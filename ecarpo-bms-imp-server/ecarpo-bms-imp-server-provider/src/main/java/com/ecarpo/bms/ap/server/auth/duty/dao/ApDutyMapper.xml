@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper	namespace="com.ecarpo.bms.ap.server.auth.duty.dao.ApDutyMapper">
+	<resultMap id="BaseResultMap" type="com.ecarpo.bms.ap.server.auth.duty.entity.ApDutyDO">
+		<!-- @mbg.generated 2019-07-15 09:31:50 -->
+    <id column="duty_id" jdbcType="BIGINT" property="dutyId" />
+    <result column="depart_id" jdbcType="BIGINT" property="departId" />
+    <result column="duty_type_id" jdbcType="BIGINT" property="dutyTypeId" />
+    <result column="duty_code" jdbcType="VARCHAR" property="dutyCode" />
+    <result column="duty_name" jdbcType="VARCHAR" property="dutyName" />
+    <result column="org_id" jdbcType="BIGINT" property="orgId" />
+    <result column="org_type" jdbcType="TINYINT" property="orgType" />
+    <result column="parent_id" jdbcType="BIGINT" property="parentId" />
+    <result column="state" jdbcType="TINYINT" property="state" />
+    <result column="sort_no" jdbcType="INTEGER" property="sortNo" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="god" jdbcType="TINYINT" property="god" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="modify_time" jdbcType="TIMESTAMP" property="modifyTime" />
+    <result column="creator_id" jdbcType="BIGINT" property="creatorId" />
+    <result column="modifier_id" jdbcType="BIGINT" property="modifierId" />
+    <result column="del_flag" jdbcType="TINYINT" property="delFlag" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!-- @mbg.generated 2019-07-15 09:31:50 -->
+    duty_id, depart_id, duty_type_id, duty_code, duty_name, org_id, org_type, parent_id, 
+    state, sort_no, remark, god, create_time, modify_time, creator_id, modifier_id, del_flag
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!-- @mbg.generated 2019-07-15 09:31:50 -->
+    select 
+    <include refid="Base_Column_List" />
+    from ap_duty
+    where duty_id = #{dutyId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!-- @mbg.generated 2019-07-15 09:31:50 -->
+    delete from ap_duty
+    where duty_id = #{dutyId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.ecarpo.bms.ap.server.auth.duty.entity.ApDutyDO">
+    <!-- @mbg.generated 2019-07-15 09:31:50 -->
+    insert into ap_duty (duty_id, depart_id, duty_type_id, 
+      duty_code, duty_name, org_id, 
+      org_type, parent_id, state, 
+      sort_no, remark, god, 
+      create_time, modify_time, creator_id, 
+      modifier_id, del_flag)
+    values (#{dutyId,jdbcType=BIGINT}, #{departId,jdbcType=BIGINT}, #{dutyTypeId,jdbcType=BIGINT}, 
+      #{dutyCode,jdbcType=VARCHAR}, #{dutyName,jdbcType=VARCHAR}, #{orgId,jdbcType=BIGINT}, 
+      #{orgType,jdbcType=TINYINT}, #{parentId,jdbcType=BIGINT}, #{state,jdbcType=TINYINT}, 
+      #{sortNo,jdbcType=INTEGER}, #{remark,jdbcType=VARCHAR}, #{god,jdbcType=TINYINT}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{modifyTime,jdbcType=TIMESTAMP}, #{creatorId,jdbcType=BIGINT}, 
+      #{modifierId,jdbcType=BIGINT}, #{delFlag,jdbcType=TINYINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ecarpo.bms.ap.server.auth.duty.entity.ApDutyDO">
+    <!-- @mbg.generated 2019-07-15 09:31:50 -->
+    insert into ap_duty
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="dutyId != null">
+        duty_id,
+      </if>
+      <if test="departId != null">
+        depart_id,
+      </if>
+      <if test="dutyTypeId != null">
+        duty_type_id,
+      </if>
+      <if test="dutyCode != null">
+        duty_code,
+      </if>
+      <if test="dutyName != null">
+        duty_name,
+      </if>
+      <if test="orgId != null">
+        org_id,
+      </if>
+      <if test="orgType != null">
+        org_type,
+      </if>
+      <if test="parentId != null">
+        parent_id,
+      </if>
+      <if test="state != null">
+        state,
+      </if>
+      <if test="sortNo != null">
+        sort_no,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+      <if test="god != null">
+        god,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="modifyTime != null">
+        modify_time,
+      </if>
+      <if test="creatorId != null">
+        creator_id,
+      </if>
+      <if test="modifierId != null">
+        modifier_id,
+      </if>
+      <if test="delFlag != null">
+        del_flag,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="dutyId != null">
+        #{dutyId,jdbcType=BIGINT},
+      </if>
+      <if test="departId != null">
+        #{departId,jdbcType=BIGINT},
+      </if>
+      <if test="dutyTypeId != null">
+        #{dutyTypeId,jdbcType=BIGINT},
+      </if>
+      <if test="dutyCode != null">
+        #{dutyCode,jdbcType=VARCHAR},
+      </if>
+      <if test="dutyName != null">
+        #{dutyName,jdbcType=VARCHAR},
+      </if>
+      <if test="orgId != null">
+        #{orgId,jdbcType=BIGINT},
+      </if>
+      <if test="orgType != null">
+        #{orgType,jdbcType=TINYINT},
+      </if>
+      <if test="parentId != null">
+        #{parentId,jdbcType=BIGINT},
+      </if>
+      <if test="state != null">
+        #{state,jdbcType=TINYINT},
+      </if>
+      <if test="sortNo != null">
+        #{sortNo,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="god != null">
+        #{god,jdbcType=TINYINT},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyTime != null">
+        #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="creatorId != null">
+        #{creatorId,jdbcType=BIGINT},
+      </if>
+      <if test="modifierId != null">
+        #{modifierId,jdbcType=BIGINT},
+      </if>
+      <if test="delFlag != null">
+        #{delFlag,jdbcType=TINYINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ecarpo.bms.ap.server.auth.duty.entity.ApDutyDO">
+    <!-- @mbg.generated 2019-07-15 09:31:50 -->
+    update ap_duty
+    <set>
+      <if test="departId != null">
+        depart_id = #{departId,jdbcType=BIGINT},
+      </if>
+      <if test="dutyTypeId != null">
+        duty_type_id = #{dutyTypeId,jdbcType=BIGINT},
+      </if>
+      <if test="dutyCode != null">
+        duty_code = #{dutyCode,jdbcType=VARCHAR},
+      </if>
+      <if test="dutyName != null">
+        duty_name = #{dutyName,jdbcType=VARCHAR},
+      </if>
+      <if test="orgId != null">
+        org_id = #{orgId,jdbcType=BIGINT},
+      </if>
+      <if test="orgType != null">
+        org_type = #{orgType,jdbcType=TINYINT},
+      </if>
+      <if test="parentId != null">
+        parent_id = #{parentId,jdbcType=BIGINT},
+      </if>
+      <if test="state != null">
+        state = #{state,jdbcType=TINYINT},
+      </if>
+      <if test="sortNo != null">
+        sort_no = #{sortNo,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="god != null">
+        god = #{god,jdbcType=TINYINT},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyTime != null">
+        modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="creatorId != null">
+        creator_id = #{creatorId,jdbcType=BIGINT},
+      </if>
+      <if test="modifierId != null">
+        modifier_id = #{modifierId,jdbcType=BIGINT},
+      </if>
+      <if test="delFlag != null">
+        del_flag = #{delFlag,jdbcType=TINYINT},
+      </if>
+    </set>
+    where duty_id = #{dutyId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ecarpo.bms.ap.server.auth.duty.entity.ApDutyDO">
+    <!-- @mbg.generated 2019-07-15 09:31:50 -->
+    update ap_duty
+    set depart_id = #{departId,jdbcType=BIGINT},
+      duty_type_id = #{dutyTypeId,jdbcType=BIGINT},
+      duty_code = #{dutyCode,jdbcType=VARCHAR},
+      duty_name = #{dutyName,jdbcType=VARCHAR},
+      org_id = #{orgId,jdbcType=BIGINT},
+      org_type = #{orgType,jdbcType=TINYINT},
+      parent_id = #{parentId,jdbcType=BIGINT},
+      state = #{state,jdbcType=TINYINT},
+      sort_no = #{sortNo,jdbcType=INTEGER},
+      remark = #{remark,jdbcType=VARCHAR},
+      god = #{god,jdbcType=TINYINT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      creator_id = #{creatorId,jdbcType=BIGINT},
+      modifier_id = #{modifierId,jdbcType=BIGINT},
+      del_flag = #{delFlag,jdbcType=TINYINT}
+    where duty_id = #{dutyId,jdbcType=BIGINT}
+  </update>
+
+	<!-- user define -->
+	<update id="updateMap" parameterType="java.util.Map">
+    update ap_duty
+    <set>
+      <if test="keys.containsKey('departId')">
+        depart_id = #{keys.departId,jdbcType=BIGINT},
+      </if>
+      <if test="keys.containsKey('dutyTypeId')">
+        duty_type_id = #{keys.dutyTypeId,jdbcType=BIGINT},
+      </if>
+      <if test="keys.containsKey('dutyCode')">
+        duty_code = #{keys.dutyCode,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('dutyName')">
+        duty_name = #{keys.dutyName,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('orgId')">
+        org_id = #{keys.orgId,jdbcType=BIGINT},
+      </if>
+      <if test="keys.containsKey('orgType')">
+        org_type = #{keys.orgType,jdbcType=TINYINT},
+      </if>
+      <if test="keys.containsKey('parentId')">
+        parent_id = #{keys.parentId,jdbcType=BIGINT},
+      </if>
+      <if test="keys.containsKey('state')">
+        state = #{keys.state,jdbcType=TINYINT},
+      </if>
+      <if test="keys.containsKey('sortNo')">
+        sort_no = #{keys.sortNo,jdbcType=INTEGER},
+      </if>
+      <if test="keys.containsKey('remark')">
+        remark = #{keys.remark,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('god')">
+        god = #{keys.god,jdbcType=TINYINT},
+      </if>
+      <if test="keys.containsKey('createTime')">
+        create_time = #{keys.createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="keys.containsKey('modifyTime')">
+        modify_time = #{keys.modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="keys.containsKey('creatorId')">
+        creator_id = #{keys.creatorId,jdbcType=BIGINT},
+      </if>
+      <if test="keys.containsKey('modifierId')">
+        modifier_id = #{keys.modifierId,jdbcType=BIGINT},
+      </if>
+      <if test="keys.containsKey('delFlag')">
+        del_flag = #{keys.delFlag,jdbcType=TINYINT},
+      </if>
+    </set>
+    where duty_id = #{keys.dutyId,jdbcType=BIGINT}
+  </update>
+
+
+  <!--岗位编码获取岗位信息  xin  2019.07.15  -->
+  <select id="selectByEasNumber" resultType="com.ecarpo.bms.ap.server.auth.duty.entity.ApDutyDO">
+    select
+      <include refid="Base_Column_List"/>
+    from 
+      ap_duty
+    where
+      duty_code = #{dutyCode,jdbcType=VARCHAR}
+    limit 0,1
+  </select>
+
+
+</mapper>

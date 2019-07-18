@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ecarpo.bms.eas.server.group.dao.EasGroupMapper">
+  <resultMap id="BaseResultMap" type="com.ecarpo.bms.eas.server.group.entity.EasGroupDO">
+    <!-- @mbg.generated 2019-06-13 16:35:36 -->
+    <id column="eas_group_id" jdbcType="BIGINT" property="easGroupId" />
+    <result column="linked_id" jdbcType="VARCHAR" property="linkedId" />
+    <result column="group_name" jdbcType="VARCHAR" property="groupName" />
+    <result column="group_number" jdbcType="VARCHAR" property="groupNumber" />
+    <result column="standard_name" jdbcType="VARCHAR" property="standardName" />
+    <result column="standard_number" jdbcType="VARCHAR" property="standardNumber" />
+    <result column="group_level" jdbcType="TINYINT" property="groupLevel" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!-- @mbg.generated 2019-06-13 16:35:36 -->
+    eas_group_id, linked_id, group_name, group_number, standard_name, standard_number, 
+    group_level
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!-- @mbg.generated 2019-06-13 16:35:36 -->
+    select 
+    <include refid="Base_Column_List" />
+    from eas_group
+    where eas_group_id = #{easGroupId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!-- @mbg.generated 2019-06-13 16:35:36 -->
+    delete from eas_group
+    where eas_group_id = #{easGroupId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.ecarpo.bms.eas.server.group.entity.EasGroupDO">
+    <!-- @mbg.generated 2019-06-13 16:35:36 -->
+    insert into eas_group (eas_group_id, linked_id, group_name, 
+      group_number, standard_name, standard_number, 
+      group_level)
+    values (#{easGroupId,jdbcType=BIGINT}, #{linkedId,jdbcType=VARCHAR}, #{groupName,jdbcType=VARCHAR}, 
+      #{groupNumber,jdbcType=VARCHAR}, #{standardName,jdbcType=VARCHAR}, #{standardNumber,jdbcType=VARCHAR}, 
+      #{groupLevel,jdbcType=TINYINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ecarpo.bms.eas.server.group.entity.EasGroupDO">
+    <!-- @mbg.generated 2019-06-13 16:35:36 -->
+    insert into eas_group
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="easGroupId != null">
+        eas_group_id,
+      </if>
+      <if test="linkedId != null">
+        linked_id,
+      </if>
+      <if test="groupName != null">
+        group_name,
+      </if>
+      <if test="groupNumber != null">
+        group_number,
+      </if>
+      <if test="standardName != null">
+        standard_name,
+      </if>
+      <if test="standardNumber != null">
+        standard_number,
+      </if>
+      <if test="groupLevel != null">
+        group_level,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="easGroupId != null">
+        #{easGroupId,jdbcType=BIGINT},
+      </if>
+      <if test="linkedId != null">
+        #{linkedId,jdbcType=VARCHAR},
+      </if>
+      <if test="groupName != null">
+        #{groupName,jdbcType=VARCHAR},
+      </if>
+      <if test="groupNumber != null">
+        #{groupNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="standardName != null">
+        #{standardName,jdbcType=VARCHAR},
+      </if>
+      <if test="standardNumber != null">
+        #{standardNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="groupLevel != null">
+        #{groupLevel,jdbcType=TINYINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ecarpo.bms.eas.server.group.entity.EasGroupDO">
+    <!-- @mbg.generated 2019-06-13 16:35:36 -->
+    update eas_group
+    <set>
+      <if test="linkedId != null">
+        linked_id = #{linkedId,jdbcType=VARCHAR},
+      </if>
+      <if test="groupName != null">
+        group_name = #{groupName,jdbcType=VARCHAR},
+      </if>
+      <if test="groupNumber != null">
+        group_number = #{groupNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="standardName != null">
+        standard_name = #{standardName,jdbcType=VARCHAR},
+      </if>
+      <if test="standardNumber != null">
+        standard_number = #{standardNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="groupLevel != null">
+        group_level = #{groupLevel,jdbcType=TINYINT},
+      </if>
+    </set>
+    where eas_group_id = #{easGroupId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ecarpo.bms.eas.server.group.entity.EasGroupDO">
+    <!-- @mbg.generated 2019-06-13 16:35:36 -->
+    update eas_group
+    set linked_id = #{linkedId,jdbcType=VARCHAR},
+      group_name = #{groupName,jdbcType=VARCHAR},
+      group_number = #{groupNumber,jdbcType=VARCHAR},
+      standard_name = #{standardName,jdbcType=VARCHAR},
+      standard_number = #{standardNumber,jdbcType=VARCHAR},
+      group_level = #{groupLevel,jdbcType=TINYINT}
+    where eas_group_id = #{easGroupId,jdbcType=BIGINT}
+  </update>
+  
+  
+  <!--user define  -->
+ <update id="updateMap" parameterType="java.util.Map">
+    update eas_group
+    <set>
+      <if test="keys.containsKey('linkedId')">
+        linked_id = #{keys.linkedId,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('groupName')">
+        group_name = #{keys.groupName,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('groupNumber')">
+        group_number = #{keys.groupNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('standardName')">
+        standard_name = #{keys.standardName,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('standardNumber')">
+        standard_number = #{keys.standardNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('groupLevel')">
+        group_level = #{keys.groupLevel,jdbcType=TINYINT},
+      </if>
+    </set>
+    where eas_group_id = #{keys.easGroupId,jdbcType=BIGINT}
+  </update>
+
+  <!--关联id 删除   xin 2019.06.13  -->
+  <delete id="deleteByLinkedId" parameterType="java.lang.String">
+    delete from eas_group where linked_id = #{linkedId,jdbcType=VARCHAR}
+  </delete>
+  
+</mapper>

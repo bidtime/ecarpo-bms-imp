@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:p="http://www.springframework.org/schema/p" xmlns:aop="http://www.springframework.org/schema/aop"
+  xmlns:context="http://www.springframework.org/schema/context" xmlns:c="http://www.springframework.org/schema/c"
+  xmlns:util="http://www.springframework.org/schema/util" xmlns:tx="http://www.springframework.org/schema/tx"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+    http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+  <context:property-placeholder location="classpath:application.properties" ignore-unresolvable="true" />
+  
+  <!--
+  <bean id="prop" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+    <property name="locations">
+        <array>
+            <value>classpath:application.properties</value>
+            <value>classpath:jdbc.properties</value>
+        </array>
+    </property>
+  </bean>
+  -->
+
+  <context:component-scan base-package="com.ecarpo.bms">
+    <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller" />
+  </context:component-scan>
+
+  <!--
+    <bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
+    <property name="providerClass" value="org.hibernate.validator.HibernateValidator" />
+    <property name="validationMessageSource" ref="messageSource" />
+    </bean>
+
+    <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+    <property name="basenames">
+    <list>
+    <value>classpath:messages</value>
+    <value>classpath:org/hibernate/validator/ValidationMessages</value>
+    </list>
+    </property>
+    <property name="useCodeAsDefaultMessage" value="false" />
+    <property name="defaultEncoding" value="UTF-8" />
+    <property name="cacheSeconds" value="60" />
+    </bean>
+
+    <bean class="org.springframework.validation.beanvalidation.BeanValidationPostProcessor"
+    p:validator-ref="validator" />
+
+    <bean class="org.springframework.validation.beanvalidation.MethodValidationPostProcessor"
+    p:validator-ref="validator" />
+  -->
+
+<!--
+  <context:property-placeholder location="classpath*:application.properties" />
+
+  <bean id="jsonFieldXmlsLoader" class="org.bidtime.dbutils.jdbc.sql.xml.JsonFieldXmlsLoader" >
+	<constructor-arg type="java.lang.String" value="com.ecarpo.bms.ap.server.datasync.server.dao"/>
+	<constructor-arg type="java.lang.String" value=".xmld"/>
+	<constructor-arg type="java.lang.Boolean" value="true"/>
+  </bean>
+-->
+
+  <bean id="sendToEASParam" class="com.ecarpo.bms.erp.server.toeas.utils.send.SendToEASParam" >
+	<property name="sendUrl" value="${erp.sendTOEas.sendUrl}"></property>
+	<property name="loginUrl" value="${erp.sendTOEas.loginUrl}"></property>
+	<property name="soapHeader" value="${erp.sendTOEas.soapHeader}"></property>
+	<property name="userName" value="${erp.sendTOEas.userName}"></property>
+	<property name="password" value="${erp.sendTOEas.password}"></property>
+	<property name="slnName" value="${erp.sendTOEas.slnName}"></property>
+	<property name="dcName" value="${erp.sendTOEas.dcName}"></property>
+	<property name="language" value="${erp.sendTOEas.language}"></property>
+	<property name="dbType" value="${erp.sendTOEas.dbType}"></property>
+	
+  </bean>
+    
+    
+   <bean id="sendToEASServer" class="com.ecarpo.bms.erp.server.toeas.utils.send.SendToEASServer" >
+     <property name="sendToEASParam" ref="sendToEASParam"></property>
+    </bean>
+    
+  
+</beans>

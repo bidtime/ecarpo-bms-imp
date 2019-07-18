@@ -1,0 +1,73 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.ecarpo.bms</groupId>
+    <artifactId>ecarpo-bms-imp-web</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>ecarpo-bms-imp-web-mvc</artifactId>
+  <packaging>jar</packaging>
+  <dependencies>
+    <dependency>
+      <groupId>com.ecarpo.bms</groupId>
+      <artifactId>ecarpo-bms-parent-mvc</artifactId>
+      <version>${project.version}</version>
+      <type>pom</type>
+    </dependency>
+    
+    <!-- below is bs web biz -->
+    <dependency>
+      <groupId>com.ecarpo.bms</groupId>
+      <artifactId>ecarpo-bms-imp-web-biz</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+	
+    <!-- 2019.05.27 add -->
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.dubbo</groupId>
+      <artifactId>dubbo</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-webmvc</artifactId>
+      <scope>provided</scope>
+    </dependency>	    
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <scope>provided</scope>
+    </dependency>
+
+    <!-- ecarpo dependencies -->
+    <dependency>
+      <groupId>com.ecarpo.framework</groupId>
+      <artifactId>ecarpo-framework-util</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.ecarpo.framework</groupId>
+      <artifactId>ecarpo-framework-web-util</artifactId>
+    </dependency>
+	
+  </dependencies>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-deploy-plugin</artifactId>
+        <configuration>
+          <skip>true</skip>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:dubbo="http://code.alibabatech.com/schema/dubbo" xmlns="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+	http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <!--
+    <import resource="classpath*:/META-INF/spring/spring-socket.xml" />
+    -->
+    <import resource="classpath*:/META-INF/spring/dubbo/provider-spring-dubbo-impl-eas.xml" />
+
+    <!--
+	<dubbo:annotation package="com" />
+	<dubbo:protocol name="dubbo" accepts="1000" />
+
+	<import resource="classpath*:spring-dubbo-provider-cargoods.xml" />
+	-->
+	
+</beans>

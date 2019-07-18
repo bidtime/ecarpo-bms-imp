@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ecarpo.bms.ap.server.auth.user.dao.ApUserMapper">
+  <resultMap id="BaseResultMap" type="com.ecarpo.bms.ap.server.auth.user.entity.ApUserDO">
+    <!-- @mbg.generated 2018-11-20 18:31:30 -->
+    <id column="user_id" jdbcType="BIGINT" property="userId" />
+    <result column="depart_id" jdbcType="BIGINT" property="departId" />
+    <result column="org_id" jdbcType="BIGINT" property="orgId" />
+    <result column="org_type" jdbcType="TINYINT" property="orgType" />
+    <result column="user_code" jdbcType="VARCHAR" property="userCode" />
+    <result column="user_name" jdbcType="VARCHAR" property="userName" />
+    <result column="account" jdbcType="VARCHAR" property="account" />
+    <result column="pwd" jdbcType="VARCHAR" property="pwd" />
+    <result column="sex" jdbcType="BIGINT" property="sex" />
+    <result column="cert_dic_id" jdbcType="BIGINT" property="certDicId" />
+    <result column="cert_no" jdbcType="VARCHAR" property="certNo" />
+    <result column="contact_phone" jdbcType="VARCHAR" property="contactPhone" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="entry_date" jdbcType="DATE" property="entryDate" />
+    <result column="formal" jdbcType="TINYINT" property="formal" />
+    <result column="formal_date" jdbcType="DATE" property="formalDate" />
+    <result column="evaluate" jdbcType="TINYINT" property="evaluate" />
+    <result column="job_name" jdbcType="VARCHAR" property="jobName" />
+    <result column="job_code" jdbcType="VARCHAR" property="jobCode" />
+    <result column="avatar" jdbcType="VARCHAR" property="avatar" />
+    <result column="wechat" jdbcType="VARCHAR" property="wechat" />
+    <result column="state" jdbcType="TINYINT" property="state" />
+    <result column="god" jdbcType="TINYINT" property="god" />
+    <result column="last_login" jdbcType="TIMESTAMP" property="lastLogin" />
+    <result column="auth_org_flag" jdbcType="TINYINT" property="authOrgFlag" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="modify_time" jdbcType="TIMESTAMP" property="modifyTime" />
+    <result column="creator_id" jdbcType="BIGINT" property="creatorId" />
+    <result column="modifier_id" jdbcType="BIGINT" property="modifierId" />
+    <result column="del_flag" jdbcType="TINYINT" property="delFlag" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!-- @mbg.generated 2018-11-20 18:31:30 -->
+    user_id, depart_id, org_id, org_type, user_code, user_name, account, pwd, sex, cert_dic_id, 
+    cert_no, contact_phone, email, entry_date, formal, formal_date, evaluate, job_name, 
+    job_code, avatar, wechat, state, god, last_login, auth_org_flag, create_time, modify_time, 
+    creator_id, modifier_id, del_flag
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!-- @mbg.generated 2018-11-20 18:31:30 -->
+    select 
+    <include refid="Base_Column_List" />
+    from ap_user
+    where user_id = #{userId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!-- @mbg.generated 2018-11-20 18:31:30 -->
+    delete from ap_user
+    where user_id = #{userId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.ecarpo.bms.ap.server.auth.user.entity.ApUserDO">
+    <!-- @mbg.generated 2018-11-20 18:31:30 -->
+    insert into ap_user (user_id, depart_id, org_id, 
+      org_type, user_code, user_name, 
+      account, pwd, sex, cert_dic_id, 
+      cert_no, contact_phone, email, 
+      entry_date, formal, formal_date, 
+      evaluate, job_name, job_code, 
+      avatar, wechat, state, 
+      god, last_login, auth_org_flag, 
+      create_time, modify_time, creator_id, 
+      modifier_id, del_flag)
+    values (#{userId,jdbcType=BIGINT}, #{departId,jdbcType=BIGINT}, #{orgId,jdbcType=BIGINT}, 
+      #{orgType,jdbcType=TINYINT}, #{userCode,jdbcType=VARCHAR}, #{userName,jdbcType=VARCHAR}, 
+      #{account,jdbcType=VARCHAR}, #{pwd,jdbcType=VARCHAR}, #{sex,jdbcType=BIGINT}, #{certDicId,jdbcType=BIGINT}, 
+      #{certNo,jdbcType=VARCHAR}, #{contactPhone,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, 
+      #{entryDate,jdbcType=DATE}, #{formal,jdbcType=TINYINT}, #{formalDate,jdbcType=DATE}, 
+      #{evaluate,jdbcType=TINYINT}, #{jobName,jdbcType=VARCHAR}, #{jobCode,jdbcType=VARCHAR}, 
+      #{avatar,jdbcType=VARCHAR}, #{wechat,jdbcType=VARCHAR}, #{state,jdbcType=TINYINT}, 
+      #{god,jdbcType=TINYINT}, #{lastLogin,jdbcType=TIMESTAMP}, #{authOrgFlag,jdbcType=TINYINT}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{modifyTime,jdbcType=TIMESTAMP}, #{creatorId,jdbcType=BIGINT}, 
+      #{modifierId,jdbcType=BIGINT}, #{delFlag,jdbcType=TINYINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ecarpo.bms.ap.server.auth.user.entity.ApUserDO">
+    <!-- @mbg.generated 2018-11-20 18:31:30 -->
+    insert into ap_user
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="departId != null">
+        depart_id,
+      </if>
+      <if test="orgId != null">
+        org_id,
+      </if>
+      <if test="orgType != null">
+        org_type,
+      </if>
+      <if test="userCode != null">
+        user_code,
+      </if>
+      <if test="userName != null">
+        user_name,
+      </if>
+      <if test="account != null">
+        account,
+      </if>
+      <if test="pwd != null">
+        pwd,
+      </if>
+      <if test="sex != null">
+        sex,
+      </if>
+      <if test="certDicId != null">
+        cert_dic_id,
+      </if>
+      <if test="certNo != null">
+        cert_no,
+      </if>
+      <if test="contactPhone != null">
+        contact_phone,
+      </if>
+      <if test="email != null">
+        email,
+      </if>
+      <if test="entryDate != null">
+        entry_date,
+      </if>
+      <if test="formal != null">
+        formal,
+      </if>
+      <if test="formalDate != null">
+        formal_date,
+      </if>
+      <if test="evaluate != null">
+        evaluate,
+      </if>
+      <if test="jobName != null">
+        job_name,
+      </if>
+      <if test="jobCode != null">
+        job_code,
+      </if>
+      <if test="avatar != null">
+        avatar,
+      </if>
+      <if test="wechat != null">
+        wechat,
+      </if>
+      <if test="state != null">
+        state,
+      </if>
+      <if test="god != null">
+        god,
+      </if>
+      <if test="lastLogin != null">
+        last_login,
+      </if>
+      <if test="authOrgFlag != null">
+        auth_org_flag,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="modifyTime != null">
+        modify_time,
+      </if>
+      <if test="creatorId != null">
+        creator_id,
+      </if>
+      <if test="modifierId != null">
+        modifier_id,
+      </if>
+      <if test="delFlag != null">
+        del_flag,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="departId != null">
+        #{departId,jdbcType=BIGINT},
+      </if>
+      <if test="orgId != null">
+        #{orgId,jdbcType=BIGINT},
+      </if>
+      <if test="orgType != null">
+        #{orgType,jdbcType=TINYINT},
+      </if>
+      <if test="userCode != null">
+        #{userCode,jdbcType=VARCHAR},
+      </if>
+      <if test="userName != null">
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="account != null">
+        #{account,jdbcType=VARCHAR},
+      </if>
+      <if test="pwd != null">
+        #{pwd,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null">
+        #{sex,jdbcType=BIGINT},
+      </if>
+      <if test="certDicId != null">
+        #{certDicId,jdbcType=BIGINT},
+      </if>
+      <if test="certNo != null">
+        #{certNo,jdbcType=VARCHAR},
+      </if>
+      <if test="contactPhone != null">
+        #{contactPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="entryDate != null">
+        #{entryDate,jdbcType=DATE},
+      </if>
+      <if test="formal != null">
+        #{formal,jdbcType=TINYINT},
+      </if>
+      <if test="formalDate != null">
+        #{formalDate,jdbcType=DATE},
+      </if>
+      <if test="evaluate != null">
+        #{evaluate,jdbcType=TINYINT},
+      </if>
+      <if test="jobName != null">
+        #{jobName,jdbcType=VARCHAR},
+      </if>
+      <if test="jobCode != null">
+        #{jobCode,jdbcType=VARCHAR},
+      </if>
+      <if test="avatar != null">
+        #{avatar,jdbcType=VARCHAR},
+      </if>
+      <if test="wechat != null">
+        #{wechat,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null">
+        #{state,jdbcType=TINYINT},
+      </if>
+      <if test="god != null">
+        #{god,jdbcType=TINYINT},
+      </if>
+      <if test="lastLogin != null">
+        #{lastLogin,jdbcType=TIMESTAMP},
+      </if>
+      <if test="authOrgFlag != null">
+        #{authOrgFlag,jdbcType=TINYINT},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyTime != null">
+        #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="creatorId != null">
+        #{creatorId,jdbcType=BIGINT},
+      </if>
+      <if test="modifierId != null">
+        #{modifierId,jdbcType=BIGINT},
+      </if>
+      <if test="delFlag != null">
+        #{delFlag,jdbcType=TINYINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ecarpo.bms.ap.server.auth.user.entity.ApUserDO">
+    <!-- @mbg.generated 2018-11-20 18:31:30 -->
+    update ap_user
+    <set>
+      <if test="departId != null">
+        depart_id = #{departId,jdbcType=BIGINT},
+      </if>
+      <if test="orgId != null">
+        org_id = #{orgId,jdbcType=BIGINT},
+      </if>
+      <if test="orgType != null">
+        org_type = #{orgType,jdbcType=TINYINT},
+      </if>
+      <if test="userCode != null">
+        user_code = #{userCode,jdbcType=VARCHAR},
+      </if>
+      <if test="userName != null">
+        user_name = #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="account != null">
+        account = #{account,jdbcType=VARCHAR},
+      </if>
+      <if test="pwd != null">
+        pwd = #{pwd,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null">
+        sex = #{sex,jdbcType=BIGINT},
+      </if>
+      <if test="certDicId != null">
+        cert_dic_id = #{certDicId,jdbcType=BIGINT},
+      </if>
+      <if test="certNo != null">
+        cert_no = #{certNo,jdbcType=VARCHAR},
+      </if>
+      <if test="contactPhone != null">
+        contact_phone = #{contactPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="entryDate != null">
+        entry_date = #{entryDate,jdbcType=DATE},
+      </if>
+      <if test="formal != null">
+        formal = #{formal,jdbcType=TINYINT},
+      </if>
+      <if test="formalDate != null">
+        formal_date = #{formalDate,jdbcType=DATE},
+      </if>
+      <if test="evaluate != null">
+        evaluate = #{evaluate,jdbcType=TINYINT},
+      </if>
+      <if test="jobName != null">
+        job_name = #{jobName,jdbcType=VARCHAR},
+      </if>
+      <if test="jobCode != null">
+        job_code = #{jobCode,jdbcType=VARCHAR},
+      </if>
+      <if test="avatar != null">
+        avatar = #{avatar,jdbcType=VARCHAR},
+      </if>
+      <if test="wechat != null">
+        wechat = #{wechat,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null">
+        state = #{state,jdbcType=TINYINT},
+      </if>
+      <if test="god != null">
+        god = #{god,jdbcType=TINYINT},
+      </if>
+      <if test="lastLogin != null">
+        last_login = #{lastLogin,jdbcType=TIMESTAMP},
+      </if>
+      <if test="authOrgFlag != null">
+        auth_org_flag = #{authOrgFlag,jdbcType=TINYINT},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyTime != null">
+        modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="creatorId != null">
+        creator_id = #{creatorId,jdbcType=BIGINT},
+      </if>
+      <if test="modifierId != null">
+        modifier_id = #{modifierId,jdbcType=BIGINT},
+      </if>
+      <if test="delFlag != null">
+        del_flag = #{delFlag,jdbcType=TINYINT},
+      </if>
+    </set>
+    where user_id = #{userId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ecarpo.bms.ap.server.auth.user.entity.ApUserDO">
+    <!-- @mbg.generated 2018-11-20 18:31:30 -->
+    update ap_user
+    set depart_id = #{departId,jdbcType=BIGINT},
+      org_id = #{orgId,jdbcType=BIGINT},
+      org_type = #{orgType,jdbcType=TINYINT},
+      user_code = #{userCode,jdbcType=VARCHAR},
+      user_name = #{userName,jdbcType=VARCHAR},
+      account = #{account,jdbcType=VARCHAR},
+      pwd = #{pwd,jdbcType=VARCHAR},
+      sex = #{sex,jdbcType=BIGINT},
+      cert_dic_id = #{certDicId,jdbcType=BIGINT},
+      cert_no = #{certNo,jdbcType=VARCHAR},
+      contact_phone = #{contactPhone,jdbcType=VARCHAR},
+      email = #{email,jdbcType=VARCHAR},
+      entry_date = #{entryDate,jdbcType=DATE},
+      formal = #{formal,jdbcType=TINYINT},
+      formal_date = #{formalDate,jdbcType=DATE},
+      evaluate = #{evaluate,jdbcType=TINYINT},
+      job_name = #{jobName,jdbcType=VARCHAR},
+      job_code = #{jobCode,jdbcType=VARCHAR},
+      avatar = #{avatar,jdbcType=VARCHAR},
+      wechat = #{wechat,jdbcType=VARCHAR},
+      state = #{state,jdbcType=TINYINT},
+      god = #{god,jdbcType=TINYINT},
+      last_login = #{lastLogin,jdbcType=TIMESTAMP},
+      auth_org_flag = #{authOrgFlag,jdbcType=TINYINT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      creator_id = #{creatorId,jdbcType=BIGINT},
+      modifier_id = #{modifierId,jdbcType=BIGINT},
+      del_flag = #{delFlag,jdbcType=TINYINT}
+    where user_id = #{userId,jdbcType=BIGINT}
+  </update>
+
+  <!-- User defined -->
+    <update id="updateMap" parameterType="java.util.Map">
+    update ap_user
+    <set>
+      <if test="keys.containsKey('departId')">
+        depart_id = #{keys.departId,jdbcType=BIGINT},
+      </if>
+      <if test="keys.containsKey('orgId')">
+        org_id = #{keys.orgId,jdbcType=BIGINT},
+      </if>
+      <if test="keys.containsKey('orgType')">
+        org_type = #{keys.orgType,jdbcType=TINYINT},
+      </if>
+      <if test="keys.containsKey('userCode')">
+        user_code = #{keys.userCode,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('userName')">
+        user_name = #{keys.userName,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('account')">
+        account = #{keys.account,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('pwd')">
+        pwd = #{keys.pwd,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('sex')">
+        sex = #{keys.sex,jdbcType=BIGINT},
+      </if>
+      <if test="keys.containsKey('certDicId')">
+        cert_dic_id = #{keys.certDicId,jdbcType=BIGINT},
+      </if>
+      <if test="keys.containsKey('certNo')">
+        cert_no = #{keys.certNo,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('contactPhone')">
+        contact_phone = #{keys.contactPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('email')">
+        email = #{keys.email,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('entryDate')">
+        entry_date = #{keys.entryDate,jdbcType=DATE},
+      </if>
+      <if test="keys.containsKey('formal')">
+        formal = #{keys.formal,jdbcType=TINYINT},
+      </if>
+      <if test="keys.containsKey('formalDate')">
+        formal_date = #{keys.formalDate,jdbcType=DATE},
+      </if>
+      <if test="keys.containsKey('evaluate')">
+        evaluate = #{keys.evaluate,jdbcType=TINYINT},
+      </if>
+      <if test="keys.containsKey('jobName')">
+        job_name = #{keys.jobName,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('jobCode')">
+        job_code = #{keys.jobCode,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('avatar')">
+        avatar = #{keys.avatar,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('wechat')">
+        wechat = #{keys.wechat,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('state')">
+        state = #{keys.state,jdbcType=TINYINT},
+      </if>
+      <if test="keys.containsKey('god')">
+        god = #{keys.god,jdbcType=TINYINT},
+      </if>
+      <if test="keys.containsKey('lastLogin')">
+        last_login = #{keys.lastLogin,jdbcType=TIMESTAMP},
+      </if>
+      <if test="keys.containsKey('authOrgFlag')">
+        auth_org_flag = #{keys.authOrgFlag,jdbcType=TINYINT},
+      </if>
+      <if test="keys.containsKey('createTime')">
+        create_time = #{keys.createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="keys.containsKey('modifyTime')">
+        modify_time = #{keys.modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="keys.containsKey('creatorId')">
+        creator_id = #{keys.creatorId,jdbcType=BIGINT},
+      </if>
+      <if test="keys.containsKey('modifierId')">
+        modifier_id = #{keys.modifierId,jdbcType=BIGINT},
+      </if>
+      <if test="keys.containsKey('delFlag')">
+        del_flag = #{keys.delFlag,jdbcType=TINYINT},
+      </if>
+    </set>
+    where user_id = #{keys.userId,jdbcType=BIGINT}
+  </update>
+
+   <!--user define   -->
+   
+   <!--编码获取人员信息  xin 2019.07.15  -->
+   <select id="selectByEasNumber" resultType="com.ecarpo.bms.ap.server.auth.user.entity.ApUserDO">
+     select
+       <include refid="Base_Column_List"/>
+     from 
+       ap_user
+     where
+       user_code = #{userCode,jdbcType=VARCHAR}
+       limit 0,1
+   </select>
+   
+</mapper>

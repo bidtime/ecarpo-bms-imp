@@ -1,0 +1,1002 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ecarpo.bms.eas.server.supplier.supplier.dao.EasSupplierMapper">
+  <resultMap id="BaseResultMap" type="com.ecarpo.bms.eas.server.supplier.supplier.entity.EasSupplierDO">
+    <!-- @mbg.generated 2019-07-08 16:16:28 -->
+    <id column="supplier_id" jdbcType="VARCHAR" property="supplierId" />
+    <result column="artificial_person" jdbcType="VARCHAR" property="artificialPerson" />
+    <result column="bar_code" jdbcType="VARCHAR" property="barCode" />
+    <result column="biz_analysis_codeID_number" jdbcType="VARCHAR" property="bizAnalysisCodeidNumber" />
+    <result column="biz_analysis_codeID_name" jdbcType="VARCHAR" property="bizAnalysisCodeidName" />
+    <result column="browse_groupID_number" jdbcType="VARCHAR" property="browseGroupidNumber" />
+    <result column="browse_groupID_name" jdbcType="VARCHAR" property="browseGroupidName" />
+    <result column="browse_groupID_level" jdbcType="TINYINT" property="browseGroupidLevel" />
+    <result column="busi_exequatur" jdbcType="VARCHAR" property="busiExequatur" />
+    <result column="biz_register_no" jdbcType="VARCHAR" property="bizRegisterNo" />
+    <result column="busi_licence" jdbcType="VARCHAR" property="busiLicence" />
+    <result column="cityID_number" jdbcType="VARCHAR" property="cityidNumber" />
+    <result column="cityID_name" jdbcType="VARCHAR" property="cityidName" />
+    <result column="countryID_number" jdbcType="VARCHAR" property="countryidNumber" />
+    <result column="countryID_name" jdbcType="VARCHAR" property="countryidName" />
+    <result column="freeze_org_unit_number" jdbcType="VARCHAR" property="freezeOrgUnitNumber" />
+    <result column="freeze_org_unit_name" jdbcType="VARCHAR" property="freezeOrgUnitName" />
+    <result column="gsp_huthentication" jdbcType="VARCHAR" property="gspHuthentication" />
+    <result column="industryID_number" jdbcType="VARCHAR" property="industryidNumber" />
+    <result column="industryID_name" jdbcType="VARCHAR" property="industryidName" />
+    <result column="internal_companyID_number" jdbcType="VARCHAR" property="internalCompanyidNumber" />
+    <result column="internal_companyID_name" jdbcType="VARCHAR" property="internalCompanyidName" />
+    <result column="is_internal_company" jdbcType="TINYINT" property="isInternalCompany" />
+    <result column="parentID_number" jdbcType="VARCHAR" property="parentidNumber" />
+    <result column="parentID_name" jdbcType="VARCHAR" property="parentidName" />
+    <result column="provinceID_number" jdbcType="VARCHAR" property="provinceidNumber" />
+    <result column="provinceID_name" jdbcType="VARCHAR" property="provinceidName" />
+    <result column="regionID_number" jdbcType="VARCHAR" property="regionidNumber" />
+    <result column="regionID_name" jdbcType="VARCHAR" property="regionidName" />
+    <result column="taxDataID_number" jdbcType="VARCHAR" property="taxdataidNumber" />
+    <result column="taxDataID_name" jdbcType="VARCHAR" property="taxdataidName" />
+    <result column="tax_register_no" jdbcType="VARCHAR" property="taxRegisterNo" />
+    <result column="used_status" jdbcType="TINYINT" property="usedStatus" />
+    <result column="version" jdbcType="TINYINT" property="version" />
+    <result column="effected_status" jdbcType="TINYINT" property="effectedStatus" />
+    <result column="mnemonic_code" jdbcType="VARCHAR" property="mnemonicCode" />
+    <result column="foreign_name" jdbcType="VARCHAR" property="foreignName" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="tax_rate" jdbcType="DECIMAL" property="taxRate" />
+    <result column="is_multi_copy" jdbcType="TINYINT" property="isMultiCopy" />
+    <result column="is_carrier" jdbcType="TINYINT" property="isCarrier" />
+    <result column="is_outer" jdbcType="TINYINT" property="isOuter" />
+    <result column="old_number" jdbcType="VARCHAR" property="oldNumber" />
+    <result column="name_pin_yin" jdbcType="VARCHAR" property="namePinYin" />
+    <result column="name_short_pin_yin" jdbcType="VARCHAR" property="nameShortPinYin" />
+    <result column="tax_payer_type" jdbcType="TINYINT" property="taxPayerType" />
+    <result column="internal_supplier_type" jdbcType="TINYINT" property="internalSupplierType" />
+    <result column="internal_profit_center_number" jdbcType="VARCHAR" property="internalProfitCenterNumber" />
+    <result column="internal_profit_center_name" jdbcType="VARCHAR" property="internalProfitCenterName" />
+    <result column="adminCUID_number" jdbcType="VARCHAR" property="admincuidNumber" />
+    <result column="adminCUID_name" jdbcType="VARCHAR" property="admincuidName" />
+    <result column="control_unitID_number" jdbcType="VARCHAR" property="controlUnitidNumber" />
+    <result column="control_unitID_name" jdbcType="VARCHAR" property="controlUnitidName" />
+    <result column="supplier_name" jdbcType="VARCHAR" property="supplierName" />
+    <result column="supplier_number" jdbcType="VARCHAR" property="supplierNumber" />
+    <result column="simple_name" jdbcType="VARCHAR" property="simpleName" />
+    <result column="erp_company_id" jdbcType="BIGINT" property="erpCompanyId" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="creatorID_number" jdbcType="VARCHAR" property="creatoridNumber" />
+    <result column="creatorID_name" jdbcType="VARCHAR" property="creatoridName" />
+    <result column="last_update_time" jdbcType="TIMESTAMP" property="lastUpdateTime" />
+    <result column="last_update_userID_number" jdbcType="VARCHAR" property="lastUpdateUseridNumber" />
+    <result column="last_update_userID_name" jdbcType="VARCHAR" property="lastUpdateUseridName" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!-- @mbg.generated 2019-07-08 16:16:28 -->
+    supplier_id, artificial_person, bar_code, biz_analysis_codeID_number, biz_analysis_codeID_name, 
+    browse_groupID_number, browse_groupID_name, browse_groupID_level, busi_exequatur, 
+    biz_register_no, busi_licence, cityID_number, cityID_name, countryID_number, countryID_name, 
+    freeze_org_unit_number, freeze_org_unit_name, gsp_huthentication, industryID_number, 
+    industryID_name, internal_companyID_number, internal_companyID_name, is_internal_company, 
+    parentID_number, parentID_name, provinceID_number, provinceID_name, regionID_number, 
+    regionID_name, taxDataID_number, taxDataID_name, tax_register_no, used_status, version, 
+    effected_status, mnemonic_code, foreign_name, address, tax_rate, is_multi_copy, is_carrier, 
+    is_outer, old_number, name_pin_yin, name_short_pin_yin, tax_payer_type, internal_supplier_type, 
+    internal_profit_center_number, internal_profit_center_name, adminCUID_number, adminCUID_name, 
+    control_unitID_number, control_unitID_name, supplier_name, supplier_number, simple_name, 
+    erp_company_id, create_time, creatorID_number, creatorID_name, last_update_time, 
+    last_update_userID_number, last_update_userID_name
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    <!-- @mbg.generated 2019-07-08 16:16:28 -->
+    select 
+    <include refid="Base_Column_List" />
+    from eas_bd_supplier
+    where supplier_id = #{supplierId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    <!-- @mbg.generated 2019-07-08 16:16:28 -->
+    delete from eas_bd_supplier
+    where supplier_id = #{supplierId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.ecarpo.bms.eas.server.supplier.supplier.entity.EasSupplierDO">
+    <!-- @mbg.generated 2019-07-08 16:16:28 -->
+    insert into eas_bd_supplier (supplier_id, artificial_person, bar_code, 
+      biz_analysis_codeID_number, biz_analysis_codeID_name, 
+      browse_groupID_number, browse_groupID_name, 
+      browse_groupID_level, busi_exequatur, biz_register_no, 
+      busi_licence, cityID_number, cityID_name, 
+      countryID_number, countryID_name, freeze_org_unit_number, 
+      freeze_org_unit_name, gsp_huthentication, industryID_number, 
+      industryID_name, internal_companyID_number, 
+      internal_companyID_name, is_internal_company, 
+      parentID_number, parentID_name, provinceID_number, 
+      provinceID_name, regionID_number, regionID_name, 
+      taxDataID_number, taxDataID_name, tax_register_no, 
+      used_status, version, effected_status, 
+      mnemonic_code, foreign_name, address, 
+      tax_rate, is_multi_copy, is_carrier, 
+      is_outer, old_number, name_pin_yin, 
+      name_short_pin_yin, tax_payer_type, internal_supplier_type, 
+      internal_profit_center_number, internal_profit_center_name, 
+      adminCUID_number, adminCUID_name, control_unitID_number, 
+      control_unitID_name, supplier_name, supplier_number, 
+      simple_name, erp_company_id, create_time, 
+      creatorID_number, creatorID_name, last_update_time, 
+      last_update_userID_number, last_update_userID_name
+      )
+    values (#{supplierId,jdbcType=VARCHAR}, #{artificialPerson,jdbcType=VARCHAR}, #{barCode,jdbcType=VARCHAR}, 
+      #{bizAnalysisCodeidNumber,jdbcType=VARCHAR}, #{bizAnalysisCodeidName,jdbcType=VARCHAR}, 
+      #{browseGroupidNumber,jdbcType=VARCHAR}, #{browseGroupidName,jdbcType=VARCHAR}, 
+      #{browseGroupidLevel,jdbcType=TINYINT}, #{busiExequatur,jdbcType=VARCHAR}, #{bizRegisterNo,jdbcType=VARCHAR}, 
+      #{busiLicence,jdbcType=VARCHAR}, #{cityidNumber,jdbcType=VARCHAR}, #{cityidName,jdbcType=VARCHAR}, 
+      #{countryidNumber,jdbcType=VARCHAR}, #{countryidName,jdbcType=VARCHAR}, #{freezeOrgUnitNumber,jdbcType=VARCHAR}, 
+      #{freezeOrgUnitName,jdbcType=VARCHAR}, #{gspHuthentication,jdbcType=VARCHAR}, #{industryidNumber,jdbcType=VARCHAR}, 
+      #{industryidName,jdbcType=VARCHAR}, #{internalCompanyidNumber,jdbcType=VARCHAR}, 
+      #{internalCompanyidName,jdbcType=VARCHAR}, #{isInternalCompany,jdbcType=TINYINT}, 
+      #{parentidNumber,jdbcType=VARCHAR}, #{parentidName,jdbcType=VARCHAR}, #{provinceidNumber,jdbcType=VARCHAR}, 
+      #{provinceidName,jdbcType=VARCHAR}, #{regionidNumber,jdbcType=VARCHAR}, #{regionidName,jdbcType=VARCHAR}, 
+      #{taxdataidNumber,jdbcType=VARCHAR}, #{taxdataidName,jdbcType=VARCHAR}, #{taxRegisterNo,jdbcType=VARCHAR}, 
+      #{usedStatus,jdbcType=TINYINT}, #{version,jdbcType=TINYINT}, #{effectedStatus,jdbcType=TINYINT}, 
+      #{mnemonicCode,jdbcType=VARCHAR}, #{foreignName,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, 
+      #{taxRate,jdbcType=DECIMAL}, #{isMultiCopy,jdbcType=TINYINT}, #{isCarrier,jdbcType=TINYINT}, 
+      #{isOuter,jdbcType=TINYINT}, #{oldNumber,jdbcType=VARCHAR}, #{namePinYin,jdbcType=VARCHAR}, 
+      #{nameShortPinYin,jdbcType=VARCHAR}, #{taxPayerType,jdbcType=TINYINT}, #{internalSupplierType,jdbcType=TINYINT}, 
+      #{internalProfitCenterNumber,jdbcType=VARCHAR}, #{internalProfitCenterName,jdbcType=VARCHAR}, 
+      #{admincuidNumber,jdbcType=VARCHAR}, #{admincuidName,jdbcType=VARCHAR}, #{controlUnitidNumber,jdbcType=VARCHAR}, 
+      #{controlUnitidName,jdbcType=VARCHAR}, #{supplierName,jdbcType=VARCHAR}, #{supplierNumber,jdbcType=VARCHAR}, 
+      #{simpleName,jdbcType=VARCHAR}, #{erpCompanyId,jdbcType=BIGINT}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{creatoridNumber,jdbcType=VARCHAR}, #{creatoridName,jdbcType=VARCHAR}, #{lastUpdateTime,jdbcType=TIMESTAMP}, 
+      #{lastUpdateUseridNumber,jdbcType=VARCHAR}, #{lastUpdateUseridName,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.ecarpo.bms.eas.server.supplier.supplier.entity.EasSupplierDO">
+    <!-- @mbg.generated 2019-07-08 16:16:28 -->
+    insert into eas_bd_supplier
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="supplierId != null">
+        supplier_id,
+      </if>
+      <if test="artificialPerson != null">
+        artificial_person,
+      </if>
+      <if test="barCode != null">
+        bar_code,
+      </if>
+      <if test="bizAnalysisCodeidNumber != null">
+        biz_analysis_codeID_number,
+      </if>
+      <if test="bizAnalysisCodeidName != null">
+        biz_analysis_codeID_name,
+      </if>
+      <if test="browseGroupidNumber != null">
+        browse_groupID_number,
+      </if>
+      <if test="browseGroupidName != null">
+        browse_groupID_name,
+      </if>
+      <if test="browseGroupidLevel != null">
+        browse_groupID_level,
+      </if>
+      <if test="busiExequatur != null">
+        busi_exequatur,
+      </if>
+      <if test="bizRegisterNo != null">
+        biz_register_no,
+      </if>
+      <if test="busiLicence != null">
+        busi_licence,
+      </if>
+      <if test="cityidNumber != null">
+        cityID_number,
+      </if>
+      <if test="cityidName != null">
+        cityID_name,
+      </if>
+      <if test="countryidNumber != null">
+        countryID_number,
+      </if>
+      <if test="countryidName != null">
+        countryID_name,
+      </if>
+      <if test="freezeOrgUnitNumber != null">
+        freeze_org_unit_number,
+      </if>
+      <if test="freezeOrgUnitName != null">
+        freeze_org_unit_name,
+      </if>
+      <if test="gspHuthentication != null">
+        gsp_huthentication,
+      </if>
+      <if test="industryidNumber != null">
+        industryID_number,
+      </if>
+      <if test="industryidName != null">
+        industryID_name,
+      </if>
+      <if test="internalCompanyidNumber != null">
+        internal_companyID_number,
+      </if>
+      <if test="internalCompanyidName != null">
+        internal_companyID_name,
+      </if>
+      <if test="isInternalCompany != null">
+        is_internal_company,
+      </if>
+      <if test="parentidNumber != null">
+        parentID_number,
+      </if>
+      <if test="parentidName != null">
+        parentID_name,
+      </if>
+      <if test="provinceidNumber != null">
+        provinceID_number,
+      </if>
+      <if test="provinceidName != null">
+        provinceID_name,
+      </if>
+      <if test="regionidNumber != null">
+        regionID_number,
+      </if>
+      <if test="regionidName != null">
+        regionID_name,
+      </if>
+      <if test="taxdataidNumber != null">
+        taxDataID_number,
+      </if>
+      <if test="taxdataidName != null">
+        taxDataID_name,
+      </if>
+      <if test="taxRegisterNo != null">
+        tax_register_no,
+      </if>
+      <if test="usedStatus != null">
+        used_status,
+      </if>
+      <if test="version != null">
+        version,
+      </if>
+      <if test="effectedStatus != null">
+        effected_status,
+      </if>
+      <if test="mnemonicCode != null">
+        mnemonic_code,
+      </if>
+      <if test="foreignName != null">
+        foreign_name,
+      </if>
+      <if test="address != null">
+        address,
+      </if>
+      <if test="taxRate != null">
+        tax_rate,
+      </if>
+      <if test="isMultiCopy != null">
+        is_multi_copy,
+      </if>
+      <if test="isCarrier != null">
+        is_carrier,
+      </if>
+      <if test="isOuter != null">
+        is_outer,
+      </if>
+      <if test="oldNumber != null">
+        old_number,
+      </if>
+      <if test="namePinYin != null">
+        name_pin_yin,
+      </if>
+      <if test="nameShortPinYin != null">
+        name_short_pin_yin,
+      </if>
+      <if test="taxPayerType != null">
+        tax_payer_type,
+      </if>
+      <if test="internalSupplierType != null">
+        internal_supplier_type,
+      </if>
+      <if test="internalProfitCenterNumber != null">
+        internal_profit_center_number,
+      </if>
+      <if test="internalProfitCenterName != null">
+        internal_profit_center_name,
+      </if>
+      <if test="admincuidNumber != null">
+        adminCUID_number,
+      </if>
+      <if test="admincuidName != null">
+        adminCUID_name,
+      </if>
+      <if test="controlUnitidNumber != null">
+        control_unitID_number,
+      </if>
+      <if test="controlUnitidName != null">
+        control_unitID_name,
+      </if>
+      <if test="supplierName != null">
+        supplier_name,
+      </if>
+      <if test="supplierNumber != null">
+        supplier_number,
+      </if>
+      <if test="simpleName != null">
+        simple_name,
+      </if>
+      <if test="erpCompanyId != null">
+        erp_company_id,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="creatoridNumber != null">
+        creatorID_number,
+      </if>
+      <if test="creatoridName != null">
+        creatorID_name,
+      </if>
+      <if test="lastUpdateTime != null">
+        last_update_time,
+      </if>
+      <if test="lastUpdateUseridNumber != null">
+        last_update_userID_number,
+      </if>
+      <if test="lastUpdateUseridName != null">
+        last_update_userID_name,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="supplierId != null">
+        #{supplierId,jdbcType=VARCHAR},
+      </if>
+      <if test="artificialPerson != null">
+        #{artificialPerson,jdbcType=VARCHAR},
+      </if>
+      <if test="barCode != null">
+        #{barCode,jdbcType=VARCHAR},
+      </if>
+      <if test="bizAnalysisCodeidNumber != null">
+        #{bizAnalysisCodeidNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="bizAnalysisCodeidName != null">
+        #{bizAnalysisCodeidName,jdbcType=VARCHAR},
+      </if>
+      <if test="browseGroupidNumber != null">
+        #{browseGroupidNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="browseGroupidName != null">
+        #{browseGroupidName,jdbcType=VARCHAR},
+      </if>
+      <if test="browseGroupidLevel != null">
+        #{browseGroupidLevel,jdbcType=TINYINT},
+      </if>
+      <if test="busiExequatur != null">
+        #{busiExequatur,jdbcType=VARCHAR},
+      </if>
+      <if test="bizRegisterNo != null">
+        #{bizRegisterNo,jdbcType=VARCHAR},
+      </if>
+      <if test="busiLicence != null">
+        #{busiLicence,jdbcType=VARCHAR},
+      </if>
+      <if test="cityidNumber != null">
+        #{cityidNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="cityidName != null">
+        #{cityidName,jdbcType=VARCHAR},
+      </if>
+      <if test="countryidNumber != null">
+        #{countryidNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="countryidName != null">
+        #{countryidName,jdbcType=VARCHAR},
+      </if>
+      <if test="freezeOrgUnitNumber != null">
+        #{freezeOrgUnitNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="freezeOrgUnitName != null">
+        #{freezeOrgUnitName,jdbcType=VARCHAR},
+      </if>
+      <if test="gspHuthentication != null">
+        #{gspHuthentication,jdbcType=VARCHAR},
+      </if>
+      <if test="industryidNumber != null">
+        #{industryidNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="industryidName != null">
+        #{industryidName,jdbcType=VARCHAR},
+      </if>
+      <if test="internalCompanyidNumber != null">
+        #{internalCompanyidNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="internalCompanyidName != null">
+        #{internalCompanyidName,jdbcType=VARCHAR},
+      </if>
+      <if test="isInternalCompany != null">
+        #{isInternalCompany,jdbcType=TINYINT},
+      </if>
+      <if test="parentidNumber != null">
+        #{parentidNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="parentidName != null">
+        #{parentidName,jdbcType=VARCHAR},
+      </if>
+      <if test="provinceidNumber != null">
+        #{provinceidNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="provinceidName != null">
+        #{provinceidName,jdbcType=VARCHAR},
+      </if>
+      <if test="regionidNumber != null">
+        #{regionidNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="regionidName != null">
+        #{regionidName,jdbcType=VARCHAR},
+      </if>
+      <if test="taxdataidNumber != null">
+        #{taxdataidNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="taxdataidName != null">
+        #{taxdataidName,jdbcType=VARCHAR},
+      </if>
+      <if test="taxRegisterNo != null">
+        #{taxRegisterNo,jdbcType=VARCHAR},
+      </if>
+      <if test="usedStatus != null">
+        #{usedStatus,jdbcType=TINYINT},
+      </if>
+      <if test="version != null">
+        #{version,jdbcType=TINYINT},
+      </if>
+      <if test="effectedStatus != null">
+        #{effectedStatus,jdbcType=TINYINT},
+      </if>
+      <if test="mnemonicCode != null">
+        #{mnemonicCode,jdbcType=VARCHAR},
+      </if>
+      <if test="foreignName != null">
+        #{foreignName,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="taxRate != null">
+        #{taxRate,jdbcType=DECIMAL},
+      </if>
+      <if test="isMultiCopy != null">
+        #{isMultiCopy,jdbcType=TINYINT},
+      </if>
+      <if test="isCarrier != null">
+        #{isCarrier,jdbcType=TINYINT},
+      </if>
+      <if test="isOuter != null">
+        #{isOuter,jdbcType=TINYINT},
+      </if>
+      <if test="oldNumber != null">
+        #{oldNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="namePinYin != null">
+        #{namePinYin,jdbcType=VARCHAR},
+      </if>
+      <if test="nameShortPinYin != null">
+        #{nameShortPinYin,jdbcType=VARCHAR},
+      </if>
+      <if test="taxPayerType != null">
+        #{taxPayerType,jdbcType=TINYINT},
+      </if>
+      <if test="internalSupplierType != null">
+        #{internalSupplierType,jdbcType=TINYINT},
+      </if>
+      <if test="internalProfitCenterNumber != null">
+        #{internalProfitCenterNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="internalProfitCenterName != null">
+        #{internalProfitCenterName,jdbcType=VARCHAR},
+      </if>
+      <if test="admincuidNumber != null">
+        #{admincuidNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="admincuidName != null">
+        #{admincuidName,jdbcType=VARCHAR},
+      </if>
+      <if test="controlUnitidNumber != null">
+        #{controlUnitidNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="controlUnitidName != null">
+        #{controlUnitidName,jdbcType=VARCHAR},
+      </if>
+      <if test="supplierName != null">
+        #{supplierName,jdbcType=VARCHAR},
+      </if>
+      <if test="supplierNumber != null">
+        #{supplierNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="simpleName != null">
+        #{simpleName,jdbcType=VARCHAR},
+      </if>
+      <if test="erpCompanyId != null">
+        #{erpCompanyId,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="creatoridNumber != null">
+        #{creatoridNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="creatoridName != null">
+        #{creatoridName,jdbcType=VARCHAR},
+      </if>
+      <if test="lastUpdateTime != null">
+        #{lastUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastUpdateUseridNumber != null">
+        #{lastUpdateUseridNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="lastUpdateUseridName != null">
+        #{lastUpdateUseridName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ecarpo.bms.eas.server.supplier.supplier.entity.EasSupplierDO">
+    <!-- @mbg.generated 2019-07-08 16:16:28 -->
+    update eas_bd_supplier
+    <set>
+      <if test="artificialPerson != null">
+        artificial_person = #{artificialPerson,jdbcType=VARCHAR},
+      </if>
+      <if test="barCode != null">
+        bar_code = #{barCode,jdbcType=VARCHAR},
+      </if>
+      <if test="bizAnalysisCodeidNumber != null">
+        biz_analysis_codeID_number = #{bizAnalysisCodeidNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="bizAnalysisCodeidName != null">
+        biz_analysis_codeID_name = #{bizAnalysisCodeidName,jdbcType=VARCHAR},
+      </if>
+      <if test="browseGroupidNumber != null">
+        browse_groupID_number = #{browseGroupidNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="browseGroupidName != null">
+        browse_groupID_name = #{browseGroupidName,jdbcType=VARCHAR},
+      </if>
+      <if test="browseGroupidLevel != null">
+        browse_groupID_level = #{browseGroupidLevel,jdbcType=TINYINT},
+      </if>
+      <if test="busiExequatur != null">
+        busi_exequatur = #{busiExequatur,jdbcType=VARCHAR},
+      </if>
+      <if test="bizRegisterNo != null">
+        biz_register_no = #{bizRegisterNo,jdbcType=VARCHAR},
+      </if>
+      <if test="busiLicence != null">
+        busi_licence = #{busiLicence,jdbcType=VARCHAR},
+      </if>
+      <if test="cityidNumber != null">
+        cityID_number = #{cityidNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="cityidName != null">
+        cityID_name = #{cityidName,jdbcType=VARCHAR},
+      </if>
+      <if test="countryidNumber != null">
+        countryID_number = #{countryidNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="countryidName != null">
+        countryID_name = #{countryidName,jdbcType=VARCHAR},
+      </if>
+      <if test="freezeOrgUnitNumber != null">
+        freeze_org_unit_number = #{freezeOrgUnitNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="freezeOrgUnitName != null">
+        freeze_org_unit_name = #{freezeOrgUnitName,jdbcType=VARCHAR},
+      </if>
+      <if test="gspHuthentication != null">
+        gsp_huthentication = #{gspHuthentication,jdbcType=VARCHAR},
+      </if>
+      <if test="industryidNumber != null">
+        industryID_number = #{industryidNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="industryidName != null">
+        industryID_name = #{industryidName,jdbcType=VARCHAR},
+      </if>
+      <if test="internalCompanyidNumber != null">
+        internal_companyID_number = #{internalCompanyidNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="internalCompanyidName != null">
+        internal_companyID_name = #{internalCompanyidName,jdbcType=VARCHAR},
+      </if>
+      <if test="isInternalCompany != null">
+        is_internal_company = #{isInternalCompany,jdbcType=TINYINT},
+      </if>
+      <if test="parentidNumber != null">
+        parentID_number = #{parentidNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="parentidName != null">
+        parentID_name = #{parentidName,jdbcType=VARCHAR},
+      </if>
+      <if test="provinceidNumber != null">
+        provinceID_number = #{provinceidNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="provinceidName != null">
+        provinceID_name = #{provinceidName,jdbcType=VARCHAR},
+      </if>
+      <if test="regionidNumber != null">
+        regionID_number = #{regionidNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="regionidName != null">
+        regionID_name = #{regionidName,jdbcType=VARCHAR},
+      </if>
+      <if test="taxdataidNumber != null">
+        taxDataID_number = #{taxdataidNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="taxdataidName != null">
+        taxDataID_name = #{taxdataidName,jdbcType=VARCHAR},
+      </if>
+      <if test="taxRegisterNo != null">
+        tax_register_no = #{taxRegisterNo,jdbcType=VARCHAR},
+      </if>
+      <if test="usedStatus != null">
+        used_status = #{usedStatus,jdbcType=TINYINT},
+      </if>
+      <if test="version != null">
+        version = #{version,jdbcType=TINYINT},
+      </if>
+      <if test="effectedStatus != null">
+        effected_status = #{effectedStatus,jdbcType=TINYINT},
+      </if>
+      <if test="mnemonicCode != null">
+        mnemonic_code = #{mnemonicCode,jdbcType=VARCHAR},
+      </if>
+      <if test="foreignName != null">
+        foreign_name = #{foreignName,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="taxRate != null">
+        tax_rate = #{taxRate,jdbcType=DECIMAL},
+      </if>
+      <if test="isMultiCopy != null">
+        is_multi_copy = #{isMultiCopy,jdbcType=TINYINT},
+      </if>
+      <if test="isCarrier != null">
+        is_carrier = #{isCarrier,jdbcType=TINYINT},
+      </if>
+      <if test="isOuter != null">
+        is_outer = #{isOuter,jdbcType=TINYINT},
+      </if>
+      <if test="oldNumber != null">
+        old_number = #{oldNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="namePinYin != null">
+        name_pin_yin = #{namePinYin,jdbcType=VARCHAR},
+      </if>
+      <if test="nameShortPinYin != null">
+        name_short_pin_yin = #{nameShortPinYin,jdbcType=VARCHAR},
+      </if>
+      <if test="taxPayerType != null">
+        tax_payer_type = #{taxPayerType,jdbcType=TINYINT},
+      </if>
+      <if test="internalSupplierType != null">
+        internal_supplier_type = #{internalSupplierType,jdbcType=TINYINT},
+      </if>
+      <if test="internalProfitCenterNumber != null">
+        internal_profit_center_number = #{internalProfitCenterNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="internalProfitCenterName != null">
+        internal_profit_center_name = #{internalProfitCenterName,jdbcType=VARCHAR},
+      </if>
+      <if test="admincuidNumber != null">
+        adminCUID_number = #{admincuidNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="admincuidName != null">
+        adminCUID_name = #{admincuidName,jdbcType=VARCHAR},
+      </if>
+      <if test="controlUnitidNumber != null">
+        control_unitID_number = #{controlUnitidNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="controlUnitidName != null">
+        control_unitID_name = #{controlUnitidName,jdbcType=VARCHAR},
+      </if>
+      <if test="supplierName != null">
+        supplier_name = #{supplierName,jdbcType=VARCHAR},
+      </if>
+      <if test="supplierNumber != null">
+        supplier_number = #{supplierNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="simpleName != null">
+        simple_name = #{simpleName,jdbcType=VARCHAR},
+      </if>
+      <if test="erpCompanyId != null">
+        erp_company_id = #{erpCompanyId,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="creatoridNumber != null">
+        creatorID_number = #{creatoridNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="creatoridName != null">
+        creatorID_name = #{creatoridName,jdbcType=VARCHAR},
+      </if>
+      <if test="lastUpdateTime != null">
+        last_update_time = #{lastUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastUpdateUseridNumber != null">
+        last_update_userID_number = #{lastUpdateUseridNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="lastUpdateUseridName != null">
+        last_update_userID_name = #{lastUpdateUseridName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where supplier_id = #{supplierId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ecarpo.bms.eas.server.supplier.supplier.entity.EasSupplierDO">
+    <!-- @mbg.generated 2019-07-08 16:16:28 -->
+    update eas_bd_supplier
+    set artificial_person = #{artificialPerson,jdbcType=VARCHAR},
+      bar_code = #{barCode,jdbcType=VARCHAR},
+      biz_analysis_codeID_number = #{bizAnalysisCodeidNumber,jdbcType=VARCHAR},
+      biz_analysis_codeID_name = #{bizAnalysisCodeidName,jdbcType=VARCHAR},
+      browse_groupID_number = #{browseGroupidNumber,jdbcType=VARCHAR},
+      browse_groupID_name = #{browseGroupidName,jdbcType=VARCHAR},
+      browse_groupID_level = #{browseGroupidLevel,jdbcType=TINYINT},
+      busi_exequatur = #{busiExequatur,jdbcType=VARCHAR},
+      biz_register_no = #{bizRegisterNo,jdbcType=VARCHAR},
+      busi_licence = #{busiLicence,jdbcType=VARCHAR},
+      cityID_number = #{cityidNumber,jdbcType=VARCHAR},
+      cityID_name = #{cityidName,jdbcType=VARCHAR},
+      countryID_number = #{countryidNumber,jdbcType=VARCHAR},
+      countryID_name = #{countryidName,jdbcType=VARCHAR},
+      freeze_org_unit_number = #{freezeOrgUnitNumber,jdbcType=VARCHAR},
+      freeze_org_unit_name = #{freezeOrgUnitName,jdbcType=VARCHAR},
+      gsp_huthentication = #{gspHuthentication,jdbcType=VARCHAR},
+      industryID_number = #{industryidNumber,jdbcType=VARCHAR},
+      industryID_name = #{industryidName,jdbcType=VARCHAR},
+      internal_companyID_number = #{internalCompanyidNumber,jdbcType=VARCHAR},
+      internal_companyID_name = #{internalCompanyidName,jdbcType=VARCHAR},
+      is_internal_company = #{isInternalCompany,jdbcType=TINYINT},
+      parentID_number = #{parentidNumber,jdbcType=VARCHAR},
+      parentID_name = #{parentidName,jdbcType=VARCHAR},
+      provinceID_number = #{provinceidNumber,jdbcType=VARCHAR},
+      provinceID_name = #{provinceidName,jdbcType=VARCHAR},
+      regionID_number = #{regionidNumber,jdbcType=VARCHAR},
+      regionID_name = #{regionidName,jdbcType=VARCHAR},
+      taxDataID_number = #{taxdataidNumber,jdbcType=VARCHAR},
+      taxDataID_name = #{taxdataidName,jdbcType=VARCHAR},
+      tax_register_no = #{taxRegisterNo,jdbcType=VARCHAR},
+      used_status = #{usedStatus,jdbcType=TINYINT},
+      version = #{version,jdbcType=TINYINT},
+      effected_status = #{effectedStatus,jdbcType=TINYINT},
+      mnemonic_code = #{mnemonicCode,jdbcType=VARCHAR},
+      foreign_name = #{foreignName,jdbcType=VARCHAR},
+      address = #{address,jdbcType=VARCHAR},
+      tax_rate = #{taxRate,jdbcType=DECIMAL},
+      is_multi_copy = #{isMultiCopy,jdbcType=TINYINT},
+      is_carrier = #{isCarrier,jdbcType=TINYINT},
+      is_outer = #{isOuter,jdbcType=TINYINT},
+      old_number = #{oldNumber,jdbcType=VARCHAR},
+      name_pin_yin = #{namePinYin,jdbcType=VARCHAR},
+      name_short_pin_yin = #{nameShortPinYin,jdbcType=VARCHAR},
+      tax_payer_type = #{taxPayerType,jdbcType=TINYINT},
+      internal_supplier_type = #{internalSupplierType,jdbcType=TINYINT},
+      internal_profit_center_number = #{internalProfitCenterNumber,jdbcType=VARCHAR},
+      internal_profit_center_name = #{internalProfitCenterName,jdbcType=VARCHAR},
+      adminCUID_number = #{admincuidNumber,jdbcType=VARCHAR},
+      adminCUID_name = #{admincuidName,jdbcType=VARCHAR},
+      control_unitID_number = #{controlUnitidNumber,jdbcType=VARCHAR},
+      control_unitID_name = #{controlUnitidName,jdbcType=VARCHAR},
+      supplier_name = #{supplierName,jdbcType=VARCHAR},
+      supplier_number = #{supplierNumber,jdbcType=VARCHAR},
+      simple_name = #{simpleName,jdbcType=VARCHAR},
+      erp_company_id = #{erpCompanyId,jdbcType=BIGINT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      creatorID_number = #{creatoridNumber,jdbcType=VARCHAR},
+      creatorID_name = #{creatoridName,jdbcType=VARCHAR},
+      last_update_time = #{lastUpdateTime,jdbcType=TIMESTAMP},
+      last_update_userID_number = #{lastUpdateUseridNumber,jdbcType=VARCHAR},
+      last_update_userID_name = #{lastUpdateUseridName,jdbcType=VARCHAR}
+    where supplier_id = #{supplierId,jdbcType=VARCHAR}
+  </update>
+  
+  <!--user define  -->
+ <update id="updateMap" parameterType="java.util.Map">
+    update eas_bd_supplier
+    <set>
+      <if test="keys.containsKey('artificialPerson')">
+        artificial_person = #{keys.artificialPerson,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('barCode')">
+        bar_code = #{keys.barCode,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('bizAnalysisCodeidNumber')">
+        biz_analysis_codeID_number = #{keys.bizAnalysisCodeidNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('bizAnalysisCodeidName')">
+        biz_analysis_codeID_name = #{keys.bizAnalysisCodeidName,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('browseGroupidNumber')">
+        browse_groupID_number = #{keys.browseGroupidNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('browseGroupidName')">
+        browse_groupID_name = #{keys.browseGroupidName,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('browseGroupidLevel')">
+        browse_groupID_level = #{keys.browseGroupidLevel,jdbcType=TINYINT},
+      </if>
+      <if test="keys.containsKey('busiExequatur')">
+        busi_exequatur = #{keys.busiExequatur,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('bizRegisterNo')">
+        biz_register_no = #{keys.bizRegisterNo,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('busiLicence')">
+        busi_licence = #{keys.busiLicence,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('cityidNumber')">
+        cityID_number = #{keys.cityidNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('cityidName')">
+        cityID_name = #{keys.cityidName,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('countryidNumber')">
+        countryID_number = #{keys.countryidNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('countryidName')">
+        countryID_name = #{keys.countryidName,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('freezeOrgUnitNumber')">
+        freeze_org_unit_number = #{keys.freezeOrgUnitNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('freezeOrgUnitName')">
+        freeze_org_unit_name = #{keys.freezeOrgUnitName,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('gspHuthentication')">
+        gsp_huthentication = #{keys.gspHuthentication,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('industryidNumber')">
+        industryID_number = #{keys.industryidNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('industryidName')">
+        industryID_name = #{keys.industryidName,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('internalCompanyidNumber')">
+        internal_companyID_number = #{keys.internalCompanyidNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('internalCompanyidName')">
+        internal_companyID_name = #{keys.internalCompanyidName,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('isInternalCompany')">
+        is_internal_company = #{keys.isInternalCompany,jdbcType=TINYINT},
+      </if>
+      <if test="keys.containsKey('parentidNumber')">
+        parentID_number = #{keys.parentidNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('parentidName')">
+        parentID_name = #{keys.parentidName,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('provinceidNumber')">
+        provinceID_number = #{keys.provinceidNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('provinceidName')">
+        provinceID_name = #{keys.provinceidName,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('regionidNumber')">
+        regionID_number = #{keys.regionidNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('regionidName')">
+        regionID_name = #{keys.regionidName,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('taxdataidNumber')">
+        taxDataID_number = #{keys.taxdataidNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('taxdataidName')">
+        taxDataID_name = #{keys.taxdataidName,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('taxRegisterNo')">
+        tax_register_no = #{keys.taxRegisterNo,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('usedStatus')">
+        used_status = #{keys.usedStatus,jdbcType=TINYINT},
+      </if>
+      <if test="keys.containsKey('version')">
+        version = #{keys.version,jdbcType=TINYINT},
+      </if>
+      <if test="keys.containsKey('effectedStatus')">
+        effected_status = #{keys.effectedStatus,jdbcType=TINYINT},
+      </if>
+      <if test="keys.containsKey('mnemonicCode')">
+        mnemonic_code = #{keys.mnemonicCode,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('foreignName')">
+        foreign_name = #{keys.foreignName,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('address')">
+        address = #{keys.address,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('taxRate')">
+        tax_rate = #{keys.taxRate,jdbcType=DECIMAL},
+      </if>
+      <if test="keys.containsKey('isMultiCopy')">
+        is_multi_copy = #{keys.isMultiCopy,jdbcType=TINYINT},
+      </if>
+      <if test="keys.containsKey('isCarrier')">
+        is_carrier = #{keys.isCarrier,jdbcType=TINYINT},
+      </if>
+      <if test="keys.containsKey('isOuter')">
+        is_outer = #{keys.isOuter,jdbcType=TINYINT},
+      </if>
+      <if test="keys.containsKey('oldNumber')">
+        old_number = #{keys.oldNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('namePinYin')">
+        name_pin_yin = #{keys.namePinYin,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('nameShortPinYin')">
+        name_short_pin_yin = #{keys.nameShortPinYin,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('taxPayerType')">
+        tax_payer_type = #{keys.taxPayerType,jdbcType=TINYINT},
+      </if>
+      <if test="keys.containsKey('internalSupplierType')">
+        internal_supplier_type = #{keys.internalSupplierType,jdbcType=TINYINT},
+      </if>
+      <if test="keys.containsKey('internalProfitCenterNumber')">
+        internal_profit_center_number = #{keys.internalProfitCenterNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('internalProfitCenterName')">
+        internal_profit_center_name = #{keys.internalProfitCenterName,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('admincuidNumber')">
+        adminCUID_number = #{keys.admincuidNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('admincuidName')">
+        adminCUID_name = #{keys.admincuidName,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('controlUnitidNumber')">
+        control_unitID_number = #{keys.controlUnitidNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('controlUnitidName')">
+        control_unitID_name = #{keys.controlUnitidName,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('supplierName')">
+        supplier_name = #{keys.supplierName,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('supplierNumber')">
+        supplier_number = #{keys.supplierNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('simpleName')">
+        simple_name = #{keys.simpleName,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('erpCompanyId')">
+        erp_company_id = #{keys.erpCompanyId,jdbcType=BIGINT},
+      </if>
+      <if test="keys.containsKey('createTime')">
+        create_time = #{keys.createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="keys.containsKey('creatoridNumber')">
+        creatorID_number = #{keys.creatoridNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('creatoridName')">
+        creatorID_name = #{keys.creatoridName,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('lastUpdateTime')">
+        last_update_time = #{keys.lastUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="keys.containsKey('lastUpdateUseridNumber')">
+        last_update_userID_number = #{keys.lastUpdateUseridNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('lastUpdateUseridName')">
+        last_update_userID_name = #{keys.lastUpdateUseridName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where supplier_id = #{keys.supplierId,jdbcType=VARCHAR}
+  </update>
+
+
+  
+    <!-- 主键获取DO xin 2019.06.05  -->
+  <select id="selectByPK" resultType="com.ecarpo.bms.eas.server.supplier.supplier.entity.EasSupplierDO">
+    select
+      <include refid="Base_Column_List"/>
+    from 
+      eas_bd_supplier
+    where
+      supplier_id = #{supplierId,jdbcType=VARCHAR}
+  </select>
+  
+</mapper>

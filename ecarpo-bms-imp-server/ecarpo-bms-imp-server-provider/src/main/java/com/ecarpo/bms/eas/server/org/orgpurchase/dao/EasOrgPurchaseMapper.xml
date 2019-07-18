@@ -1,0 +1,773 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ecarpo.bms.eas.server.org.orgpurchase.dao.EasOrgPurchaseMapper">
+  <resultMap id="BaseResultMap" type="com.ecarpo.bms.eas.server.org.orgpurchase.entity.EasOrgPurchaseDO">
+    <!-- @mbg.generated 2019-06-14 10:55:30 -->
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="is_purchase_org_unit" jdbcType="TINYINT" property="isPurchaseOrgUnit" />
+    <result column="is_grouping" jdbcType="TINYINT" property="isGrouping" />
+    <result column="last_update_time" jdbcType="TIMESTAMP" property="lastUpdateTime" />
+    <result column="last_update_user_id_number" jdbcType="VARCHAR" property="lastUpdateUserIdNumber" />
+    <result column="is_freeze" jdbcType="TINYINT" property="isFreeze" />
+    <result column="property_seal_up_date" jdbcType="TIMESTAMP" property="propertySealUpDate" />
+    <result column="is_start" jdbcType="TINYINT" property="isStart" />
+    <result column="is_admin_org_unit" jdbcType="TINYINT" property="isAdminOrgUnit" />
+    <result column="parent_id_level" jdbcType="TINYINT" property="parentIdLevel" />
+    <result column="address_id_name" jdbcType="VARCHAR" property="addressIdName" />
+    <result column="is_transport_org_unit" jdbcType="TINYINT" property="isTransportOrgUnit" />
+    <result column="is_quality_org_unit" jdbcType="TINYINT" property="isQualityOrgUnit" />
+    <result column="invalid_date" jdbcType="TIMESTAMP" property="invalidDate" />
+    <result column="gradation" jdbcType="TINYINT" property="gradation" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
+    <result column="is_seal_up" jdbcType="TINYINT" property="isSealUp" />
+    <result column="define" jdbcType="VARCHAR" property="define" />
+    <result column="is_leaf" jdbcType="TINYINT" property="isLeaf" />
+    <result column="leader_name" jdbcType="VARCHAR" property="leaderName" />
+    <result column="last_update_user_id_name" jdbcType="VARCHAR" property="lastUpdateUserIdName" />
+    <result column="is_company_org_unit" jdbcType="TINYINT" property="isCompanyOrgUnit" />
+    <result column="is_hr_org_unit" jdbcType="TINYINT" property="isHrOrgUnit" />
+    <result column="leader_number" jdbcType="VARCHAR" property="leaderNumber" />
+    <result column="is_union" jdbcType="TINYINT" property="isUnion" />
+    <result column="is_biz_unit" jdbcType="TINYINT" property="isBizUnit" />
+    <result column="is_cost_org_unit" jdbcType="TINYINT" property="isCostOrgUnit" />
+    <result column="creator_id_number" jdbcType="VARCHAR" property="creatorIdNumber" />
+    <result column="simple_name" jdbcType="VARCHAR" property="simpleName" />
+    <result column="is_ou_seal_up" jdbcType="TINYINT" property="isOuSealUp" />
+    <result column="org_type_str" jdbcType="VARCHAR" property="orgTypeStr" />
+    <result column="creator_id_name" jdbcType="VARCHAR" property="creatorIdName" />
+    <result column="effect_date" jdbcType="TIMESTAMP" property="effectDate" />
+    <result column="is_profit_org_unit" jdbcType="TINYINT" property="isProfitOrgUnit" />
+    <result column="is_cu" jdbcType="TINYINT" property="isCu" />
+    <result column="encrypt" jdbcType="VARCHAR" property="encrypt" />
+    <result column="parent_id_name" jdbcType="VARCHAR" property="parentIdName" />
+    <result column="code" jdbcType="VARCHAR" property="code" />
+    <result column="control_unit_id_number" jdbcType="VARCHAR" property="controlUnitIdNumber" />
+    <result column="control_unit_id_name" jdbcType="VARCHAR" property="controlUnitIdName" />
+    <result column="is_sale_org_unit" jdbcType="TINYINT" property="isSaleOrgUnit" />
+    <result column="is_storage_org_unit" jdbcType="TINYINT" property="isStorageOrgUnit" />
+    <result column="parent_id_number" jdbcType="VARCHAR" property="parentIdNumber" />
+    <result column="display_name" jdbcType="VARCHAR" property="displayName" />
+    <result column="long_number" jdbcType="VARCHAR" property="longNumber" />
+    <result column="address_id_number" jdbcType="VARCHAR" property="addressIdNumber" />
+    <result column="version_number" jdbcType="VARCHAR" property="versionNumber" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!-- @mbg.generated 2019-06-14 10:55:30 -->
+    id, create_time, is_purchase_org_unit, is_grouping, last_update_time, last_update_user_id_number, 
+    is_freeze, property_seal_up_date, is_start, is_admin_org_unit, parent_id_level, address_id_name, 
+    is_transport_org_unit, is_quality_org_unit, invalid_date, gradation, description, 
+    is_seal_up, define, is_leaf, leader_name, last_update_user_id_name, is_company_org_unit, 
+    is_hr_org_unit, leader_number, is_union, is_biz_unit, is_cost_org_unit, creator_id_number, 
+    simple_name, is_ou_seal_up, org_type_str, creator_id_name, effect_date, is_profit_org_unit, 
+    is_cu, encrypt, parent_id_name, code, control_unit_id_number, control_unit_id_name, 
+    is_sale_org_unit, is_storage_org_unit, parent_id_number, display_name, long_number, 
+    address_id_number, version_number
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    <!-- @mbg.generated 2019-06-14 10:55:30 -->
+    select 
+    <include refid="Base_Column_List" />
+    from eas_org_purchase
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    <!-- @mbg.generated 2019-06-14 10:55:30 -->
+    delete from eas_org_purchase
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.ecarpo.bms.eas.server.org.orgpurchase.entity.EasOrgPurchaseDO">
+    <!-- @mbg.generated 2019-06-14 10:55:30 -->
+    insert into eas_org_purchase (id, create_time, is_purchase_org_unit, 
+      is_grouping, last_update_time, last_update_user_id_number, 
+      is_freeze, property_seal_up_date, is_start, 
+      is_admin_org_unit, parent_id_level, address_id_name, 
+      is_transport_org_unit, is_quality_org_unit, invalid_date, 
+      gradation, description, is_seal_up, 
+      define, is_leaf, leader_name, 
+      last_update_user_id_name, is_company_org_unit, 
+      is_hr_org_unit, leader_number, is_union, 
+      is_biz_unit, is_cost_org_unit, creator_id_number, 
+      simple_name, is_ou_seal_up, org_type_str, 
+      creator_id_name, effect_date, is_profit_org_unit, 
+      is_cu, encrypt, parent_id_name, 
+      code, control_unit_id_number, control_unit_id_name, 
+      is_sale_org_unit, is_storage_org_unit, parent_id_number, 
+      display_name, long_number, address_id_number, 
+      version_number)
+    values (#{id,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{isPurchaseOrgUnit,jdbcType=TINYINT}, 
+      #{isGrouping,jdbcType=TINYINT}, #{lastUpdateTime,jdbcType=TIMESTAMP}, #{lastUpdateUserIdNumber,jdbcType=VARCHAR}, 
+      #{isFreeze,jdbcType=TINYINT}, #{propertySealUpDate,jdbcType=TIMESTAMP}, #{isStart,jdbcType=TINYINT}, 
+      #{isAdminOrgUnit,jdbcType=TINYINT}, #{parentIdLevel,jdbcType=TINYINT}, #{addressIdName,jdbcType=VARCHAR}, 
+      #{isTransportOrgUnit,jdbcType=TINYINT}, #{isQualityOrgUnit,jdbcType=TINYINT}, #{invalidDate,jdbcType=TIMESTAMP}, 
+      #{gradation,jdbcType=TINYINT}, #{description,jdbcType=VARCHAR}, #{isSealUp,jdbcType=TINYINT}, 
+      #{define,jdbcType=VARCHAR}, #{isLeaf,jdbcType=TINYINT}, #{leaderName,jdbcType=VARCHAR}, 
+      #{lastUpdateUserIdName,jdbcType=VARCHAR}, #{isCompanyOrgUnit,jdbcType=TINYINT}, 
+      #{isHrOrgUnit,jdbcType=TINYINT}, #{leaderNumber,jdbcType=VARCHAR}, #{isUnion,jdbcType=TINYINT}, 
+      #{isBizUnit,jdbcType=TINYINT}, #{isCostOrgUnit,jdbcType=TINYINT}, #{creatorIdNumber,jdbcType=VARCHAR}, 
+      #{simpleName,jdbcType=VARCHAR}, #{isOuSealUp,jdbcType=TINYINT}, #{orgTypeStr,jdbcType=VARCHAR}, 
+      #{creatorIdName,jdbcType=VARCHAR}, #{effectDate,jdbcType=TIMESTAMP}, #{isProfitOrgUnit,jdbcType=TINYINT}, 
+      #{isCu,jdbcType=TINYINT}, #{encrypt,jdbcType=VARCHAR}, #{parentIdName,jdbcType=VARCHAR}, 
+      #{code,jdbcType=VARCHAR}, #{controlUnitIdNumber,jdbcType=VARCHAR}, #{controlUnitIdName,jdbcType=VARCHAR}, 
+      #{isSaleOrgUnit,jdbcType=TINYINT}, #{isStorageOrgUnit,jdbcType=TINYINT}, #{parentIdNumber,jdbcType=VARCHAR}, 
+      #{displayName,jdbcType=VARCHAR}, #{longNumber,jdbcType=VARCHAR}, #{addressIdNumber,jdbcType=VARCHAR}, 
+      #{versionNumber,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ecarpo.bms.eas.server.org.orgpurchase.entity.EasOrgPurchaseDO">
+    <!-- @mbg.generated 2019-06-14 10:55:30 -->
+    insert into eas_org_purchase
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="isPurchaseOrgUnit != null">
+        is_purchase_org_unit,
+      </if>
+      <if test="isGrouping != null">
+        is_grouping,
+      </if>
+      <if test="lastUpdateTime != null">
+        last_update_time,
+      </if>
+      <if test="lastUpdateUserIdNumber != null">
+        last_update_user_id_number,
+      </if>
+      <if test="isFreeze != null">
+        is_freeze,
+      </if>
+      <if test="propertySealUpDate != null">
+        property_seal_up_date,
+      </if>
+      <if test="isStart != null">
+        is_start,
+      </if>
+      <if test="isAdminOrgUnit != null">
+        is_admin_org_unit,
+      </if>
+      <if test="parentIdLevel != null">
+        parent_id_level,
+      </if>
+      <if test="addressIdName != null">
+        address_id_name,
+      </if>
+      <if test="isTransportOrgUnit != null">
+        is_transport_org_unit,
+      </if>
+      <if test="isQualityOrgUnit != null">
+        is_quality_org_unit,
+      </if>
+      <if test="invalidDate != null">
+        invalid_date,
+      </if>
+      <if test="gradation != null">
+        gradation,
+      </if>
+      <if test="description != null">
+        description,
+      </if>
+      <if test="isSealUp != null">
+        is_seal_up,
+      </if>
+      <if test="define != null">
+        define,
+      </if>
+      <if test="isLeaf != null">
+        is_leaf,
+      </if>
+      <if test="leaderName != null">
+        leader_name,
+      </if>
+      <if test="lastUpdateUserIdName != null">
+        last_update_user_id_name,
+      </if>
+      <if test="isCompanyOrgUnit != null">
+        is_company_org_unit,
+      </if>
+      <if test="isHrOrgUnit != null">
+        is_hr_org_unit,
+      </if>
+      <if test="leaderNumber != null">
+        leader_number,
+      </if>
+      <if test="isUnion != null">
+        is_union,
+      </if>
+      <if test="isBizUnit != null">
+        is_biz_unit,
+      </if>
+      <if test="isCostOrgUnit != null">
+        is_cost_org_unit,
+      </if>
+      <if test="creatorIdNumber != null">
+        creator_id_number,
+      </if>
+      <if test="simpleName != null">
+        simple_name,
+      </if>
+      <if test="isOuSealUp != null">
+        is_ou_seal_up,
+      </if>
+      <if test="orgTypeStr != null">
+        org_type_str,
+      </if>
+      <if test="creatorIdName != null">
+        creator_id_name,
+      </if>
+      <if test="effectDate != null">
+        effect_date,
+      </if>
+      <if test="isProfitOrgUnit != null">
+        is_profit_org_unit,
+      </if>
+      <if test="isCu != null">
+        is_cu,
+      </if>
+      <if test="encrypt != null">
+        encrypt,
+      </if>
+      <if test="parentIdName != null">
+        parent_id_name,
+      </if>
+      <if test="code != null">
+        code,
+      </if>
+      <if test="controlUnitIdNumber != null">
+        control_unit_id_number,
+      </if>
+      <if test="controlUnitIdName != null">
+        control_unit_id_name,
+      </if>
+      <if test="isSaleOrgUnit != null">
+        is_sale_org_unit,
+      </if>
+      <if test="isStorageOrgUnit != null">
+        is_storage_org_unit,
+      </if>
+      <if test="parentIdNumber != null">
+        parent_id_number,
+      </if>
+      <if test="displayName != null">
+        display_name,
+      </if>
+      <if test="longNumber != null">
+        long_number,
+      </if>
+      <if test="addressIdNumber != null">
+        address_id_number,
+      </if>
+      <if test="versionNumber != null">
+        version_number,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isPurchaseOrgUnit != null">
+        #{isPurchaseOrgUnit,jdbcType=TINYINT},
+      </if>
+      <if test="isGrouping != null">
+        #{isGrouping,jdbcType=TINYINT},
+      </if>
+      <if test="lastUpdateTime != null">
+        #{lastUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastUpdateUserIdNumber != null">
+        #{lastUpdateUserIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="isFreeze != null">
+        #{isFreeze,jdbcType=TINYINT},
+      </if>
+      <if test="propertySealUpDate != null">
+        #{propertySealUpDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isStart != null">
+        #{isStart,jdbcType=TINYINT},
+      </if>
+      <if test="isAdminOrgUnit != null">
+        #{isAdminOrgUnit,jdbcType=TINYINT},
+      </if>
+      <if test="parentIdLevel != null">
+        #{parentIdLevel,jdbcType=TINYINT},
+      </if>
+      <if test="addressIdName != null">
+        #{addressIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="isTransportOrgUnit != null">
+        #{isTransportOrgUnit,jdbcType=TINYINT},
+      </if>
+      <if test="isQualityOrgUnit != null">
+        #{isQualityOrgUnit,jdbcType=TINYINT},
+      </if>
+      <if test="invalidDate != null">
+        #{invalidDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gradation != null">
+        #{gradation,jdbcType=TINYINT},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="isSealUp != null">
+        #{isSealUp,jdbcType=TINYINT},
+      </if>
+      <if test="define != null">
+        #{define,jdbcType=VARCHAR},
+      </if>
+      <if test="isLeaf != null">
+        #{isLeaf,jdbcType=TINYINT},
+      </if>
+      <if test="leaderName != null">
+        #{leaderName,jdbcType=VARCHAR},
+      </if>
+      <if test="lastUpdateUserIdName != null">
+        #{lastUpdateUserIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="isCompanyOrgUnit != null">
+        #{isCompanyOrgUnit,jdbcType=TINYINT},
+      </if>
+      <if test="isHrOrgUnit != null">
+        #{isHrOrgUnit,jdbcType=TINYINT},
+      </if>
+      <if test="leaderNumber != null">
+        #{leaderNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="isUnion != null">
+        #{isUnion,jdbcType=TINYINT},
+      </if>
+      <if test="isBizUnit != null">
+        #{isBizUnit,jdbcType=TINYINT},
+      </if>
+      <if test="isCostOrgUnit != null">
+        #{isCostOrgUnit,jdbcType=TINYINT},
+      </if>
+      <if test="creatorIdNumber != null">
+        #{creatorIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="simpleName != null">
+        #{simpleName,jdbcType=VARCHAR},
+      </if>
+      <if test="isOuSealUp != null">
+        #{isOuSealUp,jdbcType=TINYINT},
+      </if>
+      <if test="orgTypeStr != null">
+        #{orgTypeStr,jdbcType=VARCHAR},
+      </if>
+      <if test="creatorIdName != null">
+        #{creatorIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="effectDate != null">
+        #{effectDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isProfitOrgUnit != null">
+        #{isProfitOrgUnit,jdbcType=TINYINT},
+      </if>
+      <if test="isCu != null">
+        #{isCu,jdbcType=TINYINT},
+      </if>
+      <if test="encrypt != null">
+        #{encrypt,jdbcType=VARCHAR},
+      </if>
+      <if test="parentIdName != null">
+        #{parentIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="code != null">
+        #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="controlUnitIdNumber != null">
+        #{controlUnitIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="controlUnitIdName != null">
+        #{controlUnitIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="isSaleOrgUnit != null">
+        #{isSaleOrgUnit,jdbcType=TINYINT},
+      </if>
+      <if test="isStorageOrgUnit != null">
+        #{isStorageOrgUnit,jdbcType=TINYINT},
+      </if>
+      <if test="parentIdNumber != null">
+        #{parentIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="displayName != null">
+        #{displayName,jdbcType=VARCHAR},
+      </if>
+      <if test="longNumber != null">
+        #{longNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="addressIdNumber != null">
+        #{addressIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="versionNumber != null">
+        #{versionNumber,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ecarpo.bms.eas.server.org.orgpurchase.entity.EasOrgPurchaseDO">
+    <!-- @mbg.generated 2019-06-14 10:55:30 -->
+    update eas_org_purchase
+    <set>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isPurchaseOrgUnit != null">
+        is_purchase_org_unit = #{isPurchaseOrgUnit,jdbcType=TINYINT},
+      </if>
+      <if test="isGrouping != null">
+        is_grouping = #{isGrouping,jdbcType=TINYINT},
+      </if>
+      <if test="lastUpdateTime != null">
+        last_update_time = #{lastUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastUpdateUserIdNumber != null">
+        last_update_user_id_number = #{lastUpdateUserIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="isFreeze != null">
+        is_freeze = #{isFreeze,jdbcType=TINYINT},
+      </if>
+      <if test="propertySealUpDate != null">
+        property_seal_up_date = #{propertySealUpDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isStart != null">
+        is_start = #{isStart,jdbcType=TINYINT},
+      </if>
+      <if test="isAdminOrgUnit != null">
+        is_admin_org_unit = #{isAdminOrgUnit,jdbcType=TINYINT},
+      </if>
+      <if test="parentIdLevel != null">
+        parent_id_level = #{parentIdLevel,jdbcType=TINYINT},
+      </if>
+      <if test="addressIdName != null">
+        address_id_name = #{addressIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="isTransportOrgUnit != null">
+        is_transport_org_unit = #{isTransportOrgUnit,jdbcType=TINYINT},
+      </if>
+      <if test="isQualityOrgUnit != null">
+        is_quality_org_unit = #{isQualityOrgUnit,jdbcType=TINYINT},
+      </if>
+      <if test="invalidDate != null">
+        invalid_date = #{invalidDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gradation != null">
+        gradation = #{gradation,jdbcType=TINYINT},
+      </if>
+      <if test="description != null">
+        description = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="isSealUp != null">
+        is_seal_up = #{isSealUp,jdbcType=TINYINT},
+      </if>
+      <if test="define != null">
+        define = #{define,jdbcType=VARCHAR},
+      </if>
+      <if test="isLeaf != null">
+        is_leaf = #{isLeaf,jdbcType=TINYINT},
+      </if>
+      <if test="leaderName != null">
+        leader_name = #{leaderName,jdbcType=VARCHAR},
+      </if>
+      <if test="lastUpdateUserIdName != null">
+        last_update_user_id_name = #{lastUpdateUserIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="isCompanyOrgUnit != null">
+        is_company_org_unit = #{isCompanyOrgUnit,jdbcType=TINYINT},
+      </if>
+      <if test="isHrOrgUnit != null">
+        is_hr_org_unit = #{isHrOrgUnit,jdbcType=TINYINT},
+      </if>
+      <if test="leaderNumber != null">
+        leader_number = #{leaderNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="isUnion != null">
+        is_union = #{isUnion,jdbcType=TINYINT},
+      </if>
+      <if test="isBizUnit != null">
+        is_biz_unit = #{isBizUnit,jdbcType=TINYINT},
+      </if>
+      <if test="isCostOrgUnit != null">
+        is_cost_org_unit = #{isCostOrgUnit,jdbcType=TINYINT},
+      </if>
+      <if test="creatorIdNumber != null">
+        creator_id_number = #{creatorIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="simpleName != null">
+        simple_name = #{simpleName,jdbcType=VARCHAR},
+      </if>
+      <if test="isOuSealUp != null">
+        is_ou_seal_up = #{isOuSealUp,jdbcType=TINYINT},
+      </if>
+      <if test="orgTypeStr != null">
+        org_type_str = #{orgTypeStr,jdbcType=VARCHAR},
+      </if>
+      <if test="creatorIdName != null">
+        creator_id_name = #{creatorIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="effectDate != null">
+        effect_date = #{effectDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isProfitOrgUnit != null">
+        is_profit_org_unit = #{isProfitOrgUnit,jdbcType=TINYINT},
+      </if>
+      <if test="isCu != null">
+        is_cu = #{isCu,jdbcType=TINYINT},
+      </if>
+      <if test="encrypt != null">
+        encrypt = #{encrypt,jdbcType=VARCHAR},
+      </if>
+      <if test="parentIdName != null">
+        parent_id_name = #{parentIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="code != null">
+        code = #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="controlUnitIdNumber != null">
+        control_unit_id_number = #{controlUnitIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="controlUnitIdName != null">
+        control_unit_id_name = #{controlUnitIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="isSaleOrgUnit != null">
+        is_sale_org_unit = #{isSaleOrgUnit,jdbcType=TINYINT},
+      </if>
+      <if test="isStorageOrgUnit != null">
+        is_storage_org_unit = #{isStorageOrgUnit,jdbcType=TINYINT},
+      </if>
+      <if test="parentIdNumber != null">
+        parent_id_number = #{parentIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="displayName != null">
+        display_name = #{displayName,jdbcType=VARCHAR},
+      </if>
+      <if test="longNumber != null">
+        long_number = #{longNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="addressIdNumber != null">
+        address_id_number = #{addressIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="versionNumber != null">
+        version_number = #{versionNumber,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ecarpo.bms.eas.server.org.orgpurchase.entity.EasOrgPurchaseDO">
+    <!-- @mbg.generated 2019-06-14 10:55:30 -->
+    update eas_org_purchase
+    set create_time = #{createTime,jdbcType=TIMESTAMP},
+      is_purchase_org_unit = #{isPurchaseOrgUnit,jdbcType=TINYINT},
+      is_grouping = #{isGrouping,jdbcType=TINYINT},
+      last_update_time = #{lastUpdateTime,jdbcType=TIMESTAMP},
+      last_update_user_id_number = #{lastUpdateUserIdNumber,jdbcType=VARCHAR},
+      is_freeze = #{isFreeze,jdbcType=TINYINT},
+      property_seal_up_date = #{propertySealUpDate,jdbcType=TIMESTAMP},
+      is_start = #{isStart,jdbcType=TINYINT},
+      is_admin_org_unit = #{isAdminOrgUnit,jdbcType=TINYINT},
+      parent_id_level = #{parentIdLevel,jdbcType=TINYINT},
+      address_id_name = #{addressIdName,jdbcType=VARCHAR},
+      is_transport_org_unit = #{isTransportOrgUnit,jdbcType=TINYINT},
+      is_quality_org_unit = #{isQualityOrgUnit,jdbcType=TINYINT},
+      invalid_date = #{invalidDate,jdbcType=TIMESTAMP},
+      gradation = #{gradation,jdbcType=TINYINT},
+      description = #{description,jdbcType=VARCHAR},
+      is_seal_up = #{isSealUp,jdbcType=TINYINT},
+      define = #{define,jdbcType=VARCHAR},
+      is_leaf = #{isLeaf,jdbcType=TINYINT},
+      leader_name = #{leaderName,jdbcType=VARCHAR},
+      last_update_user_id_name = #{lastUpdateUserIdName,jdbcType=VARCHAR},
+      is_company_org_unit = #{isCompanyOrgUnit,jdbcType=TINYINT},
+      is_hr_org_unit = #{isHrOrgUnit,jdbcType=TINYINT},
+      leader_number = #{leaderNumber,jdbcType=VARCHAR},
+      is_union = #{isUnion,jdbcType=TINYINT},
+      is_biz_unit = #{isBizUnit,jdbcType=TINYINT},
+      is_cost_org_unit = #{isCostOrgUnit,jdbcType=TINYINT},
+      creator_id_number = #{creatorIdNumber,jdbcType=VARCHAR},
+      simple_name = #{simpleName,jdbcType=VARCHAR},
+      is_ou_seal_up = #{isOuSealUp,jdbcType=TINYINT},
+      org_type_str = #{orgTypeStr,jdbcType=VARCHAR},
+      creator_id_name = #{creatorIdName,jdbcType=VARCHAR},
+      effect_date = #{effectDate,jdbcType=TIMESTAMP},
+      is_profit_org_unit = #{isProfitOrgUnit,jdbcType=TINYINT},
+      is_cu = #{isCu,jdbcType=TINYINT},
+      encrypt = #{encrypt,jdbcType=VARCHAR},
+      parent_id_name = #{parentIdName,jdbcType=VARCHAR},
+      code = #{code,jdbcType=VARCHAR},
+      control_unit_id_number = #{controlUnitIdNumber,jdbcType=VARCHAR},
+      control_unit_id_name = #{controlUnitIdName,jdbcType=VARCHAR},
+      is_sale_org_unit = #{isSaleOrgUnit,jdbcType=TINYINT},
+      is_storage_org_unit = #{isStorageOrgUnit,jdbcType=TINYINT},
+      parent_id_number = #{parentIdNumber,jdbcType=VARCHAR},
+      display_name = #{displayName,jdbcType=VARCHAR},
+      long_number = #{longNumber,jdbcType=VARCHAR},
+      address_id_number = #{addressIdNumber,jdbcType=VARCHAR},
+      version_number = #{versionNumber,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  
+  
+  <!--user define   -->
+  <update id="updateMap" parameterType="java.util.Map">
+    update eas_org_purchase
+    <set>
+      <if test="keys.containsKey('createTime')">
+        create_time = #{keys.createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="keys.containsKey('isPurchaseOrgUnit')">
+        is_purchase_org_unit = #{keys.isPurchaseOrgUnit,jdbcType=TINYINT},
+      </if>
+      <if test="keys.containsKey('isGrouping')">
+        is_grouping = #{keys.isGrouping,jdbcType=TINYINT},
+      </if>
+      <if test="keys.containsKey('lastUpdateTime')">
+        last_update_time = #{keys.lastUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="keys.containsKey('lastUpdateUserIdNumber')">
+        last_update_user_id_number = #{keys.lastUpdateUserIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('isFreeze')">
+        is_freeze = #{keys.isFreeze,jdbcType=TINYINT},
+      </if>
+      <if test="keys.containsKey('propertySealUpDate')">
+        property_seal_up_date = #{keys.propertySealUpDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="keys.containsKey('isStart')">
+        is_start = #{keys.isStart,jdbcType=TINYINT},
+      </if>
+      <if test="keys.containsKey('isAdminOrgUnit')">
+        is_admin_org_unit = #{keys.isAdminOrgUnit,jdbcType=TINYINT},
+      </if>
+      <if test="keys.containsKey('parentIdLevel')">
+        parent_id_level = #{keys.parentIdLevel,jdbcType=TINYINT},
+      </if>
+      <if test="keys.containsKey('addressIdName')">
+        address_id_name = #{keys.addressIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('isTransportOrgUnit')">
+        is_transport_org_unit = #{keys.isTransportOrgUnit,jdbcType=TINYINT},
+      </if>
+      <if test="keys.containsKey('isQualityOrgUnit')">
+        is_quality_org_unit = #{keys.isQualityOrgUnit,jdbcType=TINYINT},
+      </if>
+      <if test="keys.containsKey('invalidDate')">
+        invalid_date = #{keys.invalidDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="keys.containsKey('gradation')">
+        gradation = #{keys.gradation,jdbcType=TINYINT},
+      </if>
+      <if test="keys.containsKey('description')">
+        description = #{keys.description,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('isSealUp')">
+        is_seal_up = #{keys.isSealUp,jdbcType=TINYINT},
+      </if>
+      <if test="keys.containsKey('define')">
+        define = #{keys.define,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('isLeaf')">
+        is_leaf = #{keys.isLeaf,jdbcType=TINYINT},
+      </if>
+      <if test="keys.containsKey('leaderName')">
+        leader_name = #{keys.leaderName,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('lastUpdateUserIdName')">
+        last_update_user_id_name = #{keys.lastUpdateUserIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('isCompanyOrgUnit')">
+        is_company_org_unit = #{keys.isCompanyOrgUnit,jdbcType=TINYINT},
+      </if>
+      <if test="keys.containsKey('isHrOrgUnit')">
+        is_hr_org_unit = #{keys.isHrOrgUnit,jdbcType=TINYINT},
+      </if>
+      <if test="keys.containsKey('leaderNumber')">
+        leader_number = #{keys.leaderNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('isUnion')">
+        is_union = #{keys.isUnion,jdbcType=TINYINT},
+      </if>
+      <if test="keys.containsKey('isBizUnit')">
+        is_biz_unit = #{keys.isBizUnit,jdbcType=TINYINT},
+      </if>
+      <if test="keys.containsKey('isCostOrgUnit')">
+        is_cost_org_unit = #{keys.isCostOrgUnit,jdbcType=TINYINT},
+      </if>
+      <if test="keys.containsKey('creatorIdNumber')">
+        creator_id_number = #{keys.creatorIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('simpleName')">
+        simple_name = #{keys.simpleName,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('isOuSealUp')">
+        is_ou_seal_up = #{keys.isOuSealUp,jdbcType=TINYINT},
+      </if>
+      <if test="keys.containsKey('orgTypeStr')">
+        org_type_str = #{keys.orgTypeStr,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('creatorIdName')">
+        creator_id_name = #{keys.creatorIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('effectDate')">
+        effect_date = #{keys.effectDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="keys.containsKey('isProfitOrgUnit')">
+        is_profit_org_unit = #{keys.isProfitOrgUnit,jdbcType=TINYINT},
+      </if>
+      <if test="keys.containsKey('isCu')">
+        is_cu = #{keys.isCu,jdbcType=TINYINT},
+      </if>
+      <if test="keys.containsKey('encrypt')">
+        encrypt = #{keys.encrypt,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('parentIdName')">
+        parent_id_name = #{keys.parentIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('code')">
+        code = #{keys.code,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('controlUnitIdNumber')">
+        control_unit_id_number = #{keys.controlUnitIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('controlUnitIdName')">
+        control_unit_id_name = #{keys.controlUnitIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('isSaleOrgUnit')">
+        is_sale_org_unit = #{keys.isSaleOrgUnit,jdbcType=TINYINT},
+      </if>
+      <if test="keys.containsKey('isStorageOrgUnit')">
+        is_storage_org_unit = #{keys.isStorageOrgUnit,jdbcType=TINYINT},
+      </if>
+      <if test="keys.containsKey('parentIdNumber')">
+        parent_id_number = #{keys.parentIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('displayName')">
+        display_name = #{keys.displayName,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('longNumber')">
+        long_number = #{keys.longNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('addressIdNumber')">
+        address_id_number = #{keys.addressIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('versionNumber')">
+        version_number = #{keys.versionNumber,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{keys.id,jdbcType=VARCHAR}
+  </update>
+  
+  
+  <!--id获取DO    xin  2019.06.14  -->
+  <select id="selectById" resultType="com.ecarpo.bms.eas.server.org.orgpurchase.entity.EasOrgPurchaseDO">
+    select
+      <include refid="Base_Column_List"/>
+    from
+      eas_org_purchase
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  
+</mapper>

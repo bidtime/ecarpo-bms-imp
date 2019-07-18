@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ecarpo.bms.ap.server.auth.usermenu.dao.ApUserMenuMapper">
+  <resultMap id="BaseResultMap" type="com.ecarpo.bms.ap.server.auth.usermenu.entity.ApUserMenuDO">
+    <!-- @mbg.generated 2017-10-09 10:42:57 -->
+    <id column="user_menu_id" jdbcType="BIGINT" property="userMenuId" />
+    <result column="product_id" jdbcType="BIGINT" property="productId" />
+    <result column="user_id" jdbcType="BIGINT" property="userId" />
+    <result column="menu_id" jdbcType="BIGINT" property="menuId" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="modify_time" jdbcType="TIMESTAMP" property="modifyTime" />
+    <result column="creator_id" jdbcType="BIGINT" property="creatorId" />
+    <result column="modifier_id" jdbcType="BIGINT" property="modifierId" />
+    <result column="del_flag" jdbcType="TINYINT" property="delFlag" />
+    <result column="manual_flag" jdbcType="TINYINT" property="manualFlag" />
+    <result column="auth_code" jdbcType="TINYINT" property="authCode" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!-- @mbg.generated 2017-10-09 10:42:57 -->
+    user_menu_id, product_id, user_id, menu_id, create_time, modify_time, creator_id, 
+    modifier_id, del_flag, manual_flag, auth_code
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!-- @mbg.generated 2017-10-09 10:42:57 -->
+    select 
+    <include refid="Base_Column_List" />
+    from ap_user_menu
+    where user_menu_id = #{userMenuId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!-- @mbg.generated 2017-10-09 10:42:57 -->
+    delete from ap_user_menu
+    where user_menu_id = #{userMenuId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.ecarpo.bms.ap.server.auth.usermenu.entity.ApUserMenuDO">
+    <!-- @mbg.generated 2017-10-09 10:42:57 -->
+    insert into ap_user_menu (user_menu_id, product_id, user_id, 
+      menu_id, create_time, modify_time, creator_id, modifier_id, del_flag, 
+      manual_flag, auth_code)
+    values (#{userMenuId,jdbcType=BIGINT}, #{productId,jdbcType=BIGINT}, #{userId,jdbcType=BIGINT}, 
+      #{menuId,jdbcType=BIGINT}, #{createTime,jdbcType=TIMESTAMP}, #{modifyTime,jdbcType=TIMESTAMP}, 
+      #{creatorId,jdbcType=BIGINT}, #{modifierId,jdbcType=BIGINT}, #{delFlag,jdbcType=TINYINT}, 
+      #{manualFlag,jdbcType=TINYINT}, #{authCode,jdbcType=TINYINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ecarpo.bms.ap.server.auth.usermenu.entity.ApUserMenuDO">
+    <!-- @mbg.generated 2017-10-09 10:42:57 -->
+    insert into ap_user_menu
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userMenuId != null">
+        user_menu_id,
+      </if>
+      <if test="productId != null">
+        product_id,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="menuId != null">
+        menu_id,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="modifyTime != null">
+        modify_time,
+      </if>
+      <if test="creatorId != null">
+        creator_id,
+      </if>
+      <if test="modifierId != null">
+        modifier_id,
+      </if>
+      <if test="delFlag != null">
+        del_flag,
+      </if>
+      <if test="manualFlag != null">
+        manual_flag,
+      </if>
+      <if test="authCode != null">
+        auth_code,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userMenuId != null">
+        #{userMenuId,jdbcType=BIGINT},
+      </if>
+      <if test="productId != null">
+        #{productId,jdbcType=BIGINT},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="menuId != null">
+        #{menuId,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyTime != null">
+        #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="creatorId != null">
+        #{creatorId,jdbcType=BIGINT},
+      </if>
+      <if test="modifierId != null">
+        #{modifierId,jdbcType=BIGINT},
+      </if>
+      <if test="delFlag != null">
+        #{delFlag,jdbcType=TINYINT},
+      </if>
+      <if test="manualFlag != null">
+        #{manualFlag,jdbcType=TINYINT},
+      </if>
+      <if test="authCode != null">
+        #{authCode,jdbcType=TINYINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ecarpo.bms.ap.server.auth.usermenu.entity.ApUserMenuDO">
+    <!-- @mbg.generated 2017-10-09 10:42:57 -->
+    update ap_user_menu
+    <set>
+      <if test="productId != null">
+        product_id = #{productId,jdbcType=BIGINT},
+      </if>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="menuId != null">
+        menu_id = #{menuId,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyTime != null">
+        modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="creatorId != null">
+        creator_id = #{creatorId,jdbcType=BIGINT},
+      </if>
+      <if test="modifierId != null">
+        modifier_id = #{modifierId,jdbcType=BIGINT},
+      </if>
+      <if test="delFlag != null">
+        del_flag = #{delFlag,jdbcType=TINYINT},
+      </if>
+      <if test="manualFlag != null">
+        manual_flag = #{manualFlag,jdbcType=TINYINT},
+      </if>
+      <if test="authCode != null">
+        auth_code = #{authCode,jdbcType=TINYINT},
+      </if>
+    </set>
+    where user_menu_id = #{userMenuId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ecarpo.bms.ap.server.auth.usermenu.entity.ApUserMenuDO">
+    <!-- @mbg.generated 2017-10-09 10:42:57 -->
+    update ap_user_menu
+    set product_id = #{productId,jdbcType=BIGINT},
+      user_id = #{userId,jdbcType=BIGINT},
+      menu_id = #{menuId,jdbcType=BIGINT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      creator_id = #{creatorId,jdbcType=BIGINT},
+      modifier_id = #{modifierId,jdbcType=BIGINT},
+      del_flag = #{delFlag,jdbcType=TINYINT},
+      manual_flag = #{manualFlag,jdbcType=TINYINT},
+      auth_code = #{authCode,jdbcType=TINYINT}
+    where user_menu_id = #{userMenuId,jdbcType=BIGINT}
+  </update>
+  <update id="updateMap" parameterType="java.util.Map">
+    update ap_user_menu
+    <set>
+      <if test="keys.containsKey('productId')">
+        product_id = #{keys.productId,jdbcType=BIGINT},
+      </if>
+      <if test="keys.containsKey('userId')">
+        user_id = #{keys.userId,jdbcType=BIGINT},
+      </if>
+      <if test="keys.containsKey('menuId')">
+        menu_id = #{keys.menuId,jdbcType=BIGINT},
+      </if>
+      <if test="keys.containsKey('createTime')">
+        create_time = #{keys.createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="keys.containsKey('modifyTime')">
+        modify_time = #{keys.modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="keys.containsKey('creatorId')">
+        creator_id = #{keys.creatorId,jdbcType=BIGINT},
+      </if>
+      <if test="keys.containsKey('modifierId')">
+        modifier_id = #{keys.modifierId,jdbcType=BIGINT},
+      </if>
+      <if test="keys.containsKey('delFlag')">
+        del_flag = #{keys.delFlag,jdbcType=TINYINT},
+      </if>
+      <if test="keys.containsKey('manualFlag')">
+        manual_flag = #{keys.manualFlag,jdbcType=TINYINT},
+      </if>
+      <if test="keys.containsKey('authCode')">
+        auth_code = #{keys.authCode,jdbcType=TINYINT},
+      </if>
+    </set>
+    where user_menu_id = #{keys.userMenuId,jdbcType=BIGINT}
+  </update>
+  
+  <!-- user define -->
+  
+  <!--userId 删除记录  2019.06.20   xin   -->
+  <delete id="deleteByUserId" parameterType="java.lang.Long">
+    delete from ap_user_menu where user_id = #{userId,jdbcType=BIGINT}
+  </delete>
+
+  <select id="getMenuIdsByProductUserId" resultType="java.lang.Long">
+    select
+      menu_id
+    from
+      ap_user_menu
+    where
+      product_id = #{productId,jdbcType=BIGINT}
+    and user_id = #{userId,jdbcType=BIGINT}
+    and del_flag = #{delFlag,jdbcType=TINYINT}
+  </select>
+  
+    <!-- maguangzu 2018-05-16 获取用户菜单对应的模块 -->  
+  <select id="getSetProductIdsByUserId" parameterType="java.lang.Long" resultType="java.lang.Long">
+    select 
+      product_id
+    from ap_user_menu
+    where user_id = #{userId,jdbcType=BIGINT}
+  </select>
+  
+</mapper>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ecarpo.bms.eas.server.orgrange.dao.EasOrgRangeMapper">
+  <resultMap id="BaseResultMap" type="com.ecarpo.bms.eas.server.orgrange.entity.EasOrgRangeDO">
+    <!-- @mbg.generated 2019-06-13 16:36:30 -->
+    <id column="eas_org_range_id" jdbcType="BIGINT" property="easOrgRangeId" />
+    <result column="linked_id" jdbcType="VARCHAR" property="linkedId" />
+    <result column="assign_number" jdbcType="VARCHAR" property="assignNumber" />
+    <result column="assign_name" jdbcType="VARCHAR" property="assignName" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!-- @mbg.generated 2019-06-13 16:36:30 -->
+    eas_org_range_id, linked_id, assign_number, assign_name
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!-- @mbg.generated 2019-06-13 16:36:30 -->
+    select 
+    <include refid="Base_Column_List" />
+    from eas_org_range
+    where eas_org_range_id = #{easOrgRangeId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!-- @mbg.generated 2019-06-13 16:36:30 -->
+    delete from eas_org_range
+    where eas_org_range_id = #{easOrgRangeId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.ecarpo.bms.eas.server.orgrange.entity.EasOrgRangeDO">
+    <!-- @mbg.generated 2019-06-13 16:36:30 -->
+    insert into eas_org_range (eas_org_range_id, linked_id, assign_number, 
+      assign_name)
+    values (#{easOrgRangeId,jdbcType=BIGINT}, #{linkedId,jdbcType=VARCHAR}, #{assignNumber,jdbcType=VARCHAR}, 
+      #{assignName,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ecarpo.bms.eas.server.orgrange.entity.EasOrgRangeDO">
+    <!-- @mbg.generated 2019-06-13 16:36:30 -->
+    insert into eas_org_range
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="easOrgRangeId != null">
+        eas_org_range_id,
+      </if>
+      <if test="linkedId != null">
+        linked_id,
+      </if>
+      <if test="assignNumber != null">
+        assign_number,
+      </if>
+      <if test="assignName != null">
+        assign_name,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="easOrgRangeId != null">
+        #{easOrgRangeId,jdbcType=BIGINT},
+      </if>
+      <if test="linkedId != null">
+        #{linkedId,jdbcType=VARCHAR},
+      </if>
+      <if test="assignNumber != null">
+        #{assignNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="assignName != null">
+        #{assignName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ecarpo.bms.eas.server.orgrange.entity.EasOrgRangeDO">
+    <!-- @mbg.generated 2019-06-13 16:36:30 -->
+    update eas_org_range
+    <set>
+      <if test="linkedId != null">
+        linked_id = #{linkedId,jdbcType=VARCHAR},
+      </if>
+      <if test="assignNumber != null">
+        assign_number = #{assignNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="assignName != null">
+        assign_name = #{assignName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where eas_org_range_id = #{easOrgRangeId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ecarpo.bms.eas.server.orgrange.entity.EasOrgRangeDO">
+    <!-- @mbg.generated 2019-06-13 16:36:30 -->
+    update eas_org_range
+    set linked_id = #{linkedId,jdbcType=VARCHAR},
+      assign_number = #{assignNumber,jdbcType=VARCHAR},
+      assign_name = #{assignName,jdbcType=VARCHAR}
+    where eas_org_range_id = #{easOrgRangeId,jdbcType=BIGINT}
+  </update>
+  
+  <!--user define  -->
+    <update id="updateMap" parameterType="java.util.Map">
+    update eas_org_range
+    <set>
+      <if test="keys.containsKey('linkedId')">
+        linked_id = #{keys.linkedId,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('assignNumber')">
+        assign_number = #{keys.assignNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('assignName')">
+        assign_name = #{keys.assignName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where eas_org_range_id = #{keys.easOrgRangeId,jdbcType=BIGINT}
+  </update>
+  
+  
+  <!--关联id 删除   xin 2019.06.13  -->
+  <delete id="deleteByLinkedId" parameterType="java.lang.String">
+    delete from eas_org_range where linked_id = #{linkedId,jdbcType=VARCHAR}
+  </delete>
+</mapper>

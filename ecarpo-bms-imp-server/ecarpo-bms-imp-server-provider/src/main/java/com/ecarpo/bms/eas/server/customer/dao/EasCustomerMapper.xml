@@ -1,0 +1,644 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ecarpo.bms.eas.server.customer.dao.EasCustomerMapper">
+  <resultMap id="BaseResultMap" type="com.ecarpo.bms.eas.server.customer.entity.EasCustomerDO">
+     <!-- @mbg.generated 2019-07-09 14:32:49 -->
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="uid" jdbcType="VARCHAR" property="uid" />
+    <result column="is_changed_pw" jdbcType="TINYINT" property="isChangedPw" />
+    <result column="err_count" jdbcType="INTEGER" property="errCount" />
+    <result column="referId" jdbcType="VARCHAR" property="referid" />
+    <result column="last_update_user_id_number" jdbcType="VARCHAR" property="lastUpdateUserIdNumber" />
+    <result column="is_biz_admin" jdbcType="TINYINT" property="isBizAdmin" />
+    <result column="type" jdbcType="TINYINT" property="type" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="homePhone" jdbcType="VARCHAR" property="homephone" />
+    <result column="is_register" jdbcType="TINYINT" property="isRegister" />
+    <result column="is_delete" jdbcType="TINYINT" property="isDelete" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
+    <result column="security_id_name" jdbcType="VARCHAR" property="securityIdName" />
+    <result column="cell" jdbcType="VARCHAR" property="cell" />
+    <result column="security_id_number" jdbcType="VARCHAR" property="securityIdNumber" />
+    <result column="encrypt" jdbcType="VARCHAR" property="encrypt" />
+    <result column="control_unit_id_number" jdbcType="VARCHAR" property="controlUnitIdNumber" />
+    <result column="control_unit_id_name" jdbcType="VARCHAR" property="controlUnitIdName" />
+    <result column="pweffective_date" jdbcType="TIMESTAMP" property="pweffectiveDate" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="locked_time" jdbcType="TIMESTAMP" property="lockedTime" />
+    <result column="group_id_number" jdbcType="VARCHAR" property="groupIdNumber" />
+    <result column="invalidation_date" jdbcType="TIMESTAMP" property="invalidationDate" />
+    <result column="customer_id" jdbcType="VARCHAR" property="customerId" />
+    <result column="default_locale" jdbcType="VARCHAR" property="defaultLocale" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="supplier_id" jdbcType="VARCHAR" property="supplierId" />
+    <result column="main_role_id_number" jdbcType="VARCHAR" property="mainRoleIdNumber" />
+    <result column="group_id_name" jdbcType="VARCHAR" property="groupIdName" />
+    <result column="person_id_name" jdbcType="VARCHAR" property="personIdName" />
+    <result column="last_update_time" jdbcType="TIMESTAMP" property="lastUpdateTime" />
+    <result column="define" jdbcType="VARCHAR" property="define" />
+    <result column="person_id_number" jdbcType="VARCHAR" property="personIdNumber" />
+    <result column="last_update_user_id_name" jdbcType="VARCHAR" property="lastUpdateUserIdName" />
+    <result column="def_org_unit_id_number" jdbcType="VARCHAR" property="defOrgUnitIdNumber" />
+    <result column="effective_date" jdbcType="TIMESTAMP" property="effectiveDate" />
+    <result column="def_org_unit_id_name" jdbcType="VARCHAR" property="defOrgUnitIdName" />
+    <result column="agent_user" jdbcType="TINYINT" property="agentUser" />
+    <result column="pwd_his_str" jdbcType="VARCHAR" property="pwdHisStr" />
+    <result column="creator_id_number" jdbcType="VARCHAR" property="creatorIdNumber" />
+    <result column="creator_id_name" jdbcType="VARCHAR" property="creatorIdName" />
+    <result column="office_phone" jdbcType="VARCHAR" property="officePhone" />
+    <result column="is_locked" jdbcType="TINYINT" property="isLocked" />
+    <result column="login_author_way" jdbcType="TINYINT" property="loginAuthorWay" />
+    <result column="ad_number" jdbcType="VARCHAR" property="adNumber" />
+    <result column="is_syn_to_cloud" jdbcType="TINYINT" property="isSynToCloud" />
+    <result column="backup_email" jdbcType="VARCHAR" property="backupEmail" />
+    <result column="forbidden" jdbcType="TINYINT" property="forbidden" />
+    <result column="main_role_id_name" jdbcType="VARCHAR" property="mainRoleIdName" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!-- @mbg.generated 2019-07-09 14:32:49 -->
+    id, uid, is_changed_pw, err_count, referId, last_update_user_id_number, is_biz_admin, 
+    type, password, homePhone, is_register, is_delete, description, security_id_name, 
+    cell, security_id_number, encrypt, control_unit_id_number, control_unit_id_name, 
+    pweffective_date, email, locked_time, group_id_number, invalidation_date, customer_id, 
+    default_locale, create_time, supplier_id, main_role_id_number, group_id_name, person_id_name, 
+    last_update_time, define, person_id_number, last_update_user_id_name, def_org_unit_id_number, 
+    effective_date, def_org_unit_id_name, agent_user, pwd_his_str, creator_id_number, 
+    creator_id_name, office_phone, is_locked, login_author_way, ad_number, is_syn_to_cloud, 
+    backup_email, forbidden, main_role_id_name
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    <!-- @mbg.generated 2019-07-09 14:32:49 -->
+    select 
+    <include refid="Base_Column_List" />
+    from eas_pm_user
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    <!-- @mbg.generated 2019-07-09 14:32:49 -->
+    delete from eas_pm_user
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.ecarpo.bms.eas.server.customer.entity.EasCustomerDO">
+    <!-- @mbg.generated 2019-07-09 14:32:49 -->
+    insert into eas_pm_user (id, uid, is_changed_pw, 
+      err_count, referId, last_update_user_id_number, 
+      is_biz_admin, type, password, 
+      homePhone, is_register, is_delete, 
+      description, security_id_name, cell, 
+      security_id_number, encrypt, control_unit_id_number, 
+      control_unit_id_name, pweffective_date, email, 
+      locked_time, group_id_number, invalidation_date, 
+      customer_id, default_locale, create_time, 
+      supplier_id, main_role_id_number, group_id_name, 
+      person_id_name, last_update_time, define, 
+      person_id_number, last_update_user_id_name, def_org_unit_id_number, 
+      effective_date, def_org_unit_id_name, agent_user, 
+      pwd_his_str, creator_id_number, creator_id_name, 
+      office_phone, is_locked, login_author_way, 
+      ad_number, is_syn_to_cloud, backup_email, 
+      forbidden, main_role_id_name)
+    values (#{id,jdbcType=VARCHAR}, #{uid,jdbcType=VARCHAR}, #{isChangedPw,jdbcType=TINYINT}, 
+      #{errCount,jdbcType=INTEGER}, #{referid,jdbcType=VARCHAR}, #{lastUpdateUserIdNumber,jdbcType=VARCHAR}, 
+      #{isBizAdmin,jdbcType=TINYINT}, #{type,jdbcType=TINYINT}, #{password,jdbcType=VARCHAR}, 
+      #{homephone,jdbcType=VARCHAR}, #{isRegister,jdbcType=TINYINT}, #{isDelete,jdbcType=TINYINT}, 
+      #{description,jdbcType=VARCHAR}, #{securityIdName,jdbcType=VARCHAR}, #{cell,jdbcType=VARCHAR}, 
+      #{securityIdNumber,jdbcType=VARCHAR}, #{encrypt,jdbcType=VARCHAR}, #{controlUnitIdNumber,jdbcType=VARCHAR}, 
+      #{controlUnitIdName,jdbcType=VARCHAR}, #{pweffectiveDate,jdbcType=TIMESTAMP}, #{email,jdbcType=VARCHAR}, 
+      #{lockedTime,jdbcType=TIMESTAMP}, #{groupIdNumber,jdbcType=VARCHAR}, #{invalidationDate,jdbcType=TIMESTAMP}, 
+      #{customerId,jdbcType=VARCHAR}, #{defaultLocale,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{supplierId,jdbcType=VARCHAR}, #{mainRoleIdNumber,jdbcType=VARCHAR}, #{groupIdName,jdbcType=VARCHAR}, 
+      #{personIdName,jdbcType=VARCHAR}, #{lastUpdateTime,jdbcType=TIMESTAMP}, #{define,jdbcType=VARCHAR}, 
+      #{personIdNumber,jdbcType=VARCHAR}, #{lastUpdateUserIdName,jdbcType=VARCHAR}, #{defOrgUnitIdNumber,jdbcType=VARCHAR}, 
+      #{effectiveDate,jdbcType=TIMESTAMP}, #{defOrgUnitIdName,jdbcType=VARCHAR}, #{agentUser,jdbcType=TINYINT}, 
+      #{pwdHisStr,jdbcType=VARCHAR}, #{creatorIdNumber,jdbcType=VARCHAR}, #{creatorIdName,jdbcType=VARCHAR}, 
+      #{officePhone,jdbcType=VARCHAR}, #{isLocked,jdbcType=TINYINT}, #{loginAuthorWay,jdbcType=TINYINT}, 
+      #{adNumber,jdbcType=VARCHAR}, #{isSynToCloud,jdbcType=TINYINT}, #{backupEmail,jdbcType=VARCHAR}, 
+      #{forbidden,jdbcType=TINYINT}, #{mainRoleIdName,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ecarpo.bms.eas.server.customer.entity.EasCustomerDO">
+    <!-- @mbg.generated 2019-07-09 14:32:49 -->
+    insert into eas_pm_user
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="uid != null">
+        uid,
+      </if>
+      <if test="isChangedPw != null">
+        is_changed_pw,
+      </if>
+      <if test="errCount != null">
+        err_count,
+      </if>
+      <if test="referid != null">
+        referId,
+      </if>
+      <if test="lastUpdateUserIdNumber != null">
+        last_update_user_id_number,
+      </if>
+      <if test="isBizAdmin != null">
+        is_biz_admin,
+      </if>
+      <if test="type != null">
+        type,
+      </if>
+      <if test="password != null">
+        password,
+      </if>
+      <if test="homephone != null">
+        homePhone,
+      </if>
+      <if test="isRegister != null">
+        is_register,
+      </if>
+      <if test="isDelete != null">
+        is_delete,
+      </if>
+      <if test="description != null">
+        description,
+      </if>
+      <if test="securityIdName != null">
+        security_id_name,
+      </if>
+      <if test="cell != null">
+        cell,
+      </if>
+      <if test="securityIdNumber != null">
+        security_id_number,
+      </if>
+      <if test="encrypt != null">
+        encrypt,
+      </if>
+      <if test="controlUnitIdNumber != null">
+        control_unit_id_number,
+      </if>
+      <if test="controlUnitIdName != null">
+        control_unit_id_name,
+      </if>
+      <if test="pweffectiveDate != null">
+        pweffective_date,
+      </if>
+      <if test="email != null">
+        email,
+      </if>
+      <if test="lockedTime != null">
+        locked_time,
+      </if>
+      <if test="groupIdNumber != null">
+        group_id_number,
+      </if>
+      <if test="invalidationDate != null">
+        invalidation_date,
+      </if>
+      <if test="customerId != null">
+        customer_id,
+      </if>
+      <if test="defaultLocale != null">
+        default_locale,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="supplierId != null">
+        supplier_id,
+      </if>
+      <if test="mainRoleIdNumber != null">
+        main_role_id_number,
+      </if>
+      <if test="groupIdName != null">
+        group_id_name,
+      </if>
+      <if test="personIdName != null">
+        person_id_name,
+      </if>
+      <if test="lastUpdateTime != null">
+        last_update_time,
+      </if>
+      <if test="define != null">
+        define,
+      </if>
+      <if test="personIdNumber != null">
+        person_id_number,
+      </if>
+      <if test="lastUpdateUserIdName != null">
+        last_update_user_id_name,
+      </if>
+      <if test="defOrgUnitIdNumber != null">
+        def_org_unit_id_number,
+      </if>
+      <if test="effectiveDate != null">
+        effective_date,
+      </if>
+      <if test="defOrgUnitIdName != null">
+        def_org_unit_id_name,
+      </if>
+      <if test="agentUser != null">
+        agent_user,
+      </if>
+      <if test="pwdHisStr != null">
+        pwd_his_str,
+      </if>
+      <if test="creatorIdNumber != null">
+        creator_id_number,
+      </if>
+      <if test="creatorIdName != null">
+        creator_id_name,
+      </if>
+      <if test="officePhone != null">
+        office_phone,
+      </if>
+      <if test="isLocked != null">
+        is_locked,
+      </if>
+      <if test="loginAuthorWay != null">
+        login_author_way,
+      </if>
+      <if test="adNumber != null">
+        ad_number,
+      </if>
+      <if test="isSynToCloud != null">
+        is_syn_to_cloud,
+      </if>
+      <if test="backupEmail != null">
+        backup_email,
+      </if>
+      <if test="forbidden != null">
+        forbidden,
+      </if>
+      <if test="mainRoleIdName != null">
+        main_role_id_name,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="uid != null">
+        #{uid,jdbcType=VARCHAR},
+      </if>
+      <if test="isChangedPw != null">
+        #{isChangedPw,jdbcType=TINYINT},
+      </if>
+      <if test="errCount != null">
+        #{errCount,jdbcType=INTEGER},
+      </if>
+      <if test="referid != null">
+        #{referid,jdbcType=VARCHAR},
+      </if>
+      <if test="lastUpdateUserIdNumber != null">
+        #{lastUpdateUserIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="isBizAdmin != null">
+        #{isBizAdmin,jdbcType=TINYINT},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=TINYINT},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="homephone != null">
+        #{homephone,jdbcType=VARCHAR},
+      </if>
+      <if test="isRegister != null">
+        #{isRegister,jdbcType=TINYINT},
+      </if>
+      <if test="isDelete != null">
+        #{isDelete,jdbcType=TINYINT},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="securityIdName != null">
+        #{securityIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="cell != null">
+        #{cell,jdbcType=VARCHAR},
+      </if>
+      <if test="securityIdNumber != null">
+        #{securityIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="encrypt != null">
+        #{encrypt,jdbcType=VARCHAR},
+      </if>
+      <if test="controlUnitIdNumber != null">
+        #{controlUnitIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="controlUnitIdName != null">
+        #{controlUnitIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="pweffectiveDate != null">
+        #{pweffectiveDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="email != null">
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="lockedTime != null">
+        #{lockedTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="groupIdNumber != null">
+        #{groupIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="invalidationDate != null">
+        #{invalidationDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="customerId != null">
+        #{customerId,jdbcType=VARCHAR},
+      </if>
+      <if test="defaultLocale != null">
+        #{defaultLocale,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="supplierId != null">
+        #{supplierId,jdbcType=VARCHAR},
+      </if>
+      <if test="mainRoleIdNumber != null">
+        #{mainRoleIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="groupIdName != null">
+        #{groupIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="personIdName != null">
+        #{personIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="lastUpdateTime != null">
+        #{lastUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="define != null">
+        #{define,jdbcType=VARCHAR},
+      </if>
+      <if test="personIdNumber != null">
+        #{personIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="lastUpdateUserIdName != null">
+        #{lastUpdateUserIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="defOrgUnitIdNumber != null">
+        #{defOrgUnitIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="effectiveDate != null">
+        #{effectiveDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="defOrgUnitIdName != null">
+        #{defOrgUnitIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="agentUser != null">
+        #{agentUser,jdbcType=TINYINT},
+      </if>
+      <if test="pwdHisStr != null">
+        #{pwdHisStr,jdbcType=VARCHAR},
+      </if>
+      <if test="creatorIdNumber != null">
+        #{creatorIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="creatorIdName != null">
+        #{creatorIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="officePhone != null">
+        #{officePhone,jdbcType=VARCHAR},
+      </if>
+      <if test="isLocked != null">
+        #{isLocked,jdbcType=TINYINT},
+      </if>
+      <if test="loginAuthorWay != null">
+        #{loginAuthorWay,jdbcType=TINYINT},
+      </if>
+      <if test="adNumber != null">
+        #{adNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="isSynToCloud != null">
+        #{isSynToCloud,jdbcType=TINYINT},
+      </if>
+      <if test="backupEmail != null">
+        #{backupEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="forbidden != null">
+        #{forbidden,jdbcType=TINYINT},
+      </if>
+      <if test="mainRoleIdName != null">
+        #{mainRoleIdName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ecarpo.bms.eas.server.customer.entity.EasCustomerDO">
+    <!-- @mbg.generated 2019-07-09 14:32:49 -->
+    update eas_pm_user
+    <set>
+      <if test="uid != null">
+        uid = #{uid,jdbcType=VARCHAR},
+      </if>
+      <if test="isChangedPw != null">
+        is_changed_pw = #{isChangedPw,jdbcType=TINYINT},
+      </if>
+      <if test="errCount != null">
+        err_count = #{errCount,jdbcType=INTEGER},
+      </if>
+      <if test="referid != null">
+        referId = #{referid,jdbcType=VARCHAR},
+      </if>
+      <if test="lastUpdateUserIdNumber != null">
+        last_update_user_id_number = #{lastUpdateUserIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="isBizAdmin != null">
+        is_biz_admin = #{isBizAdmin,jdbcType=TINYINT},
+      </if>
+      <if test="type != null">
+        type = #{type,jdbcType=TINYINT},
+      </if>
+      <if test="password != null">
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="homephone != null">
+        homePhone = #{homephone,jdbcType=VARCHAR},
+      </if>
+      <if test="isRegister != null">
+        is_register = #{isRegister,jdbcType=TINYINT},
+      </if>
+      <if test="isDelete != null">
+        is_delete = #{isDelete,jdbcType=TINYINT},
+      </if>
+      <if test="description != null">
+        description = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="securityIdName != null">
+        security_id_name = #{securityIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="cell != null">
+        cell = #{cell,jdbcType=VARCHAR},
+      </if>
+      <if test="securityIdNumber != null">
+        security_id_number = #{securityIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="encrypt != null">
+        encrypt = #{encrypt,jdbcType=VARCHAR},
+      </if>
+      <if test="controlUnitIdNumber != null">
+        control_unit_id_number = #{controlUnitIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="controlUnitIdName != null">
+        control_unit_id_name = #{controlUnitIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="pweffectiveDate != null">
+        pweffective_date = #{pweffectiveDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="email != null">
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="lockedTime != null">
+        locked_time = #{lockedTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="groupIdNumber != null">
+        group_id_number = #{groupIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="invalidationDate != null">
+        invalidation_date = #{invalidationDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="customerId != null">
+        customer_id = #{customerId,jdbcType=VARCHAR},
+      </if>
+      <if test="defaultLocale != null">
+        default_locale = #{defaultLocale,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="supplierId != null">
+        supplier_id = #{supplierId,jdbcType=VARCHAR},
+      </if>
+      <if test="mainRoleIdNumber != null">
+        main_role_id_number = #{mainRoleIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="groupIdName != null">
+        group_id_name = #{groupIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="personIdName != null">
+        person_id_name = #{personIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="lastUpdateTime != null">
+        last_update_time = #{lastUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="define != null">
+        define = #{define,jdbcType=VARCHAR},
+      </if>
+      <if test="personIdNumber != null">
+        person_id_number = #{personIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="lastUpdateUserIdName != null">
+        last_update_user_id_name = #{lastUpdateUserIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="defOrgUnitIdNumber != null">
+        def_org_unit_id_number = #{defOrgUnitIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="effectiveDate != null">
+        effective_date = #{effectiveDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="defOrgUnitIdName != null">
+        def_org_unit_id_name = #{defOrgUnitIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="agentUser != null">
+        agent_user = #{agentUser,jdbcType=TINYINT},
+      </if>
+      <if test="pwdHisStr != null">
+        pwd_his_str = #{pwdHisStr,jdbcType=VARCHAR},
+      </if>
+      <if test="creatorIdNumber != null">
+        creator_id_number = #{creatorIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="creatorIdName != null">
+        creator_id_name = #{creatorIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="officePhone != null">
+        office_phone = #{officePhone,jdbcType=VARCHAR},
+      </if>
+      <if test="isLocked != null">
+        is_locked = #{isLocked,jdbcType=TINYINT},
+      </if>
+      <if test="loginAuthorWay != null">
+        login_author_way = #{loginAuthorWay,jdbcType=TINYINT},
+      </if>
+      <if test="adNumber != null">
+        ad_number = #{adNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="isSynToCloud != null">
+        is_syn_to_cloud = #{isSynToCloud,jdbcType=TINYINT},
+      </if>
+      <if test="backupEmail != null">
+        backup_email = #{backupEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="forbidden != null">
+        forbidden = #{forbidden,jdbcType=TINYINT},
+      </if>
+      <if test="mainRoleIdName != null">
+        main_role_id_name = #{mainRoleIdName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ecarpo.bms.eas.server.customer.entity.EasCustomerDO">
+    <!-- @mbg.generated 2019-07-09 14:32:49 -->
+    update eas_pm_user
+    set uid = #{uid,jdbcType=VARCHAR},
+      is_changed_pw = #{isChangedPw,jdbcType=TINYINT},
+      err_count = #{errCount,jdbcType=INTEGER},
+      referId = #{referid,jdbcType=VARCHAR},
+      last_update_user_id_number = #{lastUpdateUserIdNumber,jdbcType=VARCHAR},
+      is_biz_admin = #{isBizAdmin,jdbcType=TINYINT},
+      type = #{type,jdbcType=TINYINT},
+      password = #{password,jdbcType=VARCHAR},
+      homePhone = #{homephone,jdbcType=VARCHAR},
+      is_register = #{isRegister,jdbcType=TINYINT},
+      is_delete = #{isDelete,jdbcType=TINYINT},
+      description = #{description,jdbcType=VARCHAR},
+      security_id_name = #{securityIdName,jdbcType=VARCHAR},
+      cell = #{cell,jdbcType=VARCHAR},
+      security_id_number = #{securityIdNumber,jdbcType=VARCHAR},
+      encrypt = #{encrypt,jdbcType=VARCHAR},
+      control_unit_id_number = #{controlUnitIdNumber,jdbcType=VARCHAR},
+      control_unit_id_name = #{controlUnitIdName,jdbcType=VARCHAR},
+      pweffective_date = #{pweffectiveDate,jdbcType=TIMESTAMP},
+      email = #{email,jdbcType=VARCHAR},
+      locked_time = #{lockedTime,jdbcType=TIMESTAMP},
+      group_id_number = #{groupIdNumber,jdbcType=VARCHAR},
+      invalidation_date = #{invalidationDate,jdbcType=TIMESTAMP},
+      customer_id = #{customerId,jdbcType=VARCHAR},
+      default_locale = #{defaultLocale,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      supplier_id = #{supplierId,jdbcType=VARCHAR},
+      main_role_id_number = #{mainRoleIdNumber,jdbcType=VARCHAR},
+      group_id_name = #{groupIdName,jdbcType=VARCHAR},
+      person_id_name = #{personIdName,jdbcType=VARCHAR},
+      last_update_time = #{lastUpdateTime,jdbcType=TIMESTAMP},
+      define = #{define,jdbcType=VARCHAR},
+      person_id_number = #{personIdNumber,jdbcType=VARCHAR},
+      last_update_user_id_name = #{lastUpdateUserIdName,jdbcType=VARCHAR},
+      def_org_unit_id_number = #{defOrgUnitIdNumber,jdbcType=VARCHAR},
+      effective_date = #{effectiveDate,jdbcType=TIMESTAMP},
+      def_org_unit_id_name = #{defOrgUnitIdName,jdbcType=VARCHAR},
+      agent_user = #{agentUser,jdbcType=TINYINT},
+      pwd_his_str = #{pwdHisStr,jdbcType=VARCHAR},
+      creator_id_number = #{creatorIdNumber,jdbcType=VARCHAR},
+      creator_id_name = #{creatorIdName,jdbcType=VARCHAR},
+      office_phone = #{officePhone,jdbcType=VARCHAR},
+      is_locked = #{isLocked,jdbcType=TINYINT},
+      login_author_way = #{loginAuthorWay,jdbcType=TINYINT},
+      ad_number = #{adNumber,jdbcType=VARCHAR},
+      is_syn_to_cloud = #{isSynToCloud,jdbcType=TINYINT},
+      backup_email = #{backupEmail,jdbcType=VARCHAR},
+      forbidden = #{forbidden,jdbcType=TINYINT},
+      main_role_id_name = #{mainRoleIdName,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  
+  <!--主键id 获取DO  xin  2019.07.11  -->
+  <select id="selectByPK" resultType="com.ecarpo.bms.eas.server.customer.entity.EasCustomerDO">
+    select
+      <include refid="Base_Column_List"/>
+    from
+      eas_pm_user
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  
+</mapper>

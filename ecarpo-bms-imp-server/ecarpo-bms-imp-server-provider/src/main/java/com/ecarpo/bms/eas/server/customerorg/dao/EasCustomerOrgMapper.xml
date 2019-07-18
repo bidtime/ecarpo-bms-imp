@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ecarpo.bms.eas.server.customerorg.dao.EasCustomerOrgMapper">
+  <resultMap id="BaseResultMap" type="com.ecarpo.bms.eas.server.customerorg.entity.EasCustomerOrgDO">
+    <!-- @mbg.generated 2019-07-11 14:21:00 -->
+    <id column="eas_user_org_id" jdbcType="BIGINT" property="easUserOrgId" />
+    <result column="org_id" jdbcType="VARCHAR" property="orgId" />
+    <result column="type_id" jdbcType="TINYINT" property="typeId" />
+    <result column="is_include_sub_org" jdbcType="TINYINT" property="isIncludeSubOrg" />
+    <result column="id" jdbcType="VARCHAR" property="id" />
+    <result column="user_id" jdbcType="VARCHAR" property="userId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!-- @mbg.generated 2019-07-11 14:21:00 -->
+    eas_user_org_id, org_id, type_id, is_include_sub_org, id, user_id
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!-- @mbg.generated 2019-07-11 14:21:00 -->
+    select 
+    <include refid="Base_Column_List" />
+    from eas_user_org
+    where eas_user_org_id = #{easUserOrgId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!-- @mbg.generated 2019-07-11 14:21:00 -->
+    delete from eas_user_org
+    where eas_user_org_id = #{easUserOrgId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.ecarpo.bms.eas.server.customerorg.entity.EasCustomerOrgDO">
+    <!-- @mbg.generated 2019-07-11 14:21:00 -->
+    insert into eas_user_org (eas_user_org_id, org_id, type_id, 
+      is_include_sub_org, id, user_id
+      )
+    values (#{easUserOrgId,jdbcType=BIGINT}, #{orgId,jdbcType=VARCHAR}, #{typeId,jdbcType=TINYINT}, 
+      #{isIncludeSubOrg,jdbcType=TINYINT}, #{id,jdbcType=VARCHAR}, #{userId,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.ecarpo.bms.eas.server.customerorg.entity.EasCustomerOrgDO">
+    <!-- @mbg.generated 2019-07-11 14:21:00 -->
+    insert into eas_user_org
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="easUserOrgId != null">
+        eas_user_org_id,
+      </if>
+      <if test="orgId != null">
+        org_id,
+      </if>
+      <if test="typeId != null">
+        type_id,
+      </if>
+      <if test="isIncludeSubOrg != null">
+        is_include_sub_org,
+      </if>
+      <if test="id != null">
+        id,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="easUserOrgId != null">
+        #{easUserOrgId,jdbcType=BIGINT},
+      </if>
+      <if test="orgId != null">
+        #{orgId,jdbcType=VARCHAR},
+      </if>
+      <if test="typeId != null">
+        #{typeId,jdbcType=TINYINT},
+      </if>
+      <if test="isIncludeSubOrg != null">
+        #{isIncludeSubOrg,jdbcType=TINYINT},
+      </if>
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ecarpo.bms.eas.server.customerorg.entity.EasCustomerOrgDO">
+    <!-- @mbg.generated 2019-07-11 14:21:00 -->
+    update eas_user_org
+    <set>
+      <if test="orgId != null">
+        org_id = #{orgId,jdbcType=VARCHAR},
+      </if>
+      <if test="typeId != null">
+        type_id = #{typeId,jdbcType=TINYINT},
+      </if>
+      <if test="isIncludeSubOrg != null">
+        is_include_sub_org = #{isIncludeSubOrg,jdbcType=TINYINT},
+      </if>
+      <if test="id != null">
+        id = #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where eas_user_org_id = #{easUserOrgId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ecarpo.bms.eas.server.customerorg.entity.EasCustomerOrgDO">
+    <!-- @mbg.generated 2019-07-11 14:21:00 -->
+    update eas_user_org
+    set org_id = #{orgId,jdbcType=VARCHAR},
+      type_id = #{typeId,jdbcType=TINYINT},
+      is_include_sub_org = #{isIncludeSubOrg,jdbcType=TINYINT},
+      id = #{id,jdbcType=VARCHAR},
+      user_id = #{userId,jdbcType=VARCHAR}
+    where eas_user_org_id = #{easUserOrgId,jdbcType=BIGINT}
+  </update>
+  
+  
+  <!--user define  -->
+  
+  <!-- 关联主键id 删除  xin 2019.07.11 -->
+  <delete id="deleteByUserId" parameterType="java.lang.String">
+    delete from eas_user_org
+    where user_id = #{userId,jdbcType=VARCHAR}
+  </delete>
+</mapper>

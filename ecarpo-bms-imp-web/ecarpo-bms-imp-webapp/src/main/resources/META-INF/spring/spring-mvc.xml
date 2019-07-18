@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:p="http://www.springframework.org/schema/p" xmlns:mvc="http://www.springframework.org/schema/mvc"
+  xmlns:context="http://www.springframework.org/schema/context" xmlns:c="http://www.springframework.org/schema/c"
+  xmlns:aop="http://www.springframework.org/schema/aop" xmlns:util="http://www.springframework.org/schema/util"
+  xmlns:tx="http://www.springframework.org/schema/tx" xmlns:task="http://www.springframework.org/schema/task"
+  xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+    http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+    http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+    http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd
+    http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+  <!--
+    | The base-package indicates where components stored. Spring will scan this
+    | folder and find out the annotated beans and register it in Spring container.
+  -->
+  <context:component-scan base-package="com.ecarpo.bms.web,com.ecarpo.bms.**.api" />
+
+  <context:annotation-config />
+
+  <context:property-placeholder location="classpath*:*.properties" />
+
+  <!-- 添加注解驱动 -->
+  <mvc:annotation-driven>
+    <!-- 配置Fastjson支持 -->
+    <mvc:message-converters register-defaults="true">
+      <bean class="com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter4">
+        <property name="supportedMediaTypes">
+          <list>
+            <value>application/json</value>
+          </list>
+        </property>
+        <property name="fastJsonConfig" ref="fastJsonConfig"></property>
+      </bean>
+    </mvc:message-converters>
+
+    <mvc:argument-resolvers>
+      <!-- 采用注解方式配置MVC，支持分页和排序。 -->
+      <!-- 参考：http://docs.spring.io/spring-data/data-commons/docs/1.13.1.RELEASE/reference/html -->
+      <bean class="com.ecarpo.framework.data.web.method.support.PageQOHandlerMethodArgumentResolver"
+        c:sortResolver-ref="sortResolver" />
+      <!--用户信息，数据权限, 用户岗位数据权限，自动注入 -->
+      <bean class="com.ecarpo.bms.web.interceptor.UserAuthParamResolver" />
+      <!--
+      <bean class="com.ecarpo.bms.web.interceptor.BaseDTOReqResolver" />
+      <bean class="com.ecarpo.framework.mvc.method.support.UserContextArgumentResolver" />
+      -->
+      <!--用户组数据权限, 用户岗位数据权限，自动注入
+      <bean class="com.ecarpo.bms.web.interceptor.OtherUserIdParamResolver" />
+      <bean class="com.ecarpo.bms.web.interceptor.DepartOrgIdParamResolver" />
+      -->
+    </mvc:argument-resolvers>
+  </mvc:annotation-driven>
+
+  <mvc:interceptors>
+
+    <!--打印处理时间 -->
+    <mvc:interceptor>
+      <mvc:mapping path="/**" />
+      <mvc:exclude-mapping path="/static/**" />
+      <bean class="com.ecarpo.bms.web.interceptor.HandleTimeInterceptor" />
+    </mvc:interceptor>
+    
+    <!--登录拦截器-->
+    <mvc:interceptor>
+      <mvc:mapping path="/api/**"/>
+      <mvc:exclude-mapping path="/api/eas/user/register/**"/>
+      <mvc:exclude-mapping path="/api/eas/user/login/**"/>
+      <mvc:exclude-mapping path="/api/eas/user/logout/**"/>
+      <mvc:exclude-mapping path="/api/eas/common/**"/>
+      <bean class="com.ecarpo.bms.web.interceptor.CheckUserLogin"/>
+    </mvc:interceptor>
+
+  </mvc:interceptors>
+
+  <!-- 配置视图解析器 如果不配置ViewResolver,Spring MVC默认使用org.springframework.web.servlet.view.InternalResourceViewResolver作为
+      ViewResolver,而且prefix和suffix都为空 -->
+  <!--
+  <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+      <property name="prefix" value="/WEB-INF/jsp/"></property>
+      <property name="suffix" value=".jsp"></property>
+  </bean>
+  -->
+  
+  <!-- 访问静态资源 -->
+  <mvc:resources location="/static" mapping="/**"/>
+
+  <bean id="sortResolver" class="org.springframework.data.web.SortHandlerMethodArgumentResolver" />
+
+  <bean id="fastJsonConfig" class="com.alibaba.fastjson.support.config.FastJsonConfig">
+    <property name="charset" value="UTF-8"/>
+    <property name="dateFormat" value="yyyy-MM-dd HH:mm:ss"/>
+    <property name="serializerFeatures">
+      <array>
+        <value>WriteMapNullValue</value>
+        <value>WriteNonStringKeyAsString</value>
+        <value>DisableCircularReferenceDetect</value>
+      </array>
+    </property>
+  </bean>
+
+</beans>

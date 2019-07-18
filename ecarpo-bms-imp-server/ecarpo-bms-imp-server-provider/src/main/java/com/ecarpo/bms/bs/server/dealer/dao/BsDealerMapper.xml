@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ecarpo.bms.bs.server.dealer.dao.BsDealerMapper">
+  <resultMap id="BaseResultMap" type="com.ecarpo.bms.bs.server.dealer.entity.BsDealerDO">
+    <!-- @mbg.generated 2018-01-23 17:32:47 -->
+    <id column="dealer_id" jdbcType="BIGINT" property="dealerId" />
+    <result column="group_id" jdbcType="BIGINT" property="groupId" />
+    <result column="brand_id" jdbcType="BIGINT" property="brandId" />
+    <result column="brand_name" jdbcType="VARCHAR" property="brandName" />
+    <result column="zone_id" jdbcType="BIGINT" property="zoneId" />
+    <result column="zone_name" jdbcType="VARCHAR" property="zoneName" />
+    <result column="cooper_type_id" jdbcType="BIGINT" property="cooperTypeId" />
+    <result column="cooper_type_name" jdbcType="VARCHAR" property="cooperTypeName" />
+    <result column="after_sale_tel" jdbcType="VARCHAR" property="afterSaleTel" />
+    <result column="service_tel" jdbcType="VARCHAR" property="serviceTel" />
+    <result column="rescue_tel" jdbcType="VARCHAR" property="rescueTel" />
+    <result column="logo_url" jdbcType="VARCHAR" property="logoUrl" />
+    <result column="cover_url" jdbcType="VARCHAR" property="coverUrl" />
+    <result column="qr_code" jdbcType="VARCHAR" property="qrCode" />
+    <result column="service_code" jdbcType="VARCHAR" property="serviceCode" />
+    <result column="sales_code" jdbcType="VARCHAR" property="salesCode" />
+    <result column="biz_type_id" jdbcType="BIGINT" property="bizTypeId" />
+    <result column="biz_type_name" jdbcType="VARCHAR" property="bizTypeName" />
+    <result column="ga_created" jdbcType="TINYINT" property="gaCreated" />
+    <result column="ga_account" jdbcType="VARCHAR" property="gaAccount" />
+    <result column="ga_user_id" jdbcType="BIGINT" property="gaUserId" />
+    <result column="depart_id" jdbcType="BIGINT" property="departId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!-- @mbg.generated 2018-01-23 17:32:47 -->
+    dealer_id, group_id, brand_id, brand_name, zone_id, zone_name,
+    cooper_type_id, cooper_type_name,
+    after_sale_tel, service_tel, rescue_tel, logo_url, cover_url, qr_code, service_code,
+    sales_code, biz_type_id, biz_type_name, ga_created, ga_account,
+    ga_user_id, depart_id
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!-- @mbg.generated 2018-01-23 17:32:47 -->
+    select
+    <include refid="Base_Column_List" />
+    from bs_dealer
+    where dealer_id = #{dealerId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!-- @mbg.generated 2018-01-23 17:32:47 -->
+    delete from bs_dealer
+    where dealer_id = #{dealerId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.ecarpo.bms.bs.server.dealer.entity.BsDealerDO">
+    <!-- @mbg.generated 2018-01-23 17:32:47 -->
+    insert into bs_dealer (dealer_id, group_id, brand_id,
+    brand_name, zone_id, zone_name,
+    cooper_type_id, cooper_type_name, after_sale_tel,
+    service_tel, rescue_tel, logo_url,
+    cover_url, qr_code, service_code,
+    sales_code, biz_type_id, biz_type_name,
+    ga_created, ga_account, ga_user_id,
+    depart_id)
+    values (#{dealerId,jdbcType=BIGINT}, #{groupId,jdbcType=BIGINT},
+    #{brandId,jdbcType=BIGINT},
+    #{brandName,jdbcType=VARCHAR}, #{zoneId,jdbcType=BIGINT}, #{zoneName,jdbcType=VARCHAR},
+    #{cooperTypeId,jdbcType=BIGINT}, #{cooperTypeName,jdbcType=VARCHAR},
+    #{afterSaleTel,jdbcType=VARCHAR},
+    #{serviceTel,jdbcType=VARCHAR}, #{rescueTel,jdbcType=VARCHAR}, #{logoUrl,jdbcType=VARCHAR},
+    #{coverUrl,jdbcType=VARCHAR}, #{qrCode,jdbcType=VARCHAR},
+    #{serviceCode,jdbcType=VARCHAR},
+    #{salesCode,jdbcType=VARCHAR}, #{bizTypeId,jdbcType=BIGINT}, #{bizTypeName,jdbcType=VARCHAR},
+    #{gaCreated,jdbcType=TINYINT}, #{gaAccount,jdbcType=VARCHAR},
+    #{gaUserId,jdbcType=BIGINT},
+    #{departId,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ecarpo.bms.bs.server.dealer.entity.BsDealerDO">
+    <!-- @mbg.generated 2018-01-23 17:32:47 -->
+    insert into bs_dealer
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="dealerId != null">
+        dealer_id,
+      </if>
+      <if test="groupId != null">
+        group_id,
+      </if>
+      <if test="brandId != null">
+        brand_id,
+      </if>
+      <if test="brandName != null">
+        brand_name,
+      </if>
+      <if test="zoneId != null">
+        zone_id,
+      </if>
+      <if test="zoneName != null">
+        zone_name,
+      </if>
+      <if test="cooperTypeId != null">
+        cooper_type_id,
+      </if>
+      <if test="cooperTypeName != null">
+        cooper_type_name,
+      </if>
+      <if test="afterSaleTel != null">
+        after_sale_tel,
+      </if>
+      <if test="serviceTel != null">
+        service_tel,
+      </if>
+      <if test="rescueTel != null">
+        rescue_tel,
+      </if>
+      <if test="logoUrl != null">
+        logo_url,
+      </if>
+      <if test="coverUrl != null">
+        cover_url,
+      </if>
+      <if test="qrCode != null">
+        qr_code,
+      </if>
+      <if test="serviceCode != null">
+        service_code,
+      </if>
+      <if test="salesCode != null">
+        sales_code,
+      </if>
+      <if test="bizTypeId != null">
+        biz_type_id,
+      </if>
+      <if test="bizTypeName != null">
+        biz_type_name,
+      </if>
+      <if test="gaCreated != null">
+        ga_created,
+      </if>
+      <if test="gaAccount != null">
+        ga_account,
+      </if>
+      <if test="gaUserId != null">
+        ga_user_id,
+      </if>
+      <if test="departId != null">
+        depart_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="dealerId != null">
+        #{dealerId,jdbcType=BIGINT},
+      </if>
+      <if test="groupId != null">
+        #{groupId,jdbcType=BIGINT},
+      </if>
+      <if test="brandId != null">
+        #{brandId,jdbcType=BIGINT},
+      </if>
+      <if test="brandName != null">
+        #{brandName,jdbcType=VARCHAR},
+      </if>
+      <if test="zoneId != null">
+        #{zoneId,jdbcType=BIGINT},
+      </if>
+      <if test="zoneName != null">
+        #{zoneName,jdbcType=VARCHAR},
+      </if>
+      <if test="cooperTypeId != null">
+        #{cooperTypeId,jdbcType=BIGINT},
+      </if>
+      <if test="cooperTypeName != null">
+        #{cooperTypeName,jdbcType=VARCHAR},
+      </if>
+      <if test="afterSaleTel != null">
+        #{afterSaleTel,jdbcType=VARCHAR},
+      </if>
+      <if test="serviceTel != null">
+        #{serviceTel,jdbcType=VARCHAR},
+      </if>
+      <if test="rescueTel != null">
+        #{rescueTel,jdbcType=VARCHAR},
+      </if>
+      <if test="logoUrl != null">
+        #{logoUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="coverUrl != null">
+        #{coverUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="qrCode != null">
+        #{qrCode,jdbcType=VARCHAR},
+      </if>
+      <if test="serviceCode != null">
+        #{serviceCode,jdbcType=VARCHAR},
+      </if>
+      <if test="salesCode != null">
+        #{salesCode,jdbcType=VARCHAR},
+      </if>
+      <if test="bizTypeId != null">
+        #{bizTypeId,jdbcType=BIGINT},
+      </if>
+      <if test="bizTypeName != null">
+        #{bizTypeName,jdbcType=VARCHAR},
+      </if>
+      <if test="gaCreated != null">
+        #{gaCreated,jdbcType=TINYINT},
+      </if>
+      <if test="gaAccount != null">
+        #{gaAccount,jdbcType=VARCHAR},
+      </if>
+      <if test="gaUserId != null">
+        #{gaUserId,jdbcType=BIGINT},
+      </if>
+      <if test="departId != null">
+        #{departId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ecarpo.bms.bs.server.dealer.entity.BsDealerDO">
+    <!-- @mbg.generated 2018-01-23 17:32:47 -->
+    update bs_dealer
+    <set>
+      <if test="groupId != null">
+        group_id = #{groupId,jdbcType=BIGINT},
+      </if>
+      <if test="brandId != null">
+        brand_id = #{brandId,jdbcType=BIGINT},
+      </if>
+      <if test="brandName != null">
+        brand_name = #{brandName,jdbcType=VARCHAR},
+      </if>
+      <if test="zoneId != null">
+        zone_id = #{zoneId,jdbcType=BIGINT},
+      </if>
+      <if test="zoneName != null">
+        zone_name = #{zoneName,jdbcType=VARCHAR},
+      </if>
+      <if test="cooperTypeId != null">
+        cooper_type_id = #{cooperTypeId,jdbcType=BIGINT},
+      </if>
+      <if test="cooperTypeName != null">
+        cooper_type_name = #{cooperTypeName,jdbcType=VARCHAR},
+      </if>
+      <if test="afterSaleTel != null">
+        after_sale_tel = #{afterSaleTel,jdbcType=VARCHAR},
+      </if>
+      <if test="serviceTel != null">
+        service_tel = #{serviceTel,jdbcType=VARCHAR},
+      </if>
+      <if test="rescueTel != null">
+        rescue_tel = #{rescueTel,jdbcType=VARCHAR},
+      </if>
+      <if test="logoUrl != null">
+        logo_url = #{logoUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="coverUrl != null">
+        cover_url = #{coverUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="qrCode != null">
+        qr_code = #{qrCode,jdbcType=VARCHAR},
+      </if>
+      <if test="serviceCode != null">
+        service_code = #{serviceCode,jdbcType=VARCHAR},
+      </if>
+      <if test="salesCode != null">
+        sales_code = #{salesCode,jdbcType=VARCHAR},
+      </if>
+      <if test="bizTypeId != null">
+        biz_type_id = #{bizTypeId,jdbcType=BIGINT},
+      </if>
+      <if test="bizTypeName != null">
+        biz_type_name = #{bizTypeName,jdbcType=VARCHAR},
+      </if>
+      <if test="gaCreated != null">
+        ga_created = #{gaCreated,jdbcType=TINYINT},
+      </if>
+      <if test="gaAccount != null">
+        ga_account = #{gaAccount,jdbcType=VARCHAR},
+      </if>
+      <if test="gaUserId != null">
+        ga_user_id = #{gaUserId,jdbcType=BIGINT},
+      </if>
+      <if test="departId != null">
+        depart_id = #{departId,jdbcType=BIGINT},
+      </if>
+    </set>
+    where dealer_id = #{dealerId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ecarpo.bms.bs.server.dealer.entity.BsDealerDO">
+    <!-- @mbg.generated 2018-01-23 17:32:47 -->
+    update bs_dealer
+    set group_id = #{groupId,jdbcType=BIGINT},
+    brand_id = #{brandId,jdbcType=BIGINT},
+    brand_name = #{brandName,jdbcType=VARCHAR},
+    zone_id = #{zoneId,jdbcType=BIGINT},
+    zone_name = #{zoneName,jdbcType=VARCHAR},
+    cooper_type_id = #{cooperTypeId,jdbcType=BIGINT},
+    cooper_type_name = #{cooperTypeName,jdbcType=VARCHAR},
+    after_sale_tel = #{afterSaleTel,jdbcType=VARCHAR},
+    service_tel = #{serviceTel,jdbcType=VARCHAR},
+    rescue_tel = #{rescueTel,jdbcType=VARCHAR},
+    logo_url = #{logoUrl,jdbcType=VARCHAR},
+    cover_url = #{coverUrl,jdbcType=VARCHAR},
+    qr_code = #{qrCode,jdbcType=VARCHAR},
+    service_code = #{serviceCode,jdbcType=VARCHAR},
+    sales_code = #{salesCode,jdbcType=VARCHAR},
+    biz_type_id = #{bizTypeId,jdbcType=BIGINT},
+    biz_type_name = #{bizTypeName,jdbcType=VARCHAR},
+    ga_created = #{gaCreated,jdbcType=TINYINT},
+    ga_account = #{gaAccount,jdbcType=VARCHAR},
+    ga_user_id = #{gaUserId,jdbcType=BIGINT},
+    depart_id = #{departId,jdbcType=BIGINT}
+    where dealer_id = #{dealerId,jdbcType=BIGINT}
+  </update>
+
+  <!-- user define -->
+  <update id="updateMap" parameterType="java.util.Map">
+    update bs_dealer
+    <set>
+      <if test="keys.containsKey('groupId')">
+        group_id = #{keys.groupId,jdbcType=BIGINT},
+      </if>
+      <if test="keys.containsKey('brandId')">
+        brand_id = #{keys.brandId,jdbcType=BIGINT},
+      </if>
+      <if test="keys.containsKey('brandName')">
+        brand_name = #{keys.brandName,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('zoneId')">
+        zone_id = #{keys.zoneId,jdbcType=BIGINT},
+      </if>
+      <if test="keys.containsKey('zoneName')">
+        zone_name = #{keys.zoneName,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('cooperTypeId')">
+        cooper_type_id = #{keys.cooperTypeId,jdbcType=BIGINT},
+      </if>
+      <if test="keys.containsKey('cooperTypeName')">
+        cooper_type_name = #{keys.cooperTypeName,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('afterSaleTel')">
+        after_sale_tel = #{keys.afterSaleTel,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('serviceTel')">
+        service_tel = #{keys.serviceTel,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('rescueTel')">
+        rescue_tel = #{keys.rescueTel,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('logoUrl')">
+        logo_url = #{keys.logoUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('coverUrl')">
+        cover_url = #{keys.coverUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('qrCode')">
+        qr_code = #{keys.qrCode,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('serviceCode')">
+        service_code = #{keys.serviceCode,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('salesCode')">
+        sales_code = #{keys.salesCode,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('bizTypeId')">
+        biz_type_id = #{keys.bizTypeId,jdbcType=BIGINT},
+      </if>
+      <if test="keys.containsKey('bizTypeName')">
+        biz_type_name = #{keys.bizTypeName,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('gaCreated')">
+        ga_created = #{keys.gaCreated,jdbcType=TINYINT},
+      </if>
+      <if test="keys.containsKey('gaAccount')">
+        ga_account = #{keys.gaAccount,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('gaUserId')">
+        ga_user_id = #{keys.gaUserId,jdbcType=BIGINT},
+      </if>
+      <if test="keys.containsKey('departId')">
+        depart_id = #{keys.departId,jdbcType=BIGINT},
+      </if>
+    </set>
+    where dealer_id = #{keys.dealerId,jdbcType=BIGINT}
+  </update>
+
+  
+
+
+
+   
+</mapper>

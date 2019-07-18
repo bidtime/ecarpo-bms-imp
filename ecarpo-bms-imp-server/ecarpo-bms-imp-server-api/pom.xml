@@ -1,0 +1,56 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.ecarpo.bms</groupId>
+    <artifactId>ecarpo-bms-imp-server</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>ecarpo-bms-imp-server-api</artifactId>
+  <dependencies>
+    <!-- project dependencies -->
+    <dependency>
+      <groupId>com.ecarpo.framework</groupId>
+      <artifactId>ecarpo-framework-common</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.ecarpo.bms</groupId>
+      <artifactId>ecarpo-bms-parent-api</artifactId>
+      <version>${project.version}</version>
+      <type>pom</type>
+    </dependency>
+    
+   <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-validator</artifactId>
+    </dependency>
+    	    
+	<!--2019.05.29 erp to imp 所需依赖 -->
+	<dependency>
+	    <groupId>org.apache.axis</groupId>
+	    <artifactId>axis</artifactId>
+	    <version>1.4</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.dom4j</groupId>
+	    <artifactId>dom4j</artifactId>
+	    <version>2.1.1</version>
+	</dependency>
+	<dependency>
+	    <groupId>javax.xml.rpc</groupId>
+	    <artifactId>com.springsource.javax.xml.rpc</artifactId>
+	    <version>1.1.0</version>
+	</dependency>
+	<dependency>
+	    <groupId>commons-discovery</groupId>
+	    <artifactId>commons-discovery</artifactId>
+	    <version>0.5</version>
+	</dependency>
+	<dependency>
+	    <groupId>wsdl4j</groupId>
+	    <artifactId>wsdl4j</artifactId>
+	    <version>1.6.3</version>
+	</dependency>
+	
+  </dependencies>
+</project>

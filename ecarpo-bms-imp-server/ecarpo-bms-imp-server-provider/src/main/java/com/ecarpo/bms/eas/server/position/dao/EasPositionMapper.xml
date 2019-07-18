@@ -1,0 +1,820 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ecarpo.bms.eas.server.position.dao.EasPositionMapper">
+  <resultMap id="BaseResultMap" type="com.ecarpo.bms.eas.server.position.entity.EasPositionDO">
+     <!-- @mbg.generated 2019-07-09 14:32:12 -->
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="erp_duty_id" jdbcType="BIGINT" property="erpDutyId" />
+    <result column="last_update_user_id_number" jdbcType="VARCHAR" property="lastUpdateUserIdNumber" />
+    <result column="vali_date" jdbcType="TIMESTAMP" property="valiDate" />
+    <result column="job_level_number" jdbcType="VARCHAR" property="jobLevelNumber" />
+    <result column="job_id_number" jdbcType="VARCHAR" property="jobIdNumber" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
+    <result column="is_resp_position" jdbcType="TINYINT" property="isRespPosition" />
+    <result column="domain_id_number" jdbcType="VARCHAR" property="domainIdNumber" />
+    <result column="simple_name" jdbcType="VARCHAR" property="simpleName" />
+    <result column="idx" jdbcType="INTEGER" property="idx" />
+    <result column="low_job_grade_id_name" jdbcType="VARCHAR" property="lowJobGradeIdName" />
+    <result column="product_line_id_number" jdbcType="VARCHAR" property="productLineIdNumber" />
+    <result column="pub_proper_ldap_number" jdbcType="VARCHAR" property="pubProperLdapNumber" />
+    <result column="position_type_id_number" jdbcType="VARCHAR" property="positionTypeIdNumber" />
+    <result column="encrypt" jdbcType="VARCHAR" property="encrypt" />
+    <result column="parent_id_name" jdbcType="VARCHAR" property="parentIdName" />
+    <result column="high_job_grade_id_number" jdbcType="VARCHAR" property="highJobGradeIdNumber" />
+    <result column="domain_id_name" jdbcType="VARCHAR" property="domainIdName" />
+    <result column="control_unit_id_number" jdbcType="VARCHAR" property="controlUnitIdNumber" />
+    <result column="high_job_grade_id_name" jdbcType="VARCHAR" property="highJobGradeIdName" />
+    <result column="control_unit_id_name" jdbcType="VARCHAR" property="controlUnitIdName" />
+    <result column="job_level_name" jdbcType="VARCHAR" property="jobLevelName" />
+    <result column="pos_plan_count" jdbcType="VARCHAR" property="posPlanCount" />
+    <result column="effdt" jdbcType="TIMESTAMP" property="effdt" />
+    <result column="parent_id_number" jdbcType="VARCHAR" property="parentIdNumber" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="deleted_status" jdbcType="TINYINT" property="deletedStatus" />
+    <result column="history_relate_id" jdbcType="VARCHAR" property="historyRelateId" />
+    <result column="job_id_name" jdbcType="VARCHAR" property="jobIdName" />
+    <result column="position_type_id_name" jdbcType="VARCHAR" property="positionTypeIdName" />
+    <result column="last_update_time" jdbcType="TIMESTAMP" property="lastUpdateTime" />
+    <result column="sort_code" jdbcType="TINYINT" property="sortCode" />
+    <result column="purpose" jdbcType="VARCHAR" property="purpose" />
+    <result column="admin_org_unit_id_number" jdbcType="VARCHAR" property="adminOrgUnitIdNumber" />
+    <result column="is_create_by_job" jdbcType="TINYINT" property="isCreateByJob" />
+    <result column="admin_org_unit_id_name" jdbcType="VARCHAR" property="adminOrgUnitIdName" />
+    <result column="define" jdbcType="VARCHAR" property="define" />
+    <result column="pub_proper_ldap_name" jdbcType="VARCHAR" property="pubProperLdapName" />
+    <result column="last_update_user_id_name" jdbcType="VARCHAR" property="lastUpdateUserIdName" />
+    <result column="position_type_id_level" jdbcType="VARCHAR" property="positionTypeIdLevel" />
+    <result column="creator_id_number" jdbcType="VARCHAR" property="creatorIdNumber" />
+    <result column="leffdt" jdbcType="TIMESTAMP" property="leffdt" />
+    <result column="low_job_grade_id_number" jdbcType="VARCHAR" property="lowJobGradeIdNumber" />
+    <result column="hr_org_unit_id_name" jdbcType="VARCHAR" property="hrOrgUnitIdName" />
+    <result column="hr_org_unit_id_number" jdbcType="VARCHAR" property="hrOrgUnitIdNumber" />
+    <result column="creator_id_name" jdbcType="VARCHAR" property="creatorIdName" />
+    <result column="effect_date" jdbcType="TIMESTAMP" property="effectDate" />
+    <result column="product_line_id_name" jdbcType="VARCHAR" property="productLineIdName" />
+    <result column="flu_check_time" jdbcType="TIMESTAMP" property="fluCheckTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!-- @mbg.generated 2019-07-09 14:32:12 -->
+    id, erp_duty_id, last_update_user_id_number, vali_date, job_level_number, job_id_number, 
+    description, is_resp_position, domain_id_number, simple_name, idx, low_job_grade_id_name, 
+    product_line_id_number, pub_proper_ldap_number, position_type_id_number, encrypt, 
+    parent_id_name, high_job_grade_id_number, domain_id_name, control_unit_id_number, 
+    high_job_grade_id_name, control_unit_id_name, job_level_name, pos_plan_count, effdt, 
+    parent_id_number, create_time, deleted_status, history_relate_id, job_id_name, position_type_id_name, 
+    last_update_time, sort_code, purpose, admin_org_unit_id_number, is_create_by_job, 
+    admin_org_unit_id_name, define, pub_proper_ldap_name, last_update_user_id_name, position_type_id_level, 
+    creator_id_number, leffdt, low_job_grade_id_number, hr_org_unit_id_name, hr_org_unit_id_number, 
+    creator_id_name, effect_date, product_line_id_name, flu_check_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    <!-- @mbg.generated 2019-07-09 14:32:12 -->
+    select 
+    <include refid="Base_Column_List" />
+    from eas_position
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    <!-- @mbg.generated 2019-07-09 14:32:12 -->
+    delete from eas_position
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.ecarpo.bms.eas.server.position.entity.EasPositionDO">
+    <!-- @mbg.generated 2019-07-09 14:32:12 -->
+    insert into eas_position (id, erp_duty_id, last_update_user_id_number, 
+      vali_date, job_level_number, job_id_number, 
+      description, is_resp_position, domain_id_number, 
+      simple_name, idx, low_job_grade_id_name, 
+      product_line_id_number, pub_proper_ldap_number, 
+      position_type_id_number, encrypt, parent_id_name, 
+      high_job_grade_id_number, domain_id_name, control_unit_id_number, 
+      high_job_grade_id_name, control_unit_id_name, 
+      job_level_name, pos_plan_count, effdt, 
+      parent_id_number, create_time, deleted_status, 
+      history_relate_id, job_id_name, position_type_id_name, 
+      last_update_time, sort_code, purpose, 
+      admin_org_unit_id_number, is_create_by_job, admin_org_unit_id_name, 
+      define, pub_proper_ldap_name, last_update_user_id_name, 
+      position_type_id_level, creator_id_number, leffdt, 
+      low_job_grade_id_number, hr_org_unit_id_name, hr_org_unit_id_number, 
+      creator_id_name, effect_date, product_line_id_name, 
+      flu_check_time)
+    values (#{id,jdbcType=VARCHAR}, #{erpDutyId,jdbcType=BIGINT}, #{lastUpdateUserIdNumber,jdbcType=VARCHAR}, 
+      #{valiDate,jdbcType=TIMESTAMP}, #{jobLevelNumber,jdbcType=VARCHAR}, #{jobIdNumber,jdbcType=VARCHAR}, 
+      #{description,jdbcType=VARCHAR}, #{isRespPosition,jdbcType=TINYINT}, #{domainIdNumber,jdbcType=VARCHAR}, 
+      #{simpleName,jdbcType=VARCHAR}, #{idx,jdbcType=INTEGER}, #{lowJobGradeIdName,jdbcType=VARCHAR}, 
+      #{productLineIdNumber,jdbcType=VARCHAR}, #{pubProperLdapNumber,jdbcType=VARCHAR}, 
+      #{positionTypeIdNumber,jdbcType=VARCHAR}, #{encrypt,jdbcType=VARCHAR}, #{parentIdName,jdbcType=VARCHAR}, 
+      #{highJobGradeIdNumber,jdbcType=VARCHAR}, #{domainIdName,jdbcType=VARCHAR}, #{controlUnitIdNumber,jdbcType=VARCHAR}, 
+      #{highJobGradeIdName,jdbcType=VARCHAR}, #{controlUnitIdName,jdbcType=VARCHAR}, 
+      #{jobLevelName,jdbcType=VARCHAR}, #{posPlanCount,jdbcType=VARCHAR}, #{effdt,jdbcType=TIMESTAMP}, 
+      #{parentIdNumber,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{deletedStatus,jdbcType=TINYINT}, 
+      #{historyRelateId,jdbcType=VARCHAR}, #{jobIdName,jdbcType=VARCHAR}, #{positionTypeIdName,jdbcType=VARCHAR}, 
+      #{lastUpdateTime,jdbcType=TIMESTAMP}, #{sortCode,jdbcType=TINYINT}, #{purpose,jdbcType=VARCHAR}, 
+      #{adminOrgUnitIdNumber,jdbcType=VARCHAR}, #{isCreateByJob,jdbcType=TINYINT}, #{adminOrgUnitIdName,jdbcType=VARCHAR}, 
+      #{define,jdbcType=VARCHAR}, #{pubProperLdapName,jdbcType=VARCHAR}, #{lastUpdateUserIdName,jdbcType=VARCHAR}, 
+      #{positionTypeIdLevel,jdbcType=VARCHAR}, #{creatorIdNumber,jdbcType=VARCHAR}, #{leffdt,jdbcType=TIMESTAMP}, 
+      #{lowJobGradeIdNumber,jdbcType=VARCHAR}, #{hrOrgUnitIdName,jdbcType=VARCHAR}, #{hrOrgUnitIdNumber,jdbcType=VARCHAR}, 
+      #{creatorIdName,jdbcType=VARCHAR}, #{effectDate,jdbcType=TIMESTAMP}, #{productLineIdName,jdbcType=VARCHAR}, 
+      #{fluCheckTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ecarpo.bms.eas.server.position.entity.EasPositionDO">
+    <!-- @mbg.generated 2019-07-09 14:32:12 -->
+    insert into eas_position
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="erpDutyId != null">
+        erp_duty_id,
+      </if>
+      <if test="lastUpdateUserIdNumber != null">
+        last_update_user_id_number,
+      </if>
+      <if test="valiDate != null">
+        vali_date,
+      </if>
+      <if test="jobLevelNumber != null">
+        job_level_number,
+      </if>
+      <if test="jobIdNumber != null">
+        job_id_number,
+      </if>
+      <if test="description != null">
+        description,
+      </if>
+      <if test="isRespPosition != null">
+        is_resp_position,
+      </if>
+      <if test="domainIdNumber != null">
+        domain_id_number,
+      </if>
+      <if test="simpleName != null">
+        simple_name,
+      </if>
+      <if test="idx != null">
+        idx,
+      </if>
+      <if test="lowJobGradeIdName != null">
+        low_job_grade_id_name,
+      </if>
+      <if test="productLineIdNumber != null">
+        product_line_id_number,
+      </if>
+      <if test="pubProperLdapNumber != null">
+        pub_proper_ldap_number,
+      </if>
+      <if test="positionTypeIdNumber != null">
+        position_type_id_number,
+      </if>
+      <if test="encrypt != null">
+        encrypt,
+      </if>
+      <if test="parentIdName != null">
+        parent_id_name,
+      </if>
+      <if test="highJobGradeIdNumber != null">
+        high_job_grade_id_number,
+      </if>
+      <if test="domainIdName != null">
+        domain_id_name,
+      </if>
+      <if test="controlUnitIdNumber != null">
+        control_unit_id_number,
+      </if>
+      <if test="highJobGradeIdName != null">
+        high_job_grade_id_name,
+      </if>
+      <if test="controlUnitIdName != null">
+        control_unit_id_name,
+      </if>
+      <if test="jobLevelName != null">
+        job_level_name,
+      </if>
+      <if test="posPlanCount != null">
+        pos_plan_count,
+      </if>
+      <if test="effdt != null">
+        effdt,
+      </if>
+      <if test="parentIdNumber != null">
+        parent_id_number,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="deletedStatus != null">
+        deleted_status,
+      </if>
+      <if test="historyRelateId != null">
+        history_relate_id,
+      </if>
+      <if test="jobIdName != null">
+        job_id_name,
+      </if>
+      <if test="positionTypeIdName != null">
+        position_type_id_name,
+      </if>
+      <if test="lastUpdateTime != null">
+        last_update_time,
+      </if>
+      <if test="sortCode != null">
+        sort_code,
+      </if>
+      <if test="purpose != null">
+        purpose,
+      </if>
+      <if test="adminOrgUnitIdNumber != null">
+        admin_org_unit_id_number,
+      </if>
+      <if test="isCreateByJob != null">
+        is_create_by_job,
+      </if>
+      <if test="adminOrgUnitIdName != null">
+        admin_org_unit_id_name,
+      </if>
+      <if test="define != null">
+        define,
+      </if>
+      <if test="pubProperLdapName != null">
+        pub_proper_ldap_name,
+      </if>
+      <if test="lastUpdateUserIdName != null">
+        last_update_user_id_name,
+      </if>
+      <if test="positionTypeIdLevel != null">
+        position_type_id_level,
+      </if>
+      <if test="creatorIdNumber != null">
+        creator_id_number,
+      </if>
+      <if test="leffdt != null">
+        leffdt,
+      </if>
+      <if test="lowJobGradeIdNumber != null">
+        low_job_grade_id_number,
+      </if>
+      <if test="hrOrgUnitIdName != null">
+        hr_org_unit_id_name,
+      </if>
+      <if test="hrOrgUnitIdNumber != null">
+        hr_org_unit_id_number,
+      </if>
+      <if test="creatorIdName != null">
+        creator_id_name,
+      </if>
+      <if test="effectDate != null">
+        effect_date,
+      </if>
+      <if test="productLineIdName != null">
+        product_line_id_name,
+      </if>
+      <if test="fluCheckTime != null">
+        flu_check_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="erpDutyId != null">
+        #{erpDutyId,jdbcType=BIGINT},
+      </if>
+      <if test="lastUpdateUserIdNumber != null">
+        #{lastUpdateUserIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="valiDate != null">
+        #{valiDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="jobLevelNumber != null">
+        #{jobLevelNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="jobIdNumber != null">
+        #{jobIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="isRespPosition != null">
+        #{isRespPosition,jdbcType=TINYINT},
+      </if>
+      <if test="domainIdNumber != null">
+        #{domainIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="simpleName != null">
+        #{simpleName,jdbcType=VARCHAR},
+      </if>
+      <if test="idx != null">
+        #{idx,jdbcType=INTEGER},
+      </if>
+      <if test="lowJobGradeIdName != null">
+        #{lowJobGradeIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="productLineIdNumber != null">
+        #{productLineIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="pubProperLdapNumber != null">
+        #{pubProperLdapNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="positionTypeIdNumber != null">
+        #{positionTypeIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="encrypt != null">
+        #{encrypt,jdbcType=VARCHAR},
+      </if>
+      <if test="parentIdName != null">
+        #{parentIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="highJobGradeIdNumber != null">
+        #{highJobGradeIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="domainIdName != null">
+        #{domainIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="controlUnitIdNumber != null">
+        #{controlUnitIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="highJobGradeIdName != null">
+        #{highJobGradeIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="controlUnitIdName != null">
+        #{controlUnitIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="jobLevelName != null">
+        #{jobLevelName,jdbcType=VARCHAR},
+      </if>
+      <if test="posPlanCount != null">
+        #{posPlanCount,jdbcType=VARCHAR},
+      </if>
+      <if test="effdt != null">
+        #{effdt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="parentIdNumber != null">
+        #{parentIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="deletedStatus != null">
+        #{deletedStatus,jdbcType=TINYINT},
+      </if>
+      <if test="historyRelateId != null">
+        #{historyRelateId,jdbcType=VARCHAR},
+      </if>
+      <if test="jobIdName != null">
+        #{jobIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="positionTypeIdName != null">
+        #{positionTypeIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="lastUpdateTime != null">
+        #{lastUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sortCode != null">
+        #{sortCode,jdbcType=TINYINT},
+      </if>
+      <if test="purpose != null">
+        #{purpose,jdbcType=VARCHAR},
+      </if>
+      <if test="adminOrgUnitIdNumber != null">
+        #{adminOrgUnitIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="isCreateByJob != null">
+        #{isCreateByJob,jdbcType=TINYINT},
+      </if>
+      <if test="adminOrgUnitIdName != null">
+        #{adminOrgUnitIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="define != null">
+        #{define,jdbcType=VARCHAR},
+      </if>
+      <if test="pubProperLdapName != null">
+        #{pubProperLdapName,jdbcType=VARCHAR},
+      </if>
+      <if test="lastUpdateUserIdName != null">
+        #{lastUpdateUserIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="positionTypeIdLevel != null">
+        #{positionTypeIdLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="creatorIdNumber != null">
+        #{creatorIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="leffdt != null">
+        #{leffdt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lowJobGradeIdNumber != null">
+        #{lowJobGradeIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="hrOrgUnitIdName != null">
+        #{hrOrgUnitIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="hrOrgUnitIdNumber != null">
+        #{hrOrgUnitIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="creatorIdName != null">
+        #{creatorIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="effectDate != null">
+        #{effectDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="productLineIdName != null">
+        #{productLineIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="fluCheckTime != null">
+        #{fluCheckTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ecarpo.bms.eas.server.position.entity.EasPositionDO">
+    <!-- @mbg.generated 2019-07-09 14:32:12 -->
+    update eas_position
+    <set>
+      <if test="erpDutyId != null">
+        erp_duty_id = #{erpDutyId,jdbcType=BIGINT},
+      </if>
+      <if test="lastUpdateUserIdNumber != null">
+        last_update_user_id_number = #{lastUpdateUserIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="valiDate != null">
+        vali_date = #{valiDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="jobLevelNumber != null">
+        job_level_number = #{jobLevelNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="jobIdNumber != null">
+        job_id_number = #{jobIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        description = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="isRespPosition != null">
+        is_resp_position = #{isRespPosition,jdbcType=TINYINT},
+      </if>
+      <if test="domainIdNumber != null">
+        domain_id_number = #{domainIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="simpleName != null">
+        simple_name = #{simpleName,jdbcType=VARCHAR},
+      </if>
+      <if test="idx != null">
+        idx = #{idx,jdbcType=INTEGER},
+      </if>
+      <if test="lowJobGradeIdName != null">
+        low_job_grade_id_name = #{lowJobGradeIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="productLineIdNumber != null">
+        product_line_id_number = #{productLineIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="pubProperLdapNumber != null">
+        pub_proper_ldap_number = #{pubProperLdapNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="positionTypeIdNumber != null">
+        position_type_id_number = #{positionTypeIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="encrypt != null">
+        encrypt = #{encrypt,jdbcType=VARCHAR},
+      </if>
+      <if test="parentIdName != null">
+        parent_id_name = #{parentIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="highJobGradeIdNumber != null">
+        high_job_grade_id_number = #{highJobGradeIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="domainIdName != null">
+        domain_id_name = #{domainIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="controlUnitIdNumber != null">
+        control_unit_id_number = #{controlUnitIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="highJobGradeIdName != null">
+        high_job_grade_id_name = #{highJobGradeIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="controlUnitIdName != null">
+        control_unit_id_name = #{controlUnitIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="jobLevelName != null">
+        job_level_name = #{jobLevelName,jdbcType=VARCHAR},
+      </if>
+      <if test="posPlanCount != null">
+        pos_plan_count = #{posPlanCount,jdbcType=VARCHAR},
+      </if>
+      <if test="effdt != null">
+        effdt = #{effdt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="parentIdNumber != null">
+        parent_id_number = #{parentIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="deletedStatus != null">
+        deleted_status = #{deletedStatus,jdbcType=TINYINT},
+      </if>
+      <if test="historyRelateId != null">
+        history_relate_id = #{historyRelateId,jdbcType=VARCHAR},
+      </if>
+      <if test="jobIdName != null">
+        job_id_name = #{jobIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="positionTypeIdName != null">
+        position_type_id_name = #{positionTypeIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="lastUpdateTime != null">
+        last_update_time = #{lastUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sortCode != null">
+        sort_code = #{sortCode,jdbcType=TINYINT},
+      </if>
+      <if test="purpose != null">
+        purpose = #{purpose,jdbcType=VARCHAR},
+      </if>
+      <if test="adminOrgUnitIdNumber != null">
+        admin_org_unit_id_number = #{adminOrgUnitIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="isCreateByJob != null">
+        is_create_by_job = #{isCreateByJob,jdbcType=TINYINT},
+      </if>
+      <if test="adminOrgUnitIdName != null">
+        admin_org_unit_id_name = #{adminOrgUnitIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="define != null">
+        define = #{define,jdbcType=VARCHAR},
+      </if>
+      <if test="pubProperLdapName != null">
+        pub_proper_ldap_name = #{pubProperLdapName,jdbcType=VARCHAR},
+      </if>
+      <if test="lastUpdateUserIdName != null">
+        last_update_user_id_name = #{lastUpdateUserIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="positionTypeIdLevel != null">
+        position_type_id_level = #{positionTypeIdLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="creatorIdNumber != null">
+        creator_id_number = #{creatorIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="leffdt != null">
+        leffdt = #{leffdt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lowJobGradeIdNumber != null">
+        low_job_grade_id_number = #{lowJobGradeIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="hrOrgUnitIdName != null">
+        hr_org_unit_id_name = #{hrOrgUnitIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="hrOrgUnitIdNumber != null">
+        hr_org_unit_id_number = #{hrOrgUnitIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="creatorIdName != null">
+        creator_id_name = #{creatorIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="effectDate != null">
+        effect_date = #{effectDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="productLineIdName != null">
+        product_line_id_name = #{productLineIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="fluCheckTime != null">
+        flu_check_time = #{fluCheckTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ecarpo.bms.eas.server.position.entity.EasPositionDO">
+    <!-- @mbg.generated 2019-07-09 14:32:12 -->
+    update eas_position
+    set erp_duty_id = #{erpDutyId,jdbcType=BIGINT},
+      last_update_user_id_number = #{lastUpdateUserIdNumber,jdbcType=VARCHAR},
+      vali_date = #{valiDate,jdbcType=TIMESTAMP},
+      job_level_number = #{jobLevelNumber,jdbcType=VARCHAR},
+      job_id_number = #{jobIdNumber,jdbcType=VARCHAR},
+      description = #{description,jdbcType=VARCHAR},
+      is_resp_position = #{isRespPosition,jdbcType=TINYINT},
+      domain_id_number = #{domainIdNumber,jdbcType=VARCHAR},
+      simple_name = #{simpleName,jdbcType=VARCHAR},
+      idx = #{idx,jdbcType=INTEGER},
+      low_job_grade_id_name = #{lowJobGradeIdName,jdbcType=VARCHAR},
+      product_line_id_number = #{productLineIdNumber,jdbcType=VARCHAR},
+      pub_proper_ldap_number = #{pubProperLdapNumber,jdbcType=VARCHAR},
+      position_type_id_number = #{positionTypeIdNumber,jdbcType=VARCHAR},
+      encrypt = #{encrypt,jdbcType=VARCHAR},
+      parent_id_name = #{parentIdName,jdbcType=VARCHAR},
+      high_job_grade_id_number = #{highJobGradeIdNumber,jdbcType=VARCHAR},
+      domain_id_name = #{domainIdName,jdbcType=VARCHAR},
+      control_unit_id_number = #{controlUnitIdNumber,jdbcType=VARCHAR},
+      high_job_grade_id_name = #{highJobGradeIdName,jdbcType=VARCHAR},
+      control_unit_id_name = #{controlUnitIdName,jdbcType=VARCHAR},
+      job_level_name = #{jobLevelName,jdbcType=VARCHAR},
+      pos_plan_count = #{posPlanCount,jdbcType=VARCHAR},
+      effdt = #{effdt,jdbcType=TIMESTAMP},
+      parent_id_number = #{parentIdNumber,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      deleted_status = #{deletedStatus,jdbcType=TINYINT},
+      history_relate_id = #{historyRelateId,jdbcType=VARCHAR},
+      job_id_name = #{jobIdName,jdbcType=VARCHAR},
+      position_type_id_name = #{positionTypeIdName,jdbcType=VARCHAR},
+      last_update_time = #{lastUpdateTime,jdbcType=TIMESTAMP},
+      sort_code = #{sortCode,jdbcType=TINYINT},
+      purpose = #{purpose,jdbcType=VARCHAR},
+      admin_org_unit_id_number = #{adminOrgUnitIdNumber,jdbcType=VARCHAR},
+      is_create_by_job = #{isCreateByJob,jdbcType=TINYINT},
+      admin_org_unit_id_name = #{adminOrgUnitIdName,jdbcType=VARCHAR},
+      define = #{define,jdbcType=VARCHAR},
+      pub_proper_ldap_name = #{pubProperLdapName,jdbcType=VARCHAR},
+      last_update_user_id_name = #{lastUpdateUserIdName,jdbcType=VARCHAR},
+      position_type_id_level = #{positionTypeIdLevel,jdbcType=VARCHAR},
+      creator_id_number = #{creatorIdNumber,jdbcType=VARCHAR},
+      leffdt = #{leffdt,jdbcType=TIMESTAMP},
+      low_job_grade_id_number = #{lowJobGradeIdNumber,jdbcType=VARCHAR},
+      hr_org_unit_id_name = #{hrOrgUnitIdName,jdbcType=VARCHAR},
+      hr_org_unit_id_number = #{hrOrgUnitIdNumber,jdbcType=VARCHAR},
+      creator_id_name = #{creatorIdName,jdbcType=VARCHAR},
+      effect_date = #{effectDate,jdbcType=TIMESTAMP},
+      product_line_id_name = #{productLineIdName,jdbcType=VARCHAR},
+      flu_check_time = #{fluCheckTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  
+  
+  
+  <!--user define  -->
+  <update id="updateMap" parameterType="java.util.Map">
+    update eas_position
+    <set>
+      <if test="keys.containsKey('erpDutyId')">
+        erp_duty_id = #{keys.erpDutyId,jdbcType=BIGINT},
+      </if>
+      <if test="keys.containsKey('lastUpdateUserIdNumber')">
+        last_update_user_id_number = #{keys.lastUpdateUserIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('valiDate')">
+        vali_date = #{keys.valiDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="keys.containsKey('jobLevelNumber')">
+        job_level_number = #{keys.jobLevelNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('jobIdNumber')">
+        job_id_number = #{keys.jobIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('description')">
+        description = #{keys.description,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('isRespPosition')">
+        is_resp_position = #{keys.isRespPosition,jdbcType=TINYINT},
+      </if>
+      <if test="keys.containsKey('domainIdNumber')">
+        domain_id_number = #{keys.domainIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('simpleName')">
+        simple_name = #{keys.simpleName,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('idx')">
+        idx = #{keys.idx,jdbcType=INTEGER},
+      </if>
+      <if test="keys.containsKey('lowJobGradeIdName')">
+        low_job_grade_id_name = #{keys.lowJobGradeIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('productLineIdNumber')">
+        product_line_id_number = #{keys.productLineIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('pubProperLdapNumber')">
+        pub_proper_ldap_number = #{keys.pubProperLdapNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('positionTypeIdNumber')">
+        position_type_id_number = #{keys.positionTypeIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('encrypt')">
+        encrypt = #{keys.encrypt,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('parentIdName')">
+        parent_id_name = #{keys.parentIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('highJobGradeIdNumber')">
+        high_job_grade_id_number = #{keys.highJobGradeIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('domainIdName')">
+        domain_id_name = #{keys.domainIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('controlUnitIdNumber')">
+        control_unit_id_number = #{keys.controlUnitIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('highJobGradeIdName')">
+        high_job_grade_id_name = #{keys.highJobGradeIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('controlUnitIdName')">
+        control_unit_id_name = #{keys.controlUnitIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('jobLevelName')">
+        job_level_name = #{keys.jobLevelName,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('posPlanCount')">
+        pos_plan_count = #{keys.posPlanCount,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('effdt')">
+        effdt = #{keys.effdt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="keys.containsKey('parentIdNumber')">
+        parent_id_number = #{keys.parentIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('createTime')">
+        create_time = #{keys.createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="keys.containsKey('deletedStatus')">
+        deleted_status = #{keys.deletedStatus,jdbcType=TINYINT},
+      </if>
+      <if test="keys.containsKey('historyRelateId')">
+        history_relate_id = #{keys.historyRelateId,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('jobIdName')">
+        job_id_name = #{keys.jobIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('positionTypeIdName')">
+        position_type_id_name = #{keys.positionTypeIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('lastUpdateTime')">
+        last_update_time = #{keys.lastUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="keys.containsKey('sortCode')">
+        sort_code = #{keys.sortCode,jdbcType=TINYINT},
+      </if>
+      <if test="keys.containsKey('purpose')">
+        purpose = #{keys.purpose,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('adminOrgUnitIdNumber')">
+        admin_org_unit_id_number = #{keys.adminOrgUnitIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('isCreateByJob')">
+        is_create_by_job = #{keys.isCreateByJob,jdbcType=TINYINT},
+      </if>
+      <if test="keys.containsKey('adminOrgUnitIdName')">
+        admin_org_unit_id_name = #{keys.adminOrgUnitIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('define')">
+        define = #{keys.define,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('pubProperLdapName')">
+        pub_proper_ldap_name = #{keys.pubProperLdapName,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('lastUpdateUserIdName')">
+        last_update_user_id_name = #{keys.lastUpdateUserIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('positionTypeIdLevel')">
+        position_type_id_level = #{keys.positionTypeIdLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('creatorIdNumber')">
+        creator_id_number = #{keys.creatorIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('leffdt')">
+        leffdt = #{keys.leffdt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="keys.containsKey('lowJobGradeIdNumber')">
+        low_job_grade_id_number = #{keys.lowJobGradeIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('hrOrgUnitIdName')">
+        hr_org_unit_id_name = #{keys.hrOrgUnitIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('hrOrgUnitIdNumber')">
+        hr_org_unit_id_number = #{keys.hrOrgUnitIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('creatorIdName')">
+        creator_id_name = #{keys.creatorIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('effectDate')">
+        effect_date = #{keys.effectDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="keys.containsKey('productLineIdName')">
+        product_line_id_name = #{keys.productLineIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="keys.containsKey('fluCheckTime')">
+        flu_check_time = #{keys.fluCheckTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{keys.id,jdbcType=VARCHAR}
+  </update>
+
+  
+  
+  
+  <!--EAS 岗位id 获取中间表信息   xin  2019.06.04  -->
+  <select id="selectByEasId" resultType="com.ecarpo.bms.eas.server.position.entity.EasPositionDO">
+    select
+      <include refid="Base_Column_List" />
+    from
+      eas_position
+    where
+     id = #{id,jdbcType=VARCHAR} 
+  </select>
+  
+  
+  <!--职位编码获取职务信息   xin  2019.06.012  -->
+  <select id="selectByNumber" resultType="com.ecarpo.bms.eas.server.position.entity.EasPositionDO">
+    select
+      <include refid="Base_Column_List" />
+    from
+      eas_position
+    where
+     encrypt = #{encrypt,jdbcType=VARCHAR}
+  </select>
+  
+  
+</mapper>

@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ecarpo.bms.ap.server.auth.dutymenu.dao.ApDutyMenuMapper">
+  <resultMap id="BaseResultMap" type="com.ecarpo.bms.ap.server.auth.dutymenu.entity.ApDutyMenuDO">
+    <!-- @mbg.generated 2017-07-12 23:44:00 -->
+    <id column="duty_menu_id" jdbcType="BIGINT" property="dutyMenuId" />
+    <result column="product_id" jdbcType="BIGINT" property="productId" />
+    <result column="duty_id" jdbcType="BIGINT" property="dutyId" />
+    <result column="menu_id" jdbcType="BIGINT" property="menuId" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="modify_time" jdbcType="TIMESTAMP" property="modifyTime" />
+    <result column="creator_id" jdbcType="BIGINT" property="creatorId" />
+    <result column="modifier_id" jdbcType="BIGINT" property="modifierId" />
+    <result column="del_flag" jdbcType="TINYINT" property="delFlag" />
+    <result column="auth_code" jdbcType="TINYINT" property="authCode" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!-- @mbg.generated 2017-07-12 23:44:00 -->
+    duty_menu_id, product_id, duty_id, menu_id, create_time, modify_time, creator_id, 
+    modifier_id, del_flag, auth_code
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!-- @mbg.generated 2017-07-12 23:44:00 -->
+    select 
+    <include refid="Base_Column_List" />
+    from ap_duty_menu
+    where duty_menu_id = #{dutyMenuId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!-- @mbg.generated 2017-07-12 23:44:00 -->
+    delete from ap_duty_menu
+    where duty_menu_id = #{dutyMenuId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.ecarpo.bms.ap.server.auth.dutymenu.entity.ApDutyMenuDO">
+    <!-- @mbg.generated 2017-07-12 23:44:00 -->
+    insert into ap_duty_menu (duty_menu_id, product_id, duty_id, 
+      menu_id, create_time, modify_time, 
+      creator_id, modifier_id, del_flag, auth_code
+      )
+    values (#{dutyMenuId,jdbcType=BIGINT}, #{productId,jdbcType=BIGINT}, #{dutyId,jdbcType=BIGINT}, 
+      #{menuId,jdbcType=BIGINT}, #{createTime,jdbcType=TIMESTAMP}, #{modifyTime,jdbcType=TIMESTAMP}, 
+      #{creatorId,jdbcType=BIGINT}, #{modifierId,jdbcType=BIGINT}, #{delFlag,jdbcType=TINYINT}, #{authCode,jdbcType=TINYINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.ecarpo.bms.ap.server.auth.dutymenu.entity.ApDutyMenuDO">
+    <!-- @mbg.generated 2017-07-12 23:44:00 -->
+    insert into ap_duty_menu
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="dutyMenuId != null">
+        duty_menu_id,
+      </if>
+      <if test="productId != null">
+        product_id,
+      </if>
+      <if test="dutyId != null">
+        duty_id,
+      </if>
+      <if test="menuId != null">
+        menu_id,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="modifyTime != null">
+        modify_time,
+      </if>
+      <if test="creatorId != null">
+        creator_id,
+      </if>
+      <if test="modifierId != null">
+        modifier_id,
+      </if>
+      <if test="delFlag != null">
+        del_flag,
+      </if>
+      <if test="authCode != null">
+        auth_code,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="dutyMenuId != null">
+        #{dutyMenuId,jdbcType=BIGINT},
+      </if>
+      <if test="productId != null">
+        #{productId,jdbcType=BIGINT},
+      </if>
+      <if test="dutyId != null">
+        #{dutyId,jdbcType=BIGINT},
+      </if>
+      <if test="menuId != null">
+        #{menuId,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyTime != null">
+        #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="creatorId != null">
+        #{creatorId,jdbcType=BIGINT},
+      </if>
+      <if test="modifierId != null">
+        #{modifierId,jdbcType=BIGINT},
+      </if>
+      <if test="delFlag != null">
+        #{delFlag,jdbcType=TINYINT},
+      </if>
+      <if test="authCode != null">
+        #{authCode,jdbcType=TINYINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ecarpo.bms.ap.server.auth.dutymenu.entity.ApDutyMenuDO">
+    <!-- @mbg.generated 2017-07-12 23:44:00 -->
+    update ap_duty_menu
+    <set>
+      <if test="productId != null">
+        product_id = #{productId,jdbcType=BIGINT},
+      </if>
+      <if test="dutyId != null">
+        duty_id = #{dutyId,jdbcType=BIGINT},
+      </if>
+      <if test="menuId != null">
+        menu_id = #{menuId,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyTime != null">
+        modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="creatorId != null">
+        creator_id = #{creatorId,jdbcType=BIGINT},
+      </if>
+      <if test="modifierId != null">
+        modifier_id = #{modifierId,jdbcType=BIGINT},
+      </if>
+      <if test="delFlag != null">
+        del_flag = #{delFlag,jdbcType=TINYINT},
+      </if>
+      <if test="authCode != null">
+        auth_code = #{authCode,jdbcType=TINYINT},
+      </if>
+    </set>
+    where duty_menu_id = #{dutyMenuId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ecarpo.bms.ap.server.auth.dutymenu.entity.ApDutyMenuDO">
+    <!-- @mbg.generated 2017-07-12 23:44:00 -->
+    update ap_duty_menu
+    set product_id = #{productId,jdbcType=BIGINT},
+      duty_id = #{dutyId,jdbcType=BIGINT},
+      menu_id = #{menuId,jdbcType=BIGINT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      creator_id = #{creatorId,jdbcType=BIGINT},
+      modifier_id = #{modifierId,jdbcType=BIGINT},
+      del_flag = #{delFlag,jdbcType=TINYINT},
+      auth_code = #{authCode,jdbcType=TINYINT}
+    where duty_menu_id = #{dutyMenuId,jdbcType=BIGINT}
+  </update>
+  
+  <!-- user define -->
+  <update id="updateMap" parameterType="java.util.Map">
+    update ap_duty_menu
+    <set>
+      <if test="keys.containsKey('productId')">
+        product_id = #{keys.productId,jdbcType=BIGINT},
+      </if>
+      <if test="keys.containsKey('dutyId')">
+        duty_id = #{keys.dutyId,jdbcType=BIGINT},
+      </if>
+      <if test="keys.containsKey('menuId')">
+        menu_id = #{keys.menuId,jdbcType=BIGINT},
+      </if>
+      <if test="keys.containsKey('createTime')">
+        create_time = #{keys.createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="keys.containsKey('modifyTime')">
+        modify_time = #{keys.modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="keys.containsKey('creatorId')">
+        creator_id = #{keys.creatorId,jdbcType=BIGINT},
+      </if>
+      <if test="keys.containsKey('modifierId')">
+        modifier_id = #{keys.modifierId,jdbcType=BIGINT},
+      </if>
+      <if test="keys.containsKey('delFlag')">
+        del_flag = #{keys.delFlag,jdbcType=TINYINT},
+      </if>
+      <if test="keys.containsKey('authCode')">
+        auth_code = #{keys.authCode,jdbcType=TINYINT},
+      </if>
+    </set>
+    where duty_menu_id = #{keys.dutyMenuId,jdbcType=BIGINT}
+  </update>
+  
+  <!--按岗位id获取模块id  -->
+  <select id="selectListByDutyId" parameterType="java.lang.Long" resultType="long">
+    select
+    	menu_id
+    from
+    	ap_duty_menu
+    where
+    	duty_id = #{dutyId,jdbcType=BIGINT}
+  </select>
+
+  <select id="listProductMenuIdByDutyId" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select
+    	product_id,
+    	menu_id
+    from
+    	ap_duty_menu
+    where
+    	duty_id = #{dutyId,jdbcType=BIGINT}
+  </select>
+  
+</mapper>

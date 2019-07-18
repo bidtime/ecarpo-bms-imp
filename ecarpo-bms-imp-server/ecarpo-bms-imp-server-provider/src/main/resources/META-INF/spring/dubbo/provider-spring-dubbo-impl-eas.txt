@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+		http://code.alibabatech.com/schema/dubbo
+		http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+  <dubbo:service ref="easMeasureUnitServiceImpl" timeout="30000" version="1.0.0"
+    interface="com.ecarpo.bms.eas.measureunit.service.EasMeasureUnitService"/>
+
+  <dubbo:service ref="easPersonServiceImpl" timeout="30000" version="1.0.0"
+    interface="com.ecarpo.bms.eas.person.service.EasPersonService" />
+
+  <dubbo:service ref="easCustomerServiceImpl" timeout="30000" version="1.0.0"
+    interface="com.ecarpo.bms.eas.customer.service.EasCustomerService" />
+
+  <dubbo:service ref="easPositionServiceImpl" timeout="30000" version="1.0.0"
+    interface="com.ecarpo.bms.eas.position.service.EasPositionService" />
+
+  <dubbo:service ref="erpToEasServiceImpl" timeout="30000" version="1.0.0"
+    interface="com.ecarpo.bms.erp.server.toeas.service.ErpToEasService" />
+
+  <dubbo:service ref="easSupplierServiceImpl" timeout="30000" version="1.0.0"
+    interface="com.ecarpo.bms.eas.supplier.supplier.service.EasSupplierService" />
+    
+  <dubbo:service ref="easSupplierBankServiceImpl" timeout="30000" version="1.0.0"
+    interface="com.ecarpo.bms.eas.supplier.supplierbank.service.EasSupplierBankService" />
+    
+  <dubbo:service ref="easGroupServiceImpl" timeout="30000" version="1.0.0"
+    interface="com.ecarpo.bms.eas.group.service.EasGroupService" />
+    
+  <dubbo:service ref="easSupplierTypeServiceImpl" timeout="30000" version="1.0.0"
+    interface="com.ecarpo.bms.eas.supplier.suppliertype.service.EasSupplierTypeService" />
+    
+  <dubbo:service ref="easOrgRangeServiceImpl" timeout="30000" version="1.0.0"
+    interface="com.ecarpo.bms.eas.orgrange.service.EasOrgRangeService" />
+    
+  <dubbo:service ref="easApDutyServiceImpl" timeout="30000" version="1.0.0"
+    interface="com.ecarpo.bms.ap.server.auth.duty.service.EasApDutyService" />
+    
+  <dubbo:service ref="easApOrgServiceImpl" timeout="30000" version="1.0.0"
+    interface="com.ecarpo.bms.ap.server.auth.org.service.EasApOrgService" />
+    
+  <dubbo:service ref="easApUserServiceImpl" timeout="30000" version="1.0.0"
+    interface="com.ecarpo.bms.ap.server.auth.user.service.EasApUserService" />
+    
+  <dubbo:service ref="easBsCompanyServiceImpl" timeout="30000" version="1.0.0"
+    interface="com.ecarpo.bms.bs.server.company.service.EasBsCompanyService" />
+
+  <dubbo:service ref="easOrgBaseUnitServiceImpl" timeout="30000" version="1.0.0"
+    interface="com.ecarpo.bms.eas.orgbaseunit.service.EasOrgBaseUnitService" />
+
+  <dubbo:service ref="easOrgSpecialServiceImpl" timeout="30000" version="1.0.0"
+    interface="com.ecarpo.bms.eas.org.orgspecial.service.EasOrgSpecialService" />
+
+   <dubbo:service ref="easOrgAdminServiceImpl" timeout="30000" version="1.0.0"
+    interface="com.ecarpo.bms.eas.orgadmin.service.EasOrgAdminService" />
+    
+   <dubbo:service ref="easOrgCompanyServiceImpl" timeout="30000" version="1.0.0"
+    interface="com.ecarpo.bms.eas.org.orgcompany.service.EasOrgCompanyService" />
+    
+   <dubbo:service ref="easOrgPurchaseServiceImpl" timeout="30000" version="1.0.0"
+    interface="com.ecarpo.bms.eas.org.orgpurchase.service.EasOrgPurchaseService" />
+    
+   <dubbo:service ref="easOrgSaleServiceImpl" timeout="30000" version="1.0.0"
+    interface="com.ecarpo.bms.eas.org.orgsale.service.EasOrgSaleService" />
+
+   <dubbo:service ref="easOrgCtrlUnitServiceImpl" timeout="30000" version="1.0.0"
+    interface="com.ecarpo.bms.eas.orgctrlunit.service.EasOrgCtrlUnitService" />
+
+   <dubbo:service ref="easMaterialGroupServiceImpl" timeout="30000" version="1.0.0"
+   interface="com.ecarpo.bms.eas.materialgroup.service.EasMaterialGroupService" />
+
+   <dubbo:service ref="easMaterialServiceImpl" timeout="30000" version="1.0.0"
+   interface="com.ecarpo.bms.eas.material.service.EasMaterialService" />
+    
+   <dubbo:service ref="easApUserMenuServiceImpl" timeout="30000" version="1.0.0"
+   interface="com.ecarpo.bms.ap.server.auth.usermenu.service.EasApUserMenuService" />
+   
+   <dubbo:service ref="easApDutyMenuServiceImpl" timeout="30000" version="1.0.0"
+   interface="com.ecarpo.bms.ap.server.auth.dutymenu.service.EasApDutyMenuService" />
+    
+   <dubbo:service ref="easApDutyProductServiceImpl" timeout="30000" version="1.0.0"
+   interface="com.ecarpo.bms.ap.server.auth.dutyproduct.service.EasApDutyProductService" />
+    
+   <dubbo:service ref="easApUserProductServiceImpl" timeout="30000" version="1.0.0"
+   interface="com.ecarpo.bms.ap.server.auth.userproduct.service.EasApUserProductService" />
+    
+   <dubbo:service ref="easApUserDutyServiceImpl" timeout="30000" version="1.0.0"
+   interface="com.ecarpo.bms.ap.server.auth.userduty.service.EasApUserDutyService" />
+    
+    
+    
+</beans>

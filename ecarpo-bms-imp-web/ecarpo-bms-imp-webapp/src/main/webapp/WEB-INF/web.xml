@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+  version="3.0">
+  <display-name>ecarpo-ap-web</display-name>
+
+  <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>
+      classpath*:/META-INF/spring/spring-*.xml
+    </param-value>
+  </context-param>
+
+  <!-- spring encoding filter -->
+  <filter>
+    <filter-name>encodingFilter</filter-name>
+    <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+    <init-param>
+      <param-name>encoding</param-name>
+      <param-value>UTF-8</param-value>
+    </init-param>
+    <init-param>
+      <param-name>forceEncoding</param-name>
+      <param-value>true</param-value>
+    </init-param>
+  </filter>
+  
+  <filter-mapping>
+    <filter-name>encodingFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+
+  <!-- shiro filter -->
+  <!--
+  <filter>
+    <filter-name>shiroFilter</filter-name>
+    <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+    <init-param>
+      <param-name>targetFilterLifecycle</param-name>
+      <param-value>true</param-value>
+    </init-param>
+  </filter>
+
+  <filter-mapping>
+    <filter-name>shiroFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  -->
+
+  <!-- 解决跨域问题 filter org.apache.catalina.filters.CorsFilter 
+  <filter>
+    <filter-name>CORSFilter</filter-name>
+    <filter-class>com.ecarpo.bms.web.filter.CORSFilter</filter-class>
+  </filter>
+  
+  <filter-mapping>
+    <filter-name>CORSFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  -->
+  
+  <!-- Enables use of HTTP methods PUT and DELETE, default parameter name: _method -->
+  <filter>
+    <filter-name>httpMethodFilter</filter-name>
+    <filter-class>org.springframework.web.filter.HiddenHttpMethodFilter</filter-class>
+  </filter>
+
+  <filter-mapping>
+    <filter-name>httpMethodFilter</filter-name>
+    <servlet-name>springmvc</servlet-name>
+  </filter-mapping>
+
+  <filter>
+    <filter-name>gzip</filter-name>
+    <filter-class>com.ecarpo.bms.web.filter.GZIPFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>gzip</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+
+  <!-- dubbo listener, this listener must be defined before the spring listener -->
+  <!--
+  <listener>
+    <listener-class>org.apache.dubbo.remoting.http.servlet.BootstrapListener</listener-class>
+  </listener>
+  -->
+
+  <!-- spring listener -->
+  <listener>
+    <listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
+  </listener>
+
+  <listener>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+
+  <listener>
+    <listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
+  </listener>
+     
+  <!-- The front controller of this Spring Web application, responsible for handling all application
+    requests. Map all requests to the DispatcherServlet for handling -->
+  <servlet>
+    <servlet-name>springmvc</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <init-param>
+      <param-name>contextConfigLocation</param-name>
+      <param-value>
+        classpath*:/META-INF/spring/spring-mvc.xml
+        , classpath*:/META-INF/spring/spring-interceptor.xml
+        <!-- , classpath*:/META-INF/spring/spring-dubbo.xml -->
+      </param-value>
+    </init-param>
+    <load-on-startup>2</load-on-startup>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>springmvc</servlet-name>
+    <url-pattern>/</url-pattern>
+  </servlet-mapping>
+
+  <session-config>
+    <session-timeout>1</session-timeout>
+  </session-config>
+</web-app>

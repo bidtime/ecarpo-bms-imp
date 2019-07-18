@@ -1,0 +1,96 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.ecarpo.bms</groupId>
+    <artifactId>ecarpo-bms-imp-web</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>ecarpo-bms-imp-web-biz</artifactId>
+  <dependencies>
+    <dependency>
+      <groupId>com.ecarpo.bms</groupId>
+      <artifactId>ecarpo-bms-parent-biz</artifactId>
+      <version>${project.version}</version>
+      <type>pom</type>
+    </dependency>
+    <dependency>
+      <groupId>com.ecarpo.framework</groupId>
+      <artifactId>ecarpo-framework-web-util</artifactId>
+    </dependency>
+
+    <!-- below is ecarpo API's -->
+    <dependency>
+      <groupId>com.ecarpo.bms</groupId>
+      <artifactId>ecarpo-bms-imp-server-api</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>fastjson</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+    </dependency>
+    
+    <!-- 2019.05.27 add -->
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <scope>provided</scope>
+    </dependency>
+	
+    <dependency>
+      <groupId>org.bidtime.utils</groupId>
+      <artifactId>http-session-cache</artifactId>
+      <version>${project.version}</version>
+        <exclusions>
+          <exclusion>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+          </exclusion>
+        </exclusions>
+    </dependency>
+	
+    <dependency>
+      <groupId>org.bidtime.utils</groupId>
+      <artifactId>redis-session-cache</artifactId>
+      <version>${project.version}</version>
+        <exclusions>
+          <exclusion>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+          </exclusion>
+        </exclusions>
+    </dependency>
+    
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-validator</artifactId>
+    </dependency>
+    
+    <dependency>
+      <groupId>com.ecarpo.bms</groupId>
+      <artifactId>ecarpo-bms-imp-server-provider</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    
+  </dependencies>
+</project>

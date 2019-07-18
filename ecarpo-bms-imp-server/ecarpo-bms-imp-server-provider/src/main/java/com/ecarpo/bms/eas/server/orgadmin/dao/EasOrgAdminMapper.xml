@@ -1,0 +1,1350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ecarpo.bms.eas.server.orgadmin.dao.EasOrgAdminMapper">
+  <resultMap id="BaseResultMap" type="com.ecarpo.bms.eas.server.orgadmin.entity.EasOrgAdminDO">
+    <!-- @mbg.generated 2019-06-13 14:43:43 -->
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="reserve_item_first_number" jdbcType="VARCHAR" property="reserveItemFirstNumber" />
+    <result column="registered_capital" jdbcType="DECIMAL" property="registeredCapital" />
+    <result column="company_id_name" jdbcType="VARCHAR" property="companyIdName" />
+    <result column="company_id_number" jdbcType="VARCHAR" property="companyIdNumber" />
+    <result column="is_entity" jdbcType="TINYINT" property="isEntity" />
+    <result column="phone_number" jdbcType="VARCHAR" property="phoneNumber" />
+    <result column="orgCode" jdbcType="VARCHAR" property="orgcode" />
+    <result column="office_id_number" jdbcType="VARCHAR" property="officeIdNumber" />
+    <result column="level_six_group_id_name" jdbcType="VARCHAR" property="levelSixGroupIdName" />
+    <result column="is_churchyard" jdbcType="TINYINT" property="isChurchyard" />
+    <result column="level_four_group_id_number" jdbcType="VARCHAR" property="levelFourGroupIdNumber" />
+    <result column="admin_address" jdbcType="VARCHAR" property="adminAddress" />
+    <result column="area_id_number" jdbcType="VARCHAR" property="areaIdNumber" />
+    <result column="layer_type_id_name" jdbcType="VARCHAR" property="layerTypeIdName" />
+    <result column="org_property_id_name" jdbcType="VARCHAR" property="orgPropertyIdName" />
+    <result column="layer_type_id_number" jdbcType="VARCHAR" property="layerTypeIdNumber" />
+    <result column="reserve_field_first" jdbcType="VARCHAR" property="reserveFieldFirst" />
+    <result column="delegate_hr_id_number" jdbcType="VARCHAR" property="delegateHrIdNumber" />
+    <result column="job_system_id_number" jdbcType="VARCHAR" property="jobSystemIdNumber" />
+    <result column="territory" jdbcType="VARCHAR" property="territory" />
+    <result column="sort_code" jdbcType="VARCHAR" property="sortCode" />
+    <result column="registered_code" jdbcType="VARCHAR" property="registeredCode" />
+    <result column="level_four_group_id_name" jdbcType="VARCHAR" property="levelFourGroupIdName" />
+    <result column="principal_id_name" jdbcType="VARCHAR" property="principalIdName" />
+    <result column="is_independence" jdbcType="TINYINT" property="isIndependence" />
+    <result column="area_id_name" jdbcType="VARCHAR" property="areaIdName" />
+    <result column="regist_type_id_number" jdbcType="VARCHAR" property="registTypeIdNumber" />
+    <result column="department_id_name" jdbcType="VARCHAR" property="departmentIdName" />
+    <result column="is_start_shr" jdbcType="TINYINT" property="isStartShr" />
+    <result column="tax_number" jdbcType="VARCHAR" property="taxNumber" />
+    <result column="delegate_hr_id_name" jdbcType="VARCHAR" property="delegateHrIdName" />
+    <result column="reserve_item_second_name" jdbcType="VARCHAR" property="reserveItemSecondName" />
+    <result column="org_function_id_name" jdbcType="VARCHAR" property="orgFunctionIdName" />
+    <result column="reserve_field_second" jdbcType="VARCHAR" property="reserveFieldSecond" />
+    <result column="org_property_id_number" jdbcType="VARCHAR" property="orgPropertyIdNumber" />
+    <result column="principal_id_number" jdbcType="VARCHAR" property="principalIdNumber" />
+    <result column="base_duty" jdbcType="VARCHAR" property="baseDuty" />
+    <result column="respon_position_id_number" jdbcType="VARCHAR" property="responPositionIdNumber" />
+    <result column="end_up_date" jdbcType="TIMESTAMP" property="endUpDate" />
+    <result column="zip_code" jdbcType="VARCHAR" property="zipCode" />
+    <result column="level_five_group_id_number" jdbcType="VARCHAR" property="levelFiveGroupIdNumber" />
+    <result column="reserve_item_second_number" jdbcType="VARCHAR" property="reserveItemSecondNumber" />
+    <result column="respon_position_id_name" jdbcType="VARCHAR" property="responPositionIdName" />
+    <result column="reserve_item_first_name" jdbcType="VARCHAR" property="reserveItemFirstName" />
+    <result column="fax" jdbcType="VARCHAR" property="fax" />
+    <result column="juridical_person_id_number" jdbcType="VARCHAR" property="juridicalPersonIdNumber" />
+    <result column="office_id_name" jdbcType="VARCHAR" property="officeIdName" />
+    <result column="industry_id_name" jdbcType="VARCHAR" property="industryIdName" />
+    <result column="juridical_person_id_name" jdbcType="VARCHAR" property="juridicalPersonIdName" />
+    <result column="industry_id_number" jdbcType="VARCHAR" property="industryIdNumber" />
+    <result column="level_five_group_id_name" jdbcType="VARCHAR" property="levelFiveGroupIdName" />
+    <result column="history_relate_id" jdbcType="VARCHAR" property="historyRelateId" />
+    <result column="regist_type_id_name" jdbcType="VARCHAR" property="registTypeIdName" />
+    <result column="is_juridical_company" jdbcType="TINYINT" property="isJuridicalCompany" />
+    <result column="level_six_group_id_number" jdbcType="VARCHAR" property="levelSixGroupIdNumber" />
+    <result column="job_system_id_name" jdbcType="VARCHAR" property="jobSystemIdName" />
+    <result column="department_id_number" jdbcType="VARCHAR" property="departmentIdNumber" />
+    <result column="layer_id_name" jdbcType="VARCHAR" property="layerIdName" />
+    <result column="is_virtual" jdbcType="TINYINT" property="isVirtual" />
+    <result column="org_function_id_number" jdbcType="VARCHAR" property="orgFunctionIdNumber" />
+    <result column="economic_type" jdbcType="TINYINT" property="economicType" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="is_purchase_org_unit" jdbcType="TINYINT" property="isPurchaseOrgUnit" />
+    <result column="is_grouping" jdbcType="TINYINT" property="isGrouping" />
+    <result column="last_update_time" jdbcType="TIMESTAMP" property="lastUpdateTime" />
+    <result column="last_update_user_id_number" jdbcType="VARCHAR" property="lastUpdateUserIdNumber" />
+    <result column="is_freeze" jdbcType="TINYINT" property="isFreeze" />
+    <result column="property_seal_up_date" jdbcType="TIMESTAMP" property="propertySealUpDate" />
+    <result column="is_start" jdbcType="TINYINT" property="isStart" />
+    <result column="is_admin_org_unit" jdbcType="TINYINT" property="isAdminOrgUnit" />
+    <result column="address_id_name" jdbcType="VARCHAR" property="addressIdName" />
+    <result column="is_transport_org_unit" jdbcType="TINYINT" property="isTransportOrgUnit" />
+    <result column="is_quality_org_unit" jdbcType="TINYINT" property="isQualityOrgUnit" />
+    <result column="invalid_date" jdbcType="TIMESTAMP" property="invalidDate" />
+    <result column="gradation" jdbcType="TINYINT" property="gradation" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
+    <result column="is_seal_up" jdbcType="TINYINT" property="isSealUp" />
+    <result column="define" jdbcType="VARCHAR" property="define" />
+    <result column="is_leaf" jdbcType="TINYINT" property="isLeaf" />
+    <result column="last_update_user_id_name" jdbcType="VARCHAR" property="lastUpdateUserIdName" />
+    <result column="is_company_org_unit" jdbcType="TINYINT" property="isCompanyOrgUnit" />
+    <result column="is_hr_org_unit" jdbcType="TINYINT" property="isHrOrgUnit" />
+    <result column="is_union" jdbcType="TINYINT" property="isUnion" />
+    <result column="is_cost_org_unit" jdbcType="TINYINT" property="isCostOrgUnit" />
+    <result column="creator_id_number" jdbcType="VARCHAR" property="creatorIdNumber" />
+    <result column="simple_name" jdbcType="VARCHAR" property="simpleName" />
+    <result column="is_ou_seal_up" jdbcType="TINYINT" property="isOuSealUp" />
+    <result column="org_type_str" jdbcType="VARCHAR" property="orgTypeStr" />
+    <result column="creator_id_name" jdbcType="VARCHAR" property="creatorIdName" />
+    <result column="effect_date" jdbcType="TIMESTAMP" property="effectDate" />
+    <result column="is_profit_org_unit" jdbcType="TINYINT" property="isProfitOrgUnit" />
+    <result column="is_cu" jdbcType="TINYINT" property="isCu" />
+    <result column="encrypt" jdbcType="VARCHAR" property="encrypt" />
+    <result column="parent_id_name" jdbcType="VARCHAR" property="parentIdName" />
+    <result column="code" jdbcType="VARCHAR" property="code" />
+    <result column="control_unit_id_number" jdbcType="VARCHAR" property="controlUnitIdNumber" />
+    <result column="control_unit_id_name" jdbcType="VARCHAR" property="controlUnitIdName" />
+    <result column="is_sale_org_unit" jdbcType="TINYINT" property="isSaleOrgUnit" />
+    <result column="is_storage_org_unit" jdbcType="TINYINT" property="isStorageOrgUnit" />
+    <result column="parent_id_number" jdbcType="VARCHAR" property="parentIdNumber" />
+    <result column="display_name" jdbcType="VARCHAR" property="displayName" />
+    <result column="long_number" jdbcType="VARCHAR" property="longNumber" />
+    <result column="address_id_number" jdbcType="VARCHAR" property="addressIdNumber" />
+    <result column="set_up_date" jdbcType="TIMESTAMP" property="setUpDate" />
+    <result column="version_number" jdbcType="VARCHAR" property="versionNumber" />
+    <result column="idx" jdbcType="VARCHAR" property="idx" />
+    <result column="effdt" jdbcType="TIMESTAMP" property="effdt" />
+    <result column="leffdt" jdbcType="TIMESTAMP" property="leffdt" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!-- @mbg.generated 2019-06-13 14:43:43 -->
+    id, reserve_item_first_number, registered_capital, company_id_name, company_id_number, 
+    is_entity, phone_number, orgCode, office_id_number, level_six_group_id_name, is_churchyard, 
+    level_four_group_id_number, admin_address, area_id_number, layer_type_id_name, org_property_id_name, 
+    layer_type_id_number, reserve_field_first, delegate_hr_id_number, job_system_id_number, 
+    territory, sort_code, registered_code, level_four_group_id_name, principal_id_name, 
+    is_independence, area_id_name, regist_type_id_number, department_id_name, is_start_shr, 
+    tax_number, delegate_hr_id_name, reserve_item_second_name, org_function_id_name, 
+    reserve_field_second, org_property_id_number, principal_id_number, base_duty, respon_position_id_number, 
+    end_up_date, zip_code, level_five_group_id_number, reserve_item_second_number, respon_position_id_name, 
+    reserve_item_first_name, fax, juridical_person_id_number, office_id_name, industry_id_name, 
+    juridical_person_id_name, industry_id_number, level_five_group_id_name, history_relate_id, 
+    regist_type_id_name, is_juridical_company, level_six_group_id_number, job_system_id_name, 
+    department_id_number, layer_id_name, is_virtual, org_function_id_number, economic_type, 
+    create_time, is_purchase_org_unit, is_grouping, last_update_time, last_update_user_id_number, 
+    is_freeze, property_seal_up_date, is_start, is_admin_org_unit, address_id_name, is_transport_org_unit, 
+    is_quality_org_unit, invalid_date, gradation, description, is_seal_up, define, is_leaf, 
+    last_update_user_id_name, is_company_org_unit, is_hr_org_unit, is_union, is_cost_org_unit, 
+    creator_id_number, simple_name, is_ou_seal_up, org_type_str, creator_id_name, effect_date, 
+    is_profit_org_unit, is_cu, encrypt, parent_id_name, code, control_unit_id_number, 
+    control_unit_id_name, is_sale_org_unit, is_storage_org_unit, parent_id_number, display_name, 
+    long_number, address_id_number, set_up_date, version_number, idx, effdt, leffdt
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    <!-- @mbg.generated 2019-06-13 14:43:43 -->
+    select 
+    <include refid="Base_Column_List" />
+    from eas_org_admin
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    <!-- @mbg.generated 2019-06-13 14:43:43 -->
+    delete from eas_org_admin
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.ecarpo.bms.eas.server.orgadmin.entity.EasOrgAdminDO">
+    <!-- @mbg.generated 2019-06-13 14:43:43 -->
+    insert into eas_org_admin (id, reserve_item_first_number, registered_capital, 
+      company_id_name, company_id_number, is_entity, 
+      phone_number, orgCode, office_id_number, 
+      level_six_group_id_name, is_churchyard, level_four_group_id_number, 
+      admin_address, area_id_number, layer_type_id_name, 
+      org_property_id_name, layer_type_id_number, reserve_field_first, 
+      delegate_hr_id_number, job_system_id_number, 
+      territory, sort_code, registered_code, 
+      level_four_group_id_name, principal_id_name, 
+      is_independence, area_id_name, regist_type_id_number, 
+      department_id_name, is_start_shr, tax_number, 
+      delegate_hr_id_name, reserve_item_second_name, 
+      org_function_id_name, reserve_field_second, 
+      org_property_id_number, principal_id_number, 
+      base_duty, respon_position_id_number, end_up_date, 
+      zip_code, level_five_group_id_number, reserve_item_second_number, 
+      respon_position_id_name, reserve_item_first_name, 
+      fax, juridical_person_id_number, office_id_name, 
+      industry_id_name, juridical_person_id_name, 
+      industry_id_number, level_five_group_id_name, 
+      history_relate_id, regist_type_id_name, is_juridical_company, 
+      level_six_group_id_number, job_system_id_name, 
+      department_id_number, layer_id_name, is_virtual, 
+      org_function_id_number, economic_type, create_time, 
+      is_purchase_org_unit, is_grouping, last_update_time, 
+      last_update_user_id_number, is_freeze, property_seal_up_date, 
+      is_start, is_admin_org_unit, address_id_name, 
+      is_transport_org_unit, is_quality_org_unit, invalid_date, 
+      gradation, description, is_seal_up, 
+      define, is_leaf, last_update_user_id_name, 
+      is_company_org_unit, is_hr_org_unit, is_union, 
+      is_cost_org_unit, creator_id_number, simple_name, 
+      is_ou_seal_up, org_type_str, creator_id_name, 
+      effect_date, is_profit_org_unit, is_cu, 
+      encrypt, parent_id_name, code, 
+      control_unit_id_number, control_unit_id_name, 
+      is_sale_org_unit, is_storage_org_unit, parent_id_number, 
+      display_name, long_number, address_id_number, 
+      set_up_date, version_number, idx, 
+      effdt, leffdt)
+    values (#{id,jdbcType=VARCHAR}, #{reserveItemFirstNumber,jdbcType=VARCHAR}, #{registeredCapital,jdbcType=DECIMAL}, 
+      #{companyIdName,jdbcType=VARCHAR}, #{companyIdNumber,jdbcType=VARCHAR}, #{isEntity,jdbcType=TINYINT}, 
+      #{phoneNumber,jdbcType=VARCHAR}, #{orgcode,jdbcType=VARCHAR}, #{officeIdNumber,jdbcType=VARCHAR}, 
+      #{levelSixGroupIdName,jdbcType=VARCHAR}, #{isChurchyard,jdbcType=TINYINT}, #{levelFourGroupIdNumber,jdbcType=VARCHAR}, 
+      #{adminAddress,jdbcType=VARCHAR}, #{areaIdNumber,jdbcType=VARCHAR}, #{layerTypeIdName,jdbcType=VARCHAR}, 
+      #{orgPropertyIdName,jdbcType=VARCHAR}, #{layerTypeIdNumber,jdbcType=VARCHAR}, #{reserveFieldFirst,jdbcType=VARCHAR}, 
+      #{delegateHrIdNumber,jdbcType=VARCHAR}, #{jobSystemIdNumber,jdbcType=VARCHAR}, 
+      #{territory,jdbcType=VARCHAR}, #{sortCode,jdbcType=VARCHAR}, #{registeredCode,jdbcType=VARCHAR}, 
+      #{levelFourGroupIdName,jdbcType=VARCHAR}, #{principalIdName,jdbcType=VARCHAR}, 
+      #{isIndependence,jdbcType=TINYINT}, #{areaIdName,jdbcType=VARCHAR}, #{registTypeIdNumber,jdbcType=VARCHAR}, 
+      #{departmentIdName,jdbcType=VARCHAR}, #{isStartShr,jdbcType=TINYINT}, #{taxNumber,jdbcType=VARCHAR}, 
+      #{delegateHrIdName,jdbcType=VARCHAR}, #{reserveItemSecondName,jdbcType=VARCHAR}, 
+      #{orgFunctionIdName,jdbcType=VARCHAR}, #{reserveFieldSecond,jdbcType=VARCHAR}, 
+      #{orgPropertyIdNumber,jdbcType=VARCHAR}, #{principalIdNumber,jdbcType=VARCHAR}, 
+      #{baseDuty,jdbcType=VARCHAR}, #{responPositionIdNumber,jdbcType=VARCHAR}, #{endUpDate,jdbcType=TIMESTAMP}, 
+      #{zipCode,jdbcType=VARCHAR}, #{levelFiveGroupIdNumber,jdbcType=VARCHAR}, #{reserveItemSecondNumber,jdbcType=VARCHAR}, 
+      #{responPositionIdName,jdbcType=VARCHAR}, #{reserveItemFirstName,jdbcType=VARCHAR}, 
+      #{fax,jdbcType=VARCHAR}, #{juridicalPersonIdNumber,jdbcType=VARCHAR}, #{officeIdName,jdbcType=VARCHAR}, 
+      #{industryIdName,jdbcType=VARCHAR}, #{juridicalPersonIdName,jdbcType=VARCHAR}, 
+      #{industryIdNumber,jdbcType=VARCHAR}, #{levelFiveGroupIdName,jdbcType=VARCHAR}, 
+      #{historyRelateId,jdbcType=VARCHAR}, #{registTypeIdName,jdbcType=VARCHAR}, #{isJuridicalCompany,jdbcType=TINYINT}, 
+      #{levelSixGroupIdNumber,jdbcType=VARCHAR}, #{jobSystemIdName,jdbcType=VARCHAR}, 
+      #{departmentIdNumber,jdbcType=VARCHAR}, #{layerIdName,jdbcType=VARCHAR}, #{isVirtual,jdbcType=TINYINT}, 
+      #{orgFunctionIdNumber,jdbcType=VARCHAR}, #{economicType,jdbcType=TINYINT}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{isPurchaseOrgUnit,jdbcType=TINYINT}, #{isGrouping,jdbcType=TINYINT}, #{lastUpdateTime,jdbcType=TIMESTAMP}, 
+      #{lastUpdateUserIdNumber,jdbcType=VARCHAR}, #{isFreeze,jdbcType=TINYINT}, #{propertySealUpDate,jdbcType=TIMESTAMP}, 
+      #{isStart,jdbcType=TINYINT}, #{isAdminOrgUnit,jdbcType=TINYINT}, #{addressIdName,jdbcType=VARCHAR}, 
+      #{isTransportOrgUnit,jdbcType=TINYINT}, #{isQualityOrgUnit,jdbcType=TINYINT}, #{invalidDate,jdbcType=TIMESTAMP}, 
+      #{gradation,jdbcType=TINYINT}, #{description,jdbcType=VARCHAR}, #{isSealUp,jdbcType=TINYINT}, 
+      #{define,jdbcType=VARCHAR}, #{isLeaf,jdbcType=TINYINT}, #{lastUpdateUserIdName,jdbcType=VARCHAR}, 
+      #{isCompanyOrgUnit,jdbcType=TINYINT}, #{isHrOrgUnit,jdbcType=TINYINT}, #{isUnion,jdbcType=TINYINT}, 
+      #{isCostOrgUnit,jdbcType=TINYINT}, #{creatorIdNumber,jdbcType=VARCHAR}, #{simpleName,jdbcType=VARCHAR}, 
+      #{isOuSealUp,jdbcType=TINYINT}, #{orgTypeStr,jdbcType=VARCHAR}, #{creatorIdName,jdbcType=VARCHAR}, 
+      #{effectDate,jdbcType=TIMESTAMP}, #{isProfitOrgUnit,jdbcType=TINYINT}, #{isCu,jdbcType=TINYINT}, 
+      #{encrypt,jdbcType=VARCHAR}, #{parentIdName,jdbcType=VARCHAR}, #{code,jdbcType=VARCHAR}, 
+      #{controlUnitIdNumber,jdbcType=VARCHAR}, #{controlUnitIdName,jdbcType=VARCHAR}, 
+      #{isSaleOrgUnit,jdbcType=TINYINT}, #{isStorageOrgUnit,jdbcType=TINYINT}, #{parentIdNumber,jdbcType=VARCHAR}, 
+      #{displayName,jdbcType=VARCHAR}, #{longNumber,jdbcType=VARCHAR}, #{addressIdNumber,jdbcType=VARCHAR}, 
+      #{setUpDate,jdbcType=TIMESTAMP}, #{versionNumber,jdbcType=VARCHAR}, #{idx,jdbcType=VARCHAR}, 
+      #{effdt,jdbcType=TIMESTAMP}, #{leffdt,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ecarpo.bms.eas.server.orgadmin.entity.EasOrgAdminDO">
+    <!-- @mbg.generated 2019-06-13 14:43:43 -->
+    insert into eas_org_admin
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="reserveItemFirstNumber != null">
+        reserve_item_first_number,
+      </if>
+      <if test="registeredCapital != null">
+        registered_capital,
+      </if>
+      <if test="companyIdName != null">
+        company_id_name,
+      </if>
+      <if test="companyIdNumber != null">
+        company_id_number,
+      </if>
+      <if test="isEntity != null">
+        is_entity,
+      </if>
+      <if test="phoneNumber != null">
+        phone_number,
+      </if>
+      <if test="orgcode != null">
+        orgCode,
+      </if>
+      <if test="officeIdNumber != null">
+        office_id_number,
+      </if>
+      <if test="levelSixGroupIdName != null">
+        level_six_group_id_name,
+      </if>
+      <if test="isChurchyard != null">
+        is_churchyard,
+      </if>
+      <if test="levelFourGroupIdNumber != null">
+        level_four_group_id_number,
+      </if>
+      <if test="adminAddress != null">
+        admin_address,
+      </if>
+      <if test="areaIdNumber != null">
+        area_id_number,
+      </if>
+      <if test="layerTypeIdName != null">
+        layer_type_id_name,
+      </if>
+      <if test="orgPropertyIdName != null">
+        org_property_id_name,
+      </if>
+      <if test="layerTypeIdNumber != null">
+        layer_type_id_number,
+      </if>
+      <if test="reserveFieldFirst != null">
+        reserve_field_first,
+      </if>
+      <if test="delegateHrIdNumber != null">
+        delegate_hr_id_number,
+      </if>
+      <if test="jobSystemIdNumber != null">
+        job_system_id_number,
+      </if>
+      <if test="territory != null">
+        territory,
+      </if>
+      <if test="sortCode != null">
+        sort_code,
+      </if>
+      <if test="registeredCode != null">
+        registered_code,
+      </if>
+      <if test="levelFourGroupIdName != null">
+        level_four_group_id_name,
+      </if>
+      <if test="principalIdName != null">
+        principal_id_name,
+      </if>
+      <if test="isIndependence != null">
+        is_independence,
+      </if>
+      <if test="areaIdName != null">
+        area_id_name,
+      </if>
+      <if test="registTypeIdNumber != null">
+        regist_type_id_number,
+      </if>
+      <if test="departmentIdName != null">
+        department_id_name,
+      </if>
+      <if test="isStartShr != null">
+        is_start_shr,
+      </if>
+      <if test="taxNumber != null">
+        tax_number,
+      </if>
+      <if test="delegateHrIdName != null">
+        delegate_hr_id_name,
+      </if>
+      <if test="reserveItemSecondName != null">
+        reserve_item_second_name,
+      </if>
+      <if test="orgFunctionIdName != null">
+        org_function_id_name,
+      </if>
+      <if test="reserveFieldSecond != null">
+        reserve_field_second,
+      </if>
+      <if test="orgPropertyIdNumber != null">
+        org_property_id_number,
+      </if>
+      <if test="principalIdNumber != null">
+        principal_id_number,
+      </if>
+      <if test="baseDuty != null">
+        base_duty,
+      </if>
+      <if test="responPositionIdNumber != null">
+        respon_position_id_number,
+      </if>
+      <if test="endUpDate != null">
+        end_up_date,
+      </if>
+      <if test="zipCode != null">
+        zip_code,
+      </if>
+      <if test="levelFiveGroupIdNumber != null">
+        level_five_group_id_number,
+      </if>
+      <if test="reserveItemSecondNumber != null">
+        reserve_item_second_number,
+      </if>
+      <if test="responPositionIdName != null">
+        respon_position_id_name,
+      </if>
+      <if test="reserveItemFirstName != null">
+        reserve_item_first_name,
+      </if>
+      <if test="fax != null">
+        fax,
+      </if>
+      <if test="juridicalPersonIdNumber != null">
+        juridical_person_id_number,
+      </if>
+      <if test="officeIdName != null">
+        office_id_name,
+      </if>
+      <if test="industryIdName != null">
+        industry_id_name,
+      </if>
+      <if test="juridicalPersonIdName != null">
+        juridical_person_id_name,
+      </if>
+      <if test="industryIdNumber != null">
+        industry_id_number,
+      </if>
+      <if test="levelFiveGroupIdName != null">
+        level_five_group_id_name,
+      </if>
+      <if test="historyRelateId != null">
+        history_relate_id,
+      </if>
+      <if test="registTypeIdName != null">
+        regist_type_id_name,
+      </if>
+      <if test="isJuridicalCompany != null">
+        is_juridical_company,
+      </if>
+      <if test="levelSixGroupIdNumber != null">
+        level_six_group_id_number,
+      </if>
+      <if test="jobSystemIdName != null">
+        job_system_id_name,
+      </if>
+      <if test="departmentIdNumber != null">
+        department_id_number,
+      </if>
+      <if test="layerIdName != null">
+        layer_id_name,
+      </if>
+      <if test="isVirtual != null">
+        is_virtual,
+      </if>
+      <if test="orgFunctionIdNumber != null">
+        org_function_id_number,
+      </if>
+      <if test="economicType != null">
+        economic_type,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="isPurchaseOrgUnit != null">
+        is_purchase_org_unit,
+      </if>
+      <if test="isGrouping != null">
+        is_grouping,
+      </if>
+      <if test="lastUpdateTime != null">
+        last_update_time,
+      </if>
+      <if test="lastUpdateUserIdNumber != null">
+        last_update_user_id_number,
+      </if>
+      <if test="isFreeze != null">
+        is_freeze,
+      </if>
+      <if test="propertySealUpDate != null">
+        property_seal_up_date,
+      </if>
+      <if test="isStart != null">
+        is_start,
+      </if>
+      <if test="isAdminOrgUnit != null">
+        is_admin_org_unit,
+      </if>
+      <if test="addressIdName != null">
+        address_id_name,
+      </if>
+      <if test="isTransportOrgUnit != null">
+        is_transport_org_unit,
+      </if>
+      <if test="isQualityOrgUnit != null">
+        is_quality_org_unit,
+      </if>
+      <if test="invalidDate != null">
+        invalid_date,
+      </if>
+      <if test="gradation != null">
+        gradation,
+      </if>
+      <if test="description != null">
+        description,
+      </if>
+      <if test="isSealUp != null">
+        is_seal_up,
+      </if>
+      <if test="define != null">
+        define,
+      </if>
+      <if test="isLeaf != null">
+        is_leaf,
+      </if>
+      <if test="lastUpdateUserIdName != null">
+        last_update_user_id_name,
+      </if>
+      <if test="isCompanyOrgUnit != null">
+        is_company_org_unit,
+      </if>
+      <if test="isHrOrgUnit != null">
+        is_hr_org_unit,
+      </if>
+      <if test="isUnion != null">
+        is_union,
+      </if>
+      <if test="isCostOrgUnit != null">
+        is_cost_org_unit,
+      </if>
+      <if test="creatorIdNumber != null">
+        creator_id_number,
+      </if>
+      <if test="simpleName != null">
+        simple_name,
+      </if>
+      <if test="isOuSealUp != null">
+        is_ou_seal_up,
+      </if>
+      <if test="orgTypeStr != null">
+        org_type_str,
+      </if>
+      <if test="creatorIdName != null">
+        creator_id_name,
+      </if>
+      <if test="effectDate != null">
+        effect_date,
+      </if>
+      <if test="isProfitOrgUnit != null">
+        is_profit_org_unit,
+      </if>
+      <if test="isCu != null">
+        is_cu,
+      </if>
+      <if test="encrypt != null">
+        encrypt,
+      </if>
+      <if test="parentIdName != null">
+        parent_id_name,
+      </if>
+      <if test="code != null">
+        code,
+      </if>
+      <if test="controlUnitIdNumber != null">
+        control_unit_id_number,
+      </if>
+      <if test="controlUnitIdName != null">
+        control_unit_id_name,
+      </if>
+      <if test="isSaleOrgUnit != null">
+        is_sale_org_unit,
+      </if>
+      <if test="isStorageOrgUnit != null">
+        is_storage_org_unit,
+      </if>
+      <if test="parentIdNumber != null">
+        parent_id_number,
+      </if>
+      <if test="displayName != null">
+        display_name,
+      </if>
+      <if test="longNumber != null">
+        long_number,
+      </if>
+      <if test="addressIdNumber != null">
+        address_id_number,
+      </if>
+      <if test="setUpDate != null">
+        set_up_date,
+      </if>
+      <if test="versionNumber != null">
+        version_number,
+      </if>
+      <if test="idx != null">
+        idx,
+      </if>
+      <if test="effdt != null">
+        effdt,
+      </if>
+      <if test="leffdt != null">
+        leffdt,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="reserveItemFirstNumber != null">
+        #{reserveItemFirstNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="registeredCapital != null">
+        #{registeredCapital,jdbcType=DECIMAL},
+      </if>
+      <if test="companyIdName != null">
+        #{companyIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="companyIdNumber != null">
+        #{companyIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="isEntity != null">
+        #{isEntity,jdbcType=TINYINT},
+      </if>
+      <if test="phoneNumber != null">
+        #{phoneNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="orgcode != null">
+        #{orgcode,jdbcType=VARCHAR},
+      </if>
+      <if test="officeIdNumber != null">
+        #{officeIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="levelSixGroupIdName != null">
+        #{levelSixGroupIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="isChurchyard != null">
+        #{isChurchyard,jdbcType=TINYINT},
+      </if>
+      <if test="levelFourGroupIdNumber != null">
+        #{levelFourGroupIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="adminAddress != null">
+        #{adminAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="areaIdNumber != null">
+        #{areaIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="layerTypeIdName != null">
+        #{layerTypeIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="orgPropertyIdName != null">
+        #{orgPropertyIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="layerTypeIdNumber != null">
+        #{layerTypeIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="reserveFieldFirst != null">
+        #{reserveFieldFirst,jdbcType=VARCHAR},
+      </if>
+      <if test="delegateHrIdNumber != null">
+        #{delegateHrIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="jobSystemIdNumber != null">
+        #{jobSystemIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="territory != null">
+        #{territory,jdbcType=VARCHAR},
+      </if>
+      <if test="sortCode != null">
+        #{sortCode,jdbcType=VARCHAR},
+      </if>
+      <if test="registeredCode != null">
+        #{registeredCode,jdbcType=VARCHAR},
+      </if>
+      <if test="levelFourGroupIdName != null">
+        #{levelFourGroupIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="principalIdName != null">
+        #{principalIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="isIndependence != null">
+        #{isIndependence,jdbcType=TINYINT},
+      </if>
+      <if test="areaIdName != null">
+        #{areaIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="registTypeIdNumber != null">
+        #{registTypeIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="departmentIdName != null">
+        #{departmentIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="isStartShr != null">
+        #{isStartShr,jdbcType=TINYINT},
+      </if>
+      <if test="taxNumber != null">
+        #{taxNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="delegateHrIdName != null">
+        #{delegateHrIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="reserveItemSecondName != null">
+        #{reserveItemSecondName,jdbcType=VARCHAR},
+      </if>
+      <if test="orgFunctionIdName != null">
+        #{orgFunctionIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="reserveFieldSecond != null">
+        #{reserveFieldSecond,jdbcType=VARCHAR},
+      </if>
+      <if test="orgPropertyIdNumber != null">
+        #{orgPropertyIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="principalIdNumber != null">
+        #{principalIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="baseDuty != null">
+        #{baseDuty,jdbcType=VARCHAR},
+      </if>
+      <if test="responPositionIdNumber != null">
+        #{responPositionIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="endUpDate != null">
+        #{endUpDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="zipCode != null">
+        #{zipCode,jdbcType=VARCHAR},
+      </if>
+      <if test="levelFiveGroupIdNumber != null">
+        #{levelFiveGroupIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="reserveItemSecondNumber != null">
+        #{reserveItemSecondNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="responPositionIdName != null">
+        #{responPositionIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="reserveItemFirstName != null">
+        #{reserveItemFirstName,jdbcType=VARCHAR},
+      </if>
+      <if test="fax != null">
+        #{fax,jdbcType=VARCHAR},
+      </if>
+      <if test="juridicalPersonIdNumber != null">
+        #{juridicalPersonIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="officeIdName != null">
+        #{officeIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="industryIdName != null">
+        #{industryIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="juridicalPersonIdName != null">
+        #{juridicalPersonIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="industryIdNumber != null">
+        #{industryIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="levelFiveGroupIdName != null">
+        #{levelFiveGroupIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="historyRelateId != null">
+        #{historyRelateId,jdbcType=VARCHAR},
+      </if>
+      <if test="registTypeIdName != null">
+        #{registTypeIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="isJuridicalCompany != null">
+        #{isJuridicalCompany,jdbcType=TINYINT},
+      </if>
+      <if test="levelSixGroupIdNumber != null">
+        #{levelSixGroupIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="jobSystemIdName != null">
+        #{jobSystemIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="departmentIdNumber != null">
+        #{departmentIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="layerIdName != null">
+        #{layerIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="isVirtual != null">
+        #{isVirtual,jdbcType=TINYINT},
+      </if>
+      <if test="orgFunctionIdNumber != null">
+        #{orgFunctionIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="economicType != null">
+        #{economicType,jdbcType=TINYINT},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isPurchaseOrgUnit != null">
+        #{isPurchaseOrgUnit,jdbcType=TINYINT},
+      </if>
+      <if test="isGrouping != null">
+        #{isGrouping,jdbcType=TINYINT},
+      </if>
+      <if test="lastUpdateTime != null">
+        #{lastUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastUpdateUserIdNumber != null">
+        #{lastUpdateUserIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="isFreeze != null">
+        #{isFreeze,jdbcType=TINYINT},
+      </if>
+      <if test="propertySealUpDate != null">
+        #{propertySealUpDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isStart != null">
+        #{isStart,jdbcType=TINYINT},
+      </if>
+      <if test="isAdminOrgUnit != null">
+        #{isAdminOrgUnit,jdbcType=TINYINT},
+      </if>
+      <if test="addressIdName != null">
+        #{addressIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="isTransportOrgUnit != null">
+        #{isTransportOrgUnit,jdbcType=TINYINT},
+      </if>
+      <if test="isQualityOrgUnit != null">
+        #{isQualityOrgUnit,jdbcType=TINYINT},
+      </if>
+      <if test="invalidDate != null">
+        #{invalidDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gradation != null">
+        #{gradation,jdbcType=TINYINT},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="isSealUp != null">
+        #{isSealUp,jdbcType=TINYINT},
+      </if>
+      <if test="define != null">
+        #{define,jdbcType=VARCHAR},
+      </if>
+      <if test="isLeaf != null">
+        #{isLeaf,jdbcType=TINYINT},
+      </if>
+      <if test="lastUpdateUserIdName != null">
+        #{lastUpdateUserIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="isCompanyOrgUnit != null">
+        #{isCompanyOrgUnit,jdbcType=TINYINT},
+      </if>
+      <if test="isHrOrgUnit != null">
+        #{isHrOrgUnit,jdbcType=TINYINT},
+      </if>
+      <if test="isUnion != null">
+        #{isUnion,jdbcType=TINYINT},
+      </if>
+      <if test="isCostOrgUnit != null">
+        #{isCostOrgUnit,jdbcType=TINYINT},
+      </if>
+      <if test="creatorIdNumber != null">
+        #{creatorIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="simpleName != null">
+        #{simpleName,jdbcType=VARCHAR},
+      </if>
+      <if test="isOuSealUp != null">
+        #{isOuSealUp,jdbcType=TINYINT},
+      </if>
+      <if test="orgTypeStr != null">
+        #{orgTypeStr,jdbcType=VARCHAR},
+      </if>
+      <if test="creatorIdName != null">
+        #{creatorIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="effectDate != null">
+        #{effectDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isProfitOrgUnit != null">
+        #{isProfitOrgUnit,jdbcType=TINYINT},
+      </if>
+      <if test="isCu != null">
+        #{isCu,jdbcType=TINYINT},
+      </if>
+      <if test="encrypt != null">
+        #{encrypt,jdbcType=VARCHAR},
+      </if>
+      <if test="parentIdName != null">
+        #{parentIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="code != null">
+        #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="controlUnitIdNumber != null">
+        #{controlUnitIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="controlUnitIdName != null">
+        #{controlUnitIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="isSaleOrgUnit != null">
+        #{isSaleOrgUnit,jdbcType=TINYINT},
+      </if>
+      <if test="isStorageOrgUnit != null">
+        #{isStorageOrgUnit,jdbcType=TINYINT},
+      </if>
+      <if test="parentIdNumber != null">
+        #{parentIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="displayName != null">
+        #{displayName,jdbcType=VARCHAR},
+      </if>
+      <if test="longNumber != null">
+        #{longNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="addressIdNumber != null">
+        #{addressIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="setUpDate != null">
+        #{setUpDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="versionNumber != null">
+        #{versionNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="idx != null">
+        #{idx,jdbcType=VARCHAR},
+      </if>
+      <if test="effdt != null">
+        #{effdt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="leffdt != null">
+        #{leffdt,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ecarpo.bms.eas.server.orgadmin.entity.EasOrgAdminDO">
+    <!-- @mbg.generated 2019-06-13 14:43:43 -->
+    update eas_org_admin
+    <set>
+      <if test="reserveItemFirstNumber != null">
+        reserve_item_first_number = #{reserveItemFirstNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="registeredCapital != null">
+        registered_capital = #{registeredCapital,jdbcType=DECIMAL},
+      </if>
+      <if test="companyIdName != null">
+        company_id_name = #{companyIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="companyIdNumber != null">
+        company_id_number = #{companyIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="isEntity != null">
+        is_entity = #{isEntity,jdbcType=TINYINT},
+      </if>
+      <if test="phoneNumber != null">
+        phone_number = #{phoneNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="orgcode != null">
+        orgCode = #{orgcode,jdbcType=VARCHAR},
+      </if>
+      <if test="officeIdNumber != null">
+        office_id_number = #{officeIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="levelSixGroupIdName != null">
+        level_six_group_id_name = #{levelSixGroupIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="isChurchyard != null">
+        is_churchyard = #{isChurchyard,jdbcType=TINYINT},
+      </if>
+      <if test="levelFourGroupIdNumber != null">
+        level_four_group_id_number = #{levelFourGroupIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="adminAddress != null">
+        admin_address = #{adminAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="areaIdNumber != null">
+        area_id_number = #{areaIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="layerTypeIdName != null">
+        layer_type_id_name = #{layerTypeIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="orgPropertyIdName != null">
+        org_property_id_name = #{orgPropertyIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="layerTypeIdNumber != null">
+        layer_type_id_number = #{layerTypeIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="reserveFieldFirst != null">
+        reserve_field_first = #{reserveFieldFirst,jdbcType=VARCHAR},
+      </if>
+      <if test="delegateHrIdNumber != null">
+        delegate_hr_id_number = #{delegateHrIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="jobSystemIdNumber != null">
+        job_system_id_number = #{jobSystemIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="territory != null">
+        territory = #{territory,jdbcType=VARCHAR},
+      </if>
+      <if test="sortCode != null">
+        sort_code = #{sortCode,jdbcType=VARCHAR},
+      </if>
+      <if test="registeredCode != null">
+        registered_code = #{registeredCode,jdbcType=VARCHAR},
+      </if>
+      <if test="levelFourGroupIdName != null">
+        level_four_group_id_name = #{levelFourGroupIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="principalIdName != null">
+        principal_id_name = #{principalIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="isIndependence != null">
+        is_independence = #{isIndependence,jdbcType=TINYINT},
+      </if>
+      <if test="areaIdName != null">
+        area_id_name = #{areaIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="registTypeIdNumber != null">
+        regist_type_id_number = #{registTypeIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="departmentIdName != null">
+        department_id_name = #{departmentIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="isStartShr != null">
+        is_start_shr = #{isStartShr,jdbcType=TINYINT},
+      </if>
+      <if test="taxNumber != null">
+        tax_number = #{taxNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="delegateHrIdName != null">
+        delegate_hr_id_name = #{delegateHrIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="reserveItemSecondName != null">
+        reserve_item_second_name = #{reserveItemSecondName,jdbcType=VARCHAR},
+      </if>
+      <if test="orgFunctionIdName != null">
+        org_function_id_name = #{orgFunctionIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="reserveFieldSecond != null">
+        reserve_field_second = #{reserveFieldSecond,jdbcType=VARCHAR},
+      </if>
+      <if test="orgPropertyIdNumber != null">
+        org_property_id_number = #{orgPropertyIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="principalIdNumber != null">
+        principal_id_number = #{principalIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="baseDuty != null">
+        base_duty = #{baseDuty,jdbcType=VARCHAR},
+      </if>
+      <if test="responPositionIdNumber != null">
+        respon_position_id_number = #{responPositionIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="endUpDate != null">
+        end_up_date = #{endUpDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="zipCode != null">
+        zip_code = #{zipCode,jdbcType=VARCHAR},
+      </if>
+      <if test="levelFiveGroupIdNumber != null">
+        level_five_group_id_number = #{levelFiveGroupIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="reserveItemSecondNumber != null">
+        reserve_item_second_number = #{reserveItemSecondNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="responPositionIdName != null">
+        respon_position_id_name = #{responPositionIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="reserveItemFirstName != null">
+        reserve_item_first_name = #{reserveItemFirstName,jdbcType=VARCHAR},
+      </if>
+      <if test="fax != null">
+        fax = #{fax,jdbcType=VARCHAR},
+      </if>
+      <if test="juridicalPersonIdNumber != null">
+        juridical_person_id_number = #{juridicalPersonIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="officeIdName != null">
+        office_id_name = #{officeIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="industryIdName != null">
+        industry_id_name = #{industryIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="juridicalPersonIdName != null">
+        juridical_person_id_name = #{juridicalPersonIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="industryIdNumber != null">
+        industry_id_number = #{industryIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="levelFiveGroupIdName != null">
+        level_five_group_id_name = #{levelFiveGroupIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="historyRelateId != null">
+        history_relate_id = #{historyRelateId,jdbcType=VARCHAR},
+      </if>
+      <if test="registTypeIdName != null">
+        regist_type_id_name = #{registTypeIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="isJuridicalCompany != null">
+        is_juridical_company = #{isJuridicalCompany,jdbcType=TINYINT},
+      </if>
+      <if test="levelSixGroupIdNumber != null">
+        level_six_group_id_number = #{levelSixGroupIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="jobSystemIdName != null">
+        job_system_id_name = #{jobSystemIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="departmentIdNumber != null">
+        department_id_number = #{departmentIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="layerIdName != null">
+        layer_id_name = #{layerIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="isVirtual != null">
+        is_virtual = #{isVirtual,jdbcType=TINYINT},
+      </if>
+      <if test="orgFunctionIdNumber != null">
+        org_function_id_number = #{orgFunctionIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="economicType != null">
+        economic_type = #{economicType,jdbcType=TINYINT},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isPurchaseOrgUnit != null">
+        is_purchase_org_unit = #{isPurchaseOrgUnit,jdbcType=TINYINT},
+      </if>
+      <if test="isGrouping != null">
+        is_grouping = #{isGrouping,jdbcType=TINYINT},
+      </if>
+      <if test="lastUpdateTime != null">
+        last_update_time = #{lastUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastUpdateUserIdNumber != null">
+        last_update_user_id_number = #{lastUpdateUserIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="isFreeze != null">
+        is_freeze = #{isFreeze,jdbcType=TINYINT},
+      </if>
+      <if test="propertySealUpDate != null">
+        property_seal_up_date = #{propertySealUpDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isStart != null">
+        is_start = #{isStart,jdbcType=TINYINT},
+      </if>
+      <if test="isAdminOrgUnit != null">
+        is_admin_org_unit = #{isAdminOrgUnit,jdbcType=TINYINT},
+      </if>
+      <if test="addressIdName != null">
+        address_id_name = #{addressIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="isTransportOrgUnit != null">
+        is_transport_org_unit = #{isTransportOrgUnit,jdbcType=TINYINT},
+      </if>
+      <if test="isQualityOrgUnit != null">
+        is_quality_org_unit = #{isQualityOrgUnit,jdbcType=TINYINT},
+      </if>
+      <if test="invalidDate != null">
+        invalid_date = #{invalidDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gradation != null">
+        gradation = #{gradation,jdbcType=TINYINT},
+      </if>
+      <if test="description != null">
+        description = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="isSealUp != null">
+        is_seal_up = #{isSealUp,jdbcType=TINYINT},
+      </if>
+      <if test="define != null">
+        define = #{define,jdbcType=VARCHAR},
+      </if>
+      <if test="isLeaf != null">
+        is_leaf = #{isLeaf,jdbcType=TINYINT},
+      </if>
+      <if test="lastUpdateUserIdName != null">
+        last_update_user_id_name = #{lastUpdateUserIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="isCompanyOrgUnit != null">
+        is_company_org_unit = #{isCompanyOrgUnit,jdbcType=TINYINT},
+      </if>
+      <if test="isHrOrgUnit != null">
+        is_hr_org_unit = #{isHrOrgUnit,jdbcType=TINYINT},
+      </if>
+      <if test="isUnion != null">
+        is_union = #{isUnion,jdbcType=TINYINT},
+      </if>
+      <if test="isCostOrgUnit != null">
+        is_cost_org_unit = #{isCostOrgUnit,jdbcType=TINYINT},
+      </if>
+      <if test="creatorIdNumber != null">
+        creator_id_number = #{creatorIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="simpleName != null">
+        simple_name = #{simpleName,jdbcType=VARCHAR},
+      </if>
+      <if test="isOuSealUp != null">
+        is_ou_seal_up = #{isOuSealUp,jdbcType=TINYINT},
+      </if>
+      <if test="orgTypeStr != null">
+        org_type_str = #{orgTypeStr,jdbcType=VARCHAR},
+      </if>
+      <if test="creatorIdName != null">
+        creator_id_name = #{creatorIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="effectDate != null">
+        effect_date = #{effectDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isProfitOrgUnit != null">
+        is_profit_org_unit = #{isProfitOrgUnit,jdbcType=TINYINT},
+      </if>
+      <if test="isCu != null">
+        is_cu = #{isCu,jdbcType=TINYINT},
+      </if>
+      <if test="encrypt != null">
+        encrypt = #{encrypt,jdbcType=VARCHAR},
+      </if>
+      <if test="parentIdName != null">
+        parent_id_name = #{parentIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="code != null">
+        code = #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="controlUnitIdNumber != null">
+        control_unit_id_number = #{controlUnitIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="controlUnitIdName != null">
+        control_unit_id_name = #{controlUnitIdName,jdbcType=VARCHAR},
+      </if>
+      <if test="isSaleOrgUnit != null">
+        is_sale_org_unit = #{isSaleOrgUnit,jdbcType=TINYINT},
+      </if>
+      <if test="isStorageOrgUnit != null">
+        is_storage_org_unit = #{isStorageOrgUnit,jdbcType=TINYINT},
+      </if>
+      <if test="parentIdNumber != null">
+        parent_id_number = #{parentIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="displayName != null">
+        display_name = #{displayName,jdbcType=VARCHAR},
+      </if>
+      <if test="longNumber != null">
+        long_number = #{longNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="addressIdNumber != null">
+        address_id_number = #{addressIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="setUpDate != null">
+        set_up_date = #{setUpDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="versionNumber != null">
+        version_number = #{versionNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="idx != null">
+        idx = #{idx,jdbcType=VARCHAR},
+      </if>
+      <if test="effdt != null">
+        effdt = #{effdt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="leffdt != null">
+        leffdt = #{leffdt,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ecarpo.bms.eas.server.orgadmin.entity.EasOrgAdminDO">
+    <!-- @mbg.generated 2019-06-13 14:43:43 -->
+    update eas_org_admin
+    set reserve_item_first_number = #{reserveItemFirstNumber,jdbcType=VARCHAR},
+      registered_capital = #{registeredCapital,jdbcType=DECIMAL},
+      company_id_name = #{companyIdName,jdbcType=VARCHAR},
+      company_id_number = #{companyIdNumber,jdbcType=VARCHAR},
+      is_entity = #{isEntity,jdbcType=TINYINT},
+      phone_number = #{phoneNumber,jdbcType=VARCHAR},
+      orgCode = #{orgcode,jdbcType=VARCHAR},
+      office_id_number = #{officeIdNumber,jdbcType=VARCHAR},
+      level_six_group_id_name = #{levelSixGroupIdName,jdbcType=VARCHAR},
+      is_churchyard = #{isChurchyard,jdbcType=TINYINT},
+      level_four_group_id_number = #{levelFourGroupIdNumber,jdbcType=VARCHAR},
+      admin_address = #{adminAddress,jdbcType=VARCHAR},
+      area_id_number = #{areaIdNumber,jdbcType=VARCHAR},
+      layer_type_id_name = #{layerTypeIdName,jdbcType=VARCHAR},
+      org_property_id_name = #{orgPropertyIdName,jdbcType=VARCHAR},
+      layer_type_id_number = #{layerTypeIdNumber,jdbcType=VARCHAR},
+      reserve_field_first = #{reserveFieldFirst,jdbcType=VARCHAR},
+      delegate_hr_id_number = #{delegateHrIdNumber,jdbcType=VARCHAR},
+      job_system_id_number = #{jobSystemIdNumber,jdbcType=VARCHAR},
+      territory = #{territory,jdbcType=VARCHAR},
+      sort_code = #{sortCode,jdbcType=VARCHAR},
+      registered_code = #{registeredCode,jdbcType=VARCHAR},
+      level_four_group_id_name = #{levelFourGroupIdName,jdbcType=VARCHAR},
+      principal_id_name = #{principalIdName,jdbcType=VARCHAR},
+      is_independence = #{isIndependence,jdbcType=TINYINT},
+      area_id_name = #{areaIdName,jdbcType=VARCHAR},
+      regist_type_id_number = #{registTypeIdNumber,jdbcType=VARCHAR},
+      department_id_name = #{departmentIdName,jdbcType=VARCHAR},
+      is_start_shr = #{isStartShr,jdbcType=TINYINT},
+      tax_number = #{taxNumber,jdbcType=VARCHAR},
+      delegate_hr_id_name = #{delegateHrIdName,jdbcType=VARCHAR},
+      reserve_item_second_name = #{reserveItemSecondName,jdbcType=VARCHAR},
+      org_function_id_name = #{orgFunctionIdName,jdbcType=VARCHAR},
+      reserve_field_second = #{reserveFieldSecond,jdbcType=VARCHAR},
+      org_property_id_number = #{orgPropertyIdNumber,jdbcType=VARCHAR},
+      principal_id_number = #{principalIdNumber,jdbcType=VARCHAR},
+      base_duty = #{baseDuty,jdbcType=VARCHAR},
+      respon_position_id_number = #{responPositionIdNumber,jdbcType=VARCHAR},
+      end_up_date = #{endUpDate,jdbcType=TIMESTAMP},
+      zip_code = #{zipCode,jdbcType=VARCHAR},
+      level_five_group_id_number = #{levelFiveGroupIdNumber,jdbcType=VARCHAR},
+      reserve_item_second_number = #{reserveItemSecondNumber,jdbcType=VARCHAR},
+      respon_position_id_name = #{responPositionIdName,jdbcType=VARCHAR},
+      reserve_item_first_name = #{reserveItemFirstName,jdbcType=VARCHAR},
+      fax = #{fax,jdbcType=VARCHAR},
+      juridical_person_id_number = #{juridicalPersonIdNumber,jdbcType=VARCHAR},
+      office_id_name = #{officeIdName,jdbcType=VARCHAR},
+      industry_id_name = #{industryIdName,jdbcType=VARCHAR},
+      juridical_person_id_name = #{juridicalPersonIdName,jdbcType=VARCHAR},
+      industry_id_number = #{industryIdNumber,jdbcType=VARCHAR},
+      level_five_group_id_name = #{levelFiveGroupIdName,jdbcType=VARCHAR},
+      history_relate_id = #{historyRelateId,jdbcType=VARCHAR},
+      regist_type_id_name = #{registTypeIdName,jdbcType=VARCHAR},
+      is_juridical_company = #{isJuridicalCompany,jdbcType=TINYINT},
+      level_six_group_id_number = #{levelSixGroupIdNumber,jdbcType=VARCHAR},
+      job_system_id_name = #{jobSystemIdName,jdbcType=VARCHAR},
+      department_id_number = #{departmentIdNumber,jdbcType=VARCHAR},
+      layer_id_name = #{layerIdName,jdbcType=VARCHAR},
+      is_virtual = #{isVirtual,jdbcType=TINYINT},
+      org_function_id_number = #{orgFunctionIdNumber,jdbcType=VARCHAR},
+      economic_type = #{economicType,jdbcType=TINYINT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      is_purchase_org_unit = #{isPurchaseOrgUnit,jdbcType=TINYINT},
+      is_grouping = #{isGrouping,jdbcType=TINYINT},
+      last_update_time = #{lastUpdateTime,jdbcType=TIMESTAMP},
+      last_update_user_id_number = #{lastUpdateUserIdNumber,jdbcType=VARCHAR},
+      is_freeze = #{isFreeze,jdbcType=TINYINT},
+      property_seal_up_date = #{propertySealUpDate,jdbcType=TIMESTAMP},
+      is_start = #{isStart,jdbcType=TINYINT},
+      is_admin_org_unit = #{isAdminOrgUnit,jdbcType=TINYINT},
+      address_id_name = #{addressIdName,jdbcType=VARCHAR},
+      is_transport_org_unit = #{isTransportOrgUnit,jdbcType=TINYINT},
+      is_quality_org_unit = #{isQualityOrgUnit,jdbcType=TINYINT},
+      invalid_date = #{invalidDate,jdbcType=TIMESTAMP},
+      gradation = #{gradation,jdbcType=TINYINT},
+      description = #{description,jdbcType=VARCHAR},
+      is_seal_up = #{isSealUp,jdbcType=TINYINT},
+      define = #{define,jdbcType=VARCHAR},
+      is_leaf = #{isLeaf,jdbcType=TINYINT},
+      last_update_user_id_name = #{lastUpdateUserIdName,jdbcType=VARCHAR},
+      is_company_org_unit = #{isCompanyOrgUnit,jdbcType=TINYINT},
+      is_hr_org_unit = #{isHrOrgUnit,jdbcType=TINYINT},
+      is_union = #{isUnion,jdbcType=TINYINT},
+      is_cost_org_unit = #{isCostOrgUnit,jdbcType=TINYINT},
+      creator_id_number = #{creatorIdNumber,jdbcType=VARCHAR},
+      simple_name = #{simpleName,jdbcType=VARCHAR},
+      is_ou_seal_up = #{isOuSealUp,jdbcType=TINYINT},
+      org_type_str = #{orgTypeStr,jdbcType=VARCHAR},
+      creator_id_name = #{creatorIdName,jdbcType=VARCHAR},
+      effect_date = #{effectDate,jdbcType=TIMESTAMP},
+      is_profit_org_unit = #{isProfitOrgUnit,jdbcType=TINYINT},
+      is_cu = #{isCu,jdbcType=TINYINT},
+      encrypt = #{encrypt,jdbcType=VARCHAR},
+      parent_id_name = #{parentIdName,jdbcType=VARCHAR},
+      code = #{code,jdbcType=VARCHAR},
+      control_unit_id_number = #{controlUnitIdNumber,jdbcType=VARCHAR},
+      control_unit_id_name = #{controlUnitIdName,jdbcType=VARCHAR},
+      is_sale_org_unit = #{isSaleOrgUnit,jdbcType=TINYINT},
+      is_storage_org_unit = #{isStorageOrgUnit,jdbcType=TINYINT},
+      parent_id_number = #{parentIdNumber,jdbcType=VARCHAR},
+      display_name = #{displayName,jdbcType=VARCHAR},
+      long_number = #{longNumber,jdbcType=VARCHAR},
+      address_id_number = #{addressIdNumber,jdbcType=VARCHAR},
+      set_up_date = #{setUpDate,jdbcType=TIMESTAMP},
+      version_number = #{versionNumber,jdbcType=VARCHAR},
+      idx = #{idx,jdbcType=VARCHAR},
+      effdt = #{effdt,jdbcType=TIMESTAMP},
+      leffdt = #{leffdt,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+
+  <!--id获取DO   lhf 2019.06.13  -->
+  <select id="selectById" resultType="com.ecarpo.bms.eas.server.orgadmin.entity.EasOrgAdminDO">
+    select
+      <include refid="Base_Column_List"/>
+    from
+      eas_org_admin
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+</mapper>
