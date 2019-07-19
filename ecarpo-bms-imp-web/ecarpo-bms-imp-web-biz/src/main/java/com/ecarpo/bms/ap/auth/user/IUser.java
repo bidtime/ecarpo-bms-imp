@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.bidtime.session.state.SessionLoginState;
 import org.bidtime.session.state.StateEnum;
 
-import com.ecarpo.bms.ap.auth.user.dto.UserPwdDTO;
+import com.ecarpo.bms.eas.server.user.dto.UserPwdDTO;
 import com.ecarpo.framework.model.ResultDTO;
 
 /**

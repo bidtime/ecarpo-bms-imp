@@ -10,7 +10,8 @@ import org.bidtime.session.state.StateEnum;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.ecarpo.bms.ap.auth.user.dto.UserPwdDTO;
+import com.ecarpo.bms.eas.server.user.dto.UserPwdDTO;
+import com.ecarpo.bms.eas.server.user.service.EasUserService;
 import com.ecarpo.framework.model.ResultDTO;
 
 /**
@@ -24,6 +25,9 @@ public class UserImpl implements IUser {
   
   @Autowired
   private HttpUserRequest userRequest;
+  
+  @Autowired
+  private EasUserService userService;
 
   static {
     user.setUserId(2L);
@@ -42,7 +46,7 @@ public class UserImpl implements IUser {
 
   @Override
   public ResultDTO<?> login(HttpServletRequest req, HttpServletResponse res, UserPwdDTO dto) throws RuntimeException {
-    if (!dto.getUser().equals("eas_sys")) {
+    if (userService.login(dto).isSuccess()) {
       return ResultDTO.error("用户名或密码不正确");
     }
     userRequest.login(req, res, user);

@@ -2,16 +2,15 @@
 <!DOCTYPE generatorConfiguration
   PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
   "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
-
 <generatorConfiguration>
-  <context id="test1" targetRuntime="MyBatis3">
+  <context id="MySql" targetRuntime="MyBatis3">
 
     <property name="javaFileEncoding" value="UTF-8" />
     <property name="autoDelimitKeywords" value="false" />
 
-
-    <plugin type="com.ecarpo.framework.mybatis.generator.FormatMapperPlugin"></plugin>
-
+    <!--
+    <plugin type="com.ecarpo.framework.mybatis.generator.MybatisSerializablePlugin"></plugin>
+    -->
 
     <commentGenerator type="com.ecarpo.framework.mybatis.generator.MybatisCommentGenerator">
       <property name="addRemarkComments" value="true" />
@@ -19,8 +18,8 @@
     </commentGenerator>
 
     <!-- dbms -->
-    <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://172.16.200.238:13306/ecarpo_bms_gp_5.5_fs_fix"
-                    userId="root" password="123456">
+    <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://172.16.200.238:13306/spring_demo"
+      userId="root" password="123456">
     </jdbcConnection>
 
 
@@ -29,29 +28,29 @@
     </javaTypeResolver>
 
     <!-- dao -->
-    <!-- eas_person_positon dao begin -->
+    <!-- dms_storeroom_shelflocation dao begin -->
 
-    <javaModelGenerator targetPackage="com.ecarpo.bms.eas.server.personpositon.entity" targetProject="E:\code\back-end\ecarpo-bms\ecarpo-bms-eas\ecarpo-bms-eas-server\ecarpo-bms-eas-server-provider\src\main\java">
+    <javaModelGenerator targetPackage="com.ecarpo.bms.eas.server.storeroomshelflocation.entity" targetProject="/home/working/git/github/bidtime/java/ecarpo-bms-imp/ecarpo-bms-imp-server/ecarpo-bms-imp-server-provider/src/main/java">
       <property name="enableSubPackages" value="true" />
       <property name="trimStrings" value="true" />
       <property name="immutable" value="false"/>
     </javaModelGenerator>
 
-    <sqlMapGenerator targetPackage="com.ecarpo.bms.eas.server.personpositon.dao" targetProject="E:\code\back-end\ecarpo-bms\ecarpo-bms-eas\ecarpo-bms-eas-server\ecarpo-bms-eas-server-provider\src\main\java">
+    <sqlMapGenerator targetPackage="com.ecarpo.bms.eas.server.storeroomshelflocation.dao" targetProject="/home/working/git/github/bidtime/java/ecarpo-bms-imp/ecarpo-bms-imp-server/ecarpo-bms-imp-server-provider/src/main/java">
       <property name="enableSubPackages" value="true" />
     </sqlMapGenerator>
 
-    <javaClientGenerator type="XMLMAPPER" targetPackage="com.ecarpo.bms.eas.server.personpositon.dao" targetProject="E:\code\back-end\ecarpo-bms\ecarpo-bms-eas\ecarpo-bms-eas-server\ecarpo-bms-eas-server-provider\src\main\java">
+    <javaClientGenerator type="XMLMAPPER" targetPackage="com.ecarpo.bms.eas.server.storeroomshelflocation.dao" targetProject="/home/working/git/github/bidtime/java/ecarpo-bms-imp/ecarpo-bms-imp-server/ecarpo-bms-imp-server-provider/src/main/java">
       <property name="enableSubPackages" value="true" />
     </javaClientGenerator>
 
-    <table tableName="eas_person_positon" domainObjectName="EasPersonPositonDO" mapperName="EasPersonPositonMapper"
-           enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
-           selectByExampleQueryId="false" enableUpdateByExample="false">
+    <table tableName="dms_storeroom_shelflocation" domainObjectName="DmsStoreroomShelflocationDO" mapperName="DmsStoreroomShelflocationMapper"
+      enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
+      selectByExampleQueryId="false" enableUpdateByExample="false">
       <property name="useActualColumnNames" value="false" />
     </table>
 
-    <!-- eas_person_positon dao begin -->
+    <!-- dms_storeroom_shelflocation dao begin -->
 
   </context>
 </generatorConfiguration>

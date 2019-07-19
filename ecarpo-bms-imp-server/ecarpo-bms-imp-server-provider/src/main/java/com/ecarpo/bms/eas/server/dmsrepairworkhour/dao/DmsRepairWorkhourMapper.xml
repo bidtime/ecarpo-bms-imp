@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ecarpo.bms.eas.server.storeroomshelflocation.dao.DmsStoreroomShelflocationMapper">
+  <resultMap id="BaseResultMap" type="com.ecarpo.bms.eas.server.storeroomshelflocation.entity.DmsStoreroomShelflocationDO">
+    <!-- @mbg.generated 2019-07-19 10:57:57 -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="store_id" jdbcType="INTEGER" property="storeId" />
+    <result column="location_code" jdbcType="VARCHAR" property="locationCode" />
+    <result column="location_name" jdbcType="VARCHAR" property="locationName" />
+    <result column="location_area" jdbcType="VARCHAR" property="locationArea" />
+    <result column="function_type" jdbcType="TINYINT" property="functionType" />
+    <result column="occupy_status" jdbcType="TINYINT" property="occupyStatus" />
+    <result column="room_type" jdbcType="CHAR" property="roomType" />
+    <result column="from_store_id" jdbcType="INTEGER" property="fromStoreId" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="status" jdbcType="TINYINT" property="status" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!-- @mbg.generated 2019-07-19 10:57:57 -->
+    id, store_id, location_code, location_name, location_area, function_type, occupy_status, 
+    room_type, from_store_id, remark, status
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!-- @mbg.generated 2019-07-19 10:57:57 -->
+    select 
+    <include refid="Base_Column_List" />
+    from dms_storeroom_shelflocation
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!-- @mbg.generated 2019-07-19 10:57:57 -->
+    delete from dms_storeroom_shelflocation
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.ecarpo.bms.eas.server.storeroomshelflocation.entity.DmsStoreroomShelflocationDO">
+    <!-- @mbg.generated 2019-07-19 10:57:57 -->
+    insert into dms_storeroom_shelflocation (id, store_id, location_code, 
+      location_name, location_area, function_type, 
+      occupy_status, room_type, from_store_id, 
+      remark, status)
+    values (#{id,jdbcType=INTEGER}, #{storeId,jdbcType=INTEGER}, #{locationCode,jdbcType=VARCHAR}, 
+      #{locationName,jdbcType=VARCHAR}, #{locationArea,jdbcType=VARCHAR}, #{functionType,jdbcType=TINYINT}, 
+      #{occupyStatus,jdbcType=TINYINT}, #{roomType,jdbcType=CHAR}, #{fromStoreId,jdbcType=INTEGER}, 
+      #{remark,jdbcType=VARCHAR}, #{status,jdbcType=TINYINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ecarpo.bms.eas.server.storeroomshelflocation.entity.DmsStoreroomShelflocationDO">
+    <!-- @mbg.generated 2019-07-19 10:57:57 -->
+    insert into dms_storeroom_shelflocation
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="storeId != null">
+        store_id,
+      </if>
+      <if test="locationCode != null">
+        location_code,
+      </if>
+      <if test="locationName != null">
+        location_name,
+      </if>
+      <if test="locationArea != null">
+        location_area,
+      </if>
+      <if test="functionType != null">
+        function_type,
+      </if>
+      <if test="occupyStatus != null">
+        occupy_status,
+      </if>
+      <if test="roomType != null">
+        room_type,
+      </if>
+      <if test="fromStoreId != null">
+        from_store_id,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="storeId != null">
+        #{storeId,jdbcType=INTEGER},
+      </if>
+      <if test="locationCode != null">
+        #{locationCode,jdbcType=VARCHAR},
+      </if>
+      <if test="locationName != null">
+        #{locationName,jdbcType=VARCHAR},
+      </if>
+      <if test="locationArea != null">
+        #{locationArea,jdbcType=VARCHAR},
+      </if>
+      <if test="functionType != null">
+        #{functionType,jdbcType=TINYINT},
+      </if>
+      <if test="occupyStatus != null">
+        #{occupyStatus,jdbcType=TINYINT},
+      </if>
+      <if test="roomType != null">
+        #{roomType,jdbcType=CHAR},
+      </if>
+      <if test="fromStoreId != null">
+        #{fromStoreId,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=TINYINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ecarpo.bms.eas.server.storeroomshelflocation.entity.DmsStoreroomShelflocationDO">
+    <!-- @mbg.generated 2019-07-19 10:57:57 -->
+    update dms_storeroom_shelflocation
+    <set>
+      <if test="storeId != null">
+        store_id = #{storeId,jdbcType=INTEGER},
+      </if>
+      <if test="locationCode != null">
+        location_code = #{locationCode,jdbcType=VARCHAR},
+      </if>
+      <if test="locationName != null">
+        location_name = #{locationName,jdbcType=VARCHAR},
+      </if>
+      <if test="locationArea != null">
+        location_area = #{locationArea,jdbcType=VARCHAR},
+      </if>
+      <if test="functionType != null">
+        function_type = #{functionType,jdbcType=TINYINT},
+      </if>
+      <if test="occupyStatus != null">
+        occupy_status = #{occupyStatus,jdbcType=TINYINT},
+      </if>
+      <if test="roomType != null">
+        room_type = #{roomType,jdbcType=CHAR},
+      </if>
+      <if test="fromStoreId != null">
+        from_store_id = #{fromStoreId,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=TINYINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ecarpo.bms.eas.server.storeroomshelflocation.entity.DmsStoreroomShelflocationDO">
+    <!-- @mbg.generated 2019-07-19 10:57:57 -->
+    update dms_storeroom_shelflocation
+    set store_id = #{storeId,jdbcType=INTEGER},
+      location_code = #{locationCode,jdbcType=VARCHAR},
+      location_name = #{locationName,jdbcType=VARCHAR},
+      location_area = #{locationArea,jdbcType=VARCHAR},
+      function_type = #{functionType,jdbcType=TINYINT},
+      occupy_status = #{occupyStatus,jdbcType=TINYINT},
+      room_type = #{roomType,jdbcType=CHAR},
+      from_store_id = #{fromStoreId,jdbcType=INTEGER},
+      remark = #{remark,jdbcType=VARCHAR},
+      status = #{status,jdbcType=TINYINT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

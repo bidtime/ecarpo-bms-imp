@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ecarpo.bms.ap.auth.user.IUser;
-import com.ecarpo.bms.ap.auth.user.dto.UserPwdDTO;
+import com.ecarpo.bms.eas.server.user.dto.UserPwdDTO;
 import com.ecarpo.framework.model.ResultDTO;
 
 /**
