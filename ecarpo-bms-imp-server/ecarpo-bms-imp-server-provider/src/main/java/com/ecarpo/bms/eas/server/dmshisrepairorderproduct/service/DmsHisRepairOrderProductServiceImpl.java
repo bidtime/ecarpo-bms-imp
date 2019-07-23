@@ -7,10 +7,9 @@ package com.ecarpo.bms.eas.server.dmshisrepairorderproduct.service;
 import org.springframework.stereotype.Service;
 
 import com.ecarpo.bms.eas.server.dmshisrepairorderproduct.dao.DmsHisRepairOrderProductMapper;
+import com.ecarpo.bms.eas.server.dmshisrepairorderproduct.dto.DmsHisRepairOrderProductInsertDTO;
+import com.ecarpo.bms.eas.server.dmshisrepairorderproduct.dto.DmsHisRepairOrderProductUpdateDTO;
 import com.ecarpo.bms.eas.server.dmshisrepairorderproduct.entity.DmsHisRepairOrderProductDO;
-import com.ecarpo.bms.eas.server.dmsrepairworkhour.dto.DmsRepairWorkhourInsertDTO;
-import com.ecarpo.bms.eas.server.dmsrepairworkhour.dto.DmsRepairWorkhourUpdateDTO;
-import com.ecarpo.bms.eas.server.dmsrepairworkhour.service.DmsRepairWorkhourService;
 import com.ecarpo.framework.common.service.BaseImplement;
 import com.ecarpo.framework.model.ResultDTO;
 
@@ -20,15 +19,15 @@ import com.ecarpo.framework.model.ResultDTO;
  */
 @Service
 public class DmsHisRepairOrderProductServiceImpl extends
-  BaseImplement<DmsHisRepairOrderProductManager, DmsHisRepairOrderProductMapper, DmsHisRepairOrderProductDO> implements DmsRepairWorkhourService {
+  BaseImplement<DmsHisRepairOrderProductManager, DmsHisRepairOrderProductMapper, DmsHisRepairOrderProductDO> implements DmsHisRepairOrderProductService {
 
   @Override
-  public ResultDTO<Integer> insert(DmsRepairWorkhourInsertDTO dto) throws Exception {
+  public ResultDTO<Integer> insert(DmsHisRepairOrderProductInsertDTO dto) throws Exception {
     return super.insert(dto);
   }
 
   @Override
-  public ResultDTO<Integer> update(DmsRepairWorkhourUpdateDTO dto) throws Exception {
+  public ResultDTO<Integer> update(DmsHisRepairOrderProductUpdateDTO dto) throws Exception {
     return super.updateDTO(dto);
   }
   

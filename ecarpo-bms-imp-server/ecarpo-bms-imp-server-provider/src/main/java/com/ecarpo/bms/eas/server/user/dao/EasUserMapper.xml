@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.ecarpo.bms.ap.server.auth.user.dao.ApUserMapper">
-  <resultMap id="BaseResultMap" type="com.ecarpo.bms.ap.server.auth.user.entity.ApUserDO">
+<mapper namespace="com.ecarpo.bms.eas.server.user.dao.EasUserMapper">
+  <resultMap id="BaseResultMap" type="com.ecarpo.bms.eas.server.user.entity.EasUserDO">
     <!-- @mbg.generated 2018-11-20 18:31:30 -->
     <id column="user_id" jdbcType="BIGINT" property="userId" />
     <result column="depart_id" jdbcType="BIGINT" property="departId" />
@@ -53,7 +53,7 @@
     delete from ap_user
     where user_id = #{userId,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.ecarpo.bms.ap.server.auth.user.entity.ApUserDO">
+  <insert id="insert" parameterType="com.ecarpo.bms.eas.server.user.entity.EasUserDO">
     <!-- @mbg.generated 2018-11-20 18:31:30 -->
     insert into ap_user (user_id, depart_id, org_id, 
       org_type, user_code, user_name, 
@@ -76,7 +76,7 @@
       #{createTime,jdbcType=TIMESTAMP}, #{modifyTime,jdbcType=TIMESTAMP}, #{creatorId,jdbcType=BIGINT}, 
       #{modifierId,jdbcType=BIGINT}, #{delFlag,jdbcType=TINYINT})
   </insert>
-  <insert id="insertSelective" parameterType="com.ecarpo.bms.ap.server.auth.user.entity.ApUserDO">
+  <insert id="insertSelective" parameterType="com.ecarpo.bms.eas.server.user.entity.EasUserDO">
     <!-- @mbg.generated 2018-11-20 18:31:30 -->
     insert into ap_user
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -264,7 +264,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.ecarpo.bms.ap.server.auth.user.entity.ApUserDO">
+  <update id="updateByPrimaryKeySelective" parameterType="com.ecarpo.bms.eas.server.user.entity.EasUserDO">
     <!-- @mbg.generated 2018-11-20 18:31:30 -->
     update ap_user
     <set>
@@ -358,7 +358,7 @@
     </set>
     where user_id = #{userId,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.ecarpo.bms.ap.server.auth.user.entity.ApUserDO">
+  <update id="updateByPrimaryKey" parameterType="com.ecarpo.bms.eas.server.user.entity.EasUserDO">
     <!-- @mbg.generated 2018-11-20 18:31:30 -->
     update ap_user
     set depart_id = #{departId,jdbcType=BIGINT},
@@ -491,7 +491,7 @@
    <!--user define   -->
    
    <!--编码获取人员信息  xin 2019.07.15  -->
-   <select id="selectByEasNumber" resultType="com.ecarpo.bms.ap.server.auth.user.entity.ApUserDO">
+   <select id="selectByEasNumber" resultType="com.ecarpo.bms.eas.server.user.entity.EasUserDO">
      select
        <include refid="Base_Column_List"/>
      from 
