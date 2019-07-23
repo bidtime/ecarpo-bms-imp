@@ -9,14 +9,14 @@ import org.springframework.stereotype.Service;
 import com.ecarpo.bms.eas.server.user.dao.EasUserMapper;
 import com.ecarpo.bms.eas.server.user.dto.UserPwdDTO;
 import com.ecarpo.bms.eas.server.user.entity.EasUserDO;
-import com.ecarpo.framework.common.service.BaseManager2;
+import com.ecarpo.framework.common.service.BaseManager;
 
 /**
  * @author xinbeibei
  * @since 2019.06.04
  */
 @Service
-public class EasUserManager extends BaseManager2<EasUserMapper, EasUserDO> {
+public class EasUserManager extends BaseManager<EasUserMapper, EasUserDO> {
 
   /**
    * 编码获取人员信息

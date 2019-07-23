@@ -10,7 +10,7 @@ import com.ecarpo.bms.eas.server.storeroomshelflocation.dao.DmsStoreroomShelfloc
 import com.ecarpo.bms.eas.server.storeroomshelflocation.dto.DmsStoreroomShelflocationInsertDTO;
 import com.ecarpo.bms.eas.server.storeroomshelflocation.dto.DmsStoreroomShelflocationUpdateDTO;
 import com.ecarpo.bms.eas.server.storeroomshelflocation.entity.DmsStoreroomShelflocationDO;
-import com.ecarpo.framework.common.service.BaseServiceImpl2;
+import com.ecarpo.framework.common.service.BaseImplement;
 import com.ecarpo.framework.model.ResultDTO;
 
 /**
@@ -19,11 +19,11 @@ import com.ecarpo.framework.model.ResultDTO;
  */
 @Service
 public class DmsStoreroomShelflocationServiceImpl extends
-  BaseServiceImpl2<DmsStoreroomShelflocationManager, DmsStoreroomShelflocationMapper, DmsStoreroomShelflocationDO> implements DmsStoreroomShelflocationService {
+  BaseImplement<DmsStoreroomShelflocationManager, DmsStoreroomShelflocationMapper, DmsStoreroomShelflocationDO> implements DmsStoreroomShelflocationService {
 
   @Override
-  public ResultDTO<Number> insertLong(DmsStoreroomShelflocationInsertDTO dto) throws Exception {
-    return super.insertLong(dto);
+  public ResultDTO<Integer> insert(DmsStoreroomShelflocationInsertDTO dto) throws Exception {
+    return super.insert(dto);
   }
 
   @Override

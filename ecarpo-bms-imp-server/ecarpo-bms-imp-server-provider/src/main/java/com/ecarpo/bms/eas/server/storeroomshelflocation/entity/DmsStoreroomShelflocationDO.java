@@ -3,7 +3,7 @@
  */
 package com.ecarpo.bms.eas.server.storeroomshelflocation.entity;
 
-import com.ecarpo.framework.common.mapper.DataEntity;
+import com.ecarpo.bms.eas.server.data.MyEntity;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -16,7 +16,7 @@ import lombok.EqualsAndHashCode;
 @Data
 @SuppressWarnings("serial")
 @EqualsAndHashCode(callSuper = false)
-public class DmsStoreroomShelflocationDO extends DataEntity {
+public class DmsStoreroomShelflocationDO extends MyEntity {
     /**
      *
      * @mbg.generated 2019-07-19 10:57:57
@@ -84,7 +84,7 @@ public class DmsStoreroomShelflocationDO extends DataEntity {
      *
      * @mbg.generated 2019-07-19 10:57:57
      */
-    private String remark;
+    //private String remark;
 
     /**
      * 状态(1停用0启用)

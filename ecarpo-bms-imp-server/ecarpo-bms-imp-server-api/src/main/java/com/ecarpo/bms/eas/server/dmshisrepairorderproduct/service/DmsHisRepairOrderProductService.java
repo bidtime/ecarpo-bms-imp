@@ -14,7 +14,7 @@ import com.ecarpo.framework.model.ResultDTO;
  */
 public interface DmsHisRepairOrderProductService {
   
-  ResultDTO<Number> insertLong(DmsHisRepairOrderProductInsertDTO dto) throws Exception;
+  ResultDTO<Integer> insert(DmsHisRepairOrderProductInsertDTO dto) throws Exception;
 
   ResultDTO<Integer> update(DmsHisRepairOrderProductUpdateDTO dto) throws Exception;
 

@@ -6,9 +6,6 @@ package com.ecarpo.bms.eas.server.dmsbuy.dto;
 
 import java.util.Date;
 
-import org.hibernate.validator.constraints.NotBlank;
-
-import com.alibaba.fastjson.annotation.JSONField;
 import com.ecarpo.framework.model.InsertDTO;
 
 import lombok.Data;
@@ -22,383 +19,204 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = true)
 @Data
 public class DmsBuyInsertDTO extends InsertDTO {
-
   /**
-   * 云平台id
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  private String uid;
+  *
+  * @mbg.generated 2019-07-23 11:12:52
+  */
+ //private Integer id;
 
-  /**
-   * 是否修改过密码
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "isChangedPW")
-  private Integer isChangedPw;
+ /**
+  * 采购单编号
+  *
+  * @mbg.generated 2019-07-23 11:12:52
+  */
+ private String buyNumber;
 
-  /**
-   * 登陆错误次数
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "errCount")
-  private Integer errCount;
+ /**
+  * 经销商id
+  *
+  * @mbg.generated 2019-07-23 11:12:52
+  */
+ private Integer storeId;
 
-  /**
-   * 引用id
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  private String referId;
+ /**
+  * 客户名称
+  *
+  * @mbg.generated 2019-07-23 11:12:52
+  */
+ private String contactName;
 
-  /**
-   * 最后修改者编码
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "lastUpdateUserID_number")
-  private String lastUpdateUserIdNumber;
+ /**
+  * 客户电话
+  *
+  * @mbg.generated 2019-07-23 11:12:52
+  */
+ private String contactPhone;
 
-  /**
-   * 是否为业务管理员
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "isBizAdmin")
-  private Integer isBizAdmin;
+ /**
+  * 采购类型，关联类型表
+  *
+  * @mbg.generated 2019-07-23 11:12:52
+  */
+ private Integer buyTypeId;
 
-  /**
-   * 类型 系统用户=10,职员=20,客户=30,供应商=40,其他=50,认证管理员=60,审计管理员=70
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "type")
-  private Integer type;
+ /**
+  * 供货商id
+  *
+  * @mbg.generated 2019-07-23 11:12:52
+  */
+ private Integer supplierId;
 
-  /**
-   * 密码
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  private String password;
+ /**
+  * 要求到货日期
+  *
+  * @mbg.generated 2019-07-23 11:12:52
+  */
+ private String requireReachDate;
 
-  /**
-   * 家庭电话
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  private String homePhone;
+ /**
+  * 结算方式，1现结，2挂账
+  *
+  * @mbg.generated 2019-07-23 11:12:52
+  */
+ private Integer actType;
 
-  /**
-   * 是否注册
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "isRegister")
-  private Integer isRegister;
+ /**
+  * 是否代销，0否1是
+  *
+  * @mbg.generated 2019-07-23 11:12:52
+  */
+ private Integer isSaleProxy;
 
-  /**
-   * 是否已经删除
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "isDelete")
-  private Integer isDelete;
+ /**
+  * 结算人
+  *
+  * @mbg.generated 2019-07-23 11:12:52
+  */
+ private String actName;
 
-  /**
-   * 描述
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  private String description;
+ /**
+  * 创建人
+  *
+  * @mbg.generated 2019-07-23 11:12:52
+  */
+ //private Integer creator;
 
-  /**
-   * 密码策略名称
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "securityId_name")
-  private String securityIdName;
+ /**
+  * 创建时间
+  *
+  * @mbg.generated 2019-07-23 11:12:52
+  */
+ //private Date cTime;
 
-  /**
-   * 手机号码
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  private String cell;
+ /**
+  * 入库人
+  *
+  * @mbg.generated 2019-07-23 11:12:52
+  */
+ private Integer buyerId;
 
-  /**
-   * 密码策略编码
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "securityId_number")
-  private String securityIdNumber;
+ /**
+  * 入库时间
+  *
+  * @mbg.generated 2019-07-23 11:12:52
+  */
+ private Date buyTime;
 
-  /**
-   * 编码
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "number")
-  private String encrypt;
+ /**
+  * 执行人
+  *
+  * @mbg.generated 2019-07-23 11:12:52
+  */
+ private Integer executor;
 
-  /**
-   * 控制单元编码
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "controlUnitID_number")
-  private String controlUnitIdNumber;
+ /**
+  * 执行时间
+  *
+  * @mbg.generated 2019-07-23 11:12:52
+  */
+ private Date execTime;
 
-  /**
-   * 控制单元名称
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "controlUnitID_name")
-  private String controlUnitIdName;
+ /**
+  * 收银员
+  *
+  * @mbg.generated 2019-07-23 11:12:52
+  */
+ private Integer cashier;
 
-  /**
-   * 密码生效日期
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  private String pweffectiveDate;
+ /**
+  * 收银时间
+  *
+  * @mbg.generated 2019-07-23 11:12:52
+  */
+ private Date cashierTime;
 
-  /**
-   * 电子邮件
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  private String email;
+ /**
+  * 发票号
+  *
+  * @mbg.generated 2019-07-23 11:12:52
+  */
+ private String receiptsNo;
 
-  /**
-   * 是否锁定
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  private Date lockedTime;
+ /**
+  * 采购单状态，1未执行，2待付款，3待入库，4已完成，5作废
+  *
+  * @mbg.generated 2019-07-23 11:12:52
+  */
+ private Integer status;
 
-  /**
-   * 所属用户编码
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "groupID_number")
-  private String groupIdNumber;
+ /**
+  * 原采购计划单号
+  *
+  * @mbg.generated 2019-07-23 11:12:52
+  */
+ private String appNumber;
 
-  /**
-   * 失效时间
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  private Date invalidationDate;
+ /**
+  * 来源属性（1采购计划申请/2订单补采购/3采购单1-1-3-2/4直接入库）
+  *
+  * @mbg.generated 2019-07-23 11:12:52
+  */
+ private String generateFrom;
 
-  /**
-   * 客户id
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "customerID")
-  private String customerID;
+ /**
+  * 原始单据号码
+  *
+  * @mbg.generated 2019-07-23 11:12:52
+  */
+ private String originalNumber;
 
-  /**
-   * 缺省使用语言
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  private String defaultLocale;
+ /**
+  * 配送地址
+  *
+  * @mbg.generated 2019-07-23 11:12:52
+  */
+ private String deliveryAddress;
 
-  private Date createTime;
+ /**
+  * 配送方式ID（关联ym_dms_purchase_delivery_way中的ID）
+  *
+  * @mbg.generated 2019-07-23 11:12:52
+  */
+ private Integer deliveryWayId;
 
-  /**
-   * 供应商id
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "supplierID")
-  private String supplierID;
+ /**
+  * 收件人姓名
+  *
+  * @mbg.generated 2019-07-23 11:12:52
+  */
+ private String recipientName;
 
-  /**
-   * 主要角色编码
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "mainRoleID_number")
-  private String mainRoleIdNumber;
+ /**
+  * 收件人电话
+  *
+  * @mbg.generated 2019-07-23 11:12:52
+  */
+ private String recipientMobile;
 
-  /**
-   * 所属用户组名称
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "groupID_name")
-  private String groupIdName;
-
-  /**
-   * 对应的操作人
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "personId_name")
-  private String personIdName;
-
-  /**
-   * 最后修改时间
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  private Date lastUpdateTime;
-
-  /**
-   * id
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @NotBlank(message = "主键id不能为空")
-  private String id;
-
-  /**
-   * 名称
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "name")
-  private String define;
-
-  /**
-   * 对应的操作人编码
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "personId_number")
-  private String personIdNumber;
-
-  /**
-   * 最后修改者名称
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "lastUpdateUserID_name")
-  private String lastUpdateUserIdName;
-
-  /**
-   * 缺省组织编码
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "defOrgUnitID_number")
-  private String defOrgUnitIdNumber;
-
-  /**
-   * 有效日期
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  private Date effectiveDate;
-
-  /**
-   * 缺省组织名称
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "defOrgUnitID_name")
-  private String defOrgUnitIdName;
-
-  /**
-   * 代理用户
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "agentUser")
-  private Integer agentUser;
-
-  /**
-   * 历史密码
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  private String pwdHisStr;
-
-  /**
-   * 创建者编码
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "creatorID_number")
-  private String creatorIdNumber;
-
-  /**
-   * 创建者名称
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "creatorID_name")
-  private String creatorIdName;
-
-  /**
-   * 办公室电话
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  private String officePhone;
-
-  /**
-   * 是否锁定
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "isLocked")
-  private Integer isLocked;
-
-  /**
-   * 登陆认证方式
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "loginAuthorWay")
-  private Integer loginAuthorWay;
-
-  /**
-   * AD账号
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  private String adNumber;
-
-  /**
-   * 是否同步到云平台
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "isSynToCloud")
-  private Integer isSynToCloud;
-
-  /**
-   * 备用电子邮件
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "backupEMail")
-  private String backupEmail;
-
-  /**
-   * 是否禁用
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "forbidden")
-  private Integer forbidden;
-
-  /**
-   * 主要角色名称
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "mainRoleID_name")
-  private String mainRoleIdName;
-
+ /**
+  *
+  * @mbg.generated 2019-07-23 11:12:52
+  */
+ private String desc;
 }

@@ -17,9 +17,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.ecarpo.bms.ap.auth.user.UserLoginBO;
 import com.ecarpo.bms.ap.auth.user.dto.UserUtils;
-import com.ecarpo.bms.eas.server.dmsfinanceclient.dto.DmsFnanceClientInsertDTO;
-import com.ecarpo.bms.eas.server.dmsfinanceclient.dto.DmsFnanceClientUpdateDTO;
-import com.ecarpo.bms.eas.server.dmsfinanceclient.service.DmsFnanceClientService;
+import com.ecarpo.bms.eas.server.dmsfinanceclient.dto.DmsFinanceClientInsertDTO;
+import com.ecarpo.bms.eas.server.dmsfinanceclient.dto.DmsFinanceClientUpdateDTO;
+import com.ecarpo.bms.eas.server.dmsfinanceclient.service.DmsFinanceClientService;
 import com.ecarpo.framework.model.ResultDTO;
 
 /**
@@ -31,7 +31,7 @@ import com.ecarpo.framework.model.ResultDTO;
 public class DmsFnanceClientController {
 
   @Autowired
-  private DmsFnanceClientService service;
+  private DmsFinanceClientService service;
 
   @RequestMapping(value = "get/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
   public Object info(@PathVariable Long id) throws Exception {
@@ -40,13 +40,13 @@ public class DmsFnanceClientController {
   }
 
   @RequestMapping(value = "insert", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
-  public Object insert(@Valid @RequestBody DmsFnanceClientInsertDTO dto, UserLoginBO user) throws Exception {
+  public Object insert(@Valid @RequestBody DmsFinanceClientInsertDTO dto, UserLoginBO user) throws Exception {
     UserUtils.copy(dto, user);
-    return service.insertLong(dto);
+    return service.insert(dto);
   }
 
   @RequestMapping(value = "update", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
-  public Object update(@Valid @RequestBody DmsFnanceClientUpdateDTO dto, UserLoginBO user) throws Exception {
+  public Object update(@Valid @RequestBody DmsFinanceClientUpdateDTO dto, UserLoginBO user) throws Exception {
     UserUtils.copy(dto, user);
     return service.update(dto);
   }

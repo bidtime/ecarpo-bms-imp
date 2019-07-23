@@ -6,13 +6,12 @@ package com.ecarpo.bms.eas.server.dmsrepairworkhour.service;
 
 import org.springframework.stereotype.Service;
 
+import com.ecarpo.bms.eas.server.dmsrepairworkhour.dto.DmsRepairWorkhourInsertDTO;
+import com.ecarpo.bms.eas.server.dmsrepairworkhour.dto.DmsRepairWorkhourUpdateDTO;
 import com.ecarpo.bms.eas.server.storeroomshelflocation.dao.DmsStoreroomShelflocationMapper;
-import com.ecarpo.bms.eas.server.storeroomshelflocation.dto.DmsStoreroomShelflocationInsertDTO;
-import com.ecarpo.bms.eas.server.storeroomshelflocation.dto.DmsStoreroomShelflocationUpdateDTO;
 import com.ecarpo.bms.eas.server.storeroomshelflocation.entity.DmsStoreroomShelflocationDO;
 import com.ecarpo.bms.eas.server.storeroomshelflocation.service.DmsStoreroomShelflocationManager;
-import com.ecarpo.bms.eas.server.storeroomshelflocation.service.DmsStoreroomShelflocationService;
-import com.ecarpo.framework.common.service.BaseServiceImpl2;
+import com.ecarpo.framework.common.service.BaseImplement;
 import com.ecarpo.framework.model.ResultDTO;
 
 /**
@@ -21,15 +20,15 @@ import com.ecarpo.framework.model.ResultDTO;
  */
 @Service
 public class DmsRepairWorkhourServiceImpl extends
-  BaseServiceImpl2<DmsStoreroomShelflocationManager, DmsStoreroomShelflocationMapper, DmsStoreroomShelflocationDO> implements DmsStoreroomShelflocationService {
+  BaseImplement<DmsStoreroomShelflocationManager, DmsStoreroomShelflocationMapper, DmsStoreroomShelflocationDO> implements DmsRepairWorkhourService {
 
   @Override
-  public ResultDTO<Number> insertLong(DmsStoreroomShelflocationInsertDTO dto) throws Exception {
-    return super.insertLong(dto);
+  public ResultDTO<Integer> insert(DmsRepairWorkhourInsertDTO dto) throws Exception {
+    return super.insert(dto);
   }
 
   @Override
-  public ResultDTO<Integer> update(DmsStoreroomShelflocationUpdateDTO dto) throws Exception {
+  public ResultDTO<Integer> update(DmsRepairWorkhourUpdateDTO dto) throws Exception {
     return super.updateDTO(dto);
   }
   

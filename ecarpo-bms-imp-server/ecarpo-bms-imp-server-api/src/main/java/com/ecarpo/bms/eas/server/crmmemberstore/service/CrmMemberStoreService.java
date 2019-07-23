@@ -14,7 +14,7 @@ import com.ecarpo.framework.model.ResultDTO;
  */
 public interface CrmMemberStoreService {
 
-  ResultDTO<Number> insertLong(CrmMemberStoreInsertDTO dto) throws Exception;
+  ResultDTO<Integer> insert(CrmMemberStoreInsertDTO dto) throws Exception;
 
   ResultDTO<Integer> update(CrmMemberStoreUpdateDTO dto) throws Exception;
 

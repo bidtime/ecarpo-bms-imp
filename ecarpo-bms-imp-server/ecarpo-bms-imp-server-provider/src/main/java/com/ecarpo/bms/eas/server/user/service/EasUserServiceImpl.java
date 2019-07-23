@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import com.ecarpo.bms.eas.server.user.dao.EasUserMapper;
 import com.ecarpo.bms.eas.server.user.dto.UserPwdDTO;
 import com.ecarpo.bms.eas.server.user.entity.EasUserDO;
-import com.ecarpo.framework.common.service.BaseServiceImpl2;
+import com.ecarpo.framework.common.service.BaseImplement;
 import com.ecarpo.framework.model.ResultDTO;
 
 /**
@@ -18,7 +18,7 @@ import com.ecarpo.framework.model.ResultDTO;
  */
 @Service
 public class EasUserServiceImpl extends
-  BaseServiceImpl2<EasUserManager, EasUserMapper, EasUserDO> implements EasUserService {
+  BaseImplement<EasUserManager, EasUserMapper, EasUserDO> implements EasUserService {
 
   @Override
   public ResultDTO<Integer> login(UserPwdDTO dto) {

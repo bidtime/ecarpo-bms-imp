@@ -42,8 +42,6 @@ public class UserLoginBO implements ISessionUser, Serializable {
    * @mbg.generated 2017-07-04 21:49:41
    */
   private String userName;
-
-  private String avatar;
   
   public void cloneBean(Object o) {
     try {

@@ -4,9 +4,9 @@
  */
 package com.ecarpo.bms.eas.server.crmbaseproduct.dto;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
-import com.alibaba.fastjson.annotation.JSONField;
 import com.ecarpo.framework.model.UpdateDTO;
 
 import lombok.Data;
@@ -20,381 +20,517 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = true)
 @Data
 public class CrmBaseProductUpdateDTO extends UpdateDTO {
-
   /**
-   * 云平台id
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  private String uid;
+  *
+  * @mbg.generated 2019-07-23 10:54:49
+  */
+ private Integer id;
 
-  /**
-   * 是否修改过密码
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "isChangedPW")
-  private Integer isChangedPw;
+ /**
+  * 商品类型：material实物商品，virtual虚拟商品，deposit订金商品
+  *
+  * @mbg.generated 2019-07-23 10:54:49
+  */
+ private String ptype;
 
-  /**
-   * 登陆错误次数
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "errCount")
-  private Integer errCount;
+ /**
+  * 虚拟产品类别
+  *
+  * @mbg.generated 2019-07-23 10:54:49
+  */
+ private Integer pmodel;
 
-  /**
-   * 引用id
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  private String referId;
+ /**
+  * 虚拟产品ID
+  *
+  * @mbg.generated 2019-07-23 10:54:49
+  */
+ private Integer vid;
 
-  /**
-   * 最后修改者编码
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "lastUpdateUserID_number")
-  private String lastUpdateUserIdNumber;
+ /**
+  * 经销商ID
+  *
+  * @mbg.generated 2019-07-23 10:54:49
+  */
+ private Integer storeId;
 
-  /**
-   * 是否为业务管理员
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "isBizAdmin")
-  private Integer isBizAdmin;
+ /**
+  * 供应商ID（对应base_supplier中的id）
+  *
+  * @mbg.generated 2019-07-23 10:54:49
+  */
+ private Integer supplierId;
 
-  /**
-   * 类型 系统用户=10,职员=20,客户=30,供应商=40,其他=50,认证管理员=60,审计管理员=70
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "type")
-  private Integer type;
+ /**
+  * 产品名称
+  *
+  * @mbg.generated 2019-07-23 10:54:49
+  */
+ private String name;
 
-  /**
-   * 密码
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  private String password;
+ /**
+  * 产品名称去掉空格
+  *
+  * @mbg.generated 2019-07-23 10:54:49
+  */
+ private String nameTrim;
 
-  /**
-   * 家庭电话
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  private String homePhone;
+ /**
+  * 产品图片1地址
+  *
+  * @mbg.generated 2019-07-23 10:54:49
+  */
+ private String pic1;
 
-  /**
-   * 是否注册
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "isRegister")
-  private Integer isRegister;
+ /**
+  * 产品图片2地址
+  *
+  * @mbg.generated 2019-07-23 10:54:49
+  */
+ private String pic2;
 
-  /**
-   * 是否已经删除
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "isDelete")
-  private Integer isDelete;
+ /**
+  * 产品图片3地址
+  *
+  * @mbg.generated 2019-07-23 10:54:49
+  */
+ private String pic3;
 
-  /**
-   * 描述
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  private String description;
+ /**
+  * 产品编码
+  *
+  * @mbg.generated 2019-07-23 10:54:49
+  */
+ private String code;
 
-  /**
-   * 密码策略名称
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "securityId_name")
-  private String securityIdName;
+ /**
+  * 产品检索码
+  *
+  * @mbg.generated 2019-07-23 10:54:49
+  */
+ private String indexCode;
 
-  /**
-   * 手机号码
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  private String cell;
+ /**
+  * 型号
+  *
+  * @mbg.generated 2019-07-23 10:54:49
+  */
+ private String model;
 
-  /**
-   * 密码策略编码
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "securityId_number")
-  private String securityIdNumber;
+ /**
+  * 产品条码
+  *
+  * @mbg.generated 2019-07-23 10:54:49
+  */
+ private String barCode;
 
-  /**
-   * 编码
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "number")
-  private String encrypt;
-  /**
-   * 控制单元编码
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "controlUnitID_number")
-  private String controlUnitIdNumber;
+ /**
+  * 产品属性ID（对应base_good_type中的id）
+  *
+  * @mbg.generated 2019-07-23 10:54:49
+  */
+ private Integer goodTypeId;
 
-  /**
-   * 控制单元名称
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "controlUnitID_name")
-  private String controlUnitIdName;
+ /**
+  * 产品单位（对应base_goods_unit）
+  *
+  * @mbg.generated 2019-07-23 10:54:49
+  */
+ private Integer goodUnitId;
 
-  /**
-   * 密码生效日期
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  private String pweffectiveDate;
+ /**
+  * 产品大类ID
+  *
+  * @mbg.generated 2019-07-23 10:54:49
+  */
+ private Integer grade1;
 
-  /**
-   * 电子邮件
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  private String email;
+ /**
+  * 产品中类ID
+  *
+  * @mbg.generated 2019-07-23 10:54:49
+  */
+ private Integer grade2;
 
-  /**
-   * 是否锁定
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  private Date lockedTime;
+ /**
+  * 产品小类ID
+  *
+  * @mbg.generated 2019-07-23 10:54:49
+  */
+ private Integer grade3;
 
-  /**
-   * 所属用户编码
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "groupID_number")
-  private String groupIdNumber;
+ /**
+  * 产品产地
+  *
+  * @mbg.generated 2019-07-23 10:54:49
+  */
+ private String origin;
 
-  /**
-   * 失效时间
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  private Date invalidationDate;
+ /**
+  * 产品启用日期
+  *
+  * @mbg.generated 2019-07-23 10:54:49
+  */
+ private Date sdate;
 
-  /**
-   * 客户id
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "customerID")
-  private String customerID;
+ /**
+  * 产品截止日期
+  *
+  * @mbg.generated 2019-07-23 10:54:49
+  */
+ private Date edate;
 
-  /**
-   * 缺省使用语言
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  private String defaultLocale;
+ /**
+  * 状态（1正常2停用）
+  *
+  * @mbg.generated 2019-07-23 10:54:49
+  */
+ private Integer status;
 
-  private Date createTime;
+ /**
+  * 原价
+  *
+  * @mbg.generated 2019-07-23 10:54:49
+  */
+ private BigDecimal originPrice;
 
-  /**
-   * 供应商id
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "supplierID")
-  private String supplierID;
+ /**
+  * 零售价/销售价
+  *
+  * @mbg.generated 2019-07-23 10:54:49
+  */
+ private BigDecimal salesPrice;
 
-  /**
-   * 主要角色编码
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "mainRoleID_number")
-  private String mainRoleIdNumber;
+ /**
+  * 商城价
+  *
+  * @mbg.generated 2019-07-23 10:54:49
+  */
+ private BigDecimal mallPrice;
 
-  /**
-   * 所属用户组名称
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "groupID_name")
-  private String groupIdName;
+ /**
+  * 积分
+  *
+  * @mbg.generated 2019-07-23 10:54:49
+  */
+ private Integer points;
 
-  /**
-   * 对应的操作人
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "personId_name")
-  private String personIdName;
+ /**
+  * 积分points能抵用的现金值
+  *
+  * @mbg.generated 2019-07-23 10:54:49
+  */
+ private BigDecimal pointsToMoney;
 
-  /**
-   * 最后修改时间
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  private Date lastUpdateTime;
+ /**
+  * 保养周期（都折成天）
+  *
+  * @mbg.generated 2019-07-23 10:54:49
+  */
+ private Integer maintainCycle;
 
-  /**
-   * id
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  private String id;
+ /**
+  * 施工小时数
+  *
+  * @mbg.generated 2019-07-23 10:54:49
+  */
+ private Integer workHour;
 
-  /**
-   * 名称
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "name")
-  private String define;
+ /**
+  * 产品英文名称
+  *
+  * @mbg.generated 2019-07-23 10:54:49
+  */
+ private String briefDesc;
 
-  /**
-   * 对应的操作人编码
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "personId_number")
-  private String personIdNumber;
+ /**
+  * 是否微信相关（1相关0不相关）
+  *
+  * @mbg.generated 2019-07-23 10:54:49
+  */
+ private Integer isWeixin;
 
-  /**
-   * 最后修改者名称
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "lastUpdateUserID_name")
-  private String lastUpdateUserIdName;
+ /**
+  * 发布微信商城（0，全部，1，网购商城，2，积分商城）
+  *
+  * @mbg.generated 2019-07-23 10:54:49
+  */
+ private Integer weixinMallType;
 
-  /**
-   * 缺省组织编码
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "defOrgUnitID_number")
-  private String defOrgUnitIdNumber;
+ /**
+  * 商品基础数量
+  *
+  * @mbg.generated 2019-07-23 10:54:49
+  */
+ private Integer baseNum;
 
-  /**
-   * 有效日期
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  private Date effectiveDate;
+ /**
+  * 产品消费类型（gongshi工时费cailiao材料费other其他）
+  *
+  * @mbg.generated 2019-07-23 10:54:49
+  */
+ private String costType;
 
-  /**
-   * 缺省组织名称
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "defOrgUnitID_name")
-  private String defOrgUnitIdName;
+ /**
+  * 适用车系
+  *
+  * @mbg.generated 2019-07-23 10:54:49
+  */
+ private String applySerie;
 
-  /**
-   * 代理用户
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "agentUser")
-  private Integer agentUser;
+ /**
+  * 适用车型
+  *
+  * @mbg.generated 2019-07-23 10:54:49
+  */
+ private String applyType;
 
-  /**
-   * 历史密码
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  private String pwdHisStr;
+ /**
+  * 是否通用，1是，2否
+  *
+  * @mbg.generated 2019-07-23 10:54:49
+  */
+ private Integer isCommon;
 
-  /**
-   * 创建者编码
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "creatorID_number")
-  private String creatorIdNumber;
+ /**
+  * 是否参与优惠，1是，2否
+  *
+  * @mbg.generated 2019-07-23 10:54:49
+  */
+ private Integer isFav;
 
-  /**
-   * 创建者名称
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "creatorID_name")
-  private String creatorIdName;
+ /**
+  * 是否参与根据会员级别进行的折扣
+  *
+  * @mbg.generated 2019-07-23 10:54:49
+  */
+ private String isMemberDiscount;
 
-  /**
-   * 办公室电话
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  private String officePhone;
+ /**
+  * 单位，（舍弃关联表）
+  *
+  * @mbg.generated 2019-07-23 10:54:49
+  */
+ private String unit;
 
-  /**
-   * 是否锁定
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "isLocked")
-  private Integer isLocked;
+ /**
+  * 最后入库价
+  *
+  * @mbg.generated 2019-07-23 10:54:49
+  */
+ private BigDecimal lastPrice;
 
-  /**
-   * 登陆认证方式
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "loginAuthorWay")
-  private Integer loginAuthorWay;
+ /**
+  * 最后入库价不含税
+  *
+  * @mbg.generated 2019-07-23 10:54:49
+  */
+ private BigDecimal lastPriceNotax;
 
-  /**
-   * AD账号
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  private String adNumber;
+ /**
+  * 最后一次采购价
+  *
+  * @mbg.generated 2019-07-23 10:54:49
+  */
+ private BigDecimal lastBuyPrice;
 
-  /**
-   * 是否同步到云平台
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "isSynToCloud")
-  private Integer isSynToCloud;
+ /**
+  * 销售价
+  *
+  * @mbg.generated 2019-07-23 10:54:49
+  */
+ private BigDecimal heavyBuyerPrice;
 
-  /**
-   * 备用电子邮件
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "backupEMail")
-  private String backupEmail;
+ /**
+  * 维修价
+  *
+  * @mbg.generated 2019-07-23 10:54:49
+  */
+ private BigDecimal repairPrice;
 
-  /**
-   * 是否禁用
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "forbidden")
-  private Integer forbidden;
+ /**
+  * 建档人
+  *
+  * @mbg.generated 2019-07-23 10:54:49
+  */
+ //private Integer creater;
 
-  /**
-   * 主要角色名称
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "mainRoleID_name")
-  private String mainRoleIdName;
+ /**
+  * 建档时间
+  *
+  * @mbg.generated 2019-07-23 10:54:49
+  */
+ //private Integer cTime;
 
+ /**
+  * 累计代销数量
+  *
+  * @mbg.generated 2019-07-23 10:54:49
+  */
+ private Integer proxyCount;
+
+ /**
+  * 累计退货数量
+  *
+  * @mbg.generated 2019-07-23 10:54:49
+  */
+ private Integer refundCount;
+
+ /**
+  * 累计结算数量
+  *
+  * @mbg.generated 2019-07-23 10:54:49
+  */
+ private Integer actCount;
+
+ /**
+  * 车型
+  *
+  * @mbg.generated 2019-07-23 10:54:49
+  */
+ private String carModel;
+
+ /**
+  * 货位
+  *
+  * @mbg.generated 2019-07-23 10:54:49
+  */
+ private String locationName;
+
+ /**
+  * 产品类型id，关联dms_product_type表
+  *
+  * @mbg.generated 2019-07-23 10:54:49
+  */
+ private Integer productTypeId;
+
+ /**
+  * 库存底限
+  *
+  * @mbg.generated 2019-07-23 10:54:49
+  */
+ private BigDecimal stockLowest;
+
+ /**
+  * 产品品牌ID（关联base_product_brand中的ID）
+  *
+  * @mbg.generated 2019-07-23 10:54:49
+  */
+ private Integer productBrand;
+
+ /**
+  * 花纹（如有）
+  *
+  * @mbg.generated 2019-07-23 10:54:49
+  */
+ private String figure;
+
+ /**
+  * 载重指数
+  *
+  * @mbg.generated 2019-07-23 10:54:49
+  */
+ private String loadIndex;
+
+ /**
+  * 速度级别
+  *
+  * @mbg.generated 2019-07-23 10:54:49
+  */
+ private String speedLevel;
+
+ /**
+  * 安装方式（关联ym_dms_purchase_install_way中的ID）
+  *
+  * @mbg.generated 2019-07-23 10:54:49
+  */
+ private Integer installWay;
+
+ /**
+  * 是否删除（1已删0未删）
+  *
+  * @mbg.generated 2019-07-23 10:54:49
+  */
+ private Integer isDel;
+
+ /**
+  * 轮胎_胎面宽度
+  *
+  * @mbg.generated 2019-07-23 10:54:49
+  */
+ private String tireWidth;
+
+ /**
+  * 轮胎_扁平比
+  *
+  * @mbg.generated 2019-07-23 10:54:49
+  */
+ private String tireFlat;
+
+ /**
+  * 轮胎_直径
+  *
+  * @mbg.generated 2019-07-23 10:54:49
+  */
+ private String tireDiameter;
+
+ /**
+  * 轮胎_速度级别
+  *
+  * @mbg.generated 2019-07-23 10:54:49
+  */
+ private String tireSpeedLevel;
+
+ /**
+  * 机油_粘度
+  *
+  * @mbg.generated 2019-07-23 10:54:49
+  */
+ private String oilViscosity;
+
+ /**
+  * 机油_容量
+  *
+  * @mbg.generated 2019-07-23 10:54:49
+  */
+ private String oilCapacity;
+
+ /**
+  * 机油_分类
+  *
+  * @mbg.generated 2019-07-23 10:54:49
+  */
+ private String oilClass;
+
+ /**
+  * 尾款，仅对订金商品有效
+  *
+  * @mbg.generated 2019-07-23 10:54:49
+  */
+ private BigDecimal restPayment;
+
+ /**
+  * 是否免外送费 0-否，1-是
+  *
+  * @mbg.generated 2019-07-23 10:54:49
+  */
+ private Integer isFree;
+
+ /**
+  * 配送类型：0-外送，1-外卖
+  *
+  * @mbg.generated 2019-07-23 10:54:49
+  */
+ private Integer sendType;
+
+ /**
+  * 发布平台：1-全部，2-微商城，3-微信点餐
+  *
+  * @mbg.generated 2019-07-23 10:54:49
+  */
+ private Integer platform;
+ 
+ private String desc;
+ 
+ private String remark;
 }

@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ecarpo.bms.eas.server.dmsfinanceclient.dao.DmsFinanceClientMapper">
+  <resultMap id="BaseResultMap" type="com.ecarpo.bms.eas.server.dmsfinanceclient.entity.DmsFinanceClientDO">
+    <!-- @mbg.generated 2019-07-23 10:30:16 -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="store_id" jdbcType="INTEGER" property="storeId" />
+    <result column="client_code" jdbcType="VARCHAR" property="clientCode" />
+    <result column="client_name" jdbcType="VARCHAR" property="clientName" />
+    <result column="short_name" jdbcType="VARCHAR" property="shortName" />
+    <result column="retrieval_code" jdbcType="VARCHAR" property="retrievalCode" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="postcode" jdbcType="VARCHAR" property="postcode" />
+    <result column="prov" jdbcType="TINYINT" property="prov" />
+    <result column="city" jdbcType="SMALLINT" property="city" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="fax" jdbcType="VARCHAR" property="fax" />
+    <result column="register_address" jdbcType="VARCHAR" property="registerAddress" />
+    <result column="work_address" jdbcType="VARCHAR" property="workAddress" />
+    <result column="business_register" jdbcType="VARCHAR" property="businessRegister" />
+    <result column="tax_register" jdbcType="VARCHAR" property="taxRegister" />
+    <result column="finance_name" jdbcType="VARCHAR" property="financeName" />
+    <result column="finance_phone" jdbcType="VARCHAR" property="financePhone" />
+    <result column="main_name" jdbcType="VARCHAR" property="mainName" />
+    <result column="main_phone" jdbcType="VARCHAR" property="mainPhone" />
+    <result column="main_duty" jdbcType="VARCHAR" property="mainDuty" />
+    <result column="reserve_name" jdbcType="VARCHAR" property="reserveName" />
+    <result column="reserve_phone" jdbcType="VARCHAR" property="reservePhone" />
+    <result column="reserve_duty" jdbcType="VARCHAR" property="reserveDuty" />
+    <result column="account_period" jdbcType="VARCHAR" property="accountPeriod" />
+    <result column="temp_period" jdbcType="VARCHAR" property="tempPeriod" />
+    <result column="max_debt" jdbcType="DECIMAL" property="maxDebt" />
+    <result column="temp_debt" jdbcType="DECIMAL" property="tempDebt" />
+    <result column="receivable" jdbcType="DECIMAL" property="receivable" />
+    <result column="acc_receivable" jdbcType="DECIMAL" property="accReceivable" />
+    <result column="acc_receipt" jdbcType="DECIMAL" property="accReceipt" />
+    <result column="status" jdbcType="TINYINT" property="status" />
+    <result column="creator" jdbcType="INTEGER" property="creator" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="account_opener" jdbcType="VARCHAR" property="accountOpener" />
+    <result column="account_name" jdbcType="VARCHAR" property="accountName" />
+    <result column="account_num" jdbcType="VARCHAR" property="accountNum" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!-- @mbg.generated 2019-07-23 10:30:16 -->
+    id, store_id, client_code, client_name, short_name, retrieval_code, address, postcode, 
+    prov, city, phone, fax, register_address, work_address, business_register, tax_register, 
+    finance_name, finance_phone, main_name, main_phone, main_duty, reserve_name, reserve_phone, 
+    reserve_duty, account_period, temp_period, max_debt, temp_debt, receivable, acc_receivable, 
+    acc_receipt, status, creator, create_time, account_opener, account_name, account_num
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!-- @mbg.generated 2019-07-23 10:30:16 -->
+    select 
+    <include refid="Base_Column_List" />
+    from dms_finance_client
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!-- @mbg.generated 2019-07-23 10:30:16 -->
+    delete from dms_finance_client
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="com.ecarpo.bms.eas.server.dmsfinanceclient.entity.DmsFinanceClientDO">
+    <!-- @mbg.generated 2019-07-23 10:30:16 -->
+    insert into dms_finance_client (id, store_id, client_code, 
+      client_name, short_name, retrieval_code, 
+      address, postcode, prov, 
+      city, phone, fax, 
+      register_address, work_address, business_register, 
+      tax_register, finance_name, finance_phone, 
+      main_name, main_phone, main_duty, 
+      reserve_name, reserve_phone, reserve_duty, 
+      account_period, temp_period, max_debt, 
+      temp_debt, receivable, acc_receivable, 
+      acc_receipt, status, creator, 
+      create_time, account_opener, account_name, 
+      account_num)
+    values (#{id,jdbcType=INTEGER}, #{storeId,jdbcType=INTEGER}, #{clientCode,jdbcType=VARCHAR}, 
+      #{clientName,jdbcType=VARCHAR}, #{shortName,jdbcType=VARCHAR}, #{retrievalCode,jdbcType=VARCHAR}, 
+      #{address,jdbcType=VARCHAR}, #{postcode,jdbcType=VARCHAR}, #{prov,jdbcType=TINYINT}, 
+      #{city,jdbcType=SMALLINT}, #{phone,jdbcType=VARCHAR}, #{fax,jdbcType=VARCHAR}, 
+      #{registerAddress,jdbcType=VARCHAR}, #{workAddress,jdbcType=VARCHAR}, #{businessRegister,jdbcType=VARCHAR}, 
+      #{taxRegister,jdbcType=VARCHAR}, #{financeName,jdbcType=VARCHAR}, #{financePhone,jdbcType=VARCHAR}, 
+      #{mainName,jdbcType=VARCHAR}, #{mainPhone,jdbcType=VARCHAR}, #{mainDuty,jdbcType=VARCHAR}, 
+      #{reserveName,jdbcType=VARCHAR}, #{reservePhone,jdbcType=VARCHAR}, #{reserveDuty,jdbcType=VARCHAR}, 
+      #{accountPeriod,jdbcType=VARCHAR}, #{tempPeriod,jdbcType=VARCHAR}, #{maxDebt,jdbcType=DECIMAL}, 
+      #{tempDebt,jdbcType=DECIMAL}, #{receivable,jdbcType=DECIMAL}, #{accReceivable,jdbcType=DECIMAL}, 
+      #{accReceipt,jdbcType=DECIMAL}, #{status,jdbcType=TINYINT}, #{creator,jdbcType=INTEGER}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{accountOpener,jdbcType=VARCHAR}, #{accountName,jdbcType=VARCHAR}, 
+      #{accountNum,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" useGeneratedKeys="true" keyProperty="id" parameterType="com.ecarpo.bms.eas.server.dmsfinanceclient.entity.DmsFinanceClientDO">
+    <!-- @mbg.generated 2019-07-23 10:30:16 -->
+    insert into dms_finance_client
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="storeId != null">
+        store_id,
+      </if>
+      <if test="clientCode != null">
+        client_code,
+      </if>
+      <if test="clientName != null">
+        client_name,
+      </if>
+      <if test="shortName != null">
+        short_name,
+      </if>
+      <if test="retrievalCode != null">
+        retrieval_code,
+      </if>
+      <if test="address != null">
+        address,
+      </if>
+      <if test="postcode != null">
+        postcode,
+      </if>
+      <if test="prov != null">
+        prov,
+      </if>
+      <if test="city != null">
+        city,
+      </if>
+      <if test="phone != null">
+        phone,
+      </if>
+      <if test="fax != null">
+        fax,
+      </if>
+      <if test="registerAddress != null">
+        register_address,
+      </if>
+      <if test="workAddress != null">
+        work_address,
+      </if>
+      <if test="businessRegister != null">
+        business_register,
+      </if>
+      <if test="taxRegister != null">
+        tax_register,
+      </if>
+      <if test="financeName != null">
+        finance_name,
+      </if>
+      <if test="financePhone != null">
+        finance_phone,
+      </if>
+      <if test="mainName != null">
+        main_name,
+      </if>
+      <if test="mainPhone != null">
+        main_phone,
+      </if>
+      <if test="mainDuty != null">
+        main_duty,
+      </if>
+      <if test="reserveName != null">
+        reserve_name,
+      </if>
+      <if test="reservePhone != null">
+        reserve_phone,
+      </if>
+      <if test="reserveDuty != null">
+        reserve_duty,
+      </if>
+      <if test="accountPeriod != null">
+        account_period,
+      </if>
+      <if test="tempPeriod != null">
+        temp_period,
+      </if>
+      <if test="maxDebt != null">
+        max_debt,
+      </if>
+      <if test="tempDebt != null">
+        temp_debt,
+      </if>
+      <if test="receivable != null">
+        receivable,
+      </if>
+      <if test="accReceivable != null">
+        acc_receivable,
+      </if>
+      <if test="accReceipt != null">
+        acc_receipt,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="creator != null">
+        creator,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="accountOpener != null">
+        account_opener,
+      </if>
+      <if test="accountName != null">
+        account_name,
+      </if>
+      <if test="accountNum != null">
+        account_num,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="storeId != null">
+        #{storeId,jdbcType=INTEGER},
+      </if>
+      <if test="clientCode != null">
+        #{clientCode,jdbcType=VARCHAR},
+      </if>
+      <if test="clientName != null">
+        #{clientName,jdbcType=VARCHAR},
+      </if>
+      <if test="shortName != null">
+        #{shortName,jdbcType=VARCHAR},
+      </if>
+      <if test="retrievalCode != null">
+        #{retrievalCode,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="postcode != null">
+        #{postcode,jdbcType=VARCHAR},
+      </if>
+      <if test="prov != null">
+        #{prov,jdbcType=TINYINT},
+      </if>
+      <if test="city != null">
+        #{city,jdbcType=SMALLINT},
+      </if>
+      <if test="phone != null">
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="fax != null">
+        #{fax,jdbcType=VARCHAR},
+      </if>
+      <if test="registerAddress != null">
+        #{registerAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="workAddress != null">
+        #{workAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="businessRegister != null">
+        #{businessRegister,jdbcType=VARCHAR},
+      </if>
+      <if test="taxRegister != null">
+        #{taxRegister,jdbcType=VARCHAR},
+      </if>
+      <if test="financeName != null">
+        #{financeName,jdbcType=VARCHAR},
+      </if>
+      <if test="financePhone != null">
+        #{financePhone,jdbcType=VARCHAR},
+      </if>
+      <if test="mainName != null">
+        #{mainName,jdbcType=VARCHAR},
+      </if>
+      <if test="mainPhone != null">
+        #{mainPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="mainDuty != null">
+        #{mainDuty,jdbcType=VARCHAR},
+      </if>
+      <if test="reserveName != null">
+        #{reserveName,jdbcType=VARCHAR},
+      </if>
+      <if test="reservePhone != null">
+        #{reservePhone,jdbcType=VARCHAR},
+      </if>
+      <if test="reserveDuty != null">
+        #{reserveDuty,jdbcType=VARCHAR},
+      </if>
+      <if test="accountPeriod != null">
+        #{accountPeriod,jdbcType=VARCHAR},
+      </if>
+      <if test="tempPeriod != null">
+        #{tempPeriod,jdbcType=VARCHAR},
+      </if>
+      <if test="maxDebt != null">
+        #{maxDebt,jdbcType=DECIMAL},
+      </if>
+      <if test="tempDebt != null">
+        #{tempDebt,jdbcType=DECIMAL},
+      </if>
+      <if test="receivable != null">
+        #{receivable,jdbcType=DECIMAL},
+      </if>
+      <if test="accReceivable != null">
+        #{accReceivable,jdbcType=DECIMAL},
+      </if>
+      <if test="accReceipt != null">
+        #{accReceipt,jdbcType=DECIMAL},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=TINYINT},
+      </if>
+      <if test="creator != null">
+        #{creator,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="accountOpener != null">
+        #{accountOpener,jdbcType=VARCHAR},
+      </if>
+      <if test="accountName != null">
+        #{accountName,jdbcType=VARCHAR},
+      </if>
+      <if test="accountNum != null">
+        #{accountNum,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ecarpo.bms.eas.server.dmsfinanceclient.entity.DmsFinanceClientDO">
+    <!-- @mbg.generated 2019-07-23 10:30:16 -->
+    update dms_finance_client
+    <set>
+      <if test="storeId != null">
+        store_id = #{storeId,jdbcType=INTEGER},
+      </if>
+      <if test="clientCode != null">
+        client_code = #{clientCode,jdbcType=VARCHAR},
+      </if>
+      <if test="clientName != null">
+        client_name = #{clientName,jdbcType=VARCHAR},
+      </if>
+      <if test="shortName != null">
+        short_name = #{shortName,jdbcType=VARCHAR},
+      </if>
+      <if test="retrievalCode != null">
+        retrieval_code = #{retrievalCode,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="postcode != null">
+        postcode = #{postcode,jdbcType=VARCHAR},
+      </if>
+      <if test="prov != null">
+        prov = #{prov,jdbcType=TINYINT},
+      </if>
+      <if test="city != null">
+        city = #{city,jdbcType=SMALLINT},
+      </if>
+      <if test="phone != null">
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="fax != null">
+        fax = #{fax,jdbcType=VARCHAR},
+      </if>
+      <if test="registerAddress != null">
+        register_address = #{registerAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="workAddress != null">
+        work_address = #{workAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="businessRegister != null">
+        business_register = #{businessRegister,jdbcType=VARCHAR},
+      </if>
+      <if test="taxRegister != null">
+        tax_register = #{taxRegister,jdbcType=VARCHAR},
+      </if>
+      <if test="financeName != null">
+        finance_name = #{financeName,jdbcType=VARCHAR},
+      </if>
+      <if test="financePhone != null">
+        finance_phone = #{financePhone,jdbcType=VARCHAR},
+      </if>
+      <if test="mainName != null">
+        main_name = #{mainName,jdbcType=VARCHAR},
+      </if>
+      <if test="mainPhone != null">
+        main_phone = #{mainPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="mainDuty != null">
+        main_duty = #{mainDuty,jdbcType=VARCHAR},
+      </if>
+      <if test="reserveName != null">
+        reserve_name = #{reserveName,jdbcType=VARCHAR},
+      </if>
+      <if test="reservePhone != null">
+        reserve_phone = #{reservePhone,jdbcType=VARCHAR},
+      </if>
+      <if test="reserveDuty != null">
+        reserve_duty = #{reserveDuty,jdbcType=VARCHAR},
+      </if>
+      <if test="accountPeriod != null">
+        account_period = #{accountPeriod,jdbcType=VARCHAR},
+      </if>
+      <if test="tempPeriod != null">
+        temp_period = #{tempPeriod,jdbcType=VARCHAR},
+      </if>
+      <if test="maxDebt != null">
+        max_debt = #{maxDebt,jdbcType=DECIMAL},
+      </if>
+      <if test="tempDebt != null">
+        temp_debt = #{tempDebt,jdbcType=DECIMAL},
+      </if>
+      <if test="receivable != null">
+        receivable = #{receivable,jdbcType=DECIMAL},
+      </if>
+      <if test="accReceivable != null">
+        acc_receivable = #{accReceivable,jdbcType=DECIMAL},
+      </if>
+      <if test="accReceipt != null">
+        acc_receipt = #{accReceipt,jdbcType=DECIMAL},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=TINYINT},
+      </if>
+      <if test="creator != null">
+        creator = #{creator,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="accountOpener != null">
+        account_opener = #{accountOpener,jdbcType=VARCHAR},
+      </if>
+      <if test="accountName != null">
+        account_name = #{accountName,jdbcType=VARCHAR},
+      </if>
+      <if test="accountNum != null">
+        account_num = #{accountNum,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ecarpo.bms.eas.server.dmsfinanceclient.entity.DmsFinanceClientDO">
+    <!-- @mbg.generated 2019-07-23 10:30:16 -->
+    update dms_finance_client
+    set store_id = #{storeId,jdbcType=INTEGER},
+      client_code = #{clientCode,jdbcType=VARCHAR},
+      client_name = #{clientName,jdbcType=VARCHAR},
+      short_name = #{shortName,jdbcType=VARCHAR},
+      retrieval_code = #{retrievalCode,jdbcType=VARCHAR},
+      address = #{address,jdbcType=VARCHAR},
+      postcode = #{postcode,jdbcType=VARCHAR},
+      prov = #{prov,jdbcType=TINYINT},
+      city = #{city,jdbcType=SMALLINT},
+      phone = #{phone,jdbcType=VARCHAR},
+      fax = #{fax,jdbcType=VARCHAR},
+      register_address = #{registerAddress,jdbcType=VARCHAR},
+      work_address = #{workAddress,jdbcType=VARCHAR},
+      business_register = #{businessRegister,jdbcType=VARCHAR},
+      tax_register = #{taxRegister,jdbcType=VARCHAR},
+      finance_name = #{financeName,jdbcType=VARCHAR},
+      finance_phone = #{financePhone,jdbcType=VARCHAR},
+      main_name = #{mainName,jdbcType=VARCHAR},
+      main_phone = #{mainPhone,jdbcType=VARCHAR},
+      main_duty = #{mainDuty,jdbcType=VARCHAR},
+      reserve_name = #{reserveName,jdbcType=VARCHAR},
+      reserve_phone = #{reservePhone,jdbcType=VARCHAR},
+      reserve_duty = #{reserveDuty,jdbcType=VARCHAR},
+      account_period = #{accountPeriod,jdbcType=VARCHAR},
+      temp_period = #{tempPeriod,jdbcType=VARCHAR},
+      max_debt = #{maxDebt,jdbcType=DECIMAL},
+      temp_debt = #{tempDebt,jdbcType=DECIMAL},
+      receivable = #{receivable,jdbcType=DECIMAL},
+      acc_receivable = #{accReceivable,jdbcType=DECIMAL},
+      acc_receipt = #{accReceipt,jdbcType=DECIMAL},
+      status = #{status,jdbcType=TINYINT},
+      creator = #{creator,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      account_opener = #{accountOpener,jdbcType=VARCHAR},
+      account_name = #{accountName,jdbcType=VARCHAR},
+      account_num = #{accountNum,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

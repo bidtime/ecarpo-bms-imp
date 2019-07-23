@@ -1,51 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.ecarpo.bms.eas.server.storeroomshelflocation.dao.DmsStoreroomShelflocationMapper">
-  <resultMap id="BaseResultMap" type="com.ecarpo.bms.eas.server.storeroomshelflocation.entity.DmsStoreroomShelflocationDO">
-    <!-- @mbg.generated 2019-07-19 10:57:57 -->
+<mapper namespace="com.ecarpo.bms.eas.server.dmsrepairworkhour.dao.DmsRepairWorkhourMapper">
+  <resultMap id="BaseResultMap" type="com.ecarpo.bms.eas.server.dmsrepairworkhour.entity.DmsRepairWorkhourDO">
+    <!-- @mbg.generated 2019-07-22 16:41:30 -->
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="store_id" jdbcType="INTEGER" property="storeId" />
-    <result column="location_code" jdbcType="VARCHAR" property="locationCode" />
-    <result column="location_name" jdbcType="VARCHAR" property="locationName" />
-    <result column="location_area" jdbcType="VARCHAR" property="locationArea" />
-    <result column="function_type" jdbcType="TINYINT" property="functionType" />
-    <result column="occupy_status" jdbcType="TINYINT" property="occupyStatus" />
-    <result column="room_type" jdbcType="CHAR" property="roomType" />
-    <result column="from_store_id" jdbcType="INTEGER" property="fromStoreId" />
-    <result column="remark" jdbcType="VARCHAR" property="remark" />
-    <result column="status" jdbcType="TINYINT" property="status" />
+    <result column="workhour_code" jdbcType="VARCHAR" property="workhourCode" />
+    <result column="workhour_name" jdbcType="VARCHAR" property="workhourName" />
+    <result column="review_workhour" jdbcType="DECIMAL" property="reviewWorkhour" />
+    <result column="review_price" jdbcType="DECIMAL" property="reviewPrice" />
+    <result column="rated_workhour" jdbcType="DECIMAL" property="ratedWorkhour" />
+    <result column="rated_price" jdbcType="DECIMAL" property="ratedPrice" />
+    <result column="is_universal" jdbcType="TINYINT" property="isUniversal" />
+    <result column="is_discount" jdbcType="TINYINT" property="isDiscount" />
+    <result column="is_sheetmetal" jdbcType="TINYINT" property="isSheetmetal" />
+    <result column="retrieval_code" jdbcType="VARCHAR" property="retrievalCode" />
+    <result column="state" jdbcType="TINYINT" property="state" />
+    <result column="workhour_level" jdbcType="CHAR" property="workhourLevel" />
+    <result column="creator" jdbcType="INTEGER" property="creator" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="is_wash_car" jdbcType="TINYINT" property="isWashCar" />
   </resultMap>
   <sql id="Base_Column_List">
-    <!-- @mbg.generated 2019-07-19 10:57:57 -->
-    id, store_id, location_code, location_name, location_area, function_type, occupy_status, 
-    room_type, from_store_id, remark, status
+    <!-- @mbg.generated 2019-07-22 16:41:30 -->
+    id, store_id, workhour_code, workhour_name, review_workhour, review_price, rated_workhour, 
+    rated_price, is_universal, is_discount, is_sheetmetal, retrieval_code, state, workhour_level, 
+    creator, create_time, is_wash_car
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    <!-- @mbg.generated 2019-07-19 10:57:57 -->
+    <!-- @mbg.generated 2019-07-22 16:41:30 -->
     select 
     <include refid="Base_Column_List" />
-    from dms_storeroom_shelflocation
+    from dms_repair_workhour
     where id = #{id,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    <!-- @mbg.generated 2019-07-19 10:57:57 -->
-    delete from dms_storeroom_shelflocation
+    <!-- @mbg.generated 2019-07-22 16:41:30 -->
+    delete from dms_repair_workhour
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.ecarpo.bms.eas.server.storeroomshelflocation.entity.DmsStoreroomShelflocationDO">
-    <!-- @mbg.generated 2019-07-19 10:57:57 -->
-    insert into dms_storeroom_shelflocation (id, store_id, location_code, 
-      location_name, location_area, function_type, 
-      occupy_status, room_type, from_store_id, 
-      remark, status)
-    values (#{id,jdbcType=INTEGER}, #{storeId,jdbcType=INTEGER}, #{locationCode,jdbcType=VARCHAR}, 
-      #{locationName,jdbcType=VARCHAR}, #{locationArea,jdbcType=VARCHAR}, #{functionType,jdbcType=TINYINT}, 
-      #{occupyStatus,jdbcType=TINYINT}, #{roomType,jdbcType=CHAR}, #{fromStoreId,jdbcType=INTEGER}, 
-      #{remark,jdbcType=VARCHAR}, #{status,jdbcType=TINYINT})
+  <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="com.ecarpo.bms.eas.server.dmsrepairworkhour.entity.DmsRepairWorkhourDO">
+    <!-- @mbg.generated 2019-07-22 16:41:30 -->
+    insert into dms_repair_workhour (id, store_id, workhour_code, 
+      workhour_name, review_workhour, review_price, 
+      rated_workhour, rated_price, is_universal, 
+      is_discount, is_sheetmetal, retrieval_code, 
+      state, workhour_level, creator, 
+      create_time, is_wash_car)
+    values (#{id,jdbcType=INTEGER}, #{storeId,jdbcType=INTEGER}, #{workhourCode,jdbcType=VARCHAR}, 
+      #{workhourName,jdbcType=VARCHAR}, #{reviewWorkhour,jdbcType=DECIMAL}, #{reviewPrice,jdbcType=DECIMAL}, 
+      #{ratedWorkhour,jdbcType=DECIMAL}, #{ratedPrice,jdbcType=DECIMAL}, #{isUniversal,jdbcType=TINYINT}, 
+      #{isDiscount,jdbcType=TINYINT}, #{isSheetmetal,jdbcType=TINYINT}, #{retrievalCode,jdbcType=VARCHAR}, 
+      #{state,jdbcType=TINYINT}, #{workhourLevel,jdbcType=CHAR}, #{creator,jdbcType=INTEGER}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{isWashCar,jdbcType=TINYINT})
   </insert>
-  <insert id="insertSelective" parameterType="com.ecarpo.bms.eas.server.storeroomshelflocation.entity.DmsStoreroomShelflocationDO">
-    <!-- @mbg.generated 2019-07-19 10:57:57 -->
-    insert into dms_storeroom_shelflocation
+  <insert id="insertSelective" useGeneratedKeys="true" keyProperty="id" parameterType="com.ecarpo.bms.eas.server.dmsrepairworkhour.entity.DmsRepairWorkhourDO">
+    <!-- @mbg.generated 2019-07-22 16:41:30 -->
+    insert into dms_repair_workhour
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
         id,
@@ -53,32 +64,50 @@
       <if test="storeId != null">
         store_id,
       </if>
-      <if test="locationCode != null">
-        location_code,
+      <if test="workhourCode != null">
+        workhour_code,
       </if>
-      <if test="locationName != null">
-        location_name,
+      <if test="workhourName != null">
+        workhour_name,
       </if>
-      <if test="locationArea != null">
-        location_area,
+      <if test="reviewWorkhour != null">
+        review_workhour,
       </if>
-      <if test="functionType != null">
-        function_type,
+      <if test="reviewPrice != null">
+        review_price,
       </if>
-      <if test="occupyStatus != null">
-        occupy_status,
+      <if test="ratedWorkhour != null">
+        rated_workhour,
       </if>
-      <if test="roomType != null">
-        room_type,
+      <if test="ratedPrice != null">
+        rated_price,
       </if>
-      <if test="fromStoreId != null">
-        from_store_id,
+      <if test="isUniversal != null">
+        is_universal,
       </if>
-      <if test="remark != null">
-        remark,
+      <if test="isDiscount != null">
+        is_discount,
       </if>
-      <if test="status != null">
-        status,
+      <if test="isSheetmetal != null">
+        is_sheetmetal,
+      </if>
+      <if test="retrievalCode != null">
+        retrieval_code,
+      </if>
+      <if test="state != null">
+        state,
+      </if>
+      <if test="workhourLevel != null">
+        workhour_level,
+      </if>
+      <if test="creator != null">
+        creator,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="isWashCar != null">
+        is_wash_car,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
@@ -88,85 +117,127 @@
       <if test="storeId != null">
         #{storeId,jdbcType=INTEGER},
       </if>
-      <if test="locationCode != null">
-        #{locationCode,jdbcType=VARCHAR},
+      <if test="workhourCode != null">
+        #{workhourCode,jdbcType=VARCHAR},
       </if>
-      <if test="locationName != null">
-        #{locationName,jdbcType=VARCHAR},
+      <if test="workhourName != null">
+        #{workhourName,jdbcType=VARCHAR},
       </if>
-      <if test="locationArea != null">
-        #{locationArea,jdbcType=VARCHAR},
+      <if test="reviewWorkhour != null">
+        #{reviewWorkhour,jdbcType=DECIMAL},
       </if>
-      <if test="functionType != null">
-        #{functionType,jdbcType=TINYINT},
+      <if test="reviewPrice != null">
+        #{reviewPrice,jdbcType=DECIMAL},
       </if>
-      <if test="occupyStatus != null">
-        #{occupyStatus,jdbcType=TINYINT},
+      <if test="ratedWorkhour != null">
+        #{ratedWorkhour,jdbcType=DECIMAL},
       </if>
-      <if test="roomType != null">
-        #{roomType,jdbcType=CHAR},
+      <if test="ratedPrice != null">
+        #{ratedPrice,jdbcType=DECIMAL},
       </if>
-      <if test="fromStoreId != null">
-        #{fromStoreId,jdbcType=INTEGER},
+      <if test="isUniversal != null">
+        #{isUniversal,jdbcType=TINYINT},
       </if>
-      <if test="remark != null">
-        #{remark,jdbcType=VARCHAR},
+      <if test="isDiscount != null">
+        #{isDiscount,jdbcType=TINYINT},
       </if>
-      <if test="status != null">
-        #{status,jdbcType=TINYINT},
+      <if test="isSheetmetal != null">
+        #{isSheetmetal,jdbcType=TINYINT},
+      </if>
+      <if test="retrievalCode != null">
+        #{retrievalCode,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null">
+        #{state,jdbcType=TINYINT},
+      </if>
+      <if test="workhourLevel != null">
+        #{workhourLevel,jdbcType=CHAR},
+      </if>
+      <if test="creator != null">
+        #{creator,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isWashCar != null">
+        #{isWashCar,jdbcType=TINYINT},
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.ecarpo.bms.eas.server.storeroomshelflocation.entity.DmsStoreroomShelflocationDO">
-    <!-- @mbg.generated 2019-07-19 10:57:57 -->
-    update dms_storeroom_shelflocation
+  <update id="updateByPrimaryKeySelective" parameterType="com.ecarpo.bms.eas.server.dmsrepairworkhour.entity.DmsRepairWorkhourDO">
+    <!-- @mbg.generated 2019-07-22 16:41:30 -->
+    update dms_repair_workhour
     <set>
       <if test="storeId != null">
         store_id = #{storeId,jdbcType=INTEGER},
       </if>
-      <if test="locationCode != null">
-        location_code = #{locationCode,jdbcType=VARCHAR},
+      <if test="workhourCode != null">
+        workhour_code = #{workhourCode,jdbcType=VARCHAR},
       </if>
-      <if test="locationName != null">
-        location_name = #{locationName,jdbcType=VARCHAR},
+      <if test="workhourName != null">
+        workhour_name = #{workhourName,jdbcType=VARCHAR},
       </if>
-      <if test="locationArea != null">
-        location_area = #{locationArea,jdbcType=VARCHAR},
+      <if test="reviewWorkhour != null">
+        review_workhour = #{reviewWorkhour,jdbcType=DECIMAL},
       </if>
-      <if test="functionType != null">
-        function_type = #{functionType,jdbcType=TINYINT},
+      <if test="reviewPrice != null">
+        review_price = #{reviewPrice,jdbcType=DECIMAL},
       </if>
-      <if test="occupyStatus != null">
-        occupy_status = #{occupyStatus,jdbcType=TINYINT},
+      <if test="ratedWorkhour != null">
+        rated_workhour = #{ratedWorkhour,jdbcType=DECIMAL},
       </if>
-      <if test="roomType != null">
-        room_type = #{roomType,jdbcType=CHAR},
+      <if test="ratedPrice != null">
+        rated_price = #{ratedPrice,jdbcType=DECIMAL},
       </if>
-      <if test="fromStoreId != null">
-        from_store_id = #{fromStoreId,jdbcType=INTEGER},
+      <if test="isUniversal != null">
+        is_universal = #{isUniversal,jdbcType=TINYINT},
       </if>
-      <if test="remark != null">
-        remark = #{remark,jdbcType=VARCHAR},
+      <if test="isDiscount != null">
+        is_discount = #{isDiscount,jdbcType=TINYINT},
       </if>
-      <if test="status != null">
-        status = #{status,jdbcType=TINYINT},
+      <if test="isSheetmetal != null">
+        is_sheetmetal = #{isSheetmetal,jdbcType=TINYINT},
+      </if>
+      <if test="retrievalCode != null">
+        retrieval_code = #{retrievalCode,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null">
+        state = #{state,jdbcType=TINYINT},
+      </if>
+      <if test="workhourLevel != null">
+        workhour_level = #{workhourLevel,jdbcType=CHAR},
+      </if>
+      <if test="creator != null">
+        creator = #{creator,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isWashCar != null">
+        is_wash_car = #{isWashCar,jdbcType=TINYINT},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.ecarpo.bms.eas.server.storeroomshelflocation.entity.DmsStoreroomShelflocationDO">
-    <!-- @mbg.generated 2019-07-19 10:57:57 -->
-    update dms_storeroom_shelflocation
+  <update id="updateByPrimaryKey" parameterType="com.ecarpo.bms.eas.server.dmsrepairworkhour.entity.DmsRepairWorkhourDO">
+    <!-- @mbg.generated 2019-07-22 16:41:30 -->
+    update dms_repair_workhour
     set store_id = #{storeId,jdbcType=INTEGER},
-      location_code = #{locationCode,jdbcType=VARCHAR},
-      location_name = #{locationName,jdbcType=VARCHAR},
-      location_area = #{locationArea,jdbcType=VARCHAR},
-      function_type = #{functionType,jdbcType=TINYINT},
-      occupy_status = #{occupyStatus,jdbcType=TINYINT},
-      room_type = #{roomType,jdbcType=CHAR},
-      from_store_id = #{fromStoreId,jdbcType=INTEGER},
-      remark = #{remark,jdbcType=VARCHAR},
-      status = #{status,jdbcType=TINYINT}
+      workhour_code = #{workhourCode,jdbcType=VARCHAR},
+      workhour_name = #{workhourName,jdbcType=VARCHAR},
+      review_workhour = #{reviewWorkhour,jdbcType=DECIMAL},
+      review_price = #{reviewPrice,jdbcType=DECIMAL},
+      rated_workhour = #{ratedWorkhour,jdbcType=DECIMAL},
+      rated_price = #{ratedPrice,jdbcType=DECIMAL},
+      is_universal = #{isUniversal,jdbcType=TINYINT},
+      is_discount = #{isDiscount,jdbcType=TINYINT},
+      is_sheetmetal = #{isSheetmetal,jdbcType=TINYINT},
+      retrieval_code = #{retrievalCode,jdbcType=VARCHAR},
+      state = #{state,jdbcType=TINYINT},
+      workhour_level = #{workhourLevel,jdbcType=CHAR},
+      creator = #{creator,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      is_wash_car = #{isWashCar,jdbcType=TINYINT}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ecarpo.bms.eas.server.crmmemberstore.dao.CrmMemberStoreMapper">
+  <resultMap id="BaseResultMap" type="com.ecarpo.bms.eas.server.crmmemberstore.entity.CrmMemberStoreDO">
+    <!-- @mbg.generated 2019-07-23 10:44:25 -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="store_id" jdbcType="INTEGER" property="storeId" />
+    <result column="custom_id" jdbcType="INTEGER" property="customId" />
+    <result column="card_num" jdbcType="VARCHAR" property="cardNum" />
+    <result column="ctime" jdbcType="TIMESTAMP" property="ctime" />
+    <result column="store_amount" jdbcType="DECIMAL" property="storeAmount" />
+    <result column="giving_amount" jdbcType="DECIMAL" property="givingAmount" />
+    <result column="total_amount" jdbcType="DECIMAL" property="totalAmount" />
+    <result column="now_amount" jdbcType="DECIMAL" property="nowAmount" />
+    <result column="cstaff" jdbcType="INTEGER" property="cstaff" />
+    <result column="rule_id" jdbcType="INTEGER" property="ruleId" />
+    <result column="store_type" jdbcType="VARCHAR" property="storeType" />
+    <result column="giving_value_type" jdbcType="CHAR" property="givingValueType" />
+    <result column="giving_type" jdbcType="TINYINT" property="givingType" />
+    <result column="is_payed" jdbcType="TINYINT" property="isPayed" />
+    <result column="cash_pay" jdbcType="DECIMAL" property="cashPay" />
+    <result column="hang_pay" jdbcType="DECIMAL" property="hangPay" />
+    <result column="pos_pay" jdbcType="DECIMAL" property="posPay" />
+    <result column="check_pay" jdbcType="DECIMAL" property="checkPay" />
+    <result column="lakala_pay" jdbcType="DECIMAL" property="lakalaPay" />
+    <result column="weixin_pay" jdbcType="DECIMAL" property="weixinPay" />
+    <result column="alipay_pay" jdbcType="DECIMAL" property="alipayPay" />
+    <result column="transfer" jdbcType="DECIMAL" property="transfer" />
+    <result column="total_pay" jdbcType="DECIMAL" property="totalPay" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.ecarpo.bms.eas.server.crmmemberstore.entity.CrmMemberStoreDO">
+    <!-- @mbg.generated 2019-07-23 10:44:25 -->
+    <result column="remark" jdbcType="LONGVARCHAR" property="remark" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!-- @mbg.generated 2019-07-23 10:44:25 -->
+    id, store_id, custom_id, card_num, ctime, store_amount, giving_amount, total_amount, 
+    now_amount, cstaff, rule_id, store_type, giving_value_type, giving_type, is_payed, 
+    cash_pay, hang_pay, pos_pay, check_pay, lakala_pay, weixin_pay, alipay_pay, transfer, 
+    total_pay
+  </sql>
+  <sql id="Blob_Column_List">
+    <!-- @mbg.generated 2019-07-23 10:44:25 -->
+    remark
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+    <!-- @mbg.generated 2019-07-23 10:44:25 -->
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from crm_member_store
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!-- @mbg.generated 2019-07-23 10:44:25 -->
+    delete from crm_member_store
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="com.ecarpo.bms.eas.server.crmmemberstore.entity.CrmMemberStoreDO">
+    <!-- @mbg.generated 2019-07-23 10:44:25 -->
+    insert into crm_member_store (id, store_id, custom_id, 
+      card_num, ctime, store_amount, 
+      giving_amount, total_amount, now_amount, 
+      cstaff, rule_id, store_type, 
+      giving_value_type, giving_type, is_payed, 
+      cash_pay, hang_pay, pos_pay, 
+      check_pay, lakala_pay, weixin_pay, 
+      alipay_pay, transfer, total_pay, 
+      remark)
+    values (#{id,jdbcType=INTEGER}, #{storeId,jdbcType=INTEGER}, #{customId,jdbcType=INTEGER}, 
+      #{cardNum,jdbcType=VARCHAR}, #{ctime,jdbcType=TIMESTAMP}, #{storeAmount,jdbcType=DECIMAL}, 
+      #{givingAmount,jdbcType=DECIMAL}, #{totalAmount,jdbcType=DECIMAL}, #{nowAmount,jdbcType=DECIMAL}, 
+      #{cstaff,jdbcType=INTEGER}, #{ruleId,jdbcType=INTEGER}, #{storeType,jdbcType=VARCHAR}, 
+      #{givingValueType,jdbcType=CHAR}, #{givingType,jdbcType=TINYINT}, #{isPayed,jdbcType=TINYINT}, 
+      #{cashPay,jdbcType=DECIMAL}, #{hangPay,jdbcType=DECIMAL}, #{posPay,jdbcType=DECIMAL}, 
+      #{checkPay,jdbcType=DECIMAL}, #{lakalaPay,jdbcType=DECIMAL}, #{weixinPay,jdbcType=DECIMAL}, 
+      #{alipayPay,jdbcType=DECIMAL}, #{transfer,jdbcType=DECIMAL}, #{totalPay,jdbcType=DECIMAL}, 
+      #{remark,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" useGeneratedKeys="true" keyProperty="id" parameterType="com.ecarpo.bms.eas.server.crmmemberstore.entity.CrmMemberStoreDO">
+    <!-- @mbg.generated 2019-07-23 10:44:25 -->
+    insert into crm_member_store
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="storeId != null">
+        store_id,
+      </if>
+      <if test="customId != null">
+        custom_id,
+      </if>
+      <if test="cardNum != null">
+        card_num,
+      </if>
+      <if test="ctime != null">
+        ctime,
+      </if>
+      <if test="storeAmount != null">
+        store_amount,
+      </if>
+      <if test="givingAmount != null">
+        giving_amount,
+      </if>
+      <if test="totalAmount != null">
+        total_amount,
+      </if>
+      <if test="nowAmount != null">
+        now_amount,
+      </if>
+      <if test="cstaff != null">
+        cstaff,
+      </if>
+      <if test="ruleId != null">
+        rule_id,
+      </if>
+      <if test="storeType != null">
+        store_type,
+      </if>
+      <if test="givingValueType != null">
+        giving_value_type,
+      </if>
+      <if test="givingType != null">
+        giving_type,
+      </if>
+      <if test="isPayed != null">
+        is_payed,
+      </if>
+      <if test="cashPay != null">
+        cash_pay,
+      </if>
+      <if test="hangPay != null">
+        hang_pay,
+      </if>
+      <if test="posPay != null">
+        pos_pay,
+      </if>
+      <if test="checkPay != null">
+        check_pay,
+      </if>
+      <if test="lakalaPay != null">
+        lakala_pay,
+      </if>
+      <if test="weixinPay != null">
+        weixin_pay,
+      </if>
+      <if test="alipayPay != null">
+        alipay_pay,
+      </if>
+      <if test="transfer != null">
+        transfer,
+      </if>
+      <if test="totalPay != null">
+        total_pay,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="storeId != null">
+        #{storeId,jdbcType=INTEGER},
+      </if>
+      <if test="customId != null">
+        #{customId,jdbcType=INTEGER},
+      </if>
+      <if test="cardNum != null">
+        #{cardNum,jdbcType=VARCHAR},
+      </if>
+      <if test="ctime != null">
+        #{ctime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="storeAmount != null">
+        #{storeAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="givingAmount != null">
+        #{givingAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="totalAmount != null">
+        #{totalAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="nowAmount != null">
+        #{nowAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="cstaff != null">
+        #{cstaff,jdbcType=INTEGER},
+      </if>
+      <if test="ruleId != null">
+        #{ruleId,jdbcType=INTEGER},
+      </if>
+      <if test="storeType != null">
+        #{storeType,jdbcType=VARCHAR},
+      </if>
+      <if test="givingValueType != null">
+        #{givingValueType,jdbcType=CHAR},
+      </if>
+      <if test="givingType != null">
+        #{givingType,jdbcType=TINYINT},
+      </if>
+      <if test="isPayed != null">
+        #{isPayed,jdbcType=TINYINT},
+      </if>
+      <if test="cashPay != null">
+        #{cashPay,jdbcType=DECIMAL},
+      </if>
+      <if test="hangPay != null">
+        #{hangPay,jdbcType=DECIMAL},
+      </if>
+      <if test="posPay != null">
+        #{posPay,jdbcType=DECIMAL},
+      </if>
+      <if test="checkPay != null">
+        #{checkPay,jdbcType=DECIMAL},
+      </if>
+      <if test="lakalaPay != null">
+        #{lakalaPay,jdbcType=DECIMAL},
+      </if>
+      <if test="weixinPay != null">
+        #{weixinPay,jdbcType=DECIMAL},
+      </if>
+      <if test="alipayPay != null">
+        #{alipayPay,jdbcType=DECIMAL},
+      </if>
+      <if test="transfer != null">
+        #{transfer,jdbcType=DECIMAL},
+      </if>
+      <if test="totalPay != null">
+        #{totalPay,jdbcType=DECIMAL},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ecarpo.bms.eas.server.crmmemberstore.entity.CrmMemberStoreDO">
+    <!-- @mbg.generated 2019-07-23 10:44:25 -->
+    update crm_member_store
+    <set>
+      <if test="storeId != null">
+        store_id = #{storeId,jdbcType=INTEGER},
+      </if>
+      <if test="customId != null">
+        custom_id = #{customId,jdbcType=INTEGER},
+      </if>
+      <if test="cardNum != null">
+        card_num = #{cardNum,jdbcType=VARCHAR},
+      </if>
+      <if test="ctime != null">
+        ctime = #{ctime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="storeAmount != null">
+        store_amount = #{storeAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="givingAmount != null">
+        giving_amount = #{givingAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="totalAmount != null">
+        total_amount = #{totalAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="nowAmount != null">
+        now_amount = #{nowAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="cstaff != null">
+        cstaff = #{cstaff,jdbcType=INTEGER},
+      </if>
+      <if test="ruleId != null">
+        rule_id = #{ruleId,jdbcType=INTEGER},
+      </if>
+      <if test="storeType != null">
+        store_type = #{storeType,jdbcType=VARCHAR},
+      </if>
+      <if test="givingValueType != null">
+        giving_value_type = #{givingValueType,jdbcType=CHAR},
+      </if>
+      <if test="givingType != null">
+        giving_type = #{givingType,jdbcType=TINYINT},
+      </if>
+      <if test="isPayed != null">
+        is_payed = #{isPayed,jdbcType=TINYINT},
+      </if>
+      <if test="cashPay != null">
+        cash_pay = #{cashPay,jdbcType=DECIMAL},
+      </if>
+      <if test="hangPay != null">
+        hang_pay = #{hangPay,jdbcType=DECIMAL},
+      </if>
+      <if test="posPay != null">
+        pos_pay = #{posPay,jdbcType=DECIMAL},
+      </if>
+      <if test="checkPay != null">
+        check_pay = #{checkPay,jdbcType=DECIMAL},
+      </if>
+      <if test="lakalaPay != null">
+        lakala_pay = #{lakalaPay,jdbcType=DECIMAL},
+      </if>
+      <if test="weixinPay != null">
+        weixin_pay = #{weixinPay,jdbcType=DECIMAL},
+      </if>
+      <if test="alipayPay != null">
+        alipay_pay = #{alipayPay,jdbcType=DECIMAL},
+      </if>
+      <if test="transfer != null">
+        transfer = #{transfer,jdbcType=DECIMAL},
+      </if>
+      <if test="totalPay != null">
+        total_pay = #{totalPay,jdbcType=DECIMAL},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.ecarpo.bms.eas.server.crmmemberstore.entity.CrmMemberStoreDO">
+    <!-- @mbg.generated 2019-07-23 10:44:25 -->
+    update crm_member_store
+    set store_id = #{storeId,jdbcType=INTEGER},
+      custom_id = #{customId,jdbcType=INTEGER},
+      card_num = #{cardNum,jdbcType=VARCHAR},
+      ctime = #{ctime,jdbcType=TIMESTAMP},
+      store_amount = #{storeAmount,jdbcType=DECIMAL},
+      giving_amount = #{givingAmount,jdbcType=DECIMAL},
+      total_amount = #{totalAmount,jdbcType=DECIMAL},
+      now_amount = #{nowAmount,jdbcType=DECIMAL},
+      cstaff = #{cstaff,jdbcType=INTEGER},
+      rule_id = #{ruleId,jdbcType=INTEGER},
+      store_type = #{storeType,jdbcType=VARCHAR},
+      giving_value_type = #{givingValueType,jdbcType=CHAR},
+      giving_type = #{givingType,jdbcType=TINYINT},
+      is_payed = #{isPayed,jdbcType=TINYINT},
+      cash_pay = #{cashPay,jdbcType=DECIMAL},
+      hang_pay = #{hangPay,jdbcType=DECIMAL},
+      pos_pay = #{posPay,jdbcType=DECIMAL},
+      check_pay = #{checkPay,jdbcType=DECIMAL},
+      lakala_pay = #{lakalaPay,jdbcType=DECIMAL},
+      weixin_pay = #{weixinPay,jdbcType=DECIMAL},
+      alipay_pay = #{alipayPay,jdbcType=DECIMAL},
+      transfer = #{transfer,jdbcType=DECIMAL},
+      total_pay = #{totalPay,jdbcType=DECIMAL},
+      remark = #{remark,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ecarpo.bms.eas.server.crmmemberstore.entity.CrmMemberStoreDO">
+    <!-- @mbg.generated 2019-07-23 10:44:25 -->
+    update crm_member_store
+    set store_id = #{storeId,jdbcType=INTEGER},
+      custom_id = #{customId,jdbcType=INTEGER},
+      card_num = #{cardNum,jdbcType=VARCHAR},
+      ctime = #{ctime,jdbcType=TIMESTAMP},
+      store_amount = #{storeAmount,jdbcType=DECIMAL},
+      giving_amount = #{givingAmount,jdbcType=DECIMAL},
+      total_amount = #{totalAmount,jdbcType=DECIMAL},
+      now_amount = #{nowAmount,jdbcType=DECIMAL},
+      cstaff = #{cstaff,jdbcType=INTEGER},
+      rule_id = #{ruleId,jdbcType=INTEGER},
+      store_type = #{storeType,jdbcType=VARCHAR},
+      giving_value_type = #{givingValueType,jdbcType=CHAR},
+      giving_type = #{givingType,jdbcType=TINYINT},
+      is_payed = #{isPayed,jdbcType=TINYINT},
+      cash_pay = #{cashPay,jdbcType=DECIMAL},
+      hang_pay = #{hangPay,jdbcType=DECIMAL},
+      pos_pay = #{posPay,jdbcType=DECIMAL},
+      check_pay = #{checkPay,jdbcType=DECIMAL},
+      lakala_pay = #{lakalaPay,jdbcType=DECIMAL},
+      weixin_pay = #{weixinPay,jdbcType=DECIMAL},
+      alipay_pay = #{alipayPay,jdbcType=DECIMAL},
+      transfer = #{transfer,jdbcType=DECIMAL},
+      total_pay = #{totalPay,jdbcType=DECIMAL}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

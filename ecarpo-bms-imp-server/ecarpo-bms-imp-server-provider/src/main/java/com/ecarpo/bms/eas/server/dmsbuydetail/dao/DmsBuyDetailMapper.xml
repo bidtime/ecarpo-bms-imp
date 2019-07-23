@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ecarpo.bms.eas.server.dmsbuydetail.dao.DmsBuyDetailMapper">
+  <resultMap id="BaseResultMap" type="com.ecarpo.bms.eas.server.dmsbuydetail.entity.DmsBuyDetailDO">
+    <!-- @mbg.generated 2019-07-23 10:38:13 -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="store_id" jdbcType="INTEGER" property="storeId" />
+    <result column="buy_number" jdbcType="VARCHAR" property="buyNumber" />
+    <result column="product_id" jdbcType="INTEGER" property="productId" />
+    <result column="cost_price" jdbcType="DECIMAL" property="costPrice" />
+    <result column="cost_price_notax" jdbcType="DECIMAL" property="costPriceNotax" />
+    <result column="buy_count" jdbcType="DECIMAL" property="buyCount" />
+    <result column="add_rate" jdbcType="INTEGER" property="addRate" />
+    <result column="amount" jdbcType="DECIMAL" property="amount" />
+    <result column="amount_notax" jdbcType="DECIMAL" property="amountNotax" />
+    <result column="location_id" jdbcType="INTEGER" property="locationId" />
+    <result column="location_name" jdbcType="VARCHAR" property="locationName" />
+    <result column="c_time" jdbcType="INTEGER" property="cTime" />
+    <result column="status" jdbcType="TINYINT" property="status" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.ecarpo.bms.eas.server.dmsbuydetail.entity.DmsBuyDetailDO">
+    <!-- @mbg.generated 2019-07-23 10:38:13 -->
+    <result column="desc" jdbcType="LONGVARCHAR" property="desc" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!-- @mbg.generated 2019-07-23 10:38:13 -->
+    id, store_id, buy_number, product_id, cost_price, cost_price_notax, buy_count, add_rate, 
+    amount, amount_notax, location_id, location_name, c_time, status
+  </sql>
+  <sql id="Blob_Column_List">
+    <!-- @mbg.generated 2019-07-23 10:38:13 -->
+    desc
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+    <!-- @mbg.generated 2019-07-23 10:38:13 -->
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from dms_buy_detail
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!-- @mbg.generated 2019-07-23 10:38:13 -->
+    delete from dms_buy_detail
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="com.ecarpo.bms.eas.server.dmsbuydetail.entity.DmsBuyDetailDO">
+    <!-- @mbg.generated 2019-07-23 10:38:13 -->
+    insert into dms_buy_detail (id, store_id, buy_number, 
+      product_id, cost_price, cost_price_notax, 
+      buy_count, add_rate, amount, 
+      amount_notax, location_id, location_name, 
+      c_time, status, desc
+      )
+    values (#{id,jdbcType=INTEGER}, #{storeId,jdbcType=INTEGER}, #{buyNumber,jdbcType=VARCHAR}, 
+      #{productId,jdbcType=INTEGER}, #{costPrice,jdbcType=DECIMAL}, #{costPriceNotax,jdbcType=DECIMAL}, 
+      #{buyCount,jdbcType=DECIMAL}, #{addRate,jdbcType=INTEGER}, #{amount,jdbcType=DECIMAL}, 
+      #{amountNotax,jdbcType=DECIMAL}, #{locationId,jdbcType=INTEGER}, #{locationName,jdbcType=VARCHAR}, 
+      #{cTime,jdbcType=INTEGER}, #{status,jdbcType=TINYINT}, #{desc,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" useGeneratedKeys="true" keyProperty="id" parameterType="com.ecarpo.bms.eas.server.dmsbuydetail.entity.DmsBuyDetailDO">
+    <!-- @mbg.generated 2019-07-23 10:38:13 -->
+    insert into dms_buy_detail
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="storeId != null">
+        store_id,
+      </if>
+      <if test="buyNumber != null">
+        buy_number,
+      </if>
+      <if test="productId != null">
+        product_id,
+      </if>
+      <if test="costPrice != null">
+        cost_price,
+      </if>
+      <if test="costPriceNotax != null">
+        cost_price_notax,
+      </if>
+      <if test="buyCount != null">
+        buy_count,
+      </if>
+      <if test="addRate != null">
+        add_rate,
+      </if>
+      <if test="amount != null">
+        amount,
+      </if>
+      <if test="amountNotax != null">
+        amount_notax,
+      </if>
+      <if test="locationId != null">
+        location_id,
+      </if>
+      <if test="locationName != null">
+        location_name,
+      </if>
+      <if test="cTime != null">
+        c_time,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="desc != null">
+        desc,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="storeId != null">
+        #{storeId,jdbcType=INTEGER},
+      </if>
+      <if test="buyNumber != null">
+        #{buyNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="productId != null">
+        #{productId,jdbcType=INTEGER},
+      </if>
+      <if test="costPrice != null">
+        #{costPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="costPriceNotax != null">
+        #{costPriceNotax,jdbcType=DECIMAL},
+      </if>
+      <if test="buyCount != null">
+        #{buyCount,jdbcType=DECIMAL},
+      </if>
+      <if test="addRate != null">
+        #{addRate,jdbcType=INTEGER},
+      </if>
+      <if test="amount != null">
+        #{amount,jdbcType=DECIMAL},
+      </if>
+      <if test="amountNotax != null">
+        #{amountNotax,jdbcType=DECIMAL},
+      </if>
+      <if test="locationId != null">
+        #{locationId,jdbcType=INTEGER},
+      </if>
+      <if test="locationName != null">
+        #{locationName,jdbcType=VARCHAR},
+      </if>
+      <if test="cTime != null">
+        #{cTime,jdbcType=INTEGER},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=TINYINT},
+      </if>
+      <if test="desc != null">
+        #{desc,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ecarpo.bms.eas.server.dmsbuydetail.entity.DmsBuyDetailDO">
+    <!-- @mbg.generated 2019-07-23 10:38:13 -->
+    update dms_buy_detail
+    <set>
+      <if test="storeId != null">
+        store_id = #{storeId,jdbcType=INTEGER},
+      </if>
+      <if test="buyNumber != null">
+        buy_number = #{buyNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="productId != null">
+        product_id = #{productId,jdbcType=INTEGER},
+      </if>
+      <if test="costPrice != null">
+        cost_price = #{costPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="costPriceNotax != null">
+        cost_price_notax = #{costPriceNotax,jdbcType=DECIMAL},
+      </if>
+      <if test="buyCount != null">
+        buy_count = #{buyCount,jdbcType=DECIMAL},
+      </if>
+      <if test="addRate != null">
+        add_rate = #{addRate,jdbcType=INTEGER},
+      </if>
+      <if test="amount != null">
+        amount = #{amount,jdbcType=DECIMAL},
+      </if>
+      <if test="amountNotax != null">
+        amount_notax = #{amountNotax,jdbcType=DECIMAL},
+      </if>
+      <if test="locationId != null">
+        location_id = #{locationId,jdbcType=INTEGER},
+      </if>
+      <if test="locationName != null">
+        location_name = #{locationName,jdbcType=VARCHAR},
+      </if>
+      <if test="cTime != null">
+        c_time = #{cTime,jdbcType=INTEGER},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=TINYINT},
+      </if>
+      <if test="desc != null">
+        desc = #{desc,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.ecarpo.bms.eas.server.dmsbuydetail.entity.DmsBuyDetailDO">
+    <!-- @mbg.generated 2019-07-23 10:38:13 -->
+    update dms_buy_detail
+    set store_id = #{storeId,jdbcType=INTEGER},
+      buy_number = #{buyNumber,jdbcType=VARCHAR},
+      product_id = #{productId,jdbcType=INTEGER},
+      cost_price = #{costPrice,jdbcType=DECIMAL},
+      cost_price_notax = #{costPriceNotax,jdbcType=DECIMAL},
+      buy_count = #{buyCount,jdbcType=DECIMAL},
+      add_rate = #{addRate,jdbcType=INTEGER},
+      amount = #{amount,jdbcType=DECIMAL},
+      amount_notax = #{amountNotax,jdbcType=DECIMAL},
+      location_id = #{locationId,jdbcType=INTEGER},
+      location_name = #{locationName,jdbcType=VARCHAR},
+      c_time = #{cTime,jdbcType=INTEGER},
+      status = #{status,jdbcType=TINYINT},
+      desc = #{desc,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ecarpo.bms.eas.server.dmsbuydetail.entity.DmsBuyDetailDO">
+    <!-- @mbg.generated 2019-07-23 10:38:13 -->
+    update dms_buy_detail
+    set store_id = #{storeId,jdbcType=INTEGER},
+      buy_number = #{buyNumber,jdbcType=VARCHAR},
+      product_id = #{productId,jdbcType=INTEGER},
+      cost_price = #{costPrice,jdbcType=DECIMAL},
+      cost_price_notax = #{costPriceNotax,jdbcType=DECIMAL},
+      buy_count = #{buyCount,jdbcType=DECIMAL},
+      add_rate = #{addRate,jdbcType=INTEGER},
+      amount = #{amount,jdbcType=DECIMAL},
+      amount_notax = #{amountNotax,jdbcType=DECIMAL},
+      location_id = #{locationId,jdbcType=INTEGER},
+      location_name = #{locationName,jdbcType=VARCHAR},
+      c_time = #{cTime,jdbcType=INTEGER},
+      status = #{status,jdbcType=TINYINT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

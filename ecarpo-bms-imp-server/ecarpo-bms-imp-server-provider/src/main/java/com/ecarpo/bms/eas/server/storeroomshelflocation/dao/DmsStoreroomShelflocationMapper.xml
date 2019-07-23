@@ -32,7 +32,7 @@
     delete from dms_storeroom_shelflocation
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.ecarpo.bms.eas.server.storeroomshelflocation.entity.DmsStoreroomShelflocationDO">
+  <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="com.ecarpo.bms.eas.server.storeroomshelflocation.entity.DmsStoreroomShelflocationDO">
     <!-- @mbg.generated 2019-07-19 10:57:57 -->
     insert into dms_storeroom_shelflocation (id, store_id, location_code, 
       location_name, location_area, function_type, 
@@ -43,7 +43,7 @@
       #{occupyStatus,jdbcType=TINYINT}, #{roomType,jdbcType=CHAR}, #{fromStoreId,jdbcType=INTEGER}, 
       #{remark,jdbcType=VARCHAR}, #{status,jdbcType=TINYINT})
   </insert>
-  <insert id="insertSelective" parameterType="com.ecarpo.bms.eas.server.storeroomshelflocation.entity.DmsStoreroomShelflocationDO">
+  <insert id="insertSelective" useGeneratedKeys="true" keyProperty="id" parameterType="com.ecarpo.bms.eas.server.storeroomshelflocation.entity.DmsStoreroomShelflocationDO">
     <!-- @mbg.generated 2019-07-19 10:57:57 -->
     insert into dms_storeroom_shelflocation
     <trim prefix="(" suffix=")" suffixOverrides=",">

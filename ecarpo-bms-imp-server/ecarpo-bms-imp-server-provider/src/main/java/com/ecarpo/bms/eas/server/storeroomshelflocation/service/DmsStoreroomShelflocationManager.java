@@ -8,13 +8,13 @@ import org.springframework.stereotype.Service;
 
 import com.ecarpo.bms.eas.server.storeroomshelflocation.dao.DmsStoreroomShelflocationMapper;
 import com.ecarpo.bms.eas.server.storeroomshelflocation.entity.DmsStoreroomShelflocationDO;
-import com.ecarpo.framework.common.service.BaseManager2;
+import com.ecarpo.framework.common.service.BaseManager;
 
 /**
  * @author xinbeibei
  * @since 2019.06.04
  */
 @Service
-public class DmsStoreroomShelflocationManager extends BaseManager2<DmsStoreroomShelflocationMapper, DmsStoreroomShelflocationDO> {
+public class DmsStoreroomShelflocationManager extends BaseManager<DmsStoreroomShelflocationMapper, DmsStoreroomShelflocationDO> {
 
 }

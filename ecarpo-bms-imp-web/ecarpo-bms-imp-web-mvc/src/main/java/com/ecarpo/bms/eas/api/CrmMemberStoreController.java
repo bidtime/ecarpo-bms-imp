@@ -42,7 +42,7 @@ public class CrmMemberStoreController {
   @RequestMapping(value = "insert", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
   public Object insert(@Valid @RequestBody CrmMemberStoreInsertDTO dto, UserLoginBO user) throws Exception {
     UserUtils.copy(dto, user);
-    return service.insertLong(dto);
+    return service.insert(dto);
   }
 
   @RequestMapping(value = "update", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)

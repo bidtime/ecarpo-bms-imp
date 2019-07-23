@@ -14,7 +14,7 @@ import com.ecarpo.framework.model.ResultDTO;
  */
 public interface CrmBaseSupplierService {
   
-  ResultDTO<Number> insertLong(CrmBaseSupplierInsertDTO dto) throws Exception;
+  ResultDTO<Integer> insert(CrmBaseSupplierInsertDTO dto) throws Exception;
 
   ResultDTO<Integer> update(CrmBaseSupplierUpdateDTO dto) throws Exception;
 

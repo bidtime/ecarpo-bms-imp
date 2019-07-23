@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ecarpo.bms.eas.server.dmshisrepairorderproduct.dao.DmsHisRepairOrderProductMapper">
+  <resultMap id="BaseResultMap" type="com.ecarpo.bms.eas.server.dmshisrepairorderproduct.entity.DmsHisRepairOrderProductDO">
+    <!-- @mbg.generated 2019-07-22 16:50:45 -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="store_id" jdbcType="INTEGER" property="storeId" />
+    <result column="order_no" jdbcType="VARCHAR" property="orderNo" />
+    <result column="product_code" jdbcType="VARCHAR" property="productCode" />
+    <result column="product_name" jdbcType="VARCHAR" property="productName" />
+    <result column="product_model" jdbcType="VARCHAR" property="productModel" />
+    <result column="product_price" jdbcType="DECIMAL" property="productPrice" />
+    <result column="product_amount" jdbcType="DECIMAL" property="productAmount" />
+    <result column="worker_name" jdbcType="VARCHAR" property="workerName" />
+    <result column="dispatcher" jdbcType="INTEGER" property="dispatcher" />
+    <result column="oper_time" jdbcType="TIMESTAMP" property="operTime" />
+    <result column="create_time" jdbcType="DATE" property="createTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!-- @mbg.generated 2019-07-22 16:50:45 -->
+    id, store_id, order_no, product_code, product_name, product_model, product_price, 
+    product_amount, worker_name, dispatcher, oper_time, create_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!-- @mbg.generated 2019-07-22 16:50:45 -->
+    select 
+    <include refid="Base_Column_List" />
+    from dms_his_repair_order_product
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!-- @mbg.generated 2019-07-22 16:50:45 -->
+    delete from dms_his_repair_order_product
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="com.ecarpo.bms.eas.server.dmshisrepairorderproduct.entity.DmsHisRepairOrderProductDO">
+    <!-- @mbg.generated 2019-07-22 16:50:45 -->
+    insert into dms_his_repair_order_product (id, store_id, order_no, 
+      product_code, product_name, product_model, 
+      product_price, product_amount, worker_name, 
+      dispatcher, oper_time, create_time
+      )
+    values (#{id,jdbcType=INTEGER}, #{storeId,jdbcType=INTEGER}, #{orderNo,jdbcType=VARCHAR}, 
+      #{productCode,jdbcType=VARCHAR}, #{productName,jdbcType=VARCHAR}, #{productModel,jdbcType=VARCHAR}, 
+      #{productPrice,jdbcType=DECIMAL}, #{productAmount,jdbcType=DECIMAL}, #{workerName,jdbcType=VARCHAR}, 
+      #{dispatcher,jdbcType=INTEGER}, #{operTime,jdbcType=TIMESTAMP}, #{createTime,jdbcType=DATE}
+      )
+  </insert>
+  <insert id="insertSelective" useGeneratedKeys="true" keyProperty="id" parameterType="com.ecarpo.bms.eas.server.dmshisrepairorderproduct.entity.DmsHisRepairOrderProductDO">
+    <!-- @mbg.generated 2019-07-22 16:50:45 -->
+    insert into dms_his_repair_order_product
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="storeId != null">
+        store_id,
+      </if>
+      <if test="orderNo != null">
+        order_no,
+      </if>
+      <if test="productCode != null">
+        product_code,
+      </if>
+      <if test="productName != null">
+        product_name,
+      </if>
+      <if test="productModel != null">
+        product_model,
+      </if>
+      <if test="productPrice != null">
+        product_price,
+      </if>
+      <if test="productAmount != null">
+        product_amount,
+      </if>
+      <if test="workerName != null">
+        worker_name,
+      </if>
+      <if test="dispatcher != null">
+        dispatcher,
+      </if>
+      <if test="operTime != null">
+        oper_time,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="storeId != null">
+        #{storeId,jdbcType=INTEGER},
+      </if>
+      <if test="orderNo != null">
+        #{orderNo,jdbcType=VARCHAR},
+      </if>
+      <if test="productCode != null">
+        #{productCode,jdbcType=VARCHAR},
+      </if>
+      <if test="productName != null">
+        #{productName,jdbcType=VARCHAR},
+      </if>
+      <if test="productModel != null">
+        #{productModel,jdbcType=VARCHAR},
+      </if>
+      <if test="productPrice != null">
+        #{productPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="productAmount != null">
+        #{productAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="workerName != null">
+        #{workerName,jdbcType=VARCHAR},
+      </if>
+      <if test="dispatcher != null">
+        #{dispatcher,jdbcType=INTEGER},
+      </if>
+      <if test="operTime != null">
+        #{operTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ecarpo.bms.eas.server.dmshisrepairorderproduct.entity.DmsHisRepairOrderProductDO">
+    <!-- @mbg.generated 2019-07-22 16:50:45 -->
+    update dms_his_repair_order_product
+    <set>
+      <if test="storeId != null">
+        store_id = #{storeId,jdbcType=INTEGER},
+      </if>
+      <if test="orderNo != null">
+        order_no = #{orderNo,jdbcType=VARCHAR},
+      </if>
+      <if test="productCode != null">
+        product_code = #{productCode,jdbcType=VARCHAR},
+      </if>
+      <if test="productName != null">
+        product_name = #{productName,jdbcType=VARCHAR},
+      </if>
+      <if test="productModel != null">
+        product_model = #{productModel,jdbcType=VARCHAR},
+      </if>
+      <if test="productPrice != null">
+        product_price = #{productPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="productAmount != null">
+        product_amount = #{productAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="workerName != null">
+        worker_name = #{workerName,jdbcType=VARCHAR},
+      </if>
+      <if test="dispatcher != null">
+        dispatcher = #{dispatcher,jdbcType=INTEGER},
+      </if>
+      <if test="operTime != null">
+        oper_time = #{operTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=DATE},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ecarpo.bms.eas.server.dmshisrepairorderproduct.entity.DmsHisRepairOrderProductDO">
+    <!-- @mbg.generated 2019-07-22 16:50:45 -->
+    update dms_his_repair_order_product
+    set store_id = #{storeId,jdbcType=INTEGER},
+      order_no = #{orderNo,jdbcType=VARCHAR},
+      product_code = #{productCode,jdbcType=VARCHAR},
+      product_name = #{productName,jdbcType=VARCHAR},
+      product_model = #{productModel,jdbcType=VARCHAR},
+      product_price = #{productPrice,jdbcType=DECIMAL},
+      product_amount = #{productAmount,jdbcType=DECIMAL},
+      worker_name = #{workerName,jdbcType=VARCHAR},
+      dispatcher = #{dispatcher,jdbcType=INTEGER},
+      oper_time = #{operTime,jdbcType=TIMESTAMP},
+      create_time = #{createTime,jdbcType=DATE}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

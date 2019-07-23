@@ -14,7 +14,7 @@ import com.ecarpo.framework.model.ResultDTO;
  */
 public interface DmsStoreroomShelflocationService {
   
-  ResultDTO<Number> insertLong(DmsStoreroomShelflocationInsertDTO dto) throws Exception;
+  ResultDTO<Integer> insert(DmsStoreroomShelflocationInsertDTO dto) throws Exception;
 
   ResultDTO<Integer> update(DmsStoreroomShelflocationUpdateDTO dto) throws Exception;
 

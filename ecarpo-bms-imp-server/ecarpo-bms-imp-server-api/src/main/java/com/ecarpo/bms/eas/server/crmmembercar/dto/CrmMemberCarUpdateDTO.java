@@ -4,9 +4,9 @@
  */
 package com.ecarpo.bms.eas.server.crmmembercar.dto;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
-import com.alibaba.fastjson.annotation.JSONField;
 import com.ecarpo.framework.model.UpdateDTO;
 
 import lombok.Data;
@@ -20,381 +20,289 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = true)
 @Data
 public class CrmMemberCarUpdateDTO extends UpdateDTO {
-
   /**
-   * 云平台id
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  private String uid;
+  *
+  * @mbg.generated 2019-07-23 10:46:55
+  */
+ private Integer id;
 
-  /**
-   * 是否修改过密码
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "isChangedPW")
-  private Integer isChangedPw;
+ /**
+  * 对应的会员ID
+  *
+  * @mbg.generated 2019-07-23 10:46:55
+  */
+ private Integer customId;
 
-  /**
-   * 登陆错误次数
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "errCount")
-  private Integer errCount;
+ /**
+  * 对应的经销商ID
+  *
+  * @mbg.generated 2019-07-23 10:46:55
+  */
+ private Integer storeId;
 
-  /**
-   * 引用id
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  private String referId;
+ /**
+  * 车牌号
+  *
+  * @mbg.generated 2019-07-23 10:46:55
+  */
+ private String plateNo;
 
-  /**
-   * 最后修改者编码
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "lastUpdateUserID_number")
-  private String lastUpdateUserIdNumber;
+ /**
+  * 省份ID
+  *
+  * @mbg.generated 2019-07-23 10:46:55
+  */
+ private Integer provinceId;
 
-  /**
-   * 是否为业务管理员
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "isBizAdmin")
-  private Integer isBizAdmin;
+ /**
+  * VIN号
+  *
+  * @mbg.generated 2019-07-23 10:46:55
+  */
+ private String vinNum;
 
-  /**
-   * 类型 系统用户=10,职员=20,客户=30,供应商=40,其他=50,认证管理员=60,审计管理员=70
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "type")
-  private Integer type;
+ /**
+  * 变速箱
+  *
+  * @mbg.generated 2019-07-23 10:46:55
+  */
+ private String transmission;
 
-  /**
-   * 密码
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  private String password;
+ /**
+  * 排放标准
+  *
+  * @mbg.generated 2019-07-23 10:46:55
+  */
+ private String emissionsStandards;
 
-  /**
-   * 家庭电话
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  private String homePhone;
+ /**
+  * 对应的品牌ID
+  *
+  * @mbg.generated 2019-07-23 10:46:55
+  */
+ private Integer brand;
 
-  /**
-   * 是否注册
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "isRegister")
-  private Integer isRegister;
+ /**
+  * 品牌名称，当brand为0时，读取此字段
+  *
+  * @mbg.generated 2019-07-23 10:46:55
+  */
+ private String brandName;
 
-  /**
-   * 是否已经删除
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "isDelete")
-  private Integer isDelete;
+ /**
+  * 车系
+  *
+  * @mbg.generated 2019-07-23 10:46:55
+  */
+ private Integer carSeries;
 
-  /**
-   * 描述
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  private String description;
+ /**
+  * 车系名称，当car_series为0时，读取此字段
+  *
+  * @mbg.generated 2019-07-23 10:46:55
+  */
+ private String seriesName;
 
-  /**
-   * 密码策略名称
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "securityId_name")
-  private String securityIdName;
+ /**
+  * 车型
+  *
+  * @mbg.generated 2019-07-23 10:46:55
+  */
+ private Integer carModel;
 
-  /**
-   * 手机号码
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  private String cell;
+ /**
+  * 车型名称，当car_model为0时，读取此字段
+  *
+  * @mbg.generated 2019-07-23 10:46:55
+  */
+ private String modelName;
 
-  /**
-   * 密码策略编码
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "securityId_number")
-  private String securityIdNumber;
+ /**
+  * 车身颜色
+  *
+  * @mbg.generated 2019-07-23 10:46:55
+  */
+ private String color;
 
-  /**
-   * 编码
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "number")
-  private String encrypt;
-  /**
-   * 控制单元编码
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "controlUnitID_number")
-  private String controlUnitIdNumber;
+ /**
+  * 车架号
+  *
+  * @mbg.generated 2019-07-23 10:46:55
+  */
+ private String carFrameNum;
 
-  /**
-   * 控制单元名称
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "controlUnitID_name")
-  private String controlUnitIdName;
+ /**
+  * 发动机号
+  *
+  * @mbg.generated 2019-07-23 10:46:55
+  */
+ private String engineNum;
 
-  /**
-   * 密码生效日期
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  private String pweffectiveDate;
+ /**
+  * 开票日期,购车日期
+  *
+  * @mbg.generated 2019-07-23 10:46:55
+  */
+ private Date invoiceDate;
 
-  /**
-   * 电子邮件
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  private String email;
+ /**
+  * 购车金额
+  *
+  * @mbg.generated 2019-07-23 10:46:55
+  */
+ private BigDecimal cost;
 
-  /**
-   * 是否锁定
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  private Date lockedTime;
+ /**
+  * 上牌日期
+  *
+  * @mbg.generated 2019-07-23 10:46:55
+  */
+ private Date plateInstallDate;
 
-  /**
-   * 所属用户编码
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "groupID_number")
-  private String groupIdNumber;
+ /**
+  * 用车区域（省）
+  *
+  * @mbg.generated 2019-07-23 10:46:55
+  */
+ private Integer useCarProvince;
 
-  /**
-   * 失效时间
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  private Date invalidationDate;
+ /**
+  * 用车区域（城市）
+  *
+  * @mbg.generated 2019-07-23 10:46:55
+  */
+ private Integer useCarCity;
 
-  /**
-   * 客户id
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "customerID")
-  private String customerID;
+ /**
+  * 用车区域（城市名称）
+  *
+  * @mbg.generated 2019-07-23 10:46:55
+  */
+ private String useCarCityName;
 
-  /**
-   * 缺省使用语言
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  private String defaultLocale;
+ /**
+  * 销售渠道ID
+  *
+  * @mbg.generated 2019-07-23 10:46:55
+  */
+ private Integer salesChannels;
 
-  private Date createTime;
+ /**
+  * 是否延保（1是）
+  *
+  * @mbg.generated 2019-07-23 10:46:55
+  */
+ private Integer isExtMaintain;
 
-  /**
-   * 供应商id
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "supplierID")
-  private String supplierID;
+ /**
+  * 延保开始日期
+  *
+  * @mbg.generated 2019-07-23 10:46:55
+  */
+ private Date maintainSdate;
 
-  /**
-   * 主要角色编码
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "mainRoleID_number")
-  private String mainRoleIdNumber;
+ /**
+  * 年检日期
+  *
+  * @mbg.generated 2019-07-23 10:46:55
+  */
+ private Date inspectionDate;
 
-  /**
-   * 所属用户组名称
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "groupID_name")
-  private String groupIdName;
+ /**
+  * 预计下次保养日期[微信端专用]
+  *
+  * @mbg.generated 2019-07-23 10:46:55
+  */
+ private Date nextMdate;
 
-  /**
-   * 对应的操作人
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "personId_name")
-  private String personIdName;
+ /**
+  * 保险公司
+  *
+  * @mbg.generated 2019-07-23 10:46:55
+  */
+ private String insuranceCompany;
 
-  /**
-   * 最后修改时间
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  private Date lastUpdateTime;
+ /**
+  * 当前的保险到期日[微信端专用]
+  *
+  * @mbg.generated 2019-07-23 10:46:55
+  */
+ private Date insuranceEdate;
 
-  /**
-   * id
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  private String id;
+ /**
+  * 结束里程，最后里程
+  *
+  * @mbg.generated 2019-07-23 10:46:55
+  */
+ private Integer endMileage;
 
-  /**
-   * 名称
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "name")
-  private String define;
+ /**
+  * 换表里程，一般保养时用到
+  *
+  * @mbg.generated 2019-07-23 10:46:55
+  */
+ private Integer changeOdographMileage;
 
-  /**
-   * 对应的操作人编码
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "personId_number")
-  private String personIdNumber;
+ /**
+  * 是否意向车型（1是0不是）
+  *
+  * @mbg.generated 2019-07-23 10:46:55
+  */
+ private Integer isIntention;
 
-  /**
-   * 最后修改者名称
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "lastUpdateUserID_name")
-  private String lastUpdateUserIdName;
+ /**
+  * 任务ID（供任务管理模块使用）
+  *
+  * @mbg.generated 2019-07-23 10:46:55
+  */
+ private Integer taskId;
 
-  /**
-   * 缺省组织编码
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "defOrgUnitID_number")
-  private String defOrgUnitIdNumber;
+ /**
+  * 是否二手置换车（1是0不是）
+  *
+  * @mbg.generated 2019-07-23 10:46:55
+  */
+ private Integer isReplace;
 
-  /**
-   * 有效日期
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  private Date effectiveDate;
+ /**
+  * 是否在本部投保(1是)
+  *
+  * @mbg.generated 2019-07-23 10:46:55
+  */
+ private Integer isShopInsurance;
 
-  /**
-   * 缺省组织名称
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "defOrgUnitID_name")
-  private String defOrgUnitIdName;
+ /**
+  * 保险金额
+  *
+  * @mbg.generated 2019-07-23 10:46:55
+  */
+ private BigDecimal insuranceMoney;
 
-  /**
-   * 代理用户
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "agentUser")
-  private Integer agentUser;
+ /**
+  * 上次保险办理时间
+  *
+  * @mbg.generated 2019-07-23 10:46:55
+  */
+ private Date insuranceTime;
 
-  /**
-   * 历史密码
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  private String pwdHisStr;
+ /**
+  * 保险办理人
+  *
+  * @mbg.generated 2019-07-23 10:46:55
+  */
+ private Integer insuranceCreator;
 
-  /**
-   * 创建者编码
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "creatorID_number")
-  private String creatorIdNumber;
+ /**
+  * 车源编号
+  *
+  * @mbg.generated 2019-07-23 10:46:55
+  */
+ private String carsourceNum;
 
-  /**
-   * 创建者名称
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "creatorID_name")
-  private String creatorIdName;
-
-  /**
-   * 办公室电话
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  private String officePhone;
-
-  /**
-   * 是否锁定
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "isLocked")
-  private Integer isLocked;
-
-  /**
-   * 登陆认证方式
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "loginAuthorWay")
-  private Integer loginAuthorWay;
-
-  /**
-   * AD账号
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  private String adNumber;
-
-  /**
-   * 是否同步到云平台
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "isSynToCloud")
-  private Integer isSynToCloud;
-
-  /**
-   * 备用电子邮件
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "backupEMail")
-  private String backupEmail;
-
-  /**
-   * 是否禁用
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "forbidden")
-  private Integer forbidden;
-
-  /**
-   * 主要角色名称
-   *
-   * @mbg.generated 2019-06-10 10:20:11
-   */
-  @JSONField(name = "mainRoleID_name")
-  private String mainRoleIdName;
-
+ /**
+  * 备注
+  *
+  * @mbg.generated 2019-07-23 10:46:55
+  */
+ //private String remark;
 }

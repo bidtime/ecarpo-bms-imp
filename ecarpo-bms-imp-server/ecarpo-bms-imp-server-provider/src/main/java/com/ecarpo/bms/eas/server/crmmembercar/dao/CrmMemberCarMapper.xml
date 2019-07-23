@@ -1,0 +1,580 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ecarpo.bms.eas.server.crmmembercar.dao.CrmMemberCarMapper">
+  <resultMap id="BaseResultMap" type="com.ecarpo.bms.eas.server.crmmembercar.entity.CrmMemberCarDO">
+    <!-- @mbg.generated 2019-07-23 10:46:55 -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="custom_id" jdbcType="INTEGER" property="customId" />
+    <result column="store_id" jdbcType="INTEGER" property="storeId" />
+    <result column="plate_no" jdbcType="VARCHAR" property="plateNo" />
+    <result column="province_id" jdbcType="INTEGER" property="provinceId" />
+    <result column="vin_num" jdbcType="VARCHAR" property="vinNum" />
+    <result column="transmission" jdbcType="VARCHAR" property="transmission" />
+    <result column="emissions_standards" jdbcType="VARCHAR" property="emissionsStandards" />
+    <result column="brand" jdbcType="INTEGER" property="brand" />
+    <result column="brand_name" jdbcType="VARCHAR" property="brandName" />
+    <result column="car_series" jdbcType="INTEGER" property="carSeries" />
+    <result column="series_name" jdbcType="VARCHAR" property="seriesName" />
+    <result column="car_model" jdbcType="INTEGER" property="carModel" />
+    <result column="model_name" jdbcType="VARCHAR" property="modelName" />
+    <result column="color" jdbcType="VARCHAR" property="color" />
+    <result column="car_frame_num" jdbcType="VARCHAR" property="carFrameNum" />
+    <result column="engine_num" jdbcType="VARCHAR" property="engineNum" />
+    <result column="invoice_date" jdbcType="DATE" property="invoiceDate" />
+    <result column="cost" jdbcType="DECIMAL" property="cost" />
+    <result column="plate_install_date" jdbcType="DATE" property="plateInstallDate" />
+    <result column="use_car_province" jdbcType="TINYINT" property="useCarProvince" />
+    <result column="use_car_city" jdbcType="SMALLINT" property="useCarCity" />
+    <result column="use_car_city_name" jdbcType="VARCHAR" property="useCarCityName" />
+    <result column="sales_channels" jdbcType="TINYINT" property="salesChannels" />
+    <result column="is_ext_maintain" jdbcType="TINYINT" property="isExtMaintain" />
+    <result column="maintain_sdate" jdbcType="DATE" property="maintainSdate" />
+    <result column="inspection_date" jdbcType="DATE" property="inspectionDate" />
+    <result column="next_mdate" jdbcType="DATE" property="nextMdate" />
+    <result column="insurance_company" jdbcType="VARCHAR" property="insuranceCompany" />
+    <result column="insurance_edate" jdbcType="DATE" property="insuranceEdate" />
+    <result column="end_mileage" jdbcType="INTEGER" property="endMileage" />
+    <result column="change_odograph_mileage" jdbcType="INTEGER" property="changeOdographMileage" />
+    <result column="is_intention" jdbcType="TINYINT" property="isIntention" />
+    <result column="task_id" jdbcType="INTEGER" property="taskId" />
+    <result column="is_replace" jdbcType="TINYINT" property="isReplace" />
+    <result column="is_shop_insurance" jdbcType="TINYINT" property="isShopInsurance" />
+    <result column="insurance_money" jdbcType="DECIMAL" property="insuranceMoney" />
+    <result column="insurance_time" jdbcType="TIMESTAMP" property="insuranceTime" />
+    <result column="insurance_creator" jdbcType="INTEGER" property="insuranceCreator" />
+    <result column="carsource_num" jdbcType="VARCHAR" property="carsourceNum" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.ecarpo.bms.eas.server.crmmembercar.entity.CrmMemberCarDO">
+    <!-- @mbg.generated 2019-07-23 10:46:55 -->
+    <result column="remark" jdbcType="LONGVARCHAR" property="remark" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!-- @mbg.generated 2019-07-23 10:46:55 -->
+    id, custom_id, store_id, plate_no, province_id, vin_num, transmission, emissions_standards, 
+    brand, brand_name, car_series, series_name, car_model, model_name, color, car_frame_num, 
+    engine_num, invoice_date, cost, plate_install_date, use_car_province, use_car_city, 
+    use_car_city_name, sales_channels, is_ext_maintain, maintain_sdate, inspection_date, 
+    next_mdate, insurance_company, insurance_edate, end_mileage, change_odograph_mileage, 
+    is_intention, task_id, is_replace, is_shop_insurance, insurance_money, insurance_time, 
+    insurance_creator, carsource_num
+  </sql>
+  <sql id="Blob_Column_List">
+    <!-- @mbg.generated 2019-07-23 10:46:55 -->
+    remark
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+    <!-- @mbg.generated 2019-07-23 10:46:55 -->
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from crm_member_car
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!-- @mbg.generated 2019-07-23 10:46:55 -->
+    delete from crm_member_car
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="com.ecarpo.bms.eas.server.crmmembercar.entity.CrmMemberCarDO">
+    <!-- @mbg.generated 2019-07-23 10:46:55 -->
+    insert into crm_member_car (id, custom_id, store_id, 
+      plate_no, province_id, vin_num, 
+      transmission, emissions_standards, brand, 
+      brand_name, car_series, series_name, 
+      car_model, model_name, color, 
+      car_frame_num, engine_num, invoice_date, 
+      cost, plate_install_date, use_car_province, 
+      use_car_city, use_car_city_name, sales_channels, 
+      is_ext_maintain, maintain_sdate, inspection_date, 
+      next_mdate, insurance_company, insurance_edate, 
+      end_mileage, change_odograph_mileage, is_intention, 
+      task_id, is_replace, is_shop_insurance, 
+      insurance_money, insurance_time, insurance_creator, 
+      carsource_num, remark)
+    values (#{id,jdbcType=INTEGER}, #{customId,jdbcType=INTEGER}, #{storeId,jdbcType=INTEGER}, 
+      #{plateNo,jdbcType=VARCHAR}, #{provinceId,jdbcType=INTEGER}, #{vinNum,jdbcType=VARCHAR}, 
+      #{transmission,jdbcType=VARCHAR}, #{emissionsStandards,jdbcType=VARCHAR}, #{brand,jdbcType=INTEGER}, 
+      #{brandName,jdbcType=VARCHAR}, #{carSeries,jdbcType=INTEGER}, #{seriesName,jdbcType=VARCHAR}, 
+      #{carModel,jdbcType=INTEGER}, #{modelName,jdbcType=VARCHAR}, #{color,jdbcType=VARCHAR}, 
+      #{carFrameNum,jdbcType=VARCHAR}, #{engineNum,jdbcType=VARCHAR}, #{invoiceDate,jdbcType=DATE}, 
+      #{cost,jdbcType=DECIMAL}, #{plateInstallDate,jdbcType=DATE}, #{useCarProvince,jdbcType=TINYINT}, 
+      #{useCarCity,jdbcType=SMALLINT}, #{useCarCityName,jdbcType=VARCHAR}, #{salesChannels,jdbcType=TINYINT}, 
+      #{isExtMaintain,jdbcType=TINYINT}, #{maintainSdate,jdbcType=DATE}, #{inspectionDate,jdbcType=DATE}, 
+      #{nextMdate,jdbcType=DATE}, #{insuranceCompany,jdbcType=VARCHAR}, #{insuranceEdate,jdbcType=DATE}, 
+      #{endMileage,jdbcType=INTEGER}, #{changeOdographMileage,jdbcType=INTEGER}, #{isIntention,jdbcType=TINYINT}, 
+      #{taskId,jdbcType=INTEGER}, #{isReplace,jdbcType=TINYINT}, #{isShopInsurance,jdbcType=TINYINT}, 
+      #{insuranceMoney,jdbcType=DECIMAL}, #{insuranceTime,jdbcType=TIMESTAMP}, #{insuranceCreator,jdbcType=INTEGER}, 
+      #{carsourceNum,jdbcType=VARCHAR}, #{remark,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" useGeneratedKeys="true" keyProperty="id" parameterType="com.ecarpo.bms.eas.server.crmmembercar.entity.CrmMemberCarDO">
+    <!-- @mbg.generated 2019-07-23 10:46:55 -->
+    insert into crm_member_car
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="customId != null">
+        custom_id,
+      </if>
+      <if test="storeId != null">
+        store_id,
+      </if>
+      <if test="plateNo != null">
+        plate_no,
+      </if>
+      <if test="provinceId != null">
+        province_id,
+      </if>
+      <if test="vinNum != null">
+        vin_num,
+      </if>
+      <if test="transmission != null">
+        transmission,
+      </if>
+      <if test="emissionsStandards != null">
+        emissions_standards,
+      </if>
+      <if test="brand != null">
+        brand,
+      </if>
+      <if test="brandName != null">
+        brand_name,
+      </if>
+      <if test="carSeries != null">
+        car_series,
+      </if>
+      <if test="seriesName != null">
+        series_name,
+      </if>
+      <if test="carModel != null">
+        car_model,
+      </if>
+      <if test="modelName != null">
+        model_name,
+      </if>
+      <if test="color != null">
+        color,
+      </if>
+      <if test="carFrameNum != null">
+        car_frame_num,
+      </if>
+      <if test="engineNum != null">
+        engine_num,
+      </if>
+      <if test="invoiceDate != null">
+        invoice_date,
+      </if>
+      <if test="cost != null">
+        cost,
+      </if>
+      <if test="plateInstallDate != null">
+        plate_install_date,
+      </if>
+      <if test="useCarProvince != null">
+        use_car_province,
+      </if>
+      <if test="useCarCity != null">
+        use_car_city,
+      </if>
+      <if test="useCarCityName != null">
+        use_car_city_name,
+      </if>
+      <if test="salesChannels != null">
+        sales_channels,
+      </if>
+      <if test="isExtMaintain != null">
+        is_ext_maintain,
+      </if>
+      <if test="maintainSdate != null">
+        maintain_sdate,
+      </if>
+      <if test="inspectionDate != null">
+        inspection_date,
+      </if>
+      <if test="nextMdate != null">
+        next_mdate,
+      </if>
+      <if test="insuranceCompany != null">
+        insurance_company,
+      </if>
+      <if test="insuranceEdate != null">
+        insurance_edate,
+      </if>
+      <if test="endMileage != null">
+        end_mileage,
+      </if>
+      <if test="changeOdographMileage != null">
+        change_odograph_mileage,
+      </if>
+      <if test="isIntention != null">
+        is_intention,
+      </if>
+      <if test="taskId != null">
+        task_id,
+      </if>
+      <if test="isReplace != null">
+        is_replace,
+      </if>
+      <if test="isShopInsurance != null">
+        is_shop_insurance,
+      </if>
+      <if test="insuranceMoney != null">
+        insurance_money,
+      </if>
+      <if test="insuranceTime != null">
+        insurance_time,
+      </if>
+      <if test="insuranceCreator != null">
+        insurance_creator,
+      </if>
+      <if test="carsourceNum != null">
+        carsource_num,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="customId != null">
+        #{customId,jdbcType=INTEGER},
+      </if>
+      <if test="storeId != null">
+        #{storeId,jdbcType=INTEGER},
+      </if>
+      <if test="plateNo != null">
+        #{plateNo,jdbcType=VARCHAR},
+      </if>
+      <if test="provinceId != null">
+        #{provinceId,jdbcType=INTEGER},
+      </if>
+      <if test="vinNum != null">
+        #{vinNum,jdbcType=VARCHAR},
+      </if>
+      <if test="transmission != null">
+        #{transmission,jdbcType=VARCHAR},
+      </if>
+      <if test="emissionsStandards != null">
+        #{emissionsStandards,jdbcType=VARCHAR},
+      </if>
+      <if test="brand != null">
+        #{brand,jdbcType=INTEGER},
+      </if>
+      <if test="brandName != null">
+        #{brandName,jdbcType=VARCHAR},
+      </if>
+      <if test="carSeries != null">
+        #{carSeries,jdbcType=INTEGER},
+      </if>
+      <if test="seriesName != null">
+        #{seriesName,jdbcType=VARCHAR},
+      </if>
+      <if test="carModel != null">
+        #{carModel,jdbcType=INTEGER},
+      </if>
+      <if test="modelName != null">
+        #{modelName,jdbcType=VARCHAR},
+      </if>
+      <if test="color != null">
+        #{color,jdbcType=VARCHAR},
+      </if>
+      <if test="carFrameNum != null">
+        #{carFrameNum,jdbcType=VARCHAR},
+      </if>
+      <if test="engineNum != null">
+        #{engineNum,jdbcType=VARCHAR},
+      </if>
+      <if test="invoiceDate != null">
+        #{invoiceDate,jdbcType=DATE},
+      </if>
+      <if test="cost != null">
+        #{cost,jdbcType=DECIMAL},
+      </if>
+      <if test="plateInstallDate != null">
+        #{plateInstallDate,jdbcType=DATE},
+      </if>
+      <if test="useCarProvince != null">
+        #{useCarProvince,jdbcType=TINYINT},
+      </if>
+      <if test="useCarCity != null">
+        #{useCarCity,jdbcType=SMALLINT},
+      </if>
+      <if test="useCarCityName != null">
+        #{useCarCityName,jdbcType=VARCHAR},
+      </if>
+      <if test="salesChannels != null">
+        #{salesChannels,jdbcType=TINYINT},
+      </if>
+      <if test="isExtMaintain != null">
+        #{isExtMaintain,jdbcType=TINYINT},
+      </if>
+      <if test="maintainSdate != null">
+        #{maintainSdate,jdbcType=DATE},
+      </if>
+      <if test="inspectionDate != null">
+        #{inspectionDate,jdbcType=DATE},
+      </if>
+      <if test="nextMdate != null">
+        #{nextMdate,jdbcType=DATE},
+      </if>
+      <if test="insuranceCompany != null">
+        #{insuranceCompany,jdbcType=VARCHAR},
+      </if>
+      <if test="insuranceEdate != null">
+        #{insuranceEdate,jdbcType=DATE},
+      </if>
+      <if test="endMileage != null">
+        #{endMileage,jdbcType=INTEGER},
+      </if>
+      <if test="changeOdographMileage != null">
+        #{changeOdographMileage,jdbcType=INTEGER},
+      </if>
+      <if test="isIntention != null">
+        #{isIntention,jdbcType=TINYINT},
+      </if>
+      <if test="taskId != null">
+        #{taskId,jdbcType=INTEGER},
+      </if>
+      <if test="isReplace != null">
+        #{isReplace,jdbcType=TINYINT},
+      </if>
+      <if test="isShopInsurance != null">
+        #{isShopInsurance,jdbcType=TINYINT},
+      </if>
+      <if test="insuranceMoney != null">
+        #{insuranceMoney,jdbcType=DECIMAL},
+      </if>
+      <if test="insuranceTime != null">
+        #{insuranceTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="insuranceCreator != null">
+        #{insuranceCreator,jdbcType=INTEGER},
+      </if>
+      <if test="carsourceNum != null">
+        #{carsourceNum,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ecarpo.bms.eas.server.crmmembercar.entity.CrmMemberCarDO">
+    <!-- @mbg.generated 2019-07-23 10:46:55 -->
+    update crm_member_car
+    <set>
+      <if test="customId != null">
+        custom_id = #{customId,jdbcType=INTEGER},
+      </if>
+      <if test="storeId != null">
+        store_id = #{storeId,jdbcType=INTEGER},
+      </if>
+      <if test="plateNo != null">
+        plate_no = #{plateNo,jdbcType=VARCHAR},
+      </if>
+      <if test="provinceId != null">
+        province_id = #{provinceId,jdbcType=INTEGER},
+      </if>
+      <if test="vinNum != null">
+        vin_num = #{vinNum,jdbcType=VARCHAR},
+      </if>
+      <if test="transmission != null">
+        transmission = #{transmission,jdbcType=VARCHAR},
+      </if>
+      <if test="emissionsStandards != null">
+        emissions_standards = #{emissionsStandards,jdbcType=VARCHAR},
+      </if>
+      <if test="brand != null">
+        brand = #{brand,jdbcType=INTEGER},
+      </if>
+      <if test="brandName != null">
+        brand_name = #{brandName,jdbcType=VARCHAR},
+      </if>
+      <if test="carSeries != null">
+        car_series = #{carSeries,jdbcType=INTEGER},
+      </if>
+      <if test="seriesName != null">
+        series_name = #{seriesName,jdbcType=VARCHAR},
+      </if>
+      <if test="carModel != null">
+        car_model = #{carModel,jdbcType=INTEGER},
+      </if>
+      <if test="modelName != null">
+        model_name = #{modelName,jdbcType=VARCHAR},
+      </if>
+      <if test="color != null">
+        color = #{color,jdbcType=VARCHAR},
+      </if>
+      <if test="carFrameNum != null">
+        car_frame_num = #{carFrameNum,jdbcType=VARCHAR},
+      </if>
+      <if test="engineNum != null">
+        engine_num = #{engineNum,jdbcType=VARCHAR},
+      </if>
+      <if test="invoiceDate != null">
+        invoice_date = #{invoiceDate,jdbcType=DATE},
+      </if>
+      <if test="cost != null">
+        cost = #{cost,jdbcType=DECIMAL},
+      </if>
+      <if test="plateInstallDate != null">
+        plate_install_date = #{plateInstallDate,jdbcType=DATE},
+      </if>
+      <if test="useCarProvince != null">
+        use_car_province = #{useCarProvince,jdbcType=TINYINT},
+      </if>
+      <if test="useCarCity != null">
+        use_car_city = #{useCarCity,jdbcType=SMALLINT},
+      </if>
+      <if test="useCarCityName != null">
+        use_car_city_name = #{useCarCityName,jdbcType=VARCHAR},
+      </if>
+      <if test="salesChannels != null">
+        sales_channels = #{salesChannels,jdbcType=TINYINT},
+      </if>
+      <if test="isExtMaintain != null">
+        is_ext_maintain = #{isExtMaintain,jdbcType=TINYINT},
+      </if>
+      <if test="maintainSdate != null">
+        maintain_sdate = #{maintainSdate,jdbcType=DATE},
+      </if>
+      <if test="inspectionDate != null">
+        inspection_date = #{inspectionDate,jdbcType=DATE},
+      </if>
+      <if test="nextMdate != null">
+        next_mdate = #{nextMdate,jdbcType=DATE},
+      </if>
+      <if test="insuranceCompany != null">
+        insurance_company = #{insuranceCompany,jdbcType=VARCHAR},
+      </if>
+      <if test="insuranceEdate != null">
+        insurance_edate = #{insuranceEdate,jdbcType=DATE},
+      </if>
+      <if test="endMileage != null">
+        end_mileage = #{endMileage,jdbcType=INTEGER},
+      </if>
+      <if test="changeOdographMileage != null">
+        change_odograph_mileage = #{changeOdographMileage,jdbcType=INTEGER},
+      </if>
+      <if test="isIntention != null">
+        is_intention = #{isIntention,jdbcType=TINYINT},
+      </if>
+      <if test="taskId != null">
+        task_id = #{taskId,jdbcType=INTEGER},
+      </if>
+      <if test="isReplace != null">
+        is_replace = #{isReplace,jdbcType=TINYINT},
+      </if>
+      <if test="isShopInsurance != null">
+        is_shop_insurance = #{isShopInsurance,jdbcType=TINYINT},
+      </if>
+      <if test="insuranceMoney != null">
+        insurance_money = #{insuranceMoney,jdbcType=DECIMAL},
+      </if>
+      <if test="insuranceTime != null">
+        insurance_time = #{insuranceTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="insuranceCreator != null">
+        insurance_creator = #{insuranceCreator,jdbcType=INTEGER},
+      </if>
+      <if test="carsourceNum != null">
+        carsource_num = #{carsourceNum,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.ecarpo.bms.eas.server.crmmembercar.entity.CrmMemberCarDO">
+    <!-- @mbg.generated 2019-07-23 10:46:55 -->
+    update crm_member_car
+    set custom_id = #{customId,jdbcType=INTEGER},
+      store_id = #{storeId,jdbcType=INTEGER},
+      plate_no = #{plateNo,jdbcType=VARCHAR},
+      province_id = #{provinceId,jdbcType=INTEGER},
+      vin_num = #{vinNum,jdbcType=VARCHAR},
+      transmission = #{transmission,jdbcType=VARCHAR},
+      emissions_standards = #{emissionsStandards,jdbcType=VARCHAR},
+      brand = #{brand,jdbcType=INTEGER},
+      brand_name = #{brandName,jdbcType=VARCHAR},
+      car_series = #{carSeries,jdbcType=INTEGER},
+      series_name = #{seriesName,jdbcType=VARCHAR},
+      car_model = #{carModel,jdbcType=INTEGER},
+      model_name = #{modelName,jdbcType=VARCHAR},
+      color = #{color,jdbcType=VARCHAR},
+      car_frame_num = #{carFrameNum,jdbcType=VARCHAR},
+      engine_num = #{engineNum,jdbcType=VARCHAR},
+      invoice_date = #{invoiceDate,jdbcType=DATE},
+      cost = #{cost,jdbcType=DECIMAL},
+      plate_install_date = #{plateInstallDate,jdbcType=DATE},
+      use_car_province = #{useCarProvince,jdbcType=TINYINT},
+      use_car_city = #{useCarCity,jdbcType=SMALLINT},
+      use_car_city_name = #{useCarCityName,jdbcType=VARCHAR},
+      sales_channels = #{salesChannels,jdbcType=TINYINT},
+      is_ext_maintain = #{isExtMaintain,jdbcType=TINYINT},
+      maintain_sdate = #{maintainSdate,jdbcType=DATE},
+      inspection_date = #{inspectionDate,jdbcType=DATE},
+      next_mdate = #{nextMdate,jdbcType=DATE},
+      insurance_company = #{insuranceCompany,jdbcType=VARCHAR},
+      insurance_edate = #{insuranceEdate,jdbcType=DATE},
+      end_mileage = #{endMileage,jdbcType=INTEGER},
+      change_odograph_mileage = #{changeOdographMileage,jdbcType=INTEGER},
+      is_intention = #{isIntention,jdbcType=TINYINT},
+      task_id = #{taskId,jdbcType=INTEGER},
+      is_replace = #{isReplace,jdbcType=TINYINT},
+      is_shop_insurance = #{isShopInsurance,jdbcType=TINYINT},
+      insurance_money = #{insuranceMoney,jdbcType=DECIMAL},
+      insurance_time = #{insuranceTime,jdbcType=TIMESTAMP},
+      insurance_creator = #{insuranceCreator,jdbcType=INTEGER},
+      carsource_num = #{carsourceNum,jdbcType=VARCHAR},
+      remark = #{remark,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ecarpo.bms.eas.server.crmmembercar.entity.CrmMemberCarDO">
+    <!-- @mbg.generated 2019-07-23 10:46:55 -->
+    update crm_member_car
+    set custom_id = #{customId,jdbcType=INTEGER},
+      store_id = #{storeId,jdbcType=INTEGER},
+      plate_no = #{plateNo,jdbcType=VARCHAR},
+      province_id = #{provinceId,jdbcType=INTEGER},
+      vin_num = #{vinNum,jdbcType=VARCHAR},
+      transmission = #{transmission,jdbcType=VARCHAR},
+      emissions_standards = #{emissionsStandards,jdbcType=VARCHAR},
+      brand = #{brand,jdbcType=INTEGER},
+      brand_name = #{brandName,jdbcType=VARCHAR},
+      car_series = #{carSeries,jdbcType=INTEGER},
+      series_name = #{seriesName,jdbcType=VARCHAR},
+      car_model = #{carModel,jdbcType=INTEGER},
+      model_name = #{modelName,jdbcType=VARCHAR},
+      color = #{color,jdbcType=VARCHAR},
+      car_frame_num = #{carFrameNum,jdbcType=VARCHAR},
+      engine_num = #{engineNum,jdbcType=VARCHAR},
+      invoice_date = #{invoiceDate,jdbcType=DATE},
+      cost = #{cost,jdbcType=DECIMAL},
+      plate_install_date = #{plateInstallDate,jdbcType=DATE},
+      use_car_province = #{useCarProvince,jdbcType=TINYINT},
+      use_car_city = #{useCarCity,jdbcType=SMALLINT},
+      use_car_city_name = #{useCarCityName,jdbcType=VARCHAR},
+      sales_channels = #{salesChannels,jdbcType=TINYINT},
+      is_ext_maintain = #{isExtMaintain,jdbcType=TINYINT},
+      maintain_sdate = #{maintainSdate,jdbcType=DATE},
+      inspection_date = #{inspectionDate,jdbcType=DATE},
+      next_mdate = #{nextMdate,jdbcType=DATE},
+      insurance_company = #{insuranceCompany,jdbcType=VARCHAR},
+      insurance_edate = #{insuranceEdate,jdbcType=DATE},
+      end_mileage = #{endMileage,jdbcType=INTEGER},
+      change_odograph_mileage = #{changeOdographMileage,jdbcType=INTEGER},
+      is_intention = #{isIntention,jdbcType=TINYINT},
+      task_id = #{taskId,jdbcType=INTEGER},
+      is_replace = #{isReplace,jdbcType=TINYINT},
+      is_shop_insurance = #{isShopInsurance,jdbcType=TINYINT},
+      insurance_money = #{insuranceMoney,jdbcType=DECIMAL},
+      insurance_time = #{insuranceTime,jdbcType=TIMESTAMP},
+      insurance_creator = #{insuranceCreator,jdbcType=INTEGER},
+      carsource_num = #{carsourceNum,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

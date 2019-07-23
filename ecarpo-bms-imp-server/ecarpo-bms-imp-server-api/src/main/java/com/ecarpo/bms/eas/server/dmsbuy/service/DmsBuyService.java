@@ -14,7 +14,7 @@ import com.ecarpo.framework.model.ResultDTO;
  */
 public interface DmsBuyService {
 
-  ResultDTO<Number> insertLong(DmsBuyInsertDTO dto) throws Exception;
+  ResultDTO<Integer> insert(DmsBuyInsertDTO dto) throws Exception;
 
   ResultDTO<Integer> update(DmsBuyUpdateDTO dto) throws Exception;
 

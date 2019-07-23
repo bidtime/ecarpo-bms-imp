@@ -3,93 +3,138 @@
  */
 package com.ecarpo.bms.eas.server.dmsrepairworkhour.entity;
 
-import com.ecarpo.framework.common.mapper.DataEntity;
+import java.math.BigDecimal;
+
+import com.ecarpo.bms.eas.server.data.MyEntity;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 /**
- * This class corresponds to the database table dms_storeroom_shelflocation
+ * This class corresponds to the database table dms_repair_workhour
  *
- * @mbg.generated 2019-07-19 10:57:57
+ * @mbg.generated 2019-07-22 16:41:30
  */
 @Data
 @SuppressWarnings("serial")
 @EqualsAndHashCode(callSuper = false)
-public class DmsRepairWorkhourDO extends DataEntity {
+public class DmsRepairWorkhourDO extends MyEntity {
     /**
      *
-     * @mbg.generated 2019-07-19 10:57:57
+     * @mbg.generated 2019-07-22 16:41:30
      */
     private Integer id;
 
     /**
-     * 经销商id
+     * 经销商ID
      *
-     * @mbg.generated 2019-07-19 10:57:57
+     * @mbg.generated 2019-07-22 16:41:30
      */
     private Integer storeId;
 
     /**
-     * 货位编码
+     * 工时编码
      *
-     * @mbg.generated 2019-07-19 10:57:57
+     * @mbg.generated 2019-07-22 16:41:30
      */
-    private String locationCode;
+    private String workhourCode;
 
     /**
-     * 库房名称
+     * 工时名称
      *
-     * @mbg.generated 2019-07-19 10:57:57
+     * @mbg.generated 2019-07-22 16:41:30
      */
-    private String locationName;
+    private String workhourName;
 
     /**
-     * 所在区域
+     * 考核工时
      *
-     * @mbg.generated 2019-07-19 10:57:57
+     * @mbg.generated 2019-07-22 16:41:30
      */
-    private String locationArea;
+    private BigDecimal reviewWorkhour;
 
     /**
-     * 功能分类(1三包件2正品3残次品4劳保及工具5其他)
+     * 考核单价
      *
-     * @mbg.generated 2019-07-19 10:57:57
+     * @mbg.generated 2019-07-22 16:41:30
      */
-    private Integer functionType;
+    private BigDecimal reviewPrice;
 
     /**
-     * 占用状态(1占用0空闲)
+     * 额定工时
      *
-     * @mbg.generated 2019-07-19 10:57:57
+     * @mbg.generated 2019-07-22 16:41:30
      */
-    private Integer occupyStatus;
+    private BigDecimal ratedWorkhour;
 
     /**
-     * 库房属性
+     * 额定单价
      *
-     * @mbg.generated 2019-07-19 10:57:57
+     * @mbg.generated 2019-07-22 16:41:30
      */
-    private String roomType;
+    private BigDecimal ratedPrice;
 
     /**
-     * 归属dealer_id
+     * 是否通用
      *
-     * @mbg.generated 2019-07-19 10:57:57
+     * @mbg.generated 2019-07-22 16:41:30
      */
-    private Integer fromStoreId;
+    private Integer isUniversal;
 
     /**
-     * 备注说明
+     * 是否优惠
      *
-     * @mbg.generated 2019-07-19 10:57:57
+     * @mbg.generated 2019-07-22 16:41:30
      */
-    private String remark;
+    private Integer isDiscount;
 
     /**
-     * 状态(1停用0启用)
+     * 是否是钣金项目
      *
-     * @mbg.generated 2019-07-19 10:57:57
+     * @mbg.generated 2019-07-22 16:41:30
      */
-    private Integer status;
+    private Integer isSheetmetal;
+
+    /**
+     * 检索码
+     *
+     * @mbg.generated 2019-07-22 16:41:30
+     */
+    private String retrievalCode;
+
+    /**
+     * 状态
+     *
+     * @mbg.generated 2019-07-22 16:41:30
+     */
+    //private Integer state;
+
+    /**
+     * 工时等级
+     *
+     * @mbg.generated 2019-07-22 16:41:30
+     */
+    private String workhourLevel;
+
+    /**
+     * 创建人
+     *
+     * @mbg.generated 2019-07-22 16:41:30
+     */
+    //private Integer creator;
+
+    /**
+     * 创建时间
+     *
+     * @mbg.generated 2019-07-22 16:41:30
+     */
+    //private Date createTime;
+
+    /**
+     * 是否洗车(0否1是)
+     *
+     * @mbg.generated 2019-07-22 16:41:30
+     */
+    private Integer isWashCar;
+
 }
