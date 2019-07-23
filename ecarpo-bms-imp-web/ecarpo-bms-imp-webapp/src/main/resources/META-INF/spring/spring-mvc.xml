@@ -68,10 +68,11 @@
     <!--登录拦截器-->
     <mvc:interceptor>
       <mvc:mapping path="/api/**"/>
-      <mvc:exclude-mapping path="/api/eas/user/register/**"/>
-      <mvc:exclude-mapping path="/api/eas/user/login/**"/>
-      <mvc:exclude-mapping path="/api/eas/user/logout/**"/>
-      <mvc:exclude-mapping path="/api/eas/common/**"/>
+      <mvc:exclude-mapping path="/api/dms/import/user/register/**"/>
+      <mvc:exclude-mapping path="/api/dms/import/user/login/**"/>
+      <mvc:exclude-mapping path="/api/dms/import/user/logout/**"/>
+      <mvc:exclude-mapping path="/api/dms/import/common/**"/>
+      <mvc:exclude-mapping path="/api/dms/import/**"/>
       <bean class="com.ecarpo.bms.web.interceptor.CheckUserLogin"/>
     </mvc:interceptor>
 

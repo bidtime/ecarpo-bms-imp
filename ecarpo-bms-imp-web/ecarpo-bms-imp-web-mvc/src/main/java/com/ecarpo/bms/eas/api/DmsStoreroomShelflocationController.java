@@ -27,7 +27,7 @@ import com.ecarpo.framework.model.ResultDTO;
  * @since 2019.05.21
  */
 @RestController
-@RequestMapping("/api/eas/DmsStoreroomShelflocation")
+@RequestMapping("/api/dms/import/DmsStoreroomShelflocation")
 public class DmsStoreroomShelflocationController {
 
   @Autowired

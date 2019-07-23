@@ -27,7 +27,7 @@ import com.ecarpo.framework.model.ResultDTO;
  * @since 2019.05.21
  */
 @RestController
-@RequestMapping("/api/eas/DmsBuy")
+@RequestMapping("/api/dms/import/DmsBuy")
 public class DmsBuyController {
 
   @Autowired

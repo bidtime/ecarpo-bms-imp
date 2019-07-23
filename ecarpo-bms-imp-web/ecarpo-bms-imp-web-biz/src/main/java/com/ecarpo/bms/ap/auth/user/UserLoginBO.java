@@ -63,9 +63,9 @@ public class UserLoginBO implements ISessionUser, Serializable {
   
   public static UserLoginBO getUser() {
     UserLoginBO bo = new UserLoginBO();
-    bo.setUserId(2L);
-    bo.setUserCode("002");
-    bo.setUserName("eas sys");
+    bo.setUserId(1L);
+    bo.setUserCode("001");
+    bo.setUserName("jss");
     return bo;
   }
 
