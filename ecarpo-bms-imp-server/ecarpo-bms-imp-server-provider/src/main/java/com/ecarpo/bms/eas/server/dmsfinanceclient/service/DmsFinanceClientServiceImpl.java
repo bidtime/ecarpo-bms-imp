@@ -23,7 +23,7 @@ public class DmsFinanceClientServiceImpl extends
 
   @Override
   public ResultDTO<Integer> insert(DmsFinanceClientInsertDTO dto) throws Exception {
-    return super.insert(dto);
+    return super.insertSelective(dto);
   }
 
   @Override

@@ -23,7 +23,7 @@ public class CrmBaseSupplierServiceImpl extends
 
   @Override
   public ResultDTO<Integer> insert(CrmBaseSupplierInsertDTO dto) throws Exception {
-    return super.insert(dto);
+    return super.insertSelective(dto);
   }
 
   @Override

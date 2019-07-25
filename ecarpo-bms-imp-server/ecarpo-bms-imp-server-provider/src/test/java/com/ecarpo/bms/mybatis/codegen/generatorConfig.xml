@@ -29,29 +29,29 @@
     </javaTypeResolver>
 
     <!-- dao -->
-    <!-- dms_buy dao begin -->
+    <!-- crm_base_product dao begin -->
 
-    <javaModelGenerator targetPackage="com.ecarpo.bms.eas.server.dmsbuy.entity" targetProject="/home/working/git/github/bidtime/java/ecarpo-bms-imp/ecarpo-bms-imp-server/ecarpo-bms-imp-server-provider/src/main/java">
+    <javaModelGenerator targetPackage="com.ecarpo.bms.eas.server.crmbaseproduct.entity" targetProject="/home/working/git/github/bidtime/java/ecarpo-bms-imp/ecarpo-bms-imp-server/ecarpo-bms-imp-server-provider/src/main/java">
       <property name="enableSubPackages" value="true" />
       <property name="trimStrings" value="true" />
       <property name="immutable" value="false"/>
     </javaModelGenerator>
 
-    <sqlMapGenerator targetPackage="com.ecarpo.bms.eas.server.dmsbuy.dao" targetProject="/home/working/git/github/bidtime/java/ecarpo-bms-imp/ecarpo-bms-imp-server/ecarpo-bms-imp-server-provider/src/main/java">
+    <sqlMapGenerator targetPackage="com.ecarpo.bms.eas.server.crmbaseproduct.dao" targetProject="/home/working/git/github/bidtime/java/ecarpo-bms-imp/ecarpo-bms-imp-server/ecarpo-bms-imp-server-provider/src/main/java">
       <property name="enableSubPackages" value="true" />
     </sqlMapGenerator>
 
-    <javaClientGenerator type="XMLMAPPER" targetPackage="com.ecarpo.bms.eas.server.dmsbuy.dao" targetProject="/home/working/git/github/bidtime/java/ecarpo-bms-imp/ecarpo-bms-imp-server/ecarpo-bms-imp-server-provider/src/main/java">
+    <javaClientGenerator type="XMLMAPPER" targetPackage="com.ecarpo.bms.eas.server.crmbaseproduct.dao" targetProject="/home/working/git/github/bidtime/java/ecarpo-bms-imp/ecarpo-bms-imp-server/ecarpo-bms-imp-server-provider/src/main/java">
       <property name="enableSubPackages" value="true" />
     </javaClientGenerator>
 
-    <table tableName="dms_buy" domainObjectName="DmsBuyDO" mapperName="DmsBuyMapper"
+    <table tableName="crm_base_product" domainObjectName="CrmBaseProductDO" mapperName="CrmBaseProductMapper"
       enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
       selectByExampleQueryId="false" enableUpdateByExample="false">
       <property name="useActualColumnNames" value="false" />
     </table>
 
-    <!-- dms_buy dao begin -->
+    <!-- crm_base_product dao begin -->
 
   </context>
 </generatorConfiguration>

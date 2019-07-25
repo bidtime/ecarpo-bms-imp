@@ -8,8 +8,6 @@ import com.ecarpo.framework.model.BaseDTO;
 import com.ecarpo.framework.model.InsertDTO;
 import com.ecarpo.framework.model.UpdateDTO;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * 自动注入controller 方法中的 userID 注解参数
  * <p/>

@@ -7,6 +7,10 @@ package com.ecarpo.bms.eas.server.dmshisrepairorder.dto;
 import java.math.BigDecimal;
 import java.util.Date;
 
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.NotBlank;
+
 import com.ecarpo.framework.model.UpdateDTO;
 
 import lombok.Data;
@@ -38,6 +42,7 @@ public class DmsHisRepairOrderUpdateDTO extends UpdateDTO {
   *
   * @mbg.generated 2019-07-22 16:52:54
   */
+ @NotBlank(message = "工单号不能为空")
  private String orderNo;
 
  /**
@@ -66,6 +71,7 @@ public class DmsHisRepairOrderUpdateDTO extends UpdateDTO {
   *
   * @mbg.generated 2019-07-22 16:52:54
   */
+ @NotNull(message = "维修日期不能为空")
  private Date repairTime;
 
  /**
@@ -73,6 +79,7 @@ public class DmsHisRepairOrderUpdateDTO extends UpdateDTO {
   *
   * @mbg.generated 2019-07-22 16:52:54
   */
+ @NotBlank(message = "车牌号不能为空")
  private String plateNo;
 
  /**
@@ -87,6 +94,7 @@ public class DmsHisRepairOrderUpdateDTO extends UpdateDTO {
   *
   * @mbg.generated 2019-07-22 16:52:54
   */
+ @NotNull(message = "行驶里程不能为空")
  private Integer mileage;
 
  /**

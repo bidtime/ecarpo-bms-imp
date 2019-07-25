@@ -6,6 +6,8 @@ package com.ecarpo.bms.eas.server.dmsfinanceclient.dto;
 
 import java.math.BigDecimal;
 
+import org.hibernate.validator.constraints.NotBlank;
+
 import com.ecarpo.framework.model.UpdateDTO;
 
 import lombok.Data;
@@ -36,6 +38,7 @@ public class DmsFinanceClientUpdateDTO extends UpdateDTO {
   *
   * @mbg.generated 2019-07-23 10:30:16
   */
+ @NotBlank(message = "客户编码不能为空")
  private String clientCode;
 
  /**

@@ -7,6 +7,8 @@ package com.ecarpo.bms.eas.server.dmshisrepairorderworkhours.dto;
 import java.math.BigDecimal;
 import java.util.Date;
 
+import org.hibernate.validator.constraints.NotBlank;
+
 import com.ecarpo.framework.model.InsertDTO;
 
 import lombok.Data;
@@ -38,6 +40,7 @@ public class DmsHisRepairOrderWorkhoursInsertDTO extends InsertDTO {
   *
   * @mbg.generated 2019-07-22 16:44:33
   */
+ @NotBlank(message = "工单号不能为空")
  private String orderNo;
 
  /**
@@ -45,6 +48,7 @@ public class DmsHisRepairOrderWorkhoursInsertDTO extends InsertDTO {
   *
   * @mbg.generated 2019-07-22 16:44:33
   */
+ @NotBlank(message = "工时编码不能为空")
  private String workhourCode;
 
  /**
@@ -73,6 +77,7 @@ public class DmsHisRepairOrderWorkhoursInsertDTO extends InsertDTO {
   *
   * @mbg.generated 2019-07-22 16:44:33
   */
+ @NotBlank(message = "修理工不能为空")
  private String workerName;
 
  /**

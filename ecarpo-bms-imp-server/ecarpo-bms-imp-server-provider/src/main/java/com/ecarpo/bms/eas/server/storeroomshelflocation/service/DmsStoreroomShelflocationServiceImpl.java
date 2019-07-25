@@ -23,7 +23,7 @@ public class DmsStoreroomShelflocationServiceImpl extends
 
   @Override
   public ResultDTO<Integer> insert(DmsStoreroomShelflocationInsertDTO dto) throws Exception {
-    return super.insert(dto);
+    return super.insertSelective(dto);
   }
 
   @Override

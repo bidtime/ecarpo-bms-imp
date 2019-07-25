@@ -7,6 +7,8 @@ package com.ecarpo.bms.eas.server.crmbaseproduct.dto;
 import java.math.BigDecimal;
 import java.util.Date;
 
+import org.hibernate.validator.constraints.NotBlank;
+
 import com.ecarpo.framework.model.UpdateDTO;
 
 import lombok.Data;
@@ -101,6 +103,7 @@ public class CrmBaseProductUpdateDTO extends UpdateDTO {
   *
   * @mbg.generated 2019-07-23 10:54:49
   */
+ @NotBlank(message = "产品编码不能为空")
  private String code;
 
  /**

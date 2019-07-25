@@ -24,7 +24,7 @@ public class DmsRepairWorkhourServiceImpl extends
 
   @Override
   public ResultDTO<Integer> insert(DmsRepairWorkhourInsertDTO dto) throws Exception {
-    return super.insert(dto);
+    return super.insertSelective(dto);
   }
 
   @Override

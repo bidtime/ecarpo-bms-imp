@@ -4,7 +4,6 @@
 package com.ecarpo.bms.eas.server.crmbasesupplier.dao;
 
 import com.ecarpo.bms.eas.server.crmbasesupplier.entity.CrmBaseSupplierDO;
-import com.ecarpo.bms.eas.server.crmbasesupplier.entity.CrmBaseSupplierDOWithBLOBs;
 import com.ecarpo.framework.common.annotation.MapperDesc;
 import com.ecarpo.framework.common.mapper.BaseMapper;
 
@@ -22,35 +21,35 @@ public interface CrmBaseSupplierMapper extends BaseMapper<CrmBaseSupplierDO> {
      *
      * @mbg.generated 2019-07-23 10:52:27
      */
-    int insert(CrmBaseSupplierDOWithBLOBs record);
+    int insert(CrmBaseSupplierDO record);
 
     /**
      * This method corresponds to the database table crm_base_supplier
      *
      * @mbg.generated 2019-07-23 10:52:27
      */
-    int insertSelective(CrmBaseSupplierDOWithBLOBs record);
+    int insertSelective(CrmBaseSupplierDO record);
 
     /**
      * This method corresponds to the database table crm_base_supplier
      *
      * @mbg.generated 2019-07-23 10:52:27
      */
-    CrmBaseSupplierDOWithBLOBs selectByPrimaryKey(Integer id);
+    CrmBaseSupplierDO selectByPrimaryKey(Integer id);
 
     /**
      * This method corresponds to the database table crm_base_supplier
      *
      * @mbg.generated 2019-07-23 10:52:27
      */
-    int updateByPrimaryKeySelective(CrmBaseSupplierDOWithBLOBs record);
+    int updateByPrimaryKeySelective(CrmBaseSupplierDO record);
 
     /**
      * This method corresponds to the database table crm_base_supplier
      *
      * @mbg.generated 2019-07-23 10:52:27
      */
-    int updateByPrimaryKeyWithBLOBs(CrmBaseSupplierDOWithBLOBs record);
+    int updateByPrimaryKeyWithBLOBs(CrmBaseSupplierDO record);
 
     /**
      * This method corresponds to the database table crm_base_supplier

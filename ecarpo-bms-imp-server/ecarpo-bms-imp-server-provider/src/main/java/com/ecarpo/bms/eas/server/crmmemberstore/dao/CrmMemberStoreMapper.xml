@@ -372,4 +372,12 @@
       total_pay = #{totalPay,jdbcType=DECIMAL}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  
+  <!-- user define -->
+  <select id="existsByCode" resultType="java.lang.Long">
+    select 1 from crm_member_store
+    where code = #{code,jdbcType=VARCHAR}
+    limit 0, 1
+  </select>
+  
 </mapper>

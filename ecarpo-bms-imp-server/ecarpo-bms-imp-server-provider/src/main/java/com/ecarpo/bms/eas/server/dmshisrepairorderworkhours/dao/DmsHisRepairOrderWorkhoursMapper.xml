@@ -169,4 +169,12 @@
       create_time = #{createTime,jdbcType=DATE}
     where id = #{id,jdbcType=INTEGER}
   </update>
+    
+  <!-- user define -->
+  <select id="existsByCode" resultType="java.lang.Long">
+    select 1 from dms_his_repair_order_workhours
+    where code = #{code,jdbcType=VARCHAR}
+    limit 0, 1
+  </select>
+  
 </mapper>

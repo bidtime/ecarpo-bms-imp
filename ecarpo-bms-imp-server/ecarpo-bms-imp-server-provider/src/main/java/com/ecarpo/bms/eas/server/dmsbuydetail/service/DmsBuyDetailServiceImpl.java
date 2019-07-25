@@ -23,7 +23,7 @@ public class DmsBuyDetailServiceImpl extends
 
   @Override
   public ResultDTO<Integer> insert(DmsBuyDetailInsertDTO dto) throws Exception {
-    return super.insert(dto);
+    return super.insertSelective(dto);
   }
 
   @Override

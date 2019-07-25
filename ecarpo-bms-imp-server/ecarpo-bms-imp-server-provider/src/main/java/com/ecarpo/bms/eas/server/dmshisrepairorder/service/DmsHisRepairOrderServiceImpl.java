@@ -23,7 +23,7 @@ public class DmsHisRepairOrderServiceImpl extends
 
   @Override
   public ResultDTO<Integer> insert(DmsHisRepairOrderInsertDTO dto) throws Exception {
-    return super.insert(dto);
+    return super.insertSelective(dto);
   }
 
   @Override

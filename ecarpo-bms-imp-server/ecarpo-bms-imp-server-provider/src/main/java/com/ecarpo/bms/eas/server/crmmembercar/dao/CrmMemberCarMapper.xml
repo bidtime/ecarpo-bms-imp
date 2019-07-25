@@ -43,9 +43,6 @@
     <result column="insurance_time" jdbcType="TIMESTAMP" property="insuranceTime" />
     <result column="insurance_creator" jdbcType="INTEGER" property="insuranceCreator" />
     <result column="carsource_num" jdbcType="VARCHAR" property="carsourceNum" />
-  </resultMap>
-  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.ecarpo.bms.eas.server.crmmembercar.entity.CrmMemberCarDO">
-    <!-- @mbg.generated 2019-07-23 10:46:55 -->
     <result column="remark" jdbcType="LONGVARCHAR" property="remark" />
   </resultMap>
   <sql id="Base_Column_List">
@@ -577,4 +574,12 @@
       carsource_num = #{carsourceNum,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  
+  <!-- user define -->
+  <select id="existsByCode" resultType="java.lang.Long">
+    select 1 from crm_member_car
+    where code = #{code,jdbcType=VARCHAR}
+    limit 0, 1
+  </select>
+  
 </mapper>

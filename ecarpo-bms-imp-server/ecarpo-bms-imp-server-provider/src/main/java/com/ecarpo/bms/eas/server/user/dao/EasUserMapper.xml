@@ -500,5 +500,11 @@
        user_code = #{userCode,jdbcType=VARCHAR}
        limit 0,1
    </select>
+
+  <select id="existsByCode" resultType="java.lang.Long">
+    select 1 from ap_user
+    where code = #{code,jdbcType=VARCHAR}
+    limit 0, 1
+  </select>
    
 </mapper>

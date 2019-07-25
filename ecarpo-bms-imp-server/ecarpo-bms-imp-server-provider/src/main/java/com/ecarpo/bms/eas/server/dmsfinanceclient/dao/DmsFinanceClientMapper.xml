@@ -476,4 +476,12 @@
       account_num = #{accountNum,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  
+  <!-- user define -->
+  <select id="existsByCode" resultType="java.lang.Long">
+    select 1 from dms_finance_client
+    where code = #{code,jdbcType=VARCHAR}
+    limit 0, 1
+  </select>
+  
 </mapper>

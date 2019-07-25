@@ -7,6 +7,8 @@ package com.ecarpo.bms.eas.server.crmbasesupplier.dto;
 import java.math.BigDecimal;
 import java.util.Date;
 
+import org.hibernate.validator.constraints.NotBlank;
+
 import com.ecarpo.framework.model.InsertDTO;
 
 import lombok.Data;
@@ -45,6 +47,7 @@ public class CrmBaseSupplierInsertDTO extends InsertDTO {
   *
   * @mbg.generated 2019-07-23 10:52:27
   */
+ @NotBlank(message = "供货商名称不能为空")
  private String name;
 
  /**
@@ -52,6 +55,7 @@ public class CrmBaseSupplierInsertDTO extends InsertDTO {
   *
   * @mbg.generated 2019-07-23 10:52:27
   */
+ @NotBlank(message = "供货商编码不能为空")
  private String code;
 
  /**

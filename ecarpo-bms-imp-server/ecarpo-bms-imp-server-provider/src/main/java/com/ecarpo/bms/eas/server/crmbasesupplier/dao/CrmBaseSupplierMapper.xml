@@ -32,7 +32,7 @@
     <result column="is_del" jdbcType="TINYINT" property="isDel" />
     <result column="type" jdbcType="TINYINT" property="type" />
   </resultMap>
-  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.ecarpo.bms.eas.server.crmbasesupplier.entity.CrmBaseSupplierDOWithBLOBs">
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.ecarpo.bms.eas.server.crmbasesupplier.entity.com.ecarpo.bms.eas.server.crmbasesupplier.entity.CrmBaseSupplierDOBLOBs">
     <!-- @mbg.generated 2019-07-23 10:52:27 -->
     <result column="business_scope" jdbcType="LONGVARCHAR" property="businessScope" />
     <result column="remark" jdbcType="LONGVARCHAR" property="remark" />
@@ -61,7 +61,7 @@
     delete from crm_base_supplier
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="com.ecarpo.bms.eas.server.crmbasesupplier.entity.CrmBaseSupplierDOWithBLOBs">
+  <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="com.ecarpo.bms.eas.server.crmbasesupplier.entity.com.ecarpo.bms.eas.server.crmbasesupplier.entity.CrmBaseSupplierDOBLOBs">
     <!-- @mbg.generated 2019-07-23 10:52:27 -->
     insert into crm_base_supplier (id, store_id, supplier_store_id, 
       name, code, tel, mobile, 
@@ -84,7 +84,7 @@
       #{isDel,jdbcType=TINYINT}, #{type,jdbcType=TINYINT}, #{businessScope,jdbcType=LONGVARCHAR}, 
       #{remark,jdbcType=LONGVARCHAR})
   </insert>
-  <insert id="insertSelective" useGeneratedKeys="true" keyProperty="id" parameterType="com.ecarpo.bms.eas.server.crmbasesupplier.entity.CrmBaseSupplierDOWithBLOBs">
+  <insert id="insertSelective" useGeneratedKeys="true" keyProperty="id" parameterType="com.ecarpo.bms.eas.server.crmbasesupplier.entity.com.ecarpo.bms.eas.server.crmbasesupplier.entity.CrmBaseSupplierDOBLOBs">
     <!-- @mbg.generated 2019-07-23 10:52:27 -->
     insert into crm_base_supplier
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -272,7 +272,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.ecarpo.bms.eas.server.crmbasesupplier.entity.CrmBaseSupplierDOWithBLOBs">
+  <update id="updateByPrimaryKeySelective" parameterType="com.ecarpo.bms.eas.server.crmbasesupplier.entity.com.ecarpo.bms.eas.server.crmbasesupplier.entity.CrmBaseSupplierDOBLOBs">
     <!-- @mbg.generated 2019-07-23 10:52:27 -->
     update crm_base_supplier
     <set>
@@ -366,7 +366,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.ecarpo.bms.eas.server.crmbasesupplier.entity.CrmBaseSupplierDOWithBLOBs">
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.ecarpo.bms.eas.server.crmbasesupplier.entity.com.ecarpo.bms.eas.server.crmbasesupplier.entity.CrmBaseSupplierDOBLOBs">
     <!-- @mbg.generated 2019-07-23 10:52:27 -->
     update crm_base_supplier
     set store_id = #{storeId,jdbcType=INTEGER},
@@ -432,4 +432,12 @@
       type = #{type,jdbcType=TINYINT}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  
+  <!-- user define -->
+  <select id="existsByCode" resultType="java.lang.Long">
+    select 1 from crm_base_supplier
+    where code = #{code,jdbcType=VARCHAR}
+    limit 0, 1
+  </select>
+  
 </mapper>

@@ -24,5 +24,10 @@
       <groupId>com.ecarpo.framework</groupId>
       <artifactId>ecarpo-framework-redis-cache</artifactId>
     </dependency>
+    <dependency>
+      <groupId>com.ecarpo.framework</groupId>
+      <artifactId>ecarpo-framework-web-util</artifactId>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
 </project>

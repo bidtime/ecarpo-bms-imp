@@ -214,4 +214,12 @@ public class CrmBaseSupplierDO extends MyEntity {
      * @mbg.generated 2019-07-23 10:52:27
      */
     private Integer type;
+    
+    /**
+     * 经营范围
+     *
+     * @mbg.generated 2019-07-23 10:52:27
+     */
+    private String businessScope;
+
 }

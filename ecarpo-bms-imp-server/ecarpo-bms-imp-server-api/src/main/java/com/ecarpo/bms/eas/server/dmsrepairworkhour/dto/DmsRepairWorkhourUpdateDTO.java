@@ -6,6 +6,8 @@ package com.ecarpo.bms.eas.server.dmsrepairworkhour.dto;
 
 import java.math.BigDecimal;
 
+import org.hibernate.validator.constraints.NotBlank;
+
 import com.ecarpo.framework.model.UpdateDTO;
 
 import lombok.Data;
@@ -37,6 +39,7 @@ public class DmsRepairWorkhourUpdateDTO extends UpdateDTO {
   *
   * @mbg.generated 2019-07-22 16:41:30
   */
+ @NotBlank(message = "工时编码不能为空")
  private String workhourCode;
 
  /**

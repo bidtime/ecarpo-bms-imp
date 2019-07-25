@@ -23,7 +23,7 @@ public class CrmMemberCarServiceImpl extends
 
   @Override
   public ResultDTO<Integer> insert(CrmMemberCarInsertDTO dto) throws Exception {
-    return super.insert(dto);
+    return new ResultDTO<>(manager.insertSelective(dto));
   }
 
   @Override

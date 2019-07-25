@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ecarpo.bms.eas.server.crmbaseproduct.dao.CrmBaseProductMapper">
   <resultMap id="BaseResultMap" type="com.ecarpo.bms.eas.server.crmbaseproduct.entity.CrmBaseProductDO">
-    <!-- @mbg.generated 2019-07-23 10:54:49 -->
+    <!-- @mbg.generated 2019-07-25 09:40:45 -->
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="ptype" jdbcType="CHAR" property="ptype" />
     <result column="pmodel" jdbcType="INTEGER" property="pmodel" />
@@ -35,6 +35,8 @@
     <result column="maintain_cycle" jdbcType="INTEGER" property="maintainCycle" />
     <result column="work_hour" jdbcType="INTEGER" property="workHour" />
     <result column="brief_desc" jdbcType="VARCHAR" property="briefDesc" />
+    <result column="desc" jdbcType="VARCHAR" property="desc" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
     <result column="is_weixin" jdbcType="TINYINT" property="isWeixin" />
     <result column="weixin_mall_type" jdbcType="TINYINT" property="weixinMallType" />
     <result column="base_num" jdbcType="INTEGER" property="baseNum" />
@@ -50,8 +52,8 @@
     <result column="last_buy_price" jdbcType="DECIMAL" property="lastBuyPrice" />
     <result column="heavy_buyer_price" jdbcType="DECIMAL" property="heavyBuyerPrice" />
     <result column="repair_price" jdbcType="DECIMAL" property="repairPrice" />
-    <result column="creater" jdbcType="INTEGER" property="creater" />
-    <result column="c_time" jdbcType="INTEGER" property="cTime" />
+    <result column="creator" jdbcType="INTEGER" property="creator" />
+    <result column="c_time" jdbcType="DATE" property="cTime" />
     <result column="proxy_count" jdbcType="INTEGER" property="proxyCount" />
     <result column="refund_count" jdbcType="INTEGER" property="refundCount" />
     <result column="act_count" jdbcType="INTEGER" property="actCount" />
@@ -77,44 +79,33 @@
     <result column="send_type" jdbcType="TINYINT" property="sendType" />
     <result column="platform" jdbcType="TINYINT" property="platform" />
   </resultMap>
-  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.ecarpo.bms.eas.server.crmbaseproduct.entity.CrmBaseProductDOWithBLOBs">
-    <!-- @mbg.generated 2019-07-23 10:54:49 -->
-    <result column="desc" jdbcType="LONGVARCHAR" property="desc" />
-    <result column="remark" jdbcType="LONGVARCHAR" property="remark" />
-  </resultMap>
   <sql id="Base_Column_List">
-    <!-- @mbg.generated 2019-07-23 10:54:49 -->
+    <!-- @mbg.generated 2019-07-25 09:40:45 -->
     id, ptype, pmodel, vid, store_id, supplier_id, name, name_trim, pic1, pic2, pic3, 
     code, index_code, model, bar_code, good_type_id, good_unit_id, grade_1, grade_2, 
     grade_3, origin, sdate, edate, status, origin_price, sales_price, mall_price, points, 
-    points_to_money, maintain_cycle, work_hour, brief_desc, is_weixin, weixin_mall_type, 
-    base_num, cost_type, apply_serie, apply_type, is_common, is_fav, is_member_discount, 
-    unit, last_price, last_price_notax, last_buy_price, heavy_buyer_price, repair_price, 
-    creater, c_time, proxy_count, refund_count, act_count, car_model, location_name, 
+    points_to_money, maintain_cycle, work_hour, brief_desc, desc, remark, is_weixin, 
+    weixin_mall_type, base_num, cost_type, apply_serie, apply_type, is_common, is_fav, 
+    is_member_discount, unit, last_price, last_price_notax, last_buy_price, heavy_buyer_price, 
+    repair_price, creator, c_time, proxy_count, refund_count, act_count, car_model, location_name, 
     product_type_id, stock_lowest, product_brand, figure, load_index, speed_level, install_way, 
     is_del, tire_width, tire_flat, tire_diameter, tire_speed_level, oil_viscosity, oil_capacity, 
     oil_class, rest_payment, is_free, send_type, platform
   </sql>
-  <sql id="Blob_Column_List">
-    <!-- @mbg.generated 2019-07-23 10:54:49 -->
-    desc, remark
-  </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
-    <!-- @mbg.generated 2019-07-23 10:54:49 -->
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!-- @mbg.generated 2019-07-25 09:40:45 -->
     select 
     <include refid="Base_Column_List" />
-    ,
-    <include refid="Blob_Column_List" />
     from crm_base_product
     where id = #{id,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    <!-- @mbg.generated 2019-07-23 10:54:49 -->
+    <!-- @mbg.generated 2019-07-25 09:40:45 -->
     delete from crm_base_product
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="com.ecarpo.bms.eas.server.crmbaseproduct.entity.CrmBaseProductDOWithBLOBs">
-    <!-- @mbg.generated 2019-07-23 10:54:49 -->
+  <insert id="insert" parameterType="com.ecarpo.bms.eas.server.crmbaseproduct.entity.CrmBaseProductDO">
+    <!-- @mbg.generated 2019-07-25 09:40:45 -->
     insert into crm_base_product (id, ptype, pmodel, 
       vid, store_id, supplier_id, 
       name, name_trim, pic1, 
@@ -125,21 +116,21 @@
       edate, status, origin_price, 
       sales_price, mall_price, points, 
       points_to_money, maintain_cycle, work_hour, 
-      brief_desc, is_weixin, weixin_mall_type, 
-      base_num, cost_type, apply_serie, 
-      apply_type, is_common, is_fav, 
-      is_member_discount, unit, last_price, 
-      last_price_notax, last_buy_price, heavy_buyer_price, 
-      repair_price, creater, c_time, 
-      proxy_count, refund_count, act_count, 
-      car_model, location_name, product_type_id, 
-      stock_lowest, product_brand, figure, 
-      load_index, speed_level, install_way, 
-      is_del, tire_width, tire_flat, 
-      tire_diameter, tire_speed_level, oil_viscosity, 
-      oil_capacity, oil_class, rest_payment, 
-      is_free, send_type, platform, 
-      desc, remark)
+      brief_desc, desc, remark, 
+      is_weixin, weixin_mall_type, base_num, 
+      cost_type, apply_serie, apply_type, 
+      is_common, is_fav, is_member_discount, 
+      unit, last_price, last_price_notax, 
+      last_buy_price, heavy_buyer_price, repair_price, 
+      creator, c_time, proxy_count, 
+      refund_count, act_count, car_model, 
+      location_name, product_type_id, stock_lowest, 
+      product_brand, figure, load_index, 
+      speed_level, install_way, is_del, 
+      tire_width, tire_flat, tire_diameter, 
+      tire_speed_level, oil_viscosity, oil_capacity, 
+      oil_class, rest_payment, is_free, 
+      send_type, platform)
     values (#{id,jdbcType=INTEGER}, #{ptype,jdbcType=CHAR}, #{pmodel,jdbcType=INTEGER}, 
       #{vid,jdbcType=INTEGER}, #{storeId,jdbcType=INTEGER}, #{supplierId,jdbcType=INTEGER}, 
       #{name,jdbcType=VARCHAR}, #{nameTrim,jdbcType=VARCHAR}, #{pic1,jdbcType=VARCHAR}, 
@@ -150,24 +141,24 @@
       #{edate,jdbcType=DATE}, #{status,jdbcType=TINYINT}, #{originPrice,jdbcType=DECIMAL}, 
       #{salesPrice,jdbcType=DECIMAL}, #{mallPrice,jdbcType=DECIMAL}, #{points,jdbcType=INTEGER}, 
       #{pointsToMoney,jdbcType=DECIMAL}, #{maintainCycle,jdbcType=INTEGER}, #{workHour,jdbcType=INTEGER}, 
-      #{briefDesc,jdbcType=VARCHAR}, #{isWeixin,jdbcType=TINYINT}, #{weixinMallType,jdbcType=TINYINT}, 
-      #{baseNum,jdbcType=INTEGER}, #{costType,jdbcType=CHAR}, #{applySerie,jdbcType=VARCHAR}, 
-      #{applyType,jdbcType=VARCHAR}, #{isCommon,jdbcType=TINYINT}, #{isFav,jdbcType=TINYINT}, 
-      #{isMemberDiscount,jdbcType=CHAR}, #{unit,jdbcType=VARCHAR}, #{lastPrice,jdbcType=DECIMAL}, 
-      #{lastPriceNotax,jdbcType=DECIMAL}, #{lastBuyPrice,jdbcType=DECIMAL}, #{heavyBuyerPrice,jdbcType=DECIMAL}, 
-      #{repairPrice,jdbcType=DECIMAL}, #{creater,jdbcType=INTEGER}, #{cTime,jdbcType=INTEGER}, 
-      #{proxyCount,jdbcType=INTEGER}, #{refundCount,jdbcType=INTEGER}, #{actCount,jdbcType=INTEGER}, 
-      #{carModel,jdbcType=VARCHAR}, #{locationName,jdbcType=VARCHAR}, #{productTypeId,jdbcType=INTEGER}, 
-      #{stockLowest,jdbcType=DECIMAL}, #{productBrand,jdbcType=INTEGER}, #{figure,jdbcType=VARCHAR}, 
-      #{loadIndex,jdbcType=VARCHAR}, #{speedLevel,jdbcType=VARCHAR}, #{installWay,jdbcType=INTEGER}, 
-      #{isDel,jdbcType=TINYINT}, #{tireWidth,jdbcType=VARCHAR}, #{tireFlat,jdbcType=VARCHAR}, 
-      #{tireDiameter,jdbcType=VARCHAR}, #{tireSpeedLevel,jdbcType=VARCHAR}, #{oilViscosity,jdbcType=VARCHAR}, 
-      #{oilCapacity,jdbcType=VARCHAR}, #{oilClass,jdbcType=VARCHAR}, #{restPayment,jdbcType=DECIMAL}, 
-      #{isFree,jdbcType=TINYINT}, #{sendType,jdbcType=TINYINT}, #{platform,jdbcType=TINYINT}, 
-      #{desc,jdbcType=LONGVARCHAR}, #{remark,jdbcType=LONGVARCHAR})
+      #{briefDesc,jdbcType=VARCHAR}, #{desc,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, 
+      #{isWeixin,jdbcType=TINYINT}, #{weixinMallType,jdbcType=TINYINT}, #{baseNum,jdbcType=INTEGER}, 
+      #{costType,jdbcType=CHAR}, #{applySerie,jdbcType=VARCHAR}, #{applyType,jdbcType=VARCHAR}, 
+      #{isCommon,jdbcType=TINYINT}, #{isFav,jdbcType=TINYINT}, #{isMemberDiscount,jdbcType=CHAR}, 
+      #{unit,jdbcType=VARCHAR}, #{lastPrice,jdbcType=DECIMAL}, #{lastPriceNotax,jdbcType=DECIMAL}, 
+      #{lastBuyPrice,jdbcType=DECIMAL}, #{heavyBuyerPrice,jdbcType=DECIMAL}, #{repairPrice,jdbcType=DECIMAL}, 
+      #{creator,jdbcType=INTEGER}, #{cTime,jdbcType=INTEGER}, #{proxyCount,jdbcType=INTEGER}, 
+      #{refundCount,jdbcType=INTEGER}, #{actCount,jdbcType=INTEGER}, #{carModel,jdbcType=VARCHAR}, 
+      #{locationName,jdbcType=VARCHAR}, #{productTypeId,jdbcType=INTEGER}, #{stockLowest,jdbcType=DECIMAL}, 
+      #{productBrand,jdbcType=INTEGER}, #{figure,jdbcType=VARCHAR}, #{loadIndex,jdbcType=VARCHAR}, 
+      #{speedLevel,jdbcType=VARCHAR}, #{installWay,jdbcType=INTEGER}, #{isDel,jdbcType=TINYINT}, 
+      #{tireWidth,jdbcType=VARCHAR}, #{tireFlat,jdbcType=VARCHAR}, #{tireDiameter,jdbcType=VARCHAR}, 
+      #{tireSpeedLevel,jdbcType=VARCHAR}, #{oilViscosity,jdbcType=VARCHAR}, #{oilCapacity,jdbcType=VARCHAR}, 
+      #{oilClass,jdbcType=VARCHAR}, #{restPayment,jdbcType=DECIMAL}, #{isFree,jdbcType=TINYINT}, 
+      #{sendType,jdbcType=TINYINT}, #{platform,jdbcType=TINYINT})
   </insert>
-  <insert id="insertSelective" useGeneratedKeys="true" keyProperty="id" parameterType="com.ecarpo.bms.eas.server.crmbaseproduct.entity.CrmBaseProductDOWithBLOBs">
-    <!-- @mbg.generated 2019-07-23 10:54:49 -->
+  <insert id="insertSelective" parameterType="com.ecarpo.bms.eas.server.crmbaseproduct.entity.CrmBaseProductDO">
+    <!-- @mbg.generated 2019-07-25 09:40:45 -->
     insert into crm_base_product
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -266,6 +257,12 @@
       <if test="briefDesc != null">
         brief_desc,
       </if>
+      <if test="desc != null">
+        desc,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
       <if test="isWeixin != null">
         is_weixin,
       </if>
@@ -311,8 +308,8 @@
       <if test="repairPrice != null">
         repair_price,
       </if>
-      <if test="creater != null">
-        creater,
+      <if test="creator != null">
+        creator,
       </if>
       <if test="cTime != null">
         c_time,
@@ -388,12 +385,6 @@
       </if>
       <if test="platform != null">
         platform,
-      </if>
-      <if test="desc != null">
-        desc,
-      </if>
-      <if test="remark != null">
-        remark,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
@@ -493,6 +484,12 @@
       <if test="briefDesc != null">
         #{briefDesc,jdbcType=VARCHAR},
       </if>
+      <if test="desc != null">
+        #{desc,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
       <if test="isWeixin != null">
         #{isWeixin,jdbcType=TINYINT},
       </if>
@@ -538,8 +535,8 @@
       <if test="repairPrice != null">
         #{repairPrice,jdbcType=DECIMAL},
       </if>
-      <if test="creater != null">
-        #{creater,jdbcType=INTEGER},
+      <if test="creator != null">
+        #{creator,jdbcType=INTEGER},
       </if>
       <if test="cTime != null">
         #{cTime,jdbcType=INTEGER},
@@ -616,16 +613,10 @@
       <if test="platform != null">
         #{platform,jdbcType=TINYINT},
       </if>
-      <if test="desc != null">
-        #{desc,jdbcType=LONGVARCHAR},
-      </if>
-      <if test="remark != null">
-        #{remark,jdbcType=LONGVARCHAR},
-      </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.ecarpo.bms.eas.server.crmbaseproduct.entity.CrmBaseProductDOWithBLOBs">
-    <!-- @mbg.generated 2019-07-23 10:54:49 -->
+  <update id="updateByPrimaryKeySelective" parameterType="com.ecarpo.bms.eas.server.crmbaseproduct.entity.CrmBaseProductDO">
+    <!-- @mbg.generated 2019-07-25 09:40:45 -->
     update crm_base_product
     <set>
       <if test="ptype != null">
@@ -721,6 +712,12 @@
       <if test="briefDesc != null">
         brief_desc = #{briefDesc,jdbcType=VARCHAR},
       </if>
+      <if test="desc != null">
+        desc = #{desc,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
       <if test="isWeixin != null">
         is_weixin = #{isWeixin,jdbcType=TINYINT},
       </if>
@@ -766,11 +763,11 @@
       <if test="repairPrice != null">
         repair_price = #{repairPrice,jdbcType=DECIMAL},
       </if>
-      <if test="creater != null">
-        creater = #{creater,jdbcType=INTEGER},
+      <if test="creator != null">
+        creator = #{creator,jdbcType=INTEGER},
       </if>
       <if test="cTime != null">
-        c_time = #{cTime,jdbcType=INTEGER},
+        c_time = #{cTime,jdbcType=DATE},
       </if>
       <if test="proxyCount != null">
         proxy_count = #{proxyCount,jdbcType=INTEGER},
@@ -844,96 +841,11 @@
       <if test="platform != null">
         platform = #{platform,jdbcType=TINYINT},
       </if>
-      <if test="desc != null">
-        desc = #{desc,jdbcType=LONGVARCHAR},
-      </if>
-      <if test="remark != null">
-        remark = #{remark,jdbcType=LONGVARCHAR},
-      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.ecarpo.bms.eas.server.crmbaseproduct.entity.CrmBaseProductDOWithBLOBs">
-    <!-- @mbg.generated 2019-07-23 10:54:49 -->
-    update crm_base_product
-    set ptype = #{ptype,jdbcType=CHAR},
-      pmodel = #{pmodel,jdbcType=INTEGER},
-      vid = #{vid,jdbcType=INTEGER},
-      store_id = #{storeId,jdbcType=INTEGER},
-      supplier_id = #{supplierId,jdbcType=INTEGER},
-      name = #{name,jdbcType=VARCHAR},
-      name_trim = #{nameTrim,jdbcType=VARCHAR},
-      pic1 = #{pic1,jdbcType=VARCHAR},
-      pic2 = #{pic2,jdbcType=VARCHAR},
-      pic3 = #{pic3,jdbcType=VARCHAR},
-      code = #{code,jdbcType=VARCHAR},
-      index_code = #{indexCode,jdbcType=VARCHAR},
-      model = #{model,jdbcType=VARCHAR},
-      bar_code = #{barCode,jdbcType=VARCHAR},
-      good_type_id = #{goodTypeId,jdbcType=INTEGER},
-      good_unit_id = #{goodUnitId,jdbcType=INTEGER},
-      grade_1 = #{grade1,jdbcType=INTEGER},
-      grade_2 = #{grade2,jdbcType=INTEGER},
-      grade_3 = #{grade3,jdbcType=INTEGER},
-      origin = #{origin,jdbcType=VARCHAR},
-      sdate = #{sdate,jdbcType=DATE},
-      edate = #{edate,jdbcType=DATE},
-      status = #{status,jdbcType=TINYINT},
-      origin_price = #{originPrice,jdbcType=DECIMAL},
-      sales_price = #{salesPrice,jdbcType=DECIMAL},
-      mall_price = #{mallPrice,jdbcType=DECIMAL},
-      points = #{points,jdbcType=INTEGER},
-      points_to_money = #{pointsToMoney,jdbcType=DECIMAL},
-      maintain_cycle = #{maintainCycle,jdbcType=INTEGER},
-      work_hour = #{workHour,jdbcType=INTEGER},
-      brief_desc = #{briefDesc,jdbcType=VARCHAR},
-      is_weixin = #{isWeixin,jdbcType=TINYINT},
-      weixin_mall_type = #{weixinMallType,jdbcType=TINYINT},
-      base_num = #{baseNum,jdbcType=INTEGER},
-      cost_type = #{costType,jdbcType=CHAR},
-      apply_serie = #{applySerie,jdbcType=VARCHAR},
-      apply_type = #{applyType,jdbcType=VARCHAR},
-      is_common = #{isCommon,jdbcType=TINYINT},
-      is_fav = #{isFav,jdbcType=TINYINT},
-      is_member_discount = #{isMemberDiscount,jdbcType=CHAR},
-      unit = #{unit,jdbcType=VARCHAR},
-      last_price = #{lastPrice,jdbcType=DECIMAL},
-      last_price_notax = #{lastPriceNotax,jdbcType=DECIMAL},
-      last_buy_price = #{lastBuyPrice,jdbcType=DECIMAL},
-      heavy_buyer_price = #{heavyBuyerPrice,jdbcType=DECIMAL},
-      repair_price = #{repairPrice,jdbcType=DECIMAL},
-      creater = #{creater,jdbcType=INTEGER},
-      c_time = #{cTime,jdbcType=INTEGER},
-      proxy_count = #{proxyCount,jdbcType=INTEGER},
-      refund_count = #{refundCount,jdbcType=INTEGER},
-      act_count = #{actCount,jdbcType=INTEGER},
-      car_model = #{carModel,jdbcType=VARCHAR},
-      location_name = #{locationName,jdbcType=VARCHAR},
-      product_type_id = #{productTypeId,jdbcType=INTEGER},
-      stock_lowest = #{stockLowest,jdbcType=DECIMAL},
-      product_brand = #{productBrand,jdbcType=INTEGER},
-      figure = #{figure,jdbcType=VARCHAR},
-      load_index = #{loadIndex,jdbcType=VARCHAR},
-      speed_level = #{speedLevel,jdbcType=VARCHAR},
-      install_way = #{installWay,jdbcType=INTEGER},
-      is_del = #{isDel,jdbcType=TINYINT},
-      tire_width = #{tireWidth,jdbcType=VARCHAR},
-      tire_flat = #{tireFlat,jdbcType=VARCHAR},
-      tire_diameter = #{tireDiameter,jdbcType=VARCHAR},
-      tire_speed_level = #{tireSpeedLevel,jdbcType=VARCHAR},
-      oil_viscosity = #{oilViscosity,jdbcType=VARCHAR},
-      oil_capacity = #{oilCapacity,jdbcType=VARCHAR},
-      oil_class = #{oilClass,jdbcType=VARCHAR},
-      rest_payment = #{restPayment,jdbcType=DECIMAL},
-      is_free = #{isFree,jdbcType=TINYINT},
-      send_type = #{sendType,jdbcType=TINYINT},
-      platform = #{platform,jdbcType=TINYINT},
-      desc = #{desc,jdbcType=LONGVARCHAR},
-      remark = #{remark,jdbcType=LONGVARCHAR}
-    where id = #{id,jdbcType=INTEGER}
-  </update>
   <update id="updateByPrimaryKey" parameterType="com.ecarpo.bms.eas.server.crmbaseproduct.entity.CrmBaseProductDO">
-    <!-- @mbg.generated 2019-07-23 10:54:49 -->
+    <!-- @mbg.generated 2019-07-25 09:40:45 -->
     update crm_base_product
     set ptype = #{ptype,jdbcType=CHAR},
       pmodel = #{pmodel,jdbcType=INTEGER},
@@ -966,6 +878,8 @@
       maintain_cycle = #{maintainCycle,jdbcType=INTEGER},
       work_hour = #{workHour,jdbcType=INTEGER},
       brief_desc = #{briefDesc,jdbcType=VARCHAR},
+      desc = #{desc,jdbcType=VARCHAR},
+      remark = #{remark,jdbcType=VARCHAR},
       is_weixin = #{isWeixin,jdbcType=TINYINT},
       weixin_mall_type = #{weixinMallType,jdbcType=TINYINT},
       base_num = #{baseNum,jdbcType=INTEGER},
@@ -981,8 +895,8 @@
       last_buy_price = #{lastBuyPrice,jdbcType=DECIMAL},
       heavy_buyer_price = #{heavyBuyerPrice,jdbcType=DECIMAL},
       repair_price = #{repairPrice,jdbcType=DECIMAL},
-      creater = #{creater,jdbcType=INTEGER},
-      c_time = #{cTime,jdbcType=INTEGER},
+      creator = #{creator,jdbcType=INTEGER},
+      c_time = #{cTime,jdbcType=DATE},
       proxy_count = #{proxyCount,jdbcType=INTEGER},
       refund_count = #{refundCount,jdbcType=INTEGER},
       act_count = #{actCount,jdbcType=INTEGER},
@@ -1009,4 +923,12 @@
       platform = #{platform,jdbcType=TINYINT}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  
+  <!-- user define -->
+  <select id="existsByCode" resultType="java.lang.Long">
+    select 1 from crm_base_product
+    where code = #{code,jdbcType=VARCHAR}
+    limit 0, 1
+  </select>
+  
 </mapper>

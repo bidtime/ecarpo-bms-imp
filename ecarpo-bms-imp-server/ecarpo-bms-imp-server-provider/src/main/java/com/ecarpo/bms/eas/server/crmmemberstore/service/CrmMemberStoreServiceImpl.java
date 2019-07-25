@@ -23,7 +23,7 @@ public class CrmMemberStoreServiceImpl extends
 
   @Override
   public ResultDTO<Integer> insert(CrmMemberStoreInsertDTO dto) throws Exception {
-    return super.insert(dto);
+    return super.insertSelective(dto);
   }
 
   @Override
