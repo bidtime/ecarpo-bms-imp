@@ -29,29 +29,29 @@
     </javaTypeResolver>
 
     <!-- dao -->
-    <!-- crm_member_car dao begin -->
+    <!-- serial_number_queue dao begin -->
 
-    <javaModelGenerator targetPackage="com.ecarpo.bms.eas.server.crmmembercar.entity" targetProject="/home/working/git/github/bidtime/java/ecarpo-bms-imp/ecarpo-bms-imp-server/ecarpo-bms-imp-server-provider/src/main/java">
+    <javaModelGenerator targetPackage="com.ecarpo.bms.eas.server.numberqueue.entity" targetProject="/home/working/git/github/bidtime/java/ecarpo-bms-imp/ecarpo-bms-imp-server/ecarpo-bms-imp-server-provider/src/main/java">
       <property name="enableSubPackages" value="true" />
       <property name="trimStrings" value="true" />
       <property name="immutable" value="false"/>
     </javaModelGenerator>
 
-    <sqlMapGenerator targetPackage="com.ecarpo.bms.eas.server.crmmembercar.dao" targetProject="/home/working/git/github/bidtime/java/ecarpo-bms-imp/ecarpo-bms-imp-server/ecarpo-bms-imp-server-provider/src/main/java">
+    <sqlMapGenerator targetPackage="com.ecarpo.bms.eas.server.numberqueue.dao" targetProject="/home/working/git/github/bidtime/java/ecarpo-bms-imp/ecarpo-bms-imp-server/ecarpo-bms-imp-server-provider/src/main/java">
       <property name="enableSubPackages" value="true" />
     </sqlMapGenerator>
 
-    <javaClientGenerator type="XMLMAPPER" targetPackage="com.ecarpo.bms.eas.server.crmmembercar.dao" targetProject="/home/working/git/github/bidtime/java/ecarpo-bms-imp/ecarpo-bms-imp-server/ecarpo-bms-imp-server-provider/src/main/java">
+    <javaClientGenerator type="XMLMAPPER" targetPackage="com.ecarpo.bms.eas.server.numberqueue.dao" targetProject="/home/working/git/github/bidtime/java/ecarpo-bms-imp/ecarpo-bms-imp-server/ecarpo-bms-imp-server-provider/src/main/java">
       <property name="enableSubPackages" value="true" />
     </javaClientGenerator>
 
-    <table tableName="crm_member_car" domainObjectName="CrmMemberCarDO" mapperName="CrmMemberCarMapper"
+    <table tableName="serial_number_queue" domainObjectName="SerialNumberQueueDO" mapperName="SerialNumberQueueMapper"
       enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
       selectByExampleQueryId="false" enableUpdateByExample="false">
       <property name="useActualColumnNames" value="false" />
     </table>
 
-    <!-- crm_member_car dao begin -->
+    <!-- serial_number_queue dao begin -->
 
   </context>
 </generatorConfiguration>

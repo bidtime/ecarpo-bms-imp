@@ -12,14 +12,14 @@ import com.ecarpo.framework.common.annotation.MapperDesc;
 import com.ecarpo.framework.common.annotation.TryExcept;
 import com.ecarpo.framework.common.mapper.BaseMapper;
 
-@MapperDesc(value = "库区库位")
+@MapperDesc(value = "SerialNumber")
 public interface SerialNumberQueueMapper extends BaseMapper<SerialNumberQueueDO> {
-  
+    
   @TryExcept(cmd = "get")
   Integer selectNumberByParams(@Param("date")Date date,
       @Param("storeId")Integer storeId, @Param("flag") String flag);
   
   Integer insertReplaceNumber(@Param("date")Date date,
       @Param("storeId")Integer storeId, @Param("flag") String flag);
-  
+
 }

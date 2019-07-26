@@ -13,7 +13,7 @@ import lombok.EqualsAndHashCode;
 /**
  * This class corresponds to the database table serial_number_queue
  *
- * @mbg.generated 2019-07-26 15:38:22
+ * @mbg.generated 2019-07-26 16:48:48
  */
 @Data
 @SuppressWarnings("serial")
@@ -21,25 +21,25 @@ import lombok.EqualsAndHashCode;
 public class SerialNumberQueueDO extends MyEntity {
     /**
      *
-     * @mbg.generated 2019-07-26 15:38:22
+     * @mbg.generated 2019-07-26 16:48:48
      */
     private Date date;
 
     /**
      *
-     * @mbg.generated 2019-07-26 15:38:22
+     * @mbg.generated 2019-07-26 16:48:48
      */
     private Integer storeId;
 
     /**
      *
-     * @mbg.generated 2019-07-26 15:38:22
+     * @mbg.generated 2019-07-26 16:48:48
      */
     private String flag;
 
     /**
      *
-     * @mbg.generated 2019-07-26 15:38:22
+     * @mbg.generated 2019-07-26 16:48:48
      */
     private Integer number;
 }
