@@ -5,6 +5,7 @@
 package com.ecarpo.bms.eas.server.crmbasesupplier.service;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.ecarpo.bms.eas.server.crmbasesupplier.dao.CrmBaseSupplierMapper;
 import com.ecarpo.bms.eas.server.crmbasesupplier.dto.CrmBaseSupplierInsertDTO;
@@ -22,11 +23,13 @@ public class CrmBaseSupplierServiceImpl extends
   BaseImplement<CrmBaseSupplierManager, CrmBaseSupplierMapper, CrmBaseSupplierDO> implements CrmBaseSupplierService {
 
   @Override
+  @Transactional(rollbackFor = Exception.class)
   public ResultDTO<Integer> insert(CrmBaseSupplierInsertDTO dto) throws Exception {
     return super.insertSelective(dto);
   }
 
   @Override
+  @Transactional(rollbackFor = Exception.class)
   public ResultDTO<Integer> update(CrmBaseSupplierUpdateDTO dto) throws Exception {
     return super.updateDTO(dto);
   }

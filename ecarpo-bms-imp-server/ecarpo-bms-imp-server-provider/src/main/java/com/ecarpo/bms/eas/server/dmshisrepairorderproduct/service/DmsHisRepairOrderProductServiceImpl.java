@@ -5,6 +5,7 @@
 package com.ecarpo.bms.eas.server.dmshisrepairorderproduct.service;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.ecarpo.bms.eas.server.dmshisrepairorderproduct.dao.DmsHisRepairOrderProductMapper;
 import com.ecarpo.bms.eas.server.dmshisrepairorderproduct.dto.DmsHisRepairOrderProductInsertDTO;
@@ -22,11 +23,13 @@ public class DmsHisRepairOrderProductServiceImpl extends
   BaseImplement<DmsHisRepairOrderProductManager, DmsHisRepairOrderProductMapper, DmsHisRepairOrderProductDO> implements DmsHisRepairOrderProductService {
 
   @Override
+  @Transactional(rollbackFor = Exception.class)
   public ResultDTO<Integer> insert(DmsHisRepairOrderProductInsertDTO dto) throws Exception {
     return super.insertSelective(dto);
   }
 
   @Override
+  @Transactional(rollbackFor = Exception.class)
   public ResultDTO<Integer> update(DmsHisRepairOrderProductUpdateDTO dto) throws Exception {
     return super.updateDTO(dto);
   }

@@ -5,6 +5,7 @@
 package com.ecarpo.bms.eas.server.dmsbuy.service;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.ecarpo.bms.eas.server.dmsbuy.dao.DmsBuyMapper;
 import com.ecarpo.bms.eas.server.dmsbuy.dto.DmsBuyInsertDTO;
@@ -22,11 +23,13 @@ public class DmsBuyServiceImpl extends
   BaseImplement<DmsBuyManager, DmsBuyMapper, DmsBuyDO> implements DmsBuyService {
 
   @Override
+  @Transactional(rollbackFor = Exception.class)
   public ResultDTO<Integer> insert(DmsBuyInsertDTO dto) throws Exception {
-    return super.insertSelective(dto);
+    return new ResultDTO<>(manager.insertSelective(dto));
   }
 
   @Override
+  @Transactional(rollbackFor = Exception.class)
   public ResultDTO<Integer> update(DmsBuyUpdateDTO dto) throws Exception {
     return super.updateDTO(dto);
   }

@@ -5,6 +5,7 @@
 package com.ecarpo.bms.eas.server.crmmembercar.service;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.ecarpo.bms.eas.server.crmmembercar.dao.CrmMemberCarMapper;
 import com.ecarpo.bms.eas.server.crmmembercar.dto.CrmMemberCarInsertDTO;
@@ -22,11 +23,13 @@ public class CrmMemberCarServiceImpl extends
   BaseImplement<CrmMemberCarManager, CrmMemberCarMapper, CrmMemberCarDO> implements CrmMemberCarService {
 
   @Override
+  @Transactional(rollbackFor = Exception.class)
   public ResultDTO<Integer> insert(CrmMemberCarInsertDTO dto) throws Exception {
     return new ResultDTO<>(manager.insertSelective(dto));
   }
 
   @Override
+  @Transactional(rollbackFor = Exception.class)
   public ResultDTO<Integer> update(CrmMemberCarUpdateDTO dto) throws Exception {
     return super.updateDTO(dto);
   }

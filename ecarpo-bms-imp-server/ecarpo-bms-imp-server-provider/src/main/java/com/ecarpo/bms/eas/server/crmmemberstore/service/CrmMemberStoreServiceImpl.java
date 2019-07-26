@@ -5,6 +5,7 @@
 package com.ecarpo.bms.eas.server.crmmemberstore.service;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.ecarpo.bms.eas.server.crmmemberstore.dao.CrmMemberStoreMapper;
 import com.ecarpo.bms.eas.server.crmmemberstore.dto.CrmMemberStoreInsertDTO;
@@ -22,11 +23,13 @@ public class CrmMemberStoreServiceImpl extends
   BaseImplement<CrmMemberStoreManager, CrmMemberStoreMapper, CrmMemberStoreDO> implements CrmMemberStoreService {
 
   @Override
+  @Transactional(rollbackFor = Exception.class)
   public ResultDTO<Integer> insert(CrmMemberStoreInsertDTO dto) throws Exception {
     return super.insertSelective(dto);
   }
 
   @Override
+  @Transactional(rollbackFor = Exception.class)
   public ResultDTO<Integer> update(CrmMemberStoreUpdateDTO dto) throws Exception {
     return super.updateDTO(dto);
   }

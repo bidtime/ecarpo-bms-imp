@@ -1,9 +1,12 @@
 package com.ecarpo.bms.ap.auth.user.dto;
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 import com.ecarpo.bms.ap.auth.user.UserLoginBO;
 import com.ecarpo.framework.annotation.utils.DTOAnnoUtils;
+import com.ecarpo.framework.common.utils.BeanUtils;
 import com.ecarpo.framework.model.BaseDTO;
 import com.ecarpo.framework.model.InsertDTO;
 import com.ecarpo.framework.model.UpdateDTO;
@@ -54,6 +57,7 @@ public class UserUtils {
       dto.setModifierId(user.getUserId());
       dto.setCreatorName(user.getUserName());
       dto.setModifierName(user.getUserName());
+      copys(dto, user);
 //      if (copyOrg) {
 //        if (dto instanceof InsertOrgDTO) {
 //          InsertOrgDTO org = (InsertOrgDTO) dto;
@@ -85,6 +89,7 @@ public class UserUtils {
       //dto.setUserContext(user);
       dto.setModifierId(user.getUserId());
       dto.setModifierName(user.getUserName());
+      copys(dto, user);
 //      if (copyOrg) {
 //        if (dto instanceof UpdateOrgDTO) {
 //          UpdateOrgDTO org = (UpdateOrgDTO) dto;
@@ -101,6 +106,12 @@ public class UserUtils {
 //        }
 //      }
     }
+  }
+  
+  public static void copys(Object dto, UserLoginBO user) {
+    Set<String> set = new HashSet<>();
+    set.add("storeId");
+    BeanUtils.copyProps(user, dto, set);
   }
 
 }

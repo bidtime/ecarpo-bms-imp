@@ -5,6 +5,7 @@
 package com.ecarpo.bms.eas.server.dmsrepairworkhour.service;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.ecarpo.bms.eas.server.dmsrepairworkhour.dto.DmsRepairWorkhourInsertDTO;
 import com.ecarpo.bms.eas.server.dmsrepairworkhour.dto.DmsRepairWorkhourUpdateDTO;
@@ -23,11 +24,13 @@ public class DmsRepairWorkhourServiceImpl extends
   BaseImplement<DmsStoreroomShelflocationManager, DmsStoreroomShelflocationMapper, DmsStoreroomShelflocationDO> implements DmsRepairWorkhourService {
 
   @Override
+  @Transactional(rollbackFor = Exception.class)
   public ResultDTO<Integer> insert(DmsRepairWorkhourInsertDTO dto) throws Exception {
     return super.insertSelective(dto);
   }
 
   @Override
+  @Transactional(rollbackFor = Exception.class)
   public ResultDTO<Integer> update(DmsRepairWorkhourUpdateDTO dto) throws Exception {
     return super.updateDTO(dto);
   }

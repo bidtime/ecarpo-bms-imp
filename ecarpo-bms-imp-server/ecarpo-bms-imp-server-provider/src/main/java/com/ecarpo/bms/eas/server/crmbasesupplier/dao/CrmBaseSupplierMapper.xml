@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ecarpo.bms.eas.server.crmbasesupplier.dao.CrmBaseSupplierMapper">
   <resultMap id="BaseResultMap" type="com.ecarpo.bms.eas.server.crmbasesupplier.entity.CrmBaseSupplierDO">
-    <!-- @mbg.generated 2019-07-23 10:52:27 -->
+    <!-- @mbg.generated 2019-07-26 15:19:59 -->
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="store_id" jdbcType="INTEGER" property="storeId" />
     <result column="supplier_store_id" jdbcType="INTEGER" property="supplierStoreId" />
@@ -25,67 +25,59 @@
     <result column="bank" jdbcType="VARCHAR" property="bank" />
     <result column="account" jdbcType="VARCHAR" property="account" />
     <result column="open_date" jdbcType="DATE" property="openDate" />
+    <result column="business_scope" jdbcType="VARCHAR" property="businessScope" />
     <result column="payable" jdbcType="DECIMAL" property="payable" />
     <result column="acc_payable" jdbcType="DECIMAL" property="accPayable" />
     <result column="acc_payment" jdbcType="DECIMAL" property="accPayment" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
     <result column="status" jdbcType="TINYINT" property="status" />
     <result column="is_del" jdbcType="TINYINT" property="isDel" />
     <result column="type" jdbcType="TINYINT" property="type" />
   </resultMap>
-  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.ecarpo.bms.eas.server.crmbasesupplier.entity.com.ecarpo.bms.eas.server.crmbasesupplier.entity.CrmBaseSupplierDOBLOBs">
-    <!-- @mbg.generated 2019-07-23 10:52:27 -->
-    <result column="business_scope" jdbcType="LONGVARCHAR" property="businessScope" />
-    <result column="remark" jdbcType="LONGVARCHAR" property="remark" />
-  </resultMap>
   <sql id="Base_Column_List">
-    <!-- @mbg.generated 2019-07-23 10:52:27 -->
+    <!-- @mbg.generated 2019-07-26 15:19:59 -->
     id, store_id, supplier_store_id, name, code, tel, mobile, fax, mail, cdate, postcode, 
     website, linkman, business_id, business_num, boss, province, city, address, bank, 
-    account, open_date, payable, acc_payable, acc_payment, status, is_del, type
+    account, open_date, business_scope, payable, acc_payable, acc_payment, remark, status, 
+    is_del, type
   </sql>
-  <sql id="Blob_Column_List">
-    <!-- @mbg.generated 2019-07-23 10:52:27 -->
-    business_scope, remark
-  </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
-    <!-- @mbg.generated 2019-07-23 10:52:27 -->
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!-- @mbg.generated 2019-07-26 15:19:59 -->
     select 
     <include refid="Base_Column_List" />
-    ,
-    <include refid="Blob_Column_List" />
     from crm_base_supplier
     where id = #{id,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    <!-- @mbg.generated 2019-07-23 10:52:27 -->
+    <!-- @mbg.generated 2019-07-26 15:19:59 -->
     delete from crm_base_supplier
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="com.ecarpo.bms.eas.server.crmbasesupplier.entity.com.ecarpo.bms.eas.server.crmbasesupplier.entity.CrmBaseSupplierDOBLOBs">
-    <!-- @mbg.generated 2019-07-23 10:52:27 -->
+  <insert id="insert" parameterType="com.ecarpo.bms.eas.server.crmbasesupplier.entity.CrmBaseSupplierDO">
+    <!-- @mbg.generated 2019-07-26 15:19:59 -->
     insert into crm_base_supplier (id, store_id, supplier_store_id, 
       name, code, tel, mobile, 
       fax, mail, cdate, postcode, 
       website, linkman, business_id, 
       business_num, boss, province, 
       city, address, bank, 
-      account, open_date, payable, 
-      acc_payable, acc_payment, status, 
-      is_del, type, business_scope, 
-      remark)
+      account, open_date, business_scope, 
+      payable, acc_payable, acc_payment, 
+      remark, status, is_del, 
+      type)
     values (#{id,jdbcType=INTEGER}, #{storeId,jdbcType=INTEGER}, #{supplierStoreId,jdbcType=INTEGER}, 
       #{name,jdbcType=VARCHAR}, #{code,jdbcType=VARCHAR}, #{tel,jdbcType=VARCHAR}, #{mobile,jdbcType=VARCHAR}, 
       #{fax,jdbcType=VARCHAR}, #{mail,jdbcType=VARCHAR}, #{cdate,jdbcType=DATE}, #{postcode,jdbcType=VARCHAR}, 
       #{website,jdbcType=VARCHAR}, #{linkman,jdbcType=VARCHAR}, #{businessId,jdbcType=INTEGER}, 
       #{businessNum,jdbcType=VARCHAR}, #{boss,jdbcType=VARCHAR}, #{province,jdbcType=INTEGER}, 
       #{city,jdbcType=INTEGER}, #{address,jdbcType=VARCHAR}, #{bank,jdbcType=VARCHAR}, 
-      #{account,jdbcType=VARCHAR}, #{openDate,jdbcType=DATE}, #{payable,jdbcType=DECIMAL}, 
-      #{accPayable,jdbcType=DECIMAL}, #{accPayment,jdbcType=DECIMAL}, #{status,jdbcType=TINYINT}, 
-      #{isDel,jdbcType=TINYINT}, #{type,jdbcType=TINYINT}, #{businessScope,jdbcType=LONGVARCHAR}, 
-      #{remark,jdbcType=LONGVARCHAR})
+      #{account,jdbcType=VARCHAR}, #{openDate,jdbcType=DATE}, #{businessScope,jdbcType=VARCHAR}, 
+      #{payable,jdbcType=DECIMAL}, #{accPayable,jdbcType=DECIMAL}, #{accPayment,jdbcType=DECIMAL}, 
+      #{remark,jdbcType=VARCHAR}, #{status,jdbcType=TINYINT}, #{isDel,jdbcType=TINYINT}, 
+      #{type,jdbcType=TINYINT})
   </insert>
-  <insert id="insertSelective" useGeneratedKeys="true" keyProperty="id" parameterType="com.ecarpo.bms.eas.server.crmbasesupplier.entity.com.ecarpo.bms.eas.server.crmbasesupplier.entity.CrmBaseSupplierDOBLOBs">
-    <!-- @mbg.generated 2019-07-23 10:52:27 -->
+  <insert id="insertSelective" parameterType="com.ecarpo.bms.eas.server.crmbasesupplier.entity.CrmBaseSupplierDO">
+    <!-- @mbg.generated 2019-07-26 15:19:59 -->
     insert into crm_base_supplier
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -154,6 +146,9 @@
       <if test="openDate != null">
         open_date,
       </if>
+      <if test="businessScope != null">
+        business_scope,
+      </if>
       <if test="payable != null">
         payable,
       </if>
@@ -163,6 +158,9 @@
       <if test="accPayment != null">
         acc_payment,
       </if>
+      <if test="remark != null">
+        remark,
+      </if>
       <if test="status != null">
         status,
       </if>
@@ -171,12 +169,6 @@
       </if>
       <if test="type != null">
         type,
-      </if>
-      <if test="businessScope != null">
-        business_scope,
-      </if>
-      <if test="remark != null">
-        remark,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
@@ -246,6 +238,9 @@
       <if test="openDate != null">
         #{openDate,jdbcType=DATE},
       </if>
+      <if test="businessScope != null">
+        #{businessScope,jdbcType=VARCHAR},
+      </if>
       <if test="payable != null">
         #{payable,jdbcType=DECIMAL},
       </if>
@@ -254,6 +249,9 @@
       </if>
       <if test="accPayment != null">
         #{accPayment,jdbcType=DECIMAL},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
       </if>
       <if test="status != null">
         #{status,jdbcType=TINYINT},
@@ -264,16 +262,10 @@
       <if test="type != null">
         #{type,jdbcType=TINYINT},
       </if>
-      <if test="businessScope != null">
-        #{businessScope,jdbcType=LONGVARCHAR},
-      </if>
-      <if test="remark != null">
-        #{remark,jdbcType=LONGVARCHAR},
-      </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.ecarpo.bms.eas.server.crmbasesupplier.entity.com.ecarpo.bms.eas.server.crmbasesupplier.entity.CrmBaseSupplierDOBLOBs">
-    <!-- @mbg.generated 2019-07-23 10:52:27 -->
+  <update id="updateByPrimaryKeySelective" parameterType="com.ecarpo.bms.eas.server.crmbasesupplier.entity.CrmBaseSupplierDO">
+    <!-- @mbg.generated 2019-07-26 15:19:59 -->
     update crm_base_supplier
     <set>
       <if test="storeId != null">
@@ -339,6 +331,9 @@
       <if test="openDate != null">
         open_date = #{openDate,jdbcType=DATE},
       </if>
+      <if test="businessScope != null">
+        business_scope = #{businessScope,jdbcType=VARCHAR},
+      </if>
       <if test="payable != null">
         payable = #{payable,jdbcType=DECIMAL},
       </if>
@@ -347,6 +342,9 @@
       </if>
       <if test="accPayment != null">
         acc_payment = #{accPayment,jdbcType=DECIMAL},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
       </if>
       <if test="status != null">
         status = #{status,jdbcType=TINYINT},
@@ -357,51 +355,11 @@
       <if test="type != null">
         type = #{type,jdbcType=TINYINT},
       </if>
-      <if test="businessScope != null">
-        business_scope = #{businessScope,jdbcType=LONGVARCHAR},
-      </if>
-      <if test="remark != null">
-        remark = #{remark,jdbcType=LONGVARCHAR},
-      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.ecarpo.bms.eas.server.crmbasesupplier.entity.com.ecarpo.bms.eas.server.crmbasesupplier.entity.CrmBaseSupplierDOBLOBs">
-    <!-- @mbg.generated 2019-07-23 10:52:27 -->
-    update crm_base_supplier
-    set store_id = #{storeId,jdbcType=INTEGER},
-      supplier_store_id = #{supplierStoreId,jdbcType=INTEGER},
-      name = #{name,jdbcType=VARCHAR},
-      code = #{code,jdbcType=VARCHAR},
-      tel = #{tel,jdbcType=VARCHAR},
-      mobile = #{mobile,jdbcType=VARCHAR},
-      fax = #{fax,jdbcType=VARCHAR},
-      mail = #{mail,jdbcType=VARCHAR},
-      cdate = #{cdate,jdbcType=DATE},
-      postcode = #{postcode,jdbcType=VARCHAR},
-      website = #{website,jdbcType=VARCHAR},
-      linkman = #{linkman,jdbcType=VARCHAR},
-      business_id = #{businessId,jdbcType=INTEGER},
-      business_num = #{businessNum,jdbcType=VARCHAR},
-      boss = #{boss,jdbcType=VARCHAR},
-      province = #{province,jdbcType=INTEGER},
-      city = #{city,jdbcType=INTEGER},
-      address = #{address,jdbcType=VARCHAR},
-      bank = #{bank,jdbcType=VARCHAR},
-      account = #{account,jdbcType=VARCHAR},
-      open_date = #{openDate,jdbcType=DATE},
-      payable = #{payable,jdbcType=DECIMAL},
-      acc_payable = #{accPayable,jdbcType=DECIMAL},
-      acc_payment = #{accPayment,jdbcType=DECIMAL},
-      status = #{status,jdbcType=TINYINT},
-      is_del = #{isDel,jdbcType=TINYINT},
-      type = #{type,jdbcType=TINYINT},
-      business_scope = #{businessScope,jdbcType=LONGVARCHAR},
-      remark = #{remark,jdbcType=LONGVARCHAR}
-    where id = #{id,jdbcType=INTEGER}
-  </update>
   <update id="updateByPrimaryKey" parameterType="com.ecarpo.bms.eas.server.crmbasesupplier.entity.CrmBaseSupplierDO">
-    <!-- @mbg.generated 2019-07-23 10:52:27 -->
+    <!-- @mbg.generated 2019-07-26 15:19:59 -->
     update crm_base_supplier
     set store_id = #{storeId,jdbcType=INTEGER},
       supplier_store_id = #{supplierStoreId,jdbcType=INTEGER},
@@ -424,9 +382,11 @@
       bank = #{bank,jdbcType=VARCHAR},
       account = #{account,jdbcType=VARCHAR},
       open_date = #{openDate,jdbcType=DATE},
+      business_scope = #{businessScope,jdbcType=VARCHAR},
       payable = #{payable,jdbcType=DECIMAL},
       acc_payable = #{accPayable,jdbcType=DECIMAL},
       acc_payment = #{accPayment,jdbcType=DECIMAL},
+      remark = #{remark,jdbcType=VARCHAR},
       status = #{status,jdbcType=TINYINT},
       is_del = #{isDel,jdbcType=TINYINT},
       type = #{type,jdbcType=TINYINT}

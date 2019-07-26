@@ -243,12 +243,6 @@ public class CrmBaseProductDO extends MyEntity {
      */
     private String briefDesc;
 
-    /**
-     * 产品描述
-     *
-     * @mbg.generated 2019-07-25 09:40:45
-     */
-    private String desc;
 
     /**
      * 产品备注
@@ -543,5 +537,12 @@ public class CrmBaseProductDO extends MyEntity {
      * @mbg.generated 2019-07-25 09:40:45
      */
     private Integer platform;
+    
+    /**
+     * 产品描述
+     *
+     * @mbg.generated 2019-07-25 10:59:43
+     */
+    private String desc;
 
 }

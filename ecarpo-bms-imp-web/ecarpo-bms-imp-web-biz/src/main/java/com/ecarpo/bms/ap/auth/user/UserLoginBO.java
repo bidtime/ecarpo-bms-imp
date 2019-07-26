@@ -35,6 +35,8 @@ public class UserLoginBO implements ISessionUser, Serializable {
    * @mbg.generated 2017-07-04 21:49:41
    */
   private String userCode;
+  
+  private Integer storeId;
 
   /**
    * 用户姓名

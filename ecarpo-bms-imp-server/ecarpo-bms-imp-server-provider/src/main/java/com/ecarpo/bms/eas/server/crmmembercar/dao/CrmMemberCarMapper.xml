@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ecarpo.bms.eas.server.crmmembercar.dao.CrmMemberCarMapper">
   <resultMap id="BaseResultMap" type="com.ecarpo.bms.eas.server.crmmembercar.entity.CrmMemberCarDO">
-    <!-- @mbg.generated 2019-07-23 10:46:55 -->
+    <!-- @mbg.generated 2019-07-26 16:21:09 -->
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="custom_id" jdbcType="INTEGER" property="customId" />
     <result column="store_id" jdbcType="INTEGER" property="storeId" />
@@ -35,6 +35,7 @@
     <result column="insurance_edate" jdbcType="DATE" property="insuranceEdate" />
     <result column="end_mileage" jdbcType="INTEGER" property="endMileage" />
     <result column="change_odograph_mileage" jdbcType="INTEGER" property="changeOdographMileage" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
     <result column="is_intention" jdbcType="TINYINT" property="isIntention" />
     <result column="task_id" jdbcType="INTEGER" property="taskId" />
     <result column="is_replace" jdbcType="TINYINT" property="isReplace" />
@@ -43,38 +44,31 @@
     <result column="insurance_time" jdbcType="TIMESTAMP" property="insuranceTime" />
     <result column="insurance_creator" jdbcType="INTEGER" property="insuranceCreator" />
     <result column="carsource_num" jdbcType="VARCHAR" property="carsourceNum" />
-    <result column="remark" jdbcType="LONGVARCHAR" property="remark" />
   </resultMap>
   <sql id="Base_Column_List">
-    <!-- @mbg.generated 2019-07-23 10:46:55 -->
+    <!-- @mbg.generated 2019-07-26 16:21:09 -->
     id, custom_id, store_id, plate_no, province_id, vin_num, transmission, emissions_standards, 
     brand, brand_name, car_series, series_name, car_model, model_name, color, car_frame_num, 
     engine_num, invoice_date, cost, plate_install_date, use_car_province, use_car_city, 
     use_car_city_name, sales_channels, is_ext_maintain, maintain_sdate, inspection_date, 
     next_mdate, insurance_company, insurance_edate, end_mileage, change_odograph_mileage, 
-    is_intention, task_id, is_replace, is_shop_insurance, insurance_money, insurance_time, 
+    remark, is_intention, task_id, is_replace, is_shop_insurance, insurance_money, insurance_time, 
     insurance_creator, carsource_num
   </sql>
-  <sql id="Blob_Column_List">
-    <!-- @mbg.generated 2019-07-23 10:46:55 -->
-    remark
-  </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
-    <!-- @mbg.generated 2019-07-23 10:46:55 -->
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!-- @mbg.generated 2019-07-26 16:21:09 -->
     select 
     <include refid="Base_Column_List" />
-    ,
-    <include refid="Blob_Column_List" />
     from crm_member_car
     where id = #{id,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    <!-- @mbg.generated 2019-07-23 10:46:55 -->
+    <!-- @mbg.generated 2019-07-26 16:21:09 -->
     delete from crm_member_car
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="com.ecarpo.bms.eas.server.crmmembercar.entity.CrmMemberCarDO">
-    <!-- @mbg.generated 2019-07-23 10:46:55 -->
+  <insert id="insert" parameterType="com.ecarpo.bms.eas.server.crmmembercar.entity.CrmMemberCarDO">
+    <!-- @mbg.generated 2019-07-26 16:21:09 -->
     insert into crm_member_car (id, custom_id, store_id, 
       plate_no, province_id, vin_num, 
       transmission, emissions_standards, brand, 
@@ -85,10 +79,10 @@
       use_car_city, use_car_city_name, sales_channels, 
       is_ext_maintain, maintain_sdate, inspection_date, 
       next_mdate, insurance_company, insurance_edate, 
-      end_mileage, change_odograph_mileage, is_intention, 
-      task_id, is_replace, is_shop_insurance, 
-      insurance_money, insurance_time, insurance_creator, 
-      carsource_num, remark)
+      end_mileage, change_odograph_mileage, remark, 
+      is_intention, task_id, is_replace, 
+      is_shop_insurance, insurance_money, insurance_time, 
+      insurance_creator, carsource_num)
     values (#{id,jdbcType=INTEGER}, #{customId,jdbcType=INTEGER}, #{storeId,jdbcType=INTEGER}, 
       #{plateNo,jdbcType=VARCHAR}, #{provinceId,jdbcType=INTEGER}, #{vinNum,jdbcType=VARCHAR}, 
       #{transmission,jdbcType=VARCHAR}, #{emissionsStandards,jdbcType=VARCHAR}, #{brand,jdbcType=INTEGER}, 
@@ -99,13 +93,13 @@
       #{useCarCity,jdbcType=SMALLINT}, #{useCarCityName,jdbcType=VARCHAR}, #{salesChannels,jdbcType=TINYINT}, 
       #{isExtMaintain,jdbcType=TINYINT}, #{maintainSdate,jdbcType=DATE}, #{inspectionDate,jdbcType=DATE}, 
       #{nextMdate,jdbcType=DATE}, #{insuranceCompany,jdbcType=VARCHAR}, #{insuranceEdate,jdbcType=DATE}, 
-      #{endMileage,jdbcType=INTEGER}, #{changeOdographMileage,jdbcType=INTEGER}, #{isIntention,jdbcType=TINYINT}, 
-      #{taskId,jdbcType=INTEGER}, #{isReplace,jdbcType=TINYINT}, #{isShopInsurance,jdbcType=TINYINT}, 
-      #{insuranceMoney,jdbcType=DECIMAL}, #{insuranceTime,jdbcType=TIMESTAMP}, #{insuranceCreator,jdbcType=INTEGER}, 
-      #{carsourceNum,jdbcType=VARCHAR}, #{remark,jdbcType=LONGVARCHAR})
+      #{endMileage,jdbcType=INTEGER}, #{changeOdographMileage,jdbcType=INTEGER}, #{remark,jdbcType=VARCHAR}, 
+      #{isIntention,jdbcType=TINYINT}, #{taskId,jdbcType=INTEGER}, #{isReplace,jdbcType=TINYINT}, 
+      #{isShopInsurance,jdbcType=TINYINT}, #{insuranceMoney,jdbcType=DECIMAL}, #{insuranceTime,jdbcType=TIMESTAMP}, 
+      #{insuranceCreator,jdbcType=INTEGER}, #{carsourceNum,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" useGeneratedKeys="true" keyProperty="id" parameterType="com.ecarpo.bms.eas.server.crmmembercar.entity.CrmMemberCarDO">
-    <!-- @mbg.generated 2019-07-23 10:46:55 -->
+  <insert id="insertSelective" parameterType="com.ecarpo.bms.eas.server.crmmembercar.entity.CrmMemberCarDO">
+    <!-- @mbg.generated 2019-07-26 16:21:09 -->
     insert into crm_member_car
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -204,6 +198,9 @@
       <if test="changeOdographMileage != null">
         change_odograph_mileage,
       </if>
+      <if test="remark != null">
+        remark,
+      </if>
       <if test="isIntention != null">
         is_intention,
       </if>
@@ -227,9 +224,6 @@
       </if>
       <if test="carsourceNum != null">
         carsource_num,
-      </if>
-      <if test="remark != null">
-        remark,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
@@ -329,6 +323,9 @@
       <if test="changeOdographMileage != null">
         #{changeOdographMileage,jdbcType=INTEGER},
       </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
       <if test="isIntention != null">
         #{isIntention,jdbcType=TINYINT},
       </if>
@@ -353,13 +350,10 @@
       <if test="carsourceNum != null">
         #{carsourceNum,jdbcType=VARCHAR},
       </if>
-      <if test="remark != null">
-        #{remark,jdbcType=LONGVARCHAR},
-      </if>
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.ecarpo.bms.eas.server.crmmembercar.entity.CrmMemberCarDO">
-    <!-- @mbg.generated 2019-07-23 10:46:55 -->
+    <!-- @mbg.generated 2019-07-26 16:21:09 -->
     update crm_member_car
     <set>
       <if test="customId != null">
@@ -455,6 +449,9 @@
       <if test="changeOdographMileage != null">
         change_odograph_mileage = #{changeOdographMileage,jdbcType=INTEGER},
       </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
       <if test="isIntention != null">
         is_intention = #{isIntention,jdbcType=TINYINT},
       </if>
@@ -479,59 +476,11 @@
       <if test="carsourceNum != null">
         carsource_num = #{carsourceNum,jdbcType=VARCHAR},
       </if>
-      <if test="remark != null">
-        remark = #{remark,jdbcType=LONGVARCHAR},
-      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.ecarpo.bms.eas.server.crmmembercar.entity.CrmMemberCarDO">
-    <!-- @mbg.generated 2019-07-23 10:46:55 -->
-    update crm_member_car
-    set custom_id = #{customId,jdbcType=INTEGER},
-      store_id = #{storeId,jdbcType=INTEGER},
-      plate_no = #{plateNo,jdbcType=VARCHAR},
-      province_id = #{provinceId,jdbcType=INTEGER},
-      vin_num = #{vinNum,jdbcType=VARCHAR},
-      transmission = #{transmission,jdbcType=VARCHAR},
-      emissions_standards = #{emissionsStandards,jdbcType=VARCHAR},
-      brand = #{brand,jdbcType=INTEGER},
-      brand_name = #{brandName,jdbcType=VARCHAR},
-      car_series = #{carSeries,jdbcType=INTEGER},
-      series_name = #{seriesName,jdbcType=VARCHAR},
-      car_model = #{carModel,jdbcType=INTEGER},
-      model_name = #{modelName,jdbcType=VARCHAR},
-      color = #{color,jdbcType=VARCHAR},
-      car_frame_num = #{carFrameNum,jdbcType=VARCHAR},
-      engine_num = #{engineNum,jdbcType=VARCHAR},
-      invoice_date = #{invoiceDate,jdbcType=DATE},
-      cost = #{cost,jdbcType=DECIMAL},
-      plate_install_date = #{plateInstallDate,jdbcType=DATE},
-      use_car_province = #{useCarProvince,jdbcType=TINYINT},
-      use_car_city = #{useCarCity,jdbcType=SMALLINT},
-      use_car_city_name = #{useCarCityName,jdbcType=VARCHAR},
-      sales_channels = #{salesChannels,jdbcType=TINYINT},
-      is_ext_maintain = #{isExtMaintain,jdbcType=TINYINT},
-      maintain_sdate = #{maintainSdate,jdbcType=DATE},
-      inspection_date = #{inspectionDate,jdbcType=DATE},
-      next_mdate = #{nextMdate,jdbcType=DATE},
-      insurance_company = #{insuranceCompany,jdbcType=VARCHAR},
-      insurance_edate = #{insuranceEdate,jdbcType=DATE},
-      end_mileage = #{endMileage,jdbcType=INTEGER},
-      change_odograph_mileage = #{changeOdographMileage,jdbcType=INTEGER},
-      is_intention = #{isIntention,jdbcType=TINYINT},
-      task_id = #{taskId,jdbcType=INTEGER},
-      is_replace = #{isReplace,jdbcType=TINYINT},
-      is_shop_insurance = #{isShopInsurance,jdbcType=TINYINT},
-      insurance_money = #{insuranceMoney,jdbcType=DECIMAL},
-      insurance_time = #{insuranceTime,jdbcType=TIMESTAMP},
-      insurance_creator = #{insuranceCreator,jdbcType=INTEGER},
-      carsource_num = #{carsourceNum,jdbcType=VARCHAR},
-      remark = #{remark,jdbcType=LONGVARCHAR}
-    where id = #{id,jdbcType=INTEGER}
-  </update>
   <update id="updateByPrimaryKey" parameterType="com.ecarpo.bms.eas.server.crmmembercar.entity.CrmMemberCarDO">
-    <!-- @mbg.generated 2019-07-23 10:46:55 -->
+    <!-- @mbg.generated 2019-07-26 16:21:09 -->
     update crm_member_car
     set custom_id = #{customId,jdbcType=INTEGER},
       store_id = #{storeId,jdbcType=INTEGER},
@@ -564,6 +513,7 @@
       insurance_edate = #{insuranceEdate,jdbcType=DATE},
       end_mileage = #{endMileage,jdbcType=INTEGER},
       change_odograph_mileage = #{changeOdographMileage,jdbcType=INTEGER},
+      remark = #{remark,jdbcType=VARCHAR},
       is_intention = #{isIntention,jdbcType=TINYINT},
       task_id = #{taskId,jdbcType=INTEGER},
       is_replace = #{isReplace,jdbcType=TINYINT},

@@ -6,6 +6,7 @@ package com.ecarpo.bms.eas.server.dmsbuy.entity;
 import java.util.Date;
 
 import com.ecarpo.bms.eas.server.data.MyEntity;
+import com.ecarpo.framework.common.annotation.InitialField;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -163,6 +164,7 @@ public class DmsBuyDO extends MyEntity {
      *
      * @mbg.generated 2019-07-23 11:12:52
      */
+    @InitialField(value="3")
     private Integer status;
 
     /**
@@ -177,6 +179,7 @@ public class DmsBuyDO extends MyEntity {
      *
      * @mbg.generated 2019-07-23 11:12:52
      */
+    @InitialField(value="1")
     private String generateFrom;
 
     /**

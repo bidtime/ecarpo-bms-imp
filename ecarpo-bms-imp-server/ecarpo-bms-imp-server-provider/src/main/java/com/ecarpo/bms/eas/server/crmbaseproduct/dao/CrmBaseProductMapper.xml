@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ecarpo.bms.eas.server.crmbaseproduct.dao.CrmBaseProductMapper">
   <resultMap id="BaseResultMap" type="com.ecarpo.bms.eas.server.crmbaseproduct.entity.CrmBaseProductDO">
-    <!-- @mbg.generated 2019-07-25 09:40:45 -->
+    <!-- @mbg.generated 2019-07-26 15:13:45 -->
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="ptype" jdbcType="CHAR" property="ptype" />
     <result column="pmodel" jdbcType="INTEGER" property="pmodel" />
@@ -53,7 +53,7 @@
     <result column="heavy_buyer_price" jdbcType="DECIMAL" property="heavyBuyerPrice" />
     <result column="repair_price" jdbcType="DECIMAL" property="repairPrice" />
     <result column="creator" jdbcType="INTEGER" property="creator" />
-    <result column="c_time" jdbcType="DATE" property="cTime" />
+    <result column="c_time" jdbcType="TIMESTAMP" property="cTime" />
     <result column="proxy_count" jdbcType="INTEGER" property="proxyCount" />
     <result column="refund_count" jdbcType="INTEGER" property="refundCount" />
     <result column="act_count" jdbcType="INTEGER" property="actCount" />
@@ -80,7 +80,7 @@
     <result column="platform" jdbcType="TINYINT" property="platform" />
   </resultMap>
   <sql id="Base_Column_List">
-    <!-- @mbg.generated 2019-07-25 09:40:45 -->
+    <!-- @mbg.generated 2019-07-26 15:13:45 -->
     id, ptype, pmodel, vid, store_id, supplier_id, name, name_trim, pic1, pic2, pic3, 
     code, index_code, model, bar_code, good_type_id, good_unit_id, grade_1, grade_2, 
     grade_3, origin, sdate, edate, status, origin_price, sales_price, mall_price, points, 
@@ -93,19 +93,19 @@
     oil_class, rest_payment, is_free, send_type, platform
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    <!-- @mbg.generated 2019-07-25 09:40:45 -->
+    <!-- @mbg.generated 2019-07-26 15:13:45 -->
     select 
     <include refid="Base_Column_List" />
     from crm_base_product
     where id = #{id,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    <!-- @mbg.generated 2019-07-25 09:40:45 -->
+    <!-- @mbg.generated 2019-07-26 15:13:45 -->
     delete from crm_base_product
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.ecarpo.bms.eas.server.crmbaseproduct.entity.CrmBaseProductDO">
-    <!-- @mbg.generated 2019-07-25 09:40:45 -->
+    <!-- @mbg.generated 2019-07-26 15:13:45 -->
     insert into crm_base_product (id, ptype, pmodel, 
       vid, store_id, supplier_id, 
       name, name_trim, pic1, 
@@ -147,7 +147,7 @@
       #{isCommon,jdbcType=TINYINT}, #{isFav,jdbcType=TINYINT}, #{isMemberDiscount,jdbcType=CHAR}, 
       #{unit,jdbcType=VARCHAR}, #{lastPrice,jdbcType=DECIMAL}, #{lastPriceNotax,jdbcType=DECIMAL}, 
       #{lastBuyPrice,jdbcType=DECIMAL}, #{heavyBuyerPrice,jdbcType=DECIMAL}, #{repairPrice,jdbcType=DECIMAL}, 
-      #{creator,jdbcType=INTEGER}, #{cTime,jdbcType=INTEGER}, #{proxyCount,jdbcType=INTEGER}, 
+      #{creator,jdbcType=INTEGER}, #{cTime,jdbcType=TIMESTAMP}, #{proxyCount,jdbcType=INTEGER}, 
       #{refundCount,jdbcType=INTEGER}, #{actCount,jdbcType=INTEGER}, #{carModel,jdbcType=VARCHAR}, 
       #{locationName,jdbcType=VARCHAR}, #{productTypeId,jdbcType=INTEGER}, #{stockLowest,jdbcType=DECIMAL}, 
       #{productBrand,jdbcType=INTEGER}, #{figure,jdbcType=VARCHAR}, #{loadIndex,jdbcType=VARCHAR}, 
@@ -158,7 +158,7 @@
       #{sendType,jdbcType=TINYINT}, #{platform,jdbcType=TINYINT})
   </insert>
   <insert id="insertSelective" parameterType="com.ecarpo.bms.eas.server.crmbaseproduct.entity.CrmBaseProductDO">
-    <!-- @mbg.generated 2019-07-25 09:40:45 -->
+    <!-- @mbg.generated 2019-07-26 15:13:45 -->
     insert into crm_base_product
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -539,7 +539,7 @@
         #{creator,jdbcType=INTEGER},
       </if>
       <if test="cTime != null">
-        #{cTime,jdbcType=INTEGER},
+        #{cTime,jdbcType=TIMESTAMP},
       </if>
       <if test="proxyCount != null">
         #{proxyCount,jdbcType=INTEGER},
@@ -616,7 +616,7 @@
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.ecarpo.bms.eas.server.crmbaseproduct.entity.CrmBaseProductDO">
-    <!-- @mbg.generated 2019-07-25 09:40:45 -->
+    <!-- @mbg.generated 2019-07-26 15:13:45 -->
     update crm_base_product
     <set>
       <if test="ptype != null">
@@ -767,7 +767,7 @@
         creator = #{creator,jdbcType=INTEGER},
       </if>
       <if test="cTime != null">
-        c_time = #{cTime,jdbcType=DATE},
+        c_time = #{cTime,jdbcType=TIMESTAMP},
       </if>
       <if test="proxyCount != null">
         proxy_count = #{proxyCount,jdbcType=INTEGER},
@@ -845,7 +845,7 @@
     where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.ecarpo.bms.eas.server.crmbaseproduct.entity.CrmBaseProductDO">
-    <!-- @mbg.generated 2019-07-25 09:40:45 -->
+    <!-- @mbg.generated 2019-07-26 15:13:45 -->
     update crm_base_product
     set ptype = #{ptype,jdbcType=CHAR},
       pmodel = #{pmodel,jdbcType=INTEGER},
@@ -896,7 +896,7 @@
       heavy_buyer_price = #{heavyBuyerPrice,jdbcType=DECIMAL},
       repair_price = #{repairPrice,jdbcType=DECIMAL},
       creator = #{creator,jdbcType=INTEGER},
-      c_time = #{cTime,jdbcType=DATE},
+      c_time = #{cTime,jdbcType=TIMESTAMP},
       proxy_count = #{proxyCount,jdbcType=INTEGER},
       refund_count = #{refundCount,jdbcType=INTEGER},
       act_count = #{actCount,jdbcType=INTEGER},
