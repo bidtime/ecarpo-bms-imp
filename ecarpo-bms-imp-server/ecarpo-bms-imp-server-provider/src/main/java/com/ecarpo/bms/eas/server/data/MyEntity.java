@@ -14,17 +14,23 @@ import lombok.EqualsAndHashCode;
 public class MyEntity extends DataEntity {
 
   @InitialField(value = "0")
-  private Integer creator;
+  private Long creator;
   
-  private Date cTime;
+  private Date c_time;
+
+  @InitialField(value = "")
+  private String desc;
   
-  public void setCreatorId(Integer creatorId) {
+  @Override
+  public void setCreatorId(Long creatorId) {
+    super.setCreatorId(creatorId);
     this.creator = creatorId;
   }
   
+  @Override
   public void setCreateTime(Date createTime) {
     super.setCreateTime(createTime);
-    this.cTime = createTime;
+    this.c_time = createTime;
   }
 
 //  @InitialField(value = "1")

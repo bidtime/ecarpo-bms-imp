@@ -4,34 +4,35 @@
  */
 package com.ecarpo.bms.dms.server.auth;
 
+import java.util.Date;
+
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.ecarpo.bms.JUnitTestBase;
-import com.ecarpo.bms.eas.server.crmbaseproduct.dto.CrmBaseProductInsertDTO;
-import com.ecarpo.bms.eas.server.crmbaseproduct.service.CrmBaseProductService;
+import com.ecarpo.bms.eas.server.dmshisrepairorder.dto.DmsHisRepairOrderInsertDTO;
+import com.ecarpo.bms.eas.server.dmshisrepairorder.service.DmsHisRepairOrderService;
 import com.ecarpo.framework.model.ResultDTO;
 
 /**
  * @author Jades.He
  * @since 2017.05.26
  */
-public class CrmBaseProductServiceTest extends JUnitTestBase {
+public class DmsHisRepairOrderTest extends JUnitTestBase {
 
   @Autowired
-  private CrmBaseProductService service;
+  private DmsHisRepairOrderService service;
 
   @SuppressWarnings("rawtypes")
   @Test
   public void test_insert() throws Exception {
-    int nextInt = super.getId(1000);
-    CrmBaseProductInsertDTO dto = new CrmBaseProductInsertDTO();
+    //int nextInt = super.getId(1000);
+    DmsHisRepairOrderInsertDTO dto = new DmsHisRepairOrderInsertDTO();
     super.initial(dto);
-    dto.setPtype("deposit");
-    dto.setCost_type("other");
-    dto.setIs_member_discount("1");
-    dto.setCode(String.valueOf(nextInt));
+    dto.setRepairTime(new Date());
+    //dto.setCode(String.valueOf(nextInt));
+    //dto.setRetrievalCode(String.valueOf(nextInt));
     print(dto);
     ResultDTO rst = service.insert(dto);
     print(rst);
@@ -66,5 +67,5 @@ public class CrmBaseProductServiceTest extends JUnitTestBase {
 //    ResultDTO<List<ApProductNameListBO>> rst = service.listNameByQuery(qo);
 //    print(rst);
 //  }
-
+  
 }

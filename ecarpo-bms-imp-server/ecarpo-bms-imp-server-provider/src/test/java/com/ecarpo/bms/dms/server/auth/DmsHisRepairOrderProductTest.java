@@ -9,29 +9,28 @@ import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.ecarpo.bms.JUnitTestBase;
-import com.ecarpo.bms.eas.server.crmbaseproduct.dto.CrmBaseProductInsertDTO;
-import com.ecarpo.bms.eas.server.crmbaseproduct.service.CrmBaseProductService;
+import com.ecarpo.bms.eas.server.dmshisrepairorderproduct.dto.DmsHisRepairOrderProductInsertDTO;
+import com.ecarpo.bms.eas.server.dmshisrepairorderproduct.service.DmsHisRepairOrderProductService;
 import com.ecarpo.framework.model.ResultDTO;
 
 /**
  * @author Jades.He
  * @since 2017.05.26
  */
-public class CrmBaseProductServiceTest extends JUnitTestBase {
+public class DmsHisRepairOrderProductTest extends JUnitTestBase {
 
   @Autowired
-  private CrmBaseProductService service;
+  private DmsHisRepairOrderProductService service;
 
   @SuppressWarnings("rawtypes")
   @Test
   public void test_insert() throws Exception {
     int nextInt = super.getId(1000);
-    CrmBaseProductInsertDTO dto = new CrmBaseProductInsertDTO();
+    DmsHisRepairOrderProductInsertDTO dto = new DmsHisRepairOrderProductInsertDTO();
     super.initial(dto);
-    dto.setPtype("deposit");
-    dto.setCost_type("other");
-    dto.setIs_member_discount("1");
-    dto.setCode(String.valueOf(nextInt));
+    dto.setOrderNo(String.valueOf(nextInt));
+    //dto.setCode(String.valueOf(nextInt));
+    //dto.setRetrievalCode(String.valueOf(nextInt));
     print(dto);
     ResultDTO rst = service.insert(dto);
     print(rst);
@@ -66,5 +65,5 @@ public class CrmBaseProductServiceTest extends JUnitTestBase {
 //    ResultDTO<List<ApProductNameListBO>> rst = service.listNameByQuery(qo);
 //    print(rst);
 //  }
-
+  
 }

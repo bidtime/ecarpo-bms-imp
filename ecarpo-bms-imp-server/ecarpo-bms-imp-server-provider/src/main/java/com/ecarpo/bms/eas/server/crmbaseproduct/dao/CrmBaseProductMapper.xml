@@ -2,85 +2,85 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ecarpo.bms.eas.server.crmbaseproduct.dao.CrmBaseProductMapper">
   <resultMap id="BaseResultMap" type="com.ecarpo.bms.eas.server.crmbaseproduct.entity.CrmBaseProductDO">
-    <!-- @mbg.generated 2019-07-26 15:13:45 -->
+    <!-- @mbg.generated 2019-08-05 15:18:43 -->
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="ptype" jdbcType="CHAR" property="ptype" />
     <result column="pmodel" jdbcType="INTEGER" property="pmodel" />
     <result column="vid" jdbcType="INTEGER" property="vid" />
-    <result column="store_id" jdbcType="INTEGER" property="storeId" />
-    <result column="supplier_id" jdbcType="INTEGER" property="supplierId" />
+    <result column="store_id" jdbcType="INTEGER" property="store_id" />
+    <result column="supplier_id" jdbcType="INTEGER" property="supplier_id" />
     <result column="name" jdbcType="VARCHAR" property="name" />
-    <result column="name_trim" jdbcType="VARCHAR" property="nameTrim" />
+    <result column="name_trim" jdbcType="VARCHAR" property="name_trim" />
     <result column="pic1" jdbcType="VARCHAR" property="pic1" />
     <result column="pic2" jdbcType="VARCHAR" property="pic2" />
     <result column="pic3" jdbcType="VARCHAR" property="pic3" />
     <result column="code" jdbcType="VARCHAR" property="code" />
-    <result column="index_code" jdbcType="VARCHAR" property="indexCode" />
+    <result column="index_code" jdbcType="VARCHAR" property="index_code" />
     <result column="model" jdbcType="VARCHAR" property="model" />
-    <result column="bar_code" jdbcType="VARCHAR" property="barCode" />
-    <result column="good_type_id" jdbcType="INTEGER" property="goodTypeId" />
-    <result column="good_unit_id" jdbcType="INTEGER" property="goodUnitId" />
-    <result column="grade_1" jdbcType="INTEGER" property="grade1" />
-    <result column="grade_2" jdbcType="INTEGER" property="grade2" />
-    <result column="grade_3" jdbcType="INTEGER" property="grade3" />
+    <result column="bar_code" jdbcType="VARCHAR" property="bar_code" />
+    <result column="good_type_id" jdbcType="INTEGER" property="good_type_id" />
+    <result column="good_unit_id" jdbcType="INTEGER" property="good_unit_id" />
+    <result column="grade_1" jdbcType="INTEGER" property="grade_1" />
+    <result column="grade_2" jdbcType="INTEGER" property="grade_2" />
+    <result column="grade_3" jdbcType="INTEGER" property="grade_3" />
     <result column="origin" jdbcType="VARCHAR" property="origin" />
     <result column="sdate" jdbcType="DATE" property="sdate" />
     <result column="edate" jdbcType="DATE" property="edate" />
     <result column="status" jdbcType="TINYINT" property="status" />
-    <result column="origin_price" jdbcType="DECIMAL" property="originPrice" />
-    <result column="sales_price" jdbcType="DECIMAL" property="salesPrice" />
-    <result column="mall_price" jdbcType="DECIMAL" property="mallPrice" />
+    <result column="origin_price" jdbcType="DECIMAL" property="origin_price" />
+    <result column="sales_price" jdbcType="DECIMAL" property="sales_price" />
+    <result column="mall_price" jdbcType="DECIMAL" property="mall_price" />
     <result column="points" jdbcType="INTEGER" property="points" />
-    <result column="points_to_money" jdbcType="DECIMAL" property="pointsToMoney" />
-    <result column="maintain_cycle" jdbcType="INTEGER" property="maintainCycle" />
-    <result column="work_hour" jdbcType="INTEGER" property="workHour" />
-    <result column="brief_desc" jdbcType="VARCHAR" property="briefDesc" />
+    <result column="points_to_money" jdbcType="DECIMAL" property="points_to_money" />
+    <result column="maintain_cycle" jdbcType="INTEGER" property="maintain_cycle" />
+    <result column="work_hour" jdbcType="INTEGER" property="work_hour" />
+    <result column="brief_desc" jdbcType="VARCHAR" property="brief_desc" />
     <result column="desc" jdbcType="VARCHAR" property="desc" />
     <result column="remark" jdbcType="VARCHAR" property="remark" />
-    <result column="is_weixin" jdbcType="TINYINT" property="isWeixin" />
-    <result column="weixin_mall_type" jdbcType="TINYINT" property="weixinMallType" />
-    <result column="base_num" jdbcType="INTEGER" property="baseNum" />
-    <result column="cost_type" jdbcType="CHAR" property="costType" />
-    <result column="apply_serie" jdbcType="VARCHAR" property="applySerie" />
-    <result column="apply_type" jdbcType="VARCHAR" property="applyType" />
-    <result column="is_common" jdbcType="TINYINT" property="isCommon" />
-    <result column="is_fav" jdbcType="TINYINT" property="isFav" />
-    <result column="is_member_discount" jdbcType="CHAR" property="isMemberDiscount" />
+    <result column="is_weixin" jdbcType="TINYINT" property="is_weixin" />
+    <result column="weixin_mall_type" jdbcType="TINYINT" property="weixin_mall_type" />
+    <result column="base_num" jdbcType="INTEGER" property="base_num" />
+    <result column="cost_type" jdbcType="CHAR" property="cost_type" />
+    <result column="apply_serie" jdbcType="VARCHAR" property="apply_serie" />
+    <result column="apply_type" jdbcType="VARCHAR" property="apply_type" />
+    <result column="is_common" jdbcType="TINYINT" property="is_common" />
+    <result column="is_fav" jdbcType="TINYINT" property="is_fav" />
+    <result column="is_member_discount" jdbcType="CHAR" property="is_member_discount" />
     <result column="unit" jdbcType="VARCHAR" property="unit" />
-    <result column="last_price" jdbcType="DECIMAL" property="lastPrice" />
-    <result column="last_price_notax" jdbcType="DECIMAL" property="lastPriceNotax" />
-    <result column="last_buy_price" jdbcType="DECIMAL" property="lastBuyPrice" />
-    <result column="heavy_buyer_price" jdbcType="DECIMAL" property="heavyBuyerPrice" />
-    <result column="repair_price" jdbcType="DECIMAL" property="repairPrice" />
+    <result column="last_price" jdbcType="DECIMAL" property="last_price" />
+    <result column="last_price_notax" jdbcType="DECIMAL" property="last_price_notax" />
+    <result column="last_buy_price" jdbcType="DECIMAL" property="last_buy_price" />
+    <result column="heavy_buyer_price" jdbcType="DECIMAL" property="heavy_buyer_price" />
+    <result column="repair_price" jdbcType="DECIMAL" property="repair_price" />
     <result column="creator" jdbcType="INTEGER" property="creator" />
-    <result column="c_time" jdbcType="TIMESTAMP" property="cTime" />
-    <result column="proxy_count" jdbcType="INTEGER" property="proxyCount" />
-    <result column="refund_count" jdbcType="INTEGER" property="refundCount" />
-    <result column="act_count" jdbcType="INTEGER" property="actCount" />
-    <result column="car_model" jdbcType="VARCHAR" property="carModel" />
-    <result column="location_name" jdbcType="VARCHAR" property="locationName" />
-    <result column="product_type_id" jdbcType="INTEGER" property="productTypeId" />
-    <result column="stock_lowest" jdbcType="DECIMAL" property="stockLowest" />
-    <result column="product_brand" jdbcType="INTEGER" property="productBrand" />
+    <result column="c_time" jdbcType="TIMESTAMP" property="c_time" />
+    <result column="proxy_count" jdbcType="INTEGER" property="proxy_count" />
+    <result column="refund_count" jdbcType="INTEGER" property="refund_count" />
+    <result column="act_count" jdbcType="INTEGER" property="act_count" />
+    <result column="car_model" jdbcType="VARCHAR" property="car_model" />
+    <result column="location_name" jdbcType="VARCHAR" property="location_name" />
+    <result column="product_type_id" jdbcType="INTEGER" property="product_type_id" />
+    <result column="stock_lowest" jdbcType="DECIMAL" property="stock_lowest" />
+    <result column="product_brand" jdbcType="INTEGER" property="product_brand" />
     <result column="figure" jdbcType="VARCHAR" property="figure" />
-    <result column="load_index" jdbcType="VARCHAR" property="loadIndex" />
-    <result column="speed_level" jdbcType="VARCHAR" property="speedLevel" />
-    <result column="install_way" jdbcType="INTEGER" property="installWay" />
-    <result column="is_del" jdbcType="TINYINT" property="isDel" />
-    <result column="tire_width" jdbcType="VARCHAR" property="tireWidth" />
-    <result column="tire_flat" jdbcType="VARCHAR" property="tireFlat" />
-    <result column="tire_diameter" jdbcType="VARCHAR" property="tireDiameter" />
-    <result column="tire_speed_level" jdbcType="VARCHAR" property="tireSpeedLevel" />
-    <result column="oil_viscosity" jdbcType="VARCHAR" property="oilViscosity" />
-    <result column="oil_capacity" jdbcType="VARCHAR" property="oilCapacity" />
-    <result column="oil_class" jdbcType="VARCHAR" property="oilClass" />
-    <result column="rest_payment" jdbcType="DECIMAL" property="restPayment" />
-    <result column="is_free" jdbcType="TINYINT" property="isFree" />
-    <result column="send_type" jdbcType="TINYINT" property="sendType" />
+    <result column="load_index" jdbcType="VARCHAR" property="load_index" />
+    <result column="speed_level" jdbcType="VARCHAR" property="speed_level" />
+    <result column="install_way" jdbcType="INTEGER" property="install_way" />
+    <result column="is_del" jdbcType="TINYINT" property="is_del" />
+    <result column="tire_width" jdbcType="VARCHAR" property="tire_width" />
+    <result column="tire_flat" jdbcType="VARCHAR" property="tire_flat" />
+    <result column="tire_diameter" jdbcType="VARCHAR" property="tire_diameter" />
+    <result column="tire_speed_level" jdbcType="VARCHAR" property="tire_speed_level" />
+    <result column="oil_viscosity" jdbcType="VARCHAR" property="oil_viscosity" />
+    <result column="oil_capacity" jdbcType="VARCHAR" property="oil_capacity" />
+    <result column="oil_class" jdbcType="VARCHAR" property="oil_class" />
+    <result column="rest_payment" jdbcType="DECIMAL" property="rest_payment" />
+    <result column="is_free" jdbcType="TINYINT" property="is_free" />
+    <result column="send_type" jdbcType="TINYINT" property="send_type" />
     <result column="platform" jdbcType="TINYINT" property="platform" />
   </resultMap>
   <sql id="Base_Column_List">
-    <!-- @mbg.generated 2019-07-26 15:13:45 -->
+    <!-- @mbg.generated 2019-08-05 15:18:43 -->
     id, ptype, pmodel, vid, store_id, supplier_id, name, name_trim, pic1, pic2, pic3, 
     code, index_code, model, bar_code, good_type_id, good_unit_id, grade_1, grade_2, 
     grade_3, origin, sdate, edate, status, origin_price, sales_price, mall_price, points, 
@@ -93,19 +93,19 @@
     oil_class, rest_payment, is_free, send_type, platform
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    <!-- @mbg.generated 2019-07-26 15:13:45 -->
+    <!-- @mbg.generated 2019-08-05 15:18:43 -->
     select 
     <include refid="Base_Column_List" />
     from crm_base_product
     where id = #{id,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    <!-- @mbg.generated 2019-07-26 15:13:45 -->
+    <!-- @mbg.generated 2019-08-05 15:18:43 -->
     delete from crm_base_product
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.ecarpo.bms.eas.server.crmbaseproduct.entity.CrmBaseProductDO">
-    <!-- @mbg.generated 2019-07-26 15:13:45 -->
+    <!-- @mbg.generated 2019-08-05 15:18:43 -->
     insert into crm_base_product (id, ptype, pmodel, 
       vid, store_id, supplier_id, 
       name, name_trim, pic1, 
@@ -132,33 +132,33 @@
       oil_class, rest_payment, is_free, 
       send_type, platform)
     values (#{id,jdbcType=INTEGER}, #{ptype,jdbcType=CHAR}, #{pmodel,jdbcType=INTEGER}, 
-      #{vid,jdbcType=INTEGER}, #{storeId,jdbcType=INTEGER}, #{supplierId,jdbcType=INTEGER}, 
-      #{name,jdbcType=VARCHAR}, #{nameTrim,jdbcType=VARCHAR}, #{pic1,jdbcType=VARCHAR}, 
-      #{pic2,jdbcType=VARCHAR}, #{pic3,jdbcType=VARCHAR}, #{code,jdbcType=VARCHAR}, #{indexCode,jdbcType=VARCHAR}, 
-      #{model,jdbcType=VARCHAR}, #{barCode,jdbcType=VARCHAR}, #{goodTypeId,jdbcType=INTEGER}, 
-      #{goodUnitId,jdbcType=INTEGER}, #{grade1,jdbcType=INTEGER}, #{grade2,jdbcType=INTEGER}, 
-      #{grade3,jdbcType=INTEGER}, #{origin,jdbcType=VARCHAR}, #{sdate,jdbcType=DATE}, 
-      #{edate,jdbcType=DATE}, #{status,jdbcType=TINYINT}, #{originPrice,jdbcType=DECIMAL}, 
-      #{salesPrice,jdbcType=DECIMAL}, #{mallPrice,jdbcType=DECIMAL}, #{points,jdbcType=INTEGER}, 
-      #{pointsToMoney,jdbcType=DECIMAL}, #{maintainCycle,jdbcType=INTEGER}, #{workHour,jdbcType=INTEGER}, 
-      #{briefDesc,jdbcType=VARCHAR}, #{desc,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, 
-      #{isWeixin,jdbcType=TINYINT}, #{weixinMallType,jdbcType=TINYINT}, #{baseNum,jdbcType=INTEGER}, 
-      #{costType,jdbcType=CHAR}, #{applySerie,jdbcType=VARCHAR}, #{applyType,jdbcType=VARCHAR}, 
-      #{isCommon,jdbcType=TINYINT}, #{isFav,jdbcType=TINYINT}, #{isMemberDiscount,jdbcType=CHAR}, 
-      #{unit,jdbcType=VARCHAR}, #{lastPrice,jdbcType=DECIMAL}, #{lastPriceNotax,jdbcType=DECIMAL}, 
-      #{lastBuyPrice,jdbcType=DECIMAL}, #{heavyBuyerPrice,jdbcType=DECIMAL}, #{repairPrice,jdbcType=DECIMAL}, 
-      #{creator,jdbcType=INTEGER}, #{cTime,jdbcType=TIMESTAMP}, #{proxyCount,jdbcType=INTEGER}, 
-      #{refundCount,jdbcType=INTEGER}, #{actCount,jdbcType=INTEGER}, #{carModel,jdbcType=VARCHAR}, 
-      #{locationName,jdbcType=VARCHAR}, #{productTypeId,jdbcType=INTEGER}, #{stockLowest,jdbcType=DECIMAL}, 
-      #{productBrand,jdbcType=INTEGER}, #{figure,jdbcType=VARCHAR}, #{loadIndex,jdbcType=VARCHAR}, 
-      #{speedLevel,jdbcType=VARCHAR}, #{installWay,jdbcType=INTEGER}, #{isDel,jdbcType=TINYINT}, 
-      #{tireWidth,jdbcType=VARCHAR}, #{tireFlat,jdbcType=VARCHAR}, #{tireDiameter,jdbcType=VARCHAR}, 
-      #{tireSpeedLevel,jdbcType=VARCHAR}, #{oilViscosity,jdbcType=VARCHAR}, #{oilCapacity,jdbcType=VARCHAR}, 
-      #{oilClass,jdbcType=VARCHAR}, #{restPayment,jdbcType=DECIMAL}, #{isFree,jdbcType=TINYINT}, 
-      #{sendType,jdbcType=TINYINT}, #{platform,jdbcType=TINYINT})
+      #{vid,jdbcType=INTEGER}, #{store_id,jdbcType=INTEGER}, #{supplier_id,jdbcType=INTEGER}, 
+      #{name,jdbcType=VARCHAR}, #{name_trim,jdbcType=VARCHAR}, #{pic1,jdbcType=VARCHAR}, 
+      #{pic2,jdbcType=VARCHAR}, #{pic3,jdbcType=VARCHAR}, #{code,jdbcType=VARCHAR}, #{index_code,jdbcType=VARCHAR}, 
+      #{model,jdbcType=VARCHAR}, #{bar_code,jdbcType=VARCHAR}, #{good_type_id,jdbcType=INTEGER}, 
+      #{good_unit_id,jdbcType=INTEGER}, #{grade_1,jdbcType=INTEGER}, #{grade_2,jdbcType=INTEGER}, 
+      #{grade_3,jdbcType=INTEGER}, #{origin,jdbcType=VARCHAR}, #{sdate,jdbcType=DATE}, 
+      #{edate,jdbcType=DATE}, #{status,jdbcType=TINYINT}, #{origin_price,jdbcType=DECIMAL}, 
+      #{sales_price,jdbcType=DECIMAL}, #{mall_price,jdbcType=DECIMAL}, #{points,jdbcType=INTEGER}, 
+      #{points_to_money,jdbcType=DECIMAL}, #{maintain_cycle,jdbcType=INTEGER}, #{work_hour,jdbcType=INTEGER}, 
+      #{brief_desc,jdbcType=VARCHAR}, #{desc,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, 
+      #{is_weixin,jdbcType=TINYINT}, #{weixin_mall_type,jdbcType=TINYINT}, #{base_num,jdbcType=INTEGER}, 
+      #{cost_type,jdbcType=CHAR}, #{apply_serie,jdbcType=VARCHAR}, #{apply_type,jdbcType=VARCHAR}, 
+      #{is_common,jdbcType=TINYINT}, #{is_fav,jdbcType=TINYINT}, #{is_member_discount,jdbcType=CHAR}, 
+      #{unit,jdbcType=VARCHAR}, #{last_price,jdbcType=DECIMAL}, #{last_price_notax,jdbcType=DECIMAL}, 
+      #{last_buy_price,jdbcType=DECIMAL}, #{heavy_buyer_price,jdbcType=DECIMAL}, #{repair_price,jdbcType=DECIMAL}, 
+      #{creator,jdbcType=INTEGER}, #{c_time,jdbcType=TIMESTAMP}, #{proxy_count,jdbcType=INTEGER}, 
+      #{refund_count,jdbcType=INTEGER}, #{act_count,jdbcType=INTEGER}, #{car_model,jdbcType=VARCHAR}, 
+      #{location_name,jdbcType=VARCHAR}, #{product_type_id,jdbcType=INTEGER}, #{stock_lowest,jdbcType=DECIMAL}, 
+      #{product_brand,jdbcType=INTEGER}, #{figure,jdbcType=VARCHAR}, #{load_index,jdbcType=VARCHAR}, 
+      #{speed_level,jdbcType=VARCHAR}, #{install_way,jdbcType=INTEGER}, #{is_del,jdbcType=TINYINT}, 
+      #{tire_width,jdbcType=VARCHAR}, #{tire_flat,jdbcType=VARCHAR}, #{tire_diameter,jdbcType=VARCHAR}, 
+      #{tire_speed_level,jdbcType=VARCHAR}, #{oil_viscosity,jdbcType=VARCHAR}, #{oil_capacity,jdbcType=VARCHAR}, 
+      #{oil_class,jdbcType=VARCHAR}, #{rest_payment,jdbcType=DECIMAL}, #{is_free,jdbcType=TINYINT}, 
+      #{send_type,jdbcType=TINYINT}, #{platform,jdbcType=TINYINT})
   </insert>
   <insert id="insertSelective" parameterType="com.ecarpo.bms.eas.server.crmbaseproduct.entity.CrmBaseProductDO">
-    <!-- @mbg.generated 2019-07-26 15:13:45 -->
+    <!-- @mbg.generated 2019-08-05 15:18:43 -->
     insert into crm_base_product
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -173,16 +173,16 @@
       <if test="vid != null">
         vid,
       </if>
-      <if test="storeId != null">
+      <if test="store_id != null">
         store_id,
       </if>
-      <if test="supplierId != null">
+      <if test="supplier_id != null">
         supplier_id,
       </if>
       <if test="name != null">
         name,
       </if>
-      <if test="nameTrim != null">
+      <if test="name_trim != null">
         name_trim,
       </if>
       <if test="pic1 != null">
@@ -197,28 +197,28 @@
       <if test="code != null">
         code,
       </if>
-      <if test="indexCode != null">
+      <if test="index_code != null">
         index_code,
       </if>
       <if test="model != null">
         model,
       </if>
-      <if test="barCode != null">
+      <if test="bar_code != null">
         bar_code,
       </if>
-      <if test="goodTypeId != null">
+      <if test="good_type_id != null">
         good_type_id,
       </if>
-      <if test="goodUnitId != null">
+      <if test="good_unit_id != null">
         good_unit_id,
       </if>
-      <if test="grade1 != null">
+      <if test="grade_1 != null">
         grade_1,
       </if>
-      <if test="grade2 != null">
+      <if test="grade_2 != null">
         grade_2,
       </if>
-      <if test="grade3 != null">
+      <if test="grade_3 != null">
         grade_3,
       </if>
       <if test="origin != null">
@@ -233,154 +233,154 @@
       <if test="status != null">
         status,
       </if>
-      <if test="originPrice != null">
+      <if test="origin_price != null">
         origin_price,
       </if>
-      <if test="salesPrice != null">
+      <if test="sales_price != null">
         sales_price,
       </if>
-      <if test="mallPrice != null">
+      <if test="mall_price != null">
         mall_price,
       </if>
       <if test="points != null">
         points,
       </if>
-      <if test="pointsToMoney != null">
+      <if test="points_to_money != null">
         points_to_money,
       </if>
-      <if test="maintainCycle != null">
+      <if test="maintain_cycle != null">
         maintain_cycle,
       </if>
-      <if test="workHour != null">
+      <if test="work_hour != null">
         work_hour,
       </if>
-      <if test="briefDesc != null">
+      <if test="brief_desc != null">
         brief_desc,
       </if>
-      <if test="desc != null">
+      <!-- <if test="desc != null">
         desc,
-      </if>
+      </if> -->
       <if test="remark != null">
         remark,
       </if>
-      <if test="isWeixin != null">
+      <if test="is_weixin != null">
         is_weixin,
       </if>
-      <if test="weixinMallType != null">
+      <if test="weixin_mall_type != null">
         weixin_mall_type,
       </if>
-      <if test="baseNum != null">
+      <if test="base_num != null">
         base_num,
       </if>
-      <if test="costType != null">
+      <if test="cost_type != null">
         cost_type,
       </if>
-      <if test="applySerie != null">
+      <if test="apply_serie != null">
         apply_serie,
       </if>
-      <if test="applyType != null">
+      <if test="apply_type != null">
         apply_type,
       </if>
-      <if test="isCommon != null">
+      <if test="is_common != null">
         is_common,
       </if>
-      <if test="isFav != null">
+      <if test="is_fav != null">
         is_fav,
       </if>
-      <if test="isMemberDiscount != null">
+      <if test="is_member_discount != null">
         is_member_discount,
       </if>
       <if test="unit != null">
         unit,
       </if>
-      <if test="lastPrice != null">
+      <if test="last_price != null">
         last_price,
       </if>
-      <if test="lastPriceNotax != null">
+      <if test="last_price_notax != null">
         last_price_notax,
       </if>
-      <if test="lastBuyPrice != null">
+      <if test="last_buy_price != null">
         last_buy_price,
       </if>
-      <if test="heavyBuyerPrice != null">
+      <if test="heavy_buyer_price != null">
         heavy_buyer_price,
       </if>
-      <if test="repairPrice != null">
+      <if test="repair_price != null">
         repair_price,
       </if>
       <if test="creator != null">
         creator,
       </if>
-      <if test="cTime != null">
+      <if test="c_time != null">
         c_time,
       </if>
-      <if test="proxyCount != null">
+      <if test="proxy_count != null">
         proxy_count,
       </if>
-      <if test="refundCount != null">
+      <if test="refund_count != null">
         refund_count,
       </if>
-      <if test="actCount != null">
+      <if test="act_count != null">
         act_count,
       </if>
-      <if test="carModel != null">
+      <if test="car_model != null">
         car_model,
       </if>
-      <if test="locationName != null">
+      <if test="location_name != null">
         location_name,
       </if>
-      <if test="productTypeId != null">
+      <if test="product_type_id != null">
         product_type_id,
       </if>
-      <if test="stockLowest != null">
+      <if test="stock_lowest != null">
         stock_lowest,
       </if>
-      <if test="productBrand != null">
+      <if test="product_brand != null">
         product_brand,
       </if>
       <if test="figure != null">
         figure,
       </if>
-      <if test="loadIndex != null">
+      <if test="load_index != null">
         load_index,
       </if>
-      <if test="speedLevel != null">
+      <if test="speed_level != null">
         speed_level,
       </if>
-      <if test="installWay != null">
+      <if test="install_way != null">
         install_way,
       </if>
-      <if test="isDel != null">
+      <if test="is_del != null">
         is_del,
       </if>
-      <if test="tireWidth != null">
+      <if test="tire_width != null">
         tire_width,
       </if>
-      <if test="tireFlat != null">
+      <if test="tire_flat != null">
         tire_flat,
       </if>
-      <if test="tireDiameter != null">
+      <if test="tire_diameter != null">
         tire_diameter,
       </if>
-      <if test="tireSpeedLevel != null">
+      <if test="tire_speed_level != null">
         tire_speed_level,
       </if>
-      <if test="oilViscosity != null">
+      <if test="oil_viscosity != null">
         oil_viscosity,
       </if>
-      <if test="oilCapacity != null">
+      <if test="oil_capacity != null">
         oil_capacity,
       </if>
-      <if test="oilClass != null">
+      <if test="oil_class != null">
         oil_class,
       </if>
-      <if test="restPayment != null">
+      <if test="rest_payment != null">
         rest_payment,
       </if>
-      <if test="isFree != null">
+      <if test="is_free != null">
         is_free,
       </if>
-      <if test="sendType != null">
+      <if test="send_type != null">
         send_type,
       </if>
       <if test="platform != null">
@@ -400,17 +400,17 @@
       <if test="vid != null">
         #{vid,jdbcType=INTEGER},
       </if>
-      <if test="storeId != null">
-        #{storeId,jdbcType=INTEGER},
+      <if test="store_id != null">
+        #{store_id,jdbcType=INTEGER},
       </if>
-      <if test="supplierId != null">
-        #{supplierId,jdbcType=INTEGER},
+      <if test="supplier_id != null">
+        #{supplier_id,jdbcType=INTEGER},
       </if>
       <if test="name != null">
         #{name,jdbcType=VARCHAR},
       </if>
-      <if test="nameTrim != null">
-        #{nameTrim,jdbcType=VARCHAR},
+      <if test="name_trim != null">
+        #{name_trim,jdbcType=VARCHAR},
       </if>
       <if test="pic1 != null">
         #{pic1,jdbcType=VARCHAR},
@@ -424,29 +424,29 @@
       <if test="code != null">
         #{code,jdbcType=VARCHAR},
       </if>
-      <if test="indexCode != null">
-        #{indexCode,jdbcType=VARCHAR},
+      <if test="index_code != null">
+        #{index_code,jdbcType=VARCHAR},
       </if>
       <if test="model != null">
         #{model,jdbcType=VARCHAR},
       </if>
-      <if test="barCode != null">
-        #{barCode,jdbcType=VARCHAR},
+      <if test="bar_code != null">
+        #{bar_code,jdbcType=VARCHAR},
       </if>
-      <if test="goodTypeId != null">
-        #{goodTypeId,jdbcType=INTEGER},
+      <if test="good_type_id != null">
+        #{good_type_id,jdbcType=INTEGER},
       </if>
-      <if test="goodUnitId != null">
-        #{goodUnitId,jdbcType=INTEGER},
+      <if test="good_unit_id != null">
+        #{good_unit_id,jdbcType=INTEGER},
       </if>
-      <if test="grade1 != null">
-        #{grade1,jdbcType=INTEGER},
+      <if test="grade_1 != null">
+        #{grade_1,jdbcType=INTEGER},
       </if>
-      <if test="grade2 != null">
-        #{grade2,jdbcType=INTEGER},
+      <if test="grade_2 != null">
+        #{grade_2,jdbcType=INTEGER},
       </if>
-      <if test="grade3 != null">
-        #{grade3,jdbcType=INTEGER},
+      <if test="grade_3 != null">
+        #{grade_3,jdbcType=INTEGER},
       </if>
       <if test="origin != null">
         #{origin,jdbcType=VARCHAR},
@@ -460,155 +460,155 @@
       <if test="status != null">
         #{status,jdbcType=TINYINT},
       </if>
-      <if test="originPrice != null">
-        #{originPrice,jdbcType=DECIMAL},
+      <if test="origin_price != null">
+        #{origin_price,jdbcType=DECIMAL},
       </if>
-      <if test="salesPrice != null">
-        #{salesPrice,jdbcType=DECIMAL},
+      <if test="sales_price != null">
+        #{sales_price,jdbcType=DECIMAL},
       </if>
-      <if test="mallPrice != null">
-        #{mallPrice,jdbcType=DECIMAL},
+      <if test="mall_price != null">
+        #{mall_price,jdbcType=DECIMAL},
       </if>
       <if test="points != null">
         #{points,jdbcType=INTEGER},
       </if>
-      <if test="pointsToMoney != null">
-        #{pointsToMoney,jdbcType=DECIMAL},
+      <if test="points_to_money != null">
+        #{points_to_money,jdbcType=DECIMAL},
       </if>
-      <if test="maintainCycle != null">
-        #{maintainCycle,jdbcType=INTEGER},
+      <if test="maintain_cycle != null">
+        #{maintain_cycle,jdbcType=INTEGER},
       </if>
-      <if test="workHour != null">
-        #{workHour,jdbcType=INTEGER},
+      <if test="work_hour != null">
+        #{work_hour,jdbcType=INTEGER},
       </if>
-      <if test="briefDesc != null">
-        #{briefDesc,jdbcType=VARCHAR},
+      <if test="brief_desc != null">
+        #{brief_desc,jdbcType=VARCHAR},
       </if>
-      <if test="desc != null">
+      <!-- <if test="desc != null">
         #{desc,jdbcType=VARCHAR},
-      </if>
+      </if> -->
       <if test="remark != null">
         #{remark,jdbcType=VARCHAR},
       </if>
-      <if test="isWeixin != null">
-        #{isWeixin,jdbcType=TINYINT},
+      <if test="is_weixin != null">
+        #{is_weixin,jdbcType=TINYINT},
       </if>
-      <if test="weixinMallType != null">
-        #{weixinMallType,jdbcType=TINYINT},
+      <if test="weixin_mall_type != null">
+        #{weixin_mall_type,jdbcType=TINYINT},
       </if>
-      <if test="baseNum != null">
-        #{baseNum,jdbcType=INTEGER},
+      <if test="base_num != null">
+        #{base_num,jdbcType=INTEGER},
       </if>
-      <if test="costType != null">
-        #{costType,jdbcType=CHAR},
+      <if test="cost_type != null">
+        #{cost_type,jdbcType=CHAR},
       </if>
-      <if test="applySerie != null">
-        #{applySerie,jdbcType=VARCHAR},
+      <if test="apply_serie != null">
+        #{apply_serie,jdbcType=VARCHAR},
       </if>
-      <if test="applyType != null">
-        #{applyType,jdbcType=VARCHAR},
+      <if test="apply_type != null">
+        #{apply_type,jdbcType=VARCHAR},
       </if>
-      <if test="isCommon != null">
-        #{isCommon,jdbcType=TINYINT},
+      <if test="is_common != null">
+        #{is_common,jdbcType=TINYINT},
       </if>
-      <if test="isFav != null">
-        #{isFav,jdbcType=TINYINT},
+      <if test="is_fav != null">
+        #{is_fav,jdbcType=TINYINT},
       </if>
-      <if test="isMemberDiscount != null">
-        #{isMemberDiscount,jdbcType=CHAR},
+      <if test="is_member_discount != null">
+        #{is_member_discount,jdbcType=CHAR},
       </if>
       <if test="unit != null">
         #{unit,jdbcType=VARCHAR},
       </if>
-      <if test="lastPrice != null">
-        #{lastPrice,jdbcType=DECIMAL},
+      <if test="last_price != null">
+        #{last_price,jdbcType=DECIMAL},
       </if>
-      <if test="lastPriceNotax != null">
-        #{lastPriceNotax,jdbcType=DECIMAL},
+      <if test="last_price_notax != null">
+        #{last_price_notax,jdbcType=DECIMAL},
       </if>
-      <if test="lastBuyPrice != null">
-        #{lastBuyPrice,jdbcType=DECIMAL},
+      <if test="last_buy_price != null">
+        #{last_buy_price,jdbcType=DECIMAL},
       </if>
-      <if test="heavyBuyerPrice != null">
-        #{heavyBuyerPrice,jdbcType=DECIMAL},
+      <if test="heavy_buyer_price != null">
+        #{heavy_buyer_price,jdbcType=DECIMAL},
       </if>
-      <if test="repairPrice != null">
-        #{repairPrice,jdbcType=DECIMAL},
+      <if test="repair_price != null">
+        #{repair_price,jdbcType=DECIMAL},
       </if>
       <if test="creator != null">
         #{creator,jdbcType=INTEGER},
       </if>
-      <if test="cTime != null">
-        #{cTime,jdbcType=TIMESTAMP},
+      <if test="c_time != null">
+        #{c_time,jdbcType=TIMESTAMP},
       </if>
-      <if test="proxyCount != null">
-        #{proxyCount,jdbcType=INTEGER},
+      <if test="proxy_count != null">
+        #{proxy_count,jdbcType=INTEGER},
       </if>
-      <if test="refundCount != null">
-        #{refundCount,jdbcType=INTEGER},
+      <if test="refund_count != null">
+        #{refund_count,jdbcType=INTEGER},
       </if>
-      <if test="actCount != null">
-        #{actCount,jdbcType=INTEGER},
+      <if test="act_count != null">
+        #{act_count,jdbcType=INTEGER},
       </if>
-      <if test="carModel != null">
-        #{carModel,jdbcType=VARCHAR},
+      <if test="car_model != null">
+        #{car_model,jdbcType=VARCHAR},
       </if>
-      <if test="locationName != null">
-        #{locationName,jdbcType=VARCHAR},
+      <if test="location_name != null">
+        #{location_name,jdbcType=VARCHAR},
       </if>
-      <if test="productTypeId != null">
-        #{productTypeId,jdbcType=INTEGER},
+      <if test="product_type_id != null">
+        #{product_type_id,jdbcType=INTEGER},
       </if>
-      <if test="stockLowest != null">
-        #{stockLowest,jdbcType=DECIMAL},
+      <if test="stock_lowest != null">
+        #{stock_lowest,jdbcType=DECIMAL},
       </if>
-      <if test="productBrand != null">
-        #{productBrand,jdbcType=INTEGER},
+      <if test="product_brand != null">
+        #{product_brand,jdbcType=INTEGER},
       </if>
       <if test="figure != null">
         #{figure,jdbcType=VARCHAR},
       </if>
-      <if test="loadIndex != null">
-        #{loadIndex,jdbcType=VARCHAR},
+      <if test="load_index != null">
+        #{load_index,jdbcType=VARCHAR},
       </if>
-      <if test="speedLevel != null">
-        #{speedLevel,jdbcType=VARCHAR},
+      <if test="speed_level != null">
+        #{speed_level,jdbcType=VARCHAR},
       </if>
-      <if test="installWay != null">
-        #{installWay,jdbcType=INTEGER},
+      <if test="install_way != null">
+        #{install_way,jdbcType=INTEGER},
       </if>
-      <if test="isDel != null">
-        #{isDel,jdbcType=TINYINT},
+      <if test="is_del != null">
+        #{is_del,jdbcType=TINYINT},
       </if>
-      <if test="tireWidth != null">
-        #{tireWidth,jdbcType=VARCHAR},
+      <if test="tire_width != null">
+        #{tire_width,jdbcType=VARCHAR},
       </if>
-      <if test="tireFlat != null">
-        #{tireFlat,jdbcType=VARCHAR},
+      <if test="tire_flat != null">
+        #{tire_flat,jdbcType=VARCHAR},
       </if>
-      <if test="tireDiameter != null">
-        #{tireDiameter,jdbcType=VARCHAR},
+      <if test="tire_diameter != null">
+        #{tire_diameter,jdbcType=VARCHAR},
       </if>
-      <if test="tireSpeedLevel != null">
-        #{tireSpeedLevel,jdbcType=VARCHAR},
+      <if test="tire_speed_level != null">
+        #{tire_speed_level,jdbcType=VARCHAR},
       </if>
-      <if test="oilViscosity != null">
-        #{oilViscosity,jdbcType=VARCHAR},
+      <if test="oil_viscosity != null">
+        #{oil_viscosity,jdbcType=VARCHAR},
       </if>
-      <if test="oilCapacity != null">
-        #{oilCapacity,jdbcType=VARCHAR},
+      <if test="oil_capacity != null">
+        #{oil_capacity,jdbcType=VARCHAR},
       </if>
-      <if test="oilClass != null">
-        #{oilClass,jdbcType=VARCHAR},
+      <if test="oil_class != null">
+        #{oil_class,jdbcType=VARCHAR},
       </if>
-      <if test="restPayment != null">
-        #{restPayment,jdbcType=DECIMAL},
+      <if test="rest_payment != null">
+        #{rest_payment,jdbcType=DECIMAL},
       </if>
-      <if test="isFree != null">
-        #{isFree,jdbcType=TINYINT},
+      <if test="is_free != null">
+        #{is_free,jdbcType=TINYINT},
       </if>
-      <if test="sendType != null">
-        #{sendType,jdbcType=TINYINT},
+      <if test="send_type != null">
+        #{send_type,jdbcType=TINYINT},
       </if>
       <if test="platform != null">
         #{platform,jdbcType=TINYINT},
@@ -616,7 +616,7 @@
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.ecarpo.bms.eas.server.crmbaseproduct.entity.CrmBaseProductDO">
-    <!-- @mbg.generated 2019-07-26 15:13:45 -->
+    <!-- @mbg.generated 2019-08-05 15:18:43 -->
     update crm_base_product
     <set>
       <if test="ptype != null">
@@ -628,17 +628,17 @@
       <if test="vid != null">
         vid = #{vid,jdbcType=INTEGER},
       </if>
-      <if test="storeId != null">
-        store_id = #{storeId,jdbcType=INTEGER},
+      <if test="store_id != null">
+        store_id = #{store_id,jdbcType=INTEGER},
       </if>
-      <if test="supplierId != null">
-        supplier_id = #{supplierId,jdbcType=INTEGER},
+      <if test="supplier_id != null">
+        supplier_id = #{supplier_id,jdbcType=INTEGER},
       </if>
       <if test="name != null">
         name = #{name,jdbcType=VARCHAR},
       </if>
-      <if test="nameTrim != null">
-        name_trim = #{nameTrim,jdbcType=VARCHAR},
+      <if test="name_trim != null">
+        name_trim = #{name_trim,jdbcType=VARCHAR},
       </if>
       <if test="pic1 != null">
         pic1 = #{pic1,jdbcType=VARCHAR},
@@ -652,29 +652,29 @@
       <if test="code != null">
         code = #{code,jdbcType=VARCHAR},
       </if>
-      <if test="indexCode != null">
-        index_code = #{indexCode,jdbcType=VARCHAR},
+      <if test="index_code != null">
+        index_code = #{index_code,jdbcType=VARCHAR},
       </if>
       <if test="model != null">
         model = #{model,jdbcType=VARCHAR},
       </if>
-      <if test="barCode != null">
-        bar_code = #{barCode,jdbcType=VARCHAR},
+      <if test="bar_code != null">
+        bar_code = #{bar_code,jdbcType=VARCHAR},
       </if>
-      <if test="goodTypeId != null">
-        good_type_id = #{goodTypeId,jdbcType=INTEGER},
+      <if test="good_type_id != null">
+        good_type_id = #{good_type_id,jdbcType=INTEGER},
       </if>
-      <if test="goodUnitId != null">
-        good_unit_id = #{goodUnitId,jdbcType=INTEGER},
+      <if test="good_unit_id != null">
+        good_unit_id = #{good_unit_id,jdbcType=INTEGER},
       </if>
-      <if test="grade1 != null">
-        grade_1 = #{grade1,jdbcType=INTEGER},
+      <if test="grade_1 != null">
+        grade_1 = #{grade_1,jdbcType=INTEGER},
       </if>
-      <if test="grade2 != null">
-        grade_2 = #{grade2,jdbcType=INTEGER},
+      <if test="grade_2 != null">
+        grade_2 = #{grade_2,jdbcType=INTEGER},
       </if>
-      <if test="grade3 != null">
-        grade_3 = #{grade3,jdbcType=INTEGER},
+      <if test="grade_3 != null">
+        grade_3 = #{grade_3,jdbcType=INTEGER},
       </if>
       <if test="origin != null">
         origin = #{origin,jdbcType=VARCHAR},
@@ -688,29 +688,29 @@
       <if test="status != null">
         status = #{status,jdbcType=TINYINT},
       </if>
-      <if test="originPrice != null">
-        origin_price = #{originPrice,jdbcType=DECIMAL},
+      <if test="origin_price != null">
+        origin_price = #{origin_price,jdbcType=DECIMAL},
       </if>
-      <if test="salesPrice != null">
-        sales_price = #{salesPrice,jdbcType=DECIMAL},
+      <if test="sales_price != null">
+        sales_price = #{sales_price,jdbcType=DECIMAL},
       </if>
-      <if test="mallPrice != null">
-        mall_price = #{mallPrice,jdbcType=DECIMAL},
+      <if test="mall_price != null">
+        mall_price = #{mall_price,jdbcType=DECIMAL},
       </if>
       <if test="points != null">
         points = #{points,jdbcType=INTEGER},
       </if>
-      <if test="pointsToMoney != null">
-        points_to_money = #{pointsToMoney,jdbcType=DECIMAL},
+      <if test="points_to_money != null">
+        points_to_money = #{points_to_money,jdbcType=DECIMAL},
       </if>
-      <if test="maintainCycle != null">
-        maintain_cycle = #{maintainCycle,jdbcType=INTEGER},
+      <if test="maintain_cycle != null">
+        maintain_cycle = #{maintain_cycle,jdbcType=INTEGER},
       </if>
-      <if test="workHour != null">
-        work_hour = #{workHour,jdbcType=INTEGER},
+      <if test="work_hour != null">
+        work_hour = #{work_hour,jdbcType=INTEGER},
       </if>
-      <if test="briefDesc != null">
-        brief_desc = #{briefDesc,jdbcType=VARCHAR},
+      <if test="brief_desc != null">
+        brief_desc = #{brief_desc,jdbcType=VARCHAR},
       </if>
       <if test="desc != null">
         desc = #{desc,jdbcType=VARCHAR},
@@ -718,125 +718,125 @@
       <if test="remark != null">
         remark = #{remark,jdbcType=VARCHAR},
       </if>
-      <if test="isWeixin != null">
-        is_weixin = #{isWeixin,jdbcType=TINYINT},
+      <if test="is_weixin != null">
+        is_weixin = #{is_weixin,jdbcType=TINYINT},
       </if>
-      <if test="weixinMallType != null">
-        weixin_mall_type = #{weixinMallType,jdbcType=TINYINT},
+      <if test="weixin_mall_type != null">
+        weixin_mall_type = #{weixin_mall_type,jdbcType=TINYINT},
       </if>
-      <if test="baseNum != null">
-        base_num = #{baseNum,jdbcType=INTEGER},
+      <if test="base_num != null">
+        base_num = #{base_num,jdbcType=INTEGER},
       </if>
-      <if test="costType != null">
-        cost_type = #{costType,jdbcType=CHAR},
+      <if test="cost_type != null">
+        cost_type = #{cost_type,jdbcType=CHAR},
       </if>
-      <if test="applySerie != null">
-        apply_serie = #{applySerie,jdbcType=VARCHAR},
+      <if test="apply_serie != null">
+        apply_serie = #{apply_serie,jdbcType=VARCHAR},
       </if>
-      <if test="applyType != null">
-        apply_type = #{applyType,jdbcType=VARCHAR},
+      <if test="apply_type != null">
+        apply_type = #{apply_type,jdbcType=VARCHAR},
       </if>
-      <if test="isCommon != null">
-        is_common = #{isCommon,jdbcType=TINYINT},
+      <if test="is_common != null">
+        is_common = #{is_common,jdbcType=TINYINT},
       </if>
-      <if test="isFav != null">
-        is_fav = #{isFav,jdbcType=TINYINT},
+      <if test="is_fav != null">
+        is_fav = #{is_fav,jdbcType=TINYINT},
       </if>
-      <if test="isMemberDiscount != null">
-        is_member_discount = #{isMemberDiscount,jdbcType=CHAR},
+      <if test="is_member_discount != null">
+        is_member_discount = #{is_member_discount,jdbcType=CHAR},
       </if>
       <if test="unit != null">
         unit = #{unit,jdbcType=VARCHAR},
       </if>
-      <if test="lastPrice != null">
-        last_price = #{lastPrice,jdbcType=DECIMAL},
+      <if test="last_price != null">
+        last_price = #{last_price,jdbcType=DECIMAL},
       </if>
-      <if test="lastPriceNotax != null">
-        last_price_notax = #{lastPriceNotax,jdbcType=DECIMAL},
+      <if test="last_price_notax != null">
+        last_price_notax = #{last_price_notax,jdbcType=DECIMAL},
       </if>
-      <if test="lastBuyPrice != null">
-        last_buy_price = #{lastBuyPrice,jdbcType=DECIMAL},
+      <if test="last_buy_price != null">
+        last_buy_price = #{last_buy_price,jdbcType=DECIMAL},
       </if>
-      <if test="heavyBuyerPrice != null">
-        heavy_buyer_price = #{heavyBuyerPrice,jdbcType=DECIMAL},
+      <if test="heavy_buyer_price != null">
+        heavy_buyer_price = #{heavy_buyer_price,jdbcType=DECIMAL},
       </if>
-      <if test="repairPrice != null">
-        repair_price = #{repairPrice,jdbcType=DECIMAL},
+      <if test="repair_price != null">
+        repair_price = #{repair_price,jdbcType=DECIMAL},
       </if>
       <if test="creator != null">
         creator = #{creator,jdbcType=INTEGER},
       </if>
-      <if test="cTime != null">
-        c_time = #{cTime,jdbcType=TIMESTAMP},
+      <if test="c_time != null">
+        c_time = #{c_time,jdbcType=TIMESTAMP},
       </if>
-      <if test="proxyCount != null">
-        proxy_count = #{proxyCount,jdbcType=INTEGER},
+      <if test="proxy_count != null">
+        proxy_count = #{proxy_count,jdbcType=INTEGER},
       </if>
-      <if test="refundCount != null">
-        refund_count = #{refundCount,jdbcType=INTEGER},
+      <if test="refund_count != null">
+        refund_count = #{refund_count,jdbcType=INTEGER},
       </if>
-      <if test="actCount != null">
-        act_count = #{actCount,jdbcType=INTEGER},
+      <if test="act_count != null">
+        act_count = #{act_count,jdbcType=INTEGER},
       </if>
-      <if test="carModel != null">
-        car_model = #{carModel,jdbcType=VARCHAR},
+      <if test="car_model != null">
+        car_model = #{car_model,jdbcType=VARCHAR},
       </if>
-      <if test="locationName != null">
-        location_name = #{locationName,jdbcType=VARCHAR},
+      <if test="location_name != null">
+        location_name = #{location_name,jdbcType=VARCHAR},
       </if>
-      <if test="productTypeId != null">
-        product_type_id = #{productTypeId,jdbcType=INTEGER},
+      <if test="product_type_id != null">
+        product_type_id = #{product_type_id,jdbcType=INTEGER},
       </if>
-      <if test="stockLowest != null">
-        stock_lowest = #{stockLowest,jdbcType=DECIMAL},
+      <if test="stock_lowest != null">
+        stock_lowest = #{stock_lowest,jdbcType=DECIMAL},
       </if>
-      <if test="productBrand != null">
-        product_brand = #{productBrand,jdbcType=INTEGER},
+      <if test="product_brand != null">
+        product_brand = #{product_brand,jdbcType=INTEGER},
       </if>
       <if test="figure != null">
         figure = #{figure,jdbcType=VARCHAR},
       </if>
-      <if test="loadIndex != null">
-        load_index = #{loadIndex,jdbcType=VARCHAR},
+      <if test="load_index != null">
+        load_index = #{load_index,jdbcType=VARCHAR},
       </if>
-      <if test="speedLevel != null">
-        speed_level = #{speedLevel,jdbcType=VARCHAR},
+      <if test="speed_level != null">
+        speed_level = #{speed_level,jdbcType=VARCHAR},
       </if>
-      <if test="installWay != null">
-        install_way = #{installWay,jdbcType=INTEGER},
+      <if test="install_way != null">
+        install_way = #{install_way,jdbcType=INTEGER},
       </if>
-      <if test="isDel != null">
-        is_del = #{isDel,jdbcType=TINYINT},
+      <if test="is_del != null">
+        is_del = #{is_del,jdbcType=TINYINT},
       </if>
-      <if test="tireWidth != null">
-        tire_width = #{tireWidth,jdbcType=VARCHAR},
+      <if test="tire_width != null">
+        tire_width = #{tire_width,jdbcType=VARCHAR},
       </if>
-      <if test="tireFlat != null">
-        tire_flat = #{tireFlat,jdbcType=VARCHAR},
+      <if test="tire_flat != null">
+        tire_flat = #{tire_flat,jdbcType=VARCHAR},
       </if>
-      <if test="tireDiameter != null">
-        tire_diameter = #{tireDiameter,jdbcType=VARCHAR},
+      <if test="tire_diameter != null">
+        tire_diameter = #{tire_diameter,jdbcType=VARCHAR},
       </if>
-      <if test="tireSpeedLevel != null">
-        tire_speed_level = #{tireSpeedLevel,jdbcType=VARCHAR},
+      <if test="tire_speed_level != null">
+        tire_speed_level = #{tire_speed_level,jdbcType=VARCHAR},
       </if>
-      <if test="oilViscosity != null">
-        oil_viscosity = #{oilViscosity,jdbcType=VARCHAR},
+      <if test="oil_viscosity != null">
+        oil_viscosity = #{oil_viscosity,jdbcType=VARCHAR},
       </if>
-      <if test="oilCapacity != null">
-        oil_capacity = #{oilCapacity,jdbcType=VARCHAR},
+      <if test="oil_capacity != null">
+        oil_capacity = #{oil_capacity,jdbcType=VARCHAR},
       </if>
-      <if test="oilClass != null">
-        oil_class = #{oilClass,jdbcType=VARCHAR},
+      <if test="oil_class != null">
+        oil_class = #{oil_class,jdbcType=VARCHAR},
       </if>
-      <if test="restPayment != null">
-        rest_payment = #{restPayment,jdbcType=DECIMAL},
+      <if test="rest_payment != null">
+        rest_payment = #{rest_payment,jdbcType=DECIMAL},
       </if>
-      <if test="isFree != null">
-        is_free = #{isFree,jdbcType=TINYINT},
+      <if test="is_free != null">
+        is_free = #{is_free,jdbcType=TINYINT},
       </if>
-      <if test="sendType != null">
-        send_type = #{sendType,jdbcType=TINYINT},
+      <if test="send_type != null">
+        send_type = #{send_type,jdbcType=TINYINT},
       </if>
       <if test="platform != null">
         platform = #{platform,jdbcType=TINYINT},
@@ -845,85 +845,85 @@
     where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.ecarpo.bms.eas.server.crmbaseproduct.entity.CrmBaseProductDO">
-    <!-- @mbg.generated 2019-07-26 15:13:45 -->
+    <!-- @mbg.generated 2019-08-05 15:18:43 -->
     update crm_base_product
     set ptype = #{ptype,jdbcType=CHAR},
       pmodel = #{pmodel,jdbcType=INTEGER},
       vid = #{vid,jdbcType=INTEGER},
-      store_id = #{storeId,jdbcType=INTEGER},
-      supplier_id = #{supplierId,jdbcType=INTEGER},
+      store_id = #{store_id,jdbcType=INTEGER},
+      supplier_id = #{supplier_id,jdbcType=INTEGER},
       name = #{name,jdbcType=VARCHAR},
-      name_trim = #{nameTrim,jdbcType=VARCHAR},
+      name_trim = #{name_trim,jdbcType=VARCHAR},
       pic1 = #{pic1,jdbcType=VARCHAR},
       pic2 = #{pic2,jdbcType=VARCHAR},
       pic3 = #{pic3,jdbcType=VARCHAR},
       code = #{code,jdbcType=VARCHAR},
-      index_code = #{indexCode,jdbcType=VARCHAR},
+      index_code = #{index_code,jdbcType=VARCHAR},
       model = #{model,jdbcType=VARCHAR},
-      bar_code = #{barCode,jdbcType=VARCHAR},
-      good_type_id = #{goodTypeId,jdbcType=INTEGER},
-      good_unit_id = #{goodUnitId,jdbcType=INTEGER},
-      grade_1 = #{grade1,jdbcType=INTEGER},
-      grade_2 = #{grade2,jdbcType=INTEGER},
-      grade_3 = #{grade3,jdbcType=INTEGER},
+      bar_code = #{bar_code,jdbcType=VARCHAR},
+      good_type_id = #{good_type_id,jdbcType=INTEGER},
+      good_unit_id = #{good_unit_id,jdbcType=INTEGER},
+      grade_1 = #{grade_1,jdbcType=INTEGER},
+      grade_2 = #{grade_2,jdbcType=INTEGER},
+      grade_3 = #{grade_3,jdbcType=INTEGER},
       origin = #{origin,jdbcType=VARCHAR},
       sdate = #{sdate,jdbcType=DATE},
       edate = #{edate,jdbcType=DATE},
       status = #{status,jdbcType=TINYINT},
-      origin_price = #{originPrice,jdbcType=DECIMAL},
-      sales_price = #{salesPrice,jdbcType=DECIMAL},
-      mall_price = #{mallPrice,jdbcType=DECIMAL},
+      origin_price = #{origin_price,jdbcType=DECIMAL},
+      sales_price = #{sales_price,jdbcType=DECIMAL},
+      mall_price = #{mall_price,jdbcType=DECIMAL},
       points = #{points,jdbcType=INTEGER},
-      points_to_money = #{pointsToMoney,jdbcType=DECIMAL},
-      maintain_cycle = #{maintainCycle,jdbcType=INTEGER},
-      work_hour = #{workHour,jdbcType=INTEGER},
-      brief_desc = #{briefDesc,jdbcType=VARCHAR},
+      points_to_money = #{points_to_money,jdbcType=DECIMAL},
+      maintain_cycle = #{maintain_cycle,jdbcType=INTEGER},
+      work_hour = #{work_hour,jdbcType=INTEGER},
+      brief_desc = #{brief_desc,jdbcType=VARCHAR},
       desc = #{desc,jdbcType=VARCHAR},
       remark = #{remark,jdbcType=VARCHAR},
-      is_weixin = #{isWeixin,jdbcType=TINYINT},
-      weixin_mall_type = #{weixinMallType,jdbcType=TINYINT},
-      base_num = #{baseNum,jdbcType=INTEGER},
-      cost_type = #{costType,jdbcType=CHAR},
-      apply_serie = #{applySerie,jdbcType=VARCHAR},
-      apply_type = #{applyType,jdbcType=VARCHAR},
-      is_common = #{isCommon,jdbcType=TINYINT},
-      is_fav = #{isFav,jdbcType=TINYINT},
-      is_member_discount = #{isMemberDiscount,jdbcType=CHAR},
+      is_weixin = #{is_weixin,jdbcType=TINYINT},
+      weixin_mall_type = #{weixin_mall_type,jdbcType=TINYINT},
+      base_num = #{base_num,jdbcType=INTEGER},
+      cost_type = #{cost_type,jdbcType=CHAR},
+      apply_serie = #{apply_serie,jdbcType=VARCHAR},
+      apply_type = #{apply_type,jdbcType=VARCHAR},
+      is_common = #{is_common,jdbcType=TINYINT},
+      is_fav = #{is_fav,jdbcType=TINYINT},
+      is_member_discount = #{is_member_discount,jdbcType=CHAR},
       unit = #{unit,jdbcType=VARCHAR},
-      last_price = #{lastPrice,jdbcType=DECIMAL},
-      last_price_notax = #{lastPriceNotax,jdbcType=DECIMAL},
-      last_buy_price = #{lastBuyPrice,jdbcType=DECIMAL},
-      heavy_buyer_price = #{heavyBuyerPrice,jdbcType=DECIMAL},
-      repair_price = #{repairPrice,jdbcType=DECIMAL},
+      last_price = #{last_price,jdbcType=DECIMAL},
+      last_price_notax = #{last_price_notax,jdbcType=DECIMAL},
+      last_buy_price = #{last_buy_price,jdbcType=DECIMAL},
+      heavy_buyer_price = #{heavy_buyer_price,jdbcType=DECIMAL},
+      repair_price = #{repair_price,jdbcType=DECIMAL},
       creator = #{creator,jdbcType=INTEGER},
-      c_time = #{cTime,jdbcType=TIMESTAMP},
-      proxy_count = #{proxyCount,jdbcType=INTEGER},
-      refund_count = #{refundCount,jdbcType=INTEGER},
-      act_count = #{actCount,jdbcType=INTEGER},
-      car_model = #{carModel,jdbcType=VARCHAR},
-      location_name = #{locationName,jdbcType=VARCHAR},
-      product_type_id = #{productTypeId,jdbcType=INTEGER},
-      stock_lowest = #{stockLowest,jdbcType=DECIMAL},
-      product_brand = #{productBrand,jdbcType=INTEGER},
+      c_time = #{c_time,jdbcType=TIMESTAMP},
+      proxy_count = #{proxy_count,jdbcType=INTEGER},
+      refund_count = #{refund_count,jdbcType=INTEGER},
+      act_count = #{act_count,jdbcType=INTEGER},
+      car_model = #{car_model,jdbcType=VARCHAR},
+      location_name = #{location_name,jdbcType=VARCHAR},
+      product_type_id = #{product_type_id,jdbcType=INTEGER},
+      stock_lowest = #{stock_lowest,jdbcType=DECIMAL},
+      product_brand = #{product_brand,jdbcType=INTEGER},
       figure = #{figure,jdbcType=VARCHAR},
-      load_index = #{loadIndex,jdbcType=VARCHAR},
-      speed_level = #{speedLevel,jdbcType=VARCHAR},
-      install_way = #{installWay,jdbcType=INTEGER},
-      is_del = #{isDel,jdbcType=TINYINT},
-      tire_width = #{tireWidth,jdbcType=VARCHAR},
-      tire_flat = #{tireFlat,jdbcType=VARCHAR},
-      tire_diameter = #{tireDiameter,jdbcType=VARCHAR},
-      tire_speed_level = #{tireSpeedLevel,jdbcType=VARCHAR},
-      oil_viscosity = #{oilViscosity,jdbcType=VARCHAR},
-      oil_capacity = #{oilCapacity,jdbcType=VARCHAR},
-      oil_class = #{oilClass,jdbcType=VARCHAR},
-      rest_payment = #{restPayment,jdbcType=DECIMAL},
-      is_free = #{isFree,jdbcType=TINYINT},
-      send_type = #{sendType,jdbcType=TINYINT},
+      load_index = #{load_index,jdbcType=VARCHAR},
+      speed_level = #{speed_level,jdbcType=VARCHAR},
+      install_way = #{install_way,jdbcType=INTEGER},
+      is_del = #{is_del,jdbcType=TINYINT},
+      tire_width = #{tire_width,jdbcType=VARCHAR},
+      tire_flat = #{tire_flat,jdbcType=VARCHAR},
+      tire_diameter = #{tire_diameter,jdbcType=VARCHAR},
+      tire_speed_level = #{tire_speed_level,jdbcType=VARCHAR},
+      oil_viscosity = #{oil_viscosity,jdbcType=VARCHAR},
+      oil_capacity = #{oil_capacity,jdbcType=VARCHAR},
+      oil_class = #{oil_class,jdbcType=VARCHAR},
+      rest_payment = #{rest_payment,jdbcType=DECIMAL},
+      is_free = #{is_free,jdbcType=TINYINT},
+      send_type = #{send_type,jdbcType=TINYINT},
       platform = #{platform,jdbcType=TINYINT}
     where id = #{id,jdbcType=INTEGER}
   </update>
-  
+    
   <!-- user define -->
   <select id="existsByCode" resultType="java.lang.Long">
     select 1 from crm_base_product

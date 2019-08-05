@@ -4,6 +4,8 @@
  */
 package com.ecarpo.bms.dms.server.auth;
 
+import java.util.Date;
+
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +30,7 @@ public class CrmBaseSupplierServiceTest extends JUnitTestBase {
     int nextInt = super.getId(1000);
     CrmBaseSupplierInsertDTO dto = new CrmBaseSupplierInsertDTO();
     super.initial(dto);
+    dto.setOpen_date(new Date());
     dto.setCode(String.valueOf(nextInt));
     print(dto);
     ResultDTO rst = service.insert(dto);
