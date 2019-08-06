@@ -14,181 +14,179 @@ import lombok.EqualsAndHashCode;
 /**
  * This class corresponds to the database table crm_member_store
  *
- * @mbg.generated 2019-07-23 10:44:25
+ * @mbg.generated 2019-08-05 16:58:00
  */
 @Data
 @SuppressWarnings("serial")
 @EqualsAndHashCode(callSuper = false)
 public class CrmMemberStoreDO extends MyEntity {
-    /**
-     *
-     * @mbg.generated 2019-07-23 10:44:25
-     */
-    private Integer id;
 
-    /**
-     * 经销商ID
-     *
-     * @mbg.generated 2019-07-23 10:44:25
-     */
-    private Integer storeId;
+  /**
+   * @mbg.generated 2019-08-05 16:58:00
+   */
+  private Integer id;
 
-    /**
-     * 会员ID（如已是会员）
-     *
-     * @mbg.generated 2019-07-23 10:44:25
-     */
-    private Integer customId;
+  /**
+   * 经销商ID
+   *
+   * @mbg.generated 2019-08-05 16:58:00
+   */
+  private Integer store_id;
 
-    /**
-     * 卡号
-     *
-     * @mbg.generated 2019-07-23 10:44:25
-     */
-    private String cardNum;
+  /**
+   * 会员ID（如已是会员）
+   *
+   * @mbg.generated 2019-08-05 16:58:00
+   */
+  private Integer custom_id;
 
-    /**
-     * 审批日期
-     *
-     * @mbg.generated 2019-07-23 10:44:25
-     */
-    private Date ctime;
-    
-    /**
-     * 储值金额
-     *
-     * @mbg.generated 2019-07-23 10:44:25
-     */
-    private BigDecimal storeAmount;
+  /**
+   * 卡号
+   *
+   * @mbg.generated 2019-08-05 16:58:00
+   */
+  private String card_num;
 
-    /**
-     *
-     * @mbg.generated 2019-07-23 10:44:25
-     */
-    private BigDecimal givingAmount;
+  /**
+   * 审批日期
+   *
+   * @mbg.generated 2019-08-05 16:58:00
+   */
+  private Date ctime;
 
-    /**
-     *
-     * @mbg.generated 2019-07-23 10:44:25
-     */
-    private BigDecimal totalAmount;
+  /**
+   * 储值金额
+   *
+   * @mbg.generated 2019-08-05 16:58:00
+   */
+  private BigDecimal store_amount;
 
-    /**
-     * 当前总剩余金额
-     *
-     * @mbg.generated 2019-07-23 10:44:25
-     */
-    private BigDecimal nowAmount;
+  /**
+   * @mbg.generated 2019-08-05 16:58:00
+   */
+  private BigDecimal giving_amount;
 
-    /**
-     * 经办人ID（当前登录用户的ID）
-     *
-     * @mbg.generated 2019-07-23 10:44:25
-     */
-    private Integer cstaff;
+  /**
+   * @mbg.generated 2019-08-05 16:58:00
+   */
+  private BigDecimal total_amount;
 
-    /**
-     * 规则ID
-     *
-     * @mbg.generated 2019-07-23 10:44:25
-     */
-    private Integer ruleId;
+  /**
+   * 当前总剩余金额
+   *
+   * @mbg.generated 2019-08-05 16:58:00
+   */
+  private BigDecimal now_amount;
 
-    /**
-     * 储值类型（会员储值 || 储值调整 || 店面收银 || 微信商城）
-     *
-     * @mbg.generated 2019-07-23 10:44:25
-     */
-    private String storeType;
+  /**
+   * 经办人ID（当前登录用户的ID）
+   *
+   * @mbg.generated 2019-08-05 16:58:00
+   */
+  private Integer cstaff;
 
-    /**
-     * 赠送类型：1-赠送储值|2-赠送积分
-     *
-     * @mbg.generated 2019-07-23 10:44:25
-     */
-    private String givingValueType;
+  /**
+   * 规则ID
+   *
+   * @mbg.generated 2019-08-05 16:58:00
+   */
+  private Integer rule_id;
 
-    /**
-     * 赠送类型（1等比2非等比）
-     *
-     * @mbg.generated 2019-07-23 10:44:25
-     */
-    private Integer givingType;
+  /**
+   * 储值类型（会员储值 || 储值调整 || 店面收银 || 微信商城）
+   *
+   * @mbg.generated 2019-08-05 16:58:00
+   */
+  private String store_type;
 
-    /**
-     * 是否付款（1已付0未付）
-     *
-     * @mbg.generated 2019-07-23 10:44:25
-     */
-    private Integer isPayed;
+  /**
+   * 赠送类型：1-赠送储值|2-赠送积分
+   *
+   * @mbg.generated 2019-08-05 16:58:00
+   */
+  private String giving_value_type;
 
-    /**
-     * 现金付款
-     *
-     * @mbg.generated 2019-07-23 10:44:25
-     */
-    private BigDecimal cashPay;
+  /**
+   * 赠送类型（1等比2非等比）
+   *
+   * @mbg.generated 2019-08-05 16:58:00
+   */
+  private Integer giving_type;
 
-    /**
-     * 挂账付款
-     *
-     * @mbg.generated 2019-07-23 10:44:25
-     */
-    private BigDecimal hangPay;
+  /**
+   * 是否付款（1已付0未付）
+   *
+   * @mbg.generated 2019-08-05 16:58:00
+   */
+  private Integer is_payed;
 
-    /**
-     * POS机付款
-     *
-     * @mbg.generated 2019-07-23 10:44:25
-     */
-    private BigDecimal posPay;
+  /**
+   * 现金付款
+   *
+   * @mbg.generated 2019-08-05 16:58:00
+   */
+  private BigDecimal cash_pay;
 
-    /**
-     * 支票付款
-     *
-     * @mbg.generated 2019-07-23 10:44:25
-     */
-    private BigDecimal checkPay;
+  /**
+   * 挂账付款
+   *
+   * @mbg.generated 2019-08-05 16:58:00
+   */
+  private BigDecimal hang_pay;
 
-    /**
-     * 拉卡拉支付
-     *
-     * @mbg.generated 2019-07-23 10:44:25
-     */
-    private BigDecimal lakalaPay;
+  /**
+   * POS机付款
+   *
+   * @mbg.generated 2019-08-05 16:58:00
+   */
+  private BigDecimal pos_pay;
 
-    /**
-     * 微信支付
-     *
-     * @mbg.generated 2019-07-23 10:44:25
-     */
-    private BigDecimal weixinPay;
+  /**
+   * 支票付款
+   *
+   * @mbg.generated 2019-08-05 16:58:00
+   */
+  private BigDecimal check_pay;
 
-    /**
-     * 支付宝支付
-     *
-     * @mbg.generated 2019-07-23 10:44:25
-     */
-    private BigDecimal alipayPay;
+  /**
+   * 拉卡拉支付
+   *
+   * @mbg.generated 2019-08-05 16:58:00
+   */
+  private BigDecimal lakala_pay;
 
-    /**
-     * 转账
-     *
-     * @mbg.generated 2019-07-23 10:44:25
-     */
-    private BigDecimal transfer;
+  /**
+   * 微信支付
+   *
+   * @mbg.generated 2019-08-05 16:58:00
+   */
+  private BigDecimal weixin_pay;
 
-    /**
-     * 总付款
-     *
-     * @mbg.generated 2019-07-23 10:44:25
-     */
-    private BigDecimal totalPay;
+  /**
+   * 支付宝支付
+   *
+   * @mbg.generated 2019-08-05 16:58:00
+   */
+  private BigDecimal alipay_pay;
 
-    /**
-     * 备注
-     *
-     * @mbg.generated 2019-07-23 10:44:25
-     */
-    //private String remark;
+  /**
+   * 转账
+   *
+   * @mbg.generated 2019-08-05 16:58:00
+   */
+  private BigDecimal transfer;
+
+  /**
+   * 总付款
+   *
+   * @mbg.generated 2019-08-05 16:58:00
+   */
+  private BigDecimal total_pay;
+
+  /**
+   * 备注
+   *
+   * @mbg.generated 2019-08-05 16:58:00
+   */
+  //private String remark;
 }

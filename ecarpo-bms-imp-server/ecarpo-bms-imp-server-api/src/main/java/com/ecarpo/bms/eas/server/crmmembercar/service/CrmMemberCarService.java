@@ -4,6 +4,7 @@
  */
 package com.ecarpo.bms.eas.server.crmmembercar.service;
 
+import com.ecarpo.bms.eas.server.crmmembercar.dto.CrmMemberCarExInsertDTO;
 import com.ecarpo.bms.eas.server.crmmembercar.dto.CrmMemberCarInsertDTO;
 import com.ecarpo.bms.eas.server.crmmembercar.dto.CrmMemberCarUpdateDTO;
 import com.ecarpo.framework.model.ResultDTO;
@@ -15,6 +16,8 @@ import com.ecarpo.framework.model.ResultDTO;
 public interface CrmMemberCarService {
   
   ResultDTO<Integer> insert(CrmMemberCarInsertDTO dto) throws Exception;
+  
+  ResultDTO<Integer> insert(CrmMemberCarExInsertDTO dto) throws Exception;
 
   ResultDTO<Integer> update(CrmMemberCarUpdateDTO dto) throws Exception;
 

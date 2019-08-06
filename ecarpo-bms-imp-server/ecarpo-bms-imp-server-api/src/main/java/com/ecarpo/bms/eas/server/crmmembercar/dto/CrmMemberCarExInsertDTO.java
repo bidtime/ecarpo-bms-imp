@@ -7,7 +7,7 @@ package com.ecarpo.bms.eas.server.crmmembercar.dto;
 import java.math.BigDecimal;
 import java.util.Date;
 
-import com.ecarpo.framework.model.UpdateDTO;
+import com.ecarpo.framework.model.InsertDTO;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -19,12 +19,12 @@ import lombok.EqualsAndHashCode;
 @SuppressWarnings("serial")
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class CrmMemberCarUpdateDTO extends UpdateDTO {
- /**
+public class CrmMemberCarExInsertDTO extends InsertDTO {
+  /**
   *
   * @mbg.generated 2019-08-05 16:38:00
   */
- private Integer id;
+ //private Integer id;
 
  /**
   * 对应的会员ID
@@ -305,4 +305,6 @@ public class CrmMemberCarUpdateDTO extends UpdateDTO {
   * @mbg.generated 2019-08-05 16:38:00
   */
  private String carsource_num;
+ 
+ private String card_num;
 }
