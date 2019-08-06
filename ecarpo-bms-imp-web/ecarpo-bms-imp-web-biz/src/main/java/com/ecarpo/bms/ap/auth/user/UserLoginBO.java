@@ -68,6 +68,7 @@ public class UserLoginBO implements ISessionUser, Serializable {
     bo.setUserId(1L);
     bo.setUserCode("001");
     bo.setUserName("jss");
+    bo.setStoreId(1);
     return bo;
   }
 

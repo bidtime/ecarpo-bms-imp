@@ -1,12 +1,11 @@
 package com.ecarpo.bms.ap.auth.user.dto;
 
 import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
+
+import org.apache.commons.beanutils.BeanUtils;
 
 import com.ecarpo.bms.ap.auth.user.UserLoginBO;
 import com.ecarpo.framework.annotation.utils.DTOAnnoUtils;
-import com.ecarpo.framework.common.utils.BeanUtils;
 import com.ecarpo.framework.model.BaseDTO;
 import com.ecarpo.framework.model.InsertDTO;
 import com.ecarpo.framework.model.UpdateDTO;
@@ -109,9 +108,19 @@ public class UserUtils {
   }
   
   public static void copys(Object dto, UserLoginBO user) {
-    Set<String> set = new HashSet<>();
-    set.add("storeId");
-    BeanUtils.copyProps(user, dto, set);
+    //Set<String> set = new HashSet<>();
+    //set.add("store_id");
+    //BeanUtils.copyProps(user, dto, set);
+    copyProperty(dto, "c_time", new Date());
+    copyProperty(dto, "store_id", user.getStoreId());
+  }
+  
+  public static void copyProperty(final Object bean, final String name, final Object value) {
+    try {
+      BeanUtils.copyProperty(bean, name, value);
+    } catch (Exception e) {
+      
+    }
   }
 
 }
