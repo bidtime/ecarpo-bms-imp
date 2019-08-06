@@ -13,128 +13,126 @@ import lombok.EqualsAndHashCode;
 /**
  * This class corresponds to the database table dms_repair_workhour
  *
- * @mbg.generated 2019-07-22 16:41:30
+ * @mbg.generated 2019-08-06 11:17:53
  */
 @Data
 @SuppressWarnings("serial")
 @EqualsAndHashCode(callSuper = false)
 public class DmsRepairWorkhourDO extends MyEntity {
-    /**
-     *
-     * @mbg.generated 2019-07-22 16:41:30
-     */
-    private Integer id;
+  /**
+   * @mbg.generated 2019-08-06 11:17:53
+   */
+  private Integer id;
 
-    /**
-     * 经销商ID
-     *
-     * @mbg.generated 2019-07-22 16:41:30
-     */
-    private Integer storeId;
+  /**
+   * 经销商ID
+   *
+   * @mbg.generated 2019-08-06 11:17:53
+   */
+  private Integer store_id;
 
-    /**
-     * 工时编码
-     *
-     * @mbg.generated 2019-07-22 16:41:30
-     */
-    private String workhourCode;
+  /**
+   * 工时编码
+   *
+   * @mbg.generated 2019-08-06 11:17:53
+   */
+  private String workhour_code;
 
-    /**
-     * 工时名称
-     *
-     * @mbg.generated 2019-07-22 16:41:30
-     */
-    private String workhourName;
+  /**
+   * 工时名称
+   *
+   * @mbg.generated 2019-08-06 11:17:53
+   */
+  private String workhour_name;
 
-    /**
-     * 考核工时
-     *
-     * @mbg.generated 2019-07-22 16:41:30
-     */
-    private BigDecimal reviewWorkhour;
+  /**
+   * 考核工时
+   *
+   * @mbg.generated 2019-08-06 11:17:53
+   */
+  private BigDecimal review_workhour;
 
-    /**
-     * 考核单价
-     *
-     * @mbg.generated 2019-07-22 16:41:30
-     */
-    private BigDecimal reviewPrice;
+  /**
+   * 考核单价
+   *
+   * @mbg.generated 2019-08-06 11:17:53
+   */
+  private BigDecimal review_price;
 
-    /**
-     * 额定工时
-     *
-     * @mbg.generated 2019-07-22 16:41:30
-     */
-    private BigDecimal ratedWorkhour;
+  /**
+   * 额定工时
+   *
+   * @mbg.generated 2019-08-06 11:17:53
+   */
+  private BigDecimal rated_workhour;
 
-    /**
-     * 额定单价
-     *
-     * @mbg.generated 2019-07-22 16:41:30
-     */
-    private BigDecimal ratedPrice;
+  /**
+   * 额定单价
+   *
+   * @mbg.generated 2019-08-06 11:17:53
+   */
+  private BigDecimal rated_price;
 
-    /**
-     * 是否通用
-     *
-     * @mbg.generated 2019-07-22 16:41:30
-     */
-    private Integer isUniversal;
+  /**
+   * 是否通用
+   *
+   * @mbg.generated 2019-08-06 11:17:53
+   */
+  private Integer is_universal;
 
-    /**
-     * 是否优惠
-     *
-     * @mbg.generated 2019-07-22 16:41:30
-     */
-    private Integer isDiscount;
+  /**
+   * 是否优惠
+   *
+   * @mbg.generated 2019-08-06 11:17:53
+   */
+  private Integer is_discount;
 
-    /**
-     * 是否是钣金项目
-     *
-     * @mbg.generated 2019-07-22 16:41:30
-     */
-    private Integer isSheetmetal;
+  /**
+   * 是否是钣金项目
+   *
+   * @mbg.generated 2019-08-06 11:17:53
+   */
+  private Integer is_sheetmetal;
 
-    /**
-     * 检索码
-     *
-     * @mbg.generated 2019-07-22 16:41:30
-     */
-    private String retrievalCode;
+  /**
+   * 检索码
+   *
+   * @mbg.generated 2019-08-06 11:17:53
+   */
+  private String retrieval_code;
 
-    /**
-     * 状态
-     *
-     * @mbg.generated 2019-07-22 16:41:30
-     */
-    //private Integer state;
+  /**
+   * 状态
+   *
+   * @mbg.generated 2019-08-06 11:17:53
+   */
+  //private Integer state;
 
-    /**
-     * 工时等级
-     *
-     * @mbg.generated 2019-07-22 16:41:30
-     */
-    private String workhourLevel;
+  /**
+   * 工时等级
+   *
+   * @mbg.generated 2019-08-06 11:17:53
+   */
+  private String workhour_level;
 
-    /**
-     * 创建人
-     *
-     * @mbg.generated 2019-07-22 16:41:30
-     */
-    //private Integer creator;
+  /**
+   * 创建人
+   *
+   * @mbg.generated 2019-08-06 11:17:53
+   */
+  //private Integer creator;
 
-    /**
-     * 创建时间
-     *
-     * @mbg.generated 2019-07-22 16:41:30
-     */
-    //private Date createTime;
+  /**
+   * 创建时间
+   *
+   * @mbg.generated 2019-08-06 11:17:53
+   */
+  //private Date create_time;
 
-    /**
-     * 是否洗车(0否1是)
-     *
-     * @mbg.generated 2019-07-22 16:41:30
-     */
-    private Integer isWashCar;
-
+  /**
+   * 是否洗车(0否1是)
+   *
+   * @mbg.generated 2019-08-06 11:17:53
+   */
+  private Integer is_wash_car;
 }
