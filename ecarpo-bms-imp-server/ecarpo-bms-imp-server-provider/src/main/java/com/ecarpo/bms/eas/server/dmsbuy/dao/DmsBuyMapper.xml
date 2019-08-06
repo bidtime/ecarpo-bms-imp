@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ecarpo.bms.eas.server.dmsbuy.dao.DmsBuyMapper">
   <resultMap id="BaseResultMap" type="com.ecarpo.bms.eas.server.dmsbuy.entity.DmsBuyDO">
-    <!-- @mbg.generated 2019-08-06 13:41:54 -->
+    <!-- @mbg.generated 2019-08-06 16:18:30 -->
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="buy_number" jdbcType="VARCHAR" property="buy_number" />
     <result column="store_id" jdbcType="INTEGER" property="store_id" />
@@ -24,6 +24,7 @@
     <result column="cashier_time" jdbcType="TIMESTAMP" property="cashier_time" />
     <result column="receipts_no" jdbcType="VARCHAR" property="receipts_no" />
     <result column="status" jdbcType="TINYINT" property="status" />
+    <result column="desc" jdbcType="VARCHAR" property="desc" />
     <result column="app_number" jdbcType="VARCHAR" property="app_number" />
     <result column="generate_from" jdbcType="VARCHAR" property="generate_from" />
     <result column="original_number" jdbcType="VARCHAR" property="original_number" />
@@ -32,48 +33,38 @@
     <result column="recipient_name" jdbcType="VARCHAR" property="recipient_name" />
     <result column="recipient_mobile" jdbcType="VARCHAR" property="recipient_mobile" />
   </resultMap>
-  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.ecarpo.bms.eas.server.dmsbuy.entity.DmsBuyDO">
-    <!-- @mbg.generated 2019-08-06 13:41:54 -->
-    <result column="desc" jdbcType="LONGVARCHAR" property="desc" />
-  </resultMap>
   <sql id="Base_Column_List">
-    <!-- @mbg.generated 2019-08-06 13:41:54 -->
+    <!-- @mbg.generated 2019-08-06 16:18:30 -->
     id, buy_number, store_id, contact_name, contact_phone, buy_type_id, supplier_id, 
     require_reach_date, act_type, is_sale_proxy, act_name, creator, c_time, buyer_id, 
-    buy_time, executor, exec_time, cashier, cashier_time, receipts_no, status, app_number, 
-    generate_from, original_number, delivery_address, delivery_way_id, recipient_name, 
+    buy_time, executor, exec_time, cashier, cashier_time, receipts_no, status, `desc`, 
+    app_number, generate_from, original_number, delivery_address, delivery_way_id, recipient_name, 
     recipient_mobile
   </sql>
-  <sql id="Blob_Column_List">
-    <!-- @mbg.generated 2019-08-06 13:41:54 -->
-    desc
-  </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
-    <!-- @mbg.generated 2019-08-06 13:41:54 -->
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!-- @mbg.generated 2019-08-06 16:18:30 -->
     select 
     <include refid="Base_Column_List" />
-    ,
-    <include refid="Blob_Column_List" />
     from dms_buy
     where id = #{id,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    <!-- @mbg.generated 2019-08-06 13:41:54 -->
+    <!-- @mbg.generated 2019-08-06 16:18:30 -->
     delete from dms_buy
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.ecarpo.bms.eas.server.dmsbuy.entity.DmsBuyDO">
-    <!-- @mbg.generated 2019-08-06 13:41:54 -->
+  <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="com.ecarpo.bms.eas.server.dmsbuy.entity.DmsBuyDO">
+    <!-- @mbg.generated 2019-08-06 16:18:30 -->
     insert into dms_buy (id, buy_number, store_id, 
       contact_name, contact_phone, buy_type_id, 
       supplier_id, require_reach_date, act_type, 
       is_sale_proxy, act_name, creator, 
       c_time, buyer_id, buy_time, 
-      executor, exec_time, cashier, 
+      executor, exec_time, cashier,
       cashier_time, receipts_no, status, 
-      app_number, generate_from, original_number, 
-      delivery_address, delivery_way_id, recipient_name, 
-      recipient_mobile, desc)
+      app_number, generate_from, 
+      original_number, delivery_address, delivery_way_id, 
+      recipient_name, recipient_mobile)
     values (#{id,jdbcType=INTEGER}, #{buy_number,jdbcType=VARCHAR}, #{store_id,jdbcType=INTEGER}, 
       #{contact_name,jdbcType=VARCHAR}, #{contact_phone,jdbcType=VARCHAR}, #{buy_type_id,jdbcType=INTEGER}, 
       #{supplier_id,jdbcType=INTEGER}, #{require_reach_date,jdbcType=VARCHAR}, #{act_type,jdbcType=TINYINT}, 
@@ -81,12 +72,12 @@
       #{c_time,jdbcType=TIMESTAMP}, #{buyer_id,jdbcType=INTEGER}, #{buy_time,jdbcType=TIMESTAMP}, 
       #{executor,jdbcType=INTEGER}, #{exec_time,jdbcType=TIMESTAMP}, #{cashier,jdbcType=INTEGER}, 
       #{cashier_time,jdbcType=TIMESTAMP}, #{receipts_no,jdbcType=VARCHAR}, #{status,jdbcType=TINYINT}, 
-      #{app_number,jdbcType=VARCHAR}, #{generate_from,jdbcType=VARCHAR}, #{original_number,jdbcType=VARCHAR}, 
-      #{delivery_address,jdbcType=VARCHAR}, #{delivery_way_id,jdbcType=INTEGER}, #{recipient_name,jdbcType=VARCHAR}, 
-      #{recipient_mobile,jdbcType=VARCHAR}, #{desc,jdbcType=LONGVARCHAR})
+      #{app_number,jdbcType=VARCHAR}, #{generate_from,jdbcType=VARCHAR}, 
+      #{original_number,jdbcType=VARCHAR}, #{delivery_address,jdbcType=VARCHAR}, #{delivery_way_id,jdbcType=INTEGER}, 
+      #{recipient_name,jdbcType=VARCHAR}, #{recipient_mobile,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.ecarpo.bms.eas.server.dmsbuy.entity.DmsBuyDO">
-    <!-- @mbg.generated 2019-08-06 13:41:54 -->
+  <insert id="insertSelective" useGeneratedKeys="true" keyProperty="id" parameterType="com.ecarpo.bms.eas.server.dmsbuy.entity.DmsBuyDO">
+    <!-- @mbg.generated 2019-08-06 16:18:30 -->
     insert into dms_buy
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -172,9 +163,6 @@
       </if>
       <if test="recipient_mobile != null">
         recipient_mobile,
-      </if>
-      <if test="desc != null">
-        desc,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
@@ -262,13 +250,10 @@
       <if test="recipient_mobile != null">
         #{recipient_mobile,jdbcType=VARCHAR},
       </if>
-      <if test="desc != null">
-        #{desc,jdbcType=LONGVARCHAR},
-      </if>
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.ecarpo.bms.eas.server.dmsbuy.entity.DmsBuyDO">
-    <!-- @mbg.generated 2019-08-06 13:41:54 -->
+    <!-- @mbg.generated 2019-08-06 16:18:30 -->
     update dms_buy
     <set>
       <if test="buy_number != null">
@@ -352,47 +337,11 @@
       <if test="recipient_mobile != null">
         recipient_mobile = #{recipient_mobile,jdbcType=VARCHAR},
       </if>
-      <if test="desc != null">
-        desc = #{desc,jdbcType=LONGVARCHAR},
-      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.ecarpo.bms.eas.server.dmsbuy.entity.DmsBuyDO">
-    <!-- @mbg.generated 2019-08-06 13:41:54 -->
-    update dms_buy
-    set buy_number = #{buy_number,jdbcType=VARCHAR},
-      store_id = #{store_id,jdbcType=INTEGER},
-      contact_name = #{contact_name,jdbcType=VARCHAR},
-      contact_phone = #{contact_phone,jdbcType=VARCHAR},
-      buy_type_id = #{buy_type_id,jdbcType=INTEGER},
-      supplier_id = #{supplier_id,jdbcType=INTEGER},
-      require_reach_date = #{require_reach_date,jdbcType=VARCHAR},
-      act_type = #{act_type,jdbcType=TINYINT},
-      is_sale_proxy = #{is_sale_proxy,jdbcType=TINYINT},
-      act_name = #{act_name,jdbcType=VARCHAR},
-      creator = #{creator,jdbcType=INTEGER},
-      c_time = #{c_time,jdbcType=TIMESTAMP},
-      buyer_id = #{buyer_id,jdbcType=INTEGER},
-      buy_time = #{buy_time,jdbcType=TIMESTAMP},
-      executor = #{executor,jdbcType=INTEGER},
-      exec_time = #{exec_time,jdbcType=TIMESTAMP},
-      cashier = #{cashier,jdbcType=INTEGER},
-      cashier_time = #{cashier_time,jdbcType=TIMESTAMP},
-      receipts_no = #{receipts_no,jdbcType=VARCHAR},
-      status = #{status,jdbcType=TINYINT},
-      app_number = #{app_number,jdbcType=VARCHAR},
-      generate_from = #{generate_from,jdbcType=VARCHAR},
-      original_number = #{original_number,jdbcType=VARCHAR},
-      delivery_address = #{delivery_address,jdbcType=VARCHAR},
-      delivery_way_id = #{delivery_way_id,jdbcType=INTEGER},
-      recipient_name = #{recipient_name,jdbcType=VARCHAR},
-      recipient_mobile = #{recipient_mobile,jdbcType=VARCHAR},
-      desc = #{desc,jdbcType=LONGVARCHAR}
-    where id = #{id,jdbcType=INTEGER}
-  </update>
   <update id="updateByPrimaryKey" parameterType="com.ecarpo.bms.eas.server.dmsbuy.entity.DmsBuyDO">
-    <!-- @mbg.generated 2019-08-06 13:41:54 -->
+    <!-- @mbg.generated 2019-08-06 16:18:30 -->
     update dms_buy
     set buy_number = #{buy_number,jdbcType=VARCHAR},
       store_id = #{store_id,jdbcType=INTEGER},
