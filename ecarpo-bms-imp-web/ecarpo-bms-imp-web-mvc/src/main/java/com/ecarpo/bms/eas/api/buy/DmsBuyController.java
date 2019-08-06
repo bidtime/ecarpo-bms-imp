@@ -1,4 +1,4 @@
-package com.ecarpo.bms.eas.api;
+package com.ecarpo.bms.eas.api.buy;
 
 /*
  * $Id:$
@@ -27,7 +27,7 @@ import com.ecarpo.framework.model.ResultDTO;
  * @since 2019.05.21
  */
 @RestController
-@RequestMapping("/api/dms/import/DmsBuy")
+@RequestMapping("/api/dms/import/dms_buy")
 public class DmsBuyController {
 
   @Autowired

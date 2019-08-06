@@ -1,4 +1,4 @@
-package com.ecarpo.bms.eas.api;
+package com.ecarpo.bms.eas.api.base;
 
 /*
  * $Id:$
@@ -17,9 +17,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.ecarpo.bms.ap.auth.user.UserLoginBO;
 import com.ecarpo.bms.ap.auth.user.dto.UserUtils;
-import com.ecarpo.bms.eas.server.crmbasesupplier.dto.CrmBaseSupplierInsertDTO;
-import com.ecarpo.bms.eas.server.crmbasesupplier.dto.CrmBaseSupplierUpdateDTO;
-import com.ecarpo.bms.eas.server.crmbasesupplier.service.CrmBaseSupplierService;
+import com.ecarpo.bms.eas.server.crmbaseproduct.dto.CrmBaseProductInsertDTO;
+import com.ecarpo.bms.eas.server.crmbaseproduct.dto.CrmBaseProductUpdateDTO;
+import com.ecarpo.bms.eas.server.crmbaseproduct.service.CrmBaseProductService;
 import com.ecarpo.framework.model.ResultDTO;
 
 /**
@@ -27,11 +27,11 @@ import com.ecarpo.framework.model.ResultDTO;
  * @since 2019.05.21
  */
 @RestController
-@RequestMapping("/api/dms/import/CrmBaseSupplier")
-public class CrmBaseSupplierController {
+@RequestMapping("/api/dms/import/crm_base_product")
+public class CrmBaseProductController {
 
   @Autowired
-  private CrmBaseSupplierService service;
+  private CrmBaseProductService service;
 
   @RequestMapping(value = "get/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
   public Object info(@PathVariable Long id) throws Exception {
@@ -40,13 +40,13 @@ public class CrmBaseSupplierController {
   }
 
   @RequestMapping(value = "insert", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
-  public Object insert(@Valid @RequestBody CrmBaseSupplierInsertDTO dto, UserLoginBO user) throws Exception {
+  public Object insert(@Valid @RequestBody CrmBaseProductInsertDTO dto, UserLoginBO user) throws Exception {
     UserUtils.copy(dto, user);
     return service.insert(dto);
   }
 
   @RequestMapping(value = "update", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
-  public Object update(@Valid @RequestBody CrmBaseSupplierUpdateDTO dto, UserLoginBO user) throws Exception {
+  public Object update(@Valid @RequestBody CrmBaseProductUpdateDTO dto, UserLoginBO user) throws Exception {
     UserUtils.copy(dto, user);
     return service.update(dto);
   }

@@ -13,14 +13,14 @@ import com.ecarpo.framework.common.mapper.BaseMapper;
 
 @MapperDesc(value = "SerialNumber")
 public interface SerialNumberQueueMapper extends BaseMapper<SerialNumberQueueDO> {
-    
+
   //@TryExcept(cmd = "get")
-  Integer selectNumberByParams(@Param("date")Date date,
-      @Param("store_id")Integer storeId, @Param("flag") String flag);
-  
-//  Integer insertReplaceNumber(@Param("date")Date date,
-//      @Param("storeId")Integer storeId, @Param("flag") String flag);
-  
+  Integer selectNumberByParams(@Param("date") Date date, @Param("store_id") Integer storeId,
+      @Param("flag") String flag);
+
+  //Integer insertReplaceNumber(@Param("date")Date date,
+  //    @Param("storeId")Integer storeId, @Param("flag") String flag);
+
   int updateNumber(SerialNumberQueueDO u);
 
 }

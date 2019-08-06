@@ -2,25 +2,25 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ecarpo.bms.eas.server.numberqueue.dao.SerialNumberQueueMapper">
   <resultMap id="BaseResultMap" type="com.ecarpo.bms.eas.server.numberqueue.entity.SerialNumberQueueDO">
-    <!-- @mbg.generated 2019-07-26 16:48:48 -->
-    <result column="`date`" jdbcType="DATE" property="date" />
+    <!-- @mbg.generated 2019-08-06 17:13:41 -->
+    <result column="date" jdbcType="DATE" property="date" />
     <result column="store_id" jdbcType="INTEGER" property="store_id" />
     <result column="flag" jdbcType="VARCHAR" property="flag" />
     <result column="number" jdbcType="INTEGER" property="number" />
   </resultMap>
   <insert id="insert" parameterType="com.ecarpo.bms.eas.server.numberqueue.entity.SerialNumberQueueDO">
-    <!-- @mbg.generated 2019-07-26 16:48:48 -->
-    insert into serial_number_queue (`date`, store_id, flag, 
+    <!-- @mbg.generated 2019-08-06 17:13:41 -->
+    insert into serial_number_queue (date, store_id, flag, 
       number)
     values (#{date,jdbcType=DATE}, #{store_id,jdbcType=INTEGER}, #{flag,jdbcType=VARCHAR}, 
       #{number,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.ecarpo.bms.eas.server.numberqueue.entity.SerialNumberQueueDO">
-    <!-- @mbg.generated 2019-07-26 16:48:48 -->
+    <!-- @mbg.generated 2019-08-06 17:13:41 -->
     insert into serial_number_queue
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="date != null">
-        `date`,
+        date,
       </if>
       <if test="store_id != null">
         store_id,
@@ -49,31 +49,6 @@
   </insert>
     
   <!-- user define -->
-  
-  <!-- <update id="insertReplaceNumber">
-    replace into dms_repair_workhour(number, `date`, flag)
-      values()
-      set number = IFNULL(number, 0) + 1,
-        `date` = #{date,jdbcType=TIMESTAMP},
-        flag = #{flag,jdbcType=VARCHAR}
-    where `date` = #{date,jdbcType=TIMESTAMP},
-      and store_id = #{store_id,jdbcType=INTEGER},
-      and flag = #{flag,jdbcType=VARCHAR}
-  </update> -->
-  
-  <!-- <update id="insertReplaceNumber" >
-    replace into serial_number_queue (`date`, store_id, flag, 
-      number)
-    values (#{date,jdbcType=TIMESTAMP}, #{store_id,jdbcType=INTEGER}, #{flag,jdbcType=VARCHAR}, 
-      IFNULL(number, 0) + 1)
-  </update> -->
-  
-  <!-- <update id="update" parameterType="com.ecarpo.bms.eas.server.numberqueue.entity.SerialNumberQueueDO">
-    update serial_number_queue (`date`, store_id, flag, 
-      number)
-    set (#{date,jdbcType=TIMESTAMP}, #{store_id,jdbcType=INTEGER}, #{flag,jdbcType=VARCHAR}, 
-      #{number,jdbcType=INTEGER})
-  </update> -->
   
   <update id="updateNumber" parameterType="com.ecarpo.bms.eas.server.numberqueue.entity.SerialNumberQueueDO">
     update serial_number_queue

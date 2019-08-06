@@ -27,7 +27,7 @@ import com.ecarpo.framework.model.ResultDTO;
  * @since 2019.05.21
  */
 @RestController
-@RequestMapping("/api/dms/import/DmsFnanceClient")
+@RequestMapping("/api/dms/import/dms_finance_client")
 public class DmsFnanceClientController {
 
   @Autowired

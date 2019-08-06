@@ -27,7 +27,7 @@ import com.ecarpo.framework.model.ResultDTO;
  * @since 2019.05.21
  */
 @RestController
-@RequestMapping("/api/dms/import/DmsHisRepairOrderProduct")
+@RequestMapping("/api/dms/import/dms_his_repair_order_product")
 public class DmsHisRepairOrderProductController {
 
   @Autowired

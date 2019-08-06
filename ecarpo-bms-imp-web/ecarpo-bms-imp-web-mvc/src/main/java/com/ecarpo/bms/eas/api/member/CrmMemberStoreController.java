@@ -27,7 +27,7 @@ import com.ecarpo.framework.model.ResultDTO;
  * @since 2019.05.21
  */
 @RestController
-@RequestMapping("/api/dms/import/CrmMemberStore")
+@RequestMapping("/api/dms/import/crm_member_store")
 public class CrmMemberStoreController {
 
   @Autowired
