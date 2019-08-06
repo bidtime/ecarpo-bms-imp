@@ -28,7 +28,7 @@ public class DmsHisRepairOrderProductTest extends JUnitTestBase {
     int nextInt = super.getId(1000);
     DmsHisRepairOrderProductInsertDTO dto = new DmsHisRepairOrderProductInsertDTO();
     super.initial(dto);
-    dto.setOrderNo(String.valueOf(nextInt));
+    dto.setOrder_no(String.valueOf(nextInt));
     //dto.setCode(String.valueOf(nextInt));
     //dto.setRetrievalCode(String.valueOf(nextInt));
     print(dto);

@@ -25,131 +25,131 @@ import lombok.EqualsAndHashCode;
 @Data
 public class DmsHisRepairOrderUpdateDTO extends UpdateDTO {
   /**
-  *
-  * @mbg.generated 2019-07-22 16:52:54
-  */
- private Integer id;
+   * @mbg.generated 2019-08-06 10:15:30
+   */
+  private Integer id;
 
- /**
-  * 经销商ID
-  *
-  * @mbg.generated 2019-07-22 16:52:54
-  */
- private Integer storeId;
+  /**
+   * 经销商ID
+   *
+   * @mbg.generated 2019-08-06 10:15:30
+   */
+  private Integer store_id;
 
- /**
-  * 工单号
-  *
-  * @mbg.generated 2019-07-22 16:52:54
-  */
- @NotBlank(message = "工单号不能为空")
- private String orderNo;
+  /**
+   * 工单号
+   *
+   * @mbg.generated 2019-08-06 10:15:30
+   */
+  @NotBlank(message = "工单号不能为空")
+  private String order_no;
 
- /**
-  * 维修类型
-  *
-  * @mbg.generated 2019-07-22 16:52:54
-  */
- private String repairType;
+  /**
+   * 维修类型
+   *
+   * @mbg.generated 2019-08-06 10:15:30
+   */
+  private String repair_type;
 
- /**
-  * 客户姓名
-  *
-  * @mbg.generated 2019-07-22 16:52:54
-  */
- private String customName;
+  /**
+   * 客户姓名
+   *
+   * @mbg.generated 2019-08-06 10:15:30
+   */
+  private String custom_name;
 
- /**
-  * 客户电话
-  *
-  * @mbg.generated 2019-07-22 16:52:54
-  */
- private String customMobile;
+  /**
+   * 客户电话
+   *
+   * @mbg.generated 2019-08-06 10:15:30
+   */
+  private String custom_mobile;
 
- /**
-  * 维修日期
-  *
-  * @mbg.generated 2019-07-22 16:52:54
-  */
- @NotNull(message = "维修日期不能为空")
- private Date repairTime;
+  /**
+   * 维修日期
+   *
+   * @mbg.generated 2019-08-06 10:15:30
+   */
+  @NotNull(message = "维修日期不能为空")
+  private Date repair_time;
 
- /**
-  * 车牌号
-  *
-  * @mbg.generated 2019-07-22 16:52:54
-  */
- @NotBlank(message = "车牌号不能为空")
- private String plateNo;
+  /**
+   * 车牌号
+   *
+   * @mbg.generated 2019-08-06 10:15:30
+   */
+  @NotBlank(message = "车牌号不能为空")
+  private String plate_no;
 
- /**
-  * 车型名称
-  *
-  * @mbg.generated 2019-07-22 16:52:54
-  */
- private String modelName;
+  /**
+   * 车型名称
+   *
+   * @mbg.generated 2019-08-06 10:15:30
+   */
+  private String model_name;
 
- /**
-  * 行驶里程
-  *
-  * @mbg.generated 2019-07-22 16:52:54
-  */
- @NotNull(message = "行驶里程不能为空")
- private Integer mileage;
+  /**
+   * 行驶里程
+   *
+   * @mbg.generated 2019-08-06 10:15:30
+   */
+  @NotNull(message = "行驶里程不能为空")
+  private Integer mileage;
 
- /**
-  * 服务顾问
-  *
-  * @mbg.generated 2019-07-22 16:52:54
-  */
- private String consultantName;
+  /**
+   * 服务顾问
+   *
+   * @mbg.generated 2019-08-06 10:15:30
+   */
+  private String consultant_name;
 
- /**
-  * 配件款
-  *
-  * @mbg.generated 2019-07-22 16:52:54
-  */
- private BigDecimal productMoney;
+  /**
+   * 配件款
+   *
+   * @mbg.generated 2019-08-06 10:15:30
+   */
+  private BigDecimal product_money;
 
- /**
-  * 工时款
-  *
-  * @mbg.generated 2019-07-22 16:52:54
-  */
- private BigDecimal workhourMoney;
+  /**
+   * 工时款
+   *
+   * @mbg.generated 2019-08-06 10:15:30
+   */
+  private BigDecimal workhour_money;
 
- /**
-  * 套餐费
-  *
-  * @mbg.generated 2019-07-22 16:52:54
-  */
- private BigDecimal packageMoney;
+  /**
+   * 套餐费
+   *
+   * @mbg.generated 2019-08-06 10:15:30
+   */
+  private BigDecimal package_money;
 
- /**
-  * 附加费
-  *
-  * @mbg.generated 2019-07-22 16:52:54
-  */
- private BigDecimal additionalMoney;
+  /**
+   * 附加费
+   *
+   * @mbg.generated 2019-08-06 10:15:30
+   */
+  private BigDecimal additional_money;
 
- /**
-  * 总计费用
-  *
-  * @mbg.generated 2019-07-22 16:52:54
-  */
- private BigDecimal totalDiscount;
+  /**
+   * 总计费用
+   *
+   * @mbg.generated 2019-08-06 10:15:30
+   */
+  private BigDecimal total_discount;
 
- /**
-  * 预计交车日期
-  *
-  * @mbg.generated 2019-07-22 16:52:54
-  */
- private Date predictDate;
+  /**
+   * 预计交车日期
+   *
+   * @mbg.generated 2019-08-06 10:15:30
+   */
+  private Date predict_date;
 
- /**
-  * 数据导入时间
-  *
-  * @mbg.generated 2019-07-22 16:52:54
-  */
- //private Date createTime;
+  /**
+   * 数据导入时间
+   *
+   * @mbg.generated 2019-08-06 10:15:30
+   */
+  //private Date create_time;
+
 }

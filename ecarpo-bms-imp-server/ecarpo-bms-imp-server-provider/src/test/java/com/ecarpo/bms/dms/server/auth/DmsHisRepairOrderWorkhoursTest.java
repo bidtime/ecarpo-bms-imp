@@ -25,10 +25,10 @@ public class DmsHisRepairOrderWorkhoursTest extends JUnitTestBase {
   @SuppressWarnings("rawtypes")
   @Test
   public void test_insert() throws Exception {
-    int nextInt = super.getId(1000);
+    int nextInt = 8;//super.getId(1000);
     DmsHisRepairOrderWorkhoursInsertDTO dto = new DmsHisRepairOrderWorkhoursInsertDTO();
     super.initial(dto);
-    dto.setOrderNo(String.valueOf(nextInt));
+    dto.setOrder_no(String.valueOf(nextInt));
     //dto.setCode(String.valueOf(nextInt));
     //dto.setRetrievalCode(String.valueOf(nextInt));
     print(dto);

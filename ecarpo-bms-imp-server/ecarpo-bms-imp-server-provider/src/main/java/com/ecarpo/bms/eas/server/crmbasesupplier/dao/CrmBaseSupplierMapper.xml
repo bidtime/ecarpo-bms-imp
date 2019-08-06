@@ -53,7 +53,7 @@
     delete from crm_base_supplier
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.ecarpo.bms.eas.server.crmbasesupplier.entity.CrmBaseSupplierDO">
+  <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="com.ecarpo.bms.eas.server.crmbasesupplier.entity.CrmBaseSupplierDO">
     <!-- @mbg.generated 2019-08-05 16:24:17 -->
     insert into crm_base_supplier (id, store_id, supplier_store_id, 
       name, code, tel, mobile, 
@@ -76,7 +76,7 @@
       #{remark,jdbcType=VARCHAR}, #{status,jdbcType=TINYINT}, #{is_del,jdbcType=TINYINT}, 
       #{type,jdbcType=TINYINT})
   </insert>
-  <insert id="insertSelective" parameterType="com.ecarpo.bms.eas.server.crmbasesupplier.entity.CrmBaseSupplierDO">
+  <insert id="insertSelective" useGeneratedKeys="true" keyProperty="id" parameterType="com.ecarpo.bms.eas.server.crmbasesupplier.entity.CrmBaseSupplierDO">
     <!-- @mbg.generated 2019-08-05 16:24:17 -->
     insert into crm_base_supplier
     <trim prefix="(" suffix=")" suffixOverrides=",">

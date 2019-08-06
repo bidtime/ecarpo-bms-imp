@@ -67,7 +67,7 @@
     delete from crm_member_car
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.ecarpo.bms.eas.server.crmmembercar.entity.CrmMemberCarDO">
+  <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="com.ecarpo.bms.eas.server.crmmembercar.entity.CrmMemberCarDO">
     <!-- @mbg.generated 2019-08-05 16:38:00 -->
     insert into crm_member_car (id, custom_id, store_id, 
       plate_no, province_id, vin_num, 
@@ -98,7 +98,7 @@
       #{is_shop_insurance,jdbcType=TINYINT}, #{insurance_money,jdbcType=DECIMAL}, #{insurance_time,jdbcType=TIMESTAMP}, 
       #{insurance_creator,jdbcType=INTEGER}, #{carsource_num,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.ecarpo.bms.eas.server.crmmembercar.entity.CrmMemberCarDO">
+  <insert id="insertSelective" useGeneratedKeys="true" keyProperty="id" parameterType="com.ecarpo.bms.eas.server.crmmembercar.entity.CrmMemberCarDO">
     <!-- @mbg.generated 2019-08-05 16:38:00 -->
     insert into crm_member_car
     <trim prefix="(" suffix=")" suffixOverrides=",">

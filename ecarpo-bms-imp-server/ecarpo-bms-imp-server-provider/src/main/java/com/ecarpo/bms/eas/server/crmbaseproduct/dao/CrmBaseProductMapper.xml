@@ -104,7 +104,7 @@
     delete from crm_base_product
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.ecarpo.bms.eas.server.crmbaseproduct.entity.CrmBaseProductDO">
+  <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="com.ecarpo.bms.eas.server.crmbaseproduct.entity.CrmBaseProductDO">
     <!-- @mbg.generated 2019-08-05 15:18:43 -->
     insert into crm_base_product (id, ptype, pmodel, 
       vid, store_id, supplier_id, 
@@ -157,7 +157,7 @@
       #{oil_class,jdbcType=VARCHAR}, #{rest_payment,jdbcType=DECIMAL}, #{is_free,jdbcType=TINYINT}, 
       #{send_type,jdbcType=TINYINT}, #{platform,jdbcType=TINYINT})
   </insert>
-  <insert id="insertSelective" parameterType="com.ecarpo.bms.eas.server.crmbaseproduct.entity.CrmBaseProductDO">
+  <insert id="insertSelective" useGeneratedKeys="true" keyProperty="id" parameterType="com.ecarpo.bms.eas.server.crmbaseproduct.entity.CrmBaseProductDO">
     <!-- @mbg.generated 2019-08-05 15:18:43 -->
     insert into crm_base_product
     <trim prefix="(" suffix=")" suffixOverrides=",">

@@ -14,134 +14,135 @@ import lombok.EqualsAndHashCode;
 /**
  * This class corresponds to the database table dms_his_repair_order
  *
- * @mbg.generated 2019-07-22 16:52:54
+ * @mbg.generated 2019-08-06 10:15:30
  */
 @Data
 @SuppressWarnings("serial")
 @EqualsAndHashCode(callSuper = false)
 public class DmsHisRepairOrderDO extends MyEntity {
-    /**
-     *
-     * @mbg.generated 2019-07-22 16:52:54
-     */
-    private Integer id;
 
-    /**
-     * 经销商ID
-     *
-     * @mbg.generated 2019-07-22 16:52:54
-     */
-    private Integer storeId;
+  /**
+   * @mbg.generated 2019-08-06 10:15:30
+   */
+  private Integer id;
 
-    /**
-     * 工单号
-     *
-     * @mbg.generated 2019-07-22 16:52:54
-     */
-    private String orderNo;
+  /**
+   * 经销商ID
+   *
+   * @mbg.generated 2019-08-06 10:15:30
+   */
+  private Integer store_id;
 
-    /**
-     * 维修类型
-     *
-     * @mbg.generated 2019-07-22 16:52:54
-     */
-    private String repairType;
+  /**
+   * 工单号
+   *
+   * @mbg.generated 2019-08-06 10:15:30
+   */
+  private String order_no;
 
-    /**
-     * 客户姓名
-     *
-     * @mbg.generated 2019-07-22 16:52:54
-     */
-    private String customName;
+  /**
+   * 维修类型
+   *
+   * @mbg.generated 2019-08-06 10:15:30
+   */
+  private String repair_type;
 
-    /**
-     * 客户电话
-     *
-     * @mbg.generated 2019-07-22 16:52:54
-     */
-    private String customMobile;
+  /**
+   * 客户姓名
+   *
+   * @mbg.generated 2019-08-06 10:15:30
+   */
+  private String custom_name;
 
-    /**
-     * 维修日期
-     *
-     * @mbg.generated 2019-07-22 16:52:54
-     */
-    private Date repairTime;
+  /**
+   * 客户电话
+   *
+   * @mbg.generated 2019-08-06 10:15:30
+   */
+  private String custom_mobile;
 
-    /**
-     * 车牌号
-     *
-     * @mbg.generated 2019-07-22 16:52:54
-     */
-    private String plateNo;
+  /**
+   * 维修日期
+   *
+   * @mbg.generated 2019-08-06 10:15:30
+   */
+  private Date repair_time;
 
-    /**
-     * 车型名称
-     *
-     * @mbg.generated 2019-07-22 16:52:54
-     */
-    private String modelName;
+  /**
+   * 车牌号
+   *
+   * @mbg.generated 2019-08-06 10:15:30
+   */
+  private String plate_no;
 
-    /**
-     * 行驶里程
-     *
-     * @mbg.generated 2019-07-22 16:52:54
-     */
-    private Integer mileage;
+  /**
+   * 车型名称
+   *
+   * @mbg.generated 2019-08-06 10:15:30
+   */
+  private String model_name;
 
-    /**
-     * 服务顾问
-     *
-     * @mbg.generated 2019-07-22 16:52:54
-     */
-    private String consultantName;
+  /**
+   * 行驶里程
+   *
+   * @mbg.generated 2019-08-06 10:15:30
+   */
+  private Integer mileage;
 
-    /**
-     * 配件款
-     *
-     * @mbg.generated 2019-07-22 16:52:54
-     */
-    private BigDecimal productMoney;
+  /**
+   * 服务顾问
+   *
+   * @mbg.generated 2019-08-06 10:15:30
+   */
+  private String consultant_name;
 
-    /**
-     * 工时款
-     *
-     * @mbg.generated 2019-07-22 16:52:54
-     */
-    private BigDecimal workhourMoney;
+  /**
+   * 配件款
+   *
+   * @mbg.generated 2019-08-06 10:15:30
+   */
+  private BigDecimal product_money;
 
-    /**
-     * 套餐费
-     *
-     * @mbg.generated 2019-07-22 16:52:54
-     */
-    private BigDecimal packageMoney;
+  /**
+   * 工时款
+   *
+   * @mbg.generated 2019-08-06 10:15:30
+   */
+  private BigDecimal workhour_money;
 
-    /**
-     * 附加费
-     *
-     * @mbg.generated 2019-07-22 16:52:54
-     */
-    private BigDecimal additionalMoney;
+  /**
+   * 套餐费
+   *
+   * @mbg.generated 2019-08-06 10:15:30
+   */
+  private BigDecimal package_money;
 
-    /**
-     * 总计费用
-     *
-     * @mbg.generated 2019-07-22 16:52:54
-     */
-    private BigDecimal totalDiscount;
+  /**
+   * 附加费
+   *
+   * @mbg.generated 2019-08-06 10:15:30
+   */
+  private BigDecimal additional_money;
 
-    /**
-     * 预计交车日期
-     *
-     * @mbg.generated 2019-07-22 16:52:54
-     */
-    private Date predictDate;
+  /**
+   * 总计费用
+   *
+   * @mbg.generated 2019-08-06 10:15:30
+   */
+  private BigDecimal total_discount;
 
-    /**
-     * 数据导入时间
-     *
-     * @mbg.generated 2019-07-22 16:52:54
-     */
-    //private Date createTime;
+  /**
+   * 预计交车日期
+   *
+   * @mbg.generated 2019-08-06 10:15:30
+   */
+  private Date predict_date;
+
+  /**
+   * 数据导入时间
+   *
+   * @mbg.generated 2019-08-06 10:15:30
+   */
+  //private Date create_time;
+
 }

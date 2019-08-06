@@ -28,9 +28,9 @@ public class DmsFinanceClientTest extends JUnitTestBase {
     int nextInt = super.getId(1000);
     DmsFinanceClientInsertDTO dto = new DmsFinanceClientInsertDTO();
     super.initial(dto);
-    dto.setClientCode(String.valueOf(nextInt));
+    dto.setClient_code(String.valueOf(nextInt));
     //dto.setCode(String.valueOf(nextInt));
-    dto.setRetrievalCode(String.valueOf(nextInt));
+    dto.setRetrieval_code(String.valueOf(nextInt));
     print(dto);
     ResultDTO rst = service.insert(dto);
     print(rst);

@@ -6,6 +6,7 @@ package com.ecarpo.bms;
 
 import java.util.Date;
 
+import org.apache.commons.beanutils.BeanUtils;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
@@ -43,6 +44,7 @@ public class JUnitTestBase extends AbstractJUnit4SpringContextTests {
     dto.setModifierId(1L);
     dto.setModifierName("1");
     dto.setDelFlag(0);
+    BeanUtils.copyProperty(dto, "id", null);
   }
   
   protected void initialAp(InsertOrgDTO dto) throws Exception {
@@ -62,6 +64,7 @@ public class JUnitTestBase extends AbstractJUnit4SpringContextTests {
     dto.setModifyTime(new Date());
     dto.setModifierId(1L);
     dto.setModifierName("1");
+    BeanUtils.copyProperty(dto, "id", null);
   }
   
   public int getId(int nextInt) {

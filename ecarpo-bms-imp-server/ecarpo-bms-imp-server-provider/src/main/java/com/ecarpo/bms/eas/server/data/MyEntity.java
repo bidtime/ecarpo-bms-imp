@@ -21,6 +21,8 @@ public class MyEntity extends DataEntity {
   @InitialField(value = "")
   private String desc;
   
+  private Date create_time;
+  
   @Override
   public void setCreatorId(Long creatorId) {
     super.setCreatorId(creatorId);
@@ -31,6 +33,7 @@ public class MyEntity extends DataEntity {
   public void setCreateTime(Date createTime) {
     super.setCreateTime(createTime);
     this.c_time = createTime;
+    this.create_time = createTime;
   }
 
 //  @InitialField(value = "1")

@@ -30,7 +30,7 @@ public class DmsHisRepairOrderTest extends JUnitTestBase {
     //int nextInt = super.getId(1000);
     DmsHisRepairOrderInsertDTO dto = new DmsHisRepairOrderInsertDTO();
     super.initial(dto);
-    dto.setRepairTime(new Date());
+    dto.setRepair_time(new Date());
     //dto.setCode(String.valueOf(nextInt));
     //dto.setRetrievalCode(String.valueOf(nextInt));
     print(dto);

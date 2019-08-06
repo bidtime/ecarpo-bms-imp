@@ -20,212 +20,212 @@ import lombok.EqualsAndHashCode;
 @SuppressWarnings("serial")
 @EqualsAndHashCode(callSuper = false)
 public class CrmBaseSupplierDO extends MyEntity {
-    /**
-     *
-     * @mbg.generated 2019-08-05 16:24:17
-     */
-    private Integer id;
 
-    /**
-     * 经销商ID
-     *
-     * @mbg.generated 2019-08-05 16:24:17
-     */
-    private Integer store_id;
+  /**
+   * @mbg.generated 2019-08-05 16:24:17
+   */
+  private Integer id;
 
-    /**
-     * 供货商的dealer_id
-     *
-     * @mbg.generated 2019-08-05 16:24:17
-     */
-    private Integer supplier_store_id;
+  /**
+   * 经销商ID
+   *
+   * @mbg.generated 2019-08-05 16:24:17
+   */
+  private Integer store_id;
 
-    /**
-     * 供货商名称
-     *
-     * @mbg.generated 2019-08-05 16:24:17
-     */
-    private String name;
+  /**
+   * 供货商的dealer_id
+   *
+   * @mbg.generated 2019-08-05 16:24:17
+   */
+  private Integer supplier_store_id;
 
-    /**
-     * 供货商编码（唯一）
-     *
-     * @mbg.generated 2019-08-05 16:24:17
-     */
-    private String code;
+  /**
+   * 供货商名称
+   *
+   * @mbg.generated 2019-08-05 16:24:17
+   */
+  private String name;
 
-    /**
-     * 手机
-     *
-     * @mbg.generated 2019-08-05 16:24:17
-     */
-    private String tel;
+  /**
+   * 供货商编码（唯一）
+   *
+   * @mbg.generated 2019-08-05 16:24:17
+   */
+  private String code;
 
-    /**
-     * 电话
-     *
-     * @mbg.generated 2019-08-05 16:24:17
-     */
-    private String mobile;
+  /**
+   * 手机
+   *
+   * @mbg.generated 2019-08-05 16:24:17
+   */
+  private String tel;
 
-    /**
-     * 传真
-     *
-     * @mbg.generated 2019-08-05 16:24:17
-     */
-    private String fax;
+  /**
+   * 电话
+   *
+   * @mbg.generated 2019-08-05 16:24:17
+   */
+  private String mobile;
 
-    /**
-     * 邮箱
-     *
-     * @mbg.generated 2019-08-05 16:24:17
-     */
-    private String mail;
+  /**
+   * 传真
+   *
+   * @mbg.generated 2019-08-05 16:24:17
+   */
+  private String fax;
 
-    /**
-     * 加入日期
-     *
-     * @mbg.generated 2019-08-05 16:24:17
-     */
-    private Date cdate;
+  /**
+   * 邮箱
+   *
+   * @mbg.generated 2019-08-05 16:24:17
+   */
+  private String mail;
 
-    /**
-     * 邮政编码
-     *
-     * @mbg.generated 2019-08-05 16:24:17
-     */
-    private String postcode;
+  /**
+   * 加入日期
+   *
+   * @mbg.generated 2019-08-05 16:24:17
+   */
+  private Date cdate;
 
-    /**
-     * 网址
-     *
-     * @mbg.generated 2019-08-05 16:24:17
-     */
-    private String website;
+  /**
+   * 邮政编码
+   *
+   * @mbg.generated 2019-08-05 16:24:17
+   */
+  private String postcode;
 
-    /**
-     * 联系人
-     *
-     * @mbg.generated 2019-08-05 16:24:17
-     */
-    private String linkman;
+  /**
+   * 网址
+   *
+   * @mbg.generated 2019-08-05 16:24:17
+   */
+  private String website;
 
-    /**
-     * 所属行业
-     *
-     * @mbg.generated 2019-08-05 16:24:17
-     */
-    private Integer business_id;
+  /**
+   * 联系人
+   *
+   * @mbg.generated 2019-08-05 16:24:17
+   */
+  private String linkman;
 
-    /**
-     * 工商注册号
-     *
-     * @mbg.generated 2019-08-05 16:24:17
-     */
-    private String business_num;
+  /**
+   * 所属行业
+   *
+   * @mbg.generated 2019-08-05 16:24:17
+   */
+  private Integer business_id;
 
-    /**
-     * 法定代表人
-     *
-     * @mbg.generated 2019-08-05 16:24:17
-     */
-    private String boss;
+  /**
+   * 工商注册号
+   *
+   * @mbg.generated 2019-08-05 16:24:17
+   */
+  private String business_num;
 
-    /**
-     * 省
-     *
-     * @mbg.generated 2019-08-05 16:24:17
-     */
-    private Integer province;
+  /**
+   * 法定代表人
+   *
+   * @mbg.generated 2019-08-05 16:24:17
+   */
+  private String boss;
 
-    /**
-     * 市
-     *
-     * @mbg.generated 2019-08-05 16:24:17
-     */
-    private Integer city;
+  /**
+   * 省
+   *
+   * @mbg.generated 2019-08-05 16:24:17
+   */
+  private Integer province;
 
-    /**
-     * 地址
-     *
-     * @mbg.generated 2019-08-05 16:24:17
-     */
-    private String address;
+  /**
+   * 市
+   *
+   * @mbg.generated 2019-08-05 16:24:17
+   */
+  private Integer city;
 
-    /**
-     * 开户银行
-     *
-     * @mbg.generated 2019-08-05 16:24:17
-     */
-    private String bank;
+  /**
+   * 地址
+   *
+   * @mbg.generated 2019-08-05 16:24:17
+   */
+  private String address;
 
-    /**
-     * 银行账号
-     *
-     * @mbg.generated 2019-08-05 16:24:17
-     */
-    private String account;
+  /**
+   * 开户银行
+   *
+   * @mbg.generated 2019-08-05 16:24:17
+   */
+  private String bank;
 
-    /**
-     * 开业日期
-     *
-     * @mbg.generated 2019-08-05 16:24:17
-     */
-    private Date open_date;
+  /**
+   * 银行账号
+   *
+   * @mbg.generated 2019-08-05 16:24:17
+   */
+  private String account;
 
-    /**
-     * 经营范围
-     *
-     * @mbg.generated 2019-08-05 16:24:17
-     */
-    private String business_scope;
+  /**
+   * 开业日期
+   *
+   * @mbg.generated 2019-08-05 16:24:17
+   */
+  private Date open_date;
 
-    /**
-     * 应付款
-     *
-     * @mbg.generated 2019-08-05 16:24:17
-     */
-    private BigDecimal payable;
+  /**
+   * 经营范围
+   *
+   * @mbg.generated 2019-08-05 16:24:17
+   */
+  private String business_scope;
 
-    /**
-     * 累计应付款
-     *
-     * @mbg.generated 2019-08-05 16:24:17
-     */
-    private BigDecimal acc_payable;
+  /**
+   * 应付款
+   *
+   * @mbg.generated 2019-08-05 16:24:17
+   */
+  private BigDecimal payable;
 
-    /**
-     * 累计付款
-     *
-     * @mbg.generated 2019-08-05 16:24:17
-     */
-    private BigDecimal acc_payment;
+  /**
+   * 累计应付款
+   *
+   * @mbg.generated 2019-08-05 16:24:17
+   */
+  private BigDecimal acc_payable;
 
-    /**
-     * 备注
-     *
-     * @mbg.generated 2019-08-05 16:24:17
-     */
-    //private String remark;
+  /**
+   * 累计付款
+   *
+   * @mbg.generated 2019-08-05 16:24:17
+   */
+  private BigDecimal acc_payment;
 
-    /**
-     * 状态
-     *
-     * @mbg.generated 2019-08-05 16:24:17
-     */
-    private Integer status;
+  /**
+   * 备注
+   *
+   * @mbg.generated 2019-08-05 16:24:17
+   */
+  //private String remark;
 
-    /**
-     * 删除状态（1已删2未删）
-     *
-     * @mbg.generated 2019-08-05 16:24:17
-     */
-    private Integer is_del;
+  /**
+   * 状态
+   *
+   * @mbg.generated 2019-08-05 16:24:17
+   */
+  private Integer status;
 
-    /**
-     * 供应商类型：1集团统采，2协议供货商，3临时采购
-     *
-     * @mbg.generated 2019-08-05 16:24:17
-     */
-    private Integer type;
+  /**
+   * 删除状态（1已删2未删）
+   *
+   * @mbg.generated 2019-08-05 16:24:17
+   */
+  private Integer is_del;
+
+  /**
+   * 供应商类型：1集团统采，2协议供货商，3临时采购
+   *
+   * @mbg.generated 2019-08-05 16:24:17
+   */
+  private Integer type;
 }

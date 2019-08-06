@@ -29,29 +29,29 @@
     </javaTypeResolver>
 
     <!-- dao -->
-    <!-- crm_member_store dao begin -->
+    <!-- dms_his_repair_order_workhours dao begin -->
 
-    <javaModelGenerator targetPackage="com.ecarpo.bms.eas.server.crmmemberstore.entity" targetProject="/home/working/git/github/bidtime/java/ecarpo-bms-imp/ecarpo-bms-imp-server/ecarpo-bms-imp-server-provider/src/main/java">
+    <javaModelGenerator targetPackage="com.ecarpo.bms.eas.server.dmshisrepairorderworkhours.entity" targetProject="/home/working/git/github/bidtime/java/ecarpo-bms-imp/ecarpo-bms-imp-server/ecarpo-bms-imp-server-provider/src/main/java">
       <property name="enableSubPackages" value="true" />
       <property name="trimStrings" value="true" />
       <property name="immutable" value="false"/>
     </javaModelGenerator>
 
-    <sqlMapGenerator targetPackage="com.ecarpo.bms.eas.server.crmmemberstore.dao" targetProject="/home/working/git/github/bidtime/java/ecarpo-bms-imp/ecarpo-bms-imp-server/ecarpo-bms-imp-server-provider/src/main/java">
+    <sqlMapGenerator targetPackage="com.ecarpo.bms.eas.server.dmshisrepairorderworkhours.dao" targetProject="/home/working/git/github/bidtime/java/ecarpo-bms-imp/ecarpo-bms-imp-server/ecarpo-bms-imp-server-provider/src/main/java">
       <property name="enableSubPackages" value="true" />
     </sqlMapGenerator>
 
-    <javaClientGenerator type="XMLMAPPER" targetPackage="com.ecarpo.bms.eas.server.crmmemberstore.dao" targetProject="/home/working/git/github/bidtime/java/ecarpo-bms-imp/ecarpo-bms-imp-server/ecarpo-bms-imp-server-provider/src/main/java">
+    <javaClientGenerator type="XMLMAPPER" targetPackage="com.ecarpo.bms.eas.server.dmshisrepairorderworkhours.dao" targetProject="/home/working/git/github/bidtime/java/ecarpo-bms-imp/ecarpo-bms-imp-server/ecarpo-bms-imp-server-provider/src/main/java">
       <property name="enableSubPackages" value="true" />
     </javaClientGenerator>
 
-    <table tableName="crm_member_store" domainObjectName="CrmMemberStoreDO" mapperName="CrmMemberStoreMapper"
+    <table tableName="dms_his_repair_order_workhours" domainObjectName="DmsHisRepairOrderWorkhoursDO" mapperName="DmsHisRepairOrderWorkhoursMapper"
       enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
       selectByExampleQueryId="false" enableUpdateByExample="false">
       <property name="useActualColumnNames" value="true" />
     </table>
 
-    <!-- crm_member_store dao begin -->
+    <!-- dms_his_repair_order_workhours dao begin -->
 
   </context>
 </generatorConfiguration>

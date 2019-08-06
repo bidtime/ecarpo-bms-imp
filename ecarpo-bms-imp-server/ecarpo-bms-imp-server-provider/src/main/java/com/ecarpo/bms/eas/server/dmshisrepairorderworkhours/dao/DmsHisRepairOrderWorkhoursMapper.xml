@@ -2,82 +2,82 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ecarpo.bms.eas.server.dmshisrepairorderworkhours.dao.DmsHisRepairOrderWorkhoursMapper">
   <resultMap id="BaseResultMap" type="com.ecarpo.bms.eas.server.dmshisrepairorderworkhours.entity.DmsHisRepairOrderWorkhoursDO">
-    <!-- @mbg.generated 2019-07-22 16:44:33 -->
+    <!-- @mbg.generated 2019-08-06 10:39:52 -->
     <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="store_id" jdbcType="INTEGER" property="storeId" />
-    <result column="order_no" jdbcType="VARCHAR" property="orderNo" />
-    <result column="workhour_code" jdbcType="VARCHAR" property="workhourCode" />
-    <result column="workhour_name" jdbcType="VARCHAR" property="workhourName" />
-    <result column="rated_workhour" jdbcType="DECIMAL" property="ratedWorkhour" />
-    <result column="work_price" jdbcType="DECIMAL" property="workPrice" />
-    <result column="worker_name" jdbcType="VARCHAR" property="workerName" />
+    <result column="store_id" jdbcType="INTEGER" property="store_id" />
+    <result column="order_no" jdbcType="VARCHAR" property="order_no" />
+    <result column="workhour_code" jdbcType="VARCHAR" property="workhour_code" />
+    <result column="workhour_name" jdbcType="VARCHAR" property="workhour_name" />
+    <result column="rated_workhour" jdbcType="DECIMAL" property="rated_workhour" />
+    <result column="work_price" jdbcType="DECIMAL" property="work_price" />
+    <result column="worker_name" jdbcType="VARCHAR" property="worker_name" />
     <result column="dispatcher" jdbcType="INTEGER" property="dispatcher" />
-    <result column="oper_time" jdbcType="TIMESTAMP" property="operTime" />
-    <result column="create_time" jdbcType="DATE" property="createTime" />
+    <result column="oper_time" jdbcType="TIMESTAMP" property="oper_time" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="create_time" />
   </resultMap>
   <sql id="Base_Column_List">
-    <!-- @mbg.generated 2019-07-22 16:44:33 -->
+    <!-- @mbg.generated 2019-08-06 10:39:52 -->
     id, store_id, order_no, workhour_code, workhour_name, rated_workhour, work_price, 
     worker_name, dispatcher, oper_time, create_time
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    <!-- @mbg.generated 2019-07-22 16:44:33 -->
+    <!-- @mbg.generated 2019-08-06 10:39:52 -->
     select 
     <include refid="Base_Column_List" />
     from dms_his_repair_order_workhours
     where id = #{id,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    <!-- @mbg.generated 2019-07-22 16:44:33 -->
+    <!-- @mbg.generated 2019-08-06 10:39:52 -->
     delete from dms_his_repair_order_workhours
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="com.ecarpo.bms.eas.server.dmshisrepairorderworkhours.entity.DmsHisRepairOrderWorkhoursDO">
-    <!-- @mbg.generated 2019-07-22 16:44:33 -->
+    <!-- @mbg.generated 2019-08-06 10:39:52 -->
     insert into dms_his_repair_order_workhours (id, store_id, order_no, 
       workhour_code, workhour_name, rated_workhour, 
       work_price, worker_name, dispatcher, 
       oper_time, create_time)
-    values (#{id,jdbcType=INTEGER}, #{storeId,jdbcType=INTEGER}, #{orderNo,jdbcType=VARCHAR}, 
-      #{workhourCode,jdbcType=VARCHAR}, #{workhourName,jdbcType=VARCHAR}, #{ratedWorkhour,jdbcType=DECIMAL}, 
-      #{workPrice,jdbcType=DECIMAL}, #{workerName,jdbcType=VARCHAR}, #{dispatcher,jdbcType=INTEGER}, 
-      #{operTime,jdbcType=TIMESTAMP}, #{createTime,jdbcType=DATE})
+    values (#{id,jdbcType=INTEGER}, #{store_id,jdbcType=INTEGER}, #{order_no,jdbcType=VARCHAR}, 
+      #{workhour_code,jdbcType=VARCHAR}, #{workhour_name,jdbcType=VARCHAR}, #{rated_workhour,jdbcType=DECIMAL}, 
+      #{work_price,jdbcType=DECIMAL}, #{worker_name,jdbcType=VARCHAR}, #{dispatcher,jdbcType=INTEGER}, 
+      #{oper_time,jdbcType=TIMESTAMP}, #{create_time,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" useGeneratedKeys="true" keyProperty="id" parameterType="com.ecarpo.bms.eas.server.dmshisrepairorderworkhours.entity.DmsHisRepairOrderWorkhoursDO">
-    <!-- @mbg.generated 2019-07-22 16:44:33 -->
+    <!-- @mbg.generated 2019-08-06 10:39:52 -->
     insert into dms_his_repair_order_workhours
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
         id,
       </if>
-      <if test="storeId != null">
+      <if test="store_id != null">
         store_id,
       </if>
-      <if test="orderNo != null">
+      <if test="order_no != null">
         order_no,
       </if>
-      <if test="workhourCode != null">
+      <if test="workhour_code != null">
         workhour_code,
       </if>
-      <if test="workhourName != null">
+      <if test="workhour_name != null">
         workhour_name,
       </if>
-      <if test="ratedWorkhour != null">
+      <if test="rated_workhour != null">
         rated_workhour,
       </if>
-      <if test="workPrice != null">
+      <if test="work_price != null">
         work_price,
       </if>
-      <if test="workerName != null">
+      <if test="worker_name != null">
         worker_name,
       </if>
       <if test="dispatcher != null">
         dispatcher,
       </if>
-      <if test="operTime != null">
+      <if test="oper_time != null">
         oper_time,
       </if>
-      <if test="createTime != null">
+      <if test="create_time != null">
         create_time,
       </if>
     </trim>
@@ -85,88 +85,88 @@
       <if test="id != null">
         #{id,jdbcType=INTEGER},
       </if>
-      <if test="storeId != null">
-        #{storeId,jdbcType=INTEGER},
+      <if test="store_id != null">
+        #{store_id,jdbcType=INTEGER},
       </if>
-      <if test="orderNo != null">
-        #{orderNo,jdbcType=VARCHAR},
+      <if test="order_no != null">
+        #{order_no,jdbcType=VARCHAR},
       </if>
-      <if test="workhourCode != null">
-        #{workhourCode,jdbcType=VARCHAR},
+      <if test="workhour_code != null">
+        #{workhour_code,jdbcType=VARCHAR},
       </if>
-      <if test="workhourName != null">
-        #{workhourName,jdbcType=VARCHAR},
+      <if test="workhour_name != null">
+        #{workhour_name,jdbcType=VARCHAR},
       </if>
-      <if test="ratedWorkhour != null">
-        #{ratedWorkhour,jdbcType=DECIMAL},
+      <if test="rated_workhour != null">
+        #{rated_workhour,jdbcType=DECIMAL},
       </if>
-      <if test="workPrice != null">
-        #{workPrice,jdbcType=DECIMAL},
+      <if test="work_price != null">
+        #{work_price,jdbcType=DECIMAL},
       </if>
-      <if test="workerName != null">
-        #{workerName,jdbcType=VARCHAR},
+      <if test="worker_name != null">
+        #{worker_name,jdbcType=VARCHAR},
       </if>
       <if test="dispatcher != null">
         #{dispatcher,jdbcType=INTEGER},
       </if>
-      <if test="operTime != null">
-        #{operTime,jdbcType=TIMESTAMP},
+      <if test="oper_time != null">
+        #{oper_time,jdbcType=TIMESTAMP},
       </if>
-      <if test="createTime != null">
-        #{createTime,jdbcType=DATE},
+      <if test="create_time != null">
+        #{create_time,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.ecarpo.bms.eas.server.dmshisrepairorderworkhours.entity.DmsHisRepairOrderWorkhoursDO">
-    <!-- @mbg.generated 2019-07-22 16:44:33 -->
+    <!-- @mbg.generated 2019-08-06 10:39:52 -->
     update dms_his_repair_order_workhours
     <set>
-      <if test="storeId != null">
-        store_id = #{storeId,jdbcType=INTEGER},
+      <if test="store_id != null">
+        store_id = #{store_id,jdbcType=INTEGER},
       </if>
-      <if test="orderNo != null">
-        order_no = #{orderNo,jdbcType=VARCHAR},
+      <if test="order_no != null">
+        order_no = #{order_no,jdbcType=VARCHAR},
       </if>
-      <if test="workhourCode != null">
-        workhour_code = #{workhourCode,jdbcType=VARCHAR},
+      <if test="workhour_code != null">
+        workhour_code = #{workhour_code,jdbcType=VARCHAR},
       </if>
-      <if test="workhourName != null">
-        workhour_name = #{workhourName,jdbcType=VARCHAR},
+      <if test="workhour_name != null">
+        workhour_name = #{workhour_name,jdbcType=VARCHAR},
       </if>
-      <if test="ratedWorkhour != null">
-        rated_workhour = #{ratedWorkhour,jdbcType=DECIMAL},
+      <if test="rated_workhour != null">
+        rated_workhour = #{rated_workhour,jdbcType=DECIMAL},
       </if>
-      <if test="workPrice != null">
-        work_price = #{workPrice,jdbcType=DECIMAL},
+      <if test="work_price != null">
+        work_price = #{work_price,jdbcType=DECIMAL},
       </if>
-      <if test="workerName != null">
-        worker_name = #{workerName,jdbcType=VARCHAR},
+      <if test="worker_name != null">
+        worker_name = #{worker_name,jdbcType=VARCHAR},
       </if>
       <if test="dispatcher != null">
         dispatcher = #{dispatcher,jdbcType=INTEGER},
       </if>
-      <if test="operTime != null">
-        oper_time = #{operTime,jdbcType=TIMESTAMP},
+      <if test="oper_time != null">
+        oper_time = #{oper_time,jdbcType=TIMESTAMP},
       </if>
-      <if test="createTime != null">
-        create_time = #{createTime,jdbcType=DATE},
+      <if test="create_time != null">
+        create_time = #{create_time,jdbcType=TIMESTAMP},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.ecarpo.bms.eas.server.dmshisrepairorderworkhours.entity.DmsHisRepairOrderWorkhoursDO">
-    <!-- @mbg.generated 2019-07-22 16:44:33 -->
+    <!-- @mbg.generated 2019-08-06 10:39:52 -->
     update dms_his_repair_order_workhours
-    set store_id = #{storeId,jdbcType=INTEGER},
-      order_no = #{orderNo,jdbcType=VARCHAR},
-      workhour_code = #{workhourCode,jdbcType=VARCHAR},
-      workhour_name = #{workhourName,jdbcType=VARCHAR},
-      rated_workhour = #{ratedWorkhour,jdbcType=DECIMAL},
-      work_price = #{workPrice,jdbcType=DECIMAL},
-      worker_name = #{workerName,jdbcType=VARCHAR},
+    set store_id = #{store_id,jdbcType=INTEGER},
+      order_no = #{order_no,jdbcType=VARCHAR},
+      workhour_code = #{workhour_code,jdbcType=VARCHAR},
+      workhour_name = #{workhour_name,jdbcType=VARCHAR},
+      rated_workhour = #{rated_workhour,jdbcType=DECIMAL},
+      work_price = #{work_price,jdbcType=DECIMAL},
+      worker_name = #{worker_name,jdbcType=VARCHAR},
       dispatcher = #{dispatcher,jdbcType=INTEGER},
-      oper_time = #{operTime,jdbcType=TIMESTAMP},
-      create_time = #{createTime,jdbcType=DATE}
+      oper_time = #{oper_time,jdbcType=TIMESTAMP},
+      create_time = #{create_time,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>
     
