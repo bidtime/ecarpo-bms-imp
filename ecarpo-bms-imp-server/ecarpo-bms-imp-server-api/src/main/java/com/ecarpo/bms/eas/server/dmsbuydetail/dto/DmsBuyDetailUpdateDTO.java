@@ -20,106 +20,103 @@ import lombok.EqualsAndHashCode;
 @Data
 public class DmsBuyDetailUpdateDTO extends UpdateDTO {
   /**
-  *
-  * @mbg.generated 2019-07-23 10:38:13
-  */
- //private Integer id;
+   * @mbg.generated 2019-08-06 13:48:14
+   */
+  private Integer id;
 
- /**
-  *
-  * @mbg.generated 2019-07-23 10:38:13
-  */
- private Integer storeId;
+  /**
+   * @mbg.generated 2019-08-06 13:48:14
+   */
+  private Integer store_id;
 
- /**
-  * 采购单编号，关联dms_buy表中的buy_number
-  *
-  * @mbg.generated 2019-07-23 10:38:13
-  */
- private String buyNumber;
+  /**
+   * 采购单编号，关联dms_buy表中的buy_number
+   *
+   * @mbg.generated 2019-08-06 13:48:14
+   */
+  private String buy_number;
 
- /**
-  * 产品id
-  *
-  * @mbg.generated 2019-07-23 10:38:13
-  */
- private Integer productId;
+  /**
+   * 产品id
+   *
+   * @mbg.generated 2019-08-06 13:48:14
+   */
+  private Integer product_id;
 
- /**
-  * 含税成本价
-  *
-  * @mbg.generated 2019-07-23 10:38:13
-  */
- private BigDecimal costPrice;
+  /**
+   * 含税成本价
+   *
+   * @mbg.generated 2019-08-06 13:48:14
+   */
+  private BigDecimal cost_price;
 
- /**
-  * 无税成本价
-  *
-  * @mbg.generated 2019-07-23 10:38:13
-  */
- private BigDecimal costPriceNotax;
+  /**
+   * 无税成本价
+   *
+   * @mbg.generated 2019-08-06 13:48:14
+   */
+  private BigDecimal cost_price_notax;
 
- /**
-  * 采购数量
-  *
-  * @mbg.generated 2019-07-23 10:38:13
-  */
- private BigDecimal buyCount;
+  /**
+   * 采购数量
+   *
+   * @mbg.generated 2019-08-06 13:48:14
+   */
+  private BigDecimal buy_count;
 
- /**
-  * 采购价格浮动率
-  *
-  * @mbg.generated 2019-07-23 10:38:13
-  */
- private Integer addRate;
+  /**
+   * 采购价格浮动率
+   *
+   * @mbg.generated 2019-08-06 13:48:14
+   */
+  private Integer add_rate;
 
- /**
-  * 含税金额
-  *
-  * @mbg.generated 2019-07-23 10:38:13
-  */
- private BigDecimal amount;
+  /**
+   * 含税金额
+   *
+   * @mbg.generated 2019-08-06 13:48:14
+   */
+  private BigDecimal amount;
 
- /**
-  * 不含税金额
-  *
-  * @mbg.generated 2019-07-23 10:38:13
-  */
- private BigDecimal amountNotax;
+  /**
+   * 不含税金额
+   *
+   * @mbg.generated 2019-08-06 13:48:14
+   */
+  private BigDecimal amount_notax;
 
- /**
-  * 库房id
-  *
-  * @mbg.generated 2019-07-23 10:38:13
-  */
- private Integer locationId;
+  /**
+   * 库房id
+   *
+   * @mbg.generated 2019-08-06 13:48:14
+   */
+  private Integer location_id;
 
- /**
-  * 货位名称
-  *
-  * @mbg.generated 2019-07-23 10:38:13
-  */
- private String locationName;
+  /**
+   * 货位名称
+   *
+   * @mbg.generated 2019-08-06 13:48:14
+   */
+  private String location_name;
 
- /**
-  * 添加时间
-  *
-  * @mbg.generated 2019-07-23 10:38:13
-  */
- //private Integer cTime;
+  /**
+   * 添加时间
+   *
+   * @mbg.generated 2019-08-06 13:48:14
+   */
+  //private Integer c_time;
 
- /**
-  * 处理状态
-  *
-  * @mbg.generated 2019-07-23 10:38:13
-  */
- private Integer status;
+  /**
+   * 处理状态
+   *
+   * @mbg.generated 2019-08-06 13:48:14
+   */
+  private Integer status;
 
- /**
-  * 描述
-  *
-  * @mbg.generated 2019-07-23 10:38:13
-  */
- private String desc;
-
+  /**
+   * 描述
+   *
+   * @mbg.generated 2019-08-06 13:48:14
+   */
+  //private String desc;
 }

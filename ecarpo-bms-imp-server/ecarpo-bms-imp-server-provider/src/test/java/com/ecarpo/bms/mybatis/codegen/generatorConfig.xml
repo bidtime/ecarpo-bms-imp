@@ -29,29 +29,29 @@
     </javaTypeResolver>
 
     <!-- dao -->
-    <!-- dms_storeroom_shelflocation dao begin -->
+    <!-- dms_buy_detail dao begin -->
 
-    <javaModelGenerator targetPackage="com.ecarpo.bms.eas.server.storeroomshelflocation.entity" targetProject="/home/working/git/github/bidtime/java/ecarpo-bms-imp/ecarpo-bms-imp-server/ecarpo-bms-imp-server-provider/src/main/java">
+    <javaModelGenerator targetPackage="com.ecarpo.bms.eas.server.dmsbuydetail.entity" targetProject="/home/working/git/github/bidtime/java/ecarpo-bms-imp/ecarpo-bms-imp-server/ecarpo-bms-imp-server-provider/src/main/java">
       <property name="enableSubPackages" value="true" />
       <property name="trimStrings" value="true" />
       <property name="immutable" value="false"/>
     </javaModelGenerator>
 
-    <sqlMapGenerator targetPackage="com.ecarpo.bms.eas.server.storeroomshelflocation.dao" targetProject="/home/working/git/github/bidtime/java/ecarpo-bms-imp/ecarpo-bms-imp-server/ecarpo-bms-imp-server-provider/src/main/java">
+    <sqlMapGenerator targetPackage="com.ecarpo.bms.eas.server.dmsbuydetail.dao" targetProject="/home/working/git/github/bidtime/java/ecarpo-bms-imp/ecarpo-bms-imp-server/ecarpo-bms-imp-server-provider/src/main/java">
       <property name="enableSubPackages" value="true" />
     </sqlMapGenerator>
 
-    <javaClientGenerator type="XMLMAPPER" targetPackage="com.ecarpo.bms.eas.server.storeroomshelflocation.dao" targetProject="/home/working/git/github/bidtime/java/ecarpo-bms-imp/ecarpo-bms-imp-server/ecarpo-bms-imp-server-provider/src/main/java">
+    <javaClientGenerator type="XMLMAPPER" targetPackage="com.ecarpo.bms.eas.server.dmsbuydetail.dao" targetProject="/home/working/git/github/bidtime/java/ecarpo-bms-imp/ecarpo-bms-imp-server/ecarpo-bms-imp-server-provider/src/main/java">
       <property name="enableSubPackages" value="true" />
     </javaClientGenerator>
 
-    <table tableName="dms_storeroom_shelflocation" domainObjectName="DmsStoreroomShelflocationDO" mapperName="DmsStoreroomShelflocationMapper"
+    <table tableName="dms_buy_detail" domainObjectName="DmsBuyDetailDO" mapperName="DmsBuyDetailMapper"
       enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
       selectByExampleQueryId="false" enableUpdateByExample="false">
       <property name="useActualColumnNames" value="true" />
     </table>
 
-    <!-- dms_storeroom_shelflocation dao begin -->
+    <!-- dms_buy_detail dao begin -->
 
   </context>
 </generatorConfiguration>

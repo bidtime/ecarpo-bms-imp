@@ -29,8 +29,8 @@ public class DmsBuyManager extends BaseManager<DmsBuyMapper, DmsBuyDO> {
   public Integer insertSelective(DmsBuyInsertDTO dto) throws Exception {
     DmsBuyDO u = DAOUtils2.cloneBean(DmsBuyDO.class, dto);
     Date dateSql = new java.sql.Date(new java.util.Date().getTime());
-    String buyNo = serialNumberQueueManager.getStrByParams(dateSql, dto.getStoreId(), "rk");
-    u.setBuyNumber(buyNo);
+    String buyNo = serialNumberQueueManager.getStrByParams(dateSql, dto.getStore_id(), "rk");
+    u.setBuy_number(buyNo);
     if (super.insertSelective(u)>0) {
       return u.getId();
     } else {

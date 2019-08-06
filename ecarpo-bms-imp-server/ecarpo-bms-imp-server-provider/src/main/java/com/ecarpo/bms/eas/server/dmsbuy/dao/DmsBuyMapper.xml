@@ -2,42 +2,42 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ecarpo.bms.eas.server.dmsbuy.dao.DmsBuyMapper">
   <resultMap id="BaseResultMap" type="com.ecarpo.bms.eas.server.dmsbuy.entity.DmsBuyDO">
-    <!-- @mbg.generated 2019-07-23 11:12:52 -->
+    <!-- @mbg.generated 2019-08-06 13:41:54 -->
     <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="buy_number" jdbcType="VARCHAR" property="buyNumber" />
-    <result column="store_id" jdbcType="INTEGER" property="storeId" />
-    <result column="contact_name" jdbcType="VARCHAR" property="contactName" />
-    <result column="contact_phone" jdbcType="VARCHAR" property="contactPhone" />
-    <result column="buy_type_id" jdbcType="INTEGER" property="buyTypeId" />
-    <result column="supplier_id" jdbcType="INTEGER" property="supplierId" />
-    <result column="require_reach_date" jdbcType="VARCHAR" property="requireReachDate" />
-    <result column="act_type" jdbcType="TINYINT" property="actType" />
-    <result column="is_sale_proxy" jdbcType="TINYINT" property="isSaleProxy" />
-    <result column="act_name" jdbcType="VARCHAR" property="actName" />
+    <result column="buy_number" jdbcType="VARCHAR" property="buy_number" />
+    <result column="store_id" jdbcType="INTEGER" property="store_id" />
+    <result column="contact_name" jdbcType="VARCHAR" property="contact_name" />
+    <result column="contact_phone" jdbcType="VARCHAR" property="contact_phone" />
+    <result column="buy_type_id" jdbcType="INTEGER" property="buy_type_id" />
+    <result column="supplier_id" jdbcType="INTEGER" property="supplier_id" />
+    <result column="require_reach_date" jdbcType="VARCHAR" property="require_reach_date" />
+    <result column="act_type" jdbcType="TINYINT" property="act_type" />
+    <result column="is_sale_proxy" jdbcType="TINYINT" property="is_sale_proxy" />
+    <result column="act_name" jdbcType="VARCHAR" property="act_name" />
     <result column="creator" jdbcType="INTEGER" property="creator" />
-    <result column="c_time" jdbcType="DATE" property="cTime" />
-    <result column="buyer_id" jdbcType="INTEGER" property="buyerId" />
-    <result column="buy_time" jdbcType="DATE" property="buyTime" />
+    <result column="c_time" jdbcType="TIMESTAMP" property="c_time" />
+    <result column="buyer_id" jdbcType="INTEGER" property="buyer_id" />
+    <result column="buy_time" jdbcType="TIMESTAMP" property="buy_time" />
     <result column="executor" jdbcType="INTEGER" property="executor" />
-    <result column="exec_time" jdbcType="DATE" property="execTime" />
+    <result column="exec_time" jdbcType="TIMESTAMP" property="exec_time" />
     <result column="cashier" jdbcType="INTEGER" property="cashier" />
-    <result column="cashier_time" jdbcType="DATE" property="cashierTime" />
-    <result column="receipts_no" jdbcType="VARCHAR" property="receiptsNo" />
+    <result column="cashier_time" jdbcType="TIMESTAMP" property="cashier_time" />
+    <result column="receipts_no" jdbcType="VARCHAR" property="receipts_no" />
     <result column="status" jdbcType="TINYINT" property="status" />
-    <result column="app_number" jdbcType="VARCHAR" property="appNumber" />
-    <result column="generate_from" jdbcType="VARCHAR" property="generateFrom" />
-    <result column="original_number" jdbcType="VARCHAR" property="originalNumber" />
-    <result column="delivery_address" jdbcType="VARCHAR" property="deliveryAddress" />
-    <result column="delivery_way_id" jdbcType="INTEGER" property="deliveryWayId" />
-    <result column="recipient_name" jdbcType="VARCHAR" property="recipientName" />
-    <result column="recipient_mobile" jdbcType="VARCHAR" property="recipientMobile" />
+    <result column="app_number" jdbcType="VARCHAR" property="app_number" />
+    <result column="generate_from" jdbcType="VARCHAR" property="generate_from" />
+    <result column="original_number" jdbcType="VARCHAR" property="original_number" />
+    <result column="delivery_address" jdbcType="VARCHAR" property="delivery_address" />
+    <result column="delivery_way_id" jdbcType="INTEGER" property="delivery_way_id" />
+    <result column="recipient_name" jdbcType="VARCHAR" property="recipient_name" />
+    <result column="recipient_mobile" jdbcType="VARCHAR" property="recipient_mobile" />
   </resultMap>
   <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.ecarpo.bms.eas.server.dmsbuy.entity.DmsBuyDO">
-    <!-- @mbg.generated 2019-07-23 11:12:52 -->
+    <!-- @mbg.generated 2019-08-06 13:41:54 -->
     <result column="desc" jdbcType="LONGVARCHAR" property="desc" />
   </resultMap>
   <sql id="Base_Column_List">
-    <!-- @mbg.generated 2019-07-23 11:12:52 -->
+    <!-- @mbg.generated 2019-08-06 13:41:54 -->
     id, buy_number, store_id, contact_name, contact_phone, buy_type_id, supplier_id, 
     require_reach_date, act_type, is_sale_proxy, act_name, creator, c_time, buyer_id, 
     buy_time, executor, exec_time, cashier, cashier_time, receipts_no, status, app_number, 
@@ -45,11 +45,11 @@
     recipient_mobile
   </sql>
   <sql id="Blob_Column_List">
-    <!-- @mbg.generated 2019-07-23 11:12:52 -->
+    <!-- @mbg.generated 2019-08-06 13:41:54 -->
     desc
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
-    <!-- @mbg.generated 2019-07-23 11:12:52 -->
+    <!-- @mbg.generated 2019-08-06 13:41:54 -->
     select 
     <include refid="Base_Column_List" />
     ,
@@ -58,12 +58,12 @@
     where id = #{id,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    <!-- @mbg.generated 2019-07-23 11:12:52 -->
+    <!-- @mbg.generated 2019-08-06 13:41:54 -->
     delete from dms_buy
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="com.ecarpo.bms.eas.server.dmsbuy.entity.DmsBuyDO">
-    <!-- @mbg.generated 2019-07-23 11:12:52 -->
+  <insert id="insert" parameterType="com.ecarpo.bms.eas.server.dmsbuy.entity.DmsBuyDO">
+    <!-- @mbg.generated 2019-08-06 13:41:54 -->
     insert into dms_buy (id, buy_number, store_id, 
       contact_name, contact_phone, buy_type_id, 
       supplier_id, require_reach_date, act_type, 
@@ -74,103 +74,103 @@
       app_number, generate_from, original_number, 
       delivery_address, delivery_way_id, recipient_name, 
       recipient_mobile, desc)
-    values (#{id,jdbcType=INTEGER}, #{buyNumber,jdbcType=VARCHAR}, #{storeId,jdbcType=INTEGER}, 
-      #{contactName,jdbcType=VARCHAR}, #{contactPhone,jdbcType=VARCHAR}, #{buyTypeId,jdbcType=INTEGER}, 
-      #{supplierId,jdbcType=INTEGER}, #{requireReachDate,jdbcType=VARCHAR}, #{actType,jdbcType=TINYINT}, 
-      #{isSaleProxy,jdbcType=TINYINT}, #{actName,jdbcType=VARCHAR}, #{creator,jdbcType=INTEGER}, 
-      #{cTime,jdbcType=DATE}, #{buyerId,jdbcType=INTEGER}, #{buyTime,jdbcType=DATE}, 
-      #{executor,jdbcType=INTEGER}, #{execTime,jdbcType=DATE}, #{cashier,jdbcType=INTEGER}, 
-      #{cashierTime,jdbcType=DATE}, #{receiptsNo,jdbcType=VARCHAR}, #{status,jdbcType=TINYINT}, 
-      #{appNumber,jdbcType=VARCHAR}, #{generateFrom,jdbcType=VARCHAR}, #{originalNumber,jdbcType=VARCHAR}, 
-      #{deliveryAddress,jdbcType=VARCHAR}, #{deliveryWayId,jdbcType=INTEGER}, #{recipientName,jdbcType=VARCHAR}, 
-      #{recipientMobile,jdbcType=VARCHAR}, #{desc,jdbcType=LONGVARCHAR})
+    values (#{id,jdbcType=INTEGER}, #{buy_number,jdbcType=VARCHAR}, #{store_id,jdbcType=INTEGER}, 
+      #{contact_name,jdbcType=VARCHAR}, #{contact_phone,jdbcType=VARCHAR}, #{buy_type_id,jdbcType=INTEGER}, 
+      #{supplier_id,jdbcType=INTEGER}, #{require_reach_date,jdbcType=VARCHAR}, #{act_type,jdbcType=TINYINT}, 
+      #{is_sale_proxy,jdbcType=TINYINT}, #{act_name,jdbcType=VARCHAR}, #{creator,jdbcType=INTEGER}, 
+      #{c_time,jdbcType=TIMESTAMP}, #{buyer_id,jdbcType=INTEGER}, #{buy_time,jdbcType=TIMESTAMP}, 
+      #{executor,jdbcType=INTEGER}, #{exec_time,jdbcType=TIMESTAMP}, #{cashier,jdbcType=INTEGER}, 
+      #{cashier_time,jdbcType=TIMESTAMP}, #{receipts_no,jdbcType=VARCHAR}, #{status,jdbcType=TINYINT}, 
+      #{app_number,jdbcType=VARCHAR}, #{generate_from,jdbcType=VARCHAR}, #{original_number,jdbcType=VARCHAR}, 
+      #{delivery_address,jdbcType=VARCHAR}, #{delivery_way_id,jdbcType=INTEGER}, #{recipient_name,jdbcType=VARCHAR}, 
+      #{recipient_mobile,jdbcType=VARCHAR}, #{desc,jdbcType=LONGVARCHAR})
   </insert>
-  <insert id="insertSelective" useGeneratedKeys="true" keyProperty="id" parameterType="com.ecarpo.bms.eas.server.dmsbuy.entity.DmsBuyDO">
-    <!-- @mbg.generated 2019-07-23 11:12:52 -->
+  <insert id="insertSelective" parameterType="com.ecarpo.bms.eas.server.dmsbuy.entity.DmsBuyDO">
+    <!-- @mbg.generated 2019-08-06 13:41:54 -->
     insert into dms_buy
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
         id,
       </if>
-      <if test="buyNumber != null">
+      <if test="buy_number != null">
         buy_number,
       </if>
-      <if test="storeId != null">
+      <if test="store_id != null">
         store_id,
       </if>
-      <if test="contactName != null">
+      <if test="contact_name != null">
         contact_name,
       </if>
-      <if test="contactPhone != null">
+      <if test="contact_phone != null">
         contact_phone,
       </if>
-      <if test="buyTypeId != null">
+      <if test="buy_type_id != null">
         buy_type_id,
       </if>
-      <if test="supplierId != null">
+      <if test="supplier_id != null">
         supplier_id,
       </if>
-      <if test="requireReachDate != null">
+      <if test="require_reach_date != null">
         require_reach_date,
       </if>
-      <if test="actType != null">
+      <if test="act_type != null">
         act_type,
       </if>
-      <if test="isSaleProxy != null">
+      <if test="is_sale_proxy != null">
         is_sale_proxy,
       </if>
-      <if test="actName != null">
+      <if test="act_name != null">
         act_name,
       </if>
       <if test="creator != null">
         creator,
       </if>
-      <if test="cTime != null">
+      <if test="c_time != null">
         c_time,
       </if>
-      <if test="buyerId != null">
+      <if test="buyer_id != null">
         buyer_id,
       </if>
-      <if test="buyTime != null">
+      <if test="buy_time != null">
         buy_time,
       </if>
       <if test="executor != null">
         executor,
       </if>
-      <if test="execTime != null">
+      <if test="exec_time != null">
         exec_time,
       </if>
       <if test="cashier != null">
         cashier,
       </if>
-      <if test="cashierTime != null">
+      <if test="cashier_time != null">
         cashier_time,
       </if>
-      <if test="receiptsNo != null">
+      <if test="receipts_no != null">
         receipts_no,
       </if>
       <if test="status != null">
         status,
       </if>
-      <if test="appNumber != null">
+      <if test="app_number != null">
         app_number,
       </if>
-      <if test="generateFrom != null">
+      <if test="generate_from != null">
         generate_from,
       </if>
-      <if test="originalNumber != null">
+      <if test="original_number != null">
         original_number,
       </if>
-      <if test="deliveryAddress != null">
+      <if test="delivery_address != null">
         delivery_address,
       </if>
-      <if test="deliveryWayId != null">
+      <if test="delivery_way_id != null">
         delivery_way_id,
       </if>
-      <if test="recipientName != null">
+      <if test="recipient_name != null">
         recipient_name,
       </if>
-      <if test="recipientMobile != null">
+      <if test="recipient_mobile != null">
         recipient_mobile,
       </if>
       <if test="desc != null">
@@ -181,86 +181,86 @@
       <if test="id != null">
         #{id,jdbcType=INTEGER},
       </if>
-      <if test="buyNumber != null">
-        #{buyNumber,jdbcType=VARCHAR},
+      <if test="buy_number != null">
+        #{buy_number,jdbcType=VARCHAR},
       </if>
-      <if test="storeId != null">
-        #{storeId,jdbcType=INTEGER},
+      <if test="store_id != null">
+        #{store_id,jdbcType=INTEGER},
       </if>
-      <if test="contactName != null">
-        #{contactName,jdbcType=VARCHAR},
+      <if test="contact_name != null">
+        #{contact_name,jdbcType=VARCHAR},
       </if>
-      <if test="contactPhone != null">
-        #{contactPhone,jdbcType=VARCHAR},
+      <if test="contact_phone != null">
+        #{contact_phone,jdbcType=VARCHAR},
       </if>
-      <if test="buyTypeId != null">
-        #{buyTypeId,jdbcType=INTEGER},
+      <if test="buy_type_id != null">
+        #{buy_type_id,jdbcType=INTEGER},
       </if>
-      <if test="supplierId != null">
-        #{supplierId,jdbcType=INTEGER},
+      <if test="supplier_id != null">
+        #{supplier_id,jdbcType=INTEGER},
       </if>
-      <if test="requireReachDate != null">
-        #{requireReachDate,jdbcType=VARCHAR},
+      <if test="require_reach_date != null">
+        #{require_reach_date,jdbcType=VARCHAR},
       </if>
-      <if test="actType != null">
-        #{actType,jdbcType=TINYINT},
+      <if test="act_type != null">
+        #{act_type,jdbcType=TINYINT},
       </if>
-      <if test="isSaleProxy != null">
-        #{isSaleProxy,jdbcType=TINYINT},
+      <if test="is_sale_proxy != null">
+        #{is_sale_proxy,jdbcType=TINYINT},
       </if>
-      <if test="actName != null">
-        #{actName,jdbcType=VARCHAR},
+      <if test="act_name != null">
+        #{act_name,jdbcType=VARCHAR},
       </if>
       <if test="creator != null">
         #{creator,jdbcType=INTEGER},
       </if>
-      <if test="cTime != null">
-        #{cTime,jdbcType=DATE},
+      <if test="c_time != null">
+        #{c_time,jdbcType=TIMESTAMP},
       </if>
-      <if test="buyerId != null">
-        #{buyerId,jdbcType=INTEGER},
+      <if test="buyer_id != null">
+        #{buyer_id,jdbcType=INTEGER},
       </if>
-      <if test="buyTime != null">
-        #{buyTime,jdbcType=DATE},
+      <if test="buy_time != null">
+        #{buy_time,jdbcType=TIMESTAMP},
       </if>
       <if test="executor != null">
         #{executor,jdbcType=INTEGER},
       </if>
-      <if test="execTime != null">
-        #{execTime,jdbcType=DATE},
+      <if test="exec_time != null">
+        #{exec_time,jdbcType=TIMESTAMP},
       </if>
       <if test="cashier != null">
         #{cashier,jdbcType=INTEGER},
       </if>
-      <if test="cashierTime != null">
-        #{cashierTime,jdbcType=DATE},
+      <if test="cashier_time != null">
+        #{cashier_time,jdbcType=TIMESTAMP},
       </if>
-      <if test="receiptsNo != null">
-        #{receiptsNo,jdbcType=VARCHAR},
+      <if test="receipts_no != null">
+        #{receipts_no,jdbcType=VARCHAR},
       </if>
       <if test="status != null">
         #{status,jdbcType=TINYINT},
       </if>
-      <if test="appNumber != null">
-        #{appNumber,jdbcType=VARCHAR},
+      <if test="app_number != null">
+        #{app_number,jdbcType=VARCHAR},
       </if>
-      <if test="generateFrom != null">
-        #{generateFrom,jdbcType=VARCHAR},
+      <if test="generate_from != null">
+        #{generate_from,jdbcType=VARCHAR},
       </if>
-      <if test="originalNumber != null">
-        #{originalNumber,jdbcType=VARCHAR},
+      <if test="original_number != null">
+        #{original_number,jdbcType=VARCHAR},
       </if>
-      <if test="deliveryAddress != null">
-        #{deliveryAddress,jdbcType=VARCHAR},
+      <if test="delivery_address != null">
+        #{delivery_address,jdbcType=VARCHAR},
       </if>
-      <if test="deliveryWayId != null">
-        #{deliveryWayId,jdbcType=INTEGER},
+      <if test="delivery_way_id != null">
+        #{delivery_way_id,jdbcType=INTEGER},
       </if>
-      <if test="recipientName != null">
-        #{recipientName,jdbcType=VARCHAR},
+      <if test="recipient_name != null">
+        #{recipient_name,jdbcType=VARCHAR},
       </if>
-      <if test="recipientMobile != null">
-        #{recipientMobile,jdbcType=VARCHAR},
+      <if test="recipient_mobile != null">
+        #{recipient_mobile,jdbcType=VARCHAR},
       </if>
       <if test="desc != null">
         #{desc,jdbcType=LONGVARCHAR},
@@ -268,89 +268,89 @@
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.ecarpo.bms.eas.server.dmsbuy.entity.DmsBuyDO">
-    <!-- @mbg.generated 2019-07-23 11:12:52 -->
+    <!-- @mbg.generated 2019-08-06 13:41:54 -->
     update dms_buy
     <set>
-      <if test="buyNumber != null">
-        buy_number = #{buyNumber,jdbcType=VARCHAR},
+      <if test="buy_number != null">
+        buy_number = #{buy_number,jdbcType=VARCHAR},
       </if>
-      <if test="storeId != null">
-        store_id = #{storeId,jdbcType=INTEGER},
+      <if test="store_id != null">
+        store_id = #{store_id,jdbcType=INTEGER},
       </if>
-      <if test="contactName != null">
-        contact_name = #{contactName,jdbcType=VARCHAR},
+      <if test="contact_name != null">
+        contact_name = #{contact_name,jdbcType=VARCHAR},
       </if>
-      <if test="contactPhone != null">
-        contact_phone = #{contactPhone,jdbcType=VARCHAR},
+      <if test="contact_phone != null">
+        contact_phone = #{contact_phone,jdbcType=VARCHAR},
       </if>
-      <if test="buyTypeId != null">
-        buy_type_id = #{buyTypeId,jdbcType=INTEGER},
+      <if test="buy_type_id != null">
+        buy_type_id = #{buy_type_id,jdbcType=INTEGER},
       </if>
-      <if test="supplierId != null">
-        supplier_id = #{supplierId,jdbcType=INTEGER},
+      <if test="supplier_id != null">
+        supplier_id = #{supplier_id,jdbcType=INTEGER},
       </if>
-      <if test="requireReachDate != null">
-        require_reach_date = #{requireReachDate,jdbcType=VARCHAR},
+      <if test="require_reach_date != null">
+        require_reach_date = #{require_reach_date,jdbcType=VARCHAR},
       </if>
-      <if test="actType != null">
-        act_type = #{actType,jdbcType=TINYINT},
+      <if test="act_type != null">
+        act_type = #{act_type,jdbcType=TINYINT},
       </if>
-      <if test="isSaleProxy != null">
-        is_sale_proxy = #{isSaleProxy,jdbcType=TINYINT},
+      <if test="is_sale_proxy != null">
+        is_sale_proxy = #{is_sale_proxy,jdbcType=TINYINT},
       </if>
-      <if test="actName != null">
-        act_name = #{actName,jdbcType=VARCHAR},
+      <if test="act_name != null">
+        act_name = #{act_name,jdbcType=VARCHAR},
       </if>
       <if test="creator != null">
         creator = #{creator,jdbcType=INTEGER},
       </if>
-      <if test="cTime != null">
-        c_time = #{cTime,jdbcType=DATE},
+      <if test="c_time != null">
+        c_time = #{c_time,jdbcType=TIMESTAMP},
       </if>
-      <if test="buyerId != null">
-        buyer_id = #{buyerId,jdbcType=INTEGER},
+      <if test="buyer_id != null">
+        buyer_id = #{buyer_id,jdbcType=INTEGER},
       </if>
-      <if test="buyTime != null">
-        buy_time = #{buyTime,jdbcType=DATE},
+      <if test="buy_time != null">
+        buy_time = #{buy_time,jdbcType=TIMESTAMP},
       </if>
       <if test="executor != null">
         executor = #{executor,jdbcType=INTEGER},
       </if>
-      <if test="execTime != null">
-        exec_time = #{execTime,jdbcType=DATE},
+      <if test="exec_time != null">
+        exec_time = #{exec_time,jdbcType=TIMESTAMP},
       </if>
       <if test="cashier != null">
         cashier = #{cashier,jdbcType=INTEGER},
       </if>
-      <if test="cashierTime != null">
-        cashier_time = #{cashierTime,jdbcType=DATE},
+      <if test="cashier_time != null">
+        cashier_time = #{cashier_time,jdbcType=TIMESTAMP},
       </if>
-      <if test="receiptsNo != null">
-        receipts_no = #{receiptsNo,jdbcType=VARCHAR},
+      <if test="receipts_no != null">
+        receipts_no = #{receipts_no,jdbcType=VARCHAR},
       </if>
       <if test="status != null">
         status = #{status,jdbcType=TINYINT},
       </if>
-      <if test="appNumber != null">
-        app_number = #{appNumber,jdbcType=VARCHAR},
+      <if test="app_number != null">
+        app_number = #{app_number,jdbcType=VARCHAR},
       </if>
-      <if test="generateFrom != null">
-        generate_from = #{generateFrom,jdbcType=VARCHAR},
+      <if test="generate_from != null">
+        generate_from = #{generate_from,jdbcType=VARCHAR},
       </if>
-      <if test="originalNumber != null">
-        original_number = #{originalNumber,jdbcType=VARCHAR},
+      <if test="original_number != null">
+        original_number = #{original_number,jdbcType=VARCHAR},
       </if>
-      <if test="deliveryAddress != null">
-        delivery_address = #{deliveryAddress,jdbcType=VARCHAR},
+      <if test="delivery_address != null">
+        delivery_address = #{delivery_address,jdbcType=VARCHAR},
       </if>
-      <if test="deliveryWayId != null">
-        delivery_way_id = #{deliveryWayId,jdbcType=INTEGER},
+      <if test="delivery_way_id != null">
+        delivery_way_id = #{delivery_way_id,jdbcType=INTEGER},
       </if>
-      <if test="recipientName != null">
-        recipient_name = #{recipientName,jdbcType=VARCHAR},
+      <if test="recipient_name != null">
+        recipient_name = #{recipient_name,jdbcType=VARCHAR},
       </if>
-      <if test="recipientMobile != null">
-        recipient_mobile = #{recipientMobile,jdbcType=VARCHAR},
+      <if test="recipient_mobile != null">
+        recipient_mobile = #{recipient_mobile,jdbcType=VARCHAR},
       </if>
       <if test="desc != null">
         desc = #{desc,jdbcType=LONGVARCHAR},
@@ -359,68 +359,68 @@
     where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.ecarpo.bms.eas.server.dmsbuy.entity.DmsBuyDO">
-    <!-- @mbg.generated 2019-07-23 11:12:52 -->
+    <!-- @mbg.generated 2019-08-06 13:41:54 -->
     update dms_buy
-    set buy_number = #{buyNumber,jdbcType=VARCHAR},
-      store_id = #{storeId,jdbcType=INTEGER},
-      contact_name = #{contactName,jdbcType=VARCHAR},
-      contact_phone = #{contactPhone,jdbcType=VARCHAR},
-      buy_type_id = #{buyTypeId,jdbcType=INTEGER},
-      supplier_id = #{supplierId,jdbcType=INTEGER},
-      require_reach_date = #{requireReachDate,jdbcType=VARCHAR},
-      act_type = #{actType,jdbcType=TINYINT},
-      is_sale_proxy = #{isSaleProxy,jdbcType=TINYINT},
-      act_name = #{actName,jdbcType=VARCHAR},
+    set buy_number = #{buy_number,jdbcType=VARCHAR},
+      store_id = #{store_id,jdbcType=INTEGER},
+      contact_name = #{contact_name,jdbcType=VARCHAR},
+      contact_phone = #{contact_phone,jdbcType=VARCHAR},
+      buy_type_id = #{buy_type_id,jdbcType=INTEGER},
+      supplier_id = #{supplier_id,jdbcType=INTEGER},
+      require_reach_date = #{require_reach_date,jdbcType=VARCHAR},
+      act_type = #{act_type,jdbcType=TINYINT},
+      is_sale_proxy = #{is_sale_proxy,jdbcType=TINYINT},
+      act_name = #{act_name,jdbcType=VARCHAR},
       creator = #{creator,jdbcType=INTEGER},
-      c_time = #{cTime,jdbcType=DATE},
-      buyer_id = #{buyerId,jdbcType=INTEGER},
-      buy_time = #{buyTime,jdbcType=DATE},
+      c_time = #{c_time,jdbcType=TIMESTAMP},
+      buyer_id = #{buyer_id,jdbcType=INTEGER},
+      buy_time = #{buy_time,jdbcType=TIMESTAMP},
       executor = #{executor,jdbcType=INTEGER},
-      exec_time = #{execTime,jdbcType=DATE},
+      exec_time = #{exec_time,jdbcType=TIMESTAMP},
       cashier = #{cashier,jdbcType=INTEGER},
-      cashier_time = #{cashierTime,jdbcType=DATE},
-      receipts_no = #{receiptsNo,jdbcType=VARCHAR},
+      cashier_time = #{cashier_time,jdbcType=TIMESTAMP},
+      receipts_no = #{receipts_no,jdbcType=VARCHAR},
       status = #{status,jdbcType=TINYINT},
-      app_number = #{appNumber,jdbcType=VARCHAR},
-      generate_from = #{generateFrom,jdbcType=VARCHAR},
-      original_number = #{originalNumber,jdbcType=VARCHAR},
-      delivery_address = #{deliveryAddress,jdbcType=VARCHAR},
-      delivery_way_id = #{deliveryWayId,jdbcType=INTEGER},
-      recipient_name = #{recipientName,jdbcType=VARCHAR},
-      recipient_mobile = #{recipientMobile,jdbcType=VARCHAR},
+      app_number = #{app_number,jdbcType=VARCHAR},
+      generate_from = #{generate_from,jdbcType=VARCHAR},
+      original_number = #{original_number,jdbcType=VARCHAR},
+      delivery_address = #{delivery_address,jdbcType=VARCHAR},
+      delivery_way_id = #{delivery_way_id,jdbcType=INTEGER},
+      recipient_name = #{recipient_name,jdbcType=VARCHAR},
+      recipient_mobile = #{recipient_mobile,jdbcType=VARCHAR},
       desc = #{desc,jdbcType=LONGVARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.ecarpo.bms.eas.server.dmsbuy.entity.DmsBuyDO">
-    <!-- @mbg.generated 2019-07-23 11:12:52 -->
+    <!-- @mbg.generated 2019-08-06 13:41:54 -->
     update dms_buy
-    set buy_number = #{buyNumber,jdbcType=VARCHAR},
-      store_id = #{storeId,jdbcType=INTEGER},
-      contact_name = #{contactName,jdbcType=VARCHAR},
-      contact_phone = #{contactPhone,jdbcType=VARCHAR},
-      buy_type_id = #{buyTypeId,jdbcType=INTEGER},
-      supplier_id = #{supplierId,jdbcType=INTEGER},
-      require_reach_date = #{requireReachDate,jdbcType=VARCHAR},
-      act_type = #{actType,jdbcType=TINYINT},
-      is_sale_proxy = #{isSaleProxy,jdbcType=TINYINT},
-      act_name = #{actName,jdbcType=VARCHAR},
+    set buy_number = #{buy_number,jdbcType=VARCHAR},
+      store_id = #{store_id,jdbcType=INTEGER},
+      contact_name = #{contact_name,jdbcType=VARCHAR},
+      contact_phone = #{contact_phone,jdbcType=VARCHAR},
+      buy_type_id = #{buy_type_id,jdbcType=INTEGER},
+      supplier_id = #{supplier_id,jdbcType=INTEGER},
+      require_reach_date = #{require_reach_date,jdbcType=VARCHAR},
+      act_type = #{act_type,jdbcType=TINYINT},
+      is_sale_proxy = #{is_sale_proxy,jdbcType=TINYINT},
+      act_name = #{act_name,jdbcType=VARCHAR},
       creator = #{creator,jdbcType=INTEGER},
-      c_time = #{cTime,jdbcType=DATE},
-      buyer_id = #{buyerId,jdbcType=INTEGER},
-      buy_time = #{buyTime,jdbcType=DATE},
+      c_time = #{c_time,jdbcType=TIMESTAMP},
+      buyer_id = #{buyer_id,jdbcType=INTEGER},
+      buy_time = #{buy_time,jdbcType=TIMESTAMP},
       executor = #{executor,jdbcType=INTEGER},
-      exec_time = #{execTime,jdbcType=DATE},
+      exec_time = #{exec_time,jdbcType=TIMESTAMP},
       cashier = #{cashier,jdbcType=INTEGER},
-      cashier_time = #{cashierTime,jdbcType=DATE},
-      receipts_no = #{receiptsNo,jdbcType=VARCHAR},
+      cashier_time = #{cashier_time,jdbcType=TIMESTAMP},
+      receipts_no = #{receipts_no,jdbcType=VARCHAR},
       status = #{status,jdbcType=TINYINT},
-      app_number = #{appNumber,jdbcType=VARCHAR},
-      generate_from = #{generateFrom,jdbcType=VARCHAR},
-      original_number = #{originalNumber,jdbcType=VARCHAR},
-      delivery_address = #{deliveryAddress,jdbcType=VARCHAR},
-      delivery_way_id = #{deliveryWayId,jdbcType=INTEGER},
-      recipient_name = #{recipientName,jdbcType=VARCHAR},
-      recipient_mobile = #{recipientMobile,jdbcType=VARCHAR}
+      app_number = #{app_number,jdbcType=VARCHAR},
+      generate_from = #{generate_from,jdbcType=VARCHAR},
+      original_number = #{original_number,jdbcType=VARCHAR},
+      delivery_address = #{delivery_address,jdbcType=VARCHAR},
+      delivery_way_id = #{delivery_way_id,jdbcType=INTEGER},
+      recipient_name = #{recipient_name,jdbcType=VARCHAR},
+      recipient_mobile = #{recipient_mobile,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
   
