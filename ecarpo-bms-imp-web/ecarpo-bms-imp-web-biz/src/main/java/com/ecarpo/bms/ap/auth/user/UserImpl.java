@@ -50,7 +50,7 @@ public class UserImpl implements IUser {
       return ResultDTO.error("用户名或密码不正确");
     }
     userRequest.login(req, res, user);
-    return new ResultDTO<>();
+    return new ResultDTO<>("ok");
   }
   
   @Override
@@ -89,7 +89,12 @@ public class UserImpl implements IUser {
   
   @Override
   public StateEnum getLoginState(HttpServletRequest req) throws RuntimeException {  
-    SessionLoginState sessionLogin = this.getSessionLoginState(req);
+    SessionLoginState sessionLogin = null;
+    try {
+      sessionLogin = this.getSessionLoginState(req);
+    } catch (Exception e) {
+      
+    }
     // 0:未登陆, 1:正常登陆, 2:被其它用户踢, //3: 没有权限 4: 游客访问商城
     StateEnum e = null;
     if (sessionLogin != null) {

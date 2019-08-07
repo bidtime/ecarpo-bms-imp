@@ -112,7 +112,7 @@ public class UserUtils {
     //set.add("store_id");
     //BeanUtils.copyProps(user, dto, set);
     copyProperty(dto, "c_time", new Date());
-    copyProperty(dto, "store_id", user.getStoreId());
+    //copyProperty(dto, "store_id", user.getStoreId());
   }
   
   public static void copyProperty(final Object bean, final String name, final Object value) {

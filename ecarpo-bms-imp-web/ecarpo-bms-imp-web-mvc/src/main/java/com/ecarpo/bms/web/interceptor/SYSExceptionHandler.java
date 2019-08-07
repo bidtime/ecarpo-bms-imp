@@ -92,11 +92,23 @@ public class SYSExceptionHandler {
     } else if (ex instanceof HttpMessageNotReadableException) {
       dto = MessageNotReadable;
     } else if (ex instanceof RuntimeException) {
-      String e = ex.getMessage();
-      if (e.startsWith("com.ecarpo.framework.exception")) {
-        dto = ResultDTO.error(substring(e, ":", "\n"));
-      } else {
-        dto = ERROR;
+      Throwable t1 = ex.getCause();
+      if (t1 != null) {
+        Throwable t2 = t1.getCause();
+        if (t2 != null && t2 instanceof BaseException) {
+          dto = ResultDTO.error(t2.getMessage());
+        }
+      }
+      if (dto == null) {
+        String en = ex.getClass().getName();
+        String e = ex.getMessage();
+        if (en.startsWith("com.ecarpo.framework.exception")) {
+          dto = ResultDTO.error(substring(e, ":", "\n"));
+        } else if (en.startsWith("org.springframework.dao")) {
+          dto = ResultDTO.error("DAO: 出错，" + substring(e, ":"));
+        } else {
+          dto = ResultDTO.error("系统: 出错，" + substring(e, ":"));
+        }
       }
     } else if (ex instanceof CookieNullException || ex instanceof SessionNullException) {
       dto = ResultDTO.error(ex.getMessage());
@@ -128,19 +140,27 @@ public class SYSExceptionHandler {
 //        req.getMethod(), req.getRequestURI(), req.getAttribute("body_context"));
 //  }
 
+
   private static String substring(String ex, String bef, String aft) {
+    String result = null;
     int pos = ex.indexOf(aft);
     if (pos > -1) {
       String e = ex.substring(0, pos);
       int idx = e.indexOf(bef);
       if (idx > -1) {
-        return e.substring(idx + 1);
-      } else {
-        return null;
+        result = e.substring(idx + 1);
       }
-    } else {
-      return null;
     }
+    return result;
+  }
+  
+  private static String substring(String ex, String aft) {
+    String result = null;
+    int pos = ex.indexOf(aft);
+    if (pos > -1) {
+      result = ex.substring(0, pos);
+    }
+    return result;
   }
 
   //  public ModelAndView model(String errorPage){  

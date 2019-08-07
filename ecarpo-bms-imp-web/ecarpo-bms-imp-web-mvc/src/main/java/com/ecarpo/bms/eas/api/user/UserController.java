@@ -44,7 +44,7 @@ public class UserController {
    * @throws Exception
    * @author lhf
    * @since 2019/5/22
-   * http://localhost:8082/api/eas/user/login?user=eas_sys&pwd=888
+   * http://172.16.200.233:8082/api/dms/import/user/login?user=eas_sys&pwd=888
    */
   @RequestMapping(value = "login", method = RequestMethod.GET)
   public Object login1(HttpServletRequest req, HttpServletResponse res, UserPwdDTO dto) throws Exception {
@@ -89,7 +89,9 @@ public class UserController {
    */
   @RequestMapping(value = "login", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
   public Object login2(HttpServletRequest req, HttpServletResponse res, @Valid @RequestBody UserPwdDTO dto) throws Exception {
-    return service.login(req, res, dto);
+    Object o = new ResultDTO<String>("ok");
+    return o;
+    //return service.login(req, res, dto);
   }
  
 }
