@@ -26,7 +26,7 @@ public class CrmBaseProductInsertDTO extends InsertDTO {
   *
   * @mbg.generated 2019-08-05 15:18:43
   */
- private Integer id;
+ //private Integer id;
 
  /**
   * 商品类型：material实物商品，virtual虚拟商品，deposit订金商品

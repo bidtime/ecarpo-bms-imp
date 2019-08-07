@@ -24,7 +24,7 @@ public class DmsRepairWorkhourInsertDTO extends InsertDTO {
   /**
    * @mbg.generated 2019-08-06 11:17:53
    */
-  private Integer id;
+  //private Integer id;
 
   /**
    * 经销商ID

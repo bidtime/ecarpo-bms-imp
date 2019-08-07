@@ -27,7 +27,7 @@ public class DmsHisRepairOrderInsertDTO extends InsertDTO {
   /**
    * @mbg.generated 2019-08-06 10:15:30
    */
-  private Integer id;
+  //private Integer id;
 
   /**
    * 经销商ID

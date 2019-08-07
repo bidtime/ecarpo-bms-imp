@@ -29,6 +29,7 @@ public class DmsRepairWorkhourTest extends JUnitTestBase {
     DmsRepairWorkhourInsertDTO dto = new DmsRepairWorkhourInsertDTO();
     super.initial(dto);
     dto.setWorkhour_code(String.valueOf(nextInt));
+    dto.setWorkhour_level("C");
     //dto.setRetrievalCode(String.valueOf(nextInt));
     print(dto);
     ResultDTO rst = service.insert(dto);

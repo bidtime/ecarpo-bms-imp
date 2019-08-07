@@ -25,7 +25,7 @@ public class DmsFinanceClientInsertDTO extends InsertDTO {
   /**
    * @mbg.generated 2019-08-06 09:09:27
    */
-  private Integer id;
+  //private Integer id;
 
   /**
    * @mbg.generated 2019-08-06 09:09:27
