@@ -7,11 +7,10 @@ package com.ecarpo.bms.eas.server.dmsrepairworkhour.service;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.ecarpo.bms.eas.server.dmsrepairworkhour.dao.DmsRepairWorkhourMapper;
 import com.ecarpo.bms.eas.server.dmsrepairworkhour.dto.DmsRepairWorkhourInsertDTO;
 import com.ecarpo.bms.eas.server.dmsrepairworkhour.dto.DmsRepairWorkhourUpdateDTO;
-import com.ecarpo.bms.eas.server.storeroomshelflocation.dao.DmsStoreroomShelflocationMapper;
-import com.ecarpo.bms.eas.server.storeroomshelflocation.entity.DmsStoreroomShelflocationDO;
-import com.ecarpo.bms.eas.server.storeroomshelflocation.service.DmsStoreroomShelflocationManager;
+import com.ecarpo.bms.eas.server.dmsrepairworkhour.entity.DmsRepairWorkhourDO;
 import com.ecarpo.framework.common.service.BaseImplement;
 import com.ecarpo.framework.model.ResultDTO;
 
@@ -21,7 +20,7 @@ import com.ecarpo.framework.model.ResultDTO;
  */
 @Service
 public class DmsRepairWorkhourServiceImpl extends
-  BaseImplement<DmsStoreroomShelflocationManager, DmsStoreroomShelflocationMapper, DmsStoreroomShelflocationDO> implements DmsRepairWorkhourService {
+  BaseImplement<DmsRepairWorkhourManager, DmsRepairWorkhourMapper, DmsRepairWorkhourDO> implements DmsRepairWorkhourService {
 
   @Override
   @Transactional(rollbackFor = Exception.class)
