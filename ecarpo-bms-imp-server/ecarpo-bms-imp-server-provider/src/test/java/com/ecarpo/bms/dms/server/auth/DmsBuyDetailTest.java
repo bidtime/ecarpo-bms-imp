@@ -9,6 +9,8 @@ import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.ecarpo.bms.JUnitTestBase;
+import com.ecarpo.bms.eas.server.dmsbuy.dto.DmsBuyInsertDTO;
+import com.ecarpo.bms.eas.server.dmsbuy.service.DmsBuyService;
 import com.ecarpo.bms.eas.server.dmsbuydetail.dto.DmsBuyDetailInsertDTO;
 import com.ecarpo.bms.eas.server.dmsbuydetail.service.DmsBuyDetailService;
 import com.ecarpo.framework.model.ResultDTO;
@@ -21,6 +23,23 @@ public class DmsBuyDetailTest extends JUnitTestBase {
 
   @Autowired
   private DmsBuyDetailService service;
+  
+  @Autowired
+  private DmsBuyService buyService;
+
+  public String getBuyNumber() throws Exception {
+    //int nextInt = super.getId(1000);
+    DmsBuyInsertDTO dto = new DmsBuyInsertDTO();
+    super.initial(dto);
+    print(dto);
+    ResultDTO<String> rst = buyService.insert(dto);
+    print(rst);
+    if (rst != null) {
+      return rst.getData();
+    } else {
+      return null;
+    }
+  }
 
   @SuppressWarnings("rawtypes")
   @Test
@@ -28,9 +47,7 @@ public class DmsBuyDetailTest extends JUnitTestBase {
     //int nextInt = super.getId(1000);
     DmsBuyDetailInsertDTO dto = new DmsBuyDetailInsertDTO();
     super.initial(dto);
-    //dto.setClient_code(String.valueOf(nextInt));
-    //dto.setCode(String.valueOf(nextInt));
-    //dto.setRetrieval_code(String.valueOf(nextInt));
+    dto.setBuy_number(getBuyNumber());
     print(dto);
     ResultDTO rst = service.insert(dto);
     print(rst);

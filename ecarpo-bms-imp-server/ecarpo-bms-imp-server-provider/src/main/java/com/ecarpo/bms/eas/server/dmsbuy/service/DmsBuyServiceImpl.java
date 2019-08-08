@@ -24,7 +24,7 @@ public class DmsBuyServiceImpl extends
 
   @Override
   @Transactional(rollbackFor = Exception.class)
-  public ResultDTO<Integer> insert(DmsBuyInsertDTO dto) throws Exception {
+  public ResultDTO<String> insert(DmsBuyInsertDTO dto) throws Exception {
     return new ResultDTO<>(manager.insertSelective(dto));
   }
 
