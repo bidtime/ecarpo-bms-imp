@@ -40,7 +40,7 @@ public class IUserManager extends BaseManager<IUserMapper, IUserDO> {
     return (l != null && l == 1) ? true : false;
   }
   
-  public IdNameQO getStoresByUserId(Long userId) {
+  public IdNameQO getStoresByUserId(Integer userId) {
     return mapper.getStoresByUserId(userId);
   }
 

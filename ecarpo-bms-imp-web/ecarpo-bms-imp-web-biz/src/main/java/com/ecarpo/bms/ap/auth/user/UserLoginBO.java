@@ -37,6 +37,8 @@ public class UserLoginBO implements ISessionUser, Serializable {
   private String userCode;
   
   private Integer storeId;
+  
+  private String storeName;
 
   /**
    * 用户姓名

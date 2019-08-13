@@ -348,7 +348,7 @@
    </select>
 
   <select id="existsUserByPwd" resultType="java.lang.Long">
-    select 1 from i_user
+    select id from i_user
     where 
       username = #{username,jdbcType=VARCHAR}
       and pwd = #{pwd,jdbcType=VARCHAR}

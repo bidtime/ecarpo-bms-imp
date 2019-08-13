@@ -16,6 +16,6 @@ public interface EasUserService {
   
   ResultDTO<Integer> login(UserPwdDTO dto);
   
-  ResultDTO<IdNameQO> getStoresByUserId(Long userId);
+  ResultDTO<IdNameQO> getStoresByUserId(Integer userId);
   
 }

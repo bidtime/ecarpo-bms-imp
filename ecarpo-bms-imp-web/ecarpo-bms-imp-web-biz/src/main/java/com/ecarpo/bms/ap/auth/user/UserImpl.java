@@ -47,11 +47,31 @@ public class UserImpl implements IUser {
 
   @Override
   public ResultDTO<?> login(HttpServletRequest req, HttpServletResponse res, UserPwdDTO dto) throws RuntimeException {
-    if (!userService.login(dto).isSuccess()) {
+    ResultDTO<Integer> rstUser = userService.login(dto);
+    if (!rstUser.isSuccess()) {
       return ResultDTO.error("用户名或密码不正确");
     }
+    ResultDTO<IdNameQO> rstStore = userService.getStoresByUserId(rstUser.getData());
+    if (rstStore == null) {
+      IdNameQO qo = new IdNameQO();
+      qo.setId(1);
+      qo.setName("1_store");
+      rstStore = new ResultDTO<>(qo);
+    }
+    UserLoginBO user = newBO(rstUser.getData(), rstStore.getData());
     userRequest.login(req, res, user);
     return new ResultDTO<>("ok");
+  }
+  
+  private UserLoginBO newBO(Integer userId, IdNameQO store) {
+    UserLoginBO user = new UserLoginBO();
+    user.setUserId(userId.longValue());
+    user.setUserCode("EAS-sys");
+    user.setUserName("EAS管理員");
+    user.setStoreId(store.getId());
+    user.setStoreName(store.getName());
+    //
+    return user;
   }
   
   @Override
@@ -60,7 +80,8 @@ public class UserImpl implements IUser {
     return new ResultDTO<>();
   }
   
-  public ResultDTO<IdNameQO> getStoresByUserId(Long userId) {
+  @Override
+  public ResultDTO<IdNameQO> getStoresByUserId(Integer userId) {
     return userService.getStoresByUserId(userId);
   }
   

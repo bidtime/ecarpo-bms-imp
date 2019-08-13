@@ -36,6 +36,6 @@ public interface IUser {
   
   StateEnum getLoginState(HttpServletRequest req) throws RuntimeException;
   
-  ResultDTO<IdNameQO> getStoresByUserId(Long userId);
+  ResultDTO<IdNameQO> getStoresByUserId(Integer userId);
   
 }

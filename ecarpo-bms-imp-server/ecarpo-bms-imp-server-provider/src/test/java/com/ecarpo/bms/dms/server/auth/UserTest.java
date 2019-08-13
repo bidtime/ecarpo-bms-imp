@@ -39,7 +39,7 @@ public class UserTest extends JUnitTestBase {
   @SuppressWarnings("rawtypes")
   @Test
   public void test_getStoresByUserId() throws Exception {
-    Long userId = 1L;
+    Integer userId = 1;
     ResultDTO rst = service.getStoresByUserId(userId);
     print(rst);
   }

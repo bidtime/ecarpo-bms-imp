@@ -67,7 +67,7 @@ public class UserController {
   
   @RequestMapping(value = "getStores", method = RequestMethod.GET)
   public Object getStores(UserLoginBO user) throws Exception {
-    return service.getStoresByUserId(user.getUserId());
+    return service.getStoresByUserId(user.getUserId().intValue());
   }
   
   /**

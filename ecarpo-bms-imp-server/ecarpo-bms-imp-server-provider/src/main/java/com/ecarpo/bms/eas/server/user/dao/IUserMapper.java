@@ -15,6 +15,6 @@ public interface IUserMapper extends BaseMapper<IUserDO> {
   
   Long existsUserByPwd(@Param("username") String username, @Param("pwd") String pwd);
   
-  IdNameQO getStoresByUserId(Long userId);
+  IdNameQO getStoresByUserId(Integer userId);
 
 }

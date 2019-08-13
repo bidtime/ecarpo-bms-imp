@@ -27,7 +27,7 @@ public class EasUserServiceImpl extends
   }
   
   @Override
-  public ResultDTO<IdNameQO> getStoresByUserId(Long userId) {
+  public ResultDTO<IdNameQO> getStoresByUserId(Integer userId) {
     return new ResultDTO<>(manager.getStoresByUserId(userId));
   }
 
