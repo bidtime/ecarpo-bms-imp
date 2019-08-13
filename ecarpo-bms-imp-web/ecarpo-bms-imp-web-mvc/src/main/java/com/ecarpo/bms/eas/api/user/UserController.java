@@ -65,9 +65,8 @@ public class UserController {
     return service.logout(req);
   }
   
-  @RequestMapping(value = "logout", method = RequestMethod.GET)
+  @RequestMapping(value = "getStores", method = RequestMethod.GET)
   public Object getStores(UserLoginBO user) throws Exception {
-    //UserUtils.copy(dto, user);
     return service.getStoresByUserId(user.getUserId());
   }
   
@@ -96,9 +95,7 @@ public class UserController {
    */
   @RequestMapping(value = "login", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
   public Object login2(HttpServletRequest req, HttpServletResponse res, @Valid @RequestBody UserPwdDTO dto) throws Exception {
-    Object o = new ResultDTO<String>("ok");
-    return o;
-    //return service.login(req, res, dto);
+    return service.login(req, res, dto);
   }
  
 }

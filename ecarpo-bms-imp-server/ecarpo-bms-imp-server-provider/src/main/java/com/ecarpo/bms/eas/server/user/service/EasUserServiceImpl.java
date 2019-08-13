@@ -4,8 +4,6 @@
  */
 package com.ecarpo.bms.eas.server.user.service;
 
-import java.util.List;
-
 import org.springframework.stereotype.Service;
 
 import com.ecarpo.bms.eas.server.user.dao.IUserMapper;
@@ -29,7 +27,7 @@ public class EasUserServiceImpl extends
   }
   
   @Override
-  public ResultDTO<List<IdNameQO>> getStoresByUserId(Long userId) {
+  public ResultDTO<IdNameQO> getStoresByUserId(Long userId) {
     return new ResultDTO<>(manager.getStoresByUserId(userId));
   }
 

@@ -1,7 +1,5 @@
 package com.ecarpo.bms.ap.auth.user;
 
-import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -49,7 +47,7 @@ public class UserImpl implements IUser {
 
   @Override
   public ResultDTO<?> login(HttpServletRequest req, HttpServletResponse res, UserPwdDTO dto) throws RuntimeException {
-    if (userService.login(dto).isSuccess()) {
+    if (!userService.login(dto).isSuccess()) {
       return ResultDTO.error("用户名或密码不正确");
     }
     userRequest.login(req, res, user);
@@ -62,7 +60,7 @@ public class UserImpl implements IUser {
     return new ResultDTO<>();
   }
   
-  public ResultDTO<List<IdNameQO>> getStoresByUserId(Long userId) {
+  public ResultDTO<IdNameQO> getStoresByUserId(Long userId) {
     return userService.getStoresByUserId(userId);
   }
   

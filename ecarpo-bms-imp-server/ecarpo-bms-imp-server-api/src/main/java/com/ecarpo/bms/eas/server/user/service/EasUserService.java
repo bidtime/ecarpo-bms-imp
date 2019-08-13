@@ -4,8 +4,6 @@
  */
 package com.ecarpo.bms.eas.server.user.service;
 
-import java.util.List;
-
 import com.ecarpo.bms.eas.server.user.dto.UserPwdDTO;
 import com.ecarpo.bms.eas.server.user.qo.IdNameQO;
 import com.ecarpo.framework.model.ResultDTO;
@@ -18,6 +16,6 @@ public interface EasUserService {
   
   ResultDTO<Integer> login(UserPwdDTO dto);
   
-  ResultDTO<List<IdNameQO>> getStoresByUserId(Long userId);
+  ResultDTO<IdNameQO> getStoresByUserId(Long userId);
   
 }

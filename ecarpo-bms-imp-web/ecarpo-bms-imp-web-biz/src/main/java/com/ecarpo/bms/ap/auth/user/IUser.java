@@ -4,8 +4,6 @@
  */
 package com.ecarpo.bms.ap.auth.user;
 
-import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -38,6 +36,6 @@ public interface IUser {
   
   StateEnum getLoginState(HttpServletRequest req) throws RuntimeException;
   
-  ResultDTO<List<IdNameQO>> getStoresByUserId(Long userId);
+  ResultDTO<IdNameQO> getStoresByUserId(Long userId);
   
 }

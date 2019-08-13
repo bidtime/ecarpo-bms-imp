@@ -4,8 +4,6 @@
  */
 package com.ecarpo.bms.eas.server.user.service;
 
-import java.util.List;
-
 import org.springframework.stereotype.Service;
 import org.springframework.util.DigestUtils;
 
@@ -38,11 +36,11 @@ public class IUserManager extends BaseManager<IUserMapper, IUserDO> {
 
   public boolean login(UserPwdDTO dto) {
     String pwd_md5 = DigestUtils.md5DigestAsHex(dto.getPwd().getBytes()).toLowerCase();
-    Integer l = mapper.existsUserByPwd(dto.getUser(), pwd_md5);
-    return (l != null && l==1) ? true : false;
+    Long l = mapper.existsUserByPwd(dto.getUser(), pwd_md5);
+    return (l != null && l == 1) ? true : false;
   }
   
-  public List<IdNameQO> getStoresByUserId(Long userId) {
+  public IdNameQO getStoresByUserId(Long userId) {
     return mapper.getStoresByUserId(userId);
   }
 

@@ -7,6 +7,7 @@ package com.ecarpo.bms.dms.server.auth;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.DigestUtils;
 
 import com.ecarpo.bms.JUnitTestBase;
 import com.ecarpo.bms.eas.server.user.dto.UserPwdDTO;
@@ -40,6 +41,13 @@ public class UserTest extends JUnitTestBase {
   public void test_getStoresByUserId() throws Exception {
     Long userId = 1L;
     ResultDTO rst = service.getStoresByUserId(userId);
+    print(rst);
+  }
+  
+  @Test
+  public void test_md5() throws Exception {
+    String raw = "123456";
+    String rst = DigestUtils.md5DigestAsHex(raw.getBytes());
     print(rst);
   }
   
