@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ecarpo.bms.ap.auth.user.IUser;
+import com.ecarpo.bms.ap.auth.user.UserLoginBO;
 import com.ecarpo.bms.eas.server.user.dto.UserPwdDTO;
 import com.ecarpo.framework.model.ResultDTO;
 
@@ -62,6 +63,12 @@ public class UserController {
   @RequestMapping(value = "logout", method = RequestMethod.GET)
   public Object logout(HttpServletRequest req) throws Exception {
     return service.logout(req);
+  }
+  
+  @RequestMapping(value = "logout", method = RequestMethod.GET)
+  public Object getStores(UserLoginBO user) throws Exception {
+    //UserUtils.copy(dto, user);
+    return service.getStoresByUserId(user.getUserId());
   }
   
   /**

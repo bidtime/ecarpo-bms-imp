@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ecarpo.bms.eas.server.duser.dao.DUserMapper">
+  <resultMap id="BaseResultMap" type="com.ecarpo.bms.eas.server.duser.entity.DUserDO">
+    <!-- @mbg.generated 2019-08-12 10:46:26 -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="leaderid" jdbcType="INTEGER" property="leaderid" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="user_name" jdbcType="CHAR" property="userName" />
+    <result column="mail" jdbcType="VARCHAR" property="mail" />
+    <result column="storeId" jdbcType="INTEGER" property="storeid" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="department" jdbcType="INTEGER" property="department" />
+    <result column="leaveDate" jdbcType="DATE" property="leavedate" />
+    <result column="isAdmin" jdbcType="TINYINT" property="isadmin" />
+    <result column="advisory" jdbcType="VARCHAR" property="advisory" />
+    <result column="linkType" jdbcType="CHAR" property="linktype" />
+    <result column="imageid" jdbcType="INTEGER" property="imageid" />
+    <result column="openId" jdbcType="VARCHAR" property="openid" />
+    <result column="last_visit_ezs" jdbcType="INTEGER" property="lastVisitEzs" />
+    <result column="iswx" jdbcType="TINYINT" property="iswx" />
+    <result column="state" jdbcType="CHAR" property="state" />
+    <result column="addtime" jdbcType="TIMESTAMP" property="addtime" />
+    <result column="login_time" jdbcType="TIMESTAMP" property="loginTime" />
+    <result column="type" jdbcType="TINYINT" property="type" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!-- @mbg.generated 2019-08-12 10:46:26 -->
+    id, leaderid, user_id, user_name, mail, storeId, name, phone, department, leaveDate, 
+    isAdmin, advisory, linkType, imageid, openId, last_visit_ezs, iswx, state, addtime, 
+    login_time, type
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!-- @mbg.generated 2019-08-12 10:46:26 -->
+    select 
+    <include refid="Base_Column_List" />
+    from d_user
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!-- @mbg.generated 2019-08-12 10:46:26 -->
+    delete from d_user
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="com.ecarpo.bms.eas.server.duser.entity.DUserDO">
+    <!-- @mbg.generated 2019-08-12 10:46:26 -->
+    insert into d_user (id, leaderid, user_id, 
+      user_name, mail, storeId, 
+      name, phone, department, 
+      leaveDate, isAdmin, advisory, 
+      linkType, imageid, openId, 
+      last_visit_ezs, iswx, state, 
+      addtime, login_time, type
+      )
+    values (#{id,jdbcType=INTEGER}, #{leaderid,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, 
+      #{userName,jdbcType=CHAR}, #{mail,jdbcType=VARCHAR}, #{storeid,jdbcType=INTEGER}, 
+      #{name,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{department,jdbcType=INTEGER}, 
+      #{leavedate,jdbcType=DATE}, #{isadmin,jdbcType=TINYINT}, #{advisory,jdbcType=VARCHAR}, 
+      #{linktype,jdbcType=CHAR}, #{imageid,jdbcType=INTEGER}, #{openid,jdbcType=VARCHAR}, 
+      #{lastVisitEzs,jdbcType=INTEGER}, #{iswx,jdbcType=TINYINT}, #{state,jdbcType=CHAR}, 
+      #{addtime,jdbcType=TIMESTAMP}, #{loginTime,jdbcType=TIMESTAMP}, #{type,jdbcType=TINYINT}
+      )
+  </insert>
+  <insert id="insertSelective" useGeneratedKeys="true" keyProperty="id" parameterType="com.ecarpo.bms.eas.server.duser.entity.DUserDO">
+    <!-- @mbg.generated 2019-08-12 10:46:26 -->
+    insert into d_user
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="leaderid != null">
+        leaderid,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="userName != null">
+        user_name,
+      </if>
+      <if test="mail != null">
+        mail,
+      </if>
+      <if test="storeid != null">
+        storeId,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="phone != null">
+        phone,
+      </if>
+      <if test="department != null">
+        department,
+      </if>
+      <if test="leavedate != null">
+        leaveDate,
+      </if>
+      <if test="isadmin != null">
+        isAdmin,
+      </if>
+      <if test="advisory != null">
+        advisory,
+      </if>
+      <if test="linktype != null">
+        linkType,
+      </if>
+      <if test="imageid != null">
+        imageid,
+      </if>
+      <if test="openid != null">
+        openId,
+      </if>
+      <if test="lastVisitEzs != null">
+        last_visit_ezs,
+      </if>
+      <if test="iswx != null">
+        iswx,
+      </if>
+      <if test="state != null">
+        state,
+      </if>
+      <if test="addtime != null">
+        addtime,
+      </if>
+      <if test="loginTime != null">
+        login_time,
+      </if>
+      <if test="type != null">
+        type,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="leaderid != null">
+        #{leaderid,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="userName != null">
+        #{userName,jdbcType=CHAR},
+      </if>
+      <if test="mail != null">
+        #{mail,jdbcType=VARCHAR},
+      </if>
+      <if test="storeid != null">
+        #{storeid,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="department != null">
+        #{department,jdbcType=INTEGER},
+      </if>
+      <if test="leavedate != null">
+        #{leavedate,jdbcType=DATE},
+      </if>
+      <if test="isadmin != null">
+        #{isadmin,jdbcType=TINYINT},
+      </if>
+      <if test="advisory != null">
+        #{advisory,jdbcType=VARCHAR},
+      </if>
+      <if test="linktype != null">
+        #{linktype,jdbcType=CHAR},
+      </if>
+      <if test="imageid != null">
+        #{imageid,jdbcType=INTEGER},
+      </if>
+      <if test="openid != null">
+        #{openid,jdbcType=VARCHAR},
+      </if>
+      <if test="lastVisitEzs != null">
+        #{lastVisitEzs,jdbcType=INTEGER},
+      </if>
+      <if test="iswx != null">
+        #{iswx,jdbcType=TINYINT},
+      </if>
+      <if test="state != null">
+        #{state,jdbcType=CHAR},
+      </if>
+      <if test="addtime != null">
+        #{addtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="loginTime != null">
+        #{loginTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=TINYINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ecarpo.bms.eas.server.duser.entity.DUserDO">
+    <!-- @mbg.generated 2019-08-12 10:46:26 -->
+    update d_user
+    <set>
+      <if test="leaderid != null">
+        leaderid = #{leaderid,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="userName != null">
+        user_name = #{userName,jdbcType=CHAR},
+      </if>
+      <if test="mail != null">
+        mail = #{mail,jdbcType=VARCHAR},
+      </if>
+      <if test="storeid != null">
+        storeId = #{storeid,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="department != null">
+        department = #{department,jdbcType=INTEGER},
+      </if>
+      <if test="leavedate != null">
+        leaveDate = #{leavedate,jdbcType=DATE},
+      </if>
+      <if test="isadmin != null">
+        isAdmin = #{isadmin,jdbcType=TINYINT},
+      </if>
+      <if test="advisory != null">
+        advisory = #{advisory,jdbcType=VARCHAR},
+      </if>
+      <if test="linktype != null">
+        linkType = #{linktype,jdbcType=CHAR},
+      </if>
+      <if test="imageid != null">
+        imageid = #{imageid,jdbcType=INTEGER},
+      </if>
+      <if test="openid != null">
+        openId = #{openid,jdbcType=VARCHAR},
+      </if>
+      <if test="lastVisitEzs != null">
+        last_visit_ezs = #{lastVisitEzs,jdbcType=INTEGER},
+      </if>
+      <if test="iswx != null">
+        iswx = #{iswx,jdbcType=TINYINT},
+      </if>
+      <if test="state != null">
+        state = #{state,jdbcType=CHAR},
+      </if>
+      <if test="addtime != null">
+        addtime = #{addtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="loginTime != null">
+        login_time = #{loginTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="type != null">
+        type = #{type,jdbcType=TINYINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ecarpo.bms.eas.server.duser.entity.DUserDO">
+    <!-- @mbg.generated 2019-08-12 10:46:26 -->
+    update d_user
+    set leaderid = #{leaderid,jdbcType=INTEGER},
+      user_id = #{userId,jdbcType=INTEGER},
+      user_name = #{userName,jdbcType=CHAR},
+      mail = #{mail,jdbcType=VARCHAR},
+      storeId = #{storeid,jdbcType=INTEGER},
+      name = #{name,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=VARCHAR},
+      department = #{department,jdbcType=INTEGER},
+      leaveDate = #{leavedate,jdbcType=DATE},
+      isAdmin = #{isadmin,jdbcType=TINYINT},
+      advisory = #{advisory,jdbcType=VARCHAR},
+      linkType = #{linktype,jdbcType=CHAR},
+      imageid = #{imageid,jdbcType=INTEGER},
+      openId = #{openid,jdbcType=VARCHAR},
+      last_visit_ezs = #{lastVisitEzs,jdbcType=INTEGER},
+      iswx = #{iswx,jdbcType=TINYINT},
+      state = #{state,jdbcType=CHAR},
+      addtime = #{addtime,jdbcType=TIMESTAMP},
+      login_time = #{loginTime,jdbcType=TIMESTAMP},
+      type = #{type,jdbcType=TINYINT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+    
+  <!--user define   -->
+
+  <select id="existsByCode" resultType="java.lang.Long">
+    select 1 from i_user
+    where code = #{code,jdbcType=VARCHAR}
+    limit 0, 1
+  </select>
+ 
+</mapper>

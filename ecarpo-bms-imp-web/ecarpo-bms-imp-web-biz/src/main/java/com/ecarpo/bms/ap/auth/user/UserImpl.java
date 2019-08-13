@@ -1,5 +1,7 @@
 package com.ecarpo.bms.ap.auth.user;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -11,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ecarpo.bms.eas.server.user.dto.UserPwdDTO;
+import com.ecarpo.bms.eas.server.user.qo.IdNameQO;
 import com.ecarpo.bms.eas.server.user.service.EasUserService;
 import com.ecarpo.framework.model.ResultDTO;
 
@@ -57,6 +60,10 @@ public class UserImpl implements IUser {
   public ResultDTO<?> logout(HttpServletRequest req) throws RuntimeException {
     userRequest.logout(req);
     return new ResultDTO<>();
+  }
+  
+  public ResultDTO<List<IdNameQO>> getStoresByUserId(Long userId) {
+    return userService.getStoresByUserId(userId);
   }
   
   @Override

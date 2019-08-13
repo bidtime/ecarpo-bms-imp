@@ -1,0 +1,1006 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ecarpo.bms.eas.server.crmcustom.dao.CrmCustomMapper">
+  <resultMap id="BaseResultMap" type="com.ecarpo.bms.eas.server.crmcustom.entity.CrmCustomDO">
+    <!-- @mbg.generated 2019-08-12 16:07:37 -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="chatid" jdbcType="CHAR" property="chatid" />
+    <result column="store_id" jdbcType="INTEGER" property="store_id" />
+    <result column="province_id" jdbcType="TINYINT" property="province_id" />
+    <result column="city_id" jdbcType="SMALLINT" property="city_id" />
+    <result column="district_id" jdbcType="INTEGER" property="district_id" />
+    <result column="cgroup" jdbcType="INTEGER" property="cgroup" />
+    <result column="ccategory" jdbcType="INTEGER" property="ccategory" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="birth" jdbcType="DATE" property="birth" />
+    <result column="sex" jdbcType="TINYINT" property="sex" />
+    <result column="idcard" jdbcType="VARCHAR" property="idcard" />
+    <result column="tel" jdbcType="VARCHAR" property="tel" />
+    <result column="fax" jdbcType="VARCHAR" property="fax" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="postcode" jdbcType="VARCHAR" property="postcode" />
+    <result column="mobile" jdbcType="VARCHAR" property="mobile" />
+    <result column="pwd" jdbcType="VARCHAR" property="pwd" />
+    <result column="mail" jdbcType="VARCHAR" property="mail" />
+    <result column="weixin" jdbcType="VARCHAR" property="weixin" />
+    <result column="is_weixin_bind" jdbcType="TINYINT" property="is_weixin_bind" />
+    <result column="is_weixin_first_bind" jdbcType="TINYINT" property="is_weixin_first_bind" />
+    <result column="appsec" jdbcType="VARCHAR" property="appsec" />
+    <result column="consultant" jdbcType="VARCHAR" property="consultant" />
+    <result column="salesman" jdbcType="INTEGER" property="salesman" />
+    <result column="intro" jdbcType="VARCHAR" property="intro" />
+    <result column="custom_level" jdbcType="VARCHAR" property="custom_level" />
+    <result column="clues" jdbcType="VARCHAR" property="clues" />
+    <result column="source_id" jdbcType="INTEGER" property="source_id" />
+    <result column="jobs_id" jdbcType="INTEGER" property="jobs_id" />
+    <result column="business_type_id" jdbcType="INTEGER" property="business_type_id" />
+    <result column="company" jdbcType="VARCHAR" property="company" />
+    <result column="role" jdbcType="VARCHAR" property="role" />
+    <result column="is_keyrole" jdbcType="TINYINT" property="is_keyrole" />
+    <result column="income" jdbcType="TINYINT" property="income" />
+    <result column="home_status" jdbcType="TINYINT" property="home_status" />
+    <result column="edu_id" jdbcType="TINYINT" property="edu_id" />
+    <result column="ctime" jdbcType="TIMESTAMP" property="ctime" />
+    <result column="cdate" jdbcType="DATE" property="cdate" />
+    <result column="join_date" jdbcType="DATE" property="join_date" />
+    <result column="points" jdbcType="INTEGER" property="points" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="license_issue_date" jdbcType="DATE" property="license_issue_date" />
+    <result column="license_expire_date" jdbcType="DATE" property="license_expire_date" />
+    <result column="contact_style" jdbcType="TINYINT" property="contact_style" />
+    <result column="contact_time" jdbcType="TINYINT" property="contact_time" />
+    <result column="wedding_date" jdbcType="DATE" property="wedding_date" />
+    <result column="custom_type" jdbcType="TINYINT" property="custom_type" />
+    <result column="vouchers" jdbcType="DECIMAL" property="vouchers" />
+    <result column="top_up" jdbcType="DECIMAL" property="top_up" />
+    <result column="pre_top_up" jdbcType="DECIMAL" property="pre_top_up" />
+    <result column="discount" jdbcType="DECIMAL" property="discount" />
+    <result column="working_discount" jdbcType="INTEGER" property="working_discount" />
+    <result column="wording_coupon" jdbcType="DECIMAL" property="wording_coupon" />
+    <result column="acc_discount" jdbcType="INTEGER" property="acc_discount" />
+    <result column="acc_coupon" jdbcType="DECIMAL" property="acc_coupon" />
+    <result column="has_payed" jdbcType="DECIMAL" property="has_payed" />
+    <result column="level" jdbcType="INTEGER" property="level" />
+    <result column="card_num" jdbcType="VARCHAR" property="card_num" />
+    <result column="entity_card_num" jdbcType="VARCHAR" property="entity_card_num" />
+    <result column="actual_cost" jdbcType="INTEGER" property="actual_cost" />
+    <result column="admission" jdbcType="TINYINT" property="admission" />
+    <result column="card_pwd" jdbcType="VARCHAR" property="card_pwd" />
+    <result column="is_entity" jdbcType="TINYINT" property="is_entity" />
+    <result column="card_status" jdbcType="TINYINT" property="card_status" />
+    <result column="card_s_valid" jdbcType="DATE" property="card_s_valid" />
+    <result column="card_e_valid" jdbcType="DATE" property="card_e_valid" />
+    <result column="card_alive" jdbcType="DATE" property="card_alive" />
+    <result column="is_cancel" jdbcType="TINYINT" property="is_cancel" />
+    <result column="cancel_reason_id" jdbcType="TINYINT" property="cancel_reason_id" />
+    <result column="cancel_reason" jdbcType="VARCHAR" property="cancel_reason" />
+    <result column="working_sum" jdbcType="DECIMAL" property="working_sum" />
+    <result column="staff" jdbcType="INTEGER" property="staff" />
+    <result column="wx_source" jdbcType="TINYINT" property="wx_source" />
+    <result column="dms_mark" jdbcType="CHAR" property="dms_mark" />
+    <result column="dms_remark" jdbcType="VARCHAR" property="dms_remark" />
+    <result column="cumulative_debts" jdbcType="DECIMAL" property="cumulative_debts" />
+    <result column="cumulative_pay" jdbcType="DECIMAL" property="cumulative_pay" />
+    <result column="current_debts" jdbcType="DECIMAL" property="current_debts" />
+    <result column="is_big_custom" jdbcType="TINYINT" property="is_big_custom" />
+    <result column="source_name" jdbcType="VARCHAR" property="source_name" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!-- @mbg.generated 2019-08-12 16:07:37 -->
+    id, chatid, store_id, province_id, city_id, district_id, cgroup, ccategory, name, 
+    birth, sex, idcard, tel, fax, address, postcode, mobile, pwd, mail, weixin, is_weixin_bind, 
+    is_weixin_first_bind, appsec, consultant, salesman, intro, custom_level, clues, source_id, 
+    jobs_id, business_type_id, company, role, is_keyrole, income, home_status, edu_id, 
+    ctime, cdate, join_date, points, remark, license_issue_date, license_expire_date, 
+    contact_style, contact_time, wedding_date, custom_type, vouchers, top_up, pre_top_up, 
+    discount, working_discount, wording_coupon, acc_discount, acc_coupon, has_payed, 
+    level, card_num, entity_card_num, actual_cost, admission, card_pwd, is_entity, card_status, 
+    card_s_valid, card_e_valid, card_alive, is_cancel, cancel_reason_id, cancel_reason, 
+    working_sum, staff, wx_source, dms_mark, dms_remark, cumulative_debts, cumulative_pay, 
+    current_debts, is_big_custom, source_name
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!-- @mbg.generated 2019-08-12 16:07:37 -->
+    select 
+    <include refid="Base_Column_List" />
+    from crm_custom
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!-- @mbg.generated 2019-08-12 16:07:37 -->
+    delete from crm_custom
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="com.ecarpo.bms.eas.server.crmcustom.entity.CrmCustomDO">
+    <!-- @mbg.generated 2019-08-12 16:07:37 -->
+    insert into crm_custom (id, chatid, store_id, 
+      province_id, city_id, district_id, 
+      cgroup, ccategory, name, 
+      birth, sex, idcard, tel, 
+      fax, address, postcode, 
+      mobile, pwd, mail, 
+      weixin, is_weixin_bind, is_weixin_first_bind, 
+      appsec, consultant, salesman, 
+      intro, custom_level, clues, 
+      source_id, jobs_id, business_type_id, 
+      company, role, is_keyrole, 
+      income, home_status, edu_id, 
+      ctime, cdate, join_date, 
+      points, remark, license_issue_date, 
+      license_expire_date, contact_style, contact_time, 
+      wedding_date, custom_type, vouchers, 
+      top_up, pre_top_up, discount, 
+      working_discount, wording_coupon, acc_discount, 
+      acc_coupon, has_payed, level, 
+      card_num, entity_card_num, actual_cost, 
+      admission, card_pwd, is_entity, 
+      card_status, card_s_valid, card_e_valid, 
+      card_alive, is_cancel, cancel_reason_id, 
+      cancel_reason, working_sum, staff, 
+      wx_source, dms_mark, dms_remark, 
+      cumulative_debts, cumulative_pay, current_debts, 
+      is_big_custom, source_name)
+    values (#{id,jdbcType=INTEGER}, #{chatid,jdbcType=CHAR}, #{store_id,jdbcType=INTEGER}, 
+      #{province_id,jdbcType=TINYINT}, #{city_id,jdbcType=SMALLINT}, #{district_id,jdbcType=INTEGER}, 
+      #{cgroup,jdbcType=INTEGER}, #{ccategory,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, 
+      #{birth,jdbcType=DATE}, #{sex,jdbcType=TINYINT}, #{idcard,jdbcType=VARCHAR}, #{tel,jdbcType=VARCHAR}, 
+      #{fax,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, #{postcode,jdbcType=VARCHAR}, 
+      #{mobile,jdbcType=VARCHAR}, #{pwd,jdbcType=VARCHAR}, #{mail,jdbcType=VARCHAR}, 
+      #{weixin,jdbcType=VARCHAR}, #{is_weixin_bind,jdbcType=TINYINT}, #{is_weixin_first_bind,jdbcType=TINYINT}, 
+      #{appsec,jdbcType=VARCHAR}, #{consultant,jdbcType=VARCHAR}, #{salesman,jdbcType=INTEGER}, 
+      #{intro,jdbcType=VARCHAR}, #{custom_level,jdbcType=VARCHAR}, #{clues,jdbcType=VARCHAR}, 
+      #{source_id,jdbcType=INTEGER}, #{jobs_id,jdbcType=INTEGER}, #{business_type_id,jdbcType=INTEGER}, 
+      #{company,jdbcType=VARCHAR}, #{role,jdbcType=VARCHAR}, #{is_keyrole,jdbcType=TINYINT}, 
+      #{income,jdbcType=TINYINT}, #{home_status,jdbcType=TINYINT}, #{edu_id,jdbcType=TINYINT}, 
+      #{ctime,jdbcType=TIMESTAMP}, #{cdate,jdbcType=DATE}, #{join_date,jdbcType=DATE}, 
+      #{points,jdbcType=INTEGER}, #{remark,jdbcType=VARCHAR}, #{license_issue_date,jdbcType=DATE}, 
+      #{license_expire_date,jdbcType=DATE}, #{contact_style,jdbcType=TINYINT}, #{contact_time,jdbcType=TINYINT}, 
+      #{wedding_date,jdbcType=DATE}, #{custom_type,jdbcType=TINYINT}, #{vouchers,jdbcType=DECIMAL}, 
+      #{top_up,jdbcType=DECIMAL}, #{pre_top_up,jdbcType=DECIMAL}, #{discount,jdbcType=DECIMAL}, 
+      #{working_discount,jdbcType=INTEGER}, #{wording_coupon,jdbcType=DECIMAL}, #{acc_discount,jdbcType=INTEGER}, 
+      #{acc_coupon,jdbcType=DECIMAL}, #{has_payed,jdbcType=DECIMAL}, #{level,jdbcType=INTEGER}, 
+      #{card_num,jdbcType=VARCHAR}, #{entity_card_num,jdbcType=VARCHAR}, #{actual_cost,jdbcType=INTEGER}, 
+      #{admission,jdbcType=TINYINT}, #{card_pwd,jdbcType=VARCHAR}, #{is_entity,jdbcType=TINYINT}, 
+      #{card_status,jdbcType=TINYINT}, #{card_s_valid,jdbcType=DATE}, #{card_e_valid,jdbcType=DATE}, 
+      #{card_alive,jdbcType=DATE}, #{is_cancel,jdbcType=TINYINT}, #{cancel_reason_id,jdbcType=TINYINT}, 
+      #{cancel_reason,jdbcType=VARCHAR}, #{working_sum,jdbcType=DECIMAL}, #{staff,jdbcType=INTEGER}, 
+      #{wx_source,jdbcType=TINYINT}, #{dms_mark,jdbcType=CHAR}, #{dms_remark,jdbcType=VARCHAR}, 
+      #{cumulative_debts,jdbcType=DECIMAL}, #{cumulative_pay,jdbcType=DECIMAL}, #{current_debts,jdbcType=DECIMAL}, 
+      #{is_big_custom,jdbcType=TINYINT}, #{source_name,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" useGeneratedKeys="true" keyProperty="id" parameterType="com.ecarpo.bms.eas.server.crmcustom.entity.CrmCustomDO">
+    <!-- @mbg.generated 2019-08-12 16:07:37 -->
+    insert into crm_custom
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="chatid != null">
+        chatid,
+      </if>
+      <if test="store_id != null">
+        store_id,
+      </if>
+      <if test="province_id != null">
+        province_id,
+      </if>
+      <if test="city_id != null">
+        city_id,
+      </if>
+      <if test="district_id != null">
+        district_id,
+      </if>
+      <if test="cgroup != null">
+        cgroup,
+      </if>
+      <if test="ccategory != null">
+        ccategory,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="birth != null">
+        birth,
+      </if>
+      <if test="sex != null">
+        sex,
+      </if>
+      <if test="idcard != null">
+        idcard,
+      </if>
+      <if test="tel != null">
+        tel,
+      </if>
+      <if test="fax != null">
+        fax,
+      </if>
+      <if test="address != null">
+        address,
+      </if>
+      <if test="postcode != null">
+        postcode,
+      </if>
+      <if test="mobile != null">
+        mobile,
+      </if>
+      <if test="pwd != null">
+        pwd,
+      </if>
+      <if test="mail != null">
+        mail,
+      </if>
+      <if test="weixin != null">
+        weixin,
+      </if>
+      <if test="is_weixin_bind != null">
+        is_weixin_bind,
+      </if>
+      <if test="is_weixin_first_bind != null">
+        is_weixin_first_bind,
+      </if>
+      <if test="appsec != null">
+        appsec,
+      </if>
+      <if test="consultant != null">
+        consultant,
+      </if>
+      <if test="salesman != null">
+        salesman,
+      </if>
+      <if test="intro != null">
+        intro,
+      </if>
+      <if test="custom_level != null">
+        custom_level,
+      </if>
+      <if test="clues != null">
+        clues,
+      </if>
+      <if test="source_id != null">
+        source_id,
+      </if>
+      <if test="jobs_id != null">
+        jobs_id,
+      </if>
+      <if test="business_type_id != null">
+        business_type_id,
+      </if>
+      <if test="company != null">
+        company,
+      </if>
+      <if test="role != null">
+        role,
+      </if>
+      <if test="is_keyrole != null">
+        is_keyrole,
+      </if>
+      <if test="income != null">
+        income,
+      </if>
+      <if test="home_status != null">
+        home_status,
+      </if>
+      <if test="edu_id != null">
+        edu_id,
+      </if>
+      <if test="ctime != null">
+        ctime,
+      </if>
+      <if test="cdate != null">
+        cdate,
+      </if>
+      <if test="join_date != null">
+        join_date,
+      </if>
+      <if test="points != null">
+        points,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+      <if test="license_issue_date != null">
+        license_issue_date,
+      </if>
+      <if test="license_expire_date != null">
+        license_expire_date,
+      </if>
+      <if test="contact_style != null">
+        contact_style,
+      </if>
+      <if test="contact_time != null">
+        contact_time,
+      </if>
+      <if test="wedding_date != null">
+        wedding_date,
+      </if>
+      <if test="custom_type != null">
+        custom_type,
+      </if>
+      <if test="vouchers != null">
+        vouchers,
+      </if>
+      <if test="top_up != null">
+        top_up,
+      </if>
+      <if test="pre_top_up != null">
+        pre_top_up,
+      </if>
+      <if test="discount != null">
+        discount,
+      </if>
+      <if test="working_discount != null">
+        working_discount,
+      </if>
+      <if test="wording_coupon != null">
+        wording_coupon,
+      </if>
+      <if test="acc_discount != null">
+        acc_discount,
+      </if>
+      <if test="acc_coupon != null">
+        acc_coupon,
+      </if>
+      <if test="has_payed != null">
+        has_payed,
+      </if>
+      <if test="level != null">
+        level,
+      </if>
+      <if test="card_num != null">
+        card_num,
+      </if>
+      <if test="entity_card_num != null">
+        entity_card_num,
+      </if>
+      <if test="actual_cost != null">
+        actual_cost,
+      </if>
+      <if test="admission != null">
+        admission,
+      </if>
+      <if test="card_pwd != null">
+        card_pwd,
+      </if>
+      <if test="is_entity != null">
+        is_entity,
+      </if>
+      <if test="card_status != null">
+        card_status,
+      </if>
+      <if test="card_s_valid != null">
+        card_s_valid,
+      </if>
+      <if test="card_e_valid != null">
+        card_e_valid,
+      </if>
+      <if test="card_alive != null">
+        card_alive,
+      </if>
+      <if test="is_cancel != null">
+        is_cancel,
+      </if>
+      <if test="cancel_reason_id != null">
+        cancel_reason_id,
+      </if>
+      <if test="cancel_reason != null">
+        cancel_reason,
+      </if>
+      <if test="working_sum != null">
+        working_sum,
+      </if>
+      <if test="staff != null">
+        staff,
+      </if>
+      <if test="wx_source != null">
+        wx_source,
+      </if>
+      <if test="dms_mark != null">
+        dms_mark,
+      </if>
+      <if test="dms_remark != null">
+        dms_remark,
+      </if>
+      <if test="cumulative_debts != null">
+        cumulative_debts,
+      </if>
+      <if test="cumulative_pay != null">
+        cumulative_pay,
+      </if>
+      <if test="current_debts != null">
+        current_debts,
+      </if>
+      <if test="is_big_custom != null">
+        is_big_custom,
+      </if>
+      <if test="source_name != null">
+        source_name,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="chatid != null">
+        #{chatid,jdbcType=CHAR},
+      </if>
+      <if test="store_id != null">
+        #{store_id,jdbcType=INTEGER},
+      </if>
+      <if test="province_id != null">
+        #{province_id,jdbcType=TINYINT},
+      </if>
+      <if test="city_id != null">
+        #{city_id,jdbcType=SMALLINT},
+      </if>
+      <if test="district_id != null">
+        #{district_id,jdbcType=INTEGER},
+      </if>
+      <if test="cgroup != null">
+        #{cgroup,jdbcType=INTEGER},
+      </if>
+      <if test="ccategory != null">
+        #{ccategory,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="birth != null">
+        #{birth,jdbcType=DATE},
+      </if>
+      <if test="sex != null">
+        #{sex,jdbcType=TINYINT},
+      </if>
+      <if test="idcard != null">
+        #{idcard,jdbcType=VARCHAR},
+      </if>
+      <if test="tel != null">
+        #{tel,jdbcType=VARCHAR},
+      </if>
+      <if test="fax != null">
+        #{fax,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="postcode != null">
+        #{postcode,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null">
+        #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="pwd != null">
+        #{pwd,jdbcType=VARCHAR},
+      </if>
+      <if test="mail != null">
+        #{mail,jdbcType=VARCHAR},
+      </if>
+      <if test="weixin != null">
+        #{weixin,jdbcType=VARCHAR},
+      </if>
+      <if test="is_weixin_bind != null">
+        #{is_weixin_bind,jdbcType=TINYINT},
+      </if>
+      <if test="is_weixin_first_bind != null">
+        #{is_weixin_first_bind,jdbcType=TINYINT},
+      </if>
+      <if test="appsec != null">
+        #{appsec,jdbcType=VARCHAR},
+      </if>
+      <if test="consultant != null">
+        #{consultant,jdbcType=VARCHAR},
+      </if>
+      <if test="salesman != null">
+        #{salesman,jdbcType=INTEGER},
+      </if>
+      <if test="intro != null">
+        #{intro,jdbcType=VARCHAR},
+      </if>
+      <if test="custom_level != null">
+        #{custom_level,jdbcType=VARCHAR},
+      </if>
+      <if test="clues != null">
+        #{clues,jdbcType=VARCHAR},
+      </if>
+      <if test="source_id != null">
+        #{source_id,jdbcType=INTEGER},
+      </if>
+      <if test="jobs_id != null">
+        #{jobs_id,jdbcType=INTEGER},
+      </if>
+      <if test="business_type_id != null">
+        #{business_type_id,jdbcType=INTEGER},
+      </if>
+      <if test="company != null">
+        #{company,jdbcType=VARCHAR},
+      </if>
+      <if test="role != null">
+        #{role,jdbcType=VARCHAR},
+      </if>
+      <if test="is_keyrole != null">
+        #{is_keyrole,jdbcType=TINYINT},
+      </if>
+      <if test="income != null">
+        #{income,jdbcType=TINYINT},
+      </if>
+      <if test="home_status != null">
+        #{home_status,jdbcType=TINYINT},
+      </if>
+      <if test="edu_id != null">
+        #{edu_id,jdbcType=TINYINT},
+      </if>
+      <if test="ctime != null">
+        #{ctime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cdate != null">
+        #{cdate,jdbcType=DATE},
+      </if>
+      <if test="join_date != null">
+        #{join_date,jdbcType=DATE},
+      </if>
+      <if test="points != null">
+        #{points,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="license_issue_date != null">
+        #{license_issue_date,jdbcType=DATE},
+      </if>
+      <if test="license_expire_date != null">
+        #{license_expire_date,jdbcType=DATE},
+      </if>
+      <if test="contact_style != null">
+        #{contact_style,jdbcType=TINYINT},
+      </if>
+      <if test="contact_time != null">
+        #{contact_time,jdbcType=TINYINT},
+      </if>
+      <if test="wedding_date != null">
+        #{wedding_date,jdbcType=DATE},
+      </if>
+      <if test="custom_type != null">
+        #{custom_type,jdbcType=TINYINT},
+      </if>
+      <if test="vouchers != null">
+        #{vouchers,jdbcType=DECIMAL},
+      </if>
+      <if test="top_up != null">
+        #{top_up,jdbcType=DECIMAL},
+      </if>
+      <if test="pre_top_up != null">
+        #{pre_top_up,jdbcType=DECIMAL},
+      </if>
+      <if test="discount != null">
+        #{discount,jdbcType=DECIMAL},
+      </if>
+      <if test="working_discount != null">
+        #{working_discount,jdbcType=INTEGER},
+      </if>
+      <if test="wording_coupon != null">
+        #{wording_coupon,jdbcType=DECIMAL},
+      </if>
+      <if test="acc_discount != null">
+        #{acc_discount,jdbcType=INTEGER},
+      </if>
+      <if test="acc_coupon != null">
+        #{acc_coupon,jdbcType=DECIMAL},
+      </if>
+      <if test="has_payed != null">
+        #{has_payed,jdbcType=DECIMAL},
+      </if>
+      <if test="level != null">
+        #{level,jdbcType=INTEGER},
+      </if>
+      <if test="card_num != null">
+        #{card_num,jdbcType=VARCHAR},
+      </if>
+      <if test="entity_card_num != null">
+        #{entity_card_num,jdbcType=VARCHAR},
+      </if>
+      <if test="actual_cost != null">
+        #{actual_cost,jdbcType=INTEGER},
+      </if>
+      <if test="admission != null">
+        #{admission,jdbcType=TINYINT},
+      </if>
+      <if test="card_pwd != null">
+        #{card_pwd,jdbcType=VARCHAR},
+      </if>
+      <if test="is_entity != null">
+        #{is_entity,jdbcType=TINYINT},
+      </if>
+      <if test="card_status != null">
+        #{card_status,jdbcType=TINYINT},
+      </if>
+      <if test="card_s_valid != null">
+        #{card_s_valid,jdbcType=DATE},
+      </if>
+      <if test="card_e_valid != null">
+        #{card_e_valid,jdbcType=DATE},
+      </if>
+      <if test="card_alive != null">
+        #{card_alive,jdbcType=DATE},
+      </if>
+      <if test="is_cancel != null">
+        #{is_cancel,jdbcType=TINYINT},
+      </if>
+      <if test="cancel_reason_id != null">
+        #{cancel_reason_id,jdbcType=TINYINT},
+      </if>
+      <if test="cancel_reason != null">
+        #{cancel_reason,jdbcType=VARCHAR},
+      </if>
+      <if test="working_sum != null">
+        #{working_sum,jdbcType=DECIMAL},
+      </if>
+      <if test="staff != null">
+        #{staff,jdbcType=INTEGER},
+      </if>
+      <if test="wx_source != null">
+        #{wx_source,jdbcType=TINYINT},
+      </if>
+      <if test="dms_mark != null">
+        #{dms_mark,jdbcType=CHAR},
+      </if>
+      <if test="dms_remark != null">
+        #{dms_remark,jdbcType=VARCHAR},
+      </if>
+      <if test="cumulative_debts != null">
+        #{cumulative_debts,jdbcType=DECIMAL},
+      </if>
+      <if test="cumulative_pay != null">
+        #{cumulative_pay,jdbcType=DECIMAL},
+      </if>
+      <if test="current_debts != null">
+        #{current_debts,jdbcType=DECIMAL},
+      </if>
+      <if test="is_big_custom != null">
+        #{is_big_custom,jdbcType=TINYINT},
+      </if>
+      <if test="source_name != null">
+        #{source_name,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ecarpo.bms.eas.server.crmcustom.entity.CrmCustomDO">
+    <!-- @mbg.generated 2019-08-12 16:07:37 -->
+    update crm_custom
+    <set>
+      <if test="chatid != null">
+        chatid = #{chatid,jdbcType=CHAR},
+      </if>
+      <if test="store_id != null">
+        store_id = #{store_id,jdbcType=INTEGER},
+      </if>
+      <if test="province_id != null">
+        province_id = #{province_id,jdbcType=TINYINT},
+      </if>
+      <if test="city_id != null">
+        city_id = #{city_id,jdbcType=SMALLINT},
+      </if>
+      <if test="district_id != null">
+        district_id = #{district_id,jdbcType=INTEGER},
+      </if>
+      <if test="cgroup != null">
+        cgroup = #{cgroup,jdbcType=INTEGER},
+      </if>
+      <if test="ccategory != null">
+        ccategory = #{ccategory,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="birth != null">
+        birth = #{birth,jdbcType=DATE},
+      </if>
+      <if test="sex != null">
+        sex = #{sex,jdbcType=TINYINT},
+      </if>
+      <if test="idcard != null">
+        idcard = #{idcard,jdbcType=VARCHAR},
+      </if>
+      <if test="tel != null">
+        tel = #{tel,jdbcType=VARCHAR},
+      </if>
+      <if test="fax != null">
+        fax = #{fax,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="postcode != null">
+        postcode = #{postcode,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null">
+        mobile = #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="pwd != null">
+        pwd = #{pwd,jdbcType=VARCHAR},
+      </if>
+      <if test="mail != null">
+        mail = #{mail,jdbcType=VARCHAR},
+      </if>
+      <if test="weixin != null">
+        weixin = #{weixin,jdbcType=VARCHAR},
+      </if>
+      <if test="is_weixin_bind != null">
+        is_weixin_bind = #{is_weixin_bind,jdbcType=TINYINT},
+      </if>
+      <if test="is_weixin_first_bind != null">
+        is_weixin_first_bind = #{is_weixin_first_bind,jdbcType=TINYINT},
+      </if>
+      <if test="appsec != null">
+        appsec = #{appsec,jdbcType=VARCHAR},
+      </if>
+      <if test="consultant != null">
+        consultant = #{consultant,jdbcType=VARCHAR},
+      </if>
+      <if test="salesman != null">
+        salesman = #{salesman,jdbcType=INTEGER},
+      </if>
+      <if test="intro != null">
+        intro = #{intro,jdbcType=VARCHAR},
+      </if>
+      <if test="custom_level != null">
+        custom_level = #{custom_level,jdbcType=VARCHAR},
+      </if>
+      <if test="clues != null">
+        clues = #{clues,jdbcType=VARCHAR},
+      </if>
+      <if test="source_id != null">
+        source_id = #{source_id,jdbcType=INTEGER},
+      </if>
+      <if test="jobs_id != null">
+        jobs_id = #{jobs_id,jdbcType=INTEGER},
+      </if>
+      <if test="business_type_id != null">
+        business_type_id = #{business_type_id,jdbcType=INTEGER},
+      </if>
+      <if test="company != null">
+        company = #{company,jdbcType=VARCHAR},
+      </if>
+      <if test="role != null">
+        role = #{role,jdbcType=VARCHAR},
+      </if>
+      <if test="is_keyrole != null">
+        is_keyrole = #{is_keyrole,jdbcType=TINYINT},
+      </if>
+      <if test="income != null">
+        income = #{income,jdbcType=TINYINT},
+      </if>
+      <if test="home_status != null">
+        home_status = #{home_status,jdbcType=TINYINT},
+      </if>
+      <if test="edu_id != null">
+        edu_id = #{edu_id,jdbcType=TINYINT},
+      </if>
+      <if test="ctime != null">
+        ctime = #{ctime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cdate != null">
+        cdate = #{cdate,jdbcType=DATE},
+      </if>
+      <if test="join_date != null">
+        join_date = #{join_date,jdbcType=DATE},
+      </if>
+      <if test="points != null">
+        points = #{points,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="license_issue_date != null">
+        license_issue_date = #{license_issue_date,jdbcType=DATE},
+      </if>
+      <if test="license_expire_date != null">
+        license_expire_date = #{license_expire_date,jdbcType=DATE},
+      </if>
+      <if test="contact_style != null">
+        contact_style = #{contact_style,jdbcType=TINYINT},
+      </if>
+      <if test="contact_time != null">
+        contact_time = #{contact_time,jdbcType=TINYINT},
+      </if>
+      <if test="wedding_date != null">
+        wedding_date = #{wedding_date,jdbcType=DATE},
+      </if>
+      <if test="custom_type != null">
+        custom_type = #{custom_type,jdbcType=TINYINT},
+      </if>
+      <if test="vouchers != null">
+        vouchers = #{vouchers,jdbcType=DECIMAL},
+      </if>
+      <if test="top_up != null">
+        top_up = #{top_up,jdbcType=DECIMAL},
+      </if>
+      <if test="pre_top_up != null">
+        pre_top_up = #{pre_top_up,jdbcType=DECIMAL},
+      </if>
+      <if test="discount != null">
+        discount = #{discount,jdbcType=DECIMAL},
+      </if>
+      <if test="working_discount != null">
+        working_discount = #{working_discount,jdbcType=INTEGER},
+      </if>
+      <if test="wording_coupon != null">
+        wording_coupon = #{wording_coupon,jdbcType=DECIMAL},
+      </if>
+      <if test="acc_discount != null">
+        acc_discount = #{acc_discount,jdbcType=INTEGER},
+      </if>
+      <if test="acc_coupon != null">
+        acc_coupon = #{acc_coupon,jdbcType=DECIMAL},
+      </if>
+      <if test="has_payed != null">
+        has_payed = #{has_payed,jdbcType=DECIMAL},
+      </if>
+      <if test="level != null">
+        level = #{level,jdbcType=INTEGER},
+      </if>
+      <if test="card_num != null">
+        card_num = #{card_num,jdbcType=VARCHAR},
+      </if>
+      <if test="entity_card_num != null">
+        entity_card_num = #{entity_card_num,jdbcType=VARCHAR},
+      </if>
+      <if test="actual_cost != null">
+        actual_cost = #{actual_cost,jdbcType=INTEGER},
+      </if>
+      <if test="admission != null">
+        admission = #{admission,jdbcType=TINYINT},
+      </if>
+      <if test="card_pwd != null">
+        card_pwd = #{card_pwd,jdbcType=VARCHAR},
+      </if>
+      <if test="is_entity != null">
+        is_entity = #{is_entity,jdbcType=TINYINT},
+      </if>
+      <if test="card_status != null">
+        card_status = #{card_status,jdbcType=TINYINT},
+      </if>
+      <if test="card_s_valid != null">
+        card_s_valid = #{card_s_valid,jdbcType=DATE},
+      </if>
+      <if test="card_e_valid != null">
+        card_e_valid = #{card_e_valid,jdbcType=DATE},
+      </if>
+      <if test="card_alive != null">
+        card_alive = #{card_alive,jdbcType=DATE},
+      </if>
+      <if test="is_cancel != null">
+        is_cancel = #{is_cancel,jdbcType=TINYINT},
+      </if>
+      <if test="cancel_reason_id != null">
+        cancel_reason_id = #{cancel_reason_id,jdbcType=TINYINT},
+      </if>
+      <if test="cancel_reason != null">
+        cancel_reason = #{cancel_reason,jdbcType=VARCHAR},
+      </if>
+      <if test="working_sum != null">
+        working_sum = #{working_sum,jdbcType=DECIMAL},
+      </if>
+      <if test="staff != null">
+        staff = #{staff,jdbcType=INTEGER},
+      </if>
+      <if test="wx_source != null">
+        wx_source = #{wx_source,jdbcType=TINYINT},
+      </if>
+      <if test="dms_mark != null">
+        dms_mark = #{dms_mark,jdbcType=CHAR},
+      </if>
+      <if test="dms_remark != null">
+        dms_remark = #{dms_remark,jdbcType=VARCHAR},
+      </if>
+      <if test="cumulative_debts != null">
+        cumulative_debts = #{cumulative_debts,jdbcType=DECIMAL},
+      </if>
+      <if test="cumulative_pay != null">
+        cumulative_pay = #{cumulative_pay,jdbcType=DECIMAL},
+      </if>
+      <if test="current_debts != null">
+        current_debts = #{current_debts,jdbcType=DECIMAL},
+      </if>
+      <if test="is_big_custom != null">
+        is_big_custom = #{is_big_custom,jdbcType=TINYINT},
+      </if>
+      <if test="source_name != null">
+        source_name = #{source_name,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ecarpo.bms.eas.server.crmcustom.entity.CrmCustomDO">
+    <!-- @mbg.generated 2019-08-12 16:07:37 -->
+    update crm_custom
+    set chatid = #{chatid,jdbcType=CHAR},
+      store_id = #{store_id,jdbcType=INTEGER},
+      province_id = #{province_id,jdbcType=TINYINT},
+      city_id = #{city_id,jdbcType=SMALLINT},
+      district_id = #{district_id,jdbcType=INTEGER},
+      cgroup = #{cgroup,jdbcType=INTEGER},
+      ccategory = #{ccategory,jdbcType=INTEGER},
+      name = #{name,jdbcType=VARCHAR},
+      birth = #{birth,jdbcType=DATE},
+      sex = #{sex,jdbcType=TINYINT},
+      idcard = #{idcard,jdbcType=VARCHAR},
+      tel = #{tel,jdbcType=VARCHAR},
+      fax = #{fax,jdbcType=VARCHAR},
+      address = #{address,jdbcType=VARCHAR},
+      postcode = #{postcode,jdbcType=VARCHAR},
+      mobile = #{mobile,jdbcType=VARCHAR},
+      pwd = #{pwd,jdbcType=VARCHAR},
+      mail = #{mail,jdbcType=VARCHAR},
+      weixin = #{weixin,jdbcType=VARCHAR},
+      is_weixin_bind = #{is_weixin_bind,jdbcType=TINYINT},
+      is_weixin_first_bind = #{is_weixin_first_bind,jdbcType=TINYINT},
+      appsec = #{appsec,jdbcType=VARCHAR},
+      consultant = #{consultant,jdbcType=VARCHAR},
+      salesman = #{salesman,jdbcType=INTEGER},
+      intro = #{intro,jdbcType=VARCHAR},
+      custom_level = #{custom_level,jdbcType=VARCHAR},
+      clues = #{clues,jdbcType=VARCHAR},
+      source_id = #{source_id,jdbcType=INTEGER},
+      jobs_id = #{jobs_id,jdbcType=INTEGER},
+      business_type_id = #{business_type_id,jdbcType=INTEGER},
+      company = #{company,jdbcType=VARCHAR},
+      role = #{role,jdbcType=VARCHAR},
+      is_keyrole = #{is_keyrole,jdbcType=TINYINT},
+      income = #{income,jdbcType=TINYINT},
+      home_status = #{home_status,jdbcType=TINYINT},
+      edu_id = #{edu_id,jdbcType=TINYINT},
+      ctime = #{ctime,jdbcType=TIMESTAMP},
+      cdate = #{cdate,jdbcType=DATE},
+      join_date = #{join_date,jdbcType=DATE},
+      points = #{points,jdbcType=INTEGER},
+      remark = #{remark,jdbcType=VARCHAR},
+      license_issue_date = #{license_issue_date,jdbcType=DATE},
+      license_expire_date = #{license_expire_date,jdbcType=DATE},
+      contact_style = #{contact_style,jdbcType=TINYINT},
+      contact_time = #{contact_time,jdbcType=TINYINT},
+      wedding_date = #{wedding_date,jdbcType=DATE},
+      custom_type = #{custom_type,jdbcType=TINYINT},
+      vouchers = #{vouchers,jdbcType=DECIMAL},
+      top_up = #{top_up,jdbcType=DECIMAL},
+      pre_top_up = #{pre_top_up,jdbcType=DECIMAL},
+      discount = #{discount,jdbcType=DECIMAL},
+      working_discount = #{working_discount,jdbcType=INTEGER},
+      wording_coupon = #{wording_coupon,jdbcType=DECIMAL},
+      acc_discount = #{acc_discount,jdbcType=INTEGER},
+      acc_coupon = #{acc_coupon,jdbcType=DECIMAL},
+      has_payed = #{has_payed,jdbcType=DECIMAL},
+      level = #{level,jdbcType=INTEGER},
+      card_num = #{card_num,jdbcType=VARCHAR},
+      entity_card_num = #{entity_card_num,jdbcType=VARCHAR},
+      actual_cost = #{actual_cost,jdbcType=INTEGER},
+      admission = #{admission,jdbcType=TINYINT},
+      card_pwd = #{card_pwd,jdbcType=VARCHAR},
+      is_entity = #{is_entity,jdbcType=TINYINT},
+      card_status = #{card_status,jdbcType=TINYINT},
+      card_s_valid = #{card_s_valid,jdbcType=DATE},
+      card_e_valid = #{card_e_valid,jdbcType=DATE},
+      card_alive = #{card_alive,jdbcType=DATE},
+      is_cancel = #{is_cancel,jdbcType=TINYINT},
+      cancel_reason_id = #{cancel_reason_id,jdbcType=TINYINT},
+      cancel_reason = #{cancel_reason,jdbcType=VARCHAR},
+      working_sum = #{working_sum,jdbcType=DECIMAL},
+      staff = #{staff,jdbcType=INTEGER},
+      wx_source = #{wx_source,jdbcType=TINYINT},
+      dms_mark = #{dms_mark,jdbcType=CHAR},
+      dms_remark = #{dms_remark,jdbcType=VARCHAR},
+      cumulative_debts = #{cumulative_debts,jdbcType=DECIMAL},
+      cumulative_pay = #{cumulative_pay,jdbcType=DECIMAL},
+      current_debts = #{current_debts,jdbcType=DECIMAL},
+      is_big_custom = #{is_big_custom,jdbcType=TINYINT},
+      source_name = #{source_name,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  
+  <!-- user define -->
+  
+  <select id="existsByCode" resultType="java.lang.Long">
+    select 1 from crm_custom
+    where code = #{code,jdbcType=VARCHAR}
+    limit 0, 1
+  </select>
+  
+</mapper>

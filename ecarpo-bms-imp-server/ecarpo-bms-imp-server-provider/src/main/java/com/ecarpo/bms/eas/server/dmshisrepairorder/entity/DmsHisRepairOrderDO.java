@@ -7,6 +7,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 import com.ecarpo.bms.eas.server.data.MyEntity;
+import com.ecarpo.framework.common.annotation.InitialField;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -66,6 +67,7 @@ public class DmsHisRepairOrderDO extends MyEntity {
    *
    * @mbg.generated 2019-08-06 10:15:30
    */
+  @InitialField
   private Date repair_time;
 
   /**
@@ -136,6 +138,7 @@ public class DmsHisRepairOrderDO extends MyEntity {
    *
    * @mbg.generated 2019-08-06 10:15:30
    */
+  @InitialField
   private Date predict_date;
 
   /**

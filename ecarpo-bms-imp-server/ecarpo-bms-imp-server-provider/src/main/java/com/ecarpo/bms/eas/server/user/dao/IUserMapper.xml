@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ecarpo.bms.eas.server.user.dao.IUserMapper">
+  <resultMap id="BaseResultMap" type="com.ecarpo.bms.eas.server.user.entity.IUserDO">
+    <!-- @mbg.generated 2019-08-12 10:45:37 -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="realname" jdbcType="VARCHAR" property="realname" />
+    <result column="pwd" jdbcType="CHAR" property="pwd" />
+    <result column="mobile" jdbcType="VARCHAR" property="mobile" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="isAdmin" jdbcType="TINYINT" property="isAdmin" />
+    <result column="reg_step" jdbcType="TINYINT" property="reg_step" />
+    <result column="regIP" jdbcType="CHAR" property="regIP" />
+    <result column="reg_time" jdbcType="TIMESTAMP" property="reg_time" />
+    <result column="sex" jdbcType="TINYINT" property="sex" />
+    <result column="birthday" jdbcType="DATE" property="birthday" />
+    <result column="last_login" jdbcType="TIMESTAMP" property="last_login" />
+    <result column="is_weixin_show" jdbcType="TINYINT" property="is_weixin_show" />
+    <result column="openid" jdbcType="CHAR" property="openid" />
+    <result column="last_update" jdbcType="TIMESTAMP" property="last_update" />
+    <result column="selfintro" jdbcType="VARCHAR" property="selfintro" />
+    <result column="prov_id" jdbcType="CHAR" property="prov_id" />
+    <result column="city_id" jdbcType="CHAR" property="city_id" />
+    <result column="district_id" jdbcType="CHAR" property="district_id" />
+    <result column="last_weixin_login" jdbcType="TIMESTAMP" property="last_weixin_login" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.ecarpo.bms.eas.server.user.entity.IUserDO">
+    <!-- @mbg.generated 2019-08-12 10:45:37 -->
+    <result column="head_img" jdbcType="LONGVARCHAR" property="head_img" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!-- @mbg.generated 2019-08-12 10:45:37 -->
+    id, username, realname, pwd, mobile, email, isAdmin, reg_step, regIP, reg_time, sex, 
+    birthday, last_login, is_weixin_show, openid, last_update, selfintro, prov_id, city_id, 
+    district_id, last_weixin_login
+  </sql>
+  <sql id="Blob_Column_List">
+    <!-- @mbg.generated 2019-08-12 10:45:37 -->
+    head_img
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+    <!-- @mbg.generated 2019-08-12 10:45:37 -->
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from i_user
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!-- @mbg.generated 2019-08-12 10:45:37 -->
+    delete from i_user
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="com.ecarpo.bms.eas.server.user.entity.IUserDO">
+    <!-- @mbg.generated 2019-08-12 10:45:37 -->
+    insert into i_user (id, username, realname, 
+      pwd, mobile, email, isAdmin, 
+      reg_step, regIP, reg_time, 
+      sex, birthday, last_login, 
+      is_weixin_show, openid, last_update, 
+      selfintro, prov_id, city_id, 
+      district_id, last_weixin_login, head_img
+      )
+    values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{realname,jdbcType=VARCHAR}, 
+      #{pwd,jdbcType=CHAR}, #{mobile,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{isAdmin,jdbcType=TINYINT}, 
+      #{reg_step,jdbcType=TINYINT}, #{regIP,jdbcType=CHAR}, #{reg_time,jdbcType=TIMESTAMP}, 
+      #{sex,jdbcType=TINYINT}, #{birthday,jdbcType=DATE}, #{last_login,jdbcType=TIMESTAMP}, 
+      #{is_weixin_show,jdbcType=TINYINT}, #{openid,jdbcType=CHAR}, #{last_update,jdbcType=TIMESTAMP}, 
+      #{selfintro,jdbcType=VARCHAR}, #{prov_id,jdbcType=CHAR}, #{city_id,jdbcType=CHAR}, 
+      #{district_id,jdbcType=CHAR}, #{last_weixin_login,jdbcType=TIMESTAMP}, #{head_img,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" useGeneratedKeys="true" keyProperty="id" parameterType="com.ecarpo.bms.eas.server.user.entity.IUserDO">
+    <!-- @mbg.generated 2019-08-12 10:45:37 -->
+    insert into i_user
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="username != null">
+        username,
+      </if>
+      <if test="realname != null">
+        realname,
+      </if>
+      <if test="pwd != null">
+        pwd,
+      </if>
+      <if test="mobile != null">
+        mobile,
+      </if>
+      <if test="email != null">
+        email,
+      </if>
+      <if test="isAdmin != null">
+        isAdmin,
+      </if>
+      <if test="reg_step != null">
+        reg_step,
+      </if>
+      <if test="regIP != null">
+        regIP,
+      </if>
+      <if test="reg_time != null">
+        reg_time,
+      </if>
+      <if test="sex != null">
+        sex,
+      </if>
+      <if test="birthday != null">
+        birthday,
+      </if>
+      <if test="last_login != null">
+        last_login,
+      </if>
+      <if test="is_weixin_show != null">
+        is_weixin_show,
+      </if>
+      <if test="openid != null">
+        openid,
+      </if>
+      <if test="last_update != null">
+        last_update,
+      </if>
+      <if test="selfintro != null">
+        selfintro,
+      </if>
+      <if test="prov_id != null">
+        prov_id,
+      </if>
+      <if test="city_id != null">
+        city_id,
+      </if>
+      <if test="district_id != null">
+        district_id,
+      </if>
+      <if test="last_weixin_login != null">
+        last_weixin_login,
+      </if>
+      <if test="head_img != null">
+        head_img,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="realname != null">
+        #{realname,jdbcType=VARCHAR},
+      </if>
+      <if test="pwd != null">
+        #{pwd,jdbcType=CHAR},
+      </if>
+      <if test="mobile != null">
+        #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="isAdmin != null">
+        #{isAdmin,jdbcType=TINYINT},
+      </if>
+      <if test="reg_step != null">
+        #{reg_step,jdbcType=TINYINT},
+      </if>
+      <if test="regIP != null">
+        #{regIP,jdbcType=CHAR},
+      </if>
+      <if test="reg_time != null">
+        #{reg_time,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sex != null">
+        #{sex,jdbcType=TINYINT},
+      </if>
+      <if test="birthday != null">
+        #{birthday,jdbcType=DATE},
+      </if>
+      <if test="last_login != null">
+        #{last_login,jdbcType=TIMESTAMP},
+      </if>
+      <if test="is_weixin_show != null">
+        #{is_weixin_show,jdbcType=TINYINT},
+      </if>
+      <if test="openid != null">
+        #{openid,jdbcType=CHAR},
+      </if>
+      <if test="last_update != null">
+        #{last_update,jdbcType=TIMESTAMP},
+      </if>
+      <if test="selfintro != null">
+        #{selfintro,jdbcType=VARCHAR},
+      </if>
+      <if test="prov_id != null">
+        #{prov_id,jdbcType=CHAR},
+      </if>
+      <if test="city_id != null">
+        #{city_id,jdbcType=CHAR},
+      </if>
+      <if test="district_id != null">
+        #{district_id,jdbcType=CHAR},
+      </if>
+      <if test="last_weixin_login != null">
+        #{last_weixin_login,jdbcType=TIMESTAMP},
+      </if>
+      <if test="head_img != null">
+        #{head_img,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ecarpo.bms.eas.server.user.entity.IUserDO">
+    <!-- @mbg.generated 2019-08-12 10:45:37 -->
+    update i_user
+    <set>
+      <if test="username != null">
+        username = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="realname != null">
+        realname = #{realname,jdbcType=VARCHAR},
+      </if>
+      <if test="pwd != null">
+        pwd = #{pwd,jdbcType=CHAR},
+      </if>
+      <if test="mobile != null">
+        mobile = #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="isAdmin != null">
+        isAdmin = #{isAdmin,jdbcType=TINYINT},
+      </if>
+      <if test="reg_step != null">
+        reg_step = #{reg_step,jdbcType=TINYINT},
+      </if>
+      <if test="regIP != null">
+        regIP = #{regIP,jdbcType=CHAR},
+      </if>
+      <if test="reg_time != null">
+        reg_time = #{reg_time,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sex != null">
+        sex = #{sex,jdbcType=TINYINT},
+      </if>
+      <if test="birthday != null">
+        birthday = #{birthday,jdbcType=DATE},
+      </if>
+      <if test="last_login != null">
+        last_login = #{last_login,jdbcType=TIMESTAMP},
+      </if>
+      <if test="is_weixin_show != null">
+        is_weixin_show = #{is_weixin_show,jdbcType=TINYINT},
+      </if>
+      <if test="openid != null">
+        openid = #{openid,jdbcType=CHAR},
+      </if>
+      <if test="last_update != null">
+        last_update = #{last_update,jdbcType=TIMESTAMP},
+      </if>
+      <if test="selfintro != null">
+        selfintro = #{selfintro,jdbcType=VARCHAR},
+      </if>
+      <if test="prov_id != null">
+        prov_id = #{prov_id,jdbcType=CHAR},
+      </if>
+      <if test="city_id != null">
+        city_id = #{city_id,jdbcType=CHAR},
+      </if>
+      <if test="district_id != null">
+        district_id = #{district_id,jdbcType=CHAR},
+      </if>
+      <if test="last_weixin_login != null">
+        last_weixin_login = #{last_weixin_login,jdbcType=TIMESTAMP},
+      </if>
+      <if test="head_img != null">
+        head_img = #{head_img,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.ecarpo.bms.eas.server.user.entity.IUserDO">
+    <!-- @mbg.generated 2019-08-12 10:45:37 -->
+    update i_user
+    set username = #{username,jdbcType=VARCHAR},
+      realname = #{realname,jdbcType=VARCHAR},
+      pwd = #{pwd,jdbcType=CHAR},
+      mobile = #{mobile,jdbcType=VARCHAR},
+      email = #{email,jdbcType=VARCHAR},
+      isAdmin = #{isAdmin,jdbcType=TINYINT},
+      reg_step = #{reg_step,jdbcType=TINYINT},
+      regIP = #{regIP,jdbcType=CHAR},
+      reg_time = #{reg_time,jdbcType=TIMESTAMP},
+      sex = #{sex,jdbcType=TINYINT},
+      birthday = #{birthday,jdbcType=DATE},
+      last_login = #{last_login,jdbcType=TIMESTAMP},
+      is_weixin_show = #{is_weixin_show,jdbcType=TINYINT},
+      openid = #{openid,jdbcType=CHAR},
+      last_update = #{last_update,jdbcType=TIMESTAMP},
+      selfintro = #{selfintro,jdbcType=VARCHAR},
+      prov_id = #{prov_id,jdbcType=CHAR},
+      city_id = #{city_id,jdbcType=CHAR},
+      district_id = #{district_id,jdbcType=CHAR},
+      last_weixin_login = #{last_weixin_login,jdbcType=TIMESTAMP},
+      head_img = #{head_img,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ecarpo.bms.eas.server.user.entity.IUserDO">
+    <!-- @mbg.generated 2019-08-12 10:45:37 -->
+    update i_user
+    set username = #{username,jdbcType=VARCHAR},
+      realname = #{realname,jdbcType=VARCHAR},
+      pwd = #{pwd,jdbcType=CHAR},
+      mobile = #{mobile,jdbcType=VARCHAR},
+      email = #{email,jdbcType=VARCHAR},
+      isAdmin = #{isAdmin,jdbcType=TINYINT},
+      reg_step = #{reg_step,jdbcType=TINYINT},
+      regIP = #{regIP,jdbcType=CHAR},
+      reg_time = #{reg_time,jdbcType=TIMESTAMP},
+      sex = #{sex,jdbcType=TINYINT},
+      birthday = #{birthday,jdbcType=DATE},
+      last_login = #{last_login,jdbcType=TIMESTAMP},
+      is_weixin_show = #{is_weixin_show,jdbcType=TINYINT},
+      openid = #{openid,jdbcType=CHAR},
+      last_update = #{last_update,jdbcType=TIMESTAMP},
+      selfintro = #{selfintro,jdbcType=VARCHAR},
+      prov_id = #{prov_id,jdbcType=CHAR},
+      city_id = #{city_id,jdbcType=CHAR},
+      district_id = #{district_id,jdbcType=CHAR},
+      last_weixin_login = #{last_weixin_login,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  
+   <!--user define   -->
+   
+   <!--编码获取人员信息  xin 2019.07.15  -->
+   <select id="selectByEasNumber" resultType="com.ecarpo.bms.eas.server.user.entity.IUserDO">
+     select
+       <include refid="Base_Column_List"/>
+     from 
+       i_user
+     where
+       user_code = #{userCode,jdbcType=VARCHAR}
+       limit 0,1
+   </select>
+
+  <select id="existsUserByPwd" resultType="java.lang.Long">
+    select 1 from i_user
+    where 
+      username = #{username,jdbcType=VARCHAR}
+      and pwd = #{pwd,jdbcType=VARCHAR}
+    limit 0, 1
+  </select>
+
+  <select id="existsByCode" resultType="java.lang.Long">
+    select 1 from i_user
+    where code = #{code,jdbcType=VARCHAR}
+    limit 0, 1
+  </select>
+  
+  <select id="getStoresByUserId" resultType="com.ecarpo.bms.eas.server.user.qo.IdNameQO">
+     select
+       id, name 
+     from 
+       d_store
+     where
+       id in (
+         select distinct(storeId) from d_user
+         where user_id = #{user_id,jdbcType=INTEGER}
+       )
+     limit 0, 10
+   </select>
+  
+</mapper>

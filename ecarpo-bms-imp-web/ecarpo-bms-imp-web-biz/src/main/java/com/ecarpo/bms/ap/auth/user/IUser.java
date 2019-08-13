@@ -4,6 +4,8 @@
  */
 package com.ecarpo.bms.ap.auth.user;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -11,6 +13,7 @@ import org.bidtime.session.state.SessionLoginState;
 import org.bidtime.session.state.StateEnum;
 
 import com.ecarpo.bms.eas.server.user.dto.UserPwdDTO;
+import com.ecarpo.bms.eas.server.user.qo.IdNameQO;
 import com.ecarpo.framework.model.ResultDTO;
 
 /**
@@ -34,5 +37,7 @@ public interface IUser {
   SessionLoginState getSessionLoginState(HttpServletRequest req) throws RuntimeException;
   
   StateEnum getLoginState(HttpServletRequest req) throws RuntimeException;
+  
+  ResultDTO<List<IdNameQO>> getStoresByUserId(Long userId);
   
 }

@@ -7,6 +7,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 import com.ecarpo.bms.eas.server.data.MyEntity;
+import com.ecarpo.framework.common.annotation.InitialField;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -59,6 +60,7 @@ public class CrmBaseSupplierDO extends MyEntity {
    *
    * @mbg.generated 2019-08-05 16:24:17
    */
+  @InitialField
   private String tel;
 
   /**
@@ -66,6 +68,7 @@ public class CrmBaseSupplierDO extends MyEntity {
    *
    * @mbg.generated 2019-08-05 16:24:17
    */
+  @InitialField
   private String mobile;
 
   /**
@@ -87,6 +90,7 @@ public class CrmBaseSupplierDO extends MyEntity {
    *
    * @mbg.generated 2019-08-05 16:24:17
    */
+  @InitialField
   private Date cdate;
 
   /**
@@ -150,6 +154,7 @@ public class CrmBaseSupplierDO extends MyEntity {
    *
    * @mbg.generated 2019-08-05 16:24:17
    */
+  @InitialField
   private String address;
 
   /**
@@ -171,6 +176,7 @@ public class CrmBaseSupplierDO extends MyEntity {
    *
    * @mbg.generated 2019-08-05 16:24:17
    */
+  @InitialField
   private Date open_date;
 
   /**
@@ -178,6 +184,7 @@ public class CrmBaseSupplierDO extends MyEntity {
    *
    * @mbg.generated 2019-08-05 16:24:17
    */
+  @InitialField
   private String business_scope;
 
   /**

@@ -4,11 +4,14 @@
  */
 package com.ecarpo.bms.eas.server.user.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
-import com.ecarpo.bms.eas.server.user.dao.EasUserMapper;
+import com.ecarpo.bms.eas.server.user.dao.IUserMapper;
 import com.ecarpo.bms.eas.server.user.dto.UserPwdDTO;
-import com.ecarpo.bms.eas.server.user.entity.EasUserDO;
+import com.ecarpo.bms.eas.server.user.entity.IUserDO;
+import com.ecarpo.bms.eas.server.user.qo.IdNameQO;
 import com.ecarpo.framework.common.service.BaseImplement;
 import com.ecarpo.framework.model.ResultDTO;
 
@@ -18,11 +21,16 @@ import com.ecarpo.framework.model.ResultDTO;
  */
 @Service
 public class EasUserServiceImpl extends
-  BaseImplement<EasUserManager, EasUserMapper, EasUserDO> implements EasUserService {
+  BaseImplement<IUserManager, IUserMapper, IUserDO> implements EasUserService {
 
   @Override
   public ResultDTO<Integer> login(UserPwdDTO dto) {
     return new ResultDTO<>(manager.login(dto) ? 1:0);
+  }
+  
+  @Override
+  public ResultDTO<List<IdNameQO>> getStoresByUserId(Long userId) {
+    return new ResultDTO<>(manager.getStoresByUserId(userId));
   }
 
 }

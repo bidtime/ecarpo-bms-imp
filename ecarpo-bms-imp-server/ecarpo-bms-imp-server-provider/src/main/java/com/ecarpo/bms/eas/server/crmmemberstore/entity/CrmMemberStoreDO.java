@@ -7,6 +7,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 import com.ecarpo.bms.eas.server.data.MyEntity;
+import com.ecarpo.framework.common.annotation.InitialField;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -45,6 +46,7 @@ public class CrmMemberStoreDO extends MyEntity {
    *
    * @mbg.generated 2019-08-05 16:58:00
    */
+  @InitialField
   private String card_num;
 
   /**
