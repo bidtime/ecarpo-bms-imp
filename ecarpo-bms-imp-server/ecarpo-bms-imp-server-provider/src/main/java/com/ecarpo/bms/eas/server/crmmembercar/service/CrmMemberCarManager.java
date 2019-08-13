@@ -34,14 +34,14 @@ public class CrmMemberCarManager extends BaseManager<CrmMemberCarMapper, CrmMemb
     CrmCustomDO c = DAOUtils.cloneBean(CrmCustomDO.class, dto);
     int n = customManager.insertSelective(c);
     // TODO 判断此人是否为会员
-    //if (u.get) {
+    if (dto.getLevel() != null) {
       CrmMemberStoreDO u = DAOUtils.cloneBean(CrmMemberStoreDO.class, dto);
       u.setCustom_id(c.getId());
-    //}
-    n += memberStoreManager.insertSelective(u);
-    CrmMemberCarDO m = DAOUtils.cloneBean(CrmMemberCarDO.class, dto);
-    m.setCustom_id(u.getId());
-    n += super.insertSelective(m);
+      n += memberStoreManager.insertSelective(u);
+    }
+    CrmMemberCarDO memberCar = DAOUtils.cloneBean(CrmMemberCarDO.class, dto);
+    memberCar.setCustom_id(c.getId());
+    n += super.insertSelective(memberCar);
     return n;
   }
   
