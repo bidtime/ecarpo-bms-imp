@@ -102,12 +102,16 @@ public class SYSExceptionHandler {
       if (dto == null) {
         String en = ex.getClass().getName();
         String e = ex.getMessage();
-        if (en.startsWith("com.ecarpo.framework.exception")) {
-          dto = ResultDTO.error(substring(e, ":", "\n"));
-        } else if (en.startsWith("org.springframework.dao")) {
-          dto = ResultDTO.error("DAO: 出错，" + substring(e, ":"));
+        if (e == null) {
+          dto = ERROR;
         } else {
-          dto = ResultDTO.error("系统: 出错，" + substring(e, ":"));
+          if (en.startsWith("com.ecarpo.framework.exception")) {
+            dto = ResultDTO.error(substring(e, ":", "\n"));
+          } else if (en.startsWith("org.springframework.dao")) {
+            dto = ResultDTO.error("DAO: 出错，" + substring(e, ":"));
+          } else {
+            dto = ResultDTO.error("系统: 出错，" + substring(e, ":"));
+          }
         }
       }
     } else if (ex instanceof CookieNullException || ex instanceof SessionNullException) {
@@ -159,6 +163,8 @@ public class SYSExceptionHandler {
     int pos = ex.indexOf(aft);
     if (pos > -1) {
       result = ex.substring(0, pos);
+    } else {
+      result = ex;
     }
     return result;
   }

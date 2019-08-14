@@ -330,6 +330,7 @@ public class CrmCustomDO extends MyEntity {
    *
    * @mbg.generated 2019-08-12 16:07:37
    */
+  @InitialField
   private Date license_expire_date;
 
   /**
