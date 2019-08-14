@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.ecarpo.bms.ap.auth.user.UserLoginBO;
 import com.ecarpo.bms.ap.auth.user.dto.UserUtils;
-import com.ecarpo.bms.eas.server.crmmembercar.dto.CrmMemberCarInsertDTO;
+import com.ecarpo.bms.eas.server.crmmembercar.dto.CrmMemberCarExInsertDTO;
 import com.ecarpo.bms.eas.server.crmmembercar.dto.CrmMemberCarUpdateDTO;
 import com.ecarpo.bms.eas.server.crmmembercar.service.CrmMemberCarService;
 import com.ecarpo.framework.model.ResultDTO;
@@ -40,7 +40,7 @@ public class CrmMemberCarController {
   }
 
   @RequestMapping(value = "insert", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
-  public Object insert(@Valid @RequestBody CrmMemberCarInsertDTO dto, UserLoginBO user) throws Exception {
+  public Object insert(@Valid @RequestBody CrmMemberCarExInsertDTO dto, UserLoginBO user) throws Exception {
     UserUtils.copy(dto, user);
     return service.insert(dto);
   }
