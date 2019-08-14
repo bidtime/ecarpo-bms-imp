@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 
 import com.ecarpo.bms.eas.server.user.dto.UserPwdDTO;
 import com.ecarpo.bms.eas.server.user.qo.IdNameQO;
-import com.ecarpo.bms.eas.server.user.service.EasUserService;
+import com.ecarpo.bms.eas.server.user.service.IEasUserService;
 import com.ecarpo.framework.model.ResultDTO;
 
 /**
@@ -22,18 +22,20 @@ import com.ecarpo.framework.model.ResultDTO;
 @Service
 public class UserImpl implements IUser {
  
-  private static final UserLoginBO user = new UserLoginBO();
+  private static final UserLoginBO USER_UI = new UserLoginBO();
   
   @Autowired
   private HttpUserRequest userRequest;
   
   @Autowired
-  private EasUserService userService;
+  private IEasUserService userService;
 
   static {
-    user.setUserId(2L);
-    user.setUserCode("EAS-sys");
-    user.setUserName("EAS管理員");
+    USER_UI.setUserId(2L);
+    USER_UI.setUserCode("EAS-sys");
+    USER_UI.setUserName("EAS管理員");
+    USER_UI.setStoreId(1);
+    USER_UI.setStoreName("1_store");
   }
 
 //  @Override
@@ -52,18 +54,18 @@ public class UserImpl implements IUser {
       return ResultDTO.error("用户名或密码不正确");
     }
     ResultDTO<IdNameQO> rstStore = userService.getStoresByUserId(rstUser.getData());
-    if (rstStore == null) {
+    if (rstStore.getData() == null) {
       IdNameQO qo = new IdNameQO();
       qo.setId(1);
       qo.setName("1_store");
-      rstStore = new ResultDTO<>(qo);
+      rstStore.setData(qo);
     }
     UserLoginBO user = newBO(rstUser.getData(), rstStore.getData());
     userRequest.login(req, res, user);
     return new ResultDTO<>("ok");
   }
   
-  private UserLoginBO newBO(Integer userId, IdNameQO store) {
+  private static UserLoginBO newBO(Integer userId, IdNameQO store) {
     UserLoginBO user = new UserLoginBO();
     user.setUserId(userId.longValue());
     user.setUserCode("EAS-sys");

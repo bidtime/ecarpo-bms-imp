@@ -12,7 +12,7 @@ import com.ecarpo.framework.model.ResultDTO;
  * @author xinbeibei
  * @since 2019.06.04
  */
-public interface EasUserService {
+public interface IEasUserService {
   
   ResultDTO<Integer> login(UserPwdDTO dto);
   

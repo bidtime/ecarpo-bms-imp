@@ -19,7 +19,7 @@ import com.ecarpo.framework.model.ResultDTO;
  */
 @Service
 public class EasUserServiceImpl extends
-  BaseImplement<IUserManager, IUserMapper, IUserDO> implements EasUserService {
+  BaseImplement<IUserManager, IUserMapper, IUserDO> implements IEasUserService {
 
   @Override
   public ResultDTO<Integer> login(UserPwdDTO dto) {

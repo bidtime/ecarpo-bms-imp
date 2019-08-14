@@ -11,7 +11,7 @@ import org.springframework.util.DigestUtils;
 
 import com.ecarpo.bms.JUnitTestBase;
 import com.ecarpo.bms.eas.server.user.dto.UserPwdDTO;
-import com.ecarpo.bms.eas.server.user.service.EasUserService;
+import com.ecarpo.bms.eas.server.user.service.IEasUserService;
 import com.ecarpo.framework.model.ResultDTO;
 
 /**
@@ -21,7 +21,7 @@ import com.ecarpo.framework.model.ResultDTO;
 public class UserTest extends JUnitTestBase {
 
   @Autowired
-  private EasUserService service;
+  private IEasUserService service;
 
   @SuppressWarnings("rawtypes")
   @Test
