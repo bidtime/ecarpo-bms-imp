@@ -43,11 +43,23 @@ public class DmsBuyDetailTest extends JUnitTestBase {
 
   @SuppressWarnings("rawtypes")
   @Test
-  public void test_insert() throws Exception {
+  public void test_insert_all() throws Exception {
     //int nextInt = super.getId(1000);
     DmsBuyDetailInsertDTO dto = new DmsBuyDetailInsertDTO();
     super.initial(dto);
     dto.setBuy_number(getBuyNumber());
+    print(dto);
+    ResultDTO rst = service.insert(dto);
+    print(rst);
+  }
+
+  @SuppressWarnings("rawtypes")
+  @Test
+  public void test_insert() throws Exception {
+    int nextInt = super.getId(1000);
+    DmsBuyDetailInsertDTO dto = new DmsBuyDetailInsertDTO();
+    super.initial(dto);
+    dto.setBuy_number(String.valueOf(nextInt));
     print(dto);
     ResultDTO rst = service.insert(dto);
     print(rst);

@@ -1,5 +1,7 @@
 package com.ecarpo.bms.eas.server.data;
 
+import java.util.Date;
+
 import com.ecarpo.framework.common.annotation.InitialField;
 import com.ecarpo.framework.common.mapper.DataEntity;
 
@@ -17,10 +19,19 @@ public class MyEntityRoot extends DataEntity {
   @InitialField(value = "")
   private String desc;
   
+  @InitialField(value = "0")
+  private Integer c_time;
+  
   @Override
   public void setCreatorId(Long creatorId) {
     super.setCreatorId(creatorId);
     this.creator = creatorId;
+  }
+  
+  @Override
+  public void setCreateTime(Date createTime) {
+    super.setCreateTime(createTime);
+    this.c_time = SecondsUtils.getSeconds(createTime);
   }
 
 //  @InitialField(value = "1")
