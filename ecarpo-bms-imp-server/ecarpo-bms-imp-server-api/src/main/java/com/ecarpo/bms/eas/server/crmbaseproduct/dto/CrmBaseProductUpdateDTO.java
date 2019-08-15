@@ -377,7 +377,7 @@ public class CrmBaseProductUpdateDTO extends UpdateDTO {
   *
   * @mbg.generated 2019-08-05 15:18:43
   */
- private Date c_time;
+ private Integer c_time;
 
  /**
   * 累计代销数量

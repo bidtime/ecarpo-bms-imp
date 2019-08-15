@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <configuration>
-  <substitutionProperty name="log.base" value="/mnt/home/logs/ecarpo-dms-imp" />
+  <substitutionProperty name="log.base" value="/mnt/home/logs/ecarpo-dms-imp/sys" />
   <jmxConfigurator />
 
   <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
@@ -44,18 +44,18 @@
 
   <logger name="com.ecarpo" level="INFO" />
   <!-- ecarpo debug -->
-  <logger name="com.ecarpo.bms" level="DEBUG" />
+  <logger name="com.ecarpo.bms" level="info" />
   <logger name="com.ecarpo.eas" level="DEBUG" />
   <logger name="com.ecarpo.bms.web.interceptor.HandleTimeInterceptor" level="DEBUG" />
   <logger name="com.ecarpo.bms.web.interceptor.UserAuthParamResolver" level="DEBUG" />
   
   <logger name="org.springframework.web.servlet.mvc.method.annotation" level="INFO" />
   <logger name="org.hibernate.validator" level="INFO" />
-  <logger name="org.springframework" level="DEBUG" />
+  <logger name="org.springframework" level="info" />
 
   <root>
     <level value="INFO" />
-    <appender-ref ref="stdout" />
+    <!-- <appender-ref ref="stdout" />  -->
     <appender-ref ref="logfile" />
     <appender-ref ref="errorLogFile"/>
  </root>

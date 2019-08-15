@@ -3,8 +3,6 @@
  */
 package com.ecarpo.bms.eas.server.dmsbuy.entity;
 
-import java.util.Date;
-
 import com.ecarpo.bms.eas.server.data.MyEntity;
 import com.ecarpo.framework.common.annotation.InitialField;
 
@@ -108,7 +106,7 @@ public class DmsBuyDO extends MyEntity {
    *
    * @mbg.generated 2019-08-06 16:18:30
    */
-  //private Date c_time;
+  //private Integer c_time;
 
   /**
    * 入库人
@@ -122,7 +120,7 @@ public class DmsBuyDO extends MyEntity {
    *
    * @mbg.generated 2019-08-06 16:18:30
    */
-  private Date buy_time;
+  private Integer buy_time;
 
   /**
    * 执行人
@@ -136,7 +134,7 @@ public class DmsBuyDO extends MyEntity {
    *
    * @mbg.generated 2019-08-06 16:18:30
    */
-  private Date exec_time;
+  private Integer exec_time;
 
   /**
    * 收银员
@@ -150,7 +148,7 @@ public class DmsBuyDO extends MyEntity {
    *
    * @mbg.generated 2019-08-06 16:18:30
    */
-  private Date cashier_time;
+  private Integer cashier_time;
 
   /**
    * 发票号

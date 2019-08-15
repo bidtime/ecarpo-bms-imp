@@ -5,7 +5,7 @@ package com.ecarpo.bms.eas.server.dmsfinanceclient.entity;
 
 import java.math.BigDecimal;
 
-import com.ecarpo.bms.eas.server.data.MyEntity;
+import com.ecarpo.bms.eas.server.data.MyEntityDate;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -18,7 +18,7 @@ import lombok.EqualsAndHashCode;
 @Data
 @SuppressWarnings("serial")
 @EqualsAndHashCode(callSuper = false)
-public class DmsFinanceClientDO extends MyEntity {
+public class DmsFinanceClientDO extends MyEntityDate {
 
   /**
    * @mbg.generated 2019-08-06 09:09:27

@@ -18,7 +18,7 @@
     <result column="state" jdbcType="TINYINT" property="state" />
     <result column="workhour_level" jdbcType="CHAR" property="workhour_level" />
     <result column="creator" jdbcType="INTEGER" property="creator" />
-    <result column="create_time" jdbcType="TIMESTAMP" property="create_time" />
+    <result column="create_time" jdbcType="INTEGER" property="create_time" />
     <result column="is_wash_car" jdbcType="TINYINT" property="is_wash_car" />
   </resultMap>
   <sql id="Base_Column_List">
@@ -52,7 +52,7 @@
       #{rated_workhour,jdbcType=DECIMAL}, #{rated_price,jdbcType=DECIMAL}, #{is_universal,jdbcType=TINYINT}, 
       #{is_discount,jdbcType=TINYINT}, #{is_sheetmetal,jdbcType=TINYINT}, #{retrieval_code,jdbcType=VARCHAR}, 
       #{state,jdbcType=TINYINT}, #{workhour_level,jdbcType=CHAR}, #{creator,jdbcType=INTEGER}, 
-      #{create_time,jdbcType=TIMESTAMP}, #{is_wash_car,jdbcType=TINYINT})
+      #{create_time,jdbcType=INTEGER}, #{is_wash_car,jdbcType=TINYINT})
   </insert>
   <insert id="insertSelective" parameterType="com.ecarpo.bms.eas.server.dmsrepairworkhour.entity.DmsRepairWorkhourDO">
     <!-- @mbg.generated 2019-08-06 11:17:53 -->
@@ -157,7 +157,7 @@
         #{creator,jdbcType=INTEGER},
       </if>
       <if test="create_time != null">
-        #{create_time,jdbcType=TIMESTAMP},
+        #{create_time,jdbcType=INTEGER},
       </if>
       <if test="is_wash_car != null">
         #{is_wash_car,jdbcType=TINYINT},
@@ -211,7 +211,7 @@
         creator = #{creator,jdbcType=INTEGER},
       </if>
       <if test="create_time != null">
-        create_time = #{create_time,jdbcType=TIMESTAMP},
+        create_time = #{create_time,jdbcType=INTEGER},
       </if>
       <if test="is_wash_car != null">
         is_wash_car = #{is_wash_car,jdbcType=TINYINT},
@@ -236,7 +236,7 @@
       state = #{state,jdbcType=TINYINT},
       workhour_level = #{workhour_level,jdbcType=CHAR},
       creator = #{creator,jdbcType=INTEGER},
-      create_time = #{create_time,jdbcType=TIMESTAMP},
+      create_time = #{create_time,jdbcType=INTEGER},
       is_wash_car = #{is_wash_car,jdbcType=TINYINT}
     where id = #{id,jdbcType=INTEGER}
   </update>

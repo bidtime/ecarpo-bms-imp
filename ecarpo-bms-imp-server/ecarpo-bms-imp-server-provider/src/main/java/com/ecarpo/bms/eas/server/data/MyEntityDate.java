@@ -8,17 +8,14 @@ import lombok.EqualsAndHashCode;
 @Data
 @SuppressWarnings("serial")
 @EqualsAndHashCode(callSuper = true)
-public class MyEntity extends MyEntityRoot {
-  
-  private Integer create_time;
+public class MyEntityDate extends MyEntityRoot {
+
+  private Date create_time;
   
   @Override
   public void setCreateTime(Date createTime) {
     super.setCreateTime(createTime);
-    this.create_time = SecondsUtils.getSeconds(createTime);
+    this.create_time = this.createTime;
   }
-
-//  @InitialField(value = "1")
-//  protected Integer status;
 
 }

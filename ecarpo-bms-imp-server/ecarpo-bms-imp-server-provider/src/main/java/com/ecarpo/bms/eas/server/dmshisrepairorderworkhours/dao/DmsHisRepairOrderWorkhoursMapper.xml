@@ -13,7 +13,7 @@
     <result column="worker_name" jdbcType="VARCHAR" property="worker_name" />
     <result column="dispatcher" jdbcType="INTEGER" property="dispatcher" />
     <result column="oper_time" jdbcType="TIMESTAMP" property="oper_time" />
-    <result column="create_time" jdbcType="TIMESTAMP" property="create_time" />
+    <result column="create_time" jdbcType="INTEGER" property="create_time" />
   </resultMap>
   <sql id="Base_Column_List">
     <!-- @mbg.generated 2019-08-06 10:39:52 -->
@@ -41,7 +41,7 @@
     values (#{id,jdbcType=INTEGER}, #{store_id,jdbcType=INTEGER}, #{order_no,jdbcType=VARCHAR}, 
       #{workhour_code,jdbcType=VARCHAR}, #{workhour_name,jdbcType=VARCHAR}, #{rated_workhour,jdbcType=DECIMAL}, 
       #{work_price,jdbcType=DECIMAL}, #{worker_name,jdbcType=VARCHAR}, #{dispatcher,jdbcType=INTEGER}, 
-      #{oper_time,jdbcType=TIMESTAMP}, #{create_time,jdbcType=TIMESTAMP})
+      #{oper_time,jdbcType=TIMESTAMP}, #{create_time,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" useGeneratedKeys="true" keyProperty="id" parameterType="com.ecarpo.bms.eas.server.dmshisrepairorderworkhours.entity.DmsHisRepairOrderWorkhoursDO">
     <!-- @mbg.generated 2019-08-06 10:39:52 -->
@@ -113,7 +113,7 @@
         #{oper_time,jdbcType=TIMESTAMP},
       </if>
       <if test="create_time != null">
-        #{create_time,jdbcType=TIMESTAMP},
+        #{create_time,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
@@ -149,7 +149,7 @@
         oper_time = #{oper_time,jdbcType=TIMESTAMP},
       </if>
       <if test="create_time != null">
-        create_time = #{create_time,jdbcType=TIMESTAMP},
+        create_time = #{create_time,jdbcType=INTEGER},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
@@ -166,7 +166,7 @@
       worker_name = #{worker_name,jdbcType=VARCHAR},
       dispatcher = #{dispatcher,jdbcType=INTEGER},
       oper_time = #{oper_time,jdbcType=TIMESTAMP},
-      create_time = #{create_time,jdbcType=TIMESTAMP}
+      create_time = #{create_time,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
     

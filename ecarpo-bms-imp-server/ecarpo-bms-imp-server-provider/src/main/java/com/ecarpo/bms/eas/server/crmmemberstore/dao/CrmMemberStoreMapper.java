@@ -9,4 +9,7 @@ import com.ecarpo.framework.common.mapper.BaseMapper;
 
 @MapperDesc(value = "储值记录")
 public interface CrmMemberStoreMapper extends BaseMapper<CrmMemberStoreDO> {
+  
+  Long existsByCustId(Integer custId);
+  
 }

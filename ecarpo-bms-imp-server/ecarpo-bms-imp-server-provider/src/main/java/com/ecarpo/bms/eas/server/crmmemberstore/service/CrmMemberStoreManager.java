@@ -17,4 +17,8 @@ import com.ecarpo.framework.common.service.BaseManager;
 @Service
 public class CrmMemberStoreManager extends BaseManager<CrmMemberStoreMapper, CrmMemberStoreDO> {
 
+  public Long existsByCustId(Integer custId) {
+    return mapper.existsByCustId(custId);
+  }
+  
 }

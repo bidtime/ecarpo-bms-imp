@@ -4,8 +4,6 @@
  */
 package com.ecarpo.bms.eas.server.dmsbuy.dto;
 
-import java.util.Date;
-
 import com.ecarpo.framework.common.annotation.InitialValue;
 import com.ecarpo.framework.model.InsertDTO;
 
@@ -108,7 +106,7 @@ public class DmsBuyInsertDTO extends InsertDTO {
    *
    * @mbg.generated 2019-08-06 13:41:54
    */
-  //private Date c_time;
+  //private Integer c_time;
 
   /**
    * 入库人
@@ -122,7 +120,7 @@ public class DmsBuyInsertDTO extends InsertDTO {
    *
    * @mbg.generated 2019-08-06 13:41:54
    */
-  private Date buy_time;
+  private Integer buy_time;
 
   /**
    * 执行人
@@ -136,7 +134,7 @@ public class DmsBuyInsertDTO extends InsertDTO {
    *
    * @mbg.generated 2019-08-06 13:41:54
    */
-  private Date exec_time;
+  private Integer exec_time;
 
   /**
    * 收银员
@@ -150,7 +148,7 @@ public class DmsBuyInsertDTO extends InsertDTO {
    *
    * @mbg.generated 2019-08-06 13:41:54
    */
-  private Date cashier_time;
+  private Integer cashier_time;
 
   /**
    * 发票号

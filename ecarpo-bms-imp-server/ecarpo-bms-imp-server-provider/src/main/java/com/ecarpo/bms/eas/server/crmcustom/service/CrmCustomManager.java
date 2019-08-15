@@ -16,5 +16,9 @@ import com.ecarpo.framework.common.service.BaseManager;
  */
 @Service
 public class CrmCustomManager extends BaseManager<CrmCustomMapper, CrmCustomDO> {
+  
+  public CrmCustomDO selectByMobile(String mobile) {
+    return mapper.selectByMobile(mobile);
+  }
 
 }

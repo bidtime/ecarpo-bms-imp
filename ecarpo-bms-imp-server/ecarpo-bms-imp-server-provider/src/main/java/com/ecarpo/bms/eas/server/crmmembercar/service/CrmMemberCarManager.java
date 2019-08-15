@@ -31,18 +31,32 @@ public class CrmMemberCarManager extends BaseManager<CrmMemberCarMapper, CrmMemb
   private CrmCustomManager customManager;
   
   public int insertSelective(CrmMemberCarExInsertDTO dto) throws Exception {
-    CrmCustomDO c = DAOUtils.cloneBean(CrmCustomDO.class, dto);
+    CrmCustomDO c = customManager.selectByMobile(dto.getMobile());
+    if (c == null) {
+      c = DAOUtils.cloneBean(CrmCustomDO.class, dto);      
+    }
     int n = customManager.insertSelective(c);
-    // TODO 判断此人是否为会员
+    // 判断此人是否为会员
     if (dto.getLevel() != null) {
-      CrmMemberStoreDO u = DAOUtils.cloneBean(CrmMemberStoreDO.class, dto);
-      u.setCustom_id(c.getId());
-      n += memberStoreManager.insertSelective(u);
+      Long l = memberStoreManager.existsByCustId(c.getId());
+      if (l == null) {
+        CrmMemberStoreDO u = DAOUtils.cloneBean(CrmMemberStoreDO.class, dto);
+        u.setCustom_id(c.getId());
+        n += memberStoreManager.insertSelective(u);
+      }
+    }
+    if (existsByPlateNo(dto.getPlate_no())) {
+      
     }
     CrmMemberCarDO memberCar = DAOUtils.cloneBean(CrmMemberCarDO.class, dto);
     memberCar.setCustom_id(c.getId());
     n += super.insertSelective(memberCar);
     return n;
   }
+  
+  public Long existsByPlateNo(Integer plateNo) {
+    return mapper.existsByPlateNo(plateNo);
+  }
+
   
 }

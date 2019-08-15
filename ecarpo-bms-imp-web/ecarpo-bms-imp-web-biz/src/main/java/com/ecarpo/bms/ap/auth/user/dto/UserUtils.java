@@ -5,6 +5,7 @@ import java.util.Date;
 import org.apache.commons.beanutils.BeanUtils;
 
 import com.ecarpo.bms.ap.auth.user.UserLoginBO;
+import com.ecarpo.bms.eas.server.data.SecondsUtils;
 import com.ecarpo.framework.annotation.utils.DTOAnnoUtils;
 import com.ecarpo.framework.model.BaseDTO;
 import com.ecarpo.framework.model.InsertDTO;
@@ -111,7 +112,8 @@ public class UserUtils {
     //Set<String> set = new HashSet<>();
     //set.add("store_id");
     //BeanUtils.copyProps(user, dto, set);
-    copyProperty(dto, "c_time", new Date());
+    copyProperty(dto, "c_time", SecondsUtils.seconds());
+    //copyProperty(dto, "store_id", user.getStoreId());
     //copyProperty(dto, "store_id", user.getStoreId());
   }
   

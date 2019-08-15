@@ -15,13 +15,13 @@
     <result column="is_sale_proxy" jdbcType="TINYINT" property="is_sale_proxy" />
     <result column="act_name" jdbcType="VARCHAR" property="act_name" />
     <result column="creator" jdbcType="INTEGER" property="creator" />
-    <result column="c_time" jdbcType="TIMESTAMP" property="c_time" />
+    <result column="c_time" jdbcType="INTEGER" property="c_time" />
     <result column="buyer_id" jdbcType="INTEGER" property="buyer_id" />
-    <result column="buy_time" jdbcType="TIMESTAMP" property="buy_time" />
+    <result column="buy_time" jdbcType="INTEGER" property="buy_time" />
     <result column="executor" jdbcType="INTEGER" property="executor" />
-    <result column="exec_time" jdbcType="TIMESTAMP" property="exec_time" />
+    <result column="exec_time" jdbcType="INTEGER" property="exec_time" />
     <result column="cashier" jdbcType="INTEGER" property="cashier" />
-    <result column="cashier_time" jdbcType="TIMESTAMP" property="cashier_time" />
+    <result column="cashier_time" jdbcType="INTEGER" property="cashier_time" />
     <result column="receipts_no" jdbcType="VARCHAR" property="receipts_no" />
     <result column="status" jdbcType="TINYINT" property="status" />
     <result column="desc" jdbcType="VARCHAR" property="desc" />
@@ -69,9 +69,9 @@
       #{contact_name,jdbcType=VARCHAR}, #{contact_phone,jdbcType=VARCHAR}, #{buy_type_id,jdbcType=INTEGER}, 
       #{supplier_id,jdbcType=INTEGER}, #{require_reach_date,jdbcType=VARCHAR}, #{act_type,jdbcType=TINYINT}, 
       #{is_sale_proxy,jdbcType=TINYINT}, #{act_name,jdbcType=VARCHAR}, #{creator,jdbcType=INTEGER}, 
-      #{c_time,jdbcType=TIMESTAMP}, #{buyer_id,jdbcType=INTEGER}, #{buy_time,jdbcType=TIMESTAMP}, 
-      #{executor,jdbcType=INTEGER}, #{exec_time,jdbcType=TIMESTAMP}, #{cashier,jdbcType=INTEGER}, 
-      #{cashier_time,jdbcType=TIMESTAMP}, #{receipts_no,jdbcType=VARCHAR}, #{status,jdbcType=TINYINT}, 
+      #{c_time,jdbcType=INTEGER}, #{buyer_id,jdbcType=INTEGER}, #{buy_time,jdbcType=INTEGER}, 
+      #{executor,jdbcType=INTEGER}, #{exec_time,jdbcType=INTEGER}, #{cashier,jdbcType=INTEGER}, 
+      #{cashier_time,jdbcType=INTEGER}, #{receipts_no,jdbcType=VARCHAR}, #{status,jdbcType=TINYINT}, 
       #{app_number,jdbcType=VARCHAR}, #{generate_from,jdbcType=VARCHAR}, 
       #{original_number,jdbcType=VARCHAR}, #{delivery_address,jdbcType=VARCHAR}, #{delivery_way_id,jdbcType=INTEGER}, 
       #{recipient_name,jdbcType=VARCHAR}, #{recipient_mobile,jdbcType=VARCHAR})
@@ -203,25 +203,25 @@
         #{creator,jdbcType=INTEGER},
       </if>
       <if test="c_time != null">
-        #{c_time,jdbcType=TIMESTAMP},
+        #{c_time,jdbcType=INTEGER},
       </if>
       <if test="buyer_id != null">
         #{buyer_id,jdbcType=INTEGER},
       </if>
       <if test="buy_time != null">
-        #{buy_time,jdbcType=TIMESTAMP},
+        #{buy_time,jdbcType=INTEGER},
       </if>
       <if test="executor != null">
         #{executor,jdbcType=INTEGER},
       </if>
       <if test="exec_time != null">
-        #{exec_time,jdbcType=TIMESTAMP},
+        #{exec_time,jdbcType=INTEGER},
       </if>
       <if test="cashier != null">
         #{cashier,jdbcType=INTEGER},
       </if>
       <if test="cashier_time != null">
-        #{cashier_time,jdbcType=TIMESTAMP},
+        #{cashier_time,jdbcType=INTEGER},
       </if>
       <if test="receipts_no != null">
         #{receipts_no,jdbcType=VARCHAR},
@@ -290,25 +290,25 @@
         creator = #{creator,jdbcType=INTEGER},
       </if>
       <if test="c_time != null">
-        c_time = #{c_time,jdbcType=TIMESTAMP},
+        c_time = #{c_time,jdbcType=INTEGER},
       </if>
       <if test="buyer_id != null">
         buyer_id = #{buyer_id,jdbcType=INTEGER},
       </if>
       <if test="buy_time != null">
-        buy_time = #{buy_time,jdbcType=TIMESTAMP},
+        buy_time = #{buy_time,jdbcType=INTEGER},
       </if>
       <if test="executor != null">
         executor = #{executor,jdbcType=INTEGER},
       </if>
       <if test="exec_time != null">
-        exec_time = #{exec_time,jdbcType=TIMESTAMP},
+        exec_time = #{exec_time,jdbcType=INTEGER},
       </if>
       <if test="cashier != null">
         cashier = #{cashier,jdbcType=INTEGER},
       </if>
       <if test="cashier_time != null">
-        cashier_time = #{cashier_time,jdbcType=TIMESTAMP},
+        cashier_time = #{cashier_time,jdbcType=INTEGER},
       </if>
       <if test="receipts_no != null">
         receipts_no = #{receipts_no,jdbcType=VARCHAR},
@@ -354,13 +354,13 @@
       is_sale_proxy = #{is_sale_proxy,jdbcType=TINYINT},
       act_name = #{act_name,jdbcType=VARCHAR},
       creator = #{creator,jdbcType=INTEGER},
-      c_time = #{c_time,jdbcType=TIMESTAMP},
+      c_time = #{c_time,jdbcType=INTEGER},
       buyer_id = #{buyer_id,jdbcType=INTEGER},
-      buy_time = #{buy_time,jdbcType=TIMESTAMP},
+      buy_time = #{buy_time,jdbcType=INTEGER},
       executor = #{executor,jdbcType=INTEGER},
-      exec_time = #{exec_time,jdbcType=TIMESTAMP},
+      exec_time = #{exec_time,jdbcType=INTEGER},
       cashier = #{cashier,jdbcType=INTEGER},
-      cashier_time = #{cashier_time,jdbcType=TIMESTAMP},
+      cashier_time = #{cashier_time,jdbcType=INTEGER},
       receipts_no = #{receipts_no,jdbcType=VARCHAR},
       status = #{status,jdbcType=TINYINT},
       app_number = #{app_number,jdbcType=VARCHAR},

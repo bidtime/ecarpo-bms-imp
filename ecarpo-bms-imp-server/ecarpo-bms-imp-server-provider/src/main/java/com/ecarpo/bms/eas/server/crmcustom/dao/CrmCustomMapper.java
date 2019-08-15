@@ -9,4 +9,7 @@ import com.ecarpo.framework.common.mapper.BaseMapper;
 
 @MapperDesc(value = "客户")
 public interface CrmCustomMapper extends BaseMapper<CrmCustomDO> {
+  
+  CrmCustomDO selectByMobile(String mobile);
+  
 }

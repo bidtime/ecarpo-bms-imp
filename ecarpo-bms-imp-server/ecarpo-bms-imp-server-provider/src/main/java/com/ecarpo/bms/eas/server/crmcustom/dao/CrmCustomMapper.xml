@@ -1003,4 +1003,11 @@
     limit 0, 1
   </select>
   
+  <select id="selectByMobile" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from crm_custom
+    mobile = #{mobile,jdbcType=VARCHAR}
+  </select>
+  
 </mapper>

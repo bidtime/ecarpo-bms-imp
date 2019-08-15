@@ -108,7 +108,7 @@ public class DmsBuyUpdateDTO extends UpdateDTO {
    *
    * @mbg.generated 2019-08-06 13:41:54
    */
-  //private Date c_time;
+  //private Integer c_time;
 
   /**
    * 入库人

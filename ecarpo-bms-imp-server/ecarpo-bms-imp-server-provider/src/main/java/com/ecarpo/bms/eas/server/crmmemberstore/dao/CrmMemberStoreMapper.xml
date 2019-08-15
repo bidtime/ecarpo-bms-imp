@@ -380,4 +380,10 @@
     limit 0, 1
   </select>
   
+  <select id="existsByCustId" resultType="java.lang.Long">
+    select 1 from crm_member_store
+    where custom_id = #{custom_id,jdbcType=INTEGER}
+    limit 0, 1
+  </select>
+  
 </mapper>

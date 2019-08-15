@@ -53,7 +53,7 @@
     <result column="heavy_buyer_price" jdbcType="DECIMAL" property="heavy_buyer_price" />
     <result column="repair_price" jdbcType="DECIMAL" property="repair_price" />
     <result column="creator" jdbcType="INTEGER" property="creator" />
-    <result column="c_time" jdbcType="TIMESTAMP" property="c_time" />
+    <result column="c_time" jdbcType="INTEGER" property="c_time" />
     <result column="proxy_count" jdbcType="INTEGER" property="proxy_count" />
     <result column="refund_count" jdbcType="INTEGER" property="refund_count" />
     <result column="act_count" jdbcType="INTEGER" property="act_count" />
@@ -147,7 +147,7 @@
       #{is_common,jdbcType=TINYINT}, #{is_fav,jdbcType=TINYINT}, #{is_member_discount,jdbcType=CHAR}, 
       #{unit,jdbcType=VARCHAR}, #{last_price,jdbcType=DECIMAL}, #{last_price_notax,jdbcType=DECIMAL}, 
       #{last_buy_price,jdbcType=DECIMAL}, #{heavy_buyer_price,jdbcType=DECIMAL}, #{repair_price,jdbcType=DECIMAL}, 
-      #{creator,jdbcType=INTEGER}, #{c_time,jdbcType=TIMESTAMP}, #{proxy_count,jdbcType=INTEGER}, 
+      #{creator,jdbcType=INTEGER}, #{c_time,jdbcType=INTEGER}, #{proxy_count,jdbcType=INTEGER}, 
       #{refund_count,jdbcType=INTEGER}, #{act_count,jdbcType=INTEGER}, #{car_model,jdbcType=VARCHAR}, 
       #{location_name,jdbcType=VARCHAR}, #{product_type_id,jdbcType=INTEGER}, #{stock_lowest,jdbcType=DECIMAL}, 
       #{product_brand,jdbcType=INTEGER}, #{figure,jdbcType=VARCHAR}, #{load_index,jdbcType=VARCHAR}, 
@@ -539,7 +539,7 @@
         #{creator,jdbcType=INTEGER},
       </if>
       <if test="c_time != null">
-        #{c_time,jdbcType=TIMESTAMP},
+        #{c_time,jdbcType=INTEGER},
       </if>
       <if test="proxy_count != null">
         #{proxy_count,jdbcType=INTEGER},
@@ -767,7 +767,7 @@
         creator = #{creator,jdbcType=INTEGER},
       </if>
       <if test="c_time != null">
-        c_time = #{c_time,jdbcType=TIMESTAMP},
+        c_time = #{c_time,jdbcType=INTEGER},
       </if>
       <if test="proxy_count != null">
         proxy_count = #{proxy_count,jdbcType=INTEGER},
@@ -896,7 +896,7 @@
       heavy_buyer_price = #{heavy_buyer_price,jdbcType=DECIMAL},
       repair_price = #{repair_price,jdbcType=DECIMAL},
       creator = #{creator,jdbcType=INTEGER},
-      c_time = #{c_time,jdbcType=TIMESTAMP},
+      c_time = #{c_time,jdbcType=INTEGER},
       proxy_count = #{proxy_count,jdbcType=INTEGER},
       refund_count = #{refund_count,jdbcType=INTEGER},
       act_count = #{act_count,jdbcType=INTEGER},
