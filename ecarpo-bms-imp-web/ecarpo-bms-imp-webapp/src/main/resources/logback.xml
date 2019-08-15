@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <configuration>
-  <substitutionProperty name="log.base" value="/mnt/home/logs/ecarpo-dms-imp/sys" />
+  <substitutionProperty name="log.base" value="/home/logs/ecarpo-dms-imp/sys" />
   <jmxConfigurator />
 
   <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">

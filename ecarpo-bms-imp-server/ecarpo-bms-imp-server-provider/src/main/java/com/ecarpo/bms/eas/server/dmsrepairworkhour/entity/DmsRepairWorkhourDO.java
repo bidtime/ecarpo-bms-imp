@@ -5,7 +5,7 @@ package com.ecarpo.bms.eas.server.dmsrepairworkhour.entity;
 
 import java.math.BigDecimal;
 
-import com.ecarpo.bms.eas.server.data.MyEntity;
+import com.ecarpo.bms.eas.server.data.MyEntityDate;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -18,7 +18,7 @@ import lombok.EqualsAndHashCode;
 @Data
 @SuppressWarnings("serial")
 @EqualsAndHashCode(callSuper = false)
-public class DmsRepairWorkhourDO extends MyEntity {
+public class DmsRepairWorkhourDO extends MyEntityDate {
   /**
    * @mbg.generated 2019-08-06 11:17:53
    */

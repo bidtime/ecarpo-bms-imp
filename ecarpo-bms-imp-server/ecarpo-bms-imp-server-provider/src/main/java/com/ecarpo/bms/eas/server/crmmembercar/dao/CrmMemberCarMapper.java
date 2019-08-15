@@ -10,6 +10,6 @@ import com.ecarpo.framework.common.mapper.BaseMapper;
 @MapperDesc(value = "会员车辆")
 public interface CrmMemberCarMapper extends BaseMapper<CrmMemberCarDO> {
   
-  Long existsByPlateNo(Integer plateNo);
+  Long existsByPlateNo(String plateNo);
 
 }

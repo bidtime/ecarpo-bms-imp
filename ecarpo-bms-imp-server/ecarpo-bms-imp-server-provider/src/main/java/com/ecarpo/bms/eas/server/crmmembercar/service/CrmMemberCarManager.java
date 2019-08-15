@@ -17,11 +17,14 @@ import com.ecarpo.bms.eas.server.crmmemberstore.service.CrmMemberStoreManager;
 import com.ecarpo.framework.common.service.BaseManager;
 import com.ecarpo.framework.common.utils.DAOUtils;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * @author xinbeibei
  * @since 2019.06.04
  */
 @Service
+@Slf4j
 public class CrmMemberCarManager extends BaseManager<CrmMemberCarMapper, CrmMemberCarDO> {
 
   @Autowired
@@ -31,30 +34,39 @@ public class CrmMemberCarManager extends BaseManager<CrmMemberCarMapper, CrmMemb
   private CrmCustomManager customManager;
   
   public int insertSelective(CrmMemberCarExInsertDTO dto) throws Exception {
+    int n = 0;
     CrmCustomDO c = customManager.selectByMobile(dto.getMobile());
     if (c == null) {
-      c = DAOUtils.cloneBean(CrmCustomDO.class, dto);      
+      c = DAOUtils.cloneBean(CrmCustomDO.class, dto);
+      n = customManager.insertSelective(c);
+    } else {
+      log.info("customer({}, {}) is exists. ", c.getName(), c.getId());
     }
-    int n = customManager.insertSelective(c);
     // 判断此人是否为会员
     if (dto.getLevel() != null) {
       Long l = memberStoreManager.existsByCustId(c.getId());
       if (l == null) {
         CrmMemberStoreDO u = DAOUtils.cloneBean(CrmMemberStoreDO.class, dto);
+        DAOUtils.cloneBean(c, u);
         u.setCustom_id(c.getId());
         n += memberStoreManager.insertSelective(u);
+      } else {
+        log.info("member({}, {}) is exists. ", c.getName(), c.getId());
       }
+    } else {
+      log.info("memeber level is null, couldn't add member. ");
     }
-    if (existsByPlateNo(dto.getPlate_no())) {
-      
+    if (this.existsByPlateNo(dto.getPlate_no()) != null) {
+      log.info("plate_no({}) is exists, couldn't add car. ", dto.getPlate_no());
+    } else {
+      CrmMemberCarDO memberCar = DAOUtils.cloneBean(CrmMemberCarDO.class, dto);
+      memberCar.setCustom_id(c.getId());
+      n += super.insertSelective(memberCar);
     }
-    CrmMemberCarDO memberCar = DAOUtils.cloneBean(CrmMemberCarDO.class, dto);
-    memberCar.setCustom_id(c.getId());
-    n += super.insertSelective(memberCar);
     return n;
   }
   
-  public Long existsByPlateNo(Integer plateNo) {
+  public Long existsByPlateNo(String plateNo) {
     return mapper.existsByPlateNo(plateNo);
   }
 
