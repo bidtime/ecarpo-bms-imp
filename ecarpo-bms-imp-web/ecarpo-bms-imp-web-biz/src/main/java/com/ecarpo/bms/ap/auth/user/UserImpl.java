@@ -22,7 +22,7 @@ import com.ecarpo.framework.model.ResultDTO;
 @Service
 public class UserImpl implements IUser {
  
-  private static final UserLoginBO USER_UI = new UserLoginBO();
+  //private static final UserLoginBO USER_UI = new UserLoginBO();
   
   @Autowired
   private HttpUserRequest userRequest;
@@ -30,13 +30,13 @@ public class UserImpl implements IUser {
   @Autowired
   private IEasUserService userService;
 
-  static {
-    USER_UI.setUserId(2L);
-    USER_UI.setUserCode("EAS-sys");
-    USER_UI.setUserName("EAS管理員");
-    USER_UI.setStoreId(1);
-    USER_UI.setStoreName("1_store");
-  }
+//  static {
+//    USER_UI.setUserId(2L);
+//    USER_UI.setUserCode("EAS-sys");
+//    USER_UI.setUserName("EAS管理員");
+//    USER_UI.setStoreId(1);
+//    USER_UI.setStoreName("1_store");
+//  }
 
 //  @Override
 //  public ResultDTO<?> login(HttpServletRequest req, UserPwdDTO dto) throws RuntimeException {
@@ -55,21 +55,18 @@ public class UserImpl implements IUser {
     }
     ResultDTO<IdNameQO> rstStore = userService.getStoresByUserId(rstUser.getData());
     if (rstStore.getData() == null) {
-      IdNameQO qo = new IdNameQO();
-      qo.setId(1);
-      qo.setName("1_store");
-      rstStore.setData(qo);
+      return ResultDTO.error(dto.getUser() + ", 无对应的店面，请配置");
     }
-    UserLoginBO user = newBO(rstUser.getData(), rstStore.getData());
+    UserLoginBO user = newBO(rstUser.getData(), dto.getUser(), rstStore.getData());
     userRequest.login(req, res, user);
-    return new ResultDTO<>("ok");
+    return new ResultDTO<>();
   }
   
-  private static UserLoginBO newBO(Integer userId, IdNameQO store) {
+  private static UserLoginBO newBO(Integer userId, String name, IdNameQO store) {
     UserLoginBO user = new UserLoginBO();
     user.setUserId(userId.longValue());
-    user.setUserCode("EAS-sys");
-    user.setUserName("EAS管理員");
+    //user.setUserCode("EAS-sys");
+    user.setUserName(name);
     user.setStoreId(store.getId());
     user.setStoreName(store.getName());
     //

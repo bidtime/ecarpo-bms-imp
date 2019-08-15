@@ -5,7 +5,6 @@ import java.util.Date;
 import org.apache.commons.beanutils.BeanUtils;
 
 import com.ecarpo.bms.ap.auth.user.UserLoginBO;
-import com.ecarpo.bms.eas.server.data.SecondsUtils;
 import com.ecarpo.framework.annotation.utils.DTOAnnoUtils;
 import com.ecarpo.framework.model.BaseDTO;
 import com.ecarpo.framework.model.InsertDTO;
@@ -32,7 +31,7 @@ public class UserUtils {
 //    return u;
 //  }
   
-  public static void copy(BaseDTO dto, UserLoginBO user) {
+  public static void copy(BaseDTO dto, UserLoginBO user) throws Exception {
     if (dto instanceof InsertDTO) {
       copy((InsertDTO)dto, user, true);
     } else if (dto instanceof UpdateDTO) {
@@ -40,7 +39,7 @@ public class UserUtils {
     }
   }
   
-  public static void copy(InsertDTO dto, UserLoginBO user, boolean copyOrg) {
+  public static void copy(InsertDTO dto, UserLoginBO user, boolean copyOrg) throws Exception {
     // 初始化DTO类的默认值
     try {
       DTOAnnoUtils.process(dto);
@@ -76,7 +75,7 @@ public class UserUtils {
     }
   }
   
-  public static void copy(UpdateDTO dto, UserLoginBO user, boolean copyOrg) {
+  public static void copy(UpdateDTO dto, UserLoginBO user, boolean copyOrg) throws Exception {
     // 初始化DTO类的默认值
     try {
       DTOAnnoUtils.process(dto);
@@ -108,20 +107,23 @@ public class UserUtils {
     }
   }
   
-  public static void copys(Object dto, UserLoginBO user) {
+  public static void copys(Object dto, UserLoginBO user) throws Exception {
     //Set<String> set = new HashSet<>();
     //set.add("store_id");
     //BeanUtils.copyProps(user, dto, set);
-    copyProperty(dto, "c_time", SecondsUtils.seconds());
-    //copyProperty(dto, "store_id", user.getStoreId());
+    //copyPropertySlient(dto, "c_time", SecondsUtils.seconds());
+    copyPropertySlient(dto, "store_id", user.getStoreId());
     //copyProperty(dto, "store_id", user.getStoreId());
   }
   
-  public static void copyProperty(final Object bean, final String name, final Object value) {
+  public static void copyProperty(final Object bean, final String name, final Object value) throws Exception {
+    BeanUtils.copyProperty(bean, name, value);
+  }
+  
+  public static void copyPropertySlient(final Object bean, final String name, final Object value) {
     try {
       BeanUtils.copyProperty(bean, name, value);
     } catch (Exception e) {
-      
     }
   }
 

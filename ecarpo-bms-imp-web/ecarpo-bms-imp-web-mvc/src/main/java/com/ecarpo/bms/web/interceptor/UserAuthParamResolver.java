@@ -31,7 +31,7 @@ public class UserAuthParamResolver implements WebArgumentResolver {
     return UserLoginBO.class.equals(parameter.getParameterType());
   }
   
-  private static final UserLoginBO userI = UserLoginBO.getUser();
+  //private static final UserLoginBO userI = UserLoginBO.getUser();
 
   @Override
   public Object resolveArgument(MethodParameter methodParameter, NativeWebRequest webRequest)
@@ -43,8 +43,8 @@ public class UserAuthParamResolver implements WebArgumentResolver {
         UserLoginBO user = service.getUser(req);
         if (user == null) {
           log.warn("user is null");
-          user = userI;
-          //throw new RuntimeException("please login");
+          //user = userI;
+          throw new RuntimeException("please login");
         }
         return user;
       }
