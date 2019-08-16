@@ -36,5 +36,13 @@ public class MyEntityRoot extends DataEntity {
 
 //  @InitialField(value = "1")
 //  protected Integer status;
+  
+  /**
+   * 是否删除（1已删0未删）
+   *
+   * @mbg.generated 2019-08-05 15:18:43
+   */
+  @InitialField(value = "0")
+  private Integer is_del;
 
 }

@@ -6,7 +6,7 @@ package com.ecarpo.bms.eas.server.crmbasesupplier.entity;
 import java.math.BigDecimal;
 import java.util.Date;
 
-import com.ecarpo.bms.eas.server.data.MyEntity;
+import com.ecarpo.bms.eas.server.data.MyEntityInteger;
 import com.ecarpo.framework.common.annotation.InitialField;
 
 import lombok.Data;
@@ -20,7 +20,7 @@ import lombok.EqualsAndHashCode;
 @Data
 @SuppressWarnings("serial")
 @EqualsAndHashCode(callSuper = false)
-public class CrmBaseSupplierDO extends MyEntity {
+public class CrmBaseSupplierDO extends MyEntityInteger {
 
   /**
    * @mbg.generated 2019-08-05 16:24:17
@@ -227,7 +227,7 @@ public class CrmBaseSupplierDO extends MyEntity {
    *
    * @mbg.generated 2019-08-05 16:24:17
    */
-  private Integer is_del;
+  //private Integer is_del;
 
   /**
    * 供应商类型：1集团统采，2协议供货商，3临时采购

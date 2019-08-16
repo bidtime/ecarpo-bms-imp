@@ -5,7 +5,7 @@ package com.ecarpo.bms.eas.server.duser.entity;
 
 import java.util.Date;
 
-import com.ecarpo.bms.eas.server.data.MyEntity;
+import com.ecarpo.bms.eas.server.data.MyEntityInteger;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -18,7 +18,7 @@ import lombok.EqualsAndHashCode;
 @Data
 @SuppressWarnings("serial")
 @EqualsAndHashCode(callSuper = false)
-public class DUserDO extends MyEntity {
+public class DUserDO extends MyEntityInteger {
     /**
      *
      * @mbg.generated 2019-08-12 10:46:26

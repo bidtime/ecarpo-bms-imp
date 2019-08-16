@@ -7,7 +7,7 @@ package com.ecarpo.bms.eas.server.crmmemberstore.dto;
 import java.math.BigDecimal;
 import java.util.Date;
 
-import com.ecarpo.framework.model.InsertDTO;
+import com.ecarpo.bms.eas.server.data.EASInsertDTO;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -19,7 +19,7 @@ import lombok.EqualsAndHashCode;
 @SuppressWarnings("serial")
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class CrmMemberStoreInsertDTO extends InsertDTO {
+public class CrmMemberStoreInsertDTO extends EASInsertDTO {
   /**
    * @mbg.generated 2019-08-05 16:58:00
    */
@@ -30,7 +30,7 @@ public class CrmMemberStoreInsertDTO extends InsertDTO {
    *
    * @mbg.generated 2019-08-05 16:58:00
    */
-  private Integer store_id;
+  //private Integer store_id;
 
   /**
    * 会员ID（如已是会员）

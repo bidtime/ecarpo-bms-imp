@@ -3,7 +3,7 @@
  */
 package com.ecarpo.bms.eas.server.dmsbuy.entity;
 
-import com.ecarpo.bms.eas.server.data.MyEntity;
+import com.ecarpo.bms.eas.server.data.MyEntityInteger;
 import com.ecarpo.framework.common.annotation.InitialField;
 
 import lombok.Data;
@@ -17,7 +17,7 @@ import lombok.EqualsAndHashCode;
 @Data
 @SuppressWarnings("serial")
 @EqualsAndHashCode(callSuper = false)
-public class DmsBuyDO extends MyEntity {
+public class DmsBuyDO extends MyEntityInteger {
 
   /**
    * @mbg.generated 2019-08-06 16:18:30

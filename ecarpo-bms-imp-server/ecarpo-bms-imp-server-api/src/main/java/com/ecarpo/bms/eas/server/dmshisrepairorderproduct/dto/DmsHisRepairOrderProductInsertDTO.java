@@ -9,7 +9,7 @@ import java.util.Date;
 
 import org.hibernate.validator.constraints.NotBlank;
 
-import com.ecarpo.framework.model.InsertDTO;
+import com.ecarpo.bms.eas.server.data.EASInsertDTO;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -21,7 +21,7 @@ import lombok.EqualsAndHashCode;
 @SuppressWarnings("serial")
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class DmsHisRepairOrderProductInsertDTO extends InsertDTO {
+public class DmsHisRepairOrderProductInsertDTO extends EASInsertDTO {
   /**
    * @mbg.generated 2019-08-06 10:33:34
    */
@@ -32,7 +32,7 @@ public class DmsHisRepairOrderProductInsertDTO extends InsertDTO {
    *
    * @mbg.generated 2019-08-06 10:33:34
    */
-  private Integer store_id;
+  //private Integer store_id;
 
   /**
    * 工单号

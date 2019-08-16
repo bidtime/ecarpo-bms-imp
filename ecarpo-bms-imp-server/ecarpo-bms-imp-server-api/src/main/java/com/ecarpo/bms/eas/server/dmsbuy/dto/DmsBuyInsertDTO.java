@@ -4,8 +4,8 @@
  */
 package com.ecarpo.bms.eas.server.dmsbuy.dto;
 
+import com.ecarpo.bms.eas.server.data.EASInsertDTO;
 import com.ecarpo.framework.common.annotation.InitialValue;
-import com.ecarpo.framework.model.InsertDTO;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -17,7 +17,7 @@ import lombok.EqualsAndHashCode;
 @SuppressWarnings("serial")
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class DmsBuyInsertDTO extends InsertDTO {
+public class DmsBuyInsertDTO extends EASInsertDTO {
 
   /**
    * @mbg.generated 2019-08-06 13:41:54
@@ -36,7 +36,7 @@ public class DmsBuyInsertDTO extends InsertDTO {
    *
    * @mbg.generated 2019-08-06 13:41:54
    */
-  private Integer store_id;
+  //private Integer store_id;
 
   /**
    * 客户名称

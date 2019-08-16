@@ -6,7 +6,7 @@ package com.ecarpo.bms.eas.server.dmshisrepairorderworkhours.entity;
 import java.math.BigDecimal;
 import java.util.Date;
 
-import com.ecarpo.bms.eas.server.data.MyEntity;
+import com.ecarpo.bms.eas.server.data.MyEntityInteger;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -19,7 +19,7 @@ import lombok.EqualsAndHashCode;
 @Data
 @SuppressWarnings("serial")
 @EqualsAndHashCode(callSuper = false)
-public class DmsHisRepairOrderWorkhoursDO extends MyEntity {
+public class DmsHisRepairOrderWorkhoursDO extends MyEntityInteger {
   /**
    * @mbg.generated 2019-08-06 10:39:52
    */

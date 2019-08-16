@@ -9,7 +9,7 @@ import java.util.Date;
 
 import org.hibernate.validator.constraints.NotBlank;
 
-import com.ecarpo.framework.model.InsertDTO;
+import com.ecarpo.bms.eas.server.data.EASInsertDTO;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -21,7 +21,7 @@ import lombok.EqualsAndHashCode;
 @SuppressWarnings("serial")
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class CrmBaseSupplierInsertDTO extends InsertDTO {
+public class CrmBaseSupplierInsertDTO extends EASInsertDTO {
   /**
   *
   * @mbg.generated 2019-08-05 16:24:17
@@ -33,7 +33,7 @@ public class CrmBaseSupplierInsertDTO extends InsertDTO {
   *
   * @mbg.generated 2019-08-05 16:24:17
   */
- private Integer store_id;
+ //private Integer store_id;
 
  /**
   * 供货商的dealer_id
@@ -224,7 +224,7 @@ public class CrmBaseSupplierInsertDTO extends InsertDTO {
   *
   * @mbg.generated 2019-08-05 16:24:17
   */
- private Integer is_del;
+ //private Integer is_del;
 
  /**
   * 供应商类型：1集团统采，2协议供货商，3临时采购

@@ -5,7 +5,7 @@ package com.ecarpo.bms.eas.server.user.entity;
 
 import java.util.Date;
 
-import com.ecarpo.bms.eas.server.data.MyEntity;
+import com.ecarpo.bms.eas.server.data.MyEntityInteger;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -18,7 +18,7 @@ import lombok.EqualsAndHashCode;
 @Data
 @SuppressWarnings("serial")
 @EqualsAndHashCode(callSuper = false)
-public class IUserDO extends MyEntity {
+public class IUserDO extends MyEntityInteger {
   
     /**
      * 自增ID

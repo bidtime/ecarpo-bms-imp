@@ -5,7 +5,7 @@ package com.ecarpo.bms.eas.server.numberqueue.entity;
 
 import java.util.Date;
 
-import com.ecarpo.bms.eas.server.data.MyEntity;
+import com.ecarpo.bms.eas.server.data.MyEntityInteger;
 import com.ecarpo.framework.util.CalendarUtils;
 
 import lombok.Data;
@@ -19,7 +19,7 @@ import lombok.EqualsAndHashCode;
 @Data
 @SuppressWarnings("serial")
 @EqualsAndHashCode(callSuper = false)
-public class SerialNumberQueueDO extends MyEntity {
+public class SerialNumberQueueDO extends MyEntityInteger {
 
   /**
    * @mbg.generated 2019-07-26 16:48:48

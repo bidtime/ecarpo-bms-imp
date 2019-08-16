@@ -5,7 +5,7 @@ package com.ecarpo.bms.eas.server.dmsbuydetail.entity;
 
 import java.math.BigDecimal;
 
-import com.ecarpo.bms.eas.server.data.MyEntity;
+import com.ecarpo.bms.eas.server.data.MyEntityInteger;
 import com.ecarpo.framework.common.annotation.InitialField;
 
 import lombok.Data;
@@ -19,7 +19,7 @@ import lombok.EqualsAndHashCode;
 @Data
 @SuppressWarnings("serial")
 @EqualsAndHashCode(callSuper = false)
-public class DmsBuyDetailDO extends MyEntity {
+public class DmsBuyDetailDO extends MyEntityInteger {
   /**
    * @mbg.generated 2019-08-06 13:48:14
    */

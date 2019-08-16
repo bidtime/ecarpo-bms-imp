@@ -11,7 +11,7 @@ import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotBlank;
 
-import com.ecarpo.framework.model.InsertDTO;
+import com.ecarpo.bms.eas.server.data.EASInsertDTO;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -23,7 +23,7 @@ import lombok.EqualsAndHashCode;
 @SuppressWarnings("serial")
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class DmsHisRepairOrderInsertDTO extends InsertDTO {
+public class DmsHisRepairOrderInsertDTO extends EASInsertDTO {
   /**
    * @mbg.generated 2019-08-06 10:15:30
    */
@@ -34,7 +34,7 @@ public class DmsHisRepairOrderInsertDTO extends InsertDTO {
    *
    * @mbg.generated 2019-08-06 10:15:30
    */
-  private Integer store_id;
+  //private Integer store_id;
 
   /**
    * 工单号

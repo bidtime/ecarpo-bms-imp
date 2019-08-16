@@ -6,7 +6,7 @@ package com.ecarpo.bms.eas.server.crmmembercar.entity;
 import java.math.BigDecimal;
 import java.util.Date;
 
-import com.ecarpo.bms.eas.server.data.MyEntity;
+import com.ecarpo.bms.eas.server.data.MyEntityInteger;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -19,7 +19,7 @@ import lombok.EqualsAndHashCode;
 @Data
 @SuppressWarnings("serial")
 @EqualsAndHashCode(callSuper = false)
-public class CrmMemberCarDO extends MyEntity {
+public class CrmMemberCarDO extends MyEntityInteger {
 
   /**
    * @mbg.generated 2019-08-05 16:38:00

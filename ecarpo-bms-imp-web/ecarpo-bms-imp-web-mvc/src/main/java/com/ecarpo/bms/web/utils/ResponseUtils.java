@@ -39,7 +39,8 @@ public class ResponseUtils {
       r.setCharacterEncoding("UTF-8");
       r.setContentType("application/json;charset=UTF-8");
       // write string
-      r.getWriter().write(s);
+      r.getOutputStream().write(s.getBytes("UTF-8"));
+      //r.getWriter().write(s);
       // flush buffer
       r.flushBuffer();
       if (logger.isDebugEnabled()) {

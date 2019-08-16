@@ -468,7 +468,7 @@ public class CrmBaseProductUpdateDTO extends UpdateDTO {
   *
   * @mbg.generated 2019-08-05 15:18:43
   */
- private Integer is_del;
+ //private Integer is_del;
 
  /**
   * 轮胎_胎面宽度

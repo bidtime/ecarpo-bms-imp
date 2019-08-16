@@ -6,7 +6,7 @@ package com.ecarpo.bms.eas.server.crmcustom.entity;
 import java.math.BigDecimal;
 import java.util.Date;
 
-import com.ecarpo.bms.eas.server.data.MyEntity;
+import com.ecarpo.bms.eas.server.data.MyEntityInteger;
 import com.ecarpo.framework.common.annotation.InitialField;
 
 import lombok.Data;
@@ -20,7 +20,7 @@ import lombok.EqualsAndHashCode;
 @Data
 @SuppressWarnings("serial")
 @EqualsAndHashCode(callSuper = false)
-public class CrmCustomDO extends MyEntity {
+public class CrmCustomDO extends MyEntityInteger {
 
   /**
    * @mbg.generated 2019-08-12 16:07:37

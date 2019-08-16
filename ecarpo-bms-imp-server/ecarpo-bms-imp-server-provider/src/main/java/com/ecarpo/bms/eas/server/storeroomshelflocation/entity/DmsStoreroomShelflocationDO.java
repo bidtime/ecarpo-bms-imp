@@ -3,7 +3,7 @@
  */
 package com.ecarpo.bms.eas.server.storeroomshelflocation.entity;
 
-import com.ecarpo.bms.eas.server.data.MyEntity;
+import com.ecarpo.bms.eas.server.data.MyEntityInteger;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -16,7 +16,7 @@ import lombok.EqualsAndHashCode;
 @Data
 @SuppressWarnings("serial")
 @EqualsAndHashCode(callSuper = false)
-public class DmsStoreroomShelflocationDO extends MyEntity {
+public class DmsStoreroomShelflocationDO extends MyEntityInteger {
   /**
    * @mbg.generated 2019-08-06 11:42:27
    */

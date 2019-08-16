@@ -224,7 +224,7 @@ public class CrmBaseSupplierUpdateDTO extends UpdateDTO {
    *
    * @mbg.generated 2019-08-05 16:24:17
    */
-  private Integer is_del;
+  //private Integer is_del;
 
   /**
    * 供应商类型：1集团统采，2协议供货商，3临时采购

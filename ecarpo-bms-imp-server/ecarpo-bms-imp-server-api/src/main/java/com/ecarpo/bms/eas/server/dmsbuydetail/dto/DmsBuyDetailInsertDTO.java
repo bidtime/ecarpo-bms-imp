@@ -6,7 +6,7 @@ package com.ecarpo.bms.eas.server.dmsbuydetail.dto;
 
 import java.math.BigDecimal;
 
-import com.ecarpo.framework.model.InsertDTO;
+import com.ecarpo.bms.eas.server.data.EASInsertDTO;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -18,7 +18,7 @@ import lombok.EqualsAndHashCode;
 @SuppressWarnings("serial")
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class DmsBuyDetailInsertDTO extends InsertDTO {
+public class DmsBuyDetailInsertDTO extends EASInsertDTO {
   /**
    * @mbg.generated 2019-08-06 13:48:14
    */
@@ -27,7 +27,7 @@ public class DmsBuyDetailInsertDTO extends InsertDTO {
   /**
    * @mbg.generated 2019-08-06 13:48:14
    */
-  private Integer store_id;
+  //private Integer store_id;
 
   /**
    * 采购单编号，关联dms_buy表中的buy_number
