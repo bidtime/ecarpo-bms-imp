@@ -32,7 +32,7 @@ public class DmsBuyDetailManager extends BaseManager<DmsBuyDetailMapper, DmsBuyD
     DmsBuyDetailDO u = DAOUtils.cloneBean(DmsBuyDetailDO.class, dto);
     u.setProduct_id(crmBaseProductManager.selectIdByCode(dto.getProduct_code()));
     u.setLocation_id(dmsStoreroomShelflocationManager.selectIdByCode(dto.getLocation_code()));    
-    return super.insertSelective(dto);
+    return super.insertSelective(u);
   }
   
 }

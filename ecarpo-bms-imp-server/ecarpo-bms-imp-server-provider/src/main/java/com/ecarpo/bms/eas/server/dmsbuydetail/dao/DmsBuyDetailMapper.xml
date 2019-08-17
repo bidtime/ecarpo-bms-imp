@@ -36,7 +36,7 @@
     delete from dms_buy_detail
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.ecarpo.bms.eas.server.dmsbuydetail.entity.DmsBuyDetailDO">
+  <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="com.ecarpo.bms.eas.server.dmsbuydetail.entity.DmsBuyDetailDO">
     <!-- @mbg.generated 2019-08-08 01:17:17 -->
     insert into dms_buy_detail (id, store_id, buy_number, 
       product_id, cost_price, cost_price_notax, 
@@ -51,7 +51,7 @@
       #{desc,jdbcType=VARCHAR}, #{c_time,jdbcType=INTEGER}, #{status,jdbcType=TINYINT}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.ecarpo.bms.eas.server.dmsbuydetail.entity.DmsBuyDetailDO">
+  <insert id="insertSelective" useGeneratedKeys="true" keyProperty="id" parameterType="com.ecarpo.bms.eas.server.dmsbuydetail.entity.DmsBuyDetailDO">
     <!-- @mbg.generated 2019-08-08 01:17:17 -->
     insert into dms_buy_detail
     <trim prefix="(" suffix=")" suffixOverrides=",">

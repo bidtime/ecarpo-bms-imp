@@ -12,10 +12,13 @@ import com.ecarpo.bms.eas.server.crmbaseproduct.entity.CrmBaseProductDO;
 import com.ecarpo.framework.common.service.BaseManager;
 import com.ecarpo.framework.common.utils.DAOUtils;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * @author xinbeibei
  * @since 2019.06.04
  */
+@Slf4j
 @Service
 public class CrmBaseProductManager extends BaseManager<CrmBaseProductMapper, CrmBaseProductDO> {
 
@@ -30,8 +33,9 @@ public class CrmBaseProductManager extends BaseManager<CrmBaseProductMapper, Crm
   public int insert_type(CrmBaseProductInsertDTO dto) throws Exception {
     CrmBaseProductDO u = DAOUtils.cloneBean(CrmBaseProductDO.class, dto);
     Integer product_type_id = selectProductIdByProductName(dto.getProduct_type_name());
+    log.debug(": type_name-{}, type_id-{}", dto.getProduct_type_name(), product_type_id);
     u.setProduct_type_id(product_type_id);
-    return super.insertSelective(dto);
+    return super.insertSelective(u);
   }
 
 }
