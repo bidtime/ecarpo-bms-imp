@@ -8,6 +8,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 import com.ecarpo.bms.eas.server.data.EASInsertDTO;
+import com.ecarpo.framework.common.annotation.InitialValue;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -36,6 +37,14 @@ public class CrmMemberCarExInsertDTO extends EASInsertDTO {
   * @mbg.generated 2019-08-12 16:07:37
   */
  private String name;
+ 
+ /**
+  * 客户类型（0潜客1保有客户2会员）
+  *
+  */
+ @InitialValue(value="1")
+ private Integer custom_type;
+
 
  /**
   * 移动电话
