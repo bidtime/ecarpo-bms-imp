@@ -22,8 +22,13 @@ public class EasUserServiceImpl extends
   BaseImplement<IUserManager, IUserMapper, IUserDO> implements IEasUserService {
 
   @Override
-  public ResultDTO<Integer> login(UserPwdDTO dto) {
-    return new ResultDTO<>(manager.login(dto) ? 1:0);
+  public ResultDTO<Boolean> login(UserPwdDTO dto) {
+    return new ResultDTO<>(manager.login(dto));
+  }
+
+  @Override
+  public ResultDTO<Integer> getUserIdByPwd(UserPwdDTO dto) {
+    return new ResultDTO<>(manager.selectUserIdByPwd(dto));
   }
   
   @Override

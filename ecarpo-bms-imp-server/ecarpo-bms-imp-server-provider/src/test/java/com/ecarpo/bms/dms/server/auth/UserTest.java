@@ -28,11 +28,24 @@ public class UserTest extends JUnitTestBase {
   public void test_login() throws Exception {
     UserPwdDTO dto = new UserPwdDTO();
     //super.initial(dto);
-    dto.setUser("jss");
-    dto.setPwd("123456");
+    dto.setUser("13910294768");
+    dto.setPwd("111111");
     //dto.setRetrievalCode(String.valueOf(nextInt));
     print(dto);
     ResultDTO rst = service.login(dto);
+    print(rst);
+  }
+
+  @SuppressWarnings("rawtypes")
+  @Test
+  public void test_getUserIdByPwd() throws Exception {
+    UserPwdDTO dto = new UserPwdDTO();
+    //super.initial(dto);
+    dto.setUser("13910294768");
+    dto.setPwd("111111");
+    //dto.setRetrievalCode(String.valueOf(nextInt));
+    print(dto);
+    ResultDTO rst = service.getUserIdByPwd(dto);
     print(rst);
   }
   

@@ -14,7 +14,9 @@ import com.ecarpo.framework.model.ResultDTO;
  */
 public interface IEasUserService {
   
-  ResultDTO<Integer> login(UserPwdDTO dto);
+  ResultDTO<Boolean> login(UserPwdDTO dto);
+  
+  ResultDTO<Integer> getUserIdByPwd(UserPwdDTO dto);
   
   ResultDTO<IdNameQO> getStoresByUserId(Integer userId);
   

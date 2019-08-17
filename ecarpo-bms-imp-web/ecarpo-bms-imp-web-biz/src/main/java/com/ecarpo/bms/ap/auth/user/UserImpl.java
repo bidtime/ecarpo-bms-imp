@@ -10,15 +10,19 @@ import org.bidtime.session.state.StateEnum;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.alibaba.fastjson.JSON;
 import com.ecarpo.bms.eas.server.user.dto.UserPwdDTO;
 import com.ecarpo.bms.eas.server.user.qo.IdNameQO;
 import com.ecarpo.bms.eas.server.user.service.IEasUserService;
 import com.ecarpo.framework.model.ResultDTO;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * @author maguangzu
  * @since 2017年7月14日
  */
+@Slf4j
 @Service
 public class UserImpl implements IUser {
  
@@ -49,13 +53,17 @@ public class UserImpl implements IUser {
 
   @Override
   public ResultDTO<?> login(HttpServletRequest req, HttpServletResponse res, UserPwdDTO dto) throws RuntimeException {
-    ResultDTO<Integer> rstUser = userService.login(dto);
+    log.debug("login dto: {}", JSON.toJSONString(dto));
+    ResultDTO<Integer> rstUser = userService.getUserIdByPwd(dto);
     if (!rstUser.isSuccess()) {
       return ResultDTO.error("用户名或密码不正确");
     }
+    log.debug("rstUser: {}", JSON.toJSONString(rstUser));
     ResultDTO<IdNameQO> rstStore = userService.getStoresByUserId(rstUser.getData());
     if (rstStore.getData() == null) {
       return ResultDTO.error(dto.getUser() + ", 无对应的店面，请配置");
+    } else {
+      log.debug("找到对应的店面, {}", JSON.toJSONString(rstStore));      
     }
     UserLoginBO user = newBO(rstUser.getData(), dto.getUser(), rstStore.getData());
     userRequest.login(req, res, user);

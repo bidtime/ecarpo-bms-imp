@@ -34,10 +34,15 @@ public class IUserManager extends BaseManager<IUserMapper, IUserDO> {
     return null;
   }
 
-  public boolean login(UserPwdDTO dto) {
+  public Boolean login(UserPwdDTO dto) {
     String pwd_md5 = DigestUtils.md5DigestAsHex(dto.getPwd().getBytes()).toLowerCase();
     Long l = mapper.existsUserByPwd(dto.getUser(), pwd_md5);
-    return (l != null && l == 1) ? true : false;
+    return (l != null && l==1) ? true : false;
+  }
+
+  public Integer selectUserIdByPwd(UserPwdDTO dto) {
+    String pwd_md5 = DigestUtils.md5DigestAsHex(dto.getPwd().getBytes()).toLowerCase();
+    return mapper.selectUserIdByPwd(dto.getUser(), pwd_md5);
   }
   
   public IdNameQO getStoresByUserId(Integer userId) {
