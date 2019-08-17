@@ -232,4 +232,7 @@ public class CrmBaseSupplierUpdateDTO extends UpdateDTO {
    * @mbg.generated 2019-08-05 16:24:17
    */
   private Integer type;
+  
+  private Integer tax_rate;
+  
 }

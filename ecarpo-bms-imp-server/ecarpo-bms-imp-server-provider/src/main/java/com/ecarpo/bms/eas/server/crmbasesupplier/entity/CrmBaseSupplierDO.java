@@ -235,4 +235,7 @@ public class CrmBaseSupplierDO extends MyEntityInteger {
    * @mbg.generated 2019-08-05 16:24:17
    */
   private Integer type;
+  
+  @InitialField(value ="0")
+  private Integer tax_rate;
 }

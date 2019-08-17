@@ -135,4 +135,14 @@ public class DmsRepairWorkhourDO extends MyEntityDate {
    * @mbg.generated 2019-08-06 11:17:53
    */
   private Integer is_wash_car;
+  
+  @Override
+  public void setState(Integer state) {
+    if (state == null) {
+      this.state = 0;
+    } else {
+      this.state = (state == 1) ? 0 : 1;
+    }
+  }
+
 }
