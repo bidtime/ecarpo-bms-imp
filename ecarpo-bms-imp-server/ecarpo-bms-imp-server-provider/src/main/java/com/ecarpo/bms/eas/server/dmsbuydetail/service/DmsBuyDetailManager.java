@@ -4,11 +4,16 @@
  */
 package com.ecarpo.bms.eas.server.dmsbuydetail.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.ecarpo.bms.eas.server.crmbaseproduct.service.CrmBaseProductManager;
 import com.ecarpo.bms.eas.server.dmsbuydetail.dao.DmsBuyDetailMapper;
+import com.ecarpo.bms.eas.server.dmsbuydetail.dto.DmsBuyDetailInsertDTO;
 import com.ecarpo.bms.eas.server.dmsbuydetail.entity.DmsBuyDetailDO;
+import com.ecarpo.bms.eas.server.storeroomshelflocation.service.DmsStoreroomShelflocationManager;
 import com.ecarpo.framework.common.service.BaseManager;
+import com.ecarpo.framework.common.utils.DAOUtils;
 
 /**
  * @author xinbeibei
@@ -16,5 +21,18 @@ import com.ecarpo.framework.common.service.BaseManager;
  */
 @Service
 public class DmsBuyDetailManager extends BaseManager<DmsBuyDetailMapper, DmsBuyDetailDO> {
+  
+  @Autowired
+  private CrmBaseProductManager crmBaseProductManager;
+  
+  @Autowired
+  private DmsStoreroomShelflocationManager dmsStoreroomShelflocationManager;
 
+  public int insertSelective(DmsBuyDetailInsertDTO dto) throws Exception {
+    DmsBuyDetailDO u = DAOUtils.cloneBean(DmsBuyDetailDO.class, dto);
+    u.setProduct_id(crmBaseProductManager.selectIdByCode(dto.getProduct_code()));
+    u.setLocation_id(dmsStoreroomShelflocationManager.selectIdByCode(dto.getLocation_code()));    
+    return super.insertSelective(dto);
+  }
+  
 }

@@ -17,4 +17,8 @@ import com.ecarpo.framework.common.service.BaseManager;
 @Service
 public class DmsStoreroomShelflocationManager extends BaseManager<DmsStoreroomShelflocationMapper, DmsStoreroomShelflocationDO> {
 
+  public Integer selectIdByCode(String code) {
+    return mapper.selectIdByCode(code);
+  }
+  
 }

@@ -5,9 +5,13 @@ package com.ecarpo.bms.eas.server.crmbaseproduct.dao;
 
 import com.ecarpo.bms.eas.server.crmbaseproduct.entity.CrmBaseProductDO;
 import com.ecarpo.framework.common.annotation.MapperDesc;
+import com.ecarpo.framework.common.annotation.TryExcept;
 import com.ecarpo.framework.common.mapper.BaseMapper;
 
-@MapperDesc(value = "供货商信息")
+@MapperDesc(value = "产品信息")
 public interface CrmBaseProductMapper extends BaseMapper<CrmBaseProductDO> {
+  
+  @TryExcept(cmd = "GET")
+  Integer selectIdByCode(String code);
   
 }

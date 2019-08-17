@@ -27,7 +27,7 @@ public class DmsBuyDetailUpdateDTO extends UpdateDTO {
   /**
    * @mbg.generated 2019-08-06 13:48:14
    */
-  private Integer store_id;
+  //private Integer store_id;
 
   /**
    * 采购单编号，关联dms_buy表中的buy_number
@@ -41,7 +41,9 @@ public class DmsBuyDetailUpdateDTO extends UpdateDTO {
    *
    * @mbg.generated 2019-08-06 13:48:14
    */
-  private Integer product_id;
+  //private Integer product_id;
+  
+  private String product_code;
 
   /**
    * 含税成本价
@@ -90,7 +92,9 @@ public class DmsBuyDetailUpdateDTO extends UpdateDTO {
    *
    * @mbg.generated 2019-08-06 13:48:14
    */
-  private Integer location_id;
+  //private Integer location_id;
+  
+  private String location_code;
 
   /**
    * 货位名称

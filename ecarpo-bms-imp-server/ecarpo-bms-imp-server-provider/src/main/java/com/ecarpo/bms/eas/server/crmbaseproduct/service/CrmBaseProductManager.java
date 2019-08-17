@@ -17,4 +17,8 @@ import com.ecarpo.framework.common.service.BaseManager;
 @Service
 public class CrmBaseProductManager extends BaseManager<CrmBaseProductMapper, CrmBaseProductDO> {
 
+  public Integer selectIdByCode(String code) {
+    return mapper.selectIdByCode(code);
+  }
+
 }

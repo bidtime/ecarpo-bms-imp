@@ -60,6 +60,8 @@ public class DmsBuyDetailTest extends JUnitTestBase {
     DmsBuyDetailInsertDTO dto = new DmsBuyDetailInsertDTO();
     super.initial(dto);
     dto.setBuy_number(String.valueOf(nextInt));
+    dto.setLocation_code("01");
+    dto.setProduct_code("01");
     print(dto);
     ResultDTO rst = service.insert(dto);
     print(rst);

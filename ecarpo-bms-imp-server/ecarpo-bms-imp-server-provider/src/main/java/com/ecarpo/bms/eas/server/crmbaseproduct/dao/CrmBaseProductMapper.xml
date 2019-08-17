@@ -930,5 +930,12 @@
     where code = #{code,jdbcType=VARCHAR}
     limit 0, 1
   </select>
+    
+  <!-- user define -->
+  <select id="selectIdByCode" resultType="java.lang.Long">
+    select id from crm_base_product
+    where code = #{code,jdbcType=VARCHAR}
+    limit 0, 1
+  </select>
   
 </mapper>

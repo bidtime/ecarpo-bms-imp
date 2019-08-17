@@ -176,5 +176,12 @@
     where code = #{code,jdbcType=VARCHAR}
     limit 0, 1
   </select>
+      
+  <!-- user define -->
+  <select id="selectIdByCode" resultType="java.lang.Long">
+    select id from dms_storeroom_shelflocation
+    where code = #{code,jdbcType=VARCHAR}
+    limit 0, 1
+  </select>
   
 </mapper>
