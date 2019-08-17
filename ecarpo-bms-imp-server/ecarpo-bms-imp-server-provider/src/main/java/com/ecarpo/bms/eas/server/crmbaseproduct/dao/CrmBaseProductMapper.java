@@ -14,4 +14,7 @@ public interface CrmBaseProductMapper extends BaseMapper<CrmBaseProductDO> {
   @TryExcept(cmd = "GET")
   Integer selectIdByCode(String code);
   
+  @TryExcept(cmd = "GET", value = "类型")
+  Integer selectProductIdByProductName(String productName);
+  
 }

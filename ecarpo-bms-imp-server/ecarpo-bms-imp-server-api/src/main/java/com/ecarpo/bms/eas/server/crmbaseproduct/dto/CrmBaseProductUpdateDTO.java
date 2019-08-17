@@ -419,7 +419,9 @@ public class CrmBaseProductUpdateDTO extends UpdateDTO {
   *
   * @mbg.generated 2019-08-05 15:18:43
   */
- private Integer product_type_id;
+ //private Integer product_type_id;
+
+ private String product_type_name;
 
  /**
   * 库存底限

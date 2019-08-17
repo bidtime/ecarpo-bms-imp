@@ -21,4 +21,8 @@ public class CrmMemberStoreManager extends BaseManager<CrmMemberStoreMapper, Crm
     return mapper.existsByCustId(custId);
   }
   
+  public Integer selectMemberIdByMemberName(String memberName) {
+    return mapper.selectMemberIdByMemberName(memberName);    
+  }
+  
 }

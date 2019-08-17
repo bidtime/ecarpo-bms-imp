@@ -72,7 +72,9 @@ public class CrmMemberCarExInsertDTO extends EASInsertDTO {
   *
   * @mbg.generated 2019-08-12 16:07:37
   */
- private Integer level;
+ //private Integer level;
+ 
+ private String member_name;
 
  /**
   * 会员卡号

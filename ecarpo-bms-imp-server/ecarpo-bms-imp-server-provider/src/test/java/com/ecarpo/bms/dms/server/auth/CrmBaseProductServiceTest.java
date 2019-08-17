@@ -31,6 +31,7 @@ public class CrmBaseProductServiceTest extends JUnitTestBase {
     dto.setPtype("deposit");
     dto.setCost_type("other");
     dto.setIs_member_discount("1");
+    dto.setProduct_type_name("金卡");
     dto.setCode(String.valueOf(nextInt));
     print(dto);
     ResultDTO rst = service.insert(dto);

@@ -386,4 +386,10 @@
     limit 0, 1
   </select>
   
+  <select id="selectMemberIdByMemberName" resultType="java.lang.Integer">
+    select id from crm_base_mlevel
+    where name = #{name,jdbcType=VARCHAR}
+    limit 0, 1
+  </select>
+  
 </mapper>

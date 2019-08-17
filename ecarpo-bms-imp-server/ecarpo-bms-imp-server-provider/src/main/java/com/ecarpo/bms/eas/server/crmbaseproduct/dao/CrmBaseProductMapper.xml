@@ -937,5 +937,11 @@
     where code = #{code,jdbcType=VARCHAR}
     limit 0, 1
   </select>
+    
+  <select id="selectProductIdByProductName" resultType="java.lang.Integer">
+    select id from dms_product_type
+    where type_name = #{name,jdbcType=VARCHAR}
+    limit 0, 1
+  </select>
   
 </mapper>

@@ -38,12 +38,16 @@ public class CrmMemberCarManager extends BaseManager<CrmMemberCarMapper, CrmMemb
     CrmCustomDO c = customManager.selectByMobile(dto.getMobile());
     if (c == null) {
       c = DAOUtils.cloneBean(CrmCustomDO.class, dto);
+      if (dto.getMember_name() != null) {
+        Integer memberTypeId = memberStoreManager.selectMemberIdByMemberName(dto.getMember_name());
+        c.setLevel(memberTypeId);
+      }
       n = customManager.insertSelective(c);
     } else {
       log.info("customer({}, {}) is exists. ", c.getName(), c.getId());
     }
     // 判断此人是否为会员
-    if (dto.getLevel() != null) {
+    if (dto.getMember_name() != null) {
       Long l = memberStoreManager.existsByCustId(c.getId());
       if (l == null) {
         CrmMemberStoreDO u = DAOUtils.cloneBean(CrmMemberStoreDO.class, dto);
