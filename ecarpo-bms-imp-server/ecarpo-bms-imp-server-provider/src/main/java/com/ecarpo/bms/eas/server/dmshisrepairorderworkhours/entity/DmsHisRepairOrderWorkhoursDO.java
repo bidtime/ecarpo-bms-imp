@@ -79,7 +79,7 @@ public class DmsHisRepairOrderWorkhoursDO extends MyEntityInteger {
    *
    * @mbg.generated 2019-08-06 10:39:52
    */
-  private Integer dispatcher;
+  private String dispatcher;
 
   /**
    * 操作时间
