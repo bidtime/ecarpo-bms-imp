@@ -78,6 +78,8 @@ public class DmsHisRepairOrderProductUpdateDTO extends UpdateDTO {
    */
   private BigDecimal product_amount;
 
+  private BigDecimal product_num;
+
   /**
    * 修理工
    *

@@ -73,6 +73,8 @@ public class DmsHisRepairOrderProductDO extends MyEntityInteger {
    * @mbg.generated 2019-08-06 10:33:34
    */
   private BigDecimal product_amount;
+  
+  private BigDecimal product_num;
 
   /**
    * 修理工
