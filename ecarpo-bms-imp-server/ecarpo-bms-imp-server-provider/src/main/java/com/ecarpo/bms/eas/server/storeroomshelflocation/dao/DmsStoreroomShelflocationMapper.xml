@@ -173,14 +173,14 @@
   <!-- user define -->
   <select id="existsByCode" resultType="java.lang.Long">
     select 1 from dms_storeroom_shelflocation
-    where code = #{code,jdbcType=VARCHAR}
+    where code = #{location_code,jdbcType=VARCHAR}
     limit 0, 1
   </select>
       
   <!-- user define -->
   <select id="selectIdByCode" resultType="java.lang.Long">
     select id from dms_storeroom_shelflocation
-    where code = #{code,jdbcType=VARCHAR}
+    where code = #{location_code,jdbcType=VARCHAR}
     limit 0, 1
   </select>
   
