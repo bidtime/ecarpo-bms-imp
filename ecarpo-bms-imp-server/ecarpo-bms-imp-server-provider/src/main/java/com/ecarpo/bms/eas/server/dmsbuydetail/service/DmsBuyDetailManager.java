@@ -30,8 +30,10 @@ public class DmsBuyDetailManager extends BaseManager<DmsBuyDetailMapper, DmsBuyD
 
   public int insertSelective(DmsBuyDetailInsertDTO dto) throws Exception {
     DmsBuyDetailDO u = DAOUtils.cloneBean(DmsBuyDetailDO.class, dto);
-    u.setProduct_id(crmBaseProductManager.selectIdByCode(dto.getProduct_code()));
-    u.setLocation_id(dmsStoreroomShelflocationManager.selectIdByCode(dto.getLocation_code()));    
+    u.setProduct_id(crmBaseProductManager.selectIdByCode(dto.getProduct_code(),
+        dto.getStore_id()));
+    u.setLocation_id(dmsStoreroomShelflocationManager.selectIdByCode(dto.getLocation_code(),
+        dto.getStore_id()));    
     return super.insertSelective(u);
   }
   

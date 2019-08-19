@@ -35,7 +35,7 @@ public class CrmMemberCarManager extends BaseManager<CrmMemberCarMapper, CrmMemb
   
   public int insertSelective(CrmMemberCarExInsertDTO dto) throws Exception {
     int n = 0;
-    CrmCustomDO c = customManager.selectByMobile(dto.getMobile());
+    CrmCustomDO c = customManager.selectByMobile(dto.getMobile(), dto.getStore_id());
     if (c == null) {
       c = DAOUtils.cloneBean(CrmCustomDO.class, dto);
       if (dto.getMember_name() != null) {
@@ -62,7 +62,7 @@ public class CrmMemberCarManager extends BaseManager<CrmMemberCarMapper, CrmMemb
     } else {
       log.info("memeber level is null, couldn't add member. ");
     }
-    if (this.existsByPlateNo(dto.getPlate_no()) != null) {
+    if (this.existsByPlateNo(dto.getPlate_no(), dto.getStore_id()) != null) {
       log.info("plate_no({}) is exists, couldn't add car. ", dto.getPlate_no());
     } else {
       CrmMemberCarDO memberCar = DAOUtils.cloneBean(CrmMemberCarDO.class, dto);
@@ -72,8 +72,8 @@ public class CrmMemberCarManager extends BaseManager<CrmMemberCarMapper, CrmMemb
     return n;
   }
   
-  public Long existsByPlateNo(String plateNo) {
-    return mapper.existsByPlateNo(plateNo);
+  public Long existsByPlateNo(String plateNo, Integer store_id) {
+    return mapper.existsByPlateNo(plateNo, store_id);
   }
 
   

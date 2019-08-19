@@ -1000,14 +1000,16 @@
   <select id="existsByCode" resultType="java.lang.Long">
     select 1 from crm_custom
     where code = #{code,jdbcType=VARCHAR}
+      and store_id = #{store_id,jdbcType=INTEGER}
     limit 0, 1
   </select>
   
-  <select id="selectByMobile" parameterType="java.lang.String" resultMap="BaseResultMap">
+  <select id="selectByMobile" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from crm_custom
     where mobile = #{mobile,jdbcType=VARCHAR}
+      and store_id = #{store_id,jdbcType=INTEGER}
   </select>
   
 </mapper>

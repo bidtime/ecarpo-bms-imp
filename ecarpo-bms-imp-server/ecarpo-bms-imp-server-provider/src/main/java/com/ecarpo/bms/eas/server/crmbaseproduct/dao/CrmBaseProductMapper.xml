@@ -928,6 +928,7 @@
   <select id="existsByCode" resultType="java.lang.Long">
     select 1 from crm_base_product
     where code = #{code,jdbcType=VARCHAR}
+      and store_id = #{store_id,jdbcType=INTEGER}
     limit 0, 1
   </select>
     
@@ -935,6 +936,7 @@
   <select id="selectIdByCode" resultType="java.lang.Integer">
     select id from crm_base_product
     where code = #{code,jdbcType=VARCHAR}
+      and store_id = #{store_id,jdbcType=INTEGER}
     limit 0, 1
   </select>
     

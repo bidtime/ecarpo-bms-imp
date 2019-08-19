@@ -14,7 +14,7 @@ import com.ecarpo.framework.common.mapper.BaseMapper;
 public interface CrmBaseProductMapper extends BaseMapper<CrmBaseProductDO> {
   
   @TryExcept(cmd = "GET")
-  Integer selectIdByCode(String code);
+  Integer selectIdByCode(@Param("code")String code, @Param("store_id")Integer store_id);
   
   @TryExcept(cmd = "GET", value = "类型")
   Integer selectProductIdByProductName(@Param("type_name")String type_name, @Param("store_id")Integer store_id);

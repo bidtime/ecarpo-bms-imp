@@ -22,8 +22,8 @@ import lombok.extern.slf4j.Slf4j;
 @Service
 public class CrmBaseProductManager extends BaseManager<CrmBaseProductMapper, CrmBaseProductDO> {
 
-  public Integer selectIdByCode(String code) {
-    return mapper.selectIdByCode(code);
+  public Integer selectIdByCode(String code, Integer store_id) {
+    return mapper.selectIdByCode(code, store_id);
   }
 
   public Integer selectProductIdByProductName(String type_name, Integer store_id) {

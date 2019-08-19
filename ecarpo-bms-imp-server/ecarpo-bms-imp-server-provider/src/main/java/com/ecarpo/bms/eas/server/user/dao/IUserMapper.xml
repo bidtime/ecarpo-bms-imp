@@ -368,6 +368,7 @@
   <select id="existsByCode" resultType="java.lang.Long">
     select 1 from i_user
     where code = #{code,jdbcType=VARCHAR}
+      and store_id = #{store_id,jdbcType=INTEGER}
     limit 0, 1
   </select>
   

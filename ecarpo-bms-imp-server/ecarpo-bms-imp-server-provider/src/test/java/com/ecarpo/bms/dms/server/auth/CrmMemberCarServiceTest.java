@@ -31,6 +31,7 @@ public class CrmMemberCarServiceTest extends JUnitTestBase {
     dto.setCard_num("C-" + String.valueOf(nextInt));
     //dto.setMember_name(null);
     dto.setMember_name("金卡");
+    dto.setMobile("13121385119");
     print(dto);
     ResultDTO rst = service.insert(dto);
     print(rst);
