@@ -44,6 +44,7 @@ public class JUnitTestBase extends AbstractJUnit4SpringContextTests {
     dto.setModifierId(1L);
     dto.setModifierName("1");
     dto.setDelFlag(0);
+    BeanUtils.copyProperty(dto, "store_id", 1);
     BeanUtils.copyProperty(dto, "id", null);
   }
   
@@ -64,6 +65,7 @@ public class JUnitTestBase extends AbstractJUnit4SpringContextTests {
     dto.setModifyTime(new Date());
     dto.setModifierId(1L);
     dto.setModifierName("1");
+    BeanUtils.copyProperty(dto, "store_id", 1);
     BeanUtils.copyProperty(dto, "id", null);
   }
   

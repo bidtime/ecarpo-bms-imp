@@ -26,14 +26,15 @@ public class CrmBaseProductManager extends BaseManager<CrmBaseProductMapper, Crm
     return mapper.selectIdByCode(code);
   }
 
-  public Integer selectProductIdByProductName(String productName) {
-    return mapper.selectProductIdByProductName(productName);
+  public Integer selectProductIdByProductName(String type_name, Integer store_id) {
+    return mapper.selectProductIdByProductName(type_name, store_id);
   }
   
   public int insert_type(CrmBaseProductInsertDTO dto) throws Exception {
     CrmBaseProductDO u = DAOUtils.cloneBean(CrmBaseProductDO.class, dto);
-    Integer product_type_id = selectProductIdByProductName(dto.getProduct_type_name());
-    log.debug(": type_name-{}, type_id-{}", dto.getProduct_type_name(), product_type_id);
+    Integer product_type_id = selectProductIdByProductName(dto.getProduct_type_name(), dto.getStore_id());
+    log.debug(": type_name-{}, store_id-{}, type_id-{}", dto.getProduct_type_name(),
+        dto.getStore_id(), product_type_id);
     u.setProduct_type_id(product_type_id);
     return super.insertSelective(u);
   }

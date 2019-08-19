@@ -39,7 +39,8 @@ public class CrmMemberCarManager extends BaseManager<CrmMemberCarMapper, CrmMemb
     if (c == null) {
       c = DAOUtils.cloneBean(CrmCustomDO.class, dto);
       if (dto.getMember_name() != null) {
-        Integer memberTypeId = memberStoreManager.selectMemberIdByMemberName(dto.getMember_name());
+        Integer memberTypeId = memberStoreManager.selectMemberIdByMemberName(dto.getMember_name(),
+            dto.getStore_id());
         c.setLevel(memberTypeId);
       }
       n = customManager.insertSelective(c);
