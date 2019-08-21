@@ -14,6 +14,6 @@ import com.ecarpo.framework.common.mapper.BaseMapper;
 public interface DmsStoreroomShelflocationMapper extends BaseMapper<DmsStoreroomShelflocationDO> {
 
   @TryExcept(cmd = "GET")
-  Integer selectIdByCode(@Param("code")String code, @Param("store_id")Integer store_id);
+  Integer selectIdByCode(@Param("location_code")String code, @Param("store_id")Integer store_id);
   
 }
