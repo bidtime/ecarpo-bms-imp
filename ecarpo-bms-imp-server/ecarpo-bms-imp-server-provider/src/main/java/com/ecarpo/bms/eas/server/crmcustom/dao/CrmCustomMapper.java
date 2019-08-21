@@ -7,7 +7,6 @@ import org.apache.ibatis.annotations.Param;
 
 import com.ecarpo.bms.eas.server.crmcustom.entity.CrmCustomDO;
 import com.ecarpo.framework.common.annotation.MapperDesc;
-import com.ecarpo.framework.common.annotation.TryExcept;
 import com.ecarpo.framework.common.mapper.BaseMapper;
 
 @MapperDesc(value = "客户")

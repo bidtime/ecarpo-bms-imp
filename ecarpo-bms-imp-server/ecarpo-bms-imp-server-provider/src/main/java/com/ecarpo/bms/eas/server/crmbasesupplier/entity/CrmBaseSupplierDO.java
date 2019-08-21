@@ -216,10 +216,11 @@ public class CrmBaseSupplierDO extends MyEntityInteger {
   //private String remark;
 
   /**
-   * 状态
+  * 状态（1正常2停用）
    *
    * @mbg.generated 2019-08-05 16:24:17
    */
+  @InitialField(value = "1")
   private Integer status;
 
   /**
