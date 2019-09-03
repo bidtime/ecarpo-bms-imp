@@ -6,6 +6,7 @@ package com.ecarpo.bms.eas.server.dmsfinanceclient.entity;
 import java.math.BigDecimal;
 
 import com.ecarpo.bms.eas.server.data.MyEntityDate;
+import com.ecarpo.framework.common.annotation.InitialField;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -238,6 +239,7 @@ public class DmsFinanceClientDO extends MyEntityDate {
    *
    * @mbg.generated 2019-08-06 09:09:27
    */
+  @InitialField( value = "0")
   private Integer status;
 
   /**

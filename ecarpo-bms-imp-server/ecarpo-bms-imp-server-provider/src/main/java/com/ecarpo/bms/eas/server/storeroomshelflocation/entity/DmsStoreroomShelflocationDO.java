@@ -4,6 +4,7 @@
 package com.ecarpo.bms.eas.server.storeroomshelflocation.entity;
 
 import com.ecarpo.bms.eas.server.data.MyEntityInteger;
+import com.ecarpo.framework.common.annotation.InitialField;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -90,5 +91,7 @@ public class DmsStoreroomShelflocationDO extends MyEntityInteger {
    *
    * @mbg.generated 2019-08-06 11:42:27
    */
+  @InitialField( value = "0")
   private Integer status;
+  
 }

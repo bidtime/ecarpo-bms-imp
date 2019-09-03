@@ -7,6 +7,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 import com.ecarpo.bms.eas.server.data.MyEntityInteger;
+import com.ecarpo.framework.common.annotation.InitialField;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -185,6 +186,7 @@ public class CrmBaseProductDO extends MyEntityInteger {
    *
    * @mbg.generated 2019-08-05 15:18:43
    */
+  @InitialField( value = "1")
   private Integer status;
 
   /**
