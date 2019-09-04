@@ -4,6 +4,7 @@
  */
 package com.ecarpo.bms.dms.server.auth;
 
+import org.apache.commons.lang3.StringUtils;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,6 +44,15 @@ public class CrmBaseProductServiceTest extends JUnitTestBase {
     
   }
   
+  @Test
+  public void test_isEmpty() throws Exception {
+    String cs = " ";
+    print("isEmpty: " + StringUtils.isEmpty(cs));
+    print("isNotEmpty: " + StringUtils.isNotEmpty(cs));
+    print("isBlank: " + StringUtils.isBlank(cs));
+    print("isNotBlank: " + StringUtils.isNotBlank(cs));
+  }
+    
 //  @EndClass
 //  public static void endClass() {
 //    

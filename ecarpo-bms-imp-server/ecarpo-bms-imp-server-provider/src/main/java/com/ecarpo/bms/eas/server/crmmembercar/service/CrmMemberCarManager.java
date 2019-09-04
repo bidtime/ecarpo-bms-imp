@@ -41,9 +41,14 @@ public class CrmMemberCarManager extends BaseManager<CrmMemberCarMapper, CrmMemb
       log.info("customer(mobile-{}, storeId-{}) none exists, must be add cust. ", dto.getMobile(), dto.getStore_id());
       c = DAOUtils.cloneBean(CrmCustomDO.class, dto);
       if (StringUtils.isNoneBlank(dto.getMember_name())) {
+        log.info("memeber(level-{}) none blank, do memberTypeId. ", dto.getMember_name());
         Integer memberTypeId = memberStoreManager.selectMemberIdByMemberName(dto.getMember_name(),
             dto.getStore_id());
         c.setLevel(memberTypeId);
+        c.setCustom_type(2);
+      } else {
+        log.info("memeber(level-{}) is blank, none do memberTypeId. ", dto.getMember_name());
+        c.setCustom_type(1);
       }
       n = customManager.insertSelective(c);
     } else {
@@ -51,7 +56,7 @@ public class CrmMemberCarManager extends BaseManager<CrmMemberCarMapper, CrmMemb
           dto.getMobile(), dto.getStore_id(), c.getName(), c.getId());
     }
     // 判断此人是否为会员
-    if (StringUtils.isNoneBlank(dto.getMember_name())) {
+    if (!StringUtils.isEmpty(dto.getMember_name())) {
       log.info("memeber(level-{}) none blank, must be process member. ", dto.getMember_name());
       Long l = memberStoreManager.existsByCustId(c.getId());
       if (l == null) {
