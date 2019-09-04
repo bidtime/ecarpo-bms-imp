@@ -56,7 +56,7 @@ public class CrmMemberCarManager extends BaseManager<CrmMemberCarMapper, CrmMemb
           dto.getMobile(), dto.getStore_id(), c.getName(), c.getId());
     }
     // 判断此人是否为会员
-    if (!StringUtils.isEmpty(dto.getMember_name())) {
+    if (StringUtils.isNoneBlank(dto.getMember_name())) {
       log.info("memeber(level-{}) none blank, must be process member. ", dto.getMember_name());
       Long l = memberStoreManager.existsByCustId(c.getId());
       if (l == null) {
